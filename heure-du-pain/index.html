@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>L'Heure du Pain · Boulangerie-pâtisserie, 121 avenue d'Ivry, Paris 13e</title>
+<meta name="description" content="L'Heure du Pain, boulangerie-pâtisserie au 121 avenue d'Ivry, Paris 13e. Ouverte du mardi au dimanche, de 6 h à 21 h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --bg:#ffffff;
+  --cream:#f6f1e6;
+  --cream-deep:#ede4d1;
+  --ink:#1f1f1f;
+  --ink-soft:#4a4a4a;
+  --accent:#fa520f;
+  --accent-deep:#cc3a05;
+  --sun:#ffd900;
+  /* day band, one flat block per opening hour (6 h → 20 h) */
+  --h6:#fff0c2;--h7:#ffe295;--h8:#ffd96a;--h9:#ffd900;--h10:#ffcc00;--h11:#ffc01f;--h12:#ffb83e;
+  --h13:#ffa926;--h14:#ffa110;--h15:#ff9205;--h16:#ff8105;--h17:#fb6a0a;--h18:#fa520f;--h19:#e2470b;--h20:#cc3a05;
+  --m:clamp(16px,2.2vw,32px);
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Inter Tight",system-ui,sans-serif;
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.375rem,1.1rem + 1vw,2rem);
+  --step-head:clamp(2.75rem,1.4rem + 5vw,6rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.55 var(--sans);font-feature-settings:"tnum" 0;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+::selection{background:var(--sun);color:var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* demo banner */
+.demo{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:7px var(--m)}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px var(--m)}
+.wordmark{font:400 1.6rem/1 var(--serif);text-decoration:none;letter-spacing:-.01em}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:var(--step-small);font-weight:500}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font:600 var(--step-small)/1 var(--sans);text-decoration:none;transition:transform .25s var(--ease),background-color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-accent{background:var(--accent);color:var(--ink)}
+.btn-accent:hover{background:#ff6a2b}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#3d3d3d}
+.btn-soft{background:var(--cream-deep);color:var(--ink)}
+.btn-soft:hover{background:#ffe295}
+.btn:active{transform:scale(.97)}
+
+/* hero */
+.hero{padding:clamp(8px,2vw,24px) var(--m) 0}
+.hero h1{font:400 19.4vw/.82 var(--serif);letter-spacing:-.035em;white-space:nowrap;margin-left:-.04em}
+.hero h1 .line{display:inline-block;overflow:hidden;padding-bottom:.08em;vertical-align:top}
+.hero h1 .line>span{display:inline-block}
+.hero-row{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:clamp(20px,3vw,40px);align-items:start}
+.hero-copy{grid-column:1/6}
+.hero-copy p{font-size:clamp(1.125rem,1rem + .4vw,1.3125rem);max-width:34ch}
+.hero-copy p strong{font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.now{grid-column:7/13;text-align:right;display:flex;flex-direction:column;align-items:flex-end}
+.now-status{font:400 var(--step-lead)/1.15 var(--serif);font-size:clamp(2rem,1.2rem + 2.4vw,3.4rem);letter-spacing:-.01em}
+.now-status .dot{display:inline-block;width:.32em;height:.32em;border-radius:50%;background:var(--accent);vertical-align:.18em;margin-right:.22em}
+.now-status.closed .dot{background:var(--ink-soft)}
+.now-sub{color:var(--ink-soft);font-size:var(--step-small);margin-top:6px}
+
+/* the day band */
+.day{margin-top:clamp(28px,4vw,48px)}
+.days{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+.days button{font:500 var(--step-small)/1 var(--sans);min-height:40px;padding:0 14px;border-radius:999px;border:0;background:var(--cream);color:var(--ink);cursor:pointer;transition:background-color .2s,transform .2s var(--ease)}
+.days button:hover{background:var(--cream-deep)}
+.days button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.days button:active{transform:scale(.95)}
+.band{margin:0 var(--m);position:relative;display:grid;grid-template-columns:repeat(15,1fr);height:clamp(96px,14vw,200px)}
+.band i{display:block;transform-origin:bottom;transition:filter .4s}
+.band.off i{filter:grayscale(1) brightness(1.18)}
+.cursor{position:absolute;top:-10px;bottom:0;width:3px;background:var(--ink);left:0;transform:translateX(-1px);transition:left .6s var(--ease)}
+.cursor::before{content:"";position:absolute;top:0;left:50%;width:13px;height:13px;border-radius:50%;background:var(--ink);transform:translate(-50%,-50%)}
+.cursor[hidden]{display:none}
+.ticks{display:grid;grid-template-columns:repeat(15,1fr);padding:0 var(--m);font-size:var(--step-small);color:var(--ink-soft)}
+.ticks span{padding:8px 0 0}
+.ticks span:last-child{position:relative}
+.ticks span:last-child::after{content:"21 h";position:absolute;right:0;top:8px}
+.day-note{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px var(--m) 0;font-size:var(--step-small);color:var(--ink-soft)}
+
+/* photo strip under hero */
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--m);padding:clamp(56px,8vw,120px) var(--m) 0}
+.strip figure{overflow:hidden;background:var(--cream)}
+.strip img{width:100%;height:clamp(240px,34vw,520px);object-fit:cover}
+.strip figcaption{font-size:var(--step-small);color:var(--ink-soft);padding-top:10px;background:var(--bg)}
+
+/* intro */
+.intro{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:clamp(96px,12vw,200px) var(--m)}
+.intro-text{grid-column:7/13}
+.intro-text h2{font:400 var(--step-head)/.95 var(--serif);letter-spacing:-.02em;margin-bottom:28px}
+.intro-text p{font-size:var(--step-lead);line-height:1.3;text-indent:3em;max-width:28ch}
+.intro-text p + p{font-size:var(--step-body);line-height:1.55;text-indent:0;max-width:46ch;margin-top:24px}
+.intro-photo{grid-column:1/5;grid-row:1;align-self:end;transform:translateY(30%)}
+.intro-photo img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.intro-photo figcaption{font-size:var(--step-small);color:var(--ink-soft);margin-top:10px;max-width:24ch}
+
+/* counter list */
+.counter{background:var(--cream);padding:clamp(80px,10vw,160px) var(--m)}
+.counter h2{font:400 var(--step-head)/.95 var(--serif);letter-spacing:-.02em;max-width:14ch}
+.counter-lead{max-width:46ch;margin-top:20px}
+.rows{margin-top:clamp(40px,6vw,80px);list-style:none}
+.rows li{display:grid;grid-template-columns:1fr 1.4fr auto;gap:24px;align-items:baseline;padding:18px 0;font-size:clamp(1.25rem,.9rem + 1.4vw,2rem);line-height:1.2}
+.rows li:nth-child(odd){background:var(--cream-deep);margin:0 calc(var(--m) * -1);padding-left:var(--m);padding-right:var(--m)}
+.rows .what{font-family:var(--serif);font-size:1.35em;letter-spacing:-.01em}
+.rows .detail{font-size:var(--step-body);color:var(--ink)}
+.rows .when{font-size:var(--step-small);color:var(--ink-soft);text-align:right}
+.counter-note{margin-top:28px;font-size:var(--step-small);color:var(--ink-soft);max-width:60ch}
+
+/* showcase on yellow */
+.show{background:var(--sun);display:grid;grid-template-columns:1fr 1fr;min-height:88svh}
+.show figure{padding:clamp(24px,3vw,40px);display:flex;align-items:center}
+.show figure img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.show-text{display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding:clamp(40px,5vw,72px) clamp(24px,4vw,64px) clamp(24px,3vw,40px) clamp(16px,2vw,24px)}
+.show-text h2{font:400 var(--step-head)/.95 var(--serif);letter-spacing:-.02em;max-width:11ch}
+.show-text p{max-width:38ch;margin-top:28px}
+.show-big{font:400 clamp(5rem,3rem + 9vw,12rem)/.8 var(--serif);letter-spacing:-.04em}
+.show-text .show-cap{font-weight:500;margin-top:14px}
+.cells{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cells a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:72px;padding:0 22px;text-decoration:none;font-weight:600;transition:transform .25s var(--ease)}
+.cells a:active{transform:scale(.98)}
+.cells a:first-child{background:var(--ink);color:#fff}
+.cells a:last-child{background:#ffe766;color:var(--ink)}
+.cells a:hover{text-decoration:underline}
+.cells svg{width:20px;height:20px;flex:none}
+
+/* contact rows */
+.contact h2{font:400 var(--step-head)/.95 var(--serif);letter-spacing:-.02em;padding:clamp(96px,12vw,180px) var(--m) clamp(32px,4vw,48px)}
+.crow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;min-height:clamp(84px,10vw,150px);padding:0 var(--m) .18em;font:400 clamp(2.2rem,1rem + 5.2vw,5.5rem)/1 var(--serif);letter-spacing:-.02em;text-decoration:none}
+.crow:nth-child(even){background:var(--cream)}
+.crow small{font:500 var(--step-small)/1.3 var(--sans);letter-spacing:0;color:var(--ink-soft);text-align:right;padding-bottom:.9em}
+a.crow:hover .t{text-decoration:underline;text-decoration-thickness:2px}
+.crow.hello{background:var(--accent);color:var(--ink)}
+.crow.hello .arrow{width:.9em;height:.9em;border-radius:50%;background:var(--ink);color:var(--accent);display:grid;place-items:center;margin-bottom:.06em;transition:transform .3s var(--ease)}
+.crow.hello:hover .arrow{transform:translateX(8px)}
+.crow.hello .arrow svg{width:45%;height:45%}
+
+/* sunset close + footer */
+.stripe{display:grid;grid-template-columns:repeat(15,1fr);height:clamp(28px,4vw,56px)}
+footer{background:var(--ink);color:#fff;min-height:80svh;display:grid;grid-template-rows:auto 1fr auto;padding:40px var(--m) 20px}
+.fcols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;font-size:15px;line-height:1.6}
+.fcols p{color:#bdbdbd}
+.fcols p:first-child{color:#fff;font-weight:600}
+.fcols a{color:#bdbdbd}
+.fcols a:hover{color:#fff}
+.fword{font:400 19.4vw/.8 var(--serif);letter-spacing:-.035em;white-space:nowrap;margin-left:-.04em;align-self:end}
+.legal{font-size:13px;color:#bdbdbd;margin-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* motion */
+.js .line>span{transform:translateY(105%)}
+.js .loaded .line>span{transform:none;transition:transform 1s var(--ease)}
+.js .loaded .line:nth-child(2)>span{transition-delay:.11s}
+.js .rise{opacity:0;transform:translateY(24px)}
+.js .rise.in{opacity:1;transform:none;transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.js .band i{transform:scaleY(.0)}
+.js .band.grown i{transform:none;transition:transform .9s var(--ease)}
+.strip img,.show figure img{transition:transform 1.4s var(--ease)}
+.strip figure:hover img{transform:scale(1.04)}
+@keyframes drift{from{transform:scale(1.06) translateX(-1.5%)}to{transform:scale(1.06) translateX(1.5%)}}
+.strip figure:first-child img{animation:drift 14s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){
+  .js .line>span,.js .rise,.js .band i{transform:none!important;opacity:1!important;transition:none!important}
+  .strip figure:first-child img{animation:none}
+  .cursor{transition:none}
+}
+
+/* tablet & phone */
+@media (max-width:860px){
+  .nav ul{display:none}
+  .hero h1{font-size:35vw;line-height:.8}
+  .hero h1 .line{display:block}
+  .hero-row{grid-template-columns:1fr;gap:28px}
+  .hero-copy,.now{grid-column:1/-1;text-align:left;align-items:stretch}
+  .band{grid-template-columns:repeat(15,1fr)}
+  .days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+  .days button{padding:0;font-size:14px}
+  .ticks span{padding-left:2px;font-size:13px}
+  .ticks span:nth-child(3n+2),.ticks span:nth-child(3n){visibility:hidden}
+  .ticks span:last-child{visibility:visible;color:transparent}
+  .ticks span:last-child::after{color:var(--ink-soft)}
+  .strip{grid-template-columns:1fr 1fr}
+  .strip figure:first-child{grid-column:1/-1}
+  .strip img{height:auto;aspect-ratio:4/5}
+  .strip figure:first-child img{aspect-ratio:4/3}
+  .intro{grid-template-columns:1fr;gap:0}
+  .intro-text{grid-column:1}
+  .intro-text p{max-width:none;text-indent:0}
+  .intro-photo{grid-column:1;grid-row:2;width:62%;justify-self:end;transform:none;margin-top:40px}
+  .intro-photo img{aspect-ratio:4/5}
+  .rows li{grid-template-columns:1fr;gap:4px}
+  .rows .when{text-align:left}
+  .show{grid-template-columns:1fr;min-height:0}
+  .show figure{padding:16px 16px 0}
+  .cells{grid-template-columns:1fr}
+  .cells a{min-height:60px}
+  .crow{font-size:9.4vw;min-height:84px}
+  .crow small{display:none}
+  .fcols{grid-template-columns:1fr 1fr;row-gap:32px}
+  .fword{font-size:35vw;line-height:.82;white-space:normal}
+  .fword span{display:block}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="nav">
+  <a class="wordmark" href="#top">L'Heure du Pain</a>
+  <nav aria-label="Sections"><ul>
+    <li><a href="#comptoir">Le comptoir</a></li>
+    <li><a href="#horaires">Horaires</a></li>
+    <li><a href="#venir">Venir</a></li>
+  </ul></nav>
+  <a class="btn btn-ink" href="tel:+33145846138"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="titre">
+  <h1 id="titre" aria-label="L'Heure du Pain"><span class="line"><span>L'Heure&nbsp;</span></span><span class="line"><span>du Pain</span></span></h1>
+  <div class="hero-row">
+    <div class="hero-copy rise">
+      <p>Boulangerie-pâtisserie au <strong>121, avenue d'Ivry</strong>, dans le 13<sup>e</sup>. Ouverte du mardi au dimanche, de 6 h à 21 h.</p>
+      <div class="actions">
+        <a class="btn btn-accent" href="tel:+33145846138"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="tnum">01 45 84 61 38</span></a>
+        <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27Heure+du+Pain%2C+121+avenue+d%27Ivry%2C+75013+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+      </div>
+    </div>
+    <div class="now rise" aria-live="polite">
+      <p class="now-status" id="status"><span class="dot"></span>Du mardi au dimanche</p>
+      <p class="now-sub" id="statusSub">6 h – 21 h · fermé le lundi</p>
+      <div class="days" role="group" aria-label="Choisir un jour">
+    <button type="button" data-d="2">Mar</button><button type="button" data-d="3">Mer</button><button type="button" data-d="4">Jeu</button><button type="button" data-d="5">Ven</button><button type="button" data-d="6">Sam</button><button type="button" data-d="0">Dim</button><button type="button" data-d="1">Lun</button>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section class="day" id="horaires" aria-labelledby="h-horaires">
+  <h2 id="h-horaires" class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Horaires d'ouverture</h2>
+  <div class="band" id="band" aria-hidden="true">
+    <i style="background:var(--h6)"></i><i style="background:var(--h7)"></i><i style="background:var(--h8)"></i><i style="background:var(--h9)"></i><i style="background:var(--h10)"></i><i style="background:var(--h11)"></i><i style="background:var(--h12)"></i><i style="background:var(--h13)"></i><i style="background:var(--h14)"></i><i style="background:var(--h15)"></i><i style="background:var(--h16)"></i><i style="background:var(--h17)"></i><i style="background:var(--h18)"></i><i style="background:var(--h19)"></i><i style="background:var(--h20)"></i>
+    <span class="cursor" id="cursor" hidden></span>
+  </div>
+  <div class="ticks tnum" aria-hidden="true"><span>6 h</span><span>7</span><span>8</span><span>9 h</span><span>10</span><span>11</span><span>12 h</span><span>13</span><span>14</span><span>15 h</span><span>16</span><span>17</span><span>18 h</span><span>19</span><span>20</span></div>
+  <div class="day-note"><span id="dayLabel">Quinze heures d'ouverture, six jours sur sept.</span><span>Jours fériés : un appel avant de passer.</span></div>
+</section>
+
+<div class="strip">
+  <figure class="rise"><img src="https://images.unsplash.com/photo-1586765501019-cbe3973ef8fa?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" width="1600" height="1067" alt="Deux baguettes dorées posées sur une planche en bois"><figcaption>La baguette, dès l'ouverture.</figcaption></figure>
+  <figure class="rise"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=900&amp;q=75" width="900" height="1125" alt="Croissants feuilletés sur une ardoise" loading="lazy" style="object-position:38% 85%"><figcaption>Viennoiseries du matin.</figcaption></figure>
+  <figure class="rise"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&amp;fit=crop&amp;w=900&amp;q=75" width="900" height="1125" alt="Pain de campagne tranché sur une planche" loading="lazy"><figcaption>Pains à trancher.</figcaption></figure>
+</div>
+
+<section class="intro" aria-labelledby="h-intro">
+  <div class="intro-text">
+    <h2 id="h-intro" class="rise">Avenue d'Ivry,<br>depuis 2014</h2>
+    <p class="rise">Une boulangerie-pâtisserie de quartier qui ouvre à 6 h et ferme quand l'avenue rentre dîner.</p>
+    <p class="rise">La baguette du matin, celle du soir, les viennoiseries du dimanche : L'Heure du Pain tient sa porte ouverte quinze heures par jour, du mardi au dimanche, au 121 de l'avenue. L'entrée est de plain-pied, accessible en fauteuil.</p>
+  </div>
+  <figure class="intro-photo rise"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=900&amp;h=900&amp;q=75" width="900" height="900" alt="Pains de seigle farinés et épis de blé" loading="lazy"><figcaption>Pain, farine, épis : la matière première du métier.</figcaption></figure>
+</section>
+
+<section class="counter" id="comptoir" aria-labelledby="h-comptoir">
+  <h2 id="h-comptoir" class="rise">Au comptoir</h2>
+  <p class="counter-lead rise">Ce qu'on vient chercher au 121. Le détail change avec les saisons : la vitrine reste la meilleure carte.</p>
+  <ul class="rows">
+    <li class="rise"><span class="what">Les pains</span><span class="detail">Baguettes, pains de campagne et pains spéciaux.</span><span class="when">dès 6 h</span></li>
+    <li class="rise"><span class="what">Les viennoiseries</span><span class="detail">Croissants, pains au chocolat, brioches.</span><span class="when">le matin</span></li>
+    <li class="rise"><span class="what">Les pâtisseries</span><span class="detail">Gâteaux individuels et tartes en vitrine.</span><span class="when">toute la journée</span></li>
+    <li class="rise"><span class="what">Le salé</span><span class="detail">Sandwichs et en-cas pour le déjeuner.</span><span class="when">le midi</span></li>
+    <li class="rise"><span class="what">Les commandes</span><span class="detail">Une question, une commande : appelez la boutique.</span><span class="when">01 45 84 61 38</span></li>
+  </ul>
+</section>
+
+<section class="show" aria-labelledby="h-show">
+  <figure class="rise"><img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&amp;fit=crop&amp;w=1200&amp;h=1200&amp;q=75" width="1200" height="1200" alt="Brioches roulées saupoudrées de sucre" loading="lazy"></figure>
+  <div class="show-text">
+    <div>
+      <h2 id="h-show" class="rise">Fermé le lundi. C'est tout.</h2>
+      <p class="rise">Du mardi au dimanche, la boutique ouvre à 6 h et ferme à 21 h. Avant le travail, au retour de l'école, après le bureau : il y a toujours du pain.</p>
+    </div>
+    <div class="rise"><p class="show-big tnum">15 h</p><p class="show-cap">d'ouverture par jour, six jours sur sept</p></div>
+    <div class="cells">
+      <a href="tel:+33145846138">Appeler la boutique<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="mailto:lheuredupain75@gmail.com?subject=Commande%20%C3%A0%20L%27Heure%20du%20Pain&amp;body=Bonjour%2C%0A%0AJe%20souhaiterais%20commander%20%3A%0A%0APour%20le%20(jour%20et%20heure)%20%3A%0A%0AMerci%20!">Écrire pour commander<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="venir" aria-labelledby="h-venir">
+  <h2 id="h-venir" class="rise">Venir</h2>
+  <div class="crows">
+    <div class="crow"><span class="t">L'Heure du Pain</span></div>
+    <a class="crow" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27Heure+du+Pain%2C+121+avenue+d%27Ivry%2C+75013+Paris" target="_blank" rel="noopener"><span class="t">121, avenue d'Ivry</span></a>
+    <div class="crow"><span class="t">75013 Paris</span></div>
+    <div class="crow tnum"><span class="t">Mar – Dim, 6 h – 21 h</span></div>
+    <a class="crow tnum" href="tel:+33145846138"><span class="t">01 45 84 61 38</span></a>
+    <a class="crow hello" href="mailto:lheuredupain75@gmail.com" aria-label="Bonjour : écrire à lheuredupain75@gmail.com"><span class="t">Bonjour</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+</main>
+
+<div class="stripe" aria-hidden="true">
+  <i style="background:var(--h6)"></i><i style="background:var(--h7)"></i><i style="background:var(--h8)"></i><i style="background:var(--h9)"></i><i style="background:var(--h10)"></i><i style="background:var(--h11)"></i><i style="background:var(--h12)"></i><i style="background:var(--h13)"></i><i style="background:var(--h14)"></i><i style="background:var(--h15)"></i><i style="background:var(--h16)"></i><i style="background:var(--h17)"></i><i style="background:var(--h18)"></i><i style="background:var(--h19)"></i><i style="background:var(--h20)"></i>
+</div>
+<footer>
+  <div class="fcols">
+    <div><p>Adresse</p><p>121, avenue d'Ivry<br>75013 Paris<br>Métro Tolbiac (ligne 7)</p></div>
+    <div><p>Horaires</p><p class="tnum">Mardi – dimanche<br>6 h – 21 h<br>Fermé le lundi</p></div>
+    <div><p>Contact</p><p><a href="tel:+33145846138" class="tnum">01 45 84 61 38</a><br><a href="mailto:lheuredupain75@gmail.com">lheuredupain75@gmail.com</a></p></div>
+    <div><p>Suivre</p><p><a href="https://www.facebook.com/lheuredupain75/" target="_blank" rel="noopener">Facebook</a></p></div>
+  </div>
+  <div></div>
+  <div>
+    <p class="fword" aria-hidden="true"><span>L'Heure&nbsp;</span><span>du Pain</span></p>
+    <div class="legal"><span>Démo réalisée par Raul Hatos — site non officiel. Photos d'illustration : Unsplash.</span><span>L'Heure du Pain · Paris 13<sup>e</sup></span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var OPEN=6, CLOSE=21, CLOSED_DAY=1;
+  var names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  var band=document.getElementById('band'), cursor=document.getElementById('cursor');
+  var st=document.getElementById('status'), sub=document.getElementById('statusSub'), lab=document.getElementById('dayLabel');
+  var btns=[].slice.call(document.querySelectorAll('.days button'));
+
+  function paris(){ // wall-clock time in Paris, whatever the visitor's zone
+    var p={};new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false})
+      .formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+    return {d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday),h:+p.hour%24,m:+p.minute};
+  }
+  function dur(min){var h=Math.floor(min/60),m=min%60;return h?(h+' h'+(m?' '+(m<10?'0':'')+m:'')):(m+' min')}
+  function nextOpen(d){var n=(d+1)%7;if(n===CLOSED_DAY)n=(n+1)%7;return n}
+
+  function live(){
+    var t=paris(), min=t.h*60+t.m, open=t.d!==CLOSED_DAY&&min>=OPEN*60&&min<CLOSE*60;
+    st.classList.toggle('closed',!open);
+    if(open){
+      st.innerHTML='<span class="dot"></span>Ouvert maintenant';
+      sub.textContent='Ferme à 21 h, dans '+dur(CLOSE*60-min);
+    }else{
+      var when;
+      if(t.d!==CLOSED_DAY&&min<OPEN*60) when='aujourd’hui à 6 h';
+      else{var n=nextOpen(t.d);when=(n===(t.d+1)%7?'demain':names[n])+' à 6 h'}
+      st.innerHTML='<span class="dot"></span>Fermé';
+      sub.textContent=(t.d===CLOSED_DAY?'Fermé le lundi · rouvre ':'Rouvre ')+when;
+    }
+    return t;
+  }
+  function show(d,isToday){
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.d===d))});
+    var off=d===CLOSED_DAY; band.classList.toggle('off',off);
+    var name=names[d].charAt(0).toUpperCase()+names[d].slice(1);
+    lab.textContent=off?'Lundi : fermé toute la journée.':name+(isToday?' (aujourd’hui)':'')+' : ouvert de 6 h à 21 h, sans interruption.';
+    var t=paris(), min=t.h*60+t.m;
+    if(isToday&&!off&&min>=OPEN*60&&min<CLOSE*60){cursor.hidden=false;cursor.style.left=((min-OPEN*60)/((CLOSE-OPEN)*60)*100)+'%'}
+    else cursor.hidden=true;
+  }
+  var today=live().d; show(today,true);
+  btns.forEach(function(b){b.addEventListener('click',function(){var d=+b.dataset.d;show(d,d===paris().d)})});
+  setInterval(function(){var t=live();if(btns.some(function(b){return b.getAttribute('aria-pressed')==='true'&&+b.dataset.d===t.d}))show(t.d,true)},30000);
+
+  // motion: headline, band, entrances
+  requestAnimationFrame(function(){document.querySelector('.hero').classList.add('loaded')});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    e.target.classList.add(e.target===band?'grown':'in');io.unobserve(e.target)})},{rootMargin:'0px 0px -8% 0px'});
+  [].forEach.call(document.querySelectorAll('.rise'),function(el){
+    var sib=[].indexOf.call(el.parentNode.querySelectorAll(':scope > .rise'),el);
+    el.style.transitionDelay=Math.max(0,sib)*80+'ms';io.observe(el)});
+  [].forEach.call(band.children,function(i,k){i.style.transitionDelay=k*35+'ms'});
+  io.observe(band);
+})();
+</script>
+</body>
+</html>
