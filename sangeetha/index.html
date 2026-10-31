@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sangeetha · Végétarien du sud de l'Inde, Paris 10e</title>
+<meta name="description" content="Sangeetha, restaurant indien 100 % végétarien du sud de l'Inde au 178 rue du Faubourg Saint-Denis, Paris 10e. Dosa, idly, vadai, thali, filter coffee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400..800&display=swap" rel="stylesheet">
+<!-- DESIGN.md « Mastercard » (awesome-design) : toile mastic, tout en cercles et stades, boutons encre en pilule, orbites fines. Couleurs reprises du sujet : feuille de bananier et curcuma. -->
+<style>
+:root{
+  --canvas:#F3F0EE; --lifted:#FCFBFA; --ink:#141413; --ink-2:#3a3a37;
+  --leaf:#1F5A2E; --leaf-2:#2E7A40; --turmeric:#F2B705; --orbit:#2E7A40;
+  --r-xl:40px; --pill:999px;
+  --f:"Sofia Sans",Arial,sans-serif;
+  --gut:clamp(16px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--canvas);color:var(--ink);font:450 17px/1.5 var(--f);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--leaf-2);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--gut)}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#e9e6e2;font-size:13px;text-align:center;padding:7px 16px}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.brand{font-weight:800;font-size:24px;letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:22px;height:22px;border-radius:50%;background:var(--leaf);position:relative;display:block}
+.brand i::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--turmeric)}
+.nav ul{display:none;list-style:none;gap:36px;font-weight:500}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--leaf-2)}
+@media(min-width:900px){.nav ul{display:flex}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:10px 26px;border-radius:var(--pill);font:600 17px/1 var(--f);letter-spacing:-.01em;text-decoration:none;border:2px solid var(--ink);transition:transform .2s cubic-bezier(.2,.8,.2,1),background .2s,color .2s}
+.btn:active{transform:scale(.97)}
+.btn-ink{background:var(--ink);color:var(--canvas)}
+.btn-ink:hover{background:var(--leaf);border-color:var(--leaf)}
+.btn-line{background:var(--lifted);color:var(--ink)}
+.btn-line:hover{background:var(--turmeric)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* hero */
+.hero{display:grid;gap:40px;padding:24px 0 96px;align-items:center}
+.hero h1{font-weight:800;font-size:clamp(68px,20vw,104px);line-height:.86;letter-spacing:-.055em;margin-left:-.04em}
+.hero .lede{font-size:clamp(22px,2.4vw,30px);line-height:1.25;letter-spacing:-.015em;font-weight:500;max-width:22ch;margin-top:28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;font-size:16px}
+.facts span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:#9a9a94;flex:none}
+.dot.on{background:#1f9d48}
+.dot.off{background:#c0392b}
+.stars{color:var(--leaf);letter-spacing:2px}
+.plate{position:relative;justify-self:center;width:min(78vw,520px);aspect-ratio:1;margin:6%}
+.plate .disc{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--leaf)}
+.plate .disc img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.plate .ring{position:absolute;inset:-7%;border-radius:50%;background:var(--turmeric);z-index:-1}
+.sat{position:absolute;right:2%;bottom:6%;width:clamp(96px,22%,124px);aspect-ratio:1;border-radius:50%;background:var(--lifted);display:grid;place-items:center;text-align:center;font-weight:700;font-size:clamp(14px,1.6vw,16px);line-height:1.1;text-decoration:none;padding:10px;transition:transform .25s}
+.sat:hover{transform:rotate(-8deg) scale(1.05)}
+.sat b{display:block;font-size:clamp(26px,3vw,34px);letter-spacing:-.03em}
+@media(min-width:900px){.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;padding-top:40px}.hero h1{font-size:clamp(104px,10.4vw,150px)}.plate{width:min(100%,500px)}}
+
+/* sections */
+section{scroll-margin-top:20px}
+.h2{font-weight:800;font-size:clamp(40px,6.4vw,88px);line-height:.92;letter-spacing:-.045em}
+.p{font-size:clamp(18px,1.5vw,20px);max-width:56ch}
+.p + .p{margin-top:14px}
+
+/* histoire : champ curcuma */
+.story{background:var(--turmeric);border-radius:var(--r-xl);padding:clamp(40px,7vw,96px) clamp(24px,5vw,72px);display:grid;gap:40px;overflow:hidden;position:relative}
+.story .h2{max-width:11ch}
+.story .p{margin-top:24px}
+.story-pics{display:flex;gap:16px;align-items:flex-end}
+.story-pics figure{border-radius:50%;overflow:hidden;aspect-ratio:1;flex:1}
+.story-pics figure:nth-child(2){flex:.72;margin-bottom:12%}
+.story-pics img{width:100%;height:100%;object-fit:cover}
+.year{font-weight:800;font-size:clamp(88px,15vw,220px);line-height:.8;letter-spacing:-.06em;color:var(--ink);opacity:.1;position:absolute;right:clamp(16px,4vw,56px);bottom:-.08em;pointer-events:none}
+@media(min-width:900px){.story{grid-template-columns:1.1fr .9fr;align-items:center}}
+
+/* lexique */
+.lex{padding:clamp(96px,12vw,180px) 0 0}
+.lex-grid{display:grid;gap:40px;margin-top:48px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:600 clamp(20px,2vw,26px)/1 var(--f);letter-spacing:-.02em;padding:14px 24px;border-radius:var(--pill);border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.chip:hover{background:var(--lifted)}
+.chip:active{transform:scale(.96)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--canvas)}
+.def{margin-top:32px;min-height:9.5em}
+.def h3{font-weight:800;font-size:clamp(30px,3.2vw,44px);letter-spacing:-.035em;line-height:1}
+.def p{margin-top:12px;font-size:clamp(18px,1.5vw,20px);max-width:44ch}
+.def .tip{margin-top:12px;font-weight:600;color:var(--leaf)}
+.lex-plate{position:relative;justify-self:center;width:min(84vw,480px);aspect-ratio:1}
+.lex-plate .disc{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--leaf)}
+.lex-plate img{width:100%;height:100%;object-fit:cover;transition:opacity .35s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.lex-plate img.swap{opacity:0;transform:scale(1.06) rotate(-4deg)}
+.orbit{position:absolute;inset:-9%;width:118%;height:118%;pointer-events:none;overflow:visible}
+@media(min-width:900px){.lex-grid{grid-template-columns:1.1fr .9fr}}
+
+/* carte */
+.menu{padding:clamp(96px,12vw,180px) 0 0}
+.menu-head{display:grid;gap:24px;align-items:end}
+@media(min-width:900px){.menu-head{grid-template-columns:1fr 1fr}}
+.menu-body{display:grid;gap:16px;margin-top:48px}
+.col{background:var(--lifted);border-radius:var(--r-xl);padding:32px clamp(24px,3vw,40px)}
+.col h3{font-weight:800;font-size:clamp(28px,2.6vw,36px);letter-spacing:-.035em;line-height:1}
+.col .sub{color:var(--ink-2);margin-top:6px;font-size:16px}
+.col ul{list-style:none;margin-top:20px}
+.col li{padding:11px 0;font-size:19px;font-weight:550;display:flex;justify-content:space-between;gap:16px}
+.col li + li{border-top:0;box-shadow:0 -2px 0 0 var(--canvas)}
+.col li small{font-weight:450;font-size:15px;color:var(--ink-2);text-align:right}
+.leafcard{border-radius:var(--r-xl);overflow:hidden;min-height:360px;position:relative;background:var(--leaf)}
+.leafcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.leafcard p{position:absolute;left:16px;bottom:16px;right:16px;background:var(--lifted);border-radius:24px;padding:14px 20px;font-weight:600;font-size:16px}
+@media(min-width:760px){.menu-body{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.menu-body{grid-template-columns:1fr 1fr 1fr}.leafcard{grid-row:span 2}}
+.note{margin-top:20px;font-size:16px;color:var(--ink-2)}
+
+/* horaires + accès : champ feuille */
+.visit{margin-top:clamp(96px,12vw,180px);background:var(--leaf);color:var(--lifted);border-radius:var(--r-xl);padding:clamp(40px,7vw,96px) clamp(24px,5vw,72px);display:grid;gap:56px}
+.visit .h2{color:var(--lifted)}
+.now{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:var(--lifted);color:var(--ink);border-radius:var(--pill);padding:10px 20px;font-weight:700;font-size:18px}
+.days{list-style:none;margin-top:28px;max-width:440px}
+.days li{display:flex;justify-content:space-between;padding:10px 0;font-size:19px;box-shadow:0 -2px 0 0 rgba(252,251,250,.14)}
+.days li:first-child{box-shadow:none}
+.days li.today{color:var(--turmeric);font-weight:700}
+.addr{font-weight:700;font-size:clamp(28px,3.2vw,42px);line-height:1.05;letter-spacing:-.035em}
+.visit .p{color:#e6efe8;margin-top:18px}
+.visit .cta .btn-ink{background:var(--turmeric);color:var(--ink);border-color:var(--turmeric)}
+.visit .cta .btn-ink:hover{background:var(--lifted);border-color:var(--lifted)}
+.visit .cta .btn-line{background:transparent;color:var(--lifted);border-color:var(--lifted)}
+.visit .cta .btn-line:hover{background:var(--lifted);color:var(--ink)}
+.info{list-style:none;margin-top:28px;display:grid;gap:10px;font-size:18px}
+.info a{text-decoration-thickness:2px;text-underline-offset:4px}
+@media(min-width:900px){.visit{grid-template-columns:1fr 1fr}}
+
+/* pied */
+footer{padding:clamp(96px,12vw,180px) 0 40px}
+.big{font-weight:800;font-size:clamp(60px,17.5vw,252px);line-height:.8;letter-spacing:-.06em;margin-left:-.05em}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:32px;font-size:14px;color:var(--ink-2)}
+
+/* mouvement */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.plate .disc img{animation:spin 140s linear infinite}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.plate .disc img{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="no-js">
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<div class="wrap">
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Sangeetha, accueil"><i></i>Sangeetha</a>
+    <ul>
+      <li><a href="#lexique">Lexique</a></li>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#venir">Horaires et accès</a></li>
+    </ul>
+    <a class="btn btn-ink" href="tel:+33140350000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <h1 class="rv">Sangeetha</h1>
+        <p class="lede rv">Cuisine 100&nbsp;% végétarienne du sud de l'Inde, face à la Gare du Nord.</p>
+        <div class="cta rv">
+          <a class="btn btn-ink" href="tel:+33140350000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>01 40 35 00 00</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sangeetha%2C%20178%20rue%20du%20Faubourg%20Saint-Denis%2C%2075010%20Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Itinéraire</a>
+        </div>
+        <div class="facts rv">
+          <span><i class="dot js-dot"></i><strong class="js-now">Ouvert du mardi au dimanche</strong></span>
+          <span><span class="stars" aria-hidden="true">★★★★</span><strong>4,1</strong>&nbsp;sur 2&nbsp;130 avis Google</span>
+        </div>
+      </div>
+      <div class="plate rv">
+        <div class="ring"></div>
+        <div class="disc"><img src="https://images.unsplash.com/photo-1787024231387-edccb8c44700?w=1200&amp;h=1200&amp;fit=crop&amp;q=75&amp;auto=format" alt="Dosa, idlys et vadai sur feuille de bananier, dans une assiette en inox" width="1200" height="1200" fetchpriority="high"></div>
+        <a class="sat" href="#lexique"><span><b>Dosa</b>c'est quoi&nbsp;?</span></a>
+      </div>
+    </section>
+
+    <section class="story" aria-labelledby="h-story">
+      <div>
+        <h2 class="h2 rv" id="h-story">Une table de Chennai à Paris</h2>
+        <p class="p rv">Sangeetha est née à Chennai en 1985, fondée par les frères P.&nbsp;Rajgopal et P.&nbsp;Suresh. La maison parisienne, franchise de l'enseigne, sert depuis 2013 au cœur de Little India, à 500&nbsp;mètres de la Gare de l'Est.</p>
+        <p class="p rv">Tout est végétarien. Plats végétaliens et sans gluten sur demande&nbsp;: demandez au service, il vous oriente sur la carte.</p>
+      </div>
+      <div class="story-pics rv">
+        <figure><img src="https://images.unsplash.com/photo-1680359871322-aabe6b33eff5?w=700&amp;h=700&amp;fit=crop&amp;q=70&amp;auto=format" alt="Idlys vapeur sur feuille de bananier, sambar et chutneys" loading="lazy" width="700" height="700"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1758387941825-a6ecaec9c14d?w=500&amp;h=500&amp;fit=crop&amp;q=70&amp;auto=format" alt="Filter coffee mousseux dans son gobelet et sa coupelle en laiton" loading="lazy" width="500" height="500"></figure>
+      </div>
+      <span class="year" aria-hidden="true">1985</span>
+    </section>
+
+    <section class="lex" id="lexique" aria-labelledby="h-lex">
+      <div class="menu-head">
+        <h2 class="h2 rv" id="h-lex">Dosa, idly, vadai&nbsp;?</h2>
+        <p class="p rv">Première fois en cuisine du sud de l'Inde&nbsp;? Touchez un mot, on vous explique ce qui arrive dans l'assiette.</p>
+      </div>
+      <div class="lex-grid">
+        <div>
+          <div class="chips rv" role="group" aria-label="Choisir un plat">
+            <button class="chip" type="button" aria-pressed="true" data-k="dosa">Dosa</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="masala">Masala dosa</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="idly">Idly</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="vadai">Vadai</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="thali">Thali</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="coffee">Filter coffee</button>
+          </div>
+          <div class="def" aria-live="polite">
+            <h3 class="js-t">Dosa</h3>
+            <p class="js-d">Une grande crêpe fine et croustillante, faite d'une pâte fermentée de riz et de lentilles. On la déchire à la main et on la trempe dans le sambar et le chutney coco.</p>
+            <p class="tip js-tip">À essayer en version ghee masala dosa.</p>
+          </div>
+        </div>
+        <div class="lex-plate rv">
+          <svg class="orbit" viewBox="0 0 100 100" aria-hidden="true"><path d="M8 62 C 2 30, 30 4, 58 6 S 100 34, 94 60" fill="none" stroke="var(--orbit)" stroke-width=".5" stroke-linecap="round"/><circle cx="94" cy="60" r="2" fill="var(--turmeric)"/></svg>
+          <div class="disc"><img class="js-img" src="https://images.unsplash.com/photo-1694849789325-914b71ab4075?w=900&amp;h=900&amp;fit=crop&amp;q=70&amp;auto=format" alt="Dosa sur feuille de bananier" width="900" height="900" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="carte" aria-labelledby="h-carte">
+      <div class="menu-head">
+        <h2 class="h2 rv" id="h-carte">La carte</h2>
+        <p class="p rv">Une sélection des plats que les habitués commandent le plus. La carte complète et les prix sont affichés au restaurant.</p>
+      </div>
+      <div class="menu-body">
+        <div class="col rv">
+          <h3>Tiffin</h3>
+          <p class="sub">Les classiques du matin, servis toute la journée</p>
+          <ul>
+            <li>Dosa nature <small>sambar, chutney</small></li>
+            <li>Masala dosa <small>pommes de terre épicées</small></li>
+            <li>Ghee masala dosa <small>au beurre clarifié</small></li>
+            <li>Uttapam <small>crêpe épaisse garnie</small></li>
+            <li>Idly <small>galettes vapeur</small></li>
+            <li>Sambar vadai <small>beignet dans le sambar</small></li>
+          </ul>
+        </div>
+        <div class="leafcard rv">
+          <img src="https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=900&amp;h=1200&amp;fit=crop&amp;q=70&amp;auto=format" alt="Repas du sud de l'Inde servi sur une grande feuille de bananier" loading="lazy" width="900" height="1200">
+          <p>Thali sud-indien ou nord-indien&nbsp;: un plateau complet, plusieurs plats en un.</p>
+        </div>
+        <div class="col rv">
+          <h3>Plats</h3>
+          <p class="sub">Pour un vrai repas</p>
+          <ul>
+            <li>Thali sud-indien</li>
+            <li>Thali nord-indien</li>
+            <li>Channa bhatura <small>pois chiches, pain soufflé</small></li>
+            <li>Parotta et curry <small>pain feuilleté</small></li>
+            <li>Gobi 65 <small>chou-fleur frit épicé</small></li>
+          </ul>
+        </div>
+        <div class="col rv">
+          <h3>Entrées</h3>
+          <ul>
+            <li>Samosa</li>
+            <li>Bajji <small>beignets de légumes</small></li>
+            <li>Rolls</li>
+          </ul>
+        </div>
+        <div class="col rv">
+          <h3>Douceurs et boissons</h3>
+          <ul>
+            <li>Rava kesari <small>semoule safranée</small></li>
+            <li>Badam halwa <small>amandes</small></li>
+            <li>Sweet pongal <small>riz et jaggery</small></li>
+            <li>Filter coffee</li>
+            <li>Masala chai</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Sur place ou à emporter. Cartes bancaires et titres-restaurant acceptés.</p>
+    </section>
+
+    <section class="visit" id="venir" aria-labelledby="h-visit">
+      <div>
+        <h2 class="h2 rv" id="h-visit">Horaires</h2>
+        <p class="now rv"><i class="dot js-dot"></i><span class="js-now2">Fermé le lundi</span></p>
+        <ul class="days rv" aria-label="Horaires de la semaine">
+          <li data-d="1"><span>Lundi</span><span>Fermé</span></li>
+          <li data-d="2"><span>Mardi</span><span>10 h – 22 h 30</span></li>
+          <li data-d="3"><span>Mercredi</span><span>10 h – 22 h 30</span></li>
+          <li data-d="4"><span>Jeudi</span><span>10 h – 22 h 30</span></li>
+          <li data-d="5"><span>Vendredi</span><span>10 h – 22 h 30</span></li>
+          <li data-d="6"><span>Samedi</span><span>10 h – 22 h 30</span></li>
+          <li data-d="0"><span>Dimanche</span><span>10 h – 22 h 30</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="h2 rv">Venir</h2>
+        <p class="addr rv" style="margin-top:24px">178 rue du Faubourg<br>Saint&#8209;Denis, 75010&nbsp;Paris</p>
+        <p class="p rv">Face à la Gare du Nord, à 500&nbsp;mètres de la Gare de l'Est, dans le quartier de Little India.</p>
+        <div class="cta rv">
+          <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sangeetha%2C%20178%20rue%20du%20Faubourg%20Saint-Denis%2C%2075010%20Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+          <a class="btn btn-line" href="tel:+33140350000">01 40 35 00 00</a>
+        </div>
+        <ul class="info rv">
+          <li>Écrire&nbsp;: <a href="mailto:sangeetha.paris@gmail.com?subject=Demande%20pour%20Sangeetha%20Paris">sangeetha.paris@gmail.com</a></li>
+          <li>Groupes&nbsp;: appelez pour prévenir de votre venue.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="big" aria-hidden="true">Sangeetha</p>
+    <div class="foot">
+      <span>Sangeetha · 178 rue du Faubourg Saint-Denis, 75010 Paris · 01 40 35 00 00</span>
+      <span>Photos&nbsp;: Unsplash (Zoshua Colah, Mayur Roxan et autres), illustratives</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+document.body.classList.remove('no-js');
+// Lexique
+const L={
+  dosa:{t:'Dosa',d:"Une grande crêpe fine et croustillante, faite d'une pâte fermentée de riz et de lentilles. On la déchire à la main et on la trempe dans le sambar et le chutney coco.",tip:'À essayer en version ghee masala dosa.',img:'photo-1694849789325-914b71ab4075',alt:'Dosa sur feuille de bananier'},
+  masala:{t:'Masala dosa',d:"La même crêpe, roulée autour d'une farce de pommes de terre aux oignons, moutarde et curcuma. Le plat le plus connu du sud de l'Inde.",tip:'Un repas complet à lui seul.',img:'photo-1668236543090-82eba5ee5976',alt:'Masala dosa et ses chutneys en coupelles inox'},
+  idly:{t:'Idly',d:"De petites galettes blanches cuites à la vapeur, moelleuses et légères, issues d'une pâte fermentée de riz et de lentilles. Elles boivent le sambar.",tip:'Le petit-déjeuner de tout Chennai.',img:'photo-1680359871322-aabe6b33eff5',alt:'Idlys sur feuille de bananier'},
+  vadai:{t:'Vadai',d:"Un beignet de lentilles en forme d'anneau, croustillant dehors, tendre dedans, relevé de poivre, gingembre et feuilles de curry.",tip:'Commandez-le en sambar vadai, noyé dans le sambar.',img:'photo-1683533678059-63c6a0e9e3ef',alt:'Vadais empilés sur feuille de bananier'},
+  thali:{t:'Thali',d:"Un plateau complet&nbsp;: riz, plusieurs currys de légumes, sambar, yaourt, pain ou papadum et un dessert. Pour goûter un peu de tout en une fois.",tip:'Sud-indien ou nord-indien, au choix.',img:'photo-1625398407796-82650a8c135f',alt:'Repas sur feuille de bananier'},
+  coffee:{t:'Filter coffee',d:"Le café du Tamil Nadu&nbsp;: un café filtré lentement, mêlé de lait chaud et versé de haut d'un récipient à l'autre pour le faire mousser.",tip:'La fin de repas parfaite.',img:'photo-1758387941825-a6ecaec9c14d',alt:'Filter coffee en gobelet de laiton'}
+};
+const img=document.querySelector('.js-img'),T=document.querySelector('.js-t'),D=document.querySelector('.js-d'),TIP=document.querySelector('.js-tip');
+Object.values(L).forEach(v=>{const i=new Image();i.src='https://images.unsplash.com/'+v.img+'?w=900&h=900&fit=crop&q=70&auto=format'});
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
+  const v=L[b.dataset.k];
+  document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));
+  T.textContent=v.t;D.innerHTML=v.d;TIP.textContent=v.tip;
+  img.classList.add('swap');
+  setTimeout(()=>{img.src='https://images.unsplash.com/'+v.img+'?w=900&h=900&fit=crop&q=70&auto=format';img.alt=v.alt;img.onload=()=>img.classList.remove('swap');setTimeout(()=>img.classList.remove('swap'),400)},220);
+}));
+// Ouvert maintenant (heure de Paris) : mardi-dimanche 10h-22h30
+(function(){
+  const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const g=k=>p.find(x=>x.type===k).value, map={lun:1,mar:2,mer:3,jeu:4,ven:5,sam:6,dim:0};
+  const d=map[g('weekday').replace('.','')], m=+g('hour')*60+ +g('minute');
+  const open=d!==1&&m>=600&&m<1350;
+  let msg;
+  if(open) msg='Ouvert, jusqu’à 22 h 30';
+  else if(d!==1&&m<600) msg='Ouvre aujourd’hui à 10 h';
+  else msg=(d===0||d===1)&&!(d===0&&m<600)?'Fermé, ouvre mardi à 10 h':'Fermé, ouvre demain à 10 h';
+  document.querySelectorAll('.js-dot').forEach(e=>e.classList.add(open?'on':'off'));
+  document.querySelector('.js-now').textContent=msg;
+  document.querySelector('.js-now2').textContent=msg;
+  const li=document.querySelector('.days li[data-d="'+d+'"]'); if(li) li.classList.add('today');
+})();
+// Entrées
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+</script>
+</body>
+</html>
