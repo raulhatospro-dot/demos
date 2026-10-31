@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Azaytoona · Restaurant indien halal, rue Simart, Paris 18e</title>
+<meta name="description" content="Azaytoona, restaurant indien halal au 3 rue Simart, Paris 18e. Naans maison, butter chicken, biryani d'agneau, jus frais. Sur place, à emporter ou en livraison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#000;--body:#3d3d3d;--canvas:#fff;--soft:#efefef;--softer:#f6f6f6;--pressed:#e2e2e2;
+  --olive:#4a5716;--olive-ink:#f1f3e4;--live:#2f8f3a;
+  --pad:clamp(16px,4vw,48px);--max:1320px;
+  --f:'Outfit',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--canvas);color:var(--ink);font:400 17px/1.55 var(--f);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--olive);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+/* démo */
+.demo{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:7px var(--pad)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:#fff}
+nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.mark{font-weight:800;font-size:22px;letter-spacing:-.03em;text-decoration:none}
+nav ul{display:none;list-style:none;gap:28px;margin-left:auto;font-weight:500;font-size:16px}
+nav ul a{text-decoration:none}
+nav ul a:hover{text-decoration:underline;text-underline-offset:5px}
+nav .pill{margin-left:auto}
+@media(min-width:860px){nav ul{display:flex}nav .pill{margin-left:8px}}
+
+/* boutons Uber : pilule, plats */
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font:500 17px/1 var(--f);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s;white-space:nowrap}
+.pill:active{transform:scale(.97)}
+.pill.dark{background:var(--ink);color:#fff}
+.pill.dark:hover{background:#282828}
+.pill.light{background:var(--soft);color:var(--ink)}
+.pill.light:hover{background:var(--pressed)}
+.pill.sm{height:42px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{padding:20px 0 0}
+.hero .wrap{display:grid;gap:28px}
+.hero h1{font-weight:800;font-size:clamp(42px,6.2vw,92px);line-height:.95;letter-spacing:-.045em;max-width:15ch}
+.hero .lede{font-size:clamp(18px,1.6vw,21px);max-width:34ch;margin-top:24px;color:var(--body)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.status{display:flex;align-items:center;gap:10px;margin-top:22px;font-weight:500;font-size:16px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--live);flex:none}
+.status.closed .dot{background:#b3261e}
+.rating{margin-top:6px;font-size:16px;color:var(--body)}
+.hero figure{position:relative;margin:0 calc(-1*var(--pad));overflow:hidden}
+.hero figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(min-width:960px){
+  .hero{padding-top:36px}
+  .hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center;gap:56px}
+  .hero figure{margin:0;border-radius:16px}
+  .hero figure img{height:min(76vh,700px);aspect-ratio:auto}
+}
+
+/* raisons */
+.why{padding:clamp(96px,12vw,180px) 0 0}
+.why h2,.sec h2{font-weight:800;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.04em}
+.why-grid{display:grid;gap:40px;margin-top:44px}
+.why-item img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}
+.why-item h3{font-weight:700;font-size:24px;letter-spacing:-.02em;margin-top:18px;line-height:1.15}
+.why-item p{margin-top:8px;max-width:38ch}
+@media(min-width:860px){.why-grid{grid-template-columns:repeat(3,1fr);gap:28px}.why-item:nth-child(2){margin-top:72px}}
+
+/* carte + ticket */
+.sec{padding:clamp(96px,12vw,180px) 0 0}
+.menu-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px}
+.menu-head p{max-width:40ch;color:var(--body)}
+.menu-layout{display:grid;gap:40px;margin-top:40px}
+@media(min-width:1040px){.menu-layout{grid-template-columns:1fr 380px;align-items:start}}
+.cat{margin-bottom:44px}
+.cat h3{font-weight:700;font-size:26px;letter-spacing:-.02em;margin-bottom:14px}
+.dishes{list-style:none;display:grid;gap:8px}
+@media(min-width:700px){.dishes{grid-template-columns:1fr 1fr}}
+.dish{display:flex;align-items:center;gap:14px;background:var(--softer);border-radius:14px;padding:10px 10px 10px 10px}
+.dish img{width:76px;height:76px;object-fit:cover;border-radius:10px;flex:none}
+.dish .noimg{width:76px;height:76px;border-radius:10px;flex:none;background:var(--olive);color:var(--olive-ink);display:grid;place-items:center;font-weight:800;font-size:26px;letter-spacing:-.03em}
+.dish div{flex:1;min-width:0}
+.dish b{display:block;font-weight:700;font-size:18px;line-height:1.2}
+.dish span{display:block;font-size:15px;color:var(--body);line-height:1.35;margin-top:2px}
+.add{width:44px;height:44px;border-radius:50%;border:0;background:#fff;font:500 24px/1 var(--f);cursor:pointer;flex:none;transition:background .15s,transform .15s}
+.add:hover{background:var(--pressed)}
+.add:active{transform:scale(.9)}
+.add[aria-pressed="true"]{background:var(--ink);color:#fff}
+.veg{background:var(--olive);color:var(--olive-ink);border-radius:16px;padding:22px 24px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}
+.veg b{font-size:20px}
+
+.ticket{background:var(--ink);color:#fff;border-radius:16px;padding:24px}
+@media(min-width:1040px){.ticket{position:sticky;top:84px}}
+.ticket h3{font-weight:700;font-size:24px;letter-spacing:-.02em}
+.ticket .hint{color:#bdbdbd;font-size:15px;margin-top:6px}
+.ticket ul{list-style:none;margin:18px 0;display:grid;gap:6px}
+.ticket li{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#1c1c1c;border-radius:10px;padding:8px 8px 8px 14px;font-size:16px}
+.ticket li button{width:32px;height:32px;border-radius:50%;border:0;background:#333;color:#fff;font:500 18px/1 var(--f);cursor:pointer}
+.ticket li button:hover{background:#4b4b4b}
+.ticket .empty{background:transparent;padding:0;color:#bdbdbd}
+.ticket .pill{width:100%}
+.ticket .pill.dark{background:#fff;color:#000}
+.ticket .pill.dark:hover{background:var(--pressed)}
+.ticket .pill.light{background:#282828;color:#fff;margin-top:8px}
+.ticket .pill.light:hover{background:#3a3a3a}
+.ticket small{display:block;color:#bdbdbd;font-size:14px;margin-top:12px;line-height:1.4}
+
+/* bandeau mobile commande */
+.bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:flex;gap:8px;transform:translateY(130%);transition:transform .25s}
+.bar.on{transform:none}
+.bar .pill{flex:1;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+@media(min-width:1040px){.bar{display:none}}
+
+/* boucherie */
+.meat{margin-top:clamp(96px,12vw,180px);background:var(--olive);color:var(--olive-ink)}
+.meat .wrap{display:grid;gap:32px;padding-top:clamp(56px,8vw,112px);padding-bottom:clamp(56px,8vw,112px)}
+.meat h2{font-weight:800;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.04em;color:#fff;max-width:16ch}
+.meat p{font-size:clamp(18px,1.6vw,22px);max-width:36ch;margin-top:20px}
+.meat img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}
+@media(min-width:860px){.meat .wrap{grid-template-columns:1fr 1fr;align-items:center;gap:64px}}
+
+/* horaires + accès */
+.info{display:grid;gap:56px;margin-top:40px}
+@media(min-width:960px){.info{grid-template-columns:1fr 1.2fr;gap:64px}}
+.hours{list-style:none;display:grid;gap:4px}
+.hours li{display:flex;justify-content:space-between;padding:14px 18px;border-radius:12px;font-size:18px;background:var(--softer)}
+.hours li.today{background:var(--ink);color:#fff;font-weight:700}
+.hours-note{margin-top:14px;color:var(--body);font-size:15px}
+.contact-lines{display:grid;gap:4px;margin-top:4px}
+.contact-lines a,.contact-lines p{display:flex;justify-content:space-between;gap:16px;padding:16px 18px;border-radius:12px;background:var(--softer);text-decoration:none;font-size:18px;transition:background .15s}
+.contact-lines a:hover{background:var(--pressed)}
+.contact-lines span{color:var(--body);font-size:15px;align-self:center}
+.map{margin-top:12px;border-radius:16px;overflow:hidden;background:var(--soft);aspect-ratio:16/10}
+.map iframe{width:100%;height:100%;border:0;display:block}
+.info h3{font-weight:700;font-size:26px;letter-spacing:-.02em;margin-bottom:14px}
+
+/* footer */
+footer{margin-top:clamp(96px,12vw,180px);background:var(--ink);color:#fff;padding:56px 0 110px}
+footer .big{font-weight:800;font-size:clamp(64px,19vw,290px);line-height:.85;letter-spacing:-.06em}
+footer .row{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:28px;font-size:16px}
+footer .row a{text-decoration:none}
+footer .row a:hover{text-decoration:underline}
+footer .credit{color:#9a9a9a;font-size:13px;margin-top:28px;max-width:80ch}
+@media(min-width:1040px){footer{padding-bottom:56px}}
+
+/* entrées */
+.rise{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.rise.in{opacity:1;transform:none}
+.hero figure img{animation:drift 18s ease-out both}
+@keyframes drift{from{transform:scale(1.06)}to{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none}.hero figure img{animation:none}html{scroll-behavior:auto}}
+.no-js .rise{opacity:1;transform:none}
+</style>
+</head>
+<body class="no-js">
+<div class="demo">Démo réalisée par Raul Hatos · site non officiel</div>
+
+<nav aria-label="Navigation principale">
+  <div class="wrap">
+    <a class="mark" href="#top">Azaytoona</a>
+    <ul>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li><a href="#acces">Accès</a></li>
+    </ul>
+    <a class="pill dark sm" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener">Commander</a>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1 class="rise">La vraie cuisine indienne comme à&nbsp;la maison</h1>
+      <p class="lede rise">Restaurant indien halal au 3, rue Simart, Paris 18e. Naans maison, jus pressés, viande de notre boucherie. Sur place, à emporter ou en livraison.</p>
+      <div class="cta rise">
+        <a class="pill dark" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener">Commander en ligne</a>
+        <a class="pill light" href="tel:+33142572468">Appeler le 01 42 57 24 68</a>
+      </div>
+      <p class="status rise" id="status"><span class="dot" aria-hidden="true"></span><span id="status-txt">Ouvert tous les jours, 11 h 30 – 23 h</span></p>
+      <p class="rating rise">4,6&nbsp;sur&nbsp;5 · 1 052 avis Google</p>
+    </div>
+    <figure class="rise">
+      <img src="https://images.unsplash.com/photo-1617692855027-33b14f061079?w=1400&q=78&auto=format&fit=crop" alt="Panier de naans chauds à côté d'un poulet tandoori" fetchpriority="high">
+    </figure>
+  </div>
+</section>
+
+<section class="why" aria-labelledby="why-t">
+  <div class="wrap">
+    <h2 id="why-t" class="rise">Pourquoi nous choisir</h2>
+    <div class="why-grid">
+      <article class="why-item rise">
+        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=900&q=75&auto=format&fit=crop" alt="Naan à l'ail posé sur un curry" loading="lazy">
+        <h3>Des naans maison</h3>
+        <p>Nature, à l'ail ou au fromage, pour accompagner chaque plat.</p>
+      </article>
+      <article class="why-item rise">
+        <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=900&q=75&auto=format&fit=crop" alt="Trois jus de fruits frais en bocaux" loading="lazy">
+        <h3>Jus maison délicieux</h3>
+        <p>Tous nos jus sont faits maison, avec des fruits frais pressés.</p>
+      </article>
+      <article class="why-item rise">
+        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=900&q=75&auto=format&fit=crop" alt="Brochettes de paneer grillé et légumes" loading="lazy">
+        <h3>Des plats végétariens</h3>
+        <p>Bien entendu, vous trouverez aussi des plats 100&nbsp;% végétariens sur notre carte.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="carte" aria-labelledby="carte-t">
+  <div class="wrap">
+    <div class="menu-head">
+      <h2 id="carte-t" class="rise">La carte</h2>
+      <p class="rise">Touchez + pour préparer votre ticket, puis commandez en un clic. Prix et carte complète sur le webshop.</p>
+    </div>
+    <div class="menu-layout">
+      <div>
+        <div class="cat rise">
+          <h3>Pour commencer</h3>
+          <ul class="dishes">
+            <li class="dish"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Samoussas</b><span>Croustillants, à partager ou pas</span></div><button class="add" data-d="Samoussas" aria-pressed="false" aria-label="Ajouter Samoussas">+</button></li>
+            <li class="dish"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Rolls tikka</b><span>Rouleau garni de tikka</span></div><button class="add" data-d="Rolls tikka" aria-pressed="false" aria-label="Ajouter Rolls tikka">+</button></li>
+            <li class="dish"><span class="noimg" aria-hidden="true"><svg width="52" height="52" viewBox="0 0 52 52"><g fill="currentColor"><ellipse cx="18" cy="30" rx="12" ry="9" transform="rotate(-20 18 30)"/><ellipse cx="34" cy="22" rx="11" ry="8" transform="rotate(25 34 22)"/><ellipse cx="34" cy="38" rx="9" ry="7"/></g><g fill="#4a5716"><circle cx="14" cy="28" r="1.4"/><circle cx="22" cy="33" r="1.2"/><circle cx="33" cy="20" r="1.3"/><circle cx="36" cy="39" r="1.2"/></g></svg></span><div><b>Potatoes amritsari</b><span>Pommes de terre épicées façon Amritsar</span></div><button class="add" data-d="Potatoes amritsari" aria-pressed="false" aria-label="Ajouter Potatoes amritsari">+</button></li>
+          </ul>
+        </div>
+        <div class="cat rise">
+          <h3>Les plats</h3>
+          <ul class="dishes">
+            <li class="dish"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Butter chicken</b><span>Poulet dans une sauce tomate au beurre</span></div><button class="add" data-d="Butter chicken" aria-pressed="false" aria-label="Ajouter Butter chicken">+</button></li>
+            <li class="dish"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Biryani d'agneau</b><span>Riz épicé et agneau de notre boucherie</span></div><button class="add" data-d="Biryani d'agneau" aria-pressed="false" aria-label="Ajouter Biryani d'agneau">+</button></li>
+          </ul>
+        </div>
+        <div class="cat rise">
+          <h3>Naans maison</h3>
+          <ul class="dishes">
+            <li class="dish"><img src="https://images.unsplash.com/photo-1617692855027-33b14f061079?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Naan nature</b><span>Le pain indien, tout simple</span></div><button class="add" data-d="Naan nature" aria-pressed="false" aria-label="Ajouter Naan nature">+</button></li>
+            <li class="dish"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Naan à l'ail</b><span>Ail et herbes fraîches</span></div><button class="add" data-d="Naan à l'ail" aria-pressed="false" aria-label="Ajouter Naan à l'ail">+</button></li>
+            <li class="dish"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Naan au fromage</b><span>Fourré au fromage fondu</span></div><button class="add" data-d="Naan au fromage" aria-pressed="false" aria-label="Ajouter Naan au fromage">+</button></li>
+          </ul>
+        </div>
+        <div class="cat rise">
+          <h3>À boire</h3>
+          <ul class="dishes">
+            <li class="dish"><img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Mango lassi</b><span>Yaourt et mangue, bien frais</span></div><button class="add" data-d="Mango lassi" aria-pressed="false" aria-label="Ajouter Mango lassi">+</button></li>
+            <li class="dish"><img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Jus frais</b><span>Fruits frais pressés maison</span></div><button class="add" data-d="Jus frais" aria-pressed="false" aria-label="Ajouter Jus frais">+</button></li>
+          </ul>
+        </div>
+        <div class="veg rise"><b>Végétarien ?</b><span>Plusieurs plats 100&nbsp;% végétariens à la carte.</span></div>
+      </div>
+
+      <aside class="ticket" aria-labelledby="ticket-t">
+        <h3 id="ticket-t">Votre ticket</h3>
+        <p class="hint" id="ticket-hint">Rien pour l'instant. Ajoutez un plat avec +.</p>
+        <ul id="ticket-list" aria-live="polite"></ul>
+        <a class="pill dark" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener" id="go">Commander en ligne</a>
+        <a class="pill light" href="tel:+33142572468">Ou appeler le restaurant</a>
+        <small id="copied">Votre liste est copiée en ouvrant le webshop : vous la retrouvez d'un coup d'œil pendant la commande.</small>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="meat" aria-labelledby="meat-t">
+  <div class="wrap">
+    <div class="rise">
+      <h2 id="meat-t">Viande de qualité avec traçabilité garantie</h2>
+      <p>Nous nous fournissons en viande directement auprès de notre boucherie, ce qui nous permet d'avoir une garantie sur la qualité de nos viandes. Cuisine halal.</p>
+    </div>
+    <img class="rise" src="https://images.unsplash.com/photo-1628294895950-9805252327bc?w=1100&q=75&auto=format&fit=crop" alt="Morceaux de viande grillés et épicés" loading="lazy">
+  </div>
+</section>
+
+<section class="sec" id="horaires" aria-labelledby="h-t">
+  <div class="wrap">
+    <h2 id="h-t" class="rise">Horaires et accès</h2>
+    <div class="info">
+      <div class="rise">
+        <h3>Ouvert 7 jours sur 7</h3>
+        <ul class="hours" id="hours">
+          <li data-d="1"><span>Lundi</span><span>11 h 30 – 23 h</span></li>
+          <li data-d="2"><span>Mardi</span><span>11 h 30 – 23 h</span></li>
+          <li data-d="3"><span>Mercredi</span><span>11 h 30 – 23 h</span></li>
+          <li data-d="4"><span>Jeudi</span><span>11 h 30 – 23 h</span></li>
+          <li data-d="5"><span>Vendredi</span><span>11 h 30 – 23 h</span></li>
+          <li data-d="6"><span>Samedi</span><span>11 h 30 – 23 h</span></li>
+          <li data-d="0"><span>Dimanche</span><span>11 h 30 – 23 h</span></li>
+        </ul>
+        <p class="hours-note">Sur place, à emporter, ou en livraison via le webshop.</p>
+      </div>
+      <div class="rise" id="acces">
+        <h3>3, rue Simart, Paris 18e</h3>
+        <div class="contact-lines">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Azaytoona%2C+3+rue+Simart%2C+75018+Paris" target="_blank" rel="noopener">Itinéraire <span>Google Maps</span></a>
+          <a href="tel:+33142572468">01 42 57 24 68 <span>Appeler</span></a>
+          <a href="mailto:azaytoonarestaurant@gmail.com?subject=Question%20pour%20Azaytoona">azaytoonarestaurant@gmail.com <span>Écrire</span></a>
+          <a href="https://instagram.com/azaytoonaparis" target="_blank" rel="noopener">@azaytoonaparis <span>Instagram</span></a>
+        </div>
+        <div class="map"><iframe title="Plan d'accès : 3 rue Simart, Paris 18e" loading="lazy" src="https://www.google.com/maps?q=3+rue+Simart,+75018+Paris&z=16&output=embed"></iframe></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">Azaytoona</p>
+    <div class="row">
+      <span>Restaurant indien halal · 3, rue Simart, 75018 Paris</span>
+      <a href="tel:+33142572468">01 42 57 24 68</a>
+      <a href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener">Commander en ligne</a>
+    </div>
+    <p class="credit">Démo réalisée par Raul Hatos · site non officiel. Photos d'illustration : Unsplash (licence Unsplash), à remplacer par les photos du restaurant.</p>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <a class="pill dark" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener" id="bar-go">Commander</a>
+  <a class="pill light" href="tel:+33142572468" style="flex:none;width:52px;padding:0" aria-label="Appeler le restaurant"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></a>
+</div>
+
+<script>
+document.body.classList.remove('no-js');
+// ouvert / fermé selon l'heure de Paris
+(function(){
+  var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  var g=function(t){return (p.find(function(x){return x.type===t})||{}).value};
+  var days={lun:1,mar:2,mer:3,jeu:4,ven:5,sam:6,dim:0};
+  var d=days[(g('weekday')||'').slice(0,3)], m=(+g('hour'))*60+(+g('minute'));
+  var li=document.querySelector('#hours li[data-d="'+d+'"]'); if(li) li.classList.add('today');
+  var open=m>=690&&m<1380, s=document.getElementById('status'), t=document.getElementById('status-txt');
+  if(open){t.textContent='Ouvert maintenant · jusqu’à 23 h'}
+  else{s.classList.add('closed');t.textContent='Fermé · ouvre à 11 h 30'+(m>=1380?' demain':'')}
+})();
+// ticket
+(function(){
+  var items={}, list=document.getElementById('ticket-list'), hint=document.getElementById('ticket-hint'), bar=document.getElementById('bar'), barGo=document.getElementById('bar-go');
+  function render(){
+    list.innerHTML=''; var n=0;
+    Object.keys(items).forEach(function(k){
+      n+=items[k]; var li=document.createElement('li');
+      li.innerHTML='<span>'+items[k]+' × '+k+'</span>';
+      var b=document.createElement('button'); b.textContent='−'; b.setAttribute('aria-label','Retirer '+k);
+      b.onclick=function(){items[k]--; if(!items[k]) delete items[k]; render()};
+      li.appendChild(b); list.appendChild(li);
+    });
+    hint.textContent=n?n+(n>1?' articles':' article')+' sur votre ticket.':'Rien pour l’instant. Ajoutez un plat avec +.';
+    document.querySelectorAll('.add').forEach(function(b){b.setAttribute('aria-pressed',items[b.dataset.d]?'true':'false')});
+    barGo.textContent=n?'Commander · '+n+(n>1?' articles':' article'):'Commander';
+  }
+  document.querySelectorAll('.add').forEach(function(b){b.onclick=function(){items[b.dataset.d]=(items[b.dataset.d]||0)+1; render()}});
+  function copy(){var txt=Object.keys(items).map(function(k){return items[k]+' x '+k}).join('\n'); if(txt&&navigator.clipboard) navigator.clipboard.writeText(txt).catch(function(){})}
+  document.getElementById('go').addEventListener('click',copy); barGo.addEventListener('click',copy);
+  // bandeau mobile après le premier écran
+  addEventListener('scroll',function(){bar.classList.toggle('on',scrollY>innerHeight*.7)},{passive:true});
+})();
+// entrées
+(function(){
+  var els=document.querySelectorAll('.rise');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.querySelectorAll(':scope > .rise'));e.target.style.transitionDelay=Math.max(0,sib.indexOf(e.target))*80+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
