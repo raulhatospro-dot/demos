@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Le Drapeau de la Fidélité · Chez Quân, Paris 15e</title>
+<meta name="description" content="Le Drapeau de la Fidélité, petit bar-restaurant vietnamien au 21 rue Copreaux, Paris 15e, près du métro Volontaires. Bo bun, phở, bœuf lok lac. Espèces uniquement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf9f4;
+  --paper-2:#f1ede4;
+  --ink:#16120f;
+  --soft:#4a3f37;
+  --red:#c1121f;
+  --red-deep:#9a0d18;
+  --yellow:#ffcd1c;
+  --on-red:#ffe27a;
+  --pad:clamp(16px,4vw,48px);
+  --display:"Bebas Neue",Impact,sans-serif;
+  --text:"EB Garamond",Georgia,serif;
+  --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --s-body:clamp(1.125rem,1.06rem + .25vw,1.25rem);
+  --s-lead:clamp(1.375rem,1.2rem + .7vw,1.875rem);
+  --s-head:clamp(3rem,1.6rem + 6vw,7rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px}
+body{background:var(--paper);color:var(--ink);font:400 var(--s-body)/1.5 var(--text);font-variant-numeric:oldstyle-nums}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+::selection{background:var(--yellow);color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.9;letter-spacing:-.01em;text-transform:uppercase;text-wrap:balance}
+h2{font-size:var(--s-head)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.tab{font-variant-numeric:lining-nums tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#e9e2d6;font-size:var(--s-small);text-align:center;padding:6px 16px}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 1.0625rem/1 var(--text);text-decoration:none;white-space:nowrap;transition:transform .25s var(--ease),background-color .2s,color .2s}
+.btn:active{transform:scale(.96)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:var(--red)}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-yellow:hover{background:#fff}
+.btn-paper{background:var(--paper-2);color:var(--ink)}
+.btn-paper:hover{background:var(--yellow)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:var(--paper)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 clamp(1.15rem,.9rem + 1vw,1.5rem)/1 var(--display);letter-spacing:.01em;white-space:nowrap}
+.flag{width:34px;height:22px;flex:none}
+.nav ul{display:none;list-style:none;gap:30px;font-weight:500}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--red)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:1rem}
+@media(min-width:900px){.nav ul{display:flex}}
+
+/* hero : l'enseigne rouge de la façade */
+.sign{background:var(--red);color:var(--on-red);padding:clamp(18px,3vw,36px) 0 clamp(14px,2.4vw,28px)}
+.sign h1{font-size:clamp(4.2rem,15.5vw,13.5rem);line-height:.84;letter-spacing:-.015em}
+.sign h1 span{display:block}
+@media(min-width:900px){.sign h1{font-size:11.7vw;white-space:nowrap;line-height:.9}.sign h1 span{display:inline}}
+@media(min-width:1500px){.sign h1{font-size:10.6rem}}
+.hero{display:grid;gap:28px;padding-top:28px}
+.hero-copy{display:flex;flex-direction:column;gap:22px}
+.lead{font-size:var(--s-lead);line-height:1.3;max-width:30ch}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:var(--s-small);color:var(--soft)}
+.facts b{color:var(--ink);font-weight:600}
+.status{display:flex;gap:14px;align-items:flex-start;background:var(--paper-2);padding:16px 18px}
+.dot{width:12px;height:12px;border-radius:50%;background:#8a7f75;flex:none;margin-top:9px}
+.status[data-state="open"] .dot{background:#1f8a3a;box-shadow:0 0 0 0 rgba(31,138,58,.5);animation:pulse 2s infinite}
+.status[data-state="bar"] .dot{background:#d98a00}
+.status[data-state="closed"] .dot{background:var(--red)}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(31,138,58,0)}100%{box-shadow:0 0 0 0 rgba(31,138,58,0)}}
+.status strong{display:block;font-weight:600;font-size:1.1875rem;line-height:1.3}
+.status span{font-size:var(--s-small);color:var(--soft)}
+.facade{position:relative;overflow:hidden;background:var(--paper-2);aspect-ratio:3/2}
+.facade img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:drift 14s var(--ease) forwards}
+@keyframes drift{to{transform:scale(1)}}
+.cap{font-size:var(--s-small);color:var(--soft);margin-top:8px}
+.carte .cap{color:var(--ink)}
+@media(min-width:900px){
+  .hero{grid-template-columns:5fr 7fr;gap:48px;padding-top:40px;align-items:start}
+}
+
+/* trois bandes */
+.stripes{height:54px;background:linear-gradient(var(--red) 0 0) 0 0/100% 10px no-repeat,linear-gradient(var(--red) 0 0) 0 22px/100% 10px no-repeat,linear-gradient(var(--red) 0 0) 0 44px/100% 10px no-repeat,var(--yellow);margin-top:clamp(56px,7vw,96px)}
+
+/* la carte : le panneau peint */
+.carte{background:var(--yellow);padding:clamp(56px,8vw,120px) 0}
+.carte-grid{display:grid;gap:40px;align-items:start}
+.carte h2{margin-bottom:18px}
+.carte-intro p{max-width:34ch;font-size:var(--s-lead);line-height:1.3}
+.board{position:relative;margin-top:28px}
+.board div{overflow:hidden}
+.board img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:51% 46%;transform:scale(1.55);transform-origin:52% 50%}
+.sheet{background:var(--paper);padding:56px clamp(22px,5vw,64px) 60px;
+  -webkit-mask:radial-gradient(10px at 50% 0,#0000 98%,#000) 50% 0/26px 51% repeat-x,radial-gradient(10px at 50% 100%,#0000 98%,#000) 50% 100%/26px 51% repeat-x;
+          mask:radial-gradient(10px at 50% 0,#0000 98%,#000) 50% 0/26px 51% repeat-x,radial-gradient(10px at 50% 100%,#0000 98%,#000) 50% 100%/26px 51% repeat-x}
+.sheet-title{text-align:center;font:400 clamp(2.4rem,6vw,3.4rem)/.9 var(--display);color:var(--red)}
+.sheet-note{text-align:center;font-style:italic;color:var(--soft);margin-top:8px}
+.group{margin-top:44px}
+.group h3{text-align:center;font-size:clamp(1.6rem,3vw,2rem);color:var(--ink);margin-bottom:16px}
+.items{list-style:none;display:grid;gap:14px;max-width:440px;margin:0 auto}
+.items li{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.items em{font-style:italic;color:var(--soft);font-size:var(--s-small);text-align:right}
+.sheet-foot{text-align:center;margin-top:44px;font-weight:600}
+.sheet-foot span{display:block;font-weight:400;color:var(--soft);font-size:var(--s-small)}
+@media(min-width:900px){
+  .carte-grid{grid-template-columns:5fr 7fr;gap:64px}
+  .carte-intro{position:sticky;top:96px}
+}
+
+/* le patron */
+.patron{padding:clamp(80px,12vw,200px) 0}
+.patron-grid{display:grid;gap:40px}
+.patron h2{color:var(--red)}
+.story{display:grid;gap:22px;max-width:62ch}
+.story .big{font-size:var(--s-lead);line-height:1.3}
+.notes{list-style:none;display:grid;gap:0;margin-top:8px}
+.notes li{display:grid;grid-template-columns:8.5rem 1fr;gap:16px;padding:16px 0;background:linear-gradient(var(--paper-2),var(--paper-2)) 0 100%/100% 2px no-repeat}
+.notes b{font:400 1.5rem/1 var(--display);color:var(--red);padding-top:4px}
+.plates{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.plates figure:first-child{grid-column:1/-1}
+.plates img{width:100%;object-fit:cover}
+.plates figure{display:grid;gap:6px}
+.plates figure:first-child img{aspect-ratio:16/10}
+.plates figure:not(:first-child) img{aspect-ratio:4/5}
+.src{font-size:var(--s-small);color:var(--soft)}
+@media(min-width:900px){
+  .patron-grid{grid-template-columns:6fr 5fr;gap:72px;align-items:start}
+  .plates{position:sticky;top:96px}
+}
+
+/* horaires : l'élément vivant */
+.horaires{background:var(--red);color:var(--paper);padding:clamp(64px,9vw,140px) 0}
+.horaires h2{color:var(--on-red)}
+.h-grid{display:grid;gap:40px}
+.now{font-size:clamp(2rem,1.2rem + 3vw,3.6rem);font-family:var(--display);line-height:.95;color:var(--paper);text-transform:uppercase}
+.now-sub{font-size:var(--s-lead);line-height:1.3;margin-top:14px;max-width:28ch}
+.clock{display:flex;gap:18px;align-items:center;margin-top:28px}
+.ring{width:96px;height:96px;flex:none}
+#clock[data-state="closed"] .ring{display:none}
+.ring circle{fill:none;stroke-width:10}
+.ring .bg{stroke:var(--red-deep)}
+.ring .fg{stroke:var(--yellow);stroke-linecap:butt;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1s var(--ease)}
+.week{width:100%;border-collapse:collapse;font-size:var(--s-body)}
+.week th,.week td{text-align:left;padding:12px 0;border-bottom:2px solid var(--red-deep);font-weight:400}
+.week td{text-align:right}
+.week th{font-weight:500}
+.week tr.today th,.week tr.today td{color:var(--on-red);font-weight:600}
+.week tr.today th::after{content:" · aujourd’hui";font-weight:400;font-style:italic}
+.small-note{font-size:var(--s-small);margin-top:16px;color:#f6dcd6}
+@media(min-width:900px){.h-grid{grid-template-columns:1fr 1fr;gap:96px;align-items:start}}
+
+/* venir */
+.venir{padding:clamp(80px,12vw,200px) 0 clamp(56px,8vw,120px)}
+.venir-grid{display:grid;gap:36px}
+.street img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.addr{font:400 clamp(2.2rem,5vw,3.6rem)/.92 var(--display);text-transform:uppercase;margin:18px 0 14px}
+.venir p{max-width:40ch}
+.metro{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin-top:28px;background:var(--paper-2)}
+.metro img{width:120px;height:150px;object-fit:cover}
+.metro p{padding-right:16px}
+@media(min-width:900px){.venir-grid{grid-template-columns:7fr 5fr;gap:64px;align-items:end}}
+
+/* pied : le dos du panneau */
+.foot{background:var(--ink);color:#efe8dc;padding:clamp(64px,8vw,110px) 0 28px}
+.foot-name{font:400 clamp(3.4rem,13vw,12rem)/.82 var(--display);color:var(--yellow);text-transform:uppercase;letter-spacing:-.015em}
+.foot-grid{display:grid;gap:32px;margin-top:40px}
+.foot a{color:#fff}
+.foot ul{list-style:none;display:grid;gap:10px;font-size:1.1875rem}
+.credits{font-size:var(--s-small);color:#cbbfae;margin-top:48px;max-width:110ch}
+.credits a{color:#cbbfae}
+@media(min-width:900px){.foot-grid{grid-template-columns:1fr 1fr 1fr}}
+
+/* entrées */
+.rv{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;transition:none}
+  .facade img{animation:none;transform:none}
+  .status .dot{animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flag" viewBox="0 0 34 22"><rect width="34" height="22" fill="#ffcd1c"/><rect y="6" width="34" height="2.4" fill="#c1121f"/><rect y="9.8" width="34" height="2.4" fill="#c1121f"/><rect y="13.6" width="34" height="2.4" fill="#c1121f"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 5h18v14H3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m3 6 9 7 9-7"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top"><svg class="flag" aria-hidden="true"><use href="#flag"/></svg>Le Drapeau de la Fidélité</a>
+    <ul>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#patron">Le patron</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li><a href="#venir">Venir</a></li>
+    </ul>
+    <a class="btn btn-ink" href="tel:+33145667382"><svg aria-hidden="true"><use href="#i-tel"/></svg>Appeler</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="sign" aria-labelledby="titre">
+    <div class="wrap">
+      <h1 id="titre"><span>Le Drapeau </span><span>de la Fidélité</span></h1>
+    </div>
+  </section>
+
+  <div class="wrap hero">
+    <div class="hero-copy">
+      <p class="lead rv">Petit bar-restaurant vietnamien du 21 rue Copreaux, à deux pas du métro Volontaires. Monsieur Quân tient le comptoir depuis 1984.</p>
+      <div class="status rv" style="--i:1" id="status" data-state="closed" aria-live="polite">
+        <i class="dot" aria-hidden="true"></i>
+        <div><strong id="status-main">Lundi au samedi, 12 h à 22 h</strong><span id="status-sub">Cuisine jusqu’à 20 h 30</span></div>
+      </div>
+      <div class="actions rv" style="--i:2">
+        <a class="btn btn-ink" href="tel:+33145667382"><svg aria-hidden="true"><use href="#i-tel"/></svg>01 45 66 73 82</a>
+        <a class="btn btn-paper" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Drapeau+de+la+Fid%C3%A9lit%C3%A9%2C+21+rue+Copreaux%2C+75015+Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-map"/></svg>Itinéraire</a>
+      </div>
+      <p class="facts rv" style="--i:3"><span><b>Espèces</b> uniquement</span><span><b>Sans</b> réservation</span><span>Paris <b>15e</b></span></p>
+    </div>
+    <figure>
+      <div class="facade">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/F9676_Paris_15e_rue_Copreaux_n21_rwk.jpg/1280px-F9676_Paris_15e_rue_Copreaux_n21_rwk.jpg" width="1280" height="853" alt="La devanture du 21 rue Copreaux : enseigne rouge « Salon de thé, cave, café », vitrine et panneau peint « Boire un p’tit coup c’est agréable »">
+      </div>
+      <figcaption class="cap">La devanture du 21 rue Copreaux, septembre 2024.</figcaption>
+    </figure>
+  </div>
+
+  <div class="stripes" aria-hidden="true"></div>
+
+  <section class="carte" id="carte" aria-labelledby="t-carte">
+    <div class="wrap carte-grid">
+      <div class="carte-intro">
+        <h2 id="t-carte" class="rv">La carte</h2>
+        <p class="rv" style="--i:1">Boire un p’tit coup, c’est agréable. C’est écrit sur le panneau de la vitrine, entre les sandwichs et le café.</p>
+        <figure class="board rv" style="--i:2">
+          <div><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/F9676_Paris_15e_rue_Copreaux_n21_rwk.jpg/1920px-F9676_Paris_15e_rue_Copreaux_n21_rwk.jpg" width="1920" height="1280" loading="lazy" alt="Le panneau peint de la vitrine : Drapeau de la Fidélité, boire un p’tit coup c’est agréable, sandwich jambon poulet thon, vin, thé, café"></div>
+          <figcaption class="cap">Le panneau peint, à droite de la vitrine.</figcaption>
+        </figure>
+      </div>
+
+      <div class="sheet rv" style="--i:1">
+        <p class="sheet-title">Chez Quân</p>
+        <p class="sheet-note">Cuisine vietnamienne et comptoir de quartier</p>
+
+        <div class="group">
+          <h3>À table</h3>
+          <ul class="items">
+            <li><span>Bo bun</span><em>bún bò</em></li>
+            <li><span>Phở</span><em>soupe de nouilles</em></li>
+            <li><span>Bœuf lok lac</span><em>bò lúc lắc</em></li>
+            <li><span>Porc au caramel</span><em>thịt kho</em></li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h3>Au comptoir</h3>
+          <ul class="items">
+            <li><span>Sandwich jambon</span></li>
+            <li><span>Sandwich poulet</span></li>
+            <li><span>Sandwich thon</span></li>
+            <li><span>Bière</span><em>Leffe, Jupiter</em></li>
+            <li><span>Vin, thé, café</span></li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h3>À lire</h3>
+          <ul class="items">
+            <li><span>Les livres de M. Quân</span><em>en vente au bar</em></li>
+          </ul>
+        </div>
+
+        <p class="sheet-foot">Petits prix, affichés sur place<span>Paiement en espèces · pas de réservation · la cuisine ferme à 20 h 30</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="patron" id="patron" aria-labelledby="t-patron">
+    <div class="wrap patron-grid">
+      <div class="story">
+        <h2 id="t-patron" class="rv">Le patron</h2>
+        <p class="big rv" style="--i:1">Pham Công Quân enseignait la philosophie à Saïgon. Réfugié politique en France, il reprend ce bar de la rue Copreaux en 1984.</p>
+        <p class="rv" style="--i:2">La salle tient dans un mouchoir de poche. Les étudiants y dînent tôt, les habitués y lisent le journal au comptoir, et M. Quân boit son thé au milieu du bruit.</p>
+        <ul class="notes rv" style="--i:3">
+          <li><b>Le nom</b><span>La fidélité jurée à Bảo Đại, dernier empereur du Viêt Nam. Son drapeau, jaune à trois bandes rouges, veille au-dessus du bar.</span></li>
+          <li><b>Les murs</b><span>Des livres du sol au plafond. On tend le bras et on tombe sur du Racine.</span></li>
+          <li><b>L’horloge</b><span>Elle a la forme du Viêt Nam.</span></li>
+          <li><b>Les toilettes</b><span>L’interrupteur de la lumière allume aussi la radio.</span></li>
+        </ul>
+      </div>
+      <div class="plates">
+        <figure class="rv">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Saigon._Marais_Boresse.jpg" width="1600" height="1027" loading="lazy" alt="Carte postale ancienne de Saïgon : maisons au toit de chaume au bord d’un marais">
+          <figcaption class="src">Saïgon, carte postale du début du XXe siècle.</figcaption>
+        </figure>
+        <figure class="rv" style="--i:1">
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Old_books_on_a_shelf_%28Unsplash%29.jpg/1280px-Old_books_on_a_shelf_%28Unsplash%29.jpg" width="1280" height="853" loading="lazy" alt="Vieux livres alignés sur une étagère">
+          <figcaption class="src">Des livres, toujours.</figcaption>
+        </figure>
+        <figure class="rv" style="--i:2">
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/F9675_Paris_15e_rue_Copreaux_rwk.jpg/1280px-F9675_Paris_15e_rue_Copreaux_rwk.jpg" width="1280" height="1876" loading="lazy" alt="La rue Copreaux, immeubles clairs et enseignes de boutiques">
+          <figcaption class="src">La rue Copreaux.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="horaires" id="horaires" aria-labelledby="t-horaires">
+    <div class="wrap h-grid">
+      <div>
+        <h2 id="t-horaires" class="rv">Encore le temps&nbsp;?</h2>
+        <div class="clock rv" style="--i:1" id="clock">
+          <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" id="ring" cx="50" cy="50" r="42" stroke-dasharray="263.9" stroke-dashoffset="263.9"/></svg>
+          <p class="now" id="now">La cuisine ferme à 20 h 30</p>
+        </div>
+        <p class="now-sub rv" style="--i:2" id="now-sub">Ici, on dîne tôt. Le bar sert jusqu’à 22 h.</p>
+      </div>
+      <div class="rv" style="--i:1">
+        <table class="week tab" aria-label="Horaires de la semaine">
+          <tbody id="week">
+            <tr data-d="1"><th scope="row">Lundi</th><td>12 h – 22 h</td></tr>
+            <tr data-d="2"><th scope="row">Mardi</th><td>12 h – 22 h</td></tr>
+            <tr data-d="3"><th scope="row">Mercredi</th><td>12 h – 22 h</td></tr>
+            <tr data-d="4"><th scope="row">Jeudi</th><td>12 h – 22 h</td></tr>
+            <tr data-d="5"><th scope="row">Vendredi</th><td>12 h – 22 h</td></tr>
+            <tr data-d="6"><th scope="row">Samedi</th><td>12 h – 22 h</td></tr>
+            <tr data-d="0"><th scope="row">Dimanche</th><td>Fermé</td></tr>
+          </tbody>
+        </table>
+        <p class="small-note">Cuisine jusqu’à 20 h 30 du lundi au samedi. Un doute un jour férié&nbsp;? Un coup de fil au 01 45 66 73 82.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="venir" id="venir" aria-labelledby="t-venir">
+    <div class="wrap venir-grid">
+      <figure class="street rv">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Rue_Copreaux_-_Paris_XV_%28FR75%29_-_2021-08-09_-_1.jpg/1280px-Rue_Copreaux_-_Paris_XV_%28FR75%29_-_2021-08-09_-_1.jpg" width="1280" height="960" loading="lazy" alt="La rue Copreaux vue depuis la chaussée, voitures garées et immeubles du 15e">
+        <figcaption class="cap">La rue Copreaux, côté Volontaires.</figcaption>
+      </figure>
+      <div>
+        <h2 id="t-venir" class="rv">Venir</h2>
+        <p class="addr rv" style="--i:1">21 rue Copreaux<br>75015 Paris</p>
+        <p class="rv" style="--i:2">Une petite rue calme du 15e, à deux pas de la station Volontaires.</p>
+        <div class="actions rv" style="--i:3;margin-top:22px">
+          <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Drapeau+de+la+Fid%C3%A9lit%C3%A9%2C+21+rue+Copreaux%2C+75015+Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-map"/></svg>Itinéraire Google Maps</a>
+          <a class="btn btn-paper" href="mailto:ledrapeaudelafidelite@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>Écrire</a>
+        </div>
+        <div class="metro rv" style="--i:4">
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Acc%C3%A8s_Station_Volontaires_M%C3%A9tro_Paris_Rue_Volontaires_-_Paris_XV_%28FR75%29_-_2026-02-06_-_3.jpg/1280px-Acc%C3%A8s_Station_Volontaires_M%C3%A9tro_Paris_Rue_Volontaires_-_Paris_XV_%28FR75%29_-_2026-02-06_-_3.jpg" width="1280" height="1707" loading="lazy" alt="L’escalier carrelé blanc de l’accès au métro Volontaires">
+          <p><b>Métro Volontaires</b>, ligne 12. Sortie rue des Volontaires.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-name">Chez Quân</p>
+    <div class="foot-grid">
+      <p>Le Drapeau de la Fidélité<br>Bar-restaurant vietnamien depuis 1984<br>Espèces uniquement</p>
+      <ul>
+        <li><a href="tel:+33145667382">01 45 66 73 82</a></li>
+        <li><a href="mailto:ledrapeaudelafidelite@gmail.com">ledrapeaudelafidelite@gmail.com</a></li>
+        <li><a href="https://www.facebook.com/chezquan" target="_blank" rel="noopener">Facebook : chezquan</a></li>
+      </ul>
+      <p>21 rue Copreaux<br>75015 Paris<br>Métro Volontaires (12)</p>
+    </div>
+    <p class="credits">Photos via Wikimedia Commons : devanture et rue Copreaux par <a href="https://commons.wikimedia.org/wiki/File:F9676_Paris_15e_rue_Copreaux_n21_rwk.jpg">Mbzt</a> (CC BY 4.0) ; rue Copreaux et métro Volontaires par <a href="https://commons.wikimedia.org/wiki/File:Rue_Copreaux_-_Paris_XV_(FR75)_-_2021-08-09_-_1.jpg">Chabe01</a> (CC BY-SA 4.0) ; Saïgon, Marais Boresse, carte postale ancienne (domaine public) ; livres par Roman Kraft (CC0). Démo réalisée par Raul Hatos — site non officiel.</p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// shortcut: horaires relevés dans la presse (2022), à remplacer par ceux du patron
+const OPEN=12*60, KITCHEN=20*60+30, CLOSE=22*60, DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+function state(day,min){
+  const openDay=day!==0;
+  if(openDay&&min>=OPEN&&min<KITCHEN) return {s:'open',left:KITCHEN-min};
+  if(openDay&&min>=KITCHEN&&min<CLOSE) return {s:'bar',left:CLOSE-min};
+  let d=day;
+  if(openDay&&min<OPEN) return {s:'closed',next:'aujourd’hui'};
+  do{d=(d+1)%7}while(d===0);
+  return {s:'closed',next:d===(day+1)%7?'demain':DAYS[d]};
+}
+const fmt=m=>m>=60?Math.floor(m/60)+' h '+String(m%60).padStart(2,'0'):m+' min';
+// self-check
+console.assert(state(1,13*60).s==='open'&&state(1,13*60).left===450);
+console.assert(state(6,21*60).s==='bar');
+console.assert(state(6,23*60).next==='lundi'&&state(0,15*60).next==='demain'&&state(2,9*60).next==='aujourd’hui');
+function paris(){
+  const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+  const g=t=>p.find(x=>x.type===t).value;
+  return {day:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),min:+g('hour')*60+ +g('minute')};
+}
+function render(){
+  const {day,min}=paris(), st=state(day,min);
+  const box=document.getElementById('status'), main=document.getElementById('status-main'), sub=document.getElementById('status-sub');
+  const now=document.getElementById('now'), nowSub=document.getElementById('now-sub'), ring=document.getElementById('ring');
+  box.dataset.state=st.s; document.getElementById('clock').dataset.state=st.s;
+  let frac=0;
+  if(st.s==='open'){
+    main.textContent='Ouvert, la cuisine sert encore '+fmt(st.left);
+    sub.textContent='Commandes en cuisine jusqu’à 20 h 30, bar jusqu’à 22 h';
+    now.textContent='Oui. Encore '+fmt(st.left)+' pour commander';
+    nowSub.textContent='La cuisine ferme à 20 h 30. Ici, on dîne tôt.';
+    frac=st.left/(KITCHEN-OPEN);
+  }else if(st.s==='bar'){
+    main.textContent='Ouvert, le bar sert encore '+fmt(st.left);
+    sub.textContent='La cuisine a fermé à 20 h 30';
+    now.textContent='Trop tard pour le bo bun, pas pour un verre';
+    nowSub.textContent='Le bar ferme à 22 h. Revenez plus tôt demain pour dîner.';
+    frac=st.left/(CLOSE-KITCHEN);
+  }else{
+    main.textContent='Fermé, on rouvre '+st.next+' à 12 h';
+    sub.textContent='Du lundi au samedi, 12 h à 22 h';
+    now.textContent='Fermé. Réouverture '+st.next+' à midi';
+    nowSub.textContent='La cuisine sert de 12 h à 20 h 30, le bar jusqu’à 22 h.';
+  }
+  ring.style.strokeDashoffset=(263.9*(1-frac)).toFixed(1);
+  document.querySelectorAll('#week tr').forEach(tr=>tr.classList.toggle('today',+tr.dataset.d===day));
+}
+render(); setInterval(render,30000);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
