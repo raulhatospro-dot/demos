@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mama No Bento · Bentos japonais, rue Poissonnière</title>
+<meta name="description" content="Mama No Bento, cantine japonaise au 32 rue Poissonnière, Paris 2e. Bentos, donburi et curry japonais le midi, sur place ou à emporter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#ffffff;
+  --soft:#f4f5f7;
+  --strong:#e0e2e6;
+  --ink:#181d26;
+  --body:#333840;
+  --muted:#4a4f58;
+  --coral:#aa2d00;
+  --coral-press:#8a2400;
+  --forest:#0a2e0e;
+  --forest-2:#123d17;
+  --yellow:#f4d35e;
+  --peach:#fcab79;
+  --mint:#a8d8c4;
+  --rice:#fbfaf6;
+  --r:12px;
+  --m:16px;
+  --font:"Zen Kaku Gothic New",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+@media(min-width:900px){:root{--m:24px}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--canvas);color:var(--body);font:400 17px/1.6 var(--font);padding-bottom:44px}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+::selection{background:var(--yellow);color:var(--ink)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:4px}
+h1,h2,h3{color:var(--ink);font-weight:700;letter-spacing:-.025em;line-height:1.08;text-wrap:balance}
+.num{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Bouton */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 24px;border-radius:var(--r);font:500 16px/1.2 var(--font);text-decoration:none;transition:transform .25s var(--ease),background-color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#0d1218}
+.btn-soft{background:var(--soft);color:var(--ink)}
+.btn-soft:hover{background:var(--strong)}
+.btn:active{transform:scale(.97)}
+
+/* Cadre partagé */
+.split{display:grid;grid-template-columns:1fr;gap:12px;padding:12px var(--m) 0}
+.stage{position:relative;height:46svh;min-height:320px;border-radius:var(--r);overflow:hidden;background:var(--ink)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
+.stage img.on{opacity:1}
+.stage-bar{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:12px;align-items:center;min-height:56px;padding:10px 18px;background:var(--canvas);color:var(--ink);font-size:15px;line-height:1.3}
+.stage-bar b{font-weight:700}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--strong);margin-right:8px;vertical-align:1px}
+.dot.open{background:#1f8a3a}
+.read{min-width:0}
+@media(min-width:900px){
+  .split{grid-template-columns:1fr 1fr;align-items:start}
+  .stage{order:2;position:sticky;top:12px;height:calc(100svh - 24px - 44px);min-height:560px}
+  .read{order:1}
+}
+
+/* Hero */
+.hero{background:var(--rice);border-radius:var(--r);padding:20px 20px 40px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mark{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--ink)}
+.mark b{font-size:20px;font-weight:900;letter-spacing:-.03em}
+.mark span{font-size:14px;color:var(--muted)}
+.top nav{display:flex;gap:18px;font-size:15px}
+.top nav a{text-decoration:none;color:var(--ink)}
+.top nav a:hover{text-decoration:underline}
+.top nav .hide-s{display:none}
+.mark span{display:none}
+.stage-bar .addr{display:none}
+.hero-body{padding-top:40px}
+.jp{font-weight:700;color:var(--coral);font-size:clamp(18px,1.4vw,22px);letter-spacing:.04em;margin-bottom:18px}
+.hero h1{font-size:clamp(44px,12vw,92px);font-weight:900;letter-spacing:-.04em;line-height:.95;max-width:9ch}
+.lede{margin-top:32px;font-size:clamp(18px,1.6vw,21px);line-height:1.5;color:var(--ink);max-width:34ch}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:48px;font-size:15px;line-height:1.45;color:var(--ink)}
+.facts dt{font-weight:700}
+@media(min-width:600px){.top nav .hide-s{display:inline}.mark span,.stage-bar .addr{display:inline}.hero{padding:28px 32px 56px}}
+@media(min-width:900px){.hero{min-height:calc(100svh - 24px - 44px);padding:28px 40px 48px}.hero-body{margin-top:auto;padding-top:0}.facts{grid-template-columns:repeat(3,auto);justify-content:start}}
+
+/* Carte */
+.carte{padding:120px 4px 40px}
+.giant{container-type:inline-size}
+.giant h2{font-size:31cqw;font-weight:900;letter-spacing:-.055em;line-height:.8;color:var(--ink);margin-left:-.04em}
+.carte .intro{margin:28px 0 24px;max-width:42ch;color:var(--ink)}
+.bars{display:grid;gap:6px}
+.bars details{background:var(--soft);border-radius:var(--r);transition:background-color .2s}
+.bars details[open]{background:var(--strong)}
+.bars summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:60px;padding:0 20px;cursor:pointer;font-size:19px;font-weight:700;color:var(--ink)}
+.bars summary::-webkit-details-marker{display:none}
+.bars summary small{font-size:15px;font-weight:400;color:var(--muted);margin-left:8px}
+.plus{width:22px;height:22px;flex:none;transition:transform .35s var(--ease)}
+.bars details[open] .plus{transform:rotate(45deg)}
+.bars summary:hover .plus{transform:scale(1.15)}
+.bars details[open] summary:hover .plus{transform:rotate(45deg) scale(1.15)}
+.bars ul{list-style:none;padding:0 20px 22px;display:grid;gap:16px}
+.bars li{display:grid;gap:2px}
+.bars li b{font-weight:700;color:var(--ink);font-size:17px}
+.bars li span{font-size:15px;color:var(--muted);line-height:1.45}
+.tag{display:inline-block;margin-left:6px;font-size:14px;font-weight:500;color:var(--forest)}
+.carte .note{margin-top:20px;font-size:15px;color:var(--muted)}
+
+/* Horaires */
+.midi{padding:120px 4px 120px}
+.midi h2{font-size:clamp(34px,4.4vw,56px)}
+.clock{margin-top:28px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;color:var(--ink)}
+.clock strong{font-size:clamp(48px,9vw,96px);font-weight:900;letter-spacing:-.04em;line-height:1}
+.clock span{font-size:19px}
+.week{list-style:none;display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:28px}
+.week li{background:var(--soft);border-radius:8px;padding:12px 4px;text-align:center;font-size:15px;font-weight:700;color:var(--ink)}
+.week li small{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:2px}
+.week li.off{background:transparent;color:var(--muted);box-shadow:inset 0 0 0 2px var(--soft)}
+.week li.today{background:var(--ink);color:#fff}
+.week li.today small{color:#d6d8dc}
+.week li.today.off{background:var(--coral);box-shadow:none;color:#fff}
+.how{display:grid;gap:28px;margin-top:56px}
+.how h3{font-size:22px;margin-bottom:6px}
+.how p{max-width:42ch;color:var(--ink)}
+@media(min-width:600px){.how{grid-template-columns:1fr 1fr;gap:32px}}
+
+/* Composer : section pleine largeur */
+.compose{margin:12px var(--m) 0;background:var(--forest);color:#eef3ea;border-radius:var(--r);padding:72px 20px 40px;display:grid;gap:40px}
+.compose h2{color:#fff;font-size:clamp(34px,4.4vw,56px);max-width:14ch}
+.compose .sub{margin-top:20px;max-width:40ch;font-size:18px;color:#dfe9dc}
+.picks{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;border:0}
+.picks input{position:absolute;opacity:0;pointer-events:none}
+.picks label{display:inline-flex;align-items:center;min-height:48px;padding:10px 18px;border-radius:999px;background:var(--forest-2);color:#eef3ea;font-size:16px;font-weight:500;cursor:pointer;transition:background-color .2s,color .2s,transform .25s var(--ease)}
+.picks label:hover{background:#1b5222}
+.picks label:active{transform:scale(.96)}
+.picks input:checked+label{background:var(--yellow);color:var(--ink)}
+.picks input:focus-visible+label{outline:3px solid var(--yellow);outline-offset:3px}
+.boxwrap{display:grid;gap:20px;align-content:center}
+.box{width:100%;height:auto;display:block}
+.box .cell{transition:fill .5s var(--ease)}
+.box text{font-family:var(--font);font-weight:700}
+.box .lab{transition:opacity .35s}
+.inbox{font-size:17px;color:#eef3ea;min-height:3.2em}
+.inbox b{color:#fff}
+@media(min-width:900px){.compose{grid-template-columns:5fr 6fr;gap:56px;padding:96px 56px}}
+
+/* Le nom */
+.nom{margin:12px var(--m) 0;background:var(--yellow);border-radius:var(--r);padding:72px 20px;display:grid;gap:32px;color:var(--ink)}
+.nom .kana{font-size:clamp(56px,15vw,200px);font-weight:900;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+.nom h2{font-size:clamp(26px,3.6vw,48px);max-width:18ch}
+.nom p{margin-top:20px;font-size:18px;max-width:40ch}
+.gloss{list-style:none;display:grid;gap:10px;margin-top:28px;font-size:17px}
+.gloss b{display:inline-block;min-width:4.5em;font-weight:900}
+@media(min-width:900px){.nom{grid-template-columns:7fr 5fr;align-items:end;padding:96px 56px}}
+
+/* Contact : l'email en grand */
+.contact{margin:12px var(--m) 0;background:var(--ink);color:#e9ebee;border-radius:var(--r);padding:40px 20px 32px;min-height:86svh;display:flex;flex-direction:column;justify-content:space-between;gap:48px}
+.contact h2{color:#fff;font-size:clamp(28px,3vw,40px);max-width:20ch}
+.contact .say{margin-top:14px;font-size:18px;max-width:38ch;color:#d6d8dc}
+.mail{display:block;color:#fff;text-decoration:none;font-weight:900;letter-spacing:-.045em;line-height:.95;font-size:clamp(36px,10.2vw,140px);overflow-wrap:anywhere;transition:color .3s}
+.mail:hover{color:var(--peach)}
+.mail span{display:block}
+.contact .row{display:grid;gap:12px;font-size:16px}
+.contact .row a:not(.btn){color:#fff}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+.ctas .btn-soft{background:#fff}
+@media(min-width:900px){.contact{padding:56px;min-height:calc(100svh - 68px)}.contact .row{grid-template-columns:1fr 1fr 1fr;align-items:end}}
+
+/* Pied de page */
+.foot{margin:12px var(--m) 0;display:grid;gap:12px}
+.foot-photo{border-radius:var(--r);overflow:hidden;height:50svh;min-height:300px}
+.foot-photo img{width:100%;height:100%;object-fit:cover}
+.foot-menu{background:var(--soft);border-radius:var(--r);padding:32px 20px;display:flex;flex-direction:column;gap:40px}
+.foot-menu .mark b{font-size:18px}
+.foot-menu ul{list-style:none;display:grid;gap:14px}
+.foot-menu ul a{font-size:clamp(30px,3vw,44px);font-weight:900;letter-spacing:-.035em;text-decoration:none;color:var(--ink);display:inline-block;transition:transform .3s var(--ease),color .2s}
+.foot-menu ul:hover a{color:#8b9099}
+.foot-menu ul a:hover{color:var(--ink);transform:translateX(12px)}
+.foot-info{display:grid;gap:20px;font-size:15px;color:var(--ink)}
+.legal{font-size:13px;color:var(--muted)}
+@media(min-width:900px){.foot{grid-template-columns:1fr 1fr}.foot-photo{height:auto;min-height:620px}.foot-menu{padding:40px 48px}.foot-info{grid-template-columns:1fr 1fr}}
+
+/* Bandeau démo */
+.demo{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--ink);color:#d6d8dc;font-size:13px;line-height:1.3;text-align:center;padding:13px 16px}
+
+/* Entrées */
+.rv{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.pre{opacity:0;transform:translateY(24px)}
+@media(prefers-reduced-motion:reduce){.rv,.stage img,.box .cell{transition:none}.js .rv.pre{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="split">
+  <figure class="stage" aria-label="Photographies d’ambiance">
+    <img class="on" src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1400&h=1800&fit=crop&q=75&auto=format" width="1400" height="1800" alt="Deux mains tiennent un bol de riz nappé de curry japonais et d’une escalope panée">
+    <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=1400&h=1800&fit=crop&q=75&auto=format" width="1400" height="1800" alt="Bol de riz blanc, soupe miso et baguettes sur une table sombre" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=1400&h=1800&fit=crop&q=75&auto=format" width="1400" height="1800" alt="Vue du dessus : poulet frit, gyozas et bol de nouilles" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=1400&h=1800&fit=crop&q=75&auto=format" width="1400" height="1800" alt="Morceaux de poulet frit croustillant trempés dans une sauce" loading="lazy">
+    <figcaption class="stage-bar">
+      <span id="status"><span class="dot" aria-hidden="true"></span>Le midi, 11h30 – 15h</span>
+      <span class="addr">32 rue Poissonnière</span>
+    </figcaption>
+  </figure>
+
+  <main class="read">
+    <header class="hero" data-photo="0">
+      <div class="top">
+        <a class="mark" href="#top" id="top"><b>Mama No Bento</b><span lang="ja">ママの弁当</span></a>
+        <nav aria-label="Navigation principale">
+          <a href="#carte">La carte</a>
+          <a class="hide-s" href="#midi">Horaires</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <h1 class="rv">Le bento de maman.</h1>
+        <p class="lede rv">Bentos, donburi et curry japonais, servis le midi au 32 rue Poissonnière, Paris 2e. Sur place ou à emporter.</p>
+        <div class="actions rv">
+          <a class="btn btn-ink" href="#carte">Voir la carte</a>
+          <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&amp;destination=Mama+No+Bento+32+rue+Poissonni%C3%A8re+75002+Paris" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            Itinéraire
+          </a>
+        </div>
+        <dl class="facts rv">
+          <div><dt>Adresse</dt><dd>32 rue Poissonnière<br>75002 Paris</dd></div>
+          <div><dt>Service</dt><dd>Le midi, 11h30 – 15h<br>fermé mer. et dim.</dd></div>
+          <div><dt>Appeler</dt><dd><a class="num" href="tel:+33987734161">09 87 73 41 61</a></dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <section class="carte" id="carte" data-photo="1" aria-labelledby="carte-t">
+      <div class="giant rv"><h2 id="carte-t">Carte</h2></div>
+      <p class="intro rv">Les plats changent souvent. Le bento du jour et sa version végétarienne s’annoncent au comptoir : on commande en arrivant, puis on s’installe.</p>
+      <div class="bars rv">
+        <details open>
+          <summary><span>Bentos <small>la boîte complète</small></span><svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <ul>
+            <li><b>Bento du jour</b><span>Riz, plat principal et accompagnements, selon l’arrivage du jour.</span></li>
+            <li><b>Bento veggie du jour <span class="tag">végétarien</span></b><span>La même boîte, sans viande ni poisson.</span></li>
+            <li><b>Mix bento</b><span>Un assortiment de plusieurs garnitures autour du riz.</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary><span>Donburi <small>sur un bol de riz</small></span><svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <ul>
+            <li><b>Katsudon</b><span>Porc pané, œuf et oignon mijotés, sur riz.</span></li>
+            <li><b>Chicken katsu don</b><span>Poulet pané sur riz.</span></li>
+            <li><b>Shake ebi fry don</b><span>Saumon et crevettes panées sur riz.</span></li>
+            <li><b>Karaage don</b><span>Poulet frit à la japonaise sur riz.</span></li>
+            <li><b>Gyudon</b><span>Fines tranches de bœuf et oignon, sur riz.</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary><span>Curry japonais <small>doux et épais</small></span><svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <ul>
+            <li><b>Chicken katsu curry</b><span>Poulet pané, riz et sauce curry.</span></li>
+            <li><b>Karaage curry</b><span>Poulet frit, riz et sauce curry.</span></li>
+            <li><b>Curry végétarien <span class="tag">végétarien</span></b><span>Riz et sauce curry aux légumes.</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary><span>À côté <small>et pour finir</small></span><svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <ul>
+            <li><b>Okonomiyaki</b><span>La galette japonaise au chou, nappée de sauce.</span></li>
+            <li><b>Onigiri</b><span>Boule de riz façonnée à la main, enveloppée d’algue nori.</span></li>
+            <li><b>Bo bun</b><span>Mixte ou végétarien.</span></li>
+            <li><b>Expresso</b><span>Pour finir le déjeuner.</span></li>
+          </ul>
+        </details>
+      </div>
+      <p class="note rv">Prix et composition du jour au comptoir.</p>
+    </section>
+
+    <section class="midi" id="midi" data-photo="2" aria-labelledby="midi-t">
+      <h2 id="midi-t" class="rv">Ouvert le midi, pas le soir.</h2>
+      <p class="clock rv"><strong class="num">11h30 – 15h</strong><span>du service à la dernière boîte</span></p>
+      <ol class="week rv num" id="week" aria-label="Jours d’ouverture">
+        <li data-d="1">Lun<small>midi</small></li>
+        <li data-d="2">Mar<small>midi</small></li>
+        <li data-d="3" class="off">Mer<small>fermé</small></li>
+        <li data-d="4">Jeu<small>midi</small></li>
+        <li data-d="5">Ven<small>midi</small></li>
+        <li data-d="6">Sam<small>midi</small></li>
+        <li data-d="0" class="off">Dim<small>fermé</small></li>
+      </ol>
+      <div class="how">
+        <div class="rv">
+          <h3>Sur place</h3>
+          <p>Une petite salle calme, sans terrasse. On commande au comptoir en arrivant, puis on s’assoit.</p>
+        </div>
+        <div class="rv">
+          <h3>À emporter</h3>
+          <p>Toute la carte part dans sa boîte. Livraison aussi sur Uber Eats.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<section class="compose" id="boite" aria-labelledby="boite-t">
+  <div>
+    <h2 id="boite-t" class="rv">Qu’y a-t-il dans la boîte ?</h2>
+    <p class="sub rv">Choisissez un plat de la carte : la boîte se remplit case par case.</p>
+    <fieldset class="picks rv">
+      <legend class="sr">Choisir un plat</legend>
+      <input type="radio" name="dish" id="d-katsu" value="katsu" checked><label for="d-katsu">Chicken katsu curry</label>
+      <input type="radio" name="dish" id="d-karaage" value="karaage"><label for="d-karaage">Karaage don</label>
+      <input type="radio" name="dish" id="d-katsudon" value="katsudon"><label for="d-katsudon">Katsudon</label>
+      <input type="radio" name="dish" id="d-shake" value="shake"><label for="d-shake">Shake ebi fry don</label>
+      <input type="radio" name="dish" id="d-gyu" value="gyu"><label for="d-gyu">Gyudon</label>
+      <input type="radio" name="dish" id="d-veggie" value="veggie"><label for="d-veggie">Curry végétarien</label>
+    </fieldset>
+  </div>
+  <div class="boxwrap rv">
+    <svg class="box" viewBox="0 0 600 400" role="img" aria-labelledby="box-t">
+      <title id="box-t">Schéma d’une boîte bento à quatre cases</title>
+      <defs>
+        <pattern id="rice" width="22" height="16" patternUnits="userSpaceOnUse">
+          <rect width="22" height="16" fill="#fbfaf6"/>
+          <ellipse cx="6" cy="5" rx="3.4" ry="1.6" fill="#ebe7da" transform="rotate(-25 6 5)"/>
+          <ellipse cx="16" cy="11" rx="3.4" ry="1.6" fill="#ebe7da" transform="rotate(20 16 11)"/>
+        </pattern>
+      </defs>
+      <rect x="4" y="4" width="592" height="392" rx="18" fill="#05200a"/>
+      <rect x="20" y="20" width="560" height="360" rx="10" fill="#123d17"/>
+      <rect class="cell" id="c-rice" x="32" y="32" width="300" height="336" rx="8" fill="url(#rice)"/>
+      <circle id="ume" cx="182" cy="200" r="18" fill="#aa2d00"/>
+      <rect class="cell" id="c-main" x="344" y="32" width="224" height="180" rx="8" fill="#d9a441"/>
+      <rect class="cell" id="c-side" x="344" y="224" width="108" height="144" rx="8" fill="#a8d8c4"/>
+      <rect class="cell" id="c-pick" x="460" y="224" width="108" height="144" rx="8" fill="#fcab79"/>
+      <g class="lab" fill="#181d26" font-size="26">
+        <text x="52" y="350" id="t-rice">Riz</text>
+        <text x="362" y="196" id="t-main">Poulet pané</text>
+        <text x="358" y="352" font-size="20" id="t-side">Curry</text>
+        <text x="474" y="352" font-size="20" id="t-pick">Pickles</text>
+      </g>
+    </svg>
+    <p class="inbox" id="inbox" aria-live="polite"><b>Chicken katsu curry</b> : poulet pané, riz et sauce curry.</p>
+  </div>
+</section>
+
+<section class="nom" aria-labelledby="nom-t">
+  <p class="kana rv" lang="ja" aria-hidden="true">ママの<br>弁当</p>
+  <div>
+    <h2 id="nom-t" class="rv">Mama no bento :<br>le bento de maman.</h2>
+    <p class="rv">Le nom se lit tel quel en japonais. Un repas en boîte, comme celui qu’on emporte de chez soi.</p>
+    <ul class="gloss rv">
+      <li><b lang="ja">ママ</b> mama, maman</li>
+      <li><b lang="ja">の</b> no, de</li>
+      <li><b lang="ja">弁当</b> bentō, repas en boîte</li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-t">
+  <div>
+    <h2 id="contact-t" class="rv">Une commande de groupe, une question ?</h2>
+    <p class="say rv">Écrivez-nous, ou passez au 32 rue Poissonnière à l’heure du déjeuner.</p>
+  </div>
+  <a class="mail rv" href="mailto:bonjour@mamanobento.com?subject=Question%20pour%20Mama%20No%20Bento"><span>bonjour@</span><span>mamanobento.com</span></a>
+  <div class="row rv">
+    <div><b>Adresse</b><br>32 rue Poissonnière, 75002 Paris<br>Métro Bonne Nouvelle ou Sentier</div>
+    <div><b>Téléphone</b><br><a class="num" href="tel:+33987734161">09 87 73 41 61</a></div>
+    <div class="ctas">
+      <a class="btn btn-soft" href="tel:+33987734161">Appeler</a>
+      <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&amp;destination=Mama+No+Bento+32+rue+Poissonni%C3%A8re+75002+Paris" target="_blank" rel="noopener">Itinéraire</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-photo">
+    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1400&h=1600&fit=crop&q=75&auto=format" width="1400" height="1600" alt="Mains d’un cuisinier qui émincent des légumes sur une planche" loading="lazy">
+  </div>
+  <div class="foot-menu">
+    <a class="mark" href="#top"><b>Mama No Bento</b><span lang="ja">ママの弁当</span></a>
+    <ul>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#midi">Horaires</a></li>
+      <li><a href="#boite">La boîte</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="foot-info">
+      <p><b>Mama No Bento</b><br>32 rue Poissonnière<br>75002 Paris</p>
+      <p>Le midi, 11h30 – 15h<br>Fermé mercredi et dimanche<br><a href="mailto:bonjour@mamanobento.com">bonjour@mamanobento.com</a></p>
+    </div>
+    <p class="legal">Photographies d’illustration : Unsplash. © Mama No Bento</p>
+  </div>
+</footer>
+
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Ouvert maintenant ? Heure de Paris
+  var p={};new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+  var days={dim:0,lun:1,mar:2,mer:3,jeu:4,ven:5,sam:6},d=days[(p.weekday||'').slice(0,3).toLowerCase()];
+  var mins=(+p.hour%24)*60+(+p.minute),closedDay=(d===0||d===3),open=!closedDay&&mins>=690&&mins<900;
+  var st=document.getElementById('status');
+  if(st){
+    var t=closedDay?'Fermé aujourd’hui · le midi, 11h30 – 15h':open?'Ouvert · jusqu’à 15h':mins<690?'Ouvre à 11h30':'Fermé · réouverture au prochain midi';
+    st.innerHTML='<span class="dot'+(open?' open':'')+'" aria-hidden="true"></span>'+t;
+  }
+  var li=document.querySelector('#week li[data-d="'+d+'"]');if(li)li.classList.add('today');
+
+  // Photo fixe : fondu selon la section lue
+  var imgs=[].slice.call(document.querySelectorAll('.stage img'));
+  function show(i){imgs.forEach(function(im,k){im.classList.toggle('on',k===i)})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)show(+e.target.dataset.photo)})},{rootMargin:'-45% 0px -45% 0px'});
+    document.querySelectorAll('[data-photo]').forEach(function(s){io.observe(s)});
+  }
+  // À l'arrêt sur le haut de page, la photo change doucement
+  var auto=0,timer;
+  function tick(){if(document.hidden||scrollY>200)return;auto=(auto+1)%imgs.length;show(auto)}
+  if(!reduce)timer=setInterval(tick,5600);
+
+  // Entrées
+  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window&&!reduce){
+    rv.forEach(function(el){var r=el.getBoundingClientRect();if(r.top>innerHeight)el.classList.add('pre')});
+    var groups=new Map();
+    var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,sec=el.closest('section,header,footer')||document.body,n=groups.get(sec)||0;groups.set(sec,n+1);el.style.transitionDelay=(n*80)+'ms';el.classList.remove('pre');io2.unobserve(el)})},{rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(el){io2.observe(el)});
+  }
+
+  // La boîte
+  var R='url(#rice)';
+  var D={
+    katsu:{name:'Chicken katsu curry',txt:'poulet pané, riz et sauce curry.',main:['#d9a441','Poulet pané'],side:['#7a4a1c','Curry'],pick:['#fcab79','Pickles'],ume:false,sideInk:'#fff'},
+    karaage:{name:'Karaage don',txt:'poulet frit à la japonaise, sur riz.',main:['#c27a2c','Karaage'],side:['#a8d8c4','Salade'],pick:['#fcab79','Pickles'],ume:true},
+    katsudon:{name:'Katsudon',txt:'porc pané, œuf et oignon mijotés, sur riz.',main:['#d9a441','Porc pané'],side:['#f4d35e','Œuf'],pick:['#e8d9b8','Oignon'],ume:false},
+    shake:{name:'Shake ebi fry don',txt:'saumon et crevettes panées, sur riz.',main:['#f08a5d','Saumon'],side:['#d9a441','Crevettes'],pick:['#a8d8c4','Salade'],ume:true},
+    gyu:{name:'Gyudon',txt:'fines tranches de bœuf et oignon, sur riz.',main:['#8a4b2a','Bœuf'],side:['#e8d9b8','Oignon'],pick:['#fcab79','Gingembre'],ume:false,mainInk:'#fff'},
+    veggie:{name:'Curry végétarien',txt:'riz et sauce curry aux légumes.',main:['#a8d8c4','Légumes'],side:['#7a4a1c','Curry'],pick:['#fcab79','Pickles'],ume:true,sideInk:'#fff'}
+  };
+  function $(id){return document.getElementById(id)}
+  function fill(k){
+    var x=D[k];if(!x)return;
+    $('c-main').setAttribute('fill',x.main[0]);$('t-main').textContent=x.main[1];$('t-main').setAttribute('fill',x.mainInk||'#181d26');
+    $('c-side').setAttribute('fill',x.side[0]);$('t-side').textContent=x.side[1];$('t-side').setAttribute('fill',x.sideInk||'#181d26');
+    $('c-pick').setAttribute('fill',x.pick[0]);$('t-pick').textContent=x.pick[1];
+    $('ume').style.display=x.ume?'':'none';
+    $('inbox').innerHTML='<b>'+x.name+'</b> : '+x.txt;
+  }
+  document.querySelectorAll('input[name=dish]').forEach(function(r){r.addEventListener('change',function(){fill(r.value)})});
+  fill('katsu');
+})();
+</script>
+</body>
+</html>
