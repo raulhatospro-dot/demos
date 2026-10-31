@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Riz Djondjon · Restaurant haïtien, 291 rue Saint-Denis, Paris 2e</title>
+<meta name="description" content="Riz Djondjon, restaurant haïtien et ouest-africain au 291 rue Saint-Denis, Paris 2e. Riz djondjon, tasso, griot, bananes pesées, pikliz.">
+<!-- Démo non officielle. DESIGN.md « PostHog » (awesome-design) : toile #eeefe9, encre #23251d, accents rouge et bleu, rayon 6px. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eeefe9;
+  --surface:#e3e4dc;
+  --ink:#23251d;
+  --muted:#4d4f46;
+  --red:#cd4239;
+  --red-press:#b0352d;
+  --blue:#1d4ed8;
+  --blue-step:#2a5ce6;
+  --on-dark:#f4f4ef;
+  --djon:#23251d;
+  --r:6px;
+  --m:clamp(20px,2.4vw,36px);
+  --display:"Rokkitt",Georgia,serif;
+  --text:"IBM Plex Sans",system-ui,sans-serif;
+  --small:clamp(.8125rem,.79rem + .1vw,.875rem);
+  --body:clamp(1.0625rem,1.02rem + .25vw,1.1875rem);
+  --lead:clamp(1.25rem,1.1rem + .6vw,1.5rem);
+  --head:clamp(2.5rem,1.6rem + 3vw,4rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--ink) var(--surface)}
+body{background:var(--bg);color:var(--ink);font:400 var(--body)/1.55 var(--text)}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1.5px}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:var(--r)}
+h1,h2,h3{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:.88}
+h2{font-size:var(--head);margin-bottom:28px}
+.num{font-variant-numeric:tabular-nums}
+
+/* bandeau démo */
+.demo{position:relative;z-index:40;background:var(--ink);color:var(--on-dark);font:500 13px/1.3 var(--text);padding:8px 16px;text-align:center}
+
+/* nav */
+.nav{position:absolute;top:34px;right:0;left:0;z-index:30;display:flex;justify-content:flex-end;align-items:center;gap:28px;padding:var(--m);font:500 15px/1 var(--text)}
+.nav a{text-decoration:none}
+.nav a:not(.btn):hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 20px;border-radius:var(--r);background:var(--red);color:#fff;font:600 16px/1 var(--text);text-decoration:none;transition:background .2s,transform .2s var(--ease)}
+.btn:hover{background:var(--red-press)}
+.btn:active{transform:scale(.97)}
+.btn.alt{background:var(--surface);color:var(--ink)}
+.btn.alt:hover{background:#d6d8ce}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* split stage */
+.split{display:grid;grid-template-columns:47% 1fr;position:relative}
+.stage{position:sticky;top:0;height:100svh;padding:20px 0 20px 20px}
+.stage-frame{position:relative;height:100%;border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s var(--ease),transform 8s linear;transform:scale(1.06)}
+.stage img.on{opacity:1;transform:scale(1)}
+.stage figcaption{position:absolute;left:16px;bottom:16px;z-index:2;background:var(--bg);color:var(--ink);font:500 var(--small)/1.3 var(--text);padding:8px 12px;border-radius:var(--r);transition:opacity .4s}
+.col{padding:0 var(--m) 0 clamp(40px,5vw,80px)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:120px 0 72px}
+.hero p{font-size:var(--lead);line-height:1.35;max-width:24ch;font-weight:500}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.status{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font:500 16px/1.3 var(--text);color:var(--muted)}
+.status i{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none}
+.status.open i{background:#2c8c66}
+.wordmark{font-size:clamp(72px,7.8vw,124px);line-height:.8;letter-spacing:-.015em;margin-bottom:44px;transform-origin:left bottom}
+.wordmark span{display:block}
+
+/* intro */
+.intro{padding:clamp(80px,9vw,140px) 0;max-width:46ch}
+.intro h2{margin-bottom:32px}
+.intro p+p{margin-top:1em}
+.intro p:first-of-type{font-weight:500;font-size:var(--lead);line-height:1.4}
+
+/* carte */
+.carte{padding:clamp(80px,9vw,140px) 0;max-width:600px}
+.carte h3{font:600 16px/1 var(--text);text-transform:none;letter-spacing:0;color:var(--muted);margin:44px 0 10px}
+.carte ul{list-style:none}
+.carte li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;min-height:44px;padding:8px 0}
+.carte li b{font-weight:600;display:flex;align-items:baseline;gap:10px}
+.carte li b::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--dot,var(--ink));flex:none;transform:translateY(-1px)}
+.carte li span{font-size:15px;color:var(--muted);text-align:right}
+.carte li small{display:block;font-size:15px;color:var(--muted);font-weight:400}
+.note{margin-top:36px;font-size:15px;color:var(--muted);max-width:48ch}
+
+/* konpa */
+.konpa{padding:clamp(80px,9vw,140px) 0;max-width:46ch}
+.konpa .big{font:500 var(--lead)/1.4 var(--text);margin:0 0 20px}
+.konpa .m-photo{display:none}
+
+/* horaires */
+.horaires{padding:clamp(80px,9vw,140px) 0 clamp(120px,12vw,200px);max-width:520px}
+.horaires table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.horaires td{padding:11px 0}
+.horaires td:last-child{text-align:right}
+.horaires tr.today td{font-weight:700}
+.horaires tr.today td:first-child::after{content:" · aujourd’hui";font-weight:500;color:var(--red-press)}
+.horaires p{margin-top:24px;font-size:15px;color:var(--muted)}
+
+/* composer */
+.assiette{background:var(--djon);color:var(--on-dark);display:grid;grid-template-columns:1fr 1fr;min-height:92svh;align-items:center;gap:clamp(32px,4vw,72px);padding:clamp(72px,8vw,120px) var(--m)}
+.assiette h2{color:var(--on-dark);margin-bottom:20px}
+.plate-wrap{aspect-ratio:1;width:min(100%,72svh,620px);justify-self:center}
+.plate-wrap svg{width:100%;height:100%;display:block}
+.picker{max-width:520px}
+.picker>p{color:#d4d5cc;margin-bottom:32px;max-width:40ch}
+.picker fieldset{border:0;margin:0 0 26px}
+.picker legend{font:600 15px/1 var(--text);color:#c4c6bb;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:var(--r);background:#33362b;color:var(--on-dark);font:500 16px/1 var(--text);transition:background .2s,color .2s,transform .2s var(--ease)}
+.chips label:hover span{background:#40443a}
+.chips input:checked+span{background:var(--on-dark);color:var(--ink)}
+.chips input:focus-visible+span{outline:3px solid #8fb0ff;outline-offset:2px}
+.chips label:active span{transform:scale(.96)}
+.recap{font:500 var(--lead)/1.35 var(--text);margin:8px 0 28px;min-height:3.9em}
+.cells{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cells a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:68px;border-radius:var(--r);font:600 17px/1 var(--text);text-decoration:none;transition:background .2s,transform .2s var(--ease)}
+.cells a:active{transform:scale(.98)}
+.cells .c1{background:var(--red);color:#fff}.cells .c1:hover{background:var(--red-press)}
+.cells .c2{background:#3b3f32;color:var(--on-dark)}.cells .c2:hover{background:#474b3d}
+.picker .fine{margin-top:16px;font-size:var(--small);color:#c4c6bb}
+
+/* contact */
+.contact{background:var(--blue);color:#fff;padding:48px 0 clamp(80px,8vw,120px);overflow:hidden}
+.strip{display:flex;gap:8px;width:max-content;animation:drift 70s linear infinite}
+.strip img{height:150px;width:auto;object-fit:cover;border-radius:var(--r)}
+@keyframes drift{to{transform:translateX(-50%)}}
+.contact .in{padding:0 var(--m)}
+.contact h2{margin:72px 0 40px;font-size:clamp(2.25rem,1.5rem + 3vw,3.75rem)}
+.bar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.bar a{display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:96px;padding:16px 22px;border-radius:var(--r);background:var(--blue-step);text-decoration:none;transition:background .2s,transform .2s var(--ease)}
+.bar a:hover{background:#3a6af0}
+.bar a:active{transform:scale(.98)}
+.bar a:last-child{background:#fff;color:var(--blue)}
+.bar a:last-child:hover{background:var(--bg)}
+.bar small{font:500 15px/1.2 var(--text)}
+.bar strong{font:600 clamp(17px,1.4vw,21px)/1.2 var(--text);overflow-wrap:anywhere}
+.addr{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 40px;font-size:16px}
+
+/* footer */
+.foot{position:relative;height:100svh;min-height:560px;color:var(--on-dark);overflow:hidden}
+.foot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.5)}
+.foot .top{position:relative;display:flex;justify-content:space-between;gap:24px;padding:32px var(--m);font-size:16px}
+.foot .top ul{list-style:none;display:grid;gap:6px}
+.foot .top a{text-decoration:none}.foot .top a:hover{text-decoration:underline}
+.foot .bottom{position:absolute;left:var(--m);right:var(--m);bottom:56px}
+.foot .name{font:800 clamp(64px,13.4vw,220px)/.8 var(--display);text-transform:uppercase;white-space:nowrap;transform-origin:left bottom}
+.foot .legal{margin-top:20px;font-size:var(--small);max-width:90ch;color:#e3e4dc}
+
+/* entrées */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .split{display:block}
+  .stage{position:relative;height:50svh;padding:12px 12px 0}
+  .stage img{transition:none}
+  .stage figcaption{display:none}
+  .col{padding:0 20px}
+  .nav{gap:16px;padding:20px;justify-content:space-between}
+  .nav .hide-m{display:none}
+  .nav .menu{background:var(--bg);padding:12px 14px;border-radius:var(--r)}
+  .hero{min-height:0;padding:0 0 64px;justify-content:flex-start}
+  .wordmark{font-size:18.5vw;margin:32px 0 24px}
+  .hero p{font-size:19px;max-width:none}
+  .hero .acts .btn{flex:1 1 auto}
+  .intro,.carte,.konpa,.horaires{padding-top:80px;padding-bottom:16px}
+  .horaires{padding-bottom:96px}
+  .carte li{flex-wrap:wrap;gap:2px 16px}
+  .konpa .m-photo{display:block;margin:28px 0 0;border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
+  .assiette{grid-template-columns:1fr;padding:72px 20px;gap:28px}
+  .plate-wrap{max-width:420px}
+  .cells{grid-template-columns:1fr}
+  .cells a{min-height:60px}
+  .strip img{height:110px}
+  .bar{grid-template-columns:1fr}
+  .bar a{min-height:76px}
+  .foot{height:88svh}
+  .foot .top{flex-direction:column;padding:28px 20px}
+  .foot .bottom{left:20px;right:20px;bottom:64px}
+  .foot .name{font-size:12.6vw}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js')</script>
+
+<div class="demo" role="note">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="menu" href="#carte">Carte</a>
+  <a class="hide-m" href="#assiette">Votre assiette</a>
+  <a class="hide-m" href="#horaires">Horaires</a>
+  <a class="hide-m" href="#contact">Accès</a>
+  <a class="btn" href="tel:+33142510222">Appeler</a>
+</nav>
+
+<div class="split">
+  <figure class="stage" aria-hidden="false">
+    <div class="stage-frame">
+      <img class="on" data-k="hero" src="https://images.unsplash.com/photo-1788182149209-c56d0c440a37?w=1400&q=72&auto=format&fit=crop" width="1400" height="1750" alt="Montagne de piments rouges et orange">
+      <img data-k="intro" src="https://images.unsplash.com/photo-1777216233653-d18e143ca64c?w=1400&q=72&auto=format&fit=crop" width="1400" height="1750" alt="Champignons noirs séchés dans un sachet en papier" loading="lazy">
+      <img data-k="carte" src="https://images.unsplash.com/photo-1781019450243-ba76b4a1b789?w=1400&q=72&auto=format&fit=crop" width="1400" height="1750" alt="Chou et carottes émincés dans un bol" loading="lazy">
+      <img data-k="konpa" src="https://images.unsplash.com/photo-1742095228943-1b0ceb0fd82e?w=1400&q=72&auto=format&fit=crop" width="1400" height="1750" alt="Danseuses en robes bleues et rouges sous les palmiers" loading="lazy">
+      <img data-k="horaires" src="https://images.unsplash.com/photo-1617631716600-6a454b430367?w=1400&q=72&auto=format&fit=crop" width="1400" height="1750" alt="Régime de bananes plantains vertes sur le bananier" loading="lazy">
+      <figcaption id="cap">Piments forts</figcaption>
+    </div>
+  </figure>
+
+  <main class="col" id="top">
+    <header class="hero" data-k="hero">
+      <h1 class="wordmark" id="wm"><span>Riz</span> <span>Djondjon</span></h1>
+      <p class="rv">Cuisine haïtienne et ouest-africaine au 291 rue Saint-Denis, Paris 2<sup>e</sup>. Sur place ou à emporter.</p>
+      <div class="acts rv">
+        <a class="btn" href="tel:+33142510222"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="num">01 42 51 02 22</span></a>
+        <a class="btn alt" href="https://www.google.com/maps/dir/?api=1&destination=Riz+Djondjon+291+rue+Saint-Denis+75002+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+      </div>
+      <p class="status rv" id="status" aria-live="polite"><i></i><span>Ouvert tous les jours</span></p>
+    </header>
+
+    <section class="intro" data-k="intro" aria-labelledby="t-intro">
+      <h2 id="t-intro" class="rv">Le riz noir</h2>
+      <p class="rv">Le djon djon est un petit champignon noir qui pousse dans le nord d’Haïti. Séché, puis trempé, il donne son eau au riz, qui cuit gris-noir et prend un goût de sous-bois.</p>
+      <p class="rv">C’est le plat qui a donné son nom au restaurant. Il arrive avec du tasso de bœuf, du griot, du poisson ou du poulet en sauce, et une cuillère de pikliz pour réveiller le tout.</p>
+      <p class="rv">À côté, la cuisine regarde vers l’Afrique de l’Ouest : riz tchiep, bœuf au gombo, bananes plantains frites.</p>
+    </section>
+
+    <section class="carte" id="carte" data-k="carte" aria-labelledby="t-carte">
+      <h2 id="t-carte" class="rv">La carte</h2>
+      <div class="rv">
+        <h3>Les riz</h3>
+        <ul>
+          <li style="--dot:#3a362f"><b>Riz djondjon</b><span>Haïti</span></li>
+          <li style="--dot:#c8572b"><b>Riz tchiep</b><span>Afrique de l’Ouest</span></li>
+        </ul>
+      </div>
+      <div class="rv">
+        <h3>Viandes et poissons</h3>
+        <ul>
+          <li style="--dot:#6b3a22"><b>Tasso de bœuf</b><span>Haïti</span></li>
+          <li style="--dot:#b8742e"><b>Griot</b><span>Haïti</span></li>
+          <li style="--dot:#a0442c"><b>Poulet en sauce</b><span>Haïti</span></li>
+          <li style="--dot:#55702e"><b>Bœuf au gombo</b><span>Afrique de l’Ouest</span></li>
+          <li style="--dot:#8b8f86"><b>Poisson</b><span>Selon l’arrivage</span></li>
+        </ul>
+      </div>
+      <div class="rv">
+        <h3>À côté</h3>
+        <ul>
+          <li style="--dot:#e2b33c"><b>Bananes pesées</b><span>Plantain frit</span></li>
+          <li style="--dot:#e0652a"><b>Pikliz</b><span>Chou, carotte, piment</span></li>
+          <li style="--dot:#6f9a3a"><b>Salade</b><span>Relevée</span></li>
+        </ul>
+      </div>
+      <p class="note rv">Carte donnée à titre indicatif, elle change selon les jours. Les prix et les plats du moment sont affichés au restaurant.</p>
+    </section>
+
+    <section class="konpa" data-k="konpa" aria-labelledby="t-konpa">
+      <h2 id="t-konpa" class="rv">Soirées konpa</h2>
+      <p class="big rv">Le dîner se termine parfois en piste de danse.</p>
+      <p class="rv">Le restaurant accueille des soirées konpa, la musique de bal haïtienne. Les dates sont annoncées sur Instagram&nbsp;: <a href="https://www.instagram.com/rizdjondjon75/" target="_blank" rel="noopener">@rizdjondjon75</a>.</p>
+      <img class="m-photo" src="https://images.unsplash.com/photo-1742095228943-1b0ceb0fd82e?w=900&q=70&auto=format&fit=crop" width="900" height="675" alt="Danseuses en robes bleues et rouges sous les palmiers" loading="lazy">
+    </section>
+
+    <section class="horaires" id="horaires" data-k="horaires" aria-labelledby="t-h">
+      <h2 id="t-h" class="rv">Horaires</h2>
+      <table class="rv" id="hours">
+        <caption class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Horaires d’ouverture</caption>
+        <tbody>
+          <tr data-d="1"><td>Lundi</td><td>11 h 45 – 23 h</td></tr>
+          <tr data-d="2"><td>Mardi</td><td>11 h 45 – 23 h</td></tr>
+          <tr data-d="3"><td>Mercredi</td><td>11 h 45 – 23 h</td></tr>
+          <tr data-d="4"><td>Jeudi</td><td>11 h 45 – 23 h</td></tr>
+          <tr data-d="5"><td>Vendredi</td><td>12 h – minuit</td></tr>
+          <tr data-d="6"><td>Samedi</td><td>12 h – minuit</td></tr>
+          <tr data-d="0"><td>Dimanche</td><td>11 h 45 – 23 h</td></tr>
+        </tbody>
+      </table>
+      <p class="rv">Horaires à confirmer par téléphone les jours fériés.</p>
+    </section>
+  </main>
+</div>
+
+<section class="assiette" id="assiette" aria-labelledby="t-a">
+  <div class="plate-wrap rv">
+    <svg id="plate" viewBox="0 0 400 400" role="img" aria-labelledby="plate-t"><title id="plate-t">Dessin de votre assiette</title>
+      <circle cx="200" cy="200" r="192" fill="#d9dacf"/>
+      <circle cx="200" cy="200" r="168" fill="#f4f4ef"/>
+      <g id="g-rice"></g><g id="g-main"></g><g id="g-side"></g>
+    </svg>
+  </div>
+  <div class="picker">
+    <h2 id="t-a" class="rv">Votre assiette</h2>
+    <p class="rv">Choisissez un riz, une viande ou un poisson, et ce qui va à côté. Ensuite, appelez pour commander à emporter ou réserver une table.</p>
+    <form id="form" class="rv">
+      <fieldset><legend>Le riz</legend><div class="chips">
+        <label><input type="radio" name="riz" value="djondjon" checked><span>Riz djondjon</span></label>
+        <label><input type="radio" name="riz" value="tchiep"><span>Riz tchiep</span></label>
+      </div></fieldset>
+      <fieldset><legend>Avec</legend><div class="chips">
+        <label><input type="radio" name="main" value="tasso" checked><span>Tasso de bœuf</span></label>
+        <label><input type="radio" name="main" value="griot"><span>Griot</span></label>
+        <label><input type="radio" name="main" value="poulet"><span>Poulet en sauce</span></label>
+        <label><input type="radio" name="main" value="gombo"><span>Bœuf au gombo</span></label>
+        <label><input type="radio" name="main" value="poisson"><span>Poisson</span></label>
+      </div></fieldset>
+      <fieldset><legend>À côté</legend><div class="chips">
+        <label><input type="checkbox" name="side" value="bananes" checked><span>Bananes pesées</span></label>
+        <label><input type="checkbox" name="side" value="pikliz" checked><span>Pikliz</span></label>
+        <label><input type="checkbox" name="side" value="salade"><span>Salade</span></label>
+      </div></fieldset>
+    </form>
+    <p class="recap" id="recap" aria-live="polite">Riz djondjon, tasso de bœuf, bananes pesées et pikliz.</p>
+    <div class="cells">
+      <a class="c1" href="tel:+33142510222">Appeler pour commander</a>
+      <a class="c2" id="mail" href="mailto:rizdjondjon@gmail.com">Envoyer par e-mail</a>
+    </div>
+    <p class="fine">Disponibilité selon les jours. Le restaurant confirme au téléphone.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="t-c">
+  <div class="strip" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1603767868273-d59d712c8188?w=400&q=65&auto=format&fit=crop" width="200" height="150" alt="" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1762884601729-0eeeafbdfb8a?w=300&q=65&auto=format&fit=crop" width="150" height="150" alt="" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1757577244288-5ef1ec654d6c?w=400&q=65&auto=format&fit=crop" width="112" height="150" alt="" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1770572271597-595e0041846b?w=400&q=65&auto=format&fit=crop" width="225" height="150" alt="" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1617631716600-6a454b430367?w=400&q=65&auto=format&fit=crop" width="112" height="150" alt="" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1781019450243-ba76b4a1b789?w=300&q=65&auto=format&fit=crop" width="150" height="150" alt="" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1527091736853-64ca6a9b64d9?w=400&q=65&auto=format&fit=crop" width="225" height="150" alt="" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1788182149209-c56d0c440a37?w=400&q=65&auto=format&fit=crop" width="112" height="150" alt="" loading="lazy">
+  </div>
+  <div class="in">
+    <h2 class="rv">Rue Saint-Denis</h2>
+    <div class="bar rv">
+      <a href="tel:+33142510222"><small>Téléphone</small><strong class="num">01 42 51 02 22</strong></a>
+      <a href="mailto:rizdjondjon@gmail.com"><small>E-mail</small><strong>rizdjondjon@gmail.com</strong></a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Riz+Djondjon+291+rue+Saint-Denis+75002+Paris" target="_blank" rel="noopener"><small>291 rue Saint-Denis, 75002 Paris</small><strong>Itinéraire Google Maps</strong></a>
+    </div>
+    <div class="addr rv">
+      <span>Sur place et à emporter</span>
+      <a href="https://www.instagram.com/rizdjondjon75/" target="_blank" rel="noopener">Instagram @rizdjondjon75</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <img src="https://images.unsplash.com/photo-1527091736853-64ca6a9b64d9?w=2000&q=70&auto=format&fit=crop" width="2000" height="1333" alt="Saxophoniste dans un défilé, drapeaux haïtiens" loading="lazy">
+  <div class="top">
+    <ul><li><a href="#carte">La carte</a></li><li><a href="#assiette">Votre assiette</a></li><li><a href="#horaires">Horaires</a></li></ul>
+    <ul><li>291 rue Saint-Denis, 75002 Paris</li><li><a href="tel:+33142510222" class="num">01 42 51 02 22</a></li><li><a href="mailto:rizdjondjon@gmail.com">rizdjondjon@gmail.com</a></li></ul>
+  </div>
+  <div class="bottom">
+    <p class="name" id="fn" aria-hidden="true">Riz Djondjon</p>
+    <p class="legal">Démo réalisée par Raul Hatos, site non officiel. Photographies d’illustration Unsplash (Unsplash License), qui ne montrent ni le restaurant ni ses plats.</p>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // entrées échelonnées
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>{const sib=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=(sib.indexOf(el)*80)+'ms';io.observe(el)});
+
+  // image fixe qui suit la section
+  const caps={hero:'Piments forts',intro:'Champignons noirs séchés',carte:'Chou et carotte, la base du pikliz',konpa:'Danse en Haïti',horaires:'Bananes plantains'};
+  const imgs=[...document.querySelectorAll('.stage img')],cap=document.getElementById('cap');
+  const so=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const k=e.target.dataset.k;imgs.forEach(i=>i.classList.toggle('on',i.dataset.k===k));cap.textContent=caps[k]}),{rootMargin:'-45% 0px -45% 0px'});
+  document.querySelectorAll('[data-k]:not(img)').forEach(s=>so.observe(s));
+
+  // nom qui s'alourdit au défilement
+  const wm=document.getElementById('wm'),fn=document.getElementById('fn');
+  if(!reduce){let t=0;addEventListener('scroll',()=>{if(t)return;t=requestAnimationFrame(()=>{t=0;const y=scrollY,h=innerHeight;wm.style.transform='scale('+(1-Math.min(y/h,1)*.07)+')';const r=fn.getBoundingClientRect(),p=Math.max(0,Math.min(1,(h-r.top)/h));fn.style.transform='scale('+(.93+p*.07)+')'})},{passive:true})}
+
+  // ouvert maintenant ? (heure de Paris)
+  const H={0:[705,1380],1:[705,1380],2:[705,1380],3:[705,1380],4:[705,1380],5:[720,1440],6:[720,1440]};
+  const fmt=m=>m>=1440?'minuit':Math.floor(m/60)+' h'+(m%60?' '+String(m%60).padStart(2,'0'):'');
+  function status(){
+    const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+    const wd={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6}[p.find(x=>x.type==='weekday').value];
+    const m=+p.find(x=>x.type==='hour').value*60+ +p.find(x=>x.type==='minute').value;
+    document.querySelectorAll('#hours tr').forEach(tr=>tr.classList.toggle('today',+tr.dataset.d===wd));
+    const [o,c]=H[wd],el=document.getElementById('status');
+    const open=m>=o&&m<c;el.classList.toggle('open',open);
+    el.querySelector('span').textContent=open?'Ouvert en ce moment, jusqu’à '+fmt(c):(m<o?'Fermé pour l’instant, ouvre à '+fmt(o):'Fermé pour ce soir, réouvre demain à '+fmt(H[(wd+1)%7][0]));
+  }
+  if(H)try{status();setInterval(status,60000)}catch(e){}
+
+  // composer l'assiette
+  const NS='http://www.w3.org/2000/svg',$=id=>document.getElementById(id);
+  let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  const mk=(tag,a,g)=>{const e=document.createElementNS(NS,tag);for(const k in a)e.setAttribute(k,a[k]);g.appendChild(e);return e};
+  function rice(kind){const g=$('g-rice');g.innerHTML='';seed=11;
+    const base=kind==='djondjon'?['#6a6455','#3a362f','#2c2924','#4a453b']:['#e08a4a','#c8572b','#b8492a','#d66a36'];
+    mk('circle',{cx:150,cy:178,r:96,fill:base[0]},g);
+    for(let i=0;i<560;i++){const a=rnd()*Math.PI*2,r=Math.sqrt(rnd())*100;const x=150+Math.cos(a)*r,y=178+Math.sin(a)*r;
+      mk('ellipse',{cx:x.toFixed(1),cy:y.toFixed(1),rx:4.2,ry:1.7,transform:'rotate('+(rnd()*180|0)+' '+x.toFixed(1)+' '+y.toFixed(1)+')',fill:base[1+(rnd()*3|0)]},g)}
+    if(kind==='djondjon')for(let i=0;i<24;i++){const a=rnd()*Math.PI*2,r=rnd()*84;const x=150+Math.cos(a)*r,y=178+Math.sin(a)*r;mk('path',{d:`M${x-5} ${y} q5 -7 10 0 z`,fill:'#16140f'},g)}
+  }
+  function main(kind){const g=$('g-main');g.innerHTML='';seed=29;
+    const cx=268,cy=246;
+    if(kind==='poisson'){mk('path',{d:`M${cx-78} ${cy+6} q70 -66 140 -6 l30 -26 l-6 36 l6 36 l-30 -26 q-70 56 -140 -14z`,fill:'#a87b4a'},g);mk('circle',{cx:cx-52,cy:cy-6,r:5,fill:'#23251d'},g);for(let i=0;i<5;i++)mk('path',{d:`M${cx-30+i*20} ${cy-26} q6 26 0 52`,stroke:'#7d5530','stroke-width':3,fill:'none'},g);return}
+    if(kind==='poulet'||kind==='gombo')mk('ellipse',{cx,cy,rx:84,ry:76,fill:kind==='poulet'?'#a0442c':'#6b4a2a',opacity:.9},g);
+    const col={tasso:['#6b3a22','#82482a','#4f2a18'],griot:['#b8742e','#c98a3c','#9a5a22'],poulet:['#c7834a','#b36d38','#d39a5c'],gombo:['#5a3220','#6e3e26','#4a281a']}[kind];
+    const n=kind==='poulet'?4:9;
+    for(let i=0;i<n;i++){const a=rnd()*Math.PI*2,r=rnd()*52;const x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r*.9;
+      if(kind==='poulet'){mk('ellipse',{cx:x,cy:y,rx:24,ry:15,transform:`rotate(${rnd()*180|0} ${x} ${y})`,fill:col[i%3]},g)}
+      else mk('rect',{x:x-14,y:y-11,width:kind==='griot'?24:28,height:kind==='griot'?22:18,rx:kind==='griot'?6:3,transform:`rotate(${rnd()*90|0} ${x} ${y})`,fill:col[i%3]},g)}
+    if(kind==='gombo')for(let i=0;i<9;i++){const a=rnd()*Math.PI*2,r=rnd()*64;const x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;mk('circle',{cx:x,cy:y,r:8,fill:'#6f9a3a'},g);mk('circle',{cx:x,cy:y,r:3.4,fill:'#c9dca0'},g)}
+  }
+  function sides(list){const g=$('g-side');g.innerHTML='';seed=53;
+    if(list.includes('bananes'))[[118,300],[146,318],[176,326],[100,276],[206,320]].forEach(([x,y],i)=>{mk('ellipse',{cx:x,cy:y,rx:19,ry:15,transform:`rotate(${i*25} ${x} ${y})`,fill:'#e2b33c'},g);mk('ellipse',{cx:x,cy:y,rx:11,ry:8,transform:`rotate(${i*25} ${x} ${y})`,fill:'#c98f22',opacity:.55},g)});
+    if(list.includes('pikliz')){mk('circle',{cx:300,cy:96,r:38,fill:'#ffffff',stroke:'#d9dacf','stroke-width':4},g);const c=['#e0652a','#f0e9c8','#e0652a','#c2d18a','#d23a2a'];for(let i=0;i<34;i++){const a=rnd()*Math.PI*2,r=rnd()*26,x=300+Math.cos(a)*r,y=96+Math.sin(a)*r,t=rnd()*Math.PI;mk('line',{x1:x-Math.cos(t)*8,y1:y-Math.sin(t)*8,x2:x+Math.cos(t)*8,y2:y+Math.sin(t)*8,stroke:c[i%5],'stroke-width':3,'stroke-linecap':'round'},g)}}
+    if(list.includes('salade'))for(let i=0;i<7;i++){const x=196+rnd()*60,y=318+rnd()*24;mk('path',{d:`M${x} ${y} q12 -16 24 0 q-12 12 -24 0z`,fill:i%2?'#6f9a3a':'#8db552'},g)}
+  }
+  const names={djondjon:'Riz djondjon',tchiep:'Riz tchiep',tasso:'tasso de bœuf',griot:'griot',poulet:'poulet en sauce',gombo:'bœuf au gombo',poisson:'poisson',bananes:'bananes pesées',pikliz:'pikliz',salade:'salade'};
+  const form=$('form');
+  function update(){const f=new FormData(form),r=f.get('riz'),m=f.get('main'),s=f.getAll('side');rice(r);main(m);sides(s);
+    const parts=[names[m],...s.map(x=>names[x])];const txt=names[r]+', '+(parts.length>1?parts.slice(0,-1).join(', ')+' et '+parts.at(-1):parts[0])+'.';
+    $('recap').textContent=txt;
+    $('mail').href='mailto:rizdjondjon@gmail.com?subject='+encodeURIComponent('Commande à emporter')+'&body='+encodeURIComponent('Bonjour,\n\nJe souhaiterais commander : '+txt+'\n\nHeure de passage : \nNom : \nTéléphone : \n\nMerci !');
+  }
+  form.addEventListener('change',update);update();
+})();
+</script>
+</body>
+</html>
