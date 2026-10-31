@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Özlem · Kebab turc, rue des Petites-Écuries</title>
+<meta name="description" content="Özlem, kebab turc au 57 rue des Petites-Écuries, Paris 10e. Dürüm au pain pétri chaque matin, lahmacun, künefe. Du lundi au samedi, 11h30–16h30. Précommande par téléphone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#fbfaf6;
+  --tile:#efece4;
+  --ink:#121110;
+  --soft:#4a4642;
+  --sumac:#8e1b26;
+  --sumac-press:#6f121c;
+  --parsley:#2f5d2a;
+  --pad:clamp(16px,3vw,40px);
+  --f:"Archivo",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--ground);color:var(--ink);font:400 17px/1.55 var(--f);font-variation-settings:"wdth" 100}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-underline-offset:.2em}
+::selection{background:var(--sumac);color:#fff}
+:focus-visible{outline:3px solid var(--sumac);outline-offset:3px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{font-weight:900;letter-spacing:-.03em;line-height:.92;font-stretch:75%;text-transform:uppercase;text-wrap:balance}
+h2{font-size:clamp(2.6rem,8vw,6rem)}
+h3{font-size:clamp(1.4rem,2.6vw,2rem);line-height:1}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#e9e5dc;font-size:13px;text-align:center;padding:7px 16px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--ground)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.mark{font:900 26px/1 var(--f);font-stretch:75%;text-transform:uppercase;letter-spacing:-.02em;text-decoration:none}
+.nav ul{display:none;list-style:none;gap:32px;font-weight:600}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--sumac)}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;font:700 16px/1 var(--f);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,transform .2s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-s{background:var(--sumac);color:#fff}
+.btn-s:hover{background:var(--sumac-press)}
+.btn-k{background:var(--ink);color:var(--ground)}
+.btn-k:hover{background:#000}
+.btn-t{background:var(--tile);color:var(--ink)}
+.btn-t:hover{background:#e3dfd4}
+.nav .btn{min-height:44px;padding:0 16px;font-size:15px}
+
+/* hero */
+.hero{padding:8px 0 0}
+.hero-grid{display:grid;gap:20px}
+.hero-photo{aspect-ratio:4/5;overflow:hidden;background:var(--tile)}
+.hero-photo img{object-position:50% 40%;animation:drift 18s var(--ease) both}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero-text p.lead{font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.35;max-width:30ch;font-weight:500}
+.hero-text p.lead b{font-weight:800}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.ctas .btn{flex:1 1 auto}
+.monument,.foot-name{display:block;width:100%;height:auto;aspect-ratio:10/3;overflow:visible}
+.monument text,.foot-name text{font:900 300px var(--f);font-stretch:75%;text-transform:uppercase;fill:currentColor}
+.monument{margin:28px 0 14px}
+.monument .l{fill:var(--sumac)}
+.hero>.wrap{display:flex;flex-direction:column}
+@media (max-width:759px){.monument,.sub-mon{order:-1}.monument{margin:4px 0 10px}.sub-mon{margin-bottom:24px}}
+.sub-mon{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:14px;padding:12px 0 0;border-top:6px solid var(--ink)}
+
+/* broche du jour */
+.broche{background:var(--ink);color:var(--ground);margin-top:72px;padding:48px 0 56px}
+.broche-grid{display:grid;gap:28px}
+.broche h2{color:var(--ground);font-size:clamp(2.4rem,6vw,4.6rem)}
+.state{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;line-height:1.15;font-stretch:85%}
+.state .dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:#7fbf6a;margin-right:.35em;vertical-align:.08em}
+.state.closed .dot{background:#d0564f}
+.state-note{color:#d9d4c8;margin-top:10px;max-width:44ch}
+.day{margin-top:28px}
+.track{position:relative;height:56px;background:#2a2826}
+.seg{position:absolute;top:0;bottom:0;background:var(--sumac)}
+.now{position:absolute;top:-10px;bottom:-10px;width:4px;margin-left:-2px;background:var(--ground)}
+.now::after{content:"";position:absolute;left:-5px;top:-6px;width:14px;height:14px;border-radius:50%;background:var(--ground)}
+.ticks{display:flex;justify-content:space-between;font-size:13px;color:#d9d4c8;margin-top:8px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:24px;font-size:13px;text-align:center}
+.week div{background:#2a2826;padding:10px 2px;line-height:1.3}
+.week div b{display:block;font-size:15px}
+.week.off{color:#b3ada2}
+.week .today{background:var(--ground);color:var(--ink)}
+
+/* carte */
+.carte{padding:120px 0 0}
+.carte-head{display:grid;gap:16px;margin-bottom:40px}
+.carte-head p{max-width:52ch;font-size:18px}
+.menu{display:grid;gap:0}
+.dish{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:22px 0;border-top:3px solid var(--ink)}
+.dish h3{grid-column:1}
+.dish .price{grid-column:2;grid-row:1;font:900 clamp(1.4rem,2.6vw,2rem)/1 var(--f);font-stretch:75%}
+.dish p{grid-column:1/-1;color:var(--soft);max-width:56ch}
+.menu-photo{aspect-ratio:3/2;overflow:hidden;margin:8px 0 24px}
+.fine{font-size:14px;color:var(--soft);margin-top:20px;max-width:60ch}
+
+/* le geste */
+.geste{padding:140px 0 0}
+.geste-grid{display:grid;gap:32px}
+.geste-photo{aspect-ratio:5/4;overflow:hidden}
+.steps{list-style:none;counter-reset:none;display:grid;gap:26px;margin-top:28px}
+.steps li{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:baseline}
+.steps .when{font:900 20px/1 var(--f);font-stretch:75%;text-transform:uppercase;color:var(--sumac)}
+.steps p{max-width:46ch}
+.garnish{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.garnish span{background:var(--tile);padding:8px 14px;font-weight:600;font-size:15px}
+
+/* histoire */
+.histoire{background:var(--sumac);color:#fff;margin-top:140px;padding:72px 0 80px}
+.histoire h2{color:#fff}
+.hist-grid{display:grid;gap:36px}
+.word{font:900 clamp(9rem,40vw,26rem)/.8 var(--f);font-stretch:62%;text-transform:uppercase;letter-spacing:-.035em}
+.histoire p{font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.5;max-width:46ch}
+.histoire p+p{margin-top:16px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 40px;margin-top:32px}
+.facts b{display:block;font:900 clamp(2.2rem,5vw,3.6rem)/1 var(--f);font-stretch:75%}
+.facts span{font-size:14px;color:#f3d9dc}
+
+/* venir */
+.venir{padding:120px 0 0}
+.venir-grid{display:grid;gap:32px}
+.addr{font:900 clamp(2rem,5.4vw,4.2rem)/.95 var(--f);font-stretch:75%;text-transform:uppercase;letter-spacing:-.02em;font-style:normal}
+.info{display:grid;gap:22px;margin-top:28px}
+.info dt{font-weight:800}
+.info dd{color:var(--soft)}
+.info a{color:var(--ink);font-weight:600}
+.map{min-height:360px;background:var(--tile)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:grayscale(.6) contrast(1.05)}
+
+/* footer */
+footer{margin-top:120px;background:var(--ink);color:var(--ground);padding:40px 0 28px;overflow:hidden}
+
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:#d9d4c8;margin-top:24px}
+
+/* reveal */
+.rv{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv:not(.in){opacity:0;transform:translateY(24px)}
+@media (prefers-reduced-motion:reduce){.rv{transition:none}.js .rv:not(.in){opacity:1;transform:none}.hero-photo img{animation:none}}
+
+@media (min-width:760px){
+  .nav ul{display:flex}
+  .hero-grid{grid-template-columns:1.1fr .9fr;align-items:end;gap:40px}
+  .hero-photo{aspect-ratio:4/3}
+  .ctas .btn{flex:0 0 auto}
+  .broche-grid{grid-template-columns:.9fr 1.1fr;align-items:start;gap:56px}
+  .carte-head{grid-template-columns:1fr 1fr;align-items:end;gap:40px}
+  .menu{grid-template-columns:1fr 1fr;column-gap:56px}
+  .menu-photo{grid-column:1/-1;aspect-ratio:21/8}
+  .geste-grid{grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .geste-photo{aspect-ratio:4/5;position:sticky;top:88px}
+  .hist-grid{grid-template-columns:1fr 1fr;gap:56px;align-items:end}
+  .venir-grid{grid-template-columns:1fr 1.1fr;gap:56px}
+  .map,.map iframe{min-height:520px}
+}
+@media (min-width:1100px){
+  .hero-photo{aspect-ratio:5/4}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Özlem, accueil">Özlem</a>
+    <ul>
+      <li><a href="#broche">Horaires</a></li>
+      <li><a href="#carte">Carte</a></li>
+      <li><a href="#histoire">Depuis 1987</a></li>
+      <li><a href="#venir">Venir</a></li>
+    </ul>
+    <a class="btn btn-s" href="tel:+33147703787">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      Appeler
+    </a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text rv">
+        <h1 class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Özlem, kebab turc rue des Petites-Écuries, Paris 10e</h1>
+        <p class="lead"><b>Une broche par jour,</b> taillée au couteau et roulée dans un pain pétri le matin même. Le kebab du 57 rue des Petites-Écuries, depuis 1987.</p>
+        <div class="ctas">
+          <a class="btn btn-s" href="tel:+33147703787">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Précommander au 01 47 70 37 87
+          </a>
+          <a class="btn btn-t" href="https://www.google.com/maps/dir/?api=1&destination=57+rue+des+Petites+%C3%89curies+75010+Paris" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Itinéraire
+          </a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1596995804697-27d11d43652e?w=1600&q=80&auto=format&fit=crop" alt="Un cuisinier taille une broche de kebab au long couteau" fetchpriority="high">
+      </figure>
+    </div>
+    <svg class="monument" viewBox="0 0 1000 300" aria-hidden="true" preserveAspectRatio="none"><text x="0" y="283" textLength="1000" lengthAdjust="spacingAndGlyphs">Öz<tspan class="l">l</tspan>em</text></svg>
+    <div class="sub-mon"><span>Kebab · snack turc</span><span>Paris 10e</span><span>Depuis 1987</span></div>
+  </div>
+</section>
+
+<section class="broche" id="broche" aria-labelledby="broche-t">
+  <div class="wrap broche-grid">
+    <div class="rv">
+      <h2 id="broche-t">La broche du jour</h2>
+      <p class="state-note" style="margin-top:18px">Chez Özlem, on monte une seule broche par jour. Quand elle est finie, c'est fini. Le midi, la file déborde sur le trottoir : appelez avant, votre commande vous attend.</p>
+      <div class="ctas"><a class="btn btn-s" href="tel:+33147703787">Précommander par téléphone</a></div>
+    </div>
+    <div class="rv" aria-live="polite">
+      <p class="state" id="state"><span class="dot" aria-hidden="true"></span><span id="state-txt">Du lundi au samedi, 11h30 – 16h30</span></p>
+      <p class="state-note" id="state-note">Dimanche fermé.</p>
+      <div class="day" aria-hidden="true">
+        <div class="track" id="track"><div class="now" id="now" hidden></div></div>
+        <div class="ticks num"><span>11h</span><span>14h</span><span>17h</span><span>20h</span><span>23h</span></div>
+      </div>
+      <div class="week num" id="week">
+        <div><b>Lun</b>11h30<br>16h30</div>
+        <div><b>Mar</b>11h30<br>16h30</div>
+        <div><b>Mer</b>11h30<br>16h30</div>
+        <div><b>Jeu</b>11h30<br>16h30</div>
+        <div><b>Ven</b>11h30<br>16h30<br>18h30<br>23h</div>
+        <div><b>Sam</b>11h30<br>16h30</div>
+        <div class="off"><b>Dim</b>Fermé</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="carte" id="carte" aria-labelledby="carte-t">
+  <div class="wrap">
+    <div class="carte-head rv">
+      <h2 id="carte-t">La carte</h2>
+      <p>Poitrine de veau et dinde marinées la veille, montées en broche, grillées et taillées à la minute.</p>
+    </div>
+    <div class="menu">
+      <article class="dish rv">
+        <h3>Kebab dürüm</h3><span class="price num">10 €</span>
+        <p>La viande de la broche roulée dans le pain maison, avec oignon rouge, sumac, persil plat, piment et une sauce tomate légère.</p>
+      </article>
+      <article class="dish rv">
+        <h3>Assiette kebab</h3><span class="price num">13,50 €</span>
+        <p>La même viande servie à l'assiette.</p>
+      </article>
+      <figure class="menu-photo rv">
+        <img src="https://images.unsplash.com/photo-1741166985167-14b7178f15b7?w=1800&q=80&auto=format&fit=crop" alt="Lahmacun turc sorti du four, garni de viande hachée, poivron et tomate" loading="lazy">
+      </figure>
+      <article class="dish rv">
+        <h3>Lahmacun</h3><span class="price num">6 €</span>
+        <p>Pâte fine garnie de bœuf et de veau hachés aux oignons, roulée comme on la mange à Istanbul.</p>
+      </article>
+      <article class="dish rv">
+        <h3>Brochettes</h3>
+        <p>Poulet, dinde ou agneau, servies avec boulgour à la tomate et oignons au sumac. Celle d'agneau a ses fidèles.</p>
+      </article>
+      <article class="dish rv">
+        <h3>Köfte</h3>
+        <p>L'assiette de boulettes de veau et de dinde.</p>
+      </article>
+      <article class="dish rv">
+        <h3>Künefe</h3>
+        <p>Le dessert : spécialité d'Antakya préparée à la commande : cheveux d'ange, fromage fondant, sirop de sucre.</p>
+      </article>
+      <article class="dish rv">
+        <h3>Formules</h3><span class="price num">11,50 – 15 €</span>
+        <p>Menu enfant à 10 €.</p>
+      </article>
+      <article class="dish rv">
+        <h3>Ayran maison</h3><span class="price num">2,50 €</span>
+        <p>Boisson au yaourt, salée et fraîche. Canettes aussi.</p>
+      </article>
+    </div>
+    <p class="fine">Sur place ou à emporter, pas de livraison. Prix indicatifs, à vérifier au comptoir.</p>
+  </div>
+</section>
+
+<section class="geste" aria-labelledby="geste-t">
+  <div class="wrap geste-grid">
+    <figure class="geste-photo rv">
+      <img src="https://images.unsplash.com/photo-1756362847925-71c792d6729c?w=1400&q=80&auto=format&fit=crop" alt="Broche de viande grillée sur la rôtissoire verticale" loading="lazy">
+    </figure>
+    <div>
+      <h2 id="geste-t" class="rv">Le dürüm, du début</h2>
+      <ol class="steps">
+        <li class="rv"><span class="when">La veille</span><p>La poitrine de veau et la dinde marinent de longues heures.</p></li>
+        <li class="rv"><span class="when">À l'aube</span><p>L'équipe arrive tôt. La viande monte en broche, la pâte du dürüm se pétrit sur place.</p></li>
+        <li class="rv"><span class="when">11h30</span><p>La broche grille devant vous et se taille au long couteau, commande après commande.</p></li>
+        <li class="rv"><span class="when">Au comptoir</span><p>Le pain s'étale, la viande s'y couche, puis la garniture et un dernier tour de main.</p></li>
+      </ol>
+      <div class="garnish rv" aria-label="Garniture du dürüm">
+        <span>Oignon rouge</span><span>Sumac</span><span>Persil plat</span><span>Piment</span><span>Sauce tomate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="histoire" id="histoire" aria-labelledby="hist-t">
+  <div class="wrap hist-grid">
+    <div class="rv">
+      <h2 id="hist-t" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Depuis 1987</h2>
+      <div class="word num" aria-hidden="true">1987</div>
+    </div>
+    <div class="rv">
+      <p>En turc, <b>özlem</b> veut dire le manque, la nostalgie d'un lieu qu'on a quitté. Le nom colle à la maison : le décor n'a pas bougé depuis 1987 et les habitués reviennent pour le même dürüm.</p>
+      <p>Aujourd'hui, Edip Bolatoglu, formé à l'école Ferrandi, tient la cuisine avec son équipe. Même rigueur, même broche unique.</p>
+      <div class="facts num">
+        <div><b>4,6</b><span>sur Google</span></div>
+        <div><b>971</b><span>avis</span></div>
+        <div><b>1</b><span>broche par jour</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="venir" id="venir" aria-labelledby="venir-t">
+  <div class="wrap venir-grid">
+    <div class="rv">
+      <h2 id="venir-t">Venir</h2>
+      <address class="addr" style="margin-top:24px">57 rue des<br>Petites-Écuries<br>75010 Paris</address>
+      <dl class="info">
+        <div><dt>Métro</dt><dd>Poissonnière, Bonne Nouvelle, Château d'Eau, Cadet</dd></div>
+        <div><dt>Téléphone</dt><dd><a href="tel:+33147703787" class="num">01 47 70 37 87</a> · précommande conseillée le midi</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:ozlemsnack@gmail.com?subject=Question%20pour%20%C3%96zlem">ozlemsnack@gmail.com</a></dd></div>
+        <div><dt>Service</dt><dd>Sur place ou à emporter</dd></div>
+      </dl>
+      <div class="ctas">
+        <a class="btn btn-k" href="https://www.google.com/maps/dir/?api=1&destination=57+rue+des+Petites+%C3%89curies+75010+Paris" target="_blank" rel="noopener">Ouvrir l'itinéraire</a>
+        <a class="btn btn-t" href="mailto:ozlemsnack@gmail.com?subject=Question%20pour%20%C3%96zlem">Écrire</a>
+      </div>
+    </div>
+    <div class="map rv">
+      <iframe title="Plan : 57 rue des Petites-Écuries, Paris 10e" loading="lazy" src="https://www.google.com/maps?q=57+rue+des+Petites+%C3%89curies+75010+Paris&z=17&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <svg class="foot-name" viewBox="0 0 1000 300" aria-hidden="true" preserveAspectRatio="none"><text x="0" y="283" textLength="1000" lengthAdjust="spacingAndGlyphs">Özlem</text></svg>
+    <div class="foot-row">
+      <span>Özlem · 57 rue des Petites-Écuries, 75010 Paris · <a href="tel:+33147703787">01 47 70 37 87</a></span>
+      <span>Démo réalisée par Raul Hatos — site non officiel · Photos Unsplash</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// reveal
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e,i){e.style.transitionDelay=(i%4)*70+'ms';io.observe(e)});
+})();
+
+// broche du jour : état d'ouverture à l'heure de Paris
+(function(){
+  // minutes depuis minuit ; 0 = dimanche
+  var H={1:[[690,990]],2:[[690,990]],3:[[690,990]],4:[[690,990]],5:[[690,990],[1110,1380]],6:[[690,990]],0:[]};
+  var J=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  var START=660,END=1380;
+  function fmt(m){var h=Math.floor(m/60),mm=m%60;return h+'h'+(mm?String(mm).padStart(2,'0'):'')}
+  function dur(m){var h=Math.floor(m/60),mm=m%60;return h?h+' h'+(mm?' '+String(mm).padStart(2,'0'):''):mm+' min'}
+  function paris(){
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+    var o={};p.forEach(function(x){o[x.type]=x.value});
+    return {d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday),m:(+o.hour)*60+(+o.minute)};
+  }
+  function next(d,m){
+    for(var i=0;i<8;i++){var dd=(d+i)%7;var s=H[dd];for(var k=0;k<s.length;k++){if(i>0||s[k][0]>m)return {i:i,d:dd,at:s[k][0]}}}
+  }
+  function render(){
+    var t=paris(),slots=H[t.d],open=null;
+    slots.forEach(function(s){if(t.m>=s[0]&&t.m<s[1])open=s});
+    var st=document.getElementById('state'),tx=document.getElementById('state-txt'),no=document.getElementById('state-note');
+    if(open){
+      var left=open[1]-t.m;
+      st.classList.remove('closed');
+      tx.textContent='Ouvert, la broche tourne jusqu’à '+fmt(open[1]);
+      no.textContent=left<=60?'Plus que '+dur(left)+'. Appelez pour vérifier qu’il en reste.':'Encore '+dur(left)+' de service. Le midi, précommandez pour couper la file.';
+    }else{
+      var n=next(t.d,t.m);
+      st.classList.add('closed');
+      tx.textContent='Fermé pour l’instant';
+      no.textContent='Prochaine broche '+(n.i===0?'aujourd’hui':n.i===1?'demain':J[n.d])+' à '+fmt(n.at)+'.';
+    }
+    var tr=document.getElementById('track');
+    tr.querySelectorAll('.seg').forEach(function(e){e.remove()});
+    slots.forEach(function(s){var e=document.createElement('div');e.className='seg';e.style.left=(s[0]-START)/(END-START)*100+'%';e.style.width=(s[1]-s[0])/(END-START)*100+'%';tr.prepend(e)});
+    var nw=document.getElementById('now');
+    if(t.m>=START&&t.m<=END){nw.hidden=false;nw.style.left=(t.m-START)/(END-START)*100+'%'}else nw.hidden=true;
+    var cells=document.getElementById('week').children;
+    for(var i=0;i<7;i++)cells[i].classList.toggle('today',((i+1)%7)===t.d);
+  }
+  render();setInterval(render,30000);
+})();
+</script>
+</body>
+</html>
