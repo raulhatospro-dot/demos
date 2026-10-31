@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Baitong Thaï · Restaurant thaï, 24 rue Falguière, Paris 15e</title>
+<meta name="description" content="Baitong Thaï, cuisine thaïe traditionnelle au 24 rue Falguière, Paris 15e. Carte, formules du midi, horaires, réservation au 01 72 60 00 64.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Noto+Sans+Thai:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#F3F0EE; --lifted:#FCFBFA; --ink:#141413; --soft:#4a4844;
+  --velvet:#2340C4; --velvet-deep:#172a86; --velvet-ink:#ffffff;
+  --leaf:#1F6A43; --leaf-light:#5f9c62; --tile:#123A2B; --tile-line:#2c6a4d;
+  --putty:#E4DED6;
+  --leafcut:0 100% 0 100% / 0 100% 0 100%;
+  --btn-r:0 22px 0 22px;
+  --m:clamp(16px,4vw,48px);
+  --s-small:0.875rem; --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem); --s-head:clamp(2.1rem,1.3rem + 3.2vw,4rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--ink);font-family:Onest,system-ui,sans-serif;font-size:var(--s-body);line-height:1.5;font-weight:400;overflow-x:hidden}
+::selection{background:var(--velvet);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em}
+:focus-visible{outline:3px solid var(--leaf-light);outline-offset:3px}
+h1,h2,h3{font-weight:600;letter-spacing:-.03em;line-height:1;text-wrap:balance}
+.th{font-family:"Noto Sans Thai",Onest,sans-serif}
+.num{font-variant-numeric:tabular-nums}
+
+.demo{background:var(--ink);color:#d9d4cd;font-size:.8125rem;text-align:center;padding:6px var(--m)}
+
+/* nav */
+.nav{position:absolute;inset:auto 0 auto 0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px var(--m);color:#fff}
+.wm{font-weight:700;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.wm i{display:block;width:26px;height:16px;background:var(--leaf-light);border-radius:var(--leafcut)}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:1rem}
+.nav ul a{text-decoration:none;opacity:1}
+.nav ul a:hover{text-decoration:underline}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 1rem/1 Onest,sans-serif;text-decoration:none;padding:16px 26px;border-radius:var(--btn-r);border:0;cursor:pointer;transition:transform .25s var(--ease),background .25s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:none}
+.b-ink{background:var(--ink);color:var(--ground)}
+.b-ink:hover{background:var(--velvet-deep)}
+.b-light{background:var(--ground);color:var(--ink)}
+.b-light:hover{background:#fff}
+.b-line{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.b-line:hover{background:rgba(20,20,19,.06)}
+
+/* hero */
+.hero{position:relative;background:var(--velvet);color:#fff;min-height:min(100svh,980px);overflow:hidden;display:flex;flex-direction:column}
+.hero-top{position:relative;z-index:2;text-align:center;padding:clamp(110px,15vh,150px) var(--m) 0}
+.hero h1{font-size:clamp(4rem,12.5vw,11.5rem);letter-spacing:-.045em;line-height:.9;white-space:nowrap}
+.hero-sub{max-width:44ch;margin:28px auto 0;font-size:var(--s-lead);line-height:1.35;color:#fff}
+.hero-leaf{position:absolute;z-index:1;right:-14vw;top:38%;width:min(78vw,1100px);transform:rotate(-24deg);pointer-events:none}
+.hero-leaf2{position:absolute;z-index:1;left:-22vw;top:48%;width:min(60vw,820px);transform:rotate(200deg);opacity:1;pointer-events:none}
+
+.folders{position:relative;z-index:3;margin-top:auto;width:min(1240px,calc(100% - 2*var(--m)));margin-inline:auto;height:clamp(300px,40vh,380px)}
+.folder{position:absolute;left:0;right:0;height:100%;text-decoration:none;color:inherit}
+.folder .tab{position:absolute;top:-40px;height:40px;padding:0 34px;display:flex;align-items:center;font-weight:500;font-size:1rem;clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 100%,0 100%);background:inherit;white-space:nowrap}
+.folder .body{position:absolute;inset:0;background:inherit}
+.folder:hover .tab{text-decoration:underline}
+.f1{top:40px;background:#0f1d66;color:#fff}.f1 .tab{left:2%}
+.f2{top:84px;background:var(--tile);color:#fff}.f2 .tab{left:24%}
+.f3{top:128px;background:var(--leaf);color:#fff}.f3 .tab{left:46%}
+.f4{top:172px;background:var(--putty);color:var(--ink)}.f4 .tab{right:2%}
+.front{position:absolute;left:0;right:0;top:216px;bottom:0;background:var(--ground);color:var(--ink);padding:30px clamp(20px,3vw,40px);display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:18px 32px}
+.front .tab{position:absolute;top:-40px;left:68%;height:40px;padding:0 34px;display:flex;align-items:center;font-weight:500;background:var(--ground);clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 100%,0 100%)}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.status{display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:500;padding-top:14px}
+.dot{width:12px;height:12px;border-radius:var(--leafcut);background:#8a8378;flex:none}
+.status.open .dot{background:var(--leaf)}
+
+/* intro statement */
+.intro{padding:clamp(96px,16vh,190px) var(--m)}
+.statement{max-width:30ch;margin:0 auto;font-size:clamp(1.5rem,1rem + 1.6vw,2.25rem);line-height:1.22;font-weight:500;letter-spacing:-.02em;text-align:center}
+.statement .ph{display:inline-block;height:.9em;width:1.5em;vertical-align:-.1em;margin:0 .12em;border-radius:var(--leafcut);overflow:hidden;background:var(--putty)}
+.statement .ph img{width:100%;height:100%;object-fit:cover}
+.statement em{font-style:normal;color:var(--velvet)}
+
+/* name band */
+.name{background:var(--leaf);color:#fff;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:clamp(24px,5vw,80px);padding:clamp(72px,10vw,140px) var(--m);overflow:hidden}
+.name .th{font-size:clamp(5.5rem,17vw,15rem);line-height:1.15;letter-spacing:0}
+.name h2{font-size:var(--s-head);margin-bottom:22px}
+.name p{max-width:44ch;font-size:var(--s-body)}
+.name p+p{margin-top:14px}
+
+/* carte */
+.carte{padding:clamp(110px,14vw,200px) var(--m) clamp(80px,10vw,140px);max-width:1340px;margin:0 auto}
+.carte-head{display:grid;grid-template-columns:1fr 1fr;gap:32px 64px;align-items:end}
+.carte-head h2{font-size:clamp(3rem,2rem + 5vw,6rem)}
+.carte-head p{max-width:46ch}
+.pick{margin-top:48px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.pick span{font-weight:500;margin-right:8px}
+.chip{font:500 1rem/1 Onest,sans-serif;padding:13px 20px;border:0;border-radius:var(--btn-r);background:var(--putty);color:var(--ink);cursor:pointer;transition:background .2s,color .2s,transform .2s var(--ease)}
+.chip:hover{background:#d8d0c5}
+.chip[aria-pressed="true"]{background:var(--velvet);color:#fff}
+.chip:active{transform:scale(.96)}
+.pick-out{margin-top:16px;font-size:1rem;color:var(--soft);min-height:1.5em}
+.cat{margin-top:clamp(64px,7vw,96px)}
+.cat-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:36px}
+.cat-h h3{font-size:clamp(2rem,1.4rem + 2vw,3.1rem)}
+.cat-h span{font-size:1rem;color:var(--soft)}
+.items{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:34px 64px}
+.it{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:start}
+.it[hidden]{display:none}
+.it .pic{width:64px;height:44px;border-radius:var(--leafcut);overflow:hidden;background:var(--putty);margin-top:2px}
+.it .pic.leafonly{background:var(--leaf)}
+.it .pic img{width:100%;height:100%;object-fit:cover}
+.it .row{display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:1.0625rem}
+.it .row b{font-weight:600;white-space:nowrap}
+.it p{color:var(--soft);font-size:.9375rem;max-width:40ch;margin-top:4px}
+.it .opt{color:var(--leaf);font-size:.9375rem;margin-top:4px;font-weight:500}
+.empty{display:none;color:var(--soft);font-size:1rem}
+.cat.none .empty{display:block}
+.note{margin-top:72px;font-size:1rem;color:var(--soft);max-width:70ch}
+
+/* showcase */
+.show{background:var(--putty);padding:clamp(96px,12vw,170px) var(--m);overflow:hidden}
+.show-in{max-width:1340px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,80px);align-items:center}
+.show h2{font-size:var(--s-head);margin-bottom:28px}
+.idx{list-style:none}
+.idx button{all:unset;cursor:pointer;display:block;font-size:clamp(1.75rem,1.2rem + 1.8vw,2.75rem);font-weight:600;letter-spacing:-.03em;line-height:1.2;color:#7a746b;transition:color .24s,transform .3s var(--ease)}
+.idx button:hover{color:var(--ink);transform:translateX(6px)}
+.idx button[aria-selected="true"]{color:var(--ink)}
+.idx button[aria-selected="true"]::after{content:"";display:inline-block;width:.7em;height:.42em;margin-left:.3em;background:var(--leaf);border-radius:var(--leafcut);vertical-align:.12em}
+.idx button:focus-visible{outline:3px solid var(--velvet);outline-offset:4px}
+.stage{position:relative;aspect-ratio:1/1;width:100%;max-width:680px;justify-self:end}
+.stage .bg{position:absolute;inset:12% -2% -4% 14%;background:var(--velvet);border-radius:var(--leafcut);transition:background .3s}
+.stage figure{position:absolute;inset:0 8% 10% 0;border-radius:var(--leafcut);overflow:hidden}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s}
+.stage img.on{opacity:1}
+.fact{margin-top:28px;max-width:40ch;font-size:1.0625rem}
+.fact b{display:block;font-size:var(--s-lead);font-weight:600;margin-bottom:4px}
+
+/* midi band (tile wall) */
+.midi{position:relative;background:var(--tile);color:#fff;padding:clamp(96px,12vw,170px) var(--m);overflow:hidden}
+.midi svg.tiles{position:absolute;inset:0;width:100%;height:100%}
+.midi-in{position:relative;max-width:1340px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,5vw,80px);align-items:end}
+.midi-card{background:var(--tile);padding:clamp(28px,4vw,56px)}
+.midi h2{font-size:clamp(2.6rem,1.6rem + 4.4vw,5.4rem)}
+.midi .big{font-size:var(--s-lead);margin-top:26px;max-width:32ch;line-height:1.35}
+.facts{list-style:none;background:var(--tile);padding:clamp(28px,4vw,56px);display:grid;gap:22px}
+.facts li{display:grid;grid-template-columns:22px 1fr;gap:14px;font-size:var(--s-lead);line-height:1.35}
+.facts li::before{content:"";width:22px;height:13px;margin-top:7px;background:var(--leaf-light);border-radius:var(--leafcut)}
+
+/* visit */
+.visit{padding:clamp(110px,14vw,200px) var(--m);max-width:1340px;margin:0 auto}
+.visit h2{font-size:clamp(3rem,2rem + 5vw,6rem);margin-bottom:56px}
+.visit-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(32px,5vw,72px);align-items:start}
+.hours{width:100%;border-collapse:collapse;font-size:1.0625rem}
+.hours th{text-align:left;font-weight:500;padding:12px 0}
+.hours td{text-align:right;padding:12px 0}
+.hours tr{border-bottom:1px solid #d6cfc5}
+.hours tr.today{background:var(--velvet);color:#fff}
+.hours tr.today th,.hours tr.today td{padding-inline:14px}
+.addr{margin-top:40px;font-size:var(--s-lead);line-height:1.3;font-weight:500}
+.addr-sub{margin-top:12px;color:var(--soft);font-size:1rem}
+.addr-acts{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px}
+
+/* coupon */
+.coupon{--n:28px;position:relative;background:var(--velvet);color:#fff;display:grid;grid-template-columns:.75fr 1.25fr;border-radius:var(--btn-r);
+  -webkit-mask:radial-gradient(circle var(--n) at 42% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--n) at 42% 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+          mask:radial-gradient(circle var(--n) at 42% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--n) at 42% 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+.c-left{padding:clamp(28px,3.4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:28px;border-right:5px dotted var(--ground)}
+.c-left h3{font-size:clamp(2rem,1.4rem + 1.8vw,2.9rem)}
+.c-left p{font-size:1rem}
+.c-right{padding:clamp(28px,3.4vw,48px);display:grid;gap:10px}
+.c-right .two{display:grid;grid-template-columns:1fr;gap:10px}
+.c-right input,.c-right select{width:100%;height:54px;border:0;border-radius:0;background:#3b56d4;color:#fff;font:400 1rem Onest,sans-serif;padding:0 16px;appearance:none;-webkit-appearance:none}
+.c-right input::placeholder{color:#dfe4ff}
+.c-right input:focus-visible,.c-right select:focus-visible{outline:3px solid #fff;outline-offset:0}
+.c-right input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1)}
+.c-right button{height:56px;border:0;background:var(--ink);color:#fff;font:600 1.0625rem Onest,sans-serif;cursor:pointer;transition:background .2s}
+.c-right button:hover{background:#000}
+.c-msg{font-size:.9375rem;color:#e6e9ff;min-height:1.4em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* footer */
+.foot{background:var(--velvet-deep);color:#fff;padding:clamp(72px,9vw,120px) var(--m) 32px;overflow:hidden}
+.mark{display:flex;align-items:flex-end;gap:4px;height:clamp(150px,30svh,320px);max-width:1340px;margin:0 auto}
+.mark span{flex:1;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:clamp(2.2rem,7vw,7.5rem);letter-spacing:-.04em;color:var(--velvet-deep);border-radius:var(--leafcut)}
+.foot-cols{max-width:1340px;margin:56px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;font-size:.9375rem}
+.foot-cols h4{font-weight:600;font-size:1rem;margin-bottom:10px}
+.foot-cols a{display:block;text-decoration:none;padding:3px 0}
+.foot-cols a:hover{text-decoration:underline}
+.foot-cols p{color:#dfe3ff}
+.foot-last{max-width:1340px;margin:56px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:.875rem;color:#cdd3ff}
+
+/* motion */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.hero-leaf{animation:sway 9s ease-in-out infinite alternate}
+@keyframes sway{to{transform:rotate(-20deg) translateY(-12px)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:960px){
+  .nav ul{display:none}
+  .carte-head,.name,.show-in,.midi-in,.visit-grid{grid-template-columns:1fr}
+  .items{grid-template-columns:1fr}
+  .stage{justify-self:stretch;max-width:none;order:-1}
+  .foot-cols{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:640px){
+  .hero{min-height:auto}
+  .hero-top{padding-top:96px;text-align:left}
+  .hero h1{font-size:24vw;white-space:normal;line-height:.88}
+  .hero-sub{margin:20px 0 0;font-size:1.125rem}
+  .hero-leaf{width:120vw;right:-62vw;top:24%}
+  .hero-leaf2{display:none}
+  .folders{height:auto;margin-top:72px;width:100%}
+  .folder{height:auto}
+  .f1,.f2,.f3,.f4{display:none}
+  .front{position:relative;top:auto;padding:28px var(--m) 36px}
+  .front .tab{left:var(--m);top:-36px;height:36px;padding:0 24px}
+  .acts{width:100%}
+  .acts .btn{flex:1 1 100%;justify-content:center}
+  .statement{text-align:left;font-size:1.5rem}
+  .intro{padding:72px var(--m) 88px}
+  .stage .bg{inset:10% 0 0 10%}
+  .stage figure{inset:0 6% 6% 0}
+  .mark{height:200px}
+  .it{grid-template-columns:52px 1fr;gap:16px}
+  .it .pic{width:52px;height:36px}
+  .idx{display:flex;gap:22px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+  .idx button{font-size:1.6rem;white-space:nowrap}
+  .coupon{grid-template-columns:1fr;-webkit-mask:radial-gradient(circle var(--n) at 0 46%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--n) at 100% 46%,#0000 98%,#000) right/51% 100% no-repeat;mask:radial-gradient(circle var(--n) at 0 46%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--n) at 100% 46%,#0000 98%,#000) right/51% 100% no-repeat}
+  .c-left{border-right:0;border-bottom:5px dotted var(--ground)}
+  .c-right .two{grid-template-columns:1fr}
+  .mark span{font-size:9vw}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="hero" id="top">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="wm" href="#top"><i aria-hidden="true"></i>Baitong Thaï</a>
+    <ul>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#midi">Le midi</a></li>
+      <li><a href="#venir">Horaires</a></li>
+      <li><a href="#reserver">Réserver</a></li>
+    </ul>
+  </nav>
+
+  <svg class="hero-leaf" viewBox="0 0 1000 420" aria-hidden="true">
+    <defs><clipPath id="lf"><path d="M10 230 C 180 40, 640 -10, 990 150 C 700 330, 260 430, 10 230 Z"/></clipPath></defs>
+    <g clip-path="url(#lf)">
+      <rect width="1000" height="420" fill="#1F6A43"/>
+      <g stroke="#2d8053" stroke-width="7">
+        <path d="M120 200 L60 60M190 190 L130 30M260 180 L200 10M330 170 L280 0M400 162 L360 0M470 156 L440 0M540 152 L520 0M610 150 L600 0M680 150 L680 10M750 150 L760 40M820 152 L840 60M890 155 L920 90"/>
+        <path d="M120 230 L70 380M190 236 L140 420M260 240 L220 420M330 244 L300 420M400 246 L380 420M470 246 L460 420M540 244 L540 420M610 240 L620 420M680 234 L700 400M750 226 L780 360M820 214 L860 330M890 196 L930 280"/>
+      </g>
+      <path d="M10 230 C 300 200, 640 170, 990 150" stroke="#cfe3c5" stroke-width="9" fill="none"/>
+      <path d="M560 0 L585 150 L570 160 Z M780 420 L760 230 L790 225 Z" fill="#2340C4"/>
+    </g>
+  </svg>
+  <svg class="hero-leaf2" viewBox="0 0 1000 420" aria-hidden="true">
+    <g clip-path="url(#lf)">
+      <rect width="1000" height="420" fill="#3553d8"/>
+      <path d="M10 230 C 300 200, 640 170, 990 150" stroke="#4a66e0" stroke-width="9" fill="none"/>
+    </g>
+  </svg>
+
+  <div class="hero-top">
+    <h1>Baitong Thaï</h1>
+    <p class="hero-sub">Restaurant thaï traditionnel au 24 rue Falguière, Paris 15e. Currys, pad thaï et soupes, cuisinés devant vous.</p>
+  </div>
+
+  <div class="folders">
+    <a class="folder f1" href="#c-entrees"><span class="tab">Entrées</span><span class="body"></span></a>
+    <a class="folder f2" href="#c-plats"><span class="tab">Plats traditionnels</span><span class="body"></span></a>
+    <a class="folder f3" href="#c-currys"><span class="tab">Currys</span><span class="body"></span></a>
+    <a class="folder f4" href="#c-bobun"><span class="tab">Bobun et desserts</span><span class="body"></span></a>
+    <div class="front">
+      <span class="tab">Réserver</span>
+      <div class="acts">
+        <a class="btn b-ink" href="tel:+33172600064"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Réserver au 01 72 60 00 64</a>
+        <a class="btn b-line" href="#carte">Voir la carte</a>
+        <a class="btn b-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=Baitong+Tha%C3%AF+24+rue+Falgui%C3%A8re+75015+Paris" target="_blank" rel="noopener">Itinéraire</a>
+      </div>
+      <p class="status" id="status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span>Du lundi au samedi, midi et soir</span></p>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="intro" aria-label="La cuisine">
+  <p class="statement rv">Citronnelle <span class="ph"><img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=160&amp;h=110&amp;fit=crop&amp;q=70&amp;auto=format" alt="" width="80" height="55" loading="lazy"></span>, basilic thaï, pousses de bambou, lait de coco <span class="ph"><img src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=160&amp;h=110&amp;fit=crop&amp;q=70&amp;auto=format" alt="" width="80" height="55" loading="lazy"></span> et nouilles de riz <span class="ph"><img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=160&amp;h=110&amp;fit=crop&amp;q=70&amp;auto=format" alt="" width="80" height="55" loading="lazy"></span>, préparés devant vous. <em>Toute la carte existe en version végétarienne.</em></p>
+</section>
+
+<section class="name" aria-labelledby="name-h">
+  <p class="th rv" lang="th" aria-hidden="true">ใบตอง</p>
+  <div class="rv">
+    <h2 id="name-h">Baitong, la feuille de bananier</h2>
+    <p>En thaï, <span lang="th">ใบตอง</span> désigne la feuille de bananier, celle qui sert à envelopper, à cuire à la vapeur et à servir.</p>
+    <p>La maison s’inspire de la cuisine familiale traditionnelle du nord de la Thaïlande : légumes frais, plantes aromatiques, currys, salades et soupes, avec du bœuf émincé, des crevettes ou du tofu.</p>
+  </div>
+</section>
+
+<section class="carte" id="carte" aria-labelledby="carte-h">
+  <div class="carte-head">
+    <h2 id="carte-h" class="rv">La carte</h2>
+    <p class="rv">La plupart des plats se déclinent au bœuf, au poulet, aux crevettes ou au tofu. Choisissez, la carte n’affiche que ce qui existe dans cette version.</p>
+  </div>
+  <div class="pick" role="group" aria-label="Filtrer la carte par garniture">
+    <span>Avec :</span>
+    <button class="chip" type="button" data-p="all" aria-pressed="true">Tout</button>
+    <button class="chip" type="button" data-p="boeuf" aria-pressed="false">Bœuf</button>
+    <button class="chip" type="button" data-p="poulet" aria-pressed="false">Poulet</button>
+    <button class="chip" type="button" data-p="crevettes" aria-pressed="false">Crevettes</button>
+    <button class="chip" type="button" data-p="veggie" aria-pressed="false">Tofu, végétarien</button>
+  </div>
+  <p class="pick-out" id="pick-out" aria-live="polite"></p>
+
+  <div class="cat" id="c-entrees">
+    <div class="cat-h"><h3>Entrées</h3><span class="cnt"></span></div>
+    <ul class="items">
+      <li class="it" data-p="crevettes"><div class="pic"><img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=140&amp;h=96&amp;fit=crop&amp;q=70&amp;auto=format" alt="Soupe rouge aux herbes" width="64" height="44" loading="lazy"></div><div><div class="row"><span>Tom yam koung</span><b class="num">12,90 €</b></div><p>Soupe de gambas à la citronnelle.</p></div></li>
+      <li class="it" data-p="poulet"><div class="pic leafonly"></div><div><div class="row"><span>Soupe de poulet au lait de coco</span><b class="num">11,90 €</b></div></div></li>
+      <li class="it" data-p="veggie any"><div class="pic leafonly"></div><div><div class="row"><span>Salade de riz croustillant</span><b class="num">11,90 €</b></div></div></li>
+      <li class="it" data-p="veggie any"><div class="pic leafonly"></div><div><div class="row"><span>Salade de papaye</span><b class="num">9,50 €</b></div></div></li>
+      <li class="it" data-p="veggie any"><div class="pic leafonly"></div><div><div class="row"><span>Rouleaux impériaux</span><b class="num">8,50 €</b></div><p class="opt">Au porc ou aux légumes</p></div></li>
+    </ul>
+    <p class="empty">Rien dans cette catégorie pour cette garniture.</p>
+  </div>
+
+  <div class="cat" id="c-plats">
+    <div class="cat-h"><h3>Plats traditionnels</h3><span class="cnt"></span></div>
+    <ul class="items">
+      <li class="it" data-p="crevettes poulet boeuf veggie"><div class="pic"><img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=140&amp;h=96&amp;fit=crop&amp;q=70&amp;auto=format" alt="Pad thaï" width="64" height="44" loading="lazy"></div><div><div class="row"><span>Pad thaï</span><b class="num">16,90 €</b></div><p>Nouilles de riz sautées.</p><p class="opt">Gambas, poulet, bœuf ou tofu</p></div></li>
+      <li class="it" data-p="boeuf"><div class="pic"><img src="https://images.unsplash.com/photo-1535140728325-a4d3707eee61?w=140&amp;h=96&amp;fit=crop&amp;q=70&amp;auto=format" alt="Émincé de bœuf" width="64" height="44" loading="lazy"></div><div><div class="row"><span>Émincé de bœuf</span><b class="num">16,90 €</b></div><p class="opt">Au gingembre ou sauté au basilic</p></div></li>
+      <li class="it" data-p="poulet"><div class="pic leafonly"></div><div><div class="row"><span>Poulet Baiteuil</span><b class="num">16,90 €</b></div><p>Servi avec riz blanc ou riz gluant.</p></div></li>
+      <li class="it" data-p="boeuf"><div class="pic leafonly"></div><div><div class="row"><span>Bœuf au lait de coco, paneng neua</span><b class="num">16,90 €</b></div><p>Avec nouilles sautées, riz blanc ou riz gluant.</p></div></li>
+      <li class="it" data-p="crevettes poulet boeuf"><div class="pic"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=140&amp;h=96&amp;fit=crop&amp;q=70&amp;auto=format" alt="Riz sauté" width="64" height="44" loading="lazy"></div><div><div class="row"><span>Riz thaï sauté</span><b class="num">16,90 €</b></div><p class="opt">Crevettes, poulet ou bœuf</p></div></li>
+    </ul>
+    <p class="empty">Rien dans cette catégorie pour cette garniture.</p>
+  </div>
+
+  <div class="cat" id="c-currys">
+    <div class="cat-h"><h3>Currys</h3><span class="cnt"></span></div>
+    <ul class="items">
+      <li class="it" data-p="boeuf poulet crevettes veggie"><div class="pic"><img src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=140&amp;h=96&amp;fit=crop&amp;q=70&amp;auto=format" alt="Curry jaune et nouilles" width="64" height="44" loading="lazy"></div><div><div class="row"><span>Curry jaune</span><b class="num">16,90 €</b></div><p>Avec nouilles sautées, riz blanc ou riz gluant.</p><p class="opt">Bœuf, poulet, crevettes ou tofu</p></div></li>
+      <li class="it" data-p="boeuf poulet crevettes veggie"><div class="pic"><img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=140&amp;h=96&amp;fit=crop&amp;q=70&amp;auto=format" alt="Curry aux crevettes" width="64" height="44" loading="lazy"></div><div><div class="row"><span>Curry vert</span><b class="num">16,90 €</b></div><p>Avec nouilles sautées, riz blanc ou riz gluant.</p><p class="opt">Bœuf, poulet, crevettes ou tofu</p></div></li>
+    </ul>
+    <p class="empty">Rien dans cette catégorie pour cette garniture.</p>
+  </div>
+
+  <div class="cat" id="c-bobun">
+    <div class="cat-h"><h3>Bobun et desserts</h3><span class="cnt"></span></div>
+    <ul class="items">
+      <li class="it" data-p="boeuf poulet crevettes veggie"><div class="pic leafonly"></div><div><div class="row"><span>Bobun façon thaï, fait maison</span><b class="num">15,50 €</b></div><p>Avec nems thaïs au porc ou aux légumes.</p><p class="opt">Bœuf, poulet, crevettes ou tofu</p></div></li>
+      <li class="it" data-p="veggie any"><div class="pic leafonly"></div><div><div class="row"><span>Mangue fraîche au riz gluant</span><b class="num">7,90 €</b></div></div></li>
+      <li class="it" data-p="veggie any"><div class="pic leafonly"></div><div><div class="row"><span>Tapioca, morceaux de mangue</span><b class="num">5,50 €</b></div></div></li>
+      <li class="it" data-p="veggie any"><div class="pic leafonly"></div><div><div class="row"><span>Flan thaï au coco</span><b class="num">5,50 €</b></div></div></li>
+      <li class="it" data-p="veggie any"><div class="pic leafonly"></div><div><div class="row"><span>Perles thaïes au coco frais</span><b class="num">5,50 €</b></div></div></li>
+      <li class="it" data-p="veggie any"><div class="pic leafonly"></div><div><div class="row"><span>Accompagnements</span><b class="num">2,50 à 3,50 €</b></div><p>Riz blanc, riz gluant, nouilles sautées.</p></div></li>
+    </ul>
+    <p class="empty">Rien dans cette catégorie pour cette garniture.</p>
+  </div>
+
+  <div class="cat" id="c-boissons">
+    <div class="cat-h"><h3>À boire</h3><span class="cnt"></span></div>
+    <ul class="items">
+      <li class="it" data-p="drink"><div class="pic leafonly"></div><div><div class="row"><span>Bière thaïe Singha, 33 cl</span><b class="num">5,90 €</b></div></div></li>
+      <li class="it" data-p="drink"><div class="pic leafonly"></div><div><div class="row"><span>Vin au verre</span><b class="num">4,90 €</b></div><p>Sauvignon, merlot, syrah-grenache.</p></div></li>
+      <li class="it" data-p="drink"><div class="pic leafonly"></div><div><div class="row"><span>Vins en bouteille</span><b class="num">14,50 à 26,90 €</b></div><p>Bordeaux, saint-émilion, haut-médoc, riesling, tavel, côtes-de-provence…</p></div></li>
+      <li class="it" data-p="drink"><div class="pic leafonly"></div><div><div class="row"><span>Thé vert</span><b class="num">2,50 €</b></div><p>Sodas, jus et eaux minérales à 3,50 €.</p></div></li>
+    </ul>
+  </div>
+
+  <p class="note">Prix relevés sur la carte du restaurant (édition 2022) : ils ont pu changer, la carte en salle fait foi. Une carte à emporter existe aussi : pad thaï, bobun, udon thaï et riz sauté.</p>
+</section>
+
+<section class="show" aria-labelledby="show-h">
+  <div class="show-in">
+    <div>
+      <h2 id="show-h">Les classiques</h2>
+      <ul class="idx" role="tablist" aria-label="Plats à découvrir">
+        <li><button role="tab" aria-selected="true" data-i="0">Pad thaï</button></li>
+        <li><button role="tab" aria-selected="false" data-i="1">Tom yam koung</button></li>
+        <li><button role="tab" aria-selected="false" data-i="2">Curry jaune</button></li>
+        <li><button role="tab" aria-selected="false" data-i="3">Riz sauté</button></li>
+        <li><button role="tab" aria-selected="false" data-i="4">Émincé de bœuf</button></li>
+      </ul>
+      <p class="fact" id="fact" aria-live="polite"><b>16,90 €</b>Nouilles de riz sautées, aux gambas, au poulet, au bœuf ou au tofu.</p>
+    </div>
+    <div class="stage">
+      <div class="bg" id="stage-bg"></div>
+      <figure>
+        <img class="on" src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=900&amp;h=900&amp;fit=crop&amp;q=75&amp;auto=format" alt="Assiette de pad thaï" width="900" height="900" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=900&amp;h=900&amp;fit=crop&amp;q=75&amp;auto=format" alt="Bol de soupe épicée aux herbes" width="900" height="900" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=900&amp;h=900&amp;fit=crop&amp;q=75&amp;auto=format" alt="Bol de curry au lait de coco et nouilles" width="900" height="900" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=900&amp;h=900&amp;fit=crop&amp;q=75&amp;auto=format" alt="Riz sauté dans une assiette blanche" width="900" height="900" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1535140728325-a4d3707eee61?w=900&amp;h=900&amp;fit=crop&amp;q=75&amp;auto=format" alt="Bœuf émincé, piment et herbes" width="900" height="900" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="midi" id="midi" aria-labelledby="midi-h">
+  <svg class="tiles" aria-hidden="true">
+    <defs>
+      <pattern id="fan" width="80" height="40" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke="#2c6a4d" stroke-width="2">
+          <path d="M0 40a40 40 0 0 1 80 0M10 40a30 30 0 0 1 60 0M20 40a20 20 0 0 1 40 0M30 40a10 10 0 0 1 20 0"/>
+          <path d="M-40 20a40 40 0 0 1 80 0M40 20a40 40 0 0 1 80 0M-30 20a30 30 0 0 1 60 0M50 20a30 30 0 0 1 60 0M-20 20a20 20 0 0 1 40 0M60 20a20 20 0 0 1 40 0"/>
+        </g>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#fan)"/>
+  </svg>
+  <div class="midi-in">
+    <div class="midi-card rv">
+      <h2 id="midi-h">Le midi, de 7,90&nbsp;€ à 16,90&nbsp;€</h2>
+      <p class="big">Un choix de formules du lundi au samedi, de 12 h à 15 h.</p>
+    </div>
+    <ul class="facts rv">
+      <li>Tickets restaurant, carte bancaire et sans contact acceptés.</li>
+      <li>Le dimanche, le restaurant ouvre pour les groupes à partir de 10 personnes, sur réservation.</li>
+      <li>Plats à emporter : pad thaï, bobun, udon thaï, riz sauté.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="visit" id="venir" aria-labelledby="venir-h">
+  <h2 id="venir-h" class="rv">Horaires et accès</h2>
+  <div class="visit-grid">
+    <div class="rv">
+      <table class="hours num" aria-label="Horaires d’ouverture">
+        <tbody>
+          <tr data-d="1"><th scope="row">Lundi</th><td>12 h – 15 h · 19 h – 22 h 30</td></tr>
+          <tr data-d="2"><th scope="row">Mardi</th><td>12 h – 15 h · 19 h – 22 h 30</td></tr>
+          <tr data-d="3"><th scope="row">Mercredi</th><td>12 h – 15 h · 19 h – 22 h 30</td></tr>
+          <tr data-d="4"><th scope="row">Jeudi</th><td>12 h – 15 h · 19 h – 22 h 30</td></tr>
+          <tr data-d="5"><th scope="row">Vendredi</th><td>12 h – 15 h · 19 h – 22 h 30</td></tr>
+          <tr data-d="6"><th scope="row">Samedi</th><td>12 h – 15 h · 19 h – 22 h 30</td></tr>
+          <tr data-d="0"><th scope="row">Dimanche</th><td>Fermé (groupes sur réservation)</td></tr>
+        </tbody>
+      </table>
+      <p class="addr">24 rue Falguière<br>75015 Paris</p>
+      <p class="addr-sub">Métro Falguière (ligne 12) ou Pasteur (lignes 6 et 12).</p>
+      <div class="addr-acts">
+        <a class="btn b-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Baitong+Tha%C3%AF+24+rue+Falgui%C3%A8re+75015+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+        <a class="btn b-line" href="tel:+33172600064">01 72 60 00 64</a>
+      </div>
+    </div>
+
+    <form class="coupon rv" id="reserver" aria-labelledby="res-h" novalidate>
+      <div class="c-left">
+        <h3 id="res-h">Réserver une table</h3>
+        <p>Le plus sûr reste le téléphone, au <a href="tel:+33172600064">01 72 60 00 64</a>. Ce formulaire prépare un e-mail au restaurant, qui vous confirme la table.</p>
+      </div>
+      <div class="c-right">
+        <label class="sr" for="r-name">Votre nom</label>
+        <input id="r-name" name="name" placeholder="Votre nom" autocomplete="name" required>
+        <div class="two">
+          <div><label class="sr" for="r-date">Date</label><input id="r-date" name="date" type="date" required></div>
+          <div><label class="sr" for="r-time">Service</label>
+            <select id="r-time" name="time">
+              <option>Midi, vers 12 h</option><option>Midi, vers 13 h</option><option>Midi, vers 14 h</option>
+              <option>Soir, vers 19 h 30</option><option selected>Soir, vers 20 h</option><option>Soir, vers 21 h</option>
+            </select></div>
+        </div>
+        <label class="sr" for="r-n">Nombre de personnes</label>
+        <input id="r-n" name="n" type="number" min="1" max="40" inputmode="numeric" placeholder="Nombre de personnes" required>
+        <button type="submit">Préparer l’e-mail de réservation</button>
+        <p class="c-msg" id="c-msg" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="mark" aria-hidden="true">
+    <span style="height:100%;background:#5f9c62">B</span><span style="height:78%;background:#E4DED6">a</span><span style="height:92%;background:#F3F0EE">i</span><span style="height:66%;background:#5f9c62">t</span><span style="height:84%;background:#E4DED6">o</span><span style="height:100%;background:#F3F0EE">n</span><span style="height:72%;background:#5f9c62">g</span>
+  </div>
+  <div class="foot-cols">
+    <div><h4>Baitong Thaï</h4><p>Cuisine traditionnelle thaïlandaise, inspirée du nord de la Thaïlande.</p></div>
+    <div><h4>Venir</h4><p>24 rue Falguière<br>75015 Paris</p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Baitong+Tha%C3%AF+24+rue+Falgui%C3%A8re+75015+Paris" target="_blank" rel="noopener">Itinéraire</a></div>
+    <div><h4>Contact</h4><a href="tel:+33172600064">01 72 60 00 64</a><a href="mailto:baitongthaiparis@gmail.com">baitongthaiparis@gmail.com</a></div>
+    <div><h4>Sur la page</h4><a href="#carte">La carte</a><a href="#midi">Le midi</a><a href="#venir">Horaires</a><a href="#reserver">Réserver</a></div>
+  </div>
+  <div class="foot-last">
+    <span>Démo réalisée par Raul Hatos — site non officiel. Photos d’illustration : Unsplash.</span>
+    <a class="btn b-light" href="#top">Haut de page</a>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  // live status, Paris time
+  var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+  var g=function(t){return (p.find(function(x){return x.type===t})||{}).value};
+  var days={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6};
+  var d=days[g('weekday')], m=(+g('hour'))*60+(+g('minute'));
+  var row=document.querySelector('.hours tr[data-d="'+d+'"]'); if(row) row.classList.add('today');
+  var st=document.getElementById('status'), txt=st.lastElementChild, msg;
+  if(d===0) msg='Fermé le dimanche · réouverture lundi à 12 h';
+  else if(m>=720&&m<900) msg='Ouvert · service du midi jusqu’à 15 h';
+  else if(m>=1140&&m<1350) msg='Ouvert · service du soir jusqu’à 22 h 30';
+  else if(m<720) msg='Fermé · ouvre aujourd’hui à 12 h';
+  else if(m<1140) msg='Fermé · réouverture ce soir à 19 h';
+  else msg=d===6?'Fermé · réouverture lundi à 12 h':'Fermé · réouverture demain à 12 h';
+  txt.textContent=msg; if(msg.indexOf('Ouvert')===0) st.classList.add('open');
+
+  // carte filter
+  var labels={boeuf:'au bœuf',poulet:'au poulet',crevettes:'aux crevettes',veggie:'en version végétarienne'};
+  var chips=document.querySelectorAll('.chip'), out=document.getElementById('pick-out');
+  function apply(v){
+    var total=0;
+    document.querySelectorAll('.cat').forEach(function(c){
+      var n=0; c.querySelectorAll('.it').forEach(function(it){
+        var ps=it.dataset.p.split(' '), show=v==='all'||ps.indexOf(v)>-1||ps.indexOf('drink')>-1;
+        it.hidden=!show; if(show&&ps.indexOf('drink')<0){n++}
+      });
+      if(c.id!=='c-boissons'){total+=n;c.classList.toggle('none',n===0);c.querySelector('.cnt').textContent=n+(n>1?' plats':' plat')}
+      else c.querySelector('.cnt').textContent='';
+    });
+    out.textContent=v==='all'?'':total+' plats et desserts '+labels[v]+'.';
+  }
+  chips.forEach(function(b){b.addEventListener('click',function(){chips.forEach(function(x){x.setAttribute('aria-pressed',x===b)});apply(b.dataset.p)})});
+  apply('all');
+
+  // showcase
+  var facts=[['16,90 €','Nouilles de riz sautées, aux gambas, au poulet, au bœuf ou au tofu.','#2340C4'],
+    ['12,90 €','La soupe de gambas à la citronnelle, en entrée.','#1F6A43'],
+    ['16,90 €','Au bœuf, au poulet, aux crevettes ou au tofu, avec nouilles sautées, riz blanc ou riz gluant.','#172a86'],
+    ['16,90 €','Riz thaï sauté aux crevettes, au poulet ou au bœuf.','#123A2B'],
+    ['16,90 €','Émincé de bœuf au gingembre, ou sauté au basilic thaï.','#2340C4']];
+  var tabs=document.querySelectorAll('.idx button'), imgs=document.querySelectorAll('.stage img'), f=document.getElementById('fact'), bg=document.getElementById('stage-bg');
+  function sel(i){tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i)});imgs.forEach(function(im,j){im.classList.toggle('on',j===i)});f.innerHTML='<b>'+facts[i][0]+'</b>'+facts[i][1];bg.style.background=facts[i][2]}
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(i)});t.addEventListener('mouseenter',function(){if(matchMedia('(hover:hover)').matches)sel(i)})});
+
+  // reservation mailto
+  var dt=document.getElementById('r-date'); var today=new Date(); dt.min=today.toISOString().slice(0,10);
+  document.getElementById('reserver').addEventListener('submit',function(e){
+    e.preventDefault(); var fm=e.target, msgEl=document.getElementById('c-msg');
+    var name=fm.name.value.trim(), date=fm.date.value, n=fm.n.value;
+    if(!name||!date||!n){msgEl.textContent='Indiquez votre nom, la date et le nombre de personnes.';return}
+    var dd=new Date(date+'T12:00:00');
+    if(dd.getDay()===0&&+n<10){msgEl.textContent='Le dimanche, le restaurant reçoit seulement les groupes de 10 personnes et plus. Choisissez un autre jour.';return}
+    var ds=dd.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+    var body='Bonjour,\n\nJe souhaite réserver une table pour '+n+' personne'+(n>1?'s':'')+' le '+ds+' ('+fm.time.value+').\n\nMerci de me confirmer.\n'+name;
+    msgEl.textContent='Votre messagerie s’ouvre avec la demande prête à envoyer.';
+    location.href='mailto:baitongthaiparis@gmail.com?subject='+encodeURIComponent('Réservation – '+ds+', '+n+' pers.')+'&body='+encodeURIComponent(body);
+  });
+
+  // reveal
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%2)*80+'ms';io.observe(el)});
+  } else document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
