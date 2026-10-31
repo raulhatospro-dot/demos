@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>L'Os à Moelle — bistrot, 3 rue Vasco de Gama, Paris 15e</title>
+<meta name="description" content="L'Os à Moelle, bistrot du 15e depuis 1994, repris en mars 2026 par le chef Mathieu Anfray. 3 rue Vasco de Gama. Réservation au 01 45 57 27 27.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f4f0;          /* blanc d'os */
+  --bg-2:#ecE8e1;
+  --ink:#181d26;
+  --muted:#4a4f58;
+  --wine:#6b1222;        /* lie-de-vin, champ signature */
+  --wine-2:#5a0e1c;
+  --on-wine:#f6ece6;
+  --forest:#0f2e17;
+  --on-forest:#e9efe6;
+  --step-small:clamp(.8125rem,.79rem + .1vw,.875rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
+  --step-display:clamp(2.75rem,1.2rem + 6.4vw,7.25rem);
+  --m:12px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.55 "Work Sans",system-ui,sans-serif;font-variant-numeric:tabular-nums;overflow-x:hidden}
+::selection{background:var(--wine);color:var(--on-wine)}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+img{display:block;max-width:100%}
+h1,h2,h3{font-weight:300;letter-spacing:-.035em;line-height:1;text-wrap:balance}
+
+.demo{background:var(--ink);color:var(--bg);font-size:13px;padding:8px 16px;line-height:1.3;text-align:center}
+
+/* ---------- split stage ---------- */
+.stage{display:grid;grid-template-columns:1fr 1fr;gap:var(--m);padding:var(--m)}
+.read{background:var(--bg);min-width:0}
+.photo{position:sticky;top:var(--m);height:calc(100svh - 2*var(--m));overflow:hidden;background:#2a1d18}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.6s var(--ease),transform 9s linear}
+.photo img.on{opacity:1;transform:scale(1)}
+.bar{position:absolute;left:0;right:0;bottom:0;height:56px;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 20px;font-size:15px;z-index:2}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#9aa0a6;margin-right:8px;vertical-align:1px}
+.dot.open{background:#2f7d3e}
+.cap{position:absolute;left:20px;bottom:72px;z-index:2;color:#fff;font-size:var(--step-small);max-width:30ch;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+
+/* hero sheet */
+.sheet{min-height:calc(100svh - 2*var(--m));display:flex;flex-direction:column;padding:28px clamp(24px,4vw,64px) 48px}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-size:15px}
+.top a{text-decoration:none}
+.top a:hover{text-decoration:underline}
+.top .r{justify-self:end}
+.mark{font-weight:500;font-size:19px;letter-spacing:-.01em}
+.hero-txt{margin-top:auto;margin-bottom:auto;padding-top:12svh}
+.hero-txt h1{font-size:var(--step-display);max-width:7ch}
+.hero-txt p{margin-top:36px;max-width:38ch;font-size:var(--step-lead);line-height:1.4}
+.acts{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:500;font-size:16px;border:0;cursor:pointer;transition:background .25s,transform .2s var(--ease)}
+.btn:hover{background:var(--wine)}
+.btn:active{transform:scale(.97)}
+.btn.alt{background:var(--bg-2);color:var(--ink)}
+.btn.alt:hover{background:#dfd9cf}
+.btn svg{width:18px;height:18px}
+.facts{margin-top:56px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15px;color:var(--muted)}
+
+/* reading column */
+.col{padding:0 clamp(24px,4vw,64px)}
+.sec{padding:clamp(96px,12vw,180px) 0 0}
+.sec h2{font-size:var(--step-head);max-width:14ch}
+.sec .lead{margin-top:28px;max-width:44ch;font-size:var(--step-lead);line-height:1.4}
+
+.carte{margin-top:56px;max-width:560px}
+.grp{margin-top:40px}
+.grp:first-child{margin-top:0}
+.grp h3{font-size:var(--step-small);font-weight:500;letter-spacing:0;color:var(--muted);line-height:1.4;margin-bottom:6px}
+.grp li{list-style:none;display:flex;justify-content:space-between;gap:24px;padding:9px 0;font-size:17px;line-height:1.4}
+.grp li span:last-child{color:var(--muted);font-size:15px;white-space:nowrap}
+.note{margin-top:36px;font-size:15px;color:var(--muted);max-width:52ch}
+
+.chron{margin-top:56px;max-width:560px}
+.chron div{display:grid;grid-template-columns:5.5rem 1fr;gap:20px;padding:14px 0}
+.chron b{font-weight:300;font-size:var(--step-lead);letter-spacing:-.02em;line-height:1.2}
+.chron p{max-width:44ch}
+.team{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:28px 24px;max-width:560px}
+.team strong{display:block;font-weight:500}
+.team span{color:var(--muted);font-size:15px}
+
+/* ---------- full-width: the bone cross-section ---------- */
+.plate{background:var(--wine);color:var(--on-wine);display:grid;grid-template-columns:1fr 1fr;min-height:88svh;margin:0 var(--m)}
+.plate .pic{position:relative;padding:40px;display:flex;align-items:center}
+.plate .sq{position:relative;width:100%;aspect-ratio:1;overflow:hidden}
+.plate .sq img{width:100%;height:100%;object-fit:cover}
+.ring{position:absolute;inset:8%;border-radius:50%;border:4px solid var(--on-wine);pointer-events:none}
+.plate .txt{padding:48px clamp(24px,4vw,64px) 40px;display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.tabs{display:flex;gap:28px;flex-wrap:wrap}
+.tabs button{background:none;border:0;color:#d9a7b1;font:inherit;font-size:18px;cursor:pointer;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s}
+.tabs button[aria-selected="true"]{color:var(--on-wine);border-bottom-color:var(--on-wine)}
+.tabs button:hover{color:var(--on-wine)}
+.plate h2{font-size:var(--step-display);font-weight:300}
+.plate .desc{margin-top:28px;max-width:36ch;font-size:var(--step-lead);line-height:1.4}
+.table-calc{margin-top:28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:17px}
+.table-calc[hidden]{display:none}
+.step{display:inline-flex;align-items:center;background:var(--wine-2)}
+.step button{width:48px;height:48px;background:none;border:0;color:var(--on-wine);font:inherit;font-size:24px;cursor:pointer}
+.step button:hover{background:#470a16}
+.step output{min-width:2.5ch;text-align:center;font-size:20px}
+.total{font-size:var(--step-lead)}
+.cells{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.cells a{min-height:72px;display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:500;transition:background .25s}
+.cells a:first-child{background:var(--on-wine);color:var(--wine)}
+.cells a:first-child:hover{background:#fff}
+.cells a:last-child{background:var(--wine-2);color:var(--on-wine)}
+.cells a:last-child:hover{background:#470a16}
+.cells svg{width:18px;height:18px}
+
+/* ---------- cave (forest field) ---------- */
+.cave{margin:var(--m);background:var(--forest);color:var(--on-forest);display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,80px);padding:clamp(64px,9vw,140px) clamp(24px,5vw,80px)}
+.cave h2{font-size:var(--step-display);max-width:8ch}
+.cave p{margin-top:28px;max-width:44ch;font-size:var(--step-lead);line-height:1.4}
+.cave .small{font-size:var(--step-body);color:#c4d0c2;margin-top:20px}
+.cave img{width:100%;aspect-ratio:4/5;max-height:78svh;object-fit:cover;align-self:center}
+.cave a{color:var(--on-forest)}
+
+/* ---------- contact rows ---------- */
+.contact{margin:0 var(--m)}
+.contact h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.row{display:flex;align-items:flex-end;min-height:clamp(84px,10vw,150px);padding:0 20px 18px;font-size:clamp(34px,6vw,88px);font-weight:300;letter-spacing:-.035em;line-height:1;text-decoration:none;background:var(--bg-2);transition:background .3s}
+.row:nth-child(odd){background:var(--bg)}
+a.row:hover{background:var(--ink);color:var(--bg)}
+.row small{font-size:var(--step-small);letter-spacing:0;margin-left:auto;padding-left:16px;color:var(--muted);align-self:flex-end;padding-bottom:6px;font-weight:400;white-space:nowrap}
+a.row:hover small{color:#c9c6c0}
+.row.go{background:var(--wine);color:var(--on-wine);gap:24px}
+.row.go .arrow{width:.9em;height:.9em;border-radius:50%;background:var(--on-wine);color:var(--wine);display:inline-flex;align-items:center;justify-content:center;transition:transform .3s var(--ease)}
+.row.go:hover{background:var(--wine-2);color:var(--on-wine)}
+.row.go:hover .arrow{transform:translateX(8px)}
+.row.go .arrow svg{width:45%;height:45%}
+.hours{display:grid;grid-template-columns:repeat(7,1fr);margin:var(--m) var(--m) 0;background:var(--bg-2);font-size:15px}
+.hours div{padding:16px 12px 18px}
+.hours div.today{background:var(--ink);color:var(--bg)}
+.hours b{display:block;font-weight:500;margin-bottom:6px}
+.hours span{display:block;color:inherit;opacity:.85}
+.hours .closed span{opacity:1;color:var(--muted)}
+
+footer{display:grid;grid-template-columns:1fr auto 1fr;gap:16px 24px;align-items:end;padding:22svh 28px 64px;font-size:15px;color:var(--muted)}
+footer .links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+footer .links a{color:var(--ink)}
+footer .r{justify-self:end;text-align:right}
+footer .credits{grid-column:1/-1;font-size:13px;max-width:110ch;margin-top:24px}
+
+/* reveal */
+.rv{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- phone ---------- */
+@media (max-width:860px){
+  .stage{display:flex;flex-direction:column;gap:0;padding:var(--m)}
+  .photo{order:-1}
+  .cave img{aspect-ratio:4/3}
+  .photo{position:sticky;top:var(--m);height:56svh;z-index:0}
+  .read{position:relative;z-index:1}
+  .tabs{gap:18px}.tabs button{font-size:16px}
+  .sheet{min-height:auto;padding:24px 20px 40px}
+  .top{grid-template-columns:1fr auto}
+  .top .l{display:none}
+  .hero-txt{padding-top:28px}
+  .hero-txt h1{font-size:clamp(2.6rem,12vw,4rem)}
+  .acts .btn{flex:1 1 100%}
+  .col{padding:0 20px}
+  .sec{padding-top:88px}
+  .plate{grid-template-columns:1fr;margin:0}
+  .plate .pic{padding:16px}
+  .plate .txt{padding:16px 20px 24px}
+  .cells{grid-template-columns:1fr}
+  .cells a{min-height:60px}
+  .cave{grid-template-columns:1fr;margin:var(--m) 0}
+  .contact{margin:0}
+  .row{font-size:9.4vw;padding:0 16px 14px}
+  .row small{display:none}
+  .hours{grid-template-columns:1fr;margin:var(--m) 0 0}
+  .hours div{display:flex;justify-content:space-between;padding:12px 16px}
+  .hours b{margin:0}
+  footer{grid-template-columns:1fr;padding:20svh 20px 72px}
+  footer .links{justify-content:flex-start}
+  footer .r{justify-self:start;text-align:left}
+  .bar{font-size:14px;padding:0 14px}
+  .bar .addr{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<div class="stage">
+  <main class="read" id="top">
+    <section class="sheet" aria-labelledby="t">
+      <nav class="top" aria-label="Navigation">
+        <a class="l" href="#carte">La carte</a>
+        <span class="mark">L'Os à Moelle</span>
+        <a class="r" href="#infos">Infos &amp; horaires</a>
+      </nav>
+      <div class="hero-txt">
+        <h1 id="t" class="rv">L'Os à Moelle</h1>
+        <p class="rv">Bistrot du 15e, rue Vasco de Gama depuis 1994. Le chef Mathieu Anfray a repris la cuisine en mars 2026, dans une salle refaite à neuf.</p>
+        <div class="acts rv">
+          <a class="btn" href="tel:+33145572727"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Réserver au 01 45 57 27 27</a>
+          <a class="btn alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27Os+%C3%A0+Moelle%2C+3+rue+Vasco+de+Gama%2C+75015+Paris" target="_blank" rel="noopener">Itinéraire</a>
+        </div>
+        <p class="facts rv"><span>Sélection du Guide Michelin</span><span>4,5 sur Google, 520 avis</span><span>Métro Lourmel, ligne 8</span></p>
+      </div>
+    </section>
+
+    <div class="col">
+      <section class="sec" id="carte" aria-labelledby="h-carte" data-photo="1">
+        <h2 id="h-carte" class="rv">La carte d'automne</h2>
+        <p class="lead rv">Une cuisine de bistrot qui suit la saison : courge, châtaigne, saint-jacques, gibier de basse-cour et sauces montées au beurre.</p>
+        <div class="carte">
+          <div class="grp rv">
+            <h3>Pour commencer</h3>
+            <ul>
+              <li><span>Velouté de courge</span><span></span></li>
+              <li><span>Œuf parfait en siphon, lard fumé, crème de parmesan, croûtons</span><span></span></li>
+              <li><span>Croustillants de gambas black tiger tandoori</span><span></span></li>
+              <li><span>Poireau brûlé en vinaigrette et kiwi</span><span></span></li>
+              <li><span>Bisque crémeuse de langoustines</span><span></span></li>
+              <li><span>Terrine de campagne</span><span></span></li>
+            </ul>
+          </div>
+          <div class="grp rv">
+            <h3>Ensuite</h3>
+            <ul>
+              <li><span>Saint-jacques, tétragone, carottes glacées à la fève tonka et châtaignes</span><span></span></li>
+              <li><span>Ravioles de langoustines au chou, pistou basilic</span><span></span></li>
+              <li><span>Maquereau mariné et grillé, beurre blanc et coques</span><span></span></li>
+              <li><span>Suprême de volaille, gnocchis, champignons au vin jaune</span><span></span></li>
+              <li><span>Cocotte de joue de bœuf façon bourguignon</span><span></span></li>
+              <li><span>Côte de bœuf black angus, grenailles à la graisse de canard, béarnaise</span><span>pour deux</span></li>
+            </ul>
+          </div>
+          <div class="grp rv">
+            <h3>Pour finir</h3>
+            <ul>
+              <li><span>Crème brûlée à l'ananas, sablé viennois, glace passion</span><span></span></li>
+              <li><span>Croustillant chocolat noisette, ganache caramel</span><span></span></li>
+              <li><span>Brioche perdue au caramel beurre salé, glace vanille</span><span></span></li>
+              <li><span>Financier citron, crème à la vanille de Madagascar</span><span></span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="note rv">Plats relevés à la carte en 2026 ; elle change avec les arrivages. Comptez de 35 à 75 € à la carte.</p>
+      </section>
+
+      <section class="sec" id="maison" aria-labelledby="h-maison" data-photo="2">
+        <h2 id="h-maison" class="rv">Une maison, deux époques</h2>
+        <div class="chron">
+          <div class="rv"><b>1994</b><p>Thierry Faucher ouvre L'Os à Moelle au 3 rue Vasco de Gama. Le bistrot compte parmi les adresses qui ont lancé la bistronomie à Paris.</p></div>
+          <div class="rv"><b>2026</b><p>En mars, Mathieu Anfray reprend la cuisine. Il arrive de Comice, table étoilée de l'avenue de Versailles, puis de Clover Saint-Germain. La salle est rénovée de fond en comble.</p></div>
+        </div>
+        <div class="team rv">
+          <p><strong>Mathieu Anfray</strong><span>Chef</span></p>
+          <p><strong>Giovanni</strong><span>Second de cuisine</span></p>
+          <p><strong>Antoine Prat</strong><span>Chef sommelier et directeur</span></p>
+          <p><strong>Julie</strong><span>Accueil et service</span></p>
+        </div>
+      </section>
+      <div style="height:clamp(96px,12vw,180px)"></div>
+    </div>
+  </main>
+
+  <aside class="photo" aria-label="Photographies">
+    <img class="on" data-i="0" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Roast_Bone_Marrow.jpg/1280px-Roast_Bone_Marrow.jpg" width="1280" height="1707" alt="Os à moelle rôtis, coupés en tronçons, servis avec du pain grillé">
+    <img data-i="1" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&amp;q=75&amp;auto=format&amp;fit=crop" width="1400" height="933" alt="Service du soir dans une salle de restaurant, assiettes et verres sur la table" loading="lazy">
+    <img data-i="2" src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=1200&amp;q=75&amp;auto=format&amp;fit=crop" width="1200" height="1800" alt="Un vin rouge versé dans un verre à côté d'une viande découpée" loading="lazy">
+    <p class="cap" id="cap">L'os à moelle, rôti et tranché.</p>
+    <div class="bar"><span id="status"><span class="dot"></span>Mar–ven midi et soir, sam soir</span><span class="addr">3 rue Vasco de Gama</span></div>
+  </aside>
+</div>
+
+<!-- the bone cross-section: menus -->
+<section class="plate" id="menus" aria-labelledby="h-menus">
+  <div class="pic">
+    <div class="sq rv">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Os_%C3%A0_moelle.jpg/1280px-Os_%C3%A0_moelle.jpg" width="1280" height="960" alt="Deux os à moelle servis sur une nappe à carreaux" loading="lazy" style="object-position:62% 50%">
+      <span class="ring" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div class="txt">
+    <div class="tabs" role="tablist" aria-label="Formules">
+      <button role="tab" aria-selected="true" aria-controls="m-panel" data-k="f35">Formule midi</button>
+      <button role="tab" aria-selected="false" aria-controls="m-panel" data-k="m45">Menu midi</button>
+      <button role="tab" aria-selected="false" aria-controls="m-panel" data-k="m70">Menu à 70 €</button>
+    </div>
+    <div id="m-panel" role="tabpanel" aria-live="polite">
+      <h2 id="h-menus"><span id="m-price">35 €</span></h2>
+      <p class="desc" id="m-desc">La formule du déjeuner, du mardi au vendredi.</p>
+      <div class="table-calc" id="calc" hidden>
+        <span>Nous serons</span>
+        <span class="step"><button type="button" id="minus" aria-label="Un convive de moins">−</button><output id="n" aria-live="polite">4</output><button type="button" id="plus" aria-label="Un convive de plus">+</button></span>
+        <span class="total" id="tot">soit 280 € hors boissons</span>
+      </div>
+    </div>
+    <div class="cells">
+      <a href="tel:+33145572727" id="callcell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Réserver une table</a>
+      <a href="#carte">Voir la carte</a>
+    </div>
+  </div>
+</section>
+
+<section class="cave" id="cave" aria-labelledby="h-cave">
+  <div>
+    <h2 id="h-cave" class="rv">La cave</h2>
+    <p class="rv">Antoine Prat, chef sommelier et directeur de la maison, choisit les vins et vous guide dans la carte. Dites-lui ce que vous mangez, il s'occupe du reste.</p>
+    <p class="small rv">Groupes et privatisation de 20 à 40 personnes, terrasse d'une quinzaine de places aux beaux jours. Écrivez à <a href="mailto:lacavedelosamoelle@outlook.com?subject=Demande%20de%20privatisation%20%E2%80%94%20L'Os%20%C3%A0%20Moelle">lacavedelosamoelle@outlook.com</a>.</p>
+  </div>
+  <img class="rv" src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?w=1000&amp;q=75&amp;auto=format&amp;fit=crop" width="1000" height="1250" alt="Bouteilles de vin alignées sur une étagère de cave" loading="lazy">
+</section>
+
+<section class="contact" id="infos" aria-labelledby="h-infos">
+  <h2 id="h-infos">Infos et réservation</h2>
+  <div class="row">L'Os à Moelle</div>
+  <a class="row" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27Os+%C3%A0+Moelle%2C+3+rue+Vasco+de+Gama%2C+75015+Paris" target="_blank" rel="noopener">3 rue Vasco de Gama<small>Itinéraire</small></a>
+  <div class="row">75015 Paris<small>Métro Lourmel, ligne 8</small></div>
+  <a class="row" href="tel:+33145572727">01 45 57 27 27<small>Appeler</small></a>
+  <a class="row go" href="mailto:lacavedelosamoelle@outlook.com?subject=R%C3%A9servation%20%E2%80%94%20L'Os%20%C3%A0%20Moelle&amp;body=Bonjour%2C%0A%0ANous%20souhaiterions%20r%C3%A9server%20une%20table%20pour%20%5Bnombre%5D%20personnes%20le%20%5Bdate%5D%20%C3%A0%20%5Bheure%5D.%0A%0AMerci%20!">Écrire<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <div class="hours" id="hours" aria-label="Horaires d'ouverture"></div>
+</section>
+
+<footer>
+  <span>Bistrot, Paris 15e, depuis 1994</span>
+  <span class="links"><a href="#carte">Carte</a><a href="#menus">Menus</a><a href="#cave">Cave</a><a href="https://www.facebook.com/losamoelleetlacave" target="_blank" rel="noopener">Facebook</a></span>
+  <span class="r">2026 · Démo non officielle</span>
+  <p class="credits">Photos : « Roast Bone Marrow » par Прикли, CC BY 4.0, et « Os à moelle » par Arnaud 25, CC BY-SA 4.0, via Wikimedia Commons ; autres photos Unsplash, d'illustration. Horaires et menus relevés dans la presse en 2026, à confirmer par téléphone.</p>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// reveal, staggered per section
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('section').forEach(s=>s.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%6)*75+'ms';io.observe(el)}));
+
+// sticky photo follows the section
+const imgs=[...document.querySelectorAll('.photo img')],cap=document.getElementById('cap');
+const caps=["L'os à moelle, rôti et tranché.","Le service du soir.","Un verre de rouge avec la viande."];
+const show=i=>{imgs.forEach(im=>im.classList.toggle('on',+im.dataset.i===i));cap.textContent=caps[i]};
+const po=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)show(+e.target.dataset.photo)}),{rootMargin:'-45% 0px -45% 0px'});
+document.querySelectorAll('[data-photo]').forEach(s=>po.observe(s));
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)show(0)}),{rootMargin:'-45% 0px -45% 0px'}).observe(document.querySelector('.sheet'));
+
+// hours (source : presse 2026) — 0 = dimanche
+const H={0:[],1:[],2:[[12,0,14,0],[19,0,22,0]],3:[[12,0,14,0],[19,0,22,0]],4:[[12,0,14,0],[19,0,22,0]],5:[[12,0,14,0],[19,0,22,0]],6:[[19,0,22,0]]};
+const D=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const fmt=s=>`${s[0]}h${s[1]?String(s[1]).padStart(2,'0'):''}–${s[2]}h${s[3]?String(s[3]).padStart(2,'0'):''}`;
+const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}));
+const today=now.getDay(),mins=now.getHours()*60+now.getMinutes();
+const hb=document.getElementById('hours');
+[1,2,3,4,5,6,0].forEach(d=>{const el=document.createElement('div');if(!H[d].length)el.className='closed';if(d===today)el.classList.add('today');
+  el.innerHTML=`<b>${D[d]}</b><span>${H[d].length?H[d].map(fmt).join(' · '):'Fermé'}</span>`;hb.appendChild(el)});
+function status(){
+  const cur=H[today].find(s=>mins>=s[0]*60+s[1]&&mins<s[2]*60+s[3]);
+  if(cur)return `<span class="dot open"></span>Ouvert, service jusqu'à ${cur[2]}h`;
+  const later=H[today].find(s=>mins<s[0]*60+s[1]);
+  if(later)return `<span class="dot"></span>Fermé, réouverture à ${later[0]}h aujourd'hui`;
+  for(let k=1;k<8;k++){const d=(today+k)%7;if(H[d].length)return `<span class="dot"></span>Fermé, réouverture ${k===1?'demain':D[d].toLowerCase()} à ${H[d][0][0]}h`}
+}
+document.getElementById('status').innerHTML=status();
+
+// menus + table calculator
+const M={f35:['35 €','La formule du déjeuner, du mardi au vendredi.',false],m45:['45 €','Le menu du déjeuner, du mardi au vendredi.',false],m70:['70 €','Midi et soir, pour toute la table : amuse-bouche, entrées, plat et dessert.',true]};
+let n=4;const tot=()=>{document.getElementById('n').value=n;document.getElementById('n').textContent=n;document.getElementById('tot').textContent=`soit ${n*70} € hors boissons`};
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  const m=M[b.dataset.k];document.getElementById('m-price').textContent=m[0];document.getElementById('m-desc').textContent=m[1];document.getElementById('calc').hidden=!m[2];
+}));
+document.getElementById('minus').onclick=()=>{n=Math.max(2,n-1);tot()};
+document.getElementById('plus').onclick=()=>{n=Math.min(40,n+1);tot()};
+tot();
+</script>
+</body>
+</html>
