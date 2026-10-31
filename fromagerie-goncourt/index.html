@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>La Fromagerie Goncourt · Paris 11e</title>
+<meta name="description" content="Fromagerie au lait cru à l'angle de l'avenue Parmentier et de la rue Abel Rabaud, Paris 11e. Bar à frais, plateaux, sélection de petits producteurs.">
+<!-- DESIGN.md « IBM / Carbon » (awesome-design) : aplats francs, angles droits, un seul bleu affirmé, Plex Sans léger en titrage. Bleu repris de la façade bleu électrique de la boutique. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1d3af2; --blue-deep:#1229c4; --on-blue:#fff; --on-blue-soft:#d9defd;
+  --bg:#fff; --ink:#161616; --soft:#4d4d4d; --s1:#f3f3f1; --s2:#e7e6e1;
+  --m:clamp(16px,2.2vw,32px);
+  --small:clamp(.8125rem,.79rem + .1vw,.875rem);
+  --body:clamp(1rem,.97rem + .2vw,1.125rem);
+  --lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --head:clamp(2.1rem,1.3rem + 3.4vw,4.25rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--body)/1.55 "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+::selection{background:var(--blue);color:#fff}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.on-blue :focus-visible{outline-color:#fff}
+h1,h2,h3{margin:0;font-weight:300;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
+p{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-9999px}.skip:focus{left:var(--m);top:8px;z-index:20;background:#fff;padding:8px 12px}
+
+.demo{margin:0;background:var(--ink);color:#e9e9e9;font-size:var(--small);text-align:center;padding:7px var(--m)}
+
+/* Boutons : rectangles pleins, angle droit (Carbon) */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 18px;font:500 1rem/1.2 "IBM Plex Sans",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background .25s var(--ease),transform .2s var(--ease)}
+.btn:active{transform:translateY(1px) scale(.98)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-white{background:#fff;color:var(--blue)}.btn-white:hover{background:var(--on-blue-soft)}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blue-deep)}
+.hero-acts{display:flex;flex-wrap:wrap;gap:4px}
+.btn-deep{background:var(--blue-deep);color:#fff}.btn-deep:hover{background:#0d1f9e}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:#333}
+
+/* HERO : photo en haut, la façade bleue en bas avec le nom */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:56svh auto;background:var(--blue);color:var(--on-blue);overflow:hidden}
+.hero-pic{position:relative;overflow:hidden;background:#3a2e22}
+.hero-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:drift 24s var(--ease) both alternate infinite}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+.nav{position:absolute;inset:0 0 auto 0;display:flex;justify-content:space-between;align-items:center;padding:14px var(--m);z-index:2;background:rgba(10,10,10,.42)}
+.nav .mini{font-weight:600;color:#fff;text-decoration:none;font-size:.95rem}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{color:#fff;text-decoration:none;font-size:.95rem}
+.nav ul a:hover{text-decoration:underline}
+.nav .menu-links{display:none}
+.band{display:flex;flex-direction:column;justify-content:space-between;gap:22px;padding:22px var(--m) 14px}
+.band-row{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.band-row p{max-width:34ch;color:#fff;font-size:1.0625rem}
+.band-row p b{font-weight:600}
+h1.name{font:600 19vw/.82 "IBM Plex Sans Condensed",sans-serif;letter-spacing:-.045em;margin:0;white-space:nowrap;display:inline-block;align-self:flex-start;transform-origin:50% 100%;will-change:transform}
+
+/* INTRO */
+.intro{display:grid;gap:40px;padding:96px var(--m) 120px}
+.intro .col{max-width:36ch}
+.intro .col p+p{margin-top:1.1em}
+.intro .col p:first-child{font-size:var(--lead);line-height:1.35;font-weight:400}
+.intro figure{margin:0}
+.intro figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+figcaption{font-size:var(--small);color:var(--soft);margin-top:10px}
+
+/* SÉLECTION : déclaration + table poussée à droite */
+.sel{background:var(--s1);padding:110px var(--m) 120px}
+.sel h2{font-size:var(--head);max-width:14ch}
+.sel-grid{display:grid;gap:48px;margin-top:64px}
+.sel-pic img{width:62%;margin-left:auto;aspect-ratio:4/5;object-fit:cover}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:14px 0}
+.rows li.grp{margin-top:26px}
+.rows .k{grid-column:1/-1;color:var(--soft);font-size:var(--small)}
+.rows .v{font-weight:600}
+.rows .o{color:var(--soft);text-align:right}
+.sel-note{margin-top:28px;color:var(--soft);font-size:var(--small);max-width:46ch}
+
+/* PLATEAU : plaque carrée + outil */
+.plateau{background:var(--blue);color:#fff;display:grid}
+.plate-side{padding:56px var(--m) 0;display:grid;place-items:center}
+.plate-box{position:relative;width:min(100%,560px);aspect-ratio:1}
+.plate-box svg{width:100%;height:100%}
+.plate-box .wedge{transition:opacity .45s var(--ease),transform .5s var(--ease);transform-origin:200px 200px}
+.plate-side figcaption{color:var(--on-blue-soft);text-align:center}
+.tool{padding:48px var(--m) 72px;display:flex;flex-direction:column;gap:28px;justify-content:space-between}
+.tool h2{font-size:var(--head)}
+.tool .lede{color:var(--on-blue-soft);max-width:40ch;margin-top:16px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs button{flex:1 1 auto;min-height:48px;padding:10px 14px;border:0;background:var(--blue-deep);color:#fff;font:400 1rem "IBM Plex Sans",sans-serif;cursor:pointer;transition:background .2s}
+.tabs button[aria-pressed="true"]{background:#fff;color:var(--blue);font-weight:600}
+.tabs button:hover:not([aria-pressed="true"]){background:#0d1f9e}
+.count{display:flex;align-items:center;gap:0}
+.count button{width:56px;height:56px;border:0;background:#fff;color:var(--blue);font:300 2rem/1 "IBM Plex Sans",sans-serif;cursor:pointer}
+.count button:hover{background:var(--on-blue-soft)}
+.count output{min-width:7.5ch;text-align:center;font-size:var(--lead)}
+.res{font-size:var(--lead);line-height:1.35}
+.res b{font-weight:600}
+.res-list{list-style:none;margin:14px 0 0;padding:0;color:#fff}
+.res-list li{padding:6px 0;display:flex;gap:12px;align-items:baseline}
+.res-list i{width:12px;height:12px;flex:none;display:inline-block;transform:translateY(1px)}
+.hint{color:var(--on-blue-soft);font-size:var(--small)}
+.acts{display:grid;grid-template-columns:1fr;gap:4px}
+.acts .btn{justify-content:space-between;min-height:64px}
+
+/* BAR À FRAIS + LAIT */
+.frais{padding:120px var(--m)}
+.frais h2{font-size:var(--head);max-width:16ch}
+.frais-grid{display:grid;gap:32px;margin-top:56px}
+.frais figure{margin:0}
+.frais img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.frais h3{font-size:var(--lead);font-weight:600;letter-spacing:0;margin-top:20px}
+.frais figure p{margin-top:8px;max-width:44ch}
+
+/* HORAIRES */
+.hours{background:var(--s1);padding:110px var(--m);display:grid;gap:40px}
+.hours h2{font-size:var(--head)}
+.now{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:var(--lead)}
+.now i{width:14px;height:14px;border-radius:50%;background:#1f9d55;display:inline-block}
+.now.closed i{background:#c4362b}
+.hours table{width:100%;border-collapse:collapse;font-size:var(--body)}
+.hours td{padding:14px 0;vertical-align:top}
+.hours td+td{text-align:right}
+.hours tr{border-bottom:1px solid var(--s2)}
+.hours tr.today td{font-weight:600}
+.hours tr.today td:first-child::after{content:" · aujourd'hui";font-weight:400;color:var(--blue)}
+.hours .src{color:var(--soft);font-size:var(--small);margin-top:16px}
+
+/* CONTACT : lignes en grand */
+.contact{position:relative;z-index:1;background:var(--bg)}
+.contact h2{padding:110px var(--m) 28px;font-size:var(--head)}
+.crow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;min-height:84px;padding:12px var(--m);font:300 9vw/1 "IBM Plex Sans",sans-serif;letter-spacing:-.03em;text-decoration:none;color:var(--ink);transition:background .25s var(--ease)}
+.crow.alt{background:var(--s1)}
+a.crow:hover{background:var(--s2)}
+.crow small{font:400 var(--small)/1.3 "IBM Plex Sans",sans-serif;letter-spacing:.01em;color:var(--soft);text-align:right;padding-bottom:.4em}
+.crow.ig{font-size:7.2vw}
+.crow.go{background:var(--blue);color:#fff}
+.crow.go:hover{background:var(--blue-deep)}
+.crow .arrow{width:56px;height:56px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;flex:none;transition:transform .35s var(--ease)}
+.crow.go:hover .arrow{transform:translateX(6px)}
+.crow .arrow svg{width:24px;height:24px}
+
+/* FOOTER : la façade revient */
+.foot{min-height:0;background:var(--blue);color:#fff;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 20svh auto;padding:40px var(--m) 18px}
+.fcols{display:grid;grid-template-columns:1fr 1fr;gap:32px 24px;font-size:.95rem}
+.fcols p,.fcols li{color:var(--on-blue-soft)}
+.fcols b{display:block;color:#fff;font-weight:600;margin-bottom:6px}
+.fcols ul{list-style:none;margin:0;padding:0}
+.fcols a{color:#fff}
+.big{font:600 19vw/.8 "IBM Plex Sans Condensed",sans-serif;letter-spacing:-.045em;margin:0;white-space:nowrap;display:inline-block;align-self:flex-start;transform-origin:50% 100%}
+.legal{font-size:var(--small);color:var(--on-blue-soft);margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 18px}
+
+/* Entrées */
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rise.in{opacity:1;transform:none}
+
+@media (min-width:760px){
+  .nav{background:none;justify-content:flex-end}
+  .nav .mini{display:none}
+  .nav .menu-links{display:flex}
+  .nav ul a{text-shadow:0 1px 8px rgba(0,0,0,.5)}
+  .hero{grid-template-rows:minmax(0,1fr) auto;height:calc(100svh - 34px);min-height:640px}
+  .band-row{flex-direction:row;justify-content:space-between;align-items:center}
+  .intro{grid-template-columns:15% minmax(0,36ch) 1fr;align-items:start}
+  .intro .col{grid-column:2}
+  .intro figure{grid-column:3;justify-self:end;width:min(100%,520px)}
+  .sel h2{text-indent:3vw}
+  .sel-grid{grid-template-columns:4fr 1fr 7fr;align-items:end}
+  .sel-pic{grid-column:1}.sel-pic img{width:100%}
+  .rows-wrap{grid-column:3}
+  .rows li{grid-template-columns:11rem 1fr auto}
+  .rows .k{grid-column:auto}
+  .plateau{grid-template-columns:1fr 1fr;min-height:88svh}
+  .plate-side{padding:56px 40px}
+  .tool{padding:72px var(--m) 72px 24px}
+  .acts{grid-template-columns:1fr 1fr}
+  .frais-grid{grid-template-columns:7fr 5fr;align-items:start}
+  .frais-grid figure:last-child{margin-top:140px}
+  .hours{grid-template-columns:5fr 1fr 6fr;align-items:start}
+  .hours .tbl{grid-column:3}
+  .crow{min-height:140px;font-size:clamp(44px,6vw,88px)}
+  .fcols{grid-template-columns:repeat(4,1fr)}
+  .foot{min-height:100svh;grid-template-rows:auto 1fr auto}
+  .crow.ig{font-size:clamp(44px,6vw,88px)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .rise{opacity:1;transform:none}
+  h1.name,.big{transform:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 3.5h3l1.5 4.2-2 1.5a12 12 0 0 0 5.7 5.7l1.5-2 4.2 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM4 6l8 6.5L20 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="hero on-blue">
+  <div class="hero-pic">
+    <img src="https://images.unsplash.com/photo-1631379578550-7038263db699?w=2000&q=75&auto=format&fit=crop" width="2000" height="1333" alt="Meules de fromages affinés empilées dans une cave d'affinage" fetchpriority="high">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="mini" href="#main">La Fromagerie Goncourt</a>
+      <ul class="menu-links">
+        <li><a href="#selection">Fromages</a></li>
+        <li><a href="#plateau">Plateau</a></li>
+        <li><a href="#horaires">Horaires</a></li>
+        <li><a href="#venir">Venir</a></li>
+      </ul>
+      <a class="mini" href="#venir" style="text-decoration:underline">Venir</a>
+    </nav>
+  </div>
+  <div class="band">
+    <div class="band-row">
+      <p><b>La Fromagerie Goncourt.</b> Fromages au lait cru de petits producteurs, à l'angle de l'avenue Parmentier. Paris 11e.</p>
+      <div class="hero-acts"><a class="btn btn-white" href="tel:+33143579128"><svg aria-hidden="true"><use href="#i-tel"/></svg>01 43 57 91 28</a><a class="btn btn-deep" href="https://www.google.com/maps/dir/?api=1&amp;destination=1+rue+Abel+Rabaud+75011+Paris" target="_blank" rel="noopener">Itinéraire <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <h1 class="name" id="wordmark"><span class="sr">La Fromagerie </span>GONCOURT</h1>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="intro" aria-labelledby="t-intro">
+  <h2 id="t-intro" class="sr">La boutique</h2>
+  <div class="col rise">
+    <p>La façade bleue au coin de la rue Abel Rabaud, avec son banc devant la vitrine, c'est elle.</p>
+    <p>Clément Brossault a quitté son métier d'auditeur en 2013. Avant d'ouvrir, il a passé deux mois à vélo à travers la France pour rencontrer des producteurs.</p>
+    <p>Le comptoir en garde la trace : surtout du lait cru, des fromages de terroir, une belle place pour la Savoie et la Corse.</p>
+    <p>Et le lait cru de Normandie arrive deux fois par semaine. <a href="#selection">Voir ce qu'on trouve au comptoir</a></p>
+  </div>
+  <figure class="rise">
+    <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=1040&h=1300&q=75&auto=format&fit=crop" width="520" height="650" loading="lazy" alt="Deux tommes à croûte naturelle posées l'une sur l'autre">
+    <figcaption>Tommes à croûte naturelle.</figcaption>
+  </figure>
+</section>
+
+<section class="sel" id="selection" aria-labelledby="t-sel">
+  <h2 id="t-sel" class="rise">Du lait cru, de la Savoie à la Corse</h2>
+  <div class="sel-grid">
+    <div class="sel-pic rise">
+      <img src="https://images.unsplash.com/photo-1626957341926-98752fc2ba90?w=900&h=1125&q=75&auto=format&fit=crop" width="450" height="563" loading="lazy" alt="Pointe de fromage persillé aux veines bleues">
+    </div>
+    <div class="rows-wrap rise">
+      <ul class="rows">
+        <li><span class="k">Persillés</span><span class="v">Bethia</span><span class="o">Ferme Bethanoun, Pays basque</span></li>
+        <li><span class="k" aria-hidden="true"></span><span class="v">Persillé de Tignes</span><span class="o">Savoie</span></li>
+        <li class="grp"><span class="k">Savoie</span><span class="v">Beaufort</span><span class="o">Pâte pressée cuite</span></li>
+        <li><span class="k" aria-hidden="true"></span><span class="v">Tome des Bauges</span><span class="o">Pâte pressée</span></li>
+        <li><span class="k" aria-hidden="true"></span><span class="v">Dent du Chat</span><span class="o">Pâte pressée</span></li>
+        <li class="grp"><span class="k">Corse</span><span class="v">Calenzana</span><span class="o">Pâte molle, croûte lavée</span></li>
+        <li><span class="k">Pâtes molles</span><span class="v">Saint-Marcellin</span><span class="o">Nature ou à la truffe noire</span></li>
+        <li class="grp"><span class="k">D'ailleurs</span><span class="v">Cheddar</span><span class="o">Pâte pressée</span></li>
+        <li><span class="k" aria-hidden="true"></span><span class="v">Gouda aux herbes</span><span class="o">Pâte pressée</span></li>
+        <li class="grp"><span class="k">Bar à frais</span><span class="v">Ricotta, fromage frais</span><span class="o">Au détail</span></li>
+        <li><span class="k" aria-hidden="true"></span><span class="v">Cervelle de canut</span><span class="o">Maison</span></li>
+      </ul>
+      <p class="sel-note">Fromages relevés au comptoir par la presse. La vitrine change avec les arrivages : demandez ce qui est là cette semaine.</p>
+    </div>
+  </div>
+</section>
+
+<section class="plateau on-blue" id="plateau" aria-labelledby="t-plat">
+  <figure class="plate-side rise">
+    <div class="plate-box">
+      <svg viewBox="0 0 400 400" role="img" aria-labelledby="plate-desc">
+        <title id="plate-desc">Plateau dessiné, une part par fromage proposé</title>
+        <circle cx="200" cy="200" r="190" fill="#fff"/>
+        <circle cx="200" cy="200" r="172" fill="#c7a77a"/>
+        <circle cx="200" cy="200" r="168" fill="#d6b88c"/>
+        <g id="wedges"></g>
+      </svg>
+    </div>
+    <figcaption id="plate-cap">Un plateau de quatre fromages</figcaption>
+  </figure>
+  <div class="tool">
+    <div class="rise">
+      <h2 id="t-plat">Composez votre plateau</h2>
+      <p class="lede">Dites pour combien et pour quand. On vous propose une quantité et un assortiment tiré du comptoir, à valider avec le fromager.</p>
+    </div>
+    <div class="rise" style="display:grid;gap:18px">
+      <div class="tabs" role="group" aria-label="Moment du plateau">
+        <button type="button" data-g="80" data-l="en fin de repas" aria-pressed="true">Fin de repas</button>
+        <button type="button" data-g="150" data-l="pour l'apéritif" aria-pressed="false">Apéritif</button>
+        <button type="button" data-g="250" data-l="en plat principal" aria-pressed="false">Repas fromage</button>
+      </div>
+      <div class="count">
+        <button type="button" id="minus" aria-label="Une personne de moins">−</button>
+        <output id="n" aria-live="polite">6 pers.</output>
+        <button type="button" id="plus" aria-label="Une personne de plus">+</button>
+      </div>
+      <div>
+        <p class="res" id="res" aria-live="polite">Environ <b>480 g</b> pour 6 personnes en fin de repas.</p>
+        <ul class="res-list" id="list"></ul>
+        <p class="hint">Repère courant : 80 g par personne en fin de repas, 150 g à l'apéritif, 250 g en repas fromage.</p>
+      </div>
+    </div>
+    <div class="acts rise">
+      <a class="btn btn-white" id="ask" href="mailto:lafromageriegoncourt@gmail.com">Demander ce plateau <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-ink" href="tel:+33143579128">Appeler <svg aria-hidden="true"><use href="#i-tel"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="frais" aria-labelledby="t-frais">
+  <h2 id="t-frais" class="rise">Le bar à frais, près de la porte</h2>
+  <div class="frais-grid">
+    <figure class="rise">
+      <img src="https://images.unsplash.com/photo-1624806992066-5ffcf7ca186b?w=1400&h=933&q=75&auto=format&fit=crop" width="700" height="467" loading="lazy" alt="Petits fromages frais moulés, en train d'égoutter">
+      <h3>Au détail, comme on veut</h3>
+      <p>Fromage frais, ricotta et cervelle de canut maison, servis à la quantité. Pour une tartine du soir ou une recette.</p>
+    </figure>
+    <figure class="rise">
+      <img src="https://images.unsplash.com/photo-1528750997573-59b89d56f4f7?w=1000&h=667&q=75&auto=format&fit=crop" width="500" height="333" loading="lazy" alt="Lait versé dans un bocal en verre">
+      <h3>Lait cru de Normandie</h3>
+      <p>Livré deux fois par semaine. Il se garde peu : passez tôt dans la semaine.</p>
+    </figure>
+  </div>
+</section>
+
+<section class="hours" id="horaires" aria-labelledby="t-h">
+  <div class="rise">
+    <h2 id="t-h">Horaires</h2>
+    <p class="now" id="now"><i aria-hidden="true"></i><span>Fermé le dimanche</span></p>
+  </div>
+  <div class="tbl rise">
+    <table>
+      <caption class="sr">Horaires d'ouverture de la boutique</caption>
+      <tbody id="htab">
+        <tr data-d="1"><td>Lundi</td><td>15h30 – 20h</td></tr>
+        <tr data-d="2"><td>Mardi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
+        <tr data-d="3"><td>Mercredi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
+        <tr data-d="4"><td>Jeudi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
+        <tr data-d="5"><td>Vendredi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
+        <tr data-d="6"><td>Samedi</td><td>9h – 20h, sans coupure</td></tr>
+        <tr data-d="0"><td>Dimanche</td><td>Fermé</td></tr>
+      </tbody>
+    </table>
+    <p class="src">Horaires habituels. Jours fériés et vacances : un appel suffit.</p>
+  </div>
+</section>
+
+<section class="contact" id="venir" aria-labelledby="t-v">
+  <h2 id="t-v" class="rise">Venir</h2>
+  <a class="crow alt" href="https://www.google.com/maps/dir/?api=1&destination=1+rue+Abel+Rabaud+75011+Paris" target="_blank" rel="noopener"><span>1 rue Abel Rabaud</span><small>Itinéraire<br>Google Maps</small></a>
+  <div class="crow"><span>75011 Paris</span><small>Angle avenue<br>Parmentier</small></div>
+  <div class="crow alt"><span>Métro Goncourt</span><small>Ligne 11</small></div>
+  <a class="crow" href="tel:+33143579128"><span>01 43 57 91 28</span><small>Appeler</small></a>
+  <a class="crow alt ig" href="https://www.instagram.com/lafromageriegoncourt/" target="_blank" rel="noopener"><span>@lafromageriegoncourt</span><small>Instagram</small></a>
+  <a class="crow go" href="mailto:lafromageriegoncourt@gmail.com"><span>Écrire</span><span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+</section>
+
+</main>
+
+<footer class="foot on-blue">
+  <div class="fcols">
+    <div><b>Adresse</b><p>1 rue Abel Rabaud<br>75011 Paris</p></div>
+    <div><b>Sur la page</b><ul><li><a href="#selection">Fromages</a></li><li><a href="#plateau">Plateau</a></li><li><a href="#horaires">Horaires</a></li></ul></div>
+    <div><b>Suivre</b><ul><li><a href="https://www.instagram.com/lafromageriegoncourt/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/lafromageriegoncourt" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+    <div><b>Contact</b><p><a href="tel:+33143579128">01 43 57 91 28</a><br><a href="mailto:lafromageriegoncourt@gmail.com">Écrire un email</a></p></div>
+  </div>
+  <div></div>
+  <div>
+    <p class="big" id="foot-word" aria-hidden="true">GONCOURT</p>
+    <p class="legal"><span>La Fromagerie Goncourt, Paris 11e</span><span>Démo réalisée par Raul Hatos — site non officiel</span><span>Photos d'ambiance : Unsplash</span></p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// Entrées : visibles par défaut, animées seulement si le script tourne
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
+
+// Le nom remplit exactement la largeur entre les marges
+function fit(el){el.style.fontSize='';const w=el.parentElement.clientWidth-parseFloat(getComputedStyle(el.parentElement).paddingLeft)*2,cur=parseFloat(getComputedStyle(el).fontSize);el.style.fontSize=(cur*w/el.getBoundingClientRect().width)+'px'}
+const fitAll=()=>{fit(document.getElementById('wordmark'));fit(document.getElementById('foot-word'))};
+document.fonts.ready.then(fitAll);addEventListener('resize',fitAll);
+// Le nom pèse : il se tasse en quittant l'écran, se redresse dans le pied de page
+const wm=document.getElementById('wordmark'),fw=document.getElementById('foot-word');
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!rm)addEventListener('scroll',()=>{const y=scrollY,h=innerHeight;
+  wm.style.transform=`scale(${1-Math.min(y/h,1)*.06})`;
+  const r=fw.getBoundingClientRect(),p=Math.min(Math.max((h-r.top)/h,0),1);fw.style.transform=`scale(${.94+p*.06})`;},{passive:true});
+
+// Ouvert maintenant ? (heure de Paris)
+const H={1:[[930,1200]],2:[[540,810],[930,1200]],3:[[540,810],[930,1200]],4:[[540,810],[930,1200]],5:[[540,810],[930,1200]],6:[[540,1200]],0:[]};
+const fmt=m=>Math.floor(m/60)+'h'+(m%60?String(m%60).padStart(2,'0'):'');
+(function(){const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const g=t=>parts.find(p=>p.type===t).value,d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%24)*60+ +g('minute');
+  document.querySelector(`#htab tr[data-d="${d}"]`)?.classList.add('today');
+  const el=document.getElementById('now'),open=H[d].find(([a,b])=>m>=a&&m<b);
+  if(open){el.querySelector('span').textContent='Ouvert, jusqu\'à '+fmt(open[1]);return}
+  el.classList.add('closed');const next=H[d].find(([a])=>a>m);
+  if(next){el.querySelector('span').textContent='Fermé, réouvre à '+fmt(next[0]);return}
+  for(let k=1;k<8;k++){const dd=(d+k)%7;if(H[dd].length){const nm=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'][dd];el.querySelector('span').textContent='Fermé, réouvre '+(k===1?'demain':nm)+' à '+fmt(H[dd][0][0]);break}}
+})();
+
+// Plateau : quantité + assortiment tiré des fromages cités au comptoir
+const POOL=[['Beaufort','#e6c45f'],['Saint-Marcellin','#f3e6c2'],['Bethia, persillé basque','#dfe2d3'],['Calenzana, croûte lavée','#d9954a'],['Tome des Bauges','#c9a46a'],['Persillé de Tignes','#cfd6c6'],['Ricotta du bar à frais','#fbf9f1']];
+const RIND=['#a8823a','#e2d3a8','#c9cdb8','#b8642a','#7d6447','#aeb6a4','#efe9d8'];
+let n=6,g=80,label='en fin de repas';
+const $=id=>document.getElementById(id);
+function count(){return n<=3?3:n<=6?4:n<=10?5:n<=16?6:7}
+function wedgePath(i,k){const a0=-Math.PI/2+i*2*Math.PI/k,a1=a0+2*Math.PI/k,r=150,c=200,gap=.03;
+  const p=(a,rr)=>[c+rr*Math.cos(a),c+rr*Math.sin(a)];const [x0,y0]=p(a0+gap,r),[x1,y1]=p(a1-gap,r),[cx0,cy0]=p((a0+a1)/2,14);
+  return [`M${cx0.toFixed(1)} ${cy0.toFixed(1)}L${x0.toFixed(1)} ${y0.toFixed(1)}A${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}Z`,`M${x0.toFixed(1)} ${y0.toFixed(1)}A${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`]}
+function render(){
+  const k=count(),pick=POOL.slice(0,k),total=Math.round(n*g/10)*10;
+  $('n').textContent=n+' pers.';
+  $('res').innerHTML=`Environ <b>${total>=1000?(total/1000).toString().replace('.',',')+' kg':total+' g'}</b> pour ${n} personnes ${label}.`;
+  $('list').innerHTML=pick.map(([t,c])=>`<li><i style="background:${c}"></i>${t}, ${Math.round(total/k/10)*10} g</li>`).join('');
+  $('wedges').innerHTML=pick.map(([t,c],i)=>(([d,a])=>`<path class="wedge" d="${d}" fill="${c}"/><path d="${a}" fill="none" stroke="${RIND[i]}" stroke-width="9"/>`)(wedgePath(i,k))+(t.includes('ersill')||t.includes('Bethia')?blue(i,k):'')).join('');
+  $('plate-cap').textContent=`Un plateau de ${['','','','trois','quatre','cinq','six','sept'][k]} fromages`;
+  $('minus').disabled=n<=2;$('plus').disabled=n>=30;
+  const body=`Bonjour,\n\nJe voudrais un plateau de fromages pour ${n} personnes, ${label} (environ ${total} g).\nPiste d'assortiment : ${pick.map(p=>p[0]).join(', ')}.\n\nRetrait souhaité le : \nNom et téléphone : \n\nMerci !`;
+  $('ask').href='mailto:lafromageriegoncourt@gmail.com?subject='+encodeURIComponent(`Plateau pour ${n} personnes`)+'&body='+encodeURIComponent(body);
+}
+function blue(i,k){const a=-Math.PI/2+(i+.5)*2*Math.PI/k;let s='';[[60,-.12],[95,.1],[120,-.05],[80,.18]].forEach(([r,o])=>{s+=`<circle cx="${(200+r*Math.cos(a+o)).toFixed(1)}" cy="${(200+r*Math.sin(a+o)).toFixed(1)}" r="5" fill="#5f7d8c"/>`});return s}
+$('minus').onclick=()=>{if(n>2){n--;render()}};
+$('plus').onclick=()=>{if(n<30){n++;render()}};
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-pressed',x===b));g=+b.dataset.g;label=b.dataset.l;render()});
+render();
+</script>
+</body>
+</html>
