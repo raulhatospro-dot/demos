@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Chào Bà · Restaurant vietnamien, Paris 13e</title>
+<meta name="description" content="Chào Bà, restaurant vietnamien au 14 rue Coypel, Paris 13e, près de la place d'Italie. Bún chả, bò bún, nems maison, bánh cuốn. Midi et soir.">
+<meta name="theme-color" content="#aa2d00">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* Système adapté du DESIGN.md « Airtable » (awesome-design) : toile blanche, encre bleu-nuit,
+   aplats « signature » pleine largeur (corail, forêt, pêche, menthe, jaune), rayons 12px.
+   Adapté : le corail devient le rouge des enseignes de Hanoï, le forêt et la menthe les herbes du bún.
+   Police : Be Vietnam Pro, dessinée pour les diacritiques vietnamiens. */
+:root{
+  --canvas:#ffffff;
+  --soft:#f3f5f2;
+  --ink:#181d26;
+  --body:#2c313a;
+  --mute:#4a4f58;
+  --coral:#aa2d00;
+  --coral-d:#8a2400;
+  --forest:#0a2e0e;
+  --forest-2:#1f4a24;
+  --forest-3:#3f6e44;
+  --mint:#a8d8c4;
+  --mint-l:#d6eee3;
+  --peach:#fcab79;
+  --yellow:#f4d35e;
+  --m:clamp(16px,2.2vw,32px);
+  --g:8px;
+  --r:12px;
+  --gap:clamp(112px,13vw,200px);
+  --f:"Be Vietnam Pro",system-ui,sans-serif;
+  --t-mono:clamp(140px,19vw,300px);
+  --t-h2:clamp(2.25rem,4.6vw,4.25rem);
+  --t-st:clamp(1.375rem,2.2vw,2.125rem);
+  --t-body:1.0625rem;
+  --t-sm:0.9375rem;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--canvas);color:var(--body);font:400 var(--t-body)/1.55 var(--f);-webkit-font-smoothing:antialiased;padding-bottom:44px}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1.5px}
+h1,h2,h3{margin:0;color:var(--ink);font-weight:900;letter-spacing:-0.035em;line-height:.95;text-wrap:balance}
+p{margin:0}
+::selection{background:var(--yellow);color:var(--ink)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:4px}
+html{scrollbar-color:var(--forest-3) var(--soft)}
+.wrap{padding-inline:var(--m)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 24px;border-radius:var(--r);background:var(--ink);color:#fff;font:700 1rem/1.2 var(--f);text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background .25s}
+.btn:hover{background:var(--coral)}
+.btn:active{transform:scale(.97)}
+.btn.light{background:#fff;color:var(--ink)}
+.btn.light:hover{background:var(--yellow)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- Hero : enseigne + rails ---------- */
+.hero{display:grid;gap:var(--g);padding:var(--g);height:calc(100svh - 44px);min-height:640px;grid-template-columns:repeat(12,1fr);grid-template-rows:auto 64px minmax(0,1fr)}
+.tile{border-radius:var(--r);overflow:hidden;position:relative}
+.sign{grid-column:1/-1;background:var(--coral);padding:clamp(14px,1.6vw,24px) clamp(14px,1.6vw,24px) clamp(10px,1.2vw,18px)}
+.sign svg{display:block;width:100%;height:auto;max-height:24svh;overflow:visible}
+.sign text{font:900 100px var(--f);letter-spacing:-5px;fill:var(--yellow)}
+.links{grid-column:span 3;background:var(--soft);display:flex;align-items:flex-start;padding:14px 18px;font:500 1rem/1.2 var(--f);color:var(--ink);text-decoration:none;justify-content:space-between;transition:background .25s}
+.links:hover{background:var(--mint-l)}
+.links svg{width:18px;height:18px;transition:transform .3s var(--ease)}
+.links:hover svg{transform:translate(3px,-3px)}
+.rail-l{grid-column:1/3;display:grid;grid-template-rows:1fr auto;gap:var(--g)}
+.rail-l .tile img{width:100%;height:100%;object-fit:cover}
+.facts{background:var(--forest);color:#fff;padding:18px;font-size:var(--t-sm);line-height:1.45}
+.facts ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.facts li{color:var(--mint-l)}
+.facts li b{color:#fff;font-weight:700}
+.stage{grid-column:3/11;min-height:0}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;transform-origin:50% 60%;animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.07)}}
+.statement{position:absolute;left:var(--g);bottom:var(--g);max-width:min(620px,calc(100% - 16px));background:var(--canvas);border-radius:calc(var(--r) - 4px);padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}
+.statement h1{font-size:var(--t-st);font-weight:900;line-height:1.05;letter-spacing:-0.03em;max-width:20ch}
+.statement p{margin-top:12px;font-size:var(--t-body);color:var(--body);max-width:46ch}
+.rail-r{grid-column:11/13;display:grid;grid-template-rows:repeat(4,1fr) 1.4fr;gap:var(--g)}
+.chip{padding:14px 16px;font-size:var(--t-sm);line-height:1.35;color:var(--ink);display:flex;flex-direction:column;justify-content:space-between}
+.chip b{display:block;font-size:1.125rem;font-weight:700;letter-spacing:-0.01em}
+.c1{background:var(--mint-l)}.c2{background:var(--mint)}.c3{background:var(--peach)}.c4{background:var(--yellow)}
+.c5{background:var(--coral);color:#fff;text-decoration:none;transition:background .25s}
+.c5:hover{background:var(--coral-d)}
+.c5 b{font-size:1.25rem}
+.c5 svg{width:26px;height:26px}
+.status{display:flex;align-items:center;gap:8px;font-weight:700}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--forest-3);flex:none}
+.status.closed .dot{background:var(--coral)}
+.status.open .dot{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.5);opacity:.5}}
+
+/* ---------- Intro : titre qui légende un panorama ---------- */
+.intro{padding-top:var(--gap);display:grid;grid-template-columns:1fr auto;gap:24px 48px;align-items:end}
+.intro h2{font-size:clamp(3rem,6.5vw,6rem);max-width:12ch}
+.caps{display:flex;gap:48px;flex-wrap:wrap;padding-bottom:12px}
+.caps p{width:240px;font-size:var(--t-sm);color:var(--body)}
+.pano{margin-top:40px;width:100%;height:clamp(420px,58svh,720px);object-fit:cover;object-position:50% 55%}
+.credit-in{font-size:.8125rem;color:var(--mute);margin-top:10px}
+
+/* ---------- Carte : mot géant + barres ---------- */
+.menu{padding-top:var(--gap);display:grid;grid-template-columns:repeat(12,1fr);gap:0 var(--g)}
+.menu-col{grid-column:1/8;container-type:inline-size}
+.menu-side{grid-column:9/13;align-self:start;position:sticky;top:24px}
+.giant{font-size:31cqw;line-height:.8;letter-spacing:-0.06em;text-transform:uppercase;color:var(--forest);margin-left:-.04em}
+.tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 16px}
+.tools p{font-size:var(--t-sm);color:var(--mute)}
+.toggle{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:10px 18px 10px 12px;border-radius:999px;border:0;background:var(--soft);font:700 1rem/1 var(--f);color:var(--ink);cursor:pointer;transition:background .25s}
+.toggle:hover{background:var(--mint-l)}
+.toggle .sw{width:40px;height:24px;border-radius:999px;background:#c9cec8;position:relative;transition:background .25s}
+.toggle .sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .3s var(--ease)}
+.toggle[aria-pressed="true"]{background:var(--mint)}
+.toggle[aria-pressed="true"] .sw{background:var(--forest)}
+.toggle[aria-pressed="true"] .sw::after{transform:translateX(16px)}
+details.bar{background:var(--soft);border-radius:var(--r);margin-bottom:6px;transition:background .25s}
+details.bar[open]{background:var(--mint-l)}
+details.bar summary{list-style:none;cursor:pointer;min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 20px;font:700 1.125rem/1.2 var(--f);color:var(--ink)}
+details.bar summary::-webkit-details-marker{display:none}
+details.bar summary small{font-weight:400;font-size:var(--t-sm);color:var(--mute);margin-left:auto}
+details.bar summary .pm{width:22px;height:22px;flex:none;transition:transform .35s var(--ease)}
+details.bar[open] summary .pm{transform:rotate(45deg)}
+.dishes{list-style:none;margin:0;padding:4px 20px 22px;display:grid;gap:14px}
+.dishes li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline}
+.dishes .n{font-weight:700;color:var(--ink)}
+.dishes .vn{font-size:var(--t-sm);color:var(--forest-2);font-weight:500;text-align:right}
+.dishes .d{grid-column:1/-1;font-size:var(--t-sm);color:var(--body)}
+.veg-tag{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;background:var(--forest);color:#fff;font-size:.8125rem;font-weight:700;vertical-align:2px}
+body.veg .dishes li:not([data-veg]){display:none}
+body.veg .dishes:not(:has(li[data-veg]))::before{content:"Pas d'option sans viande signalée dans cette partie de la carte.";font-size:var(--t-sm);color:var(--mute)}
+.side-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r)}
+.menu-side p{margin-top:16px;font-size:var(--t-sm);color:var(--body);max-width:36ch}
+.menu-side p b{color:var(--ink)}
+
+/* ---------- Marquee ---------- */
+.marquee{margin-top:var(--gap);background:var(--forest);color:var(--mint);overflow:hidden;padding:clamp(18px,2.4vw,32px) 0}
+.track{display:flex;width:max-content;animation:slide 48s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{font:900 clamp(3rem,7vw,6.5rem)/1 var(--f);letter-spacing:-0.04em;white-space:nowrap;padding-right:.6em}
+.track span i{font-style:normal;color:var(--yellow)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- Bún chả : tirages posés sur le titre ---------- */
+.prints{background:var(--coral);min-height:100svh;position:relative;overflow:hidden;display:grid;place-items:center;padding:var(--m)}
+.prints h2{position:relative;z-index:1;color:var(--yellow);text-align:center;font-size:clamp(120px,15vw,240px);line-height:.85;letter-spacing:-0.05em}
+.print{position:absolute;width:clamp(180px,19vw,300px);aspect-ratio:3/4;object-fit:cover;border:8px solid #fff;border-radius:4px;transition:transform .3s var(--ease);z-index:2;cursor:pointer}
+.print.a{left:4vw;top:9%;transform:rotate(-8deg)}
+.print.b{right:5vw;bottom:8%;transform:rotate(6deg)}
+.print:hover,.print:focus{transform:rotate(0) scale(1.02);z-index:3}
+.prints .note{position:absolute;left:var(--m);bottom:var(--m);max-width:44ch;color:#fff;font-size:var(--t-body);z-index:4}
+.prints .note b{color:var(--yellow)}
+
+/* ---------- Bon à savoir : accordéon ---------- */
+.know{padding-top:var(--gap)}
+.know-head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g)}
+.know-head h2{grid-column:1/6;font-size:var(--t-h2)}
+.know-head p{grid-column:7/12;font-size:1.125rem;align-self:end;max-width:52ch}
+.acc{display:flex;height:420px;margin-top:64px;border-radius:var(--r);overflow:hidden}
+.panel{position:relative;flex:1 1 0;min-width:0;border:0;padding:0;text-align:left;cursor:pointer;transition:flex-grow .45s var(--ease);font:inherit;color:#fff;overflow:hidden}
+.panel[aria-expanded="true"]{flex-grow:6;cursor:default}
+.panel:nth-child(1){background:var(--forest)}.panel:nth-child(2){background:var(--forest-2)}.panel:nth-child(3){background:var(--forest-3)}.panel:nth-child(4){background:var(--mint);color:var(--ink)}
+.panel .lbl{position:absolute;left:22px;bottom:24px;transform-origin:0 100%;transform:rotate(-90deg) translate(0,100%);font:700 1.25rem/1 var(--f);white-space:nowrap;transition:opacity .2s}
+.panel[aria-expanded="true"] .lbl{opacity:0}
+.panel .body{position:absolute;inset:0;padding:32px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transition:opacity .3s .15s;width:min(100%,640px)}
+.panel[aria-expanded="true"] .body{opacity:1}
+.panel h3{color:inherit;font-size:clamp(2.5rem,4.4vw,4.25rem);letter-spacing:-0.03em}
+.panel .body p{font-size:clamp(1.125rem,1.5vw,1.375rem);line-height:1.45;max-width:34ch}
+
+/* ---------- Horaires & venir ---------- */
+.visit{padding-top:var(--gap);display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g)}
+.visit h2{grid-column:1/-1;font-size:var(--t-h2);margin-bottom:40px}
+.hours{grid-column:1/7;margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.hours li{display:grid;grid-template-columns:8.5em 1fr;gap:16px;align-items:center;min-height:56px;padding:0 20px;background:var(--soft);border-radius:var(--r);font-variant-numeric:tabular-nums;color:var(--ink)}
+.hours li span:first-child{font-weight:700}
+.hours li.today{background:var(--yellow)}
+.hours li.off{color:var(--mute)}
+.hours-note{grid-column:1/7;font-size:var(--t-sm);color:var(--mute);margin-top:10px}
+.where{grid-column:8/13;grid-row:2/4;background:var(--mint-l);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:18px}
+.where address{font-style:normal;font:900 clamp(1.75rem,2.6vw,2.5rem)/1.05 var(--f);letter-spacing:-0.03em;color:var(--ink)}
+.where p{font-size:var(--t-body)}
+.where .btn{align-self:flex-start;margin-top:auto}
+.map{width:100%;aspect-ratio:16/10;border-radius:calc(var(--r) - 4px);background:var(--forest)}
+
+/* ---------- Contact : l'email en display ---------- */
+.mail{margin-top:var(--gap);background:var(--ink);color:#fff;min-height:80svh;padding:var(--m);display:grid;grid-template-rows:auto 1fr auto auto;gap:24px}
+.mail h2{color:#fff;font-size:clamp(1.25rem,1.6vw,1.375rem);font-weight:500;letter-spacing:0;line-height:1.4;max-width:30ch}
+.mail .addr{align-self:end;font:400 clamp(2.5rem,7vw,7.5rem)/1 var(--f);letter-spacing:-0.045em;color:#fff;text-decoration:none;overflow-wrap:anywhere;transition:color .25s;margin-bottom:6vh}
+.mail .addr:hover{color:var(--yellow)}
+.mail .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:var(--t-sm);color:#cfd3d9}
+.mail .row a{color:#fff}
+
+/* ---------- Footer ---------- */
+footer{background:var(--forest);color:var(--mint-l);min-height:80svh;padding:40px var(--m) 20px;display:grid;grid-template-rows:auto 1fr auto auto}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;font-size:var(--t-sm)}
+.cols b{display:block;color:#fff;margin-bottom:6px}
+.cols a{color:var(--mint-l)}
+.word{align-self:end;width:100%;margin-top:20svh}
+.word text{font:900 100px var(--f);letter-spacing:-5px;fill:var(--mint)}
+.legal{font-size:.8125rem;color:var(--mint);margin-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+.demo{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--ink);color:#d7dbe0;font:500 13px/1 var(--f);text-align:center;padding:15px 16px}
+
+/* ---------- Entrées ---------- */
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr 1fr;grid-template-rows:auto;gap:6px;padding:6px;min-height:0}
+  .hero{height:auto;min-height:0}
+  .sign{order:0;padding:12px 12px 8px}
+  .stage{order:1}
+  .rail-r{order:2}
+  .links{order:3}
+  .rail-l{order:4}
+  .links{grid-column:span 1;min-height:56px}
+  .stage{grid-column:1/-1;min-height:0;overflow:hidden}
+  .statement{position:static}
+  .stage-wrap{display:contents}
+  .rail-r{grid-column:1/-1;grid-template-columns:repeat(4,1fr) 2fr;grid-template-rows:auto;}
+  .rail-l{grid-column:1/-1;grid-template-rows:auto;grid-template-columns:1fr 1fr}
+  .rail-l .tile:first-child{aspect-ratio:3/4}
+  .menu-col,.menu-side{grid-column:1/-1}
+  .menu-side{position:static;margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+  .menu-side p{margin-top:0}
+  .know-head h2,.know-head p{grid-column:1/-1}
+  .know-head p{margin-top:16px}
+  .hours,.hours-note,.where{grid-column:1/-1}
+  .where{grid-row:auto;margin-top:24px}
+  .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .stage{display:flex;flex-direction:column;aspect-ratio:auto;background:var(--canvas)}
+  .stage img{position:relative;aspect-ratio:16/11;height:auto;border-radius:var(--r)}
+  .statement{padding:20px 10px 8px;grid-template-columns:1fr}
+  .statement h1{font-size:2rem}
+  .intro{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .rail-r{grid-template-columns:1fr 1fr}
+  .rail-r .c5{grid-column:1/-1;min-height:96px}
+  .intro h2{font-size:10.5vw}
+  .caps{gap:12px}
+  .caps p{width:auto}
+  .pano{aspect-ratio:4/5;height:auto}
+  .menu-side{grid-template-columns:1fr}
+  .prints{min-height:0;display:block;padding:56px var(--m) 32px}
+  .prints h2{font-size:24vw;text-align:left}
+  .prints .pr{position:relative;width:100%;height:84vw;margin-top:24px}
+  .print{width:50vw;max-width:none}
+  .print.a{left:0;top:0}
+  .print.b{right:0;left:auto;top:14vw;bottom:auto}
+  .prints .note{position:static;margin-top:24px}
+  .acc{flex-direction:column;height:auto}
+  .panel{flex:none}
+  .panel .lbl{position:static;display:block;transform:none;padding:22px 20px;font-size:1.125rem}
+  .panel[aria-expanded="true"] .lbl{display:none}
+  .panel .body{position:static;display:none;padding:24px 20px 28px;gap:16px;opacity:1}
+  .panel[aria-expanded="true"] .body{display:flex}
+  .panel .body p{font-size:1.0625rem}
+  .hours li{grid-template-columns:7.5em 1fr;padding:0 16px}
+  .mail{min-height:86svh}
+  .mail .addr{font-size:11vw}
+  .mail .row{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .js .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="tile sign" aria-hidden="true"><svg viewBox="0 0 100 20" id="signsvg"><text x="0" y="17">CHÀO BÀ</text></svg></div>
+  <a class="tile links" href="#carte">La carte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a class="tile links" href="#horaires">Horaires <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a class="tile links" href="https://www.google.com/maps/dir/?api=1&destination=Ch%C3%A0o+B%C3%A0+14+rue+Coypel+75013+Paris" target="_blank" rel="noopener">Itinéraire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a class="tile links" href="mailto:chaobarestaurant@gmail.com">Écrire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+
+  <div class="rail-l">
+    <div class="tile"><img src="https://images.unsplash.com/photo-1631709497146-a239ef373cf1?w=700&h=900&q=75&auto=format&fit=crop" width="350" height="450" alt="Bol de nouilles, bœuf, herbes et piment, baguettes posées à côté"></div>
+    <div class="tile facts">
+      <ul>
+        <li><b>Cuisine</b> vietnamienne maison</li>
+        <li><b>Midi</b> et soir</li>
+        <li><b>Petite terrasse</b> sur la rue</li>
+        <li><b>Métro</b> Place d'Italie</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tile stage">
+    <img src="https://images.unsplash.com/photo-1576577445504-6af96477db52?w=1800&h=1200&q=78&auto=format&fit=crop" width="1800" height="1200" alt="Un bol de soupe de nouilles au bœuf, herbes fraîches et citron vert" fetchpriority="high">
+    <div class="statement">
+      <div>
+        <h1>Restaurant vietnamien, Paris 13e</h1>
+        <p>Bún chả, bò bún et nems maison au 14 rue Coypel, à deux pas de la place d'Italie.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rail-r">
+    <div class="tile chip c1"><span class="status" id="status" aria-live="polite"><span class="dot"></span><span>Midi et soir</span></span><span id="status-sub">Du lundi au samedi</span></div>
+    <div class="tile chip c2"><b>12h – 15h</b>Le midi</div>
+    <div class="tile chip c3"><b>19h – 22h</b>Le soir</div>
+    <div class="tile chip c4"><b>Dimanche</b>Fermé</div>
+    <a class="tile chip c5" href="tel:+33145328423"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span><b>Réserver</b>01 45 32 84 23</span></a>
+  </div>
+</header>
+
+<main>
+<section class="intro wrap" aria-labelledby="t-intro">
+  <h2 id="t-intro" class="rv">Chào bà, bonjour madame.</h2>
+  <div class="caps rv">
+    <p>En vietnamien, « chào bà » salue une femme plus âgée que soi, avec respect.</p>
+    <p>Au 14 rue Coypel, un petit restaurant de quartier, midi et soir.</p>
+  </div>
+</section>
+<img class="pano rv" src="https://images.unsplash.com/photo-1555921015-5532091f6026?w=2400&h=1100&q=75&auto=format&fit=crop" width="2400" height="1100" alt="Une rue étroite de Hanoï, façades colorées et drapeaux rouges">
+<p class="credit-in wrap">Hanoï, la ville du bún chả.</p>
+
+<section class="menu wrap" id="carte" aria-labelledby="t-carte">
+  <div class="menu-col">
+    <h2 id="t-carte" class="giant rv">Carte</h2>
+    <div class="tools">
+      <p>Prix affichés au restaurant.</p>
+      <button class="toggle" type="button" aria-pressed="false" id="veg"><span class="sw" aria-hidden="true"></span>Sans viande</button>
+    </div>
+
+    <details class="bar" open>
+      <summary>Entrées <small>Khai vị</small><svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></summary>
+      <ul class="dishes">
+        <li><span class="n">Nems maison</span><span class="vn">Nem rán</span><span class="d">Version végétarienne selon la carte du jour.</span></li>
+        <li><span class="n">Rouleaux de printemps</span><span class="vn">Gỏi cuốn</span></li>
+        <li><span class="n">Bánh cuốn</span><span class="vn">Bánh cuốn</span><span class="d">Crêpes de riz roulées et cuites à la vapeur.</span></li>
+        <li><span class="n">Bánh bột lọc</span><span class="vn">Bánh bột lọc</span><span class="d">Raviolis translucides à la farine de tapioca.</span></li>
+        <li data-veg><span class="n">Salade fraîche<span class="veg-tag">sans viande</span></span><span class="vn">Gỏi</span></li>
+        <li><span class="n">Assiette gourmet</span><span class="vn">À partager</span></li>
+      </ul>
+    </details>
+
+    <details class="bar">
+      <summary>Bún, vermicelles de riz <small>Bún</small><svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></summary>
+      <ul class="dishes">
+        <li><span class="n">Bún chả</span><span class="vn">Bún chả Hà Nội</span><span class="d">Porc mariné et grillé, vermicelles, herbes.</span></li>
+        <li><span class="n">Bò bún</span><span class="vn">Bún bò</span></li>
+        <li data-veg><span class="n">Bò bún végétarien<span class="veg-tag">sans viande</span></span><span class="vn">Bún chay</span></li>
+        <li><span class="n">Bún nem</span><span class="vn">Bún nem</span></li>
+      </ul>
+    </details>
+
+    <details class="bar">
+      <summary>Plats, servis avec du riz <small>Món chính</small><svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></summary>
+      <ul class="dishes">
+        <li data-veg><span class="n">Aubergines et tofu sautés à l'ail<span class="veg-tag">sans viande</span></span><span class="vn">Cà tím đậu phụ</span></li>
+        <li><span class="n">Poulet caramélisé</span><span class="vn">Gà kho</span></li>
+        <li><span class="n">Bœuf lúc lắc</span><span class="vn">Bò lúc lắc</span><span class="d">Dés de bœuf sautés au wok.</span></li>
+        <li><span class="n">Côte d'échine de porc grillée</span><span class="vn">Sườn nướng</span></li>
+        <li><span class="n">Crevettes sautées aux légumes</span><span class="vn">Tôm xào</span></li>
+        <li><span class="n">Veau sauté à la citronnelle</span><span class="vn">Bê xào sả</span></li>
+      </ul>
+    </details>
+
+    <details class="bar">
+      <summary>Phở <small>Certains jours</small><svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></summary>
+      <ul class="dishes">
+        <li><span class="n">Phở gà, soupe au poulet</span><span class="vn">Phở gà</span><span class="d">Servie certains jours de la semaine seulement, hors été. Demandez au service.</span></li>
+      </ul>
+    </details>
+
+    <details class="bar">
+      <summary>Desserts <small>Tráng miệng</small><svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></summary>
+      <ul class="dishes">
+        <li data-veg><span class="n">Perles de coco maison<span class="veg-tag">sans viande</span></span><span class="vn">Maison</span></li>
+        <li data-veg><span class="n">Riz gluant et glace<span class="veg-tag">sans viande</span></span><span class="vn">Kem xôi</span></li>
+        <li data-veg><span class="n">Salade de fruits frais<span class="veg-tag">sans viande</span></span><span class="vn">Trái cây</span></li>
+        <li data-veg><span class="n">Glaces et sorbets<span class="veg-tag">sans viande</span></span><span class="vn">Kem</span></li>
+        <li data-veg><span class="n">Café ou thé gourmand<span class="veg-tag">sans viande</span></span><span class="vn">Cà phê</span></li>
+      </ul>
+    </details>
+  </div>
+
+  <aside class="menu-side rv">
+    <img class="side-img" src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=900&h=1125&q=75&auto=format&fit=crop" width="900" height="1125" alt="Un bol de riz blanc fumant">
+    <p><b>Le midi, une formule.</b> Chaque plat arrive avec son bol de riz blanc. La carte complète et les prix sont affichés sur place.</p>
+  </aside>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Bún chả <i>·</i> Bò bún <i>·</i> Nem rán <i>·</i> Bánh cuốn <i>·</i> Bò lúc lắc <i>·</i> Kem xôi <i>·</i></span>
+    <span>Bún chả <i>·</i> Bò bún <i>·</i> Nem rán <i>·</i> Bánh cuốn <i>·</i> Bò lúc lắc <i>·</i> Kem xôi <i>·</i></span>
+  </div>
+</div>
+
+<section class="prints" aria-labelledby="t-bun">
+  <h2 id="t-bun">Bún chả<br>Hà Nội</h2>
+  <div class="pr"><img class="print a" tabindex="0" src="https://images.unsplash.com/photo-1555921015-5532091f6026?w=720&h=960&q=75&auto=format&fit=crop&crop=left" width="360" height="480" alt="Une ruelle de Hanoï le long de la voie ferrée">
+  <img class="print b" tabindex="0" src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=720&h=960&q=75&auto=format&fit=crop" width="360" height="480" alt="Pagode au bord de l'eau entre les falaises de Ninh Bình, au sud de Hanoï"></div>
+  <p class="note"><b>Le plat de Hanoï.</b> Porc mariné grillé, vermicelles de riz et herbes, à tremper dans le bouillon. Un des plats les plus cités par les clients de Chào Bà.</p>
+</section>
+
+<section class="know wrap" aria-labelledby="t-know">
+  <div class="know-head">
+    <h2 id="t-know" class="rv">Bon à savoir</h2>
+    <p class="rv">Une petite salle de quartier, une terrasse sur la rue Coypel, et une carte qui change un peu selon les jours.</p>
+  </div>
+  <div class="acc" id="acc">
+    <button class="panel" type="button" aria-expanded="true"><span class="lbl">Le midi</span><span class="body"><h3>Le midi</h3><p>Service de 12h à 15h, du lundi au samedi, avec une formule. Le rendez-vous des habitués du quartier.</p></span></button>
+    <button class="panel" type="button" aria-expanded="false"><span class="lbl">Le soir</span><span class="body"><h3>Le soir</h3><p>Service de 19h à 22h. La salle est petite : appelez avant de venir à plusieurs.</p></span></button>
+    <button class="panel" type="button" aria-expanded="false"><span class="lbl">Sans viande</span><span class="body"><h3>Sans viande</h3><p>Bò bún végétarien, aubergines et tofu à l'ail, nems végétariens : de quoi composer un repas complet.</p></span></button>
+    <button class="panel" type="button" aria-expanded="false"><span class="lbl">Le phở</span><span class="body"><h3>Le phở</h3><p>Le phở gà n'est servi que certains jours, et pas en été. Un coup de fil le matin évite la déception.</p></span></button>
+  </div>
+</section>
+
+<section class="visit wrap" id="horaires" aria-labelledby="t-hours">
+  <h2 id="t-hours" class="rv">Horaires et accès</h2>
+  <ul class="hours" id="hours">
+    <li data-d="1"><span>Lundi</span><span>12h – 15h · 19h – 22h</span></li>
+    <li data-d="2"><span>Mardi</span><span>12h – 15h · 19h – 22h</span></li>
+    <li data-d="3"><span>Mercredi</span><span>12h – 15h · 19h – 22h</span></li>
+    <li data-d="4"><span>Jeudi</span><span>12h – 15h · 19h – 22h</span></li>
+    <li data-d="5"><span>Vendredi</span><span>12h – 15h · 19h – 22h</span></li>
+    <li data-d="6"><span>Samedi</span><span>12h – 15h · 19h – 22h</span></li>
+    <li data-d="0" class="off"><span>Dimanche</span><span>Fermé</span></li>
+  </ul>
+  <p class="hours-note">Jours fériés et congés : un appel au 01 45 32 84 23 confirme l'ouverture.</p>
+  <div class="where rv">
+    <svg class="map" viewBox="0 0 400 250" role="img" aria-label="Plan simplifié : la rue Coypel part de la place d'Italie">
+      <rect width="400" height="250" fill="#0a2e0e"/>
+      <circle cx="120" cy="150" r="46" fill="#1f4a24"/>
+      <g stroke="#3f6e44" stroke-width="10" stroke-linecap="round" fill="none">
+        <path d="M120 150 L10 40"/><path d="M120 150 L-10 190"/><path d="M120 150 L60 260"/><path d="M120 150 L190 260"/><path d="M120 150 L150 -10"/>
+      </g>
+      <path d="M150 118 L390 40" stroke="#a8d8c4" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="232" cy="91" r="15" fill="#aa2d00"/><circle cx="232" cy="91" r="5" fill="#f4d35e"/>
+      <text x="252" y="128" fill="#ffffff" font-family="Be Vietnam Pro" font-weight="700" font-size="17">Chào Bà, n° 14</text>
+      <text x="290" y="34" fill="#a8d8c4" font-family="Be Vietnam Pro" font-weight="500" font-size="14">rue Coypel</text>
+      <text x="74" y="214" fill="#d6eee3" font-family="Be Vietnam Pro" font-weight="500" font-size="14">Place d'Italie</text>
+    </svg>
+    <address>14 rue Coypel<br>75013 Paris</address>
+    <p>Métro Place d'Italie, lignes 5, 6 et 7. La rue Coypel part de la place.</p>
+    <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Ch%C3%A0o+B%C3%A0+14+rue+Coypel+75013+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire Google Maps</a>
+  </div>
+</section>
+
+<section class="mail" id="contact" aria-labelledby="t-mail">
+  <h2 id="t-mail">Une table pour un groupe, une question sur la carte : écrivez-nous.</h2>
+  <span></span>
+  <a class="addr" href="mailto:chaobarestaurant@gmail.com?subject=Demande%20de%20r%C3%A9servation">chaobarestaurant@<wbr>gmail.com</a>
+  <div class="row">
+    <span><a href="tel:+33145328423">01 45 32 84 23</a> · Paris 13e</span>
+    <span>14 rue Coypel · Place d'Italie</span>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="cols">
+    <div><b>Adresse</b>14 rue Coypel<br>75013 Paris</div>
+    <div><b>Horaires</b>Lun – sam<br>12h – 15h · 19h – 22h</div>
+    <div><b>Contact</b><a href="tel:+33145328423">01 45 32 84 23</a><br><a href="mailto:chaobarestaurant@gmail.com">Écrire un email</a></div>
+    <div><b>Page</b><a href="#carte">La carte</a><br><a href="#horaires">Horaires</a></div>
+  </div>
+  <span></span>
+  <svg class="word" id="wordsvg" viewBox="0 0 470 96" aria-hidden="true"><text x="0" y="78">Chào Bà</text></svg>
+  <div class="legal"><span>© Chào Bà, restaurant vietnamien</span><span>Photos : Unsplash, à titre d'illustration</span></div>
+</footer>
+
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<script>
+document.documentElement.classList.add('js');
+// ajuste les mots-enseignes au cadre
+function fit(){['signsvg','wordsvg'].forEach(id=>{const s=document.getElementById(id);if(!s)return;const b=s.querySelector('text').getBBox();if(b.width)s.setAttribute('viewBox',[b.x,b.y,b.width,b.height].map(v=>v.toFixed(1)).join(' '))})}
+fit();document.fonts&&document.fonts.ready.then(fit);
+// statut ouvert/fermé, heure de Paris
+(function(){
+  const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}));
+  const d=now.getDay(), m=now.getHours()*60+now.getMinutes();
+  const slots=[[720,900],[1140,1320]];
+  const st=document.getElementById('status'), sub=document.getElementById('status-sub');
+  const li=document.querySelector('#hours li[data-d="'+d+'"]'); if(li) li.classList.add('today');
+  const open=d!==0 && slots.some(([a,b])=>m>=a&&m<b);
+  const fmt=x=>Math.floor(x/60)+'h'+(x%60?String(x%60).padStart(2,'0'):'');
+  let text, s;
+  if(open){const end=slots.find(([a,b])=>m>=a&&m<b)[1]; text='Ouvert'; s='Jusqu’à '+fmt(end); st.classList.add('open');}
+  else{
+    st.classList.add('closed'); text='Fermé';
+    const next=d!==0 && slots.find(([a])=>m<a);
+    s= next ? 'Ouvre à '+fmt(next[0]) : (d===6||d===0 ? 'Ouvre lundi à 12h' : 'Ouvre demain à 12h');
+  }
+  st.lastElementChild.textContent=text; sub.textContent=s;
+})();
+// filtre sans viande
+document.getElementById('veg').addEventListener('click',e=>{
+  const on=e.currentTarget.getAttribute('aria-pressed')!=='true';
+  e.currentTarget.setAttribute('aria-pressed',on);
+  document.body.classList.toggle('veg',on);
+  if(on) document.querySelectorAll('details.bar').forEach(x=>{ if(x.querySelector('li[data-veg]')) x.open=true; });
+});
+// accordéon
+const panels=[...document.querySelectorAll('#acc .panel')];
+panels.forEach(p=>p.addEventListener('click',()=>panels.forEach(q=>q.setAttribute('aria-expanded',q===p))));
+// entrées
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
+</script>
+</body>
+</html>
