@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cosmos Café · bar-café rue de la Roquette, Paris 11e</title>
+<meta name="description" content="Cosmos Café, bar-café au 53 rue de la Roquette, Paris 11e, près de Bastille. Ouvert tous les jours de 8 h à 2 h, happy hour de 17 h à 21 h, tapas, plats et cocktails.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&display=swap" rel="stylesheet">
+<!-- DESIGN.md « Miro » (awesome-design) : toile blanche, encre #1c1c1e, jaune canari, grands panneaux pastel à rayon 32px, boutons pilule noirs.
+     Couleurs reprises du lieu : bois vert bouteille, carreaux bleus, grandes fleurs jaunes (le cosmos), store rayé. -->
+<style>
+:root{
+  --canvas:#ffffff;
+  --surface:#f6f5f0;
+  --ink:#1c1c1e;
+  --ink-2:#3d3d44;
+  --yellow:#ffd02f;
+  --yellow-soft:#fff4c4;
+  --green:#1e3d2f;        /* boiseries vert bouteille */
+  --green-2:#2a5240;
+  --on-green:#f3f1e6;
+  --on-green-2:#c9d6c8;
+  --blue:#2c5aa0;         /* carreaux bleus */
+  --blue-soft:#dde8f6;
+  --rose:#fde0e6;         /* façade pastel */
+  --r-xl:32px;
+  --r-md:18px;
+  --gutter:clamp(16px,3vw,40px);
+  --s-small:.9375rem;
+  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --s-lead:clamp(1.25rem,1.1rem + .6vw,1.5rem);
+  --s-head:clamp(2.25rem,1.5rem + 3vw,4rem);
+  --s-giant:clamp(4rem,1.5rem + 11vw,11rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--canvas);color:var(--ink);font:400 var(--s-body)/1.55 "Bricolage Grotesque",system-ui,sans-serif;font-optical-sizing:auto}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1.5px}
+::selection{background:var(--yellow);color:var(--ink)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.03em;line-height:1}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+.wrap{padding-inline:var(--gutter);max-width:1520px;margin-inline:auto}
+.tnum{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#f2f2f2;font-size:var(--s-small);padding:7px var(--gutter);text-align:center}
+
+/* boutons : pilules (Miro) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:54px;padding:0 26px;border-radius:999px;font:500 1.0625rem/1 "Bricolage Grotesque",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .3s var(--ease),background-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#34343a}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-yellow:hover{background:#ffdb5c}
+.btn-soft{background:var(--surface);color:var(--ink)}
+.btn-soft:hover{background:#ecebe3}
+.btn-light{background:var(--on-green);color:var(--green)}
+.btn-light:hover{background:#fff}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--canvas)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand svg{width:34px;height:34px}
+.nav-links{display:flex;gap:28px}
+.nav-links a{text-decoration:none;font-weight:500}
+.nav-links a:hover{text-decoration:underline}
+.nav .btn{min-height:46px;padding:0 20px}
+@media (max-width:860px){.nav-links{display:none}}
+
+/* store rayé */
+.awning{height:22px;background:repeating-linear-gradient(90deg,var(--green) 0 34px,#e6dfc4 34px 68px);-webkit-mask:radial-gradient(circle at 17px 0,#000 17px,transparent 17.5px) 0 0/34px 22px repeat-x, linear-gradient(#000,#000) 0 0/100% 4px no-repeat;mask:radial-gradient(circle at 17px 0,#000 17px,transparent 17.5px) 0 0/34px 22px repeat-x, linear-gradient(#000,#000) 0 0/100% 4px no-repeat}
+
+/* ---------- HERO ---------- */
+.hero{padding-top:clamp(20px,3vw,40px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(20px,3vw,40px);align-items:stretch}
+.hero-text{display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding-block:clamp(8px,2vw,24px)}
+.hero h1{font-size:var(--s-giant);font-weight:500;letter-spacing:-.035em;line-height:.86}
+.hero h1 span{display:block}
+.hero .lead{font-size:var(--s-lead);line-height:1.4;max-width:36ch;margin-top:32px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-photo{margin:0;border-radius:var(--r-xl);overflow:hidden;position:relative;min-height:540px;background:var(--rose)}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:drift 22s var(--ease) both}
+.hero-photo figcaption{position:absolute;left:16px;bottom:16px;background:var(--canvas);border-radius:999px;padding:9px 16px;font-size:var(--s-small);font-weight:500}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{min-height:0;aspect-ratio:4/3.4;order:2}
+  .hero .lead{margin-top:20px}
+  .hero-text{gap:28px}
+}
+
+/* ---------- LA JOURNÉE (élément interactif) ---------- */
+.day{margin-top:clamp(20px,3vw,40px);background:var(--yellow);border-radius:var(--r-xl);padding:clamp(24px,4vw,56px)}
+.day-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+.day h2{font-size:var(--s-head)}
+.status{font-size:var(--s-lead);font-weight:500;line-height:1.3;margin-top:14px;max-width:36ch}
+.status b{font-weight:700}
+.clock{font-size:clamp(3rem,2rem + 4vw,6rem);font-weight:500;letter-spacing:-.04em;line-height:.9}
+.track{position:relative;margin-top:clamp(28px,4vw,48px)}
+.bands{display:grid;grid-template-columns:4fr 5fr 4fr 5fr;gap:6px;height:84px}
+.band{border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between;font-size:var(--s-small);line-height:1.2;transition:transform .35s var(--ease),background-color .3s}
+.band b{font-weight:700;font-size:1rem}
+.band.b1{background:var(--yellow-soft)}
+.band.b2{background:var(--canvas)}
+.band.b3{background:var(--green);color:var(--on-green)}
+.band.b4{background:var(--blue);color:#fff}
+.band.on{transform:translateY(-6px)}
+.ticks{position:relative;height:22px;margin-top:30px;font-size:.875rem;font-weight:500}
+.ticks span{position:absolute;top:0;white-space:nowrap;transform:translateX(-50%)}
+.ticks span:first-child{transform:none}
+.ticks span:last-child{transform:translateX(-100%)}
+.cursor{position:absolute;top:92px;height:18px;width:18px;margin-left:-9px;background:var(--ink);clip-path:polygon(50% 0,100% 100%,0 100%);pointer-events:none;transition:left .4s var(--ease)}
+.range{display:flex;align-items:center;gap:16px;margin-top:22px;flex-wrap:wrap}
+.range label{font-weight:500}
+.range input{flex:1;min-width:200px;accent-color:var(--ink);height:32px}
+.range button{font:500 var(--s-small) "Bricolage Grotesque",sans-serif;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 16px;cursor:pointer}
+.range button:hover{background:#34343a}
+@media (max-width:700px){
+  .day-head{grid-template-columns:1fr}
+  .clock{order:-1}
+  .bands{grid-template-columns:1fr;height:auto;gap:6px}
+  .band{flex-direction:row;align-items:center;gap:12px;padding:14px 16px}
+  .band.on{transform:translateX(6px)}
+  .ticks,.cursor{display:none}
+}
+
+section{padding-top:clamp(96px,12vw,200px)}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.sec-head h2{font-size:var(--s-head)}
+.sec-head p{font-size:var(--s-lead);line-height:1.4;max-width:34ch}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}}
+
+/* ---------- AMBIANCE ---------- */
+.amb-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,20px)}
+.amb-grid figure{margin:0;border-radius:var(--r-xl);overflow:hidden;position:relative}
+.amb-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.amb-grid figure:hover img{transform:scale(1.04)}
+.amb-a{grid-column:1/8;aspect-ratio:7/5}
+.amb-tiles{grid-column:8/13;border-radius:var(--r-xl);background-color:var(--blue);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232c5aa0'/%3E%3Crect x='2' y='2' width='60' height='60' fill='%233466b2'/%3E%3Cpath d='M32 10 L54 32 L32 54 L10 32Z' fill='none' stroke='%23dde8f6' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ffd02f'/%3E%3Cpath d='M2 2h8M2 2v8M62 2h-8M62 2v8M2 62h8M2 62v-8M62 62h-8M62 62v-8' stroke='%23dde8f6' stroke-width='3'/%3E%3C/svg%3E");background-size:64px 64px;display:flex;align-items:flex-end;padding:clamp(16px,2vw,24px)}
+.amb-tiles .note{background:var(--canvas);border-radius:var(--r-md);padding:clamp(20px,2.4vw,32px);font-size:var(--s-lead);line-height:1.35;font-weight:500}
+.amb-b{grid-column:1/5;aspect-ratio:1}
+.amb-c{grid-column:5/13;aspect-ratio:16/8}
+.amb-list{grid-column:1/13;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,20px);margin-top:8px}
+.amb-list li{background:var(--surface);border-radius:var(--r-md);padding:22px 24px;line-height:1.4}
+.amb-list b{display:block;font-size:1.125rem;margin-bottom:6px}
+@media (max-width:860px){
+  .amb-a,.amb-tiles,.amb-b,.amb-c{grid-column:1/13}
+  .amb-tiles{min-height:300px}
+  .amb-b{aspect-ratio:4/3}
+  .amb-list{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){.amb-list{grid-template-columns:1fr}}
+
+/* ---------- HAPPY HOUR ---------- */
+.hh{background:var(--green);color:var(--on-green);border-radius:var(--r-xl);display:grid;grid-template-columns:1.1fr 1fr;overflow:hidden}
+.hh-text{padding:clamp(28px,5vw,72px);display:flex;flex-direction:column;gap:28px;justify-content:space-between}
+.hh h2{font-size:var(--s-head)}
+.hh .hh-big{font-size:clamp(4rem,2rem + 8vw,9.5rem);font-weight:500;letter-spacing:-.05em;line-height:.85;color:var(--yellow)}
+.hh p{color:var(--on-green-2);max-width:40ch}
+.hh p strong{color:var(--on-green);font-weight:500}
+.hh figure{margin:0;position:relative;min-height:420px}
+.hh img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.hh{grid-template-columns:1fr}.hh figure{min-height:0;aspect-ratio:4/3}}
+
+/* ---------- CARTE ---------- */
+.menu{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,20px)}
+.course{border-radius:var(--r-xl);padding:clamp(24px,3vw,40px)}
+.course h3{font-size:clamp(1.75rem,1.3rem + 1.4vw,2.5rem);margin-bottom:22px}
+.course li{padding:13px 0;display:flex;justify-content:space-between;gap:16px;line-height:1.35}
+.course li+li{box-shadow:inset 0 2px 0 rgba(28,28,30,.08)}
+.course li small{font-size:var(--s-small);color:var(--ink-2);white-space:nowrap}
+.c-share{grid-column:1/6;background:var(--yellow-soft)}
+.c-mains{grid-column:6/13;background:var(--surface)}
+.c-mains ul{columns:2;column-gap:40px}
+.c-mains li{break-inside:avoid}
+.c-sweet{grid-column:1/5;background:var(--rose)}
+.c-morning{grid-column:5/9;background:var(--blue-soft)}
+.c-photo{grid-column:9/13;margin:0;border-radius:var(--r-xl);overflow:hidden;min-height:320px;position:relative}
+.c-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.menu-note{grid-column:1/13;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;padding:8px 4px 0}
+.menu-note p{max-width:62ch}
+@media (max-width:1000px){
+  .c-share,.c-mains{grid-column:1/13}
+  .c-sweet,.c-morning{grid-column:span 6}
+  .c-photo{grid-column:1/13;min-height:0;aspect-ratio:16/9}
+}
+@media (max-width:620px){
+  .c-mains ul{columns:1}
+  .c-sweet,.c-morning{grid-column:1/13}
+}
+
+/* ---------- GROUPES ---------- */
+.groups{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(20px,4vw,64px);align-items:center}
+.groups figure{margin:0;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:5/4}
+.groups img{width:100%;height:100%;object-fit:cover}
+.groups h2{font-size:var(--s-head);margin-bottom:24px}
+.groups .lead{font-size:var(--s-lead);line-height:1.4;margin-bottom:28px;max-width:32ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.chips li{background:var(--surface);border-radius:999px;padding:10px 18px;font-weight:500}
+@media (max-width:860px){.groups{grid-template-columns:1fr}.groups figure{order:2}}
+
+/* ---------- HORAIRES & VENIR ---------- */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,20px)}
+.hours{background:var(--surface);border-radius:var(--r-xl);padding:clamp(24px,3vw,44px)}
+.hours h3,.where h3{font-size:clamp(1.75rem,1.3rem + 1.4vw,2.5rem);margin-bottom:20px}
+.hours table{width:100%;border-collapse:collapse;font-size:1.125rem}
+.hours td{padding:12px 0;border-top:2px solid rgba(28,28,30,.07)}
+.hours td:last-child{text-align:right}
+.hours tr.today td{font-weight:700}
+.hours tr.today td:first-child::after{content:" · aujourd’hui";font-weight:500;color:var(--blue)}
+.hours .hhline{margin-top:20px;background:var(--yellow);border-radius:var(--r-md);padding:16px 20px;font-weight:500}
+.where{background:var(--blue);color:#fff;border-radius:var(--r-xl);padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:24px}
+.where address{font-style:normal;font-size:var(--s-lead);line-height:1.35;font-weight:500}
+.metro li{display:flex;align-items:center;gap:12px;padding:8px 0}
+.lines{display:flex;gap:6px}
+.lines i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--blue);font-weight:700;font-size:.9375rem}
+.map{grid-column:1/3;border-radius:var(--r-xl);overflow:hidden;height:420px;background:var(--blue-soft)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:860px){.visit{grid-template-columns:1fr}.map{grid-column:1;height:320px}}
+
+/* ---------- CONTACT / FOOTER ---------- */
+.contact{background:var(--rose);border-radius:var(--r-xl);padding:clamp(28px,5vw,72px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:end}
+.contact h2{font-size:var(--s-head);margin-bottom:20px}
+.contact p{font-size:var(--s-lead);line-height:1.4;max-width:32ch}
+.contact-links{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.contact-links .btn{justify-content:space-between}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+footer{padding:clamp(96px,10vw,160px) 0 32px}
+.foot-name{display:flex;align-items:center;gap:clamp(12px,2vw,28px);font-size:clamp(3.5rem,1rem + 12vw,13rem);font-weight:500;letter-spacing:-.05em;line-height:.85}
+.foot-name svg{width:.8em;height:.8em;flex:none;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.foot-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;margin-top:40px;font-size:var(--s-small);color:var(--ink-2)}
+
+/* entrées */
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .cursor,.band{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="cosmos">
+      <g fill="#ffd02f">
+        <ellipse cx="50" cy="22" rx="13" ry="22"/>
+        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(180 50 50)"/>
+        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(225 50 50)"/>
+        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(270 50 50)"/>
+        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(315 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="13" fill="#e8930c"/>
+      <circle cx="50" cy="50" r="6" fill="#1e3d2f"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cosmos Café, retour en haut"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#cosmos"/></svg>Cosmos Café</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#journee">Maintenant</a>
+      <a href="#carte">La carte</a>
+      <a href="#happy-hour">Happy hour</a>
+      <a href="#venir">Horaires et accès</a>
+    </nav>
+    <a class="btn btn-ink" href="tel:+33143142583"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Réserver</a>
+  </div>
+  <div class="awning" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+  <div class="hero wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div>
+          <h1><span>Cosmos</span><span>Café</span></h1>
+          <p class="lead">Le bar-café du 53 rue de la Roquette, à deux pas de Bastille. Café le matin, tapas et cocktails le soir, de 8&nbsp;h à 2&nbsp;h tous les jours.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-ink" href="tel:+33143142583"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>01 43 14 25 83</a>
+          <a class="btn btn-yellow" href="https://www.google.com/maps/dir/?api=1&destination=Cosmos+Caf%C3%A9+53+rue+de+la+Roquette+75011+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>Itinéraire</a>
+          <a class="btn btn-soft" href="#carte">Voir la carte</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1600&q=75&auto=format&fit=crop" alt="Terrasse de café parisien, tables sur le trottoir et ardoise posée devant la façade" fetchpriority="high">
+        <figcaption>Ouvert tous les jours, 8 h – 2 h</figcaption>
+      </figure>
+    </div>
+
+    <div class="day" id="journee">
+      <div class="day-head">
+        <div>
+          <h2>Au Cosmos, maintenant</h2>
+          <p class="status" id="status" aria-live="polite">Ouvert tous les jours de 8&nbsp;h à 2&nbsp;h. Happy hour de 17&nbsp;h à 21&nbsp;h.</p>
+        </div>
+        <p class="clock tnum" id="clock" aria-hidden="true">8:00</p>
+      </div>
+      <div class="track">
+        <div class="bands">
+          <div class="band b1" data-from="8" data-to="12"><b>Le matin</b><span>Café, petit-déjeuner</span></div>
+          <div class="band b2" data-from="12" data-to="17"><b>Le midi</b><span>Déjeuner, terrasse</span></div>
+          <div class="band b3" data-from="17" data-to="21"><b>Happy hour</b><span>17 h – 21 h</span></div>
+          <div class="band b4" data-from="21" data-to="26"><b>Le soir</b><span>Tapas, cocktails, jusqu’à 2 h</span></div>
+        </div>
+        <div class="ticks tnum" aria-hidden="true"><span style="left:0">8 h</span><span style="left:22.22%">12 h</span><span style="left:50%">17 h</span><span style="left:72.22%">21 h</span><span style="left:88.89%">0 h</span><span style="left:100%">2 h</span></div>
+        <div class="cursor" id="cursor" aria-hidden="true"></div>
+      </div>
+      <div class="range">
+        <label for="hour">Choisir une heure</label>
+        <input type="range" id="hour" min="8" max="25.75" step="0.25" value="18">
+        <button type="button" id="now">Revenir à maintenant</button>
+      </div>
+    </div>
+  </div>
+
+  <section id="ambiance" class="wrap">
+    <div class="sec-head rv">
+      <h2>Bois vert, carreaux bleus, fleurs jaunes</h2>
+      <p>Une petite salle bien pensée, des boiseries vert bouteille, des carreaux bleus, des suspensions qui chauffent la lumière et une terrasse sur la façade.</p>
+    </div>
+    <div class="amb-grid">
+      <figure class="amb-a rv"><img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=1400&q=75&auto=format&fit=crop" alt="Salle de café animée, clients attablés sous des suspensions" loading="lazy"></figure>
+      <div class="amb-tiles rv"><p class="note">Le midi, ça se remplit vite&nbsp;: venez tôt ou appelez avant de passer.</p></div>
+      <figure class="amb-b rv"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=75&auto=format&fit=crop" alt="Trois cafés trinqués au-dessus d’une table en bois" loading="lazy"></figure>
+      <figure class="amb-c rv"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=75&auto=format&fit=crop" alt="Table dressée pour le dîner, verres de vin et assiettes" loading="lazy"></figure>
+      <ul class="amb-list rv">
+        <li><b>Pour tout le monde</b>Plats végétariens et halal, cartes, sans contact et titres-restaurant acceptés.</li>
+        <li><b>Chiens bienvenus</b>À l’intérieur comme en terrasse.</li>
+        <li><b>Un lieu safe</b>LGBTQ+ friendly, accueillant pour les personnes trans.</li>
+        <li><b>Accessible</b>Entrée et places adaptées aux fauteuils roulants, Wi-Fi gratuit.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="happy-hour" class="wrap">
+    <div class="hh rv">
+      <div class="hh-text">
+        <h2>Happy hour tous les soirs</h2>
+        <p class="hh-big tnum">17–21&nbsp;h</p>
+        <p><strong>Bières, vins et cocktails à prix réduit</strong>, sept jours sur sept. La Paloma revient souvent dans les avis. Une planche, des frites maison à l’aïoli aux herbes, et la soirée démarre.</p>
+        <div class="actions"><a class="btn btn-light" href="tel:+33143142583">Réserver une table</a></div>
+      </div>
+      <figure><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1400&q=75&auto=format&fit=crop" alt="Trois cocktails colorés alignés sur un comptoir" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section id="carte" class="wrap">
+    <div class="sec-head rv">
+      <h2>La carte, du café au dernier verre</h2>
+      <p>Des assiettes faites maison et généreuses. Voici des plats déjà servis au Cosmos&nbsp;; la carte bouge, demandez celle du jour.</p>
+    </div>
+    <div class="menu">
+      <div class="course c-share rv">
+        <h3>À partager</h3>
+        <ul>
+          <li>Arancini frits au comté, sauce chimichurri</li>
+          <li>Burrata</li>
+          <li>Guacamole, pointe de citron</li>
+          <li>Frites maison, aïoli aux herbes</li>
+          <li>Planche de charcuterie <small>Maison Montalet</small></li>
+          <li>Tapas et planches du moment</li>
+        </ul>
+      </div>
+      <div class="course c-mains rv">
+        <h3>Les plats</h3>
+        <ul>
+          <li>Agneau cuit 7 heures, courgettes au cumin, boulgour</li>
+          <li>Gnocchi à la crème de potimarron</li>
+          <li>Entrecôte grillée</li>
+          <li>Steak tartare</li>
+          <li>Dos de cabillaud</li>
+          <li>Salade au halloumi</li>
+          <li>Coquillettes jambon et truffe</li>
+          <li>Couscous poulet ou végétarien</li>
+          <li>Saucisson lyonnais, purée maison</li>
+        </ul>
+      </div>
+      <div class="course c-sweet rv">
+        <h3>Desserts</h3>
+        <ul>
+          <li>Mousse au chocolat</li>
+          <li>Crumble à la mangue</li>
+          <li>Tiramisu</li>
+          <li>Fondant au chocolat</li>
+        </ul>
+      </div>
+      <div class="course c-morning rv">
+        <h3>Matin et brunch</h3>
+        <ul>
+          <li>Café, cappuccino</li>
+          <li>Chocolat chaud</li>
+          <li>Petit-déjeuner</li>
+          <li>Brunch, bagel au saumon</li>
+        </ul>
+      </div>
+      <figure class="c-photo rv"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1000&q=75&auto=format&fit=crop" alt="Entrecôte grillée tranchée et frites sur une assiette blanche" loading="lazy"></figure>
+      <div class="menu-note rv">
+        <p>Sur place, à emporter ou en livraison. Les prix sont affichés au Cosmos.</p>
+        <a class="btn btn-ink" href="tel:+33143142583">Appeler pour réserver</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="groupes" class="wrap">
+    <div class="groups">
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1200&q=75&auto=format&fit=crop" alt="Un barman verse un cocktail ambré dans un verre à whisky" loading="lazy"></figure>
+      <div class="rv">
+        <h2>Un verre à plusieurs</h2>
+        <p class="lead">Anniversaire, afterwork, pot de départ&nbsp;: le Cosmos reçoit les groupes. Apportez votre gâteau, on s’occupe des verres.</p>
+        <ul class="chips">
+          <li>Anniversaires</li><li>Afterworks</li><li>Pots de départ</li><li>EVJF et EVG</li><li>Brunch entre amis</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-ink" href="tel:+33143142583">Appeler le 01 43 14 25 83</a>
+          <a class="btn btn-soft" href="mailto:cosmoscafe@gmail.com?subject=R%C3%A9servation%20de%20groupe&body=Bonjour%2C%0A%0ANous%20serions%20%5Bnombre%5D%20personnes%20le%20%5Bdate%5D%20vers%20%5Bheure%5D%20pour%20%5Boccasion%5D.%0A%0AMerci%20!">Écrire un e-mail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="venir" class="wrap">
+    <div class="sec-head rv">
+      <h2>Horaires et accès</h2>
+      <p>Sept jours sur sept, du premier café au dernier verre. À cinq minutes à pied de la place de la Bastille.</p>
+    </div>
+    <div class="visit">
+      <div class="hours rv">
+        <h3>Ouvert tous les jours</h3>
+        <table class="tnum">
+          <tbody id="hours">
+            <tr data-d="1"><td>Lundi</td><td>8 h – 2 h</td></tr>
+            <tr data-d="2"><td>Mardi</td><td>8 h – 2 h</td></tr>
+            <tr data-d="3"><td>Mercredi</td><td>8 h – 2 h</td></tr>
+            <tr data-d="4"><td>Jeudi</td><td>8 h – 2 h</td></tr>
+            <tr data-d="5"><td>Vendredi</td><td>8 h – 2 h</td></tr>
+            <tr data-d="6"><td>Samedi</td><td>8 h – 2 h</td></tr>
+            <tr data-d="0"><td>Dimanche</td><td>8 h – 2 h</td></tr>
+          </tbody>
+        </table>
+        <p class="hhline">Happy hour chaque jour de 17&nbsp;h à 21&nbsp;h</p>
+      </div>
+      <div class="where rv">
+        <h3>Venir au Cosmos</h3>
+        <address>53 rue de la Roquette<br>75011 Paris</address>
+        <ul class="metro">
+          <li><span class="lines"><i>1</i><i>5</i><i>8</i></span>Bastille</li>
+          <li><span class="lines"><i>8</i></span>Ledru-Rollin</li>
+          <li><span class="lines"><i>9</i></span>Voltaire</li>
+        </ul>
+        <div class="actions"><a class="btn btn-yellow" href="https://www.google.com/maps/dir/?api=1&destination=Cosmos+Caf%C3%A9+53+rue+de+la+Roquette+75011+Paris" target="_blank" rel="noopener">Ouvrir l’itinéraire</a></div>
+      </div>
+      <div class="map rv">
+        <iframe title="Plan d’accès au Cosmos Café, 53 rue de la Roquette" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=53+rue+de+la+Roquette+75011+Paris&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap">
+    <div class="contact rv">
+      <div>
+        <h2>Une table, une question&nbsp;?</h2>
+        <p>Le plus simple, c’est d’appeler. Pour un groupe, un e-mail marche aussi.</p>
+      </div>
+      <div class="contact-links">
+        <a class="btn btn-ink" href="tel:+33143142583">01 43 14 25 83 <span aria-hidden="true">→</span></a>
+        <a class="btn btn-soft" href="mailto:cosmoscafe@gmail.com">cosmoscafe@gmail.com <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p class="foot-name"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#cosmos"/></svg>Cosmos</p>
+  <div class="foot-meta">
+    <span>Cosmos Café · 53 rue de la Roquette, 75011 Paris · tous les jours 8 h – 2 h</span>
+    <span>Photos d’ambiance : Unsplash · Démo réalisée par Raul Hatos — site non officiel</span>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// entrées
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+
+// jour courant dans les horaires
+const dow=new Date().getDay();
+document.querySelector('#hours tr[data-d="'+dow+'"]')?.classList.add('today');
+
+// la journée du Cosmos : heures 8 → 26 (= 2 h du matin)
+const range=document.getElementById('hour'),cursor=document.getElementById('cursor'),statusEl=document.getElementById('status'),clock=document.getElementById('clock'),bands=[...document.querySelectorAll('.band')];
+const fmt=h=>{h=((h%24)+24)%24;const H=Math.floor(h),M=Math.round((h-H)*60);return H+':'+String(M).padStart(2,'0')};
+const dur=m=>{m=Math.round(m);const h=Math.floor(m/60),r=m%60;return h?(h+' h'+(r?' '+String(r).padStart(2,'0'):'')):r+' min'};
+function nowH(){const d=new Date();let h=d.getHours()+d.getMinutes()/60;if(h<8)h+=24;return h} // 0 h – 8 h compté comme la nuit précédente
+function render(h,live){
+  const open=h>=8&&h<26;
+  clock.textContent=fmt(h);
+  bands.forEach(b=>b.classList.toggle('on',open&&h>=+b.dataset.from&&h<+b.dataset.to));
+  const pos=Math.min(Math.max((h-8)/18,0),1);
+  cursor.style.left=(pos*100)+'%';
+  const at=live?'En ce moment':'À '+fmt(h).replace(':00',' h').replace(':',' h ');
+  let s;
+  if(!open){const until=(32-h)*60;s=at+', <b>le Cosmos est fermé</b>. Réouverture à 8 h, dans '+dur(until)+'.'}
+  else if(h<17){s=at+', <b>le Cosmos est ouvert</b>. Happy hour dans '+dur((17-h)*60)+'.'}
+  else if(h<21){s=at+', <b>c’est l’happy hour</b>, encore '+dur((21-h)*60)+'.'}
+  else{s=at+', <b>le Cosmos est ouvert</b> jusqu’à 2 h, encore '+dur((26-h)*60)+'.'}
+  statusEl.innerHTML=s;
+  range.setAttribute('aria-valuetext',fmt(h));
+}
+let live=true;
+function tick(){if(live){const h=nowH();if(h<26)range.value=Math.min(h,25.75);render(h,true)}}
+range.addEventListener('input',()=>{live=false;render(+range.value,false)});
+document.getElementById('now').addEventListener('click',()=>{live=true;tick()});
+tick();setInterval(tick,30000);
+</script>
+</body>
+</html>
