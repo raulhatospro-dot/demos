@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>À l'Ouest, librairie et salon de thé, Paris 14e</title>
+<meta name="description" content="À l'Ouest, librairie générale indépendante et salon de thé au 15 rue de l'Ouest, Paris 14e. Du mardi au samedi, 10 h 30 à 19 h 30.">
+<!-- DESIGN.md « Notion » (awesome-design) : bandeau marine profond #0a1530, une seule famille sans, aplats de couleurs franches par chapitre, CTA plein. Direction taste-skill « Colour chapters » (seed 948875497) : chaque section est un aplat, idée du phare (« La librairie, c'est comme un phare dans un quartier »). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a1530; --navy-2:#16244a;
+  --beam:#ffd84a; --beam-2:#ffe98f;
+  --red:#d7261e; --red-2:#b81d16;
+  --blue:#1e4bd7; --blue-2:#183fb8;
+  --sky:#dcecfa; --sky-2:#c6dff5;
+  --paper:#ffffff; --paper-2:#f2f4f7;
+  --font:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --m:clamp(16px, 2.4vw, 32px);
+  --s-small:14px; --s-body:clamp(17px, 1rem + .2vw, 19px); --s-lead:clamp(20px, 1.1rem + .6vw, 26px);
+  --s-head:clamp(40px, 1.4rem + 4.2vw, 84px); --s-disp:clamp(60px, 10.4vw, 168px);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:16px}
+body{margin:0; background:var(--paper); color:var(--navy); font:400 var(--s-body)/1.5 var(--font); font-optical-sizing:auto}
+img{display:block; max-width:100%}
+a{color:inherit; text-underline-offset:.2em; text-decoration-thickness:2px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:800; letter-spacing:-.035em; line-height:.95; text-wrap:balance}
+::selection{background:var(--beam); color:var(--navy)}
+:focus-visible{outline:3px solid var(--blue); outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--beam)}
+.wrap{padding-inline:var(--m); max-width:1600px; margin-inline:auto}
+.vh{position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* boutons : rectangles pleins, angles droits */
+.btn{display:inline-flex; align-items:center; gap:10px; min-height:52px; padding:14px 22px; font:600 17px/1.1 var(--font); text-decoration:none; border:0; cursor:pointer; background:var(--navy); color:var(--paper); transition:transform .25s var(--ease), background-color .2s}
+.btn:hover{background:var(--navy-2); transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:20px; height:20px; flex:none}
+.btn.beam{background:var(--beam); color:var(--navy)}
+.btn.beam:hover{background:var(--beam-2)}
+.btn.paper{background:var(--paper); color:var(--navy)}
+.btn.paper:hover{background:var(--sky)}
+
+/* bandeau démo */
+.demo{background:var(--navy); color:#c9d3ea; font-size:13px; line-height:1.3; text-align:center; padding:7px var(--m)}
+
+/* ---------- HERO : ligne de flottaison ---------- */
+.hero{position:relative; height:min(100svh, 980px); min-height:600px; background:var(--navy); overflow:hidden; --seam:50%; --hf:var(--s-disp)}
+.hero::before{content:""; position:absolute; inset:0 0 auto 0; height:var(--seam); background:var(--beam)}
+.top{position:absolute; inset:0 0 auto 0; z-index:3; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:22px var(--m)}
+.mark{display:flex; align-items:center; gap:10px; font-weight:800; font-size:26px; letter-spacing:-.03em; text-decoration:none}
+.mark svg{width:30px; height:30px}
+.top nav{display:flex; align-items:center; gap:28px; font-weight:600; font-size:16px}
+.top nav a:not(.btn){text-decoration:none}
+.top nav a:not(.btn):hover{text-decoration:underline}
+.hl{position:absolute; left:0; right:0; top:calc(var(--seam) - 1.29 * var(--hf)); text-align:center; font-size:var(--hf); line-height:.86; text-transform:uppercase; letter-spacing:-.045em; font-weight:800; padding-inline:var(--m)}
+.hl span{display:block; overflow:hidden; padding-bottom:.04em}
+.hl span i{display:inline-block; font-style:normal}
+.hl.a{color:var(--navy); clip-path:inset(0 0 calc(100% - (1.29 * var(--hf))) 0)}
+.hl.b{color:var(--beam); clip-path:inset(calc(1.29 * var(--hf)) 0 0 0)}
+.hero-foot{position:absolute; left:0; right:0; bottom:clamp(28px,5vh,48px); z-index:2; color:var(--paper); display:grid; grid-template-columns:1fr auto; align-items:end; gap:24px}
+.hero-foot p{font-size:var(--s-lead); line-height:1.3; max-width:30ch}
+.hero-foot p b{font-weight:600; color:var(--beam)}
+.acts{display:flex; flex-wrap:wrap; gap:10px}
+.beamline{position:absolute; z-index:1; top:var(--seam); left:50%; width:160vmax; height:2px; transform-origin:0 0; pointer-events:none}
+
+/* ---------- CHAPITRE : le phare (mosaïque) ---------- */
+.board{padding:8px; display:grid; grid-template-columns:repeat(12,1fr); grid-template-rows:38svh 38svh; gap:8px; min-height:620px}
+.tile{position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:24px}
+.t-a{grid-column:1/9; grid-row:1/3; background:var(--navy); color:var(--paper)}
+.t-a h2{font-size:clamp(56px, 8.4vw, 136px); line-height:.86; text-transform:uppercase; letter-spacing:-.045em}
+.t-a h2 em{font-style:normal; color:var(--beam)}
+.t-b{grid-column:9/13; grid-row:1; background:var(--beam); color:var(--navy); flex-direction:column; align-items:flex-start; justify-content:space-between}
+.t-b strong{font-size:clamp(64px, 9vw, 150px); line-height:.82; letter-spacing:-.05em; font-weight:800}
+.t-b span{font-size:var(--s-body); font-weight:600}
+.t-c{grid-column:9/13; grid-row:2; padding:0}
+.t-c img{width:100%; height:100%; object-fit:cover}
+.story{display:grid; grid-template-columns:repeat(12,1fr); gap:8px; padding:clamp(48px,7vw,110px) var(--m) clamp(80px,10vw,160px)}
+.story blockquote{grid-column:1/7; margin:0; font-size:clamp(24px, 1rem + 1.3vw, 36px); line-height:1.15; font-weight:600; letter-spacing:-.02em; max-width:20ch}
+.story blockquote footer{margin-top:18px; font-size:var(--s-small); font-weight:400; letter-spacing:0}
+.story .txt{grid-column:7/13; font-size:var(--s-lead); line-height:1.4; max-width:36ch}
+.story .txt p+p{margin-top:.8em}
+
+/* ---------- CHAPITRE : rayons (bleu) ---------- */
+.ch{position:relative; padding:clamp(72px,9vw,140px) 0}
+.rayons{background:var(--blue); color:var(--paper); min-height:90svh}
+.ch-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap}
+.ch-head h2{font-size:var(--s-head)}
+.ch-head h2 .soft{display:block; opacity:.62}
+.ray{display:grid; grid-template-columns:240px 1fr; gap:40px; margin-top:56px}
+.tabs{display:flex; flex-direction:column; gap:6px}
+.tab{appearance:none; border:0; cursor:pointer; text-align:left; padding:16px 18px; min-height:64px; font:600 18px/1.15 var(--font); background:var(--blue-2); color:var(--paper); transition:background-color .2s, transform .25s var(--ease)}
+.tab:hover{background:#2a56e0; transform:translateX(4px)}
+.tab[aria-selected="true"]{background:var(--paper); color:var(--blue)}
+.panel{background:var(--blue-2); padding:clamp(28px,4vw,56px); display:grid; grid-template-columns:1.25fr .75fr; gap:clamp(24px,4vw,56px); align-items:end; min-height:440px}
+.panel[hidden]{display:none}
+.panel h3{font-size:clamp(44px, 6vw, 104px); letter-spacing:-.045em}
+.panel p{margin-top:20px; font-size:var(--s-lead); line-height:1.35; max-width:30ch}
+.panel .btn{margin-top:28px}
+.panel img{width:100%; aspect-ratio:4/5; max-height:500px; object-fit:cover}
+
+/* ---------- CHAPITRE : deux aplats (salon de thé / rencontres) ---------- */
+.duo{display:grid; grid-template-columns:1fr 1fr}
+.half{position:relative; min-height:92svh; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; padding:clamp(24px,3vw,40px)}
+.half.tea{background:var(--beam)}
+.half.meet{background:var(--sky)}
+.half h2{position:relative; z-index:2; font-size:clamp(36px, 3.6vw, 60px); max-width:9ch}
+.half .obj{position:absolute; z-index:1; top:0; right:0; width:52%; height:60%; object-fit:cover; pointer-events:none; transition:transform 1.2s var(--ease)}
+.half:hover .obj{transform:scale(1.02)}
+.half .body{position:relative; z-index:2; max-width:34ch}
+.half .body p{font-size:var(--s-body)}
+.half .body p strong{display:block; font-size:var(--s-lead); line-height:1.2; letter-spacing:-.01em; margin-bottom:8px}
+.half .acts{margin-top:22px}
+.half ul{list-style:none; margin:0 0 16px; padding:0}
+.half li{padding:10px 0; font-size:var(--s-body)}
+.half li b{font-weight:600}
+
+/* ---------- CHAPITRE : le phare est-il allumé ? (horaires) ---------- */
+.hours{background:var(--navy); color:var(--paper); min-height:90svh; overflow:hidden}
+.hours-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:start}
+.hours h2{grid-column:1/13; font-size:var(--s-head)}
+.status{grid-column:1/7; margin-top:48px}
+.status .now{font-size:clamp(40px, 5.2vw, 88px); font-weight:800; letter-spacing:-.04em; line-height:.95; color:var(--beam)}
+.status .now.off{color:#8fa0c8}
+.status .sub{margin-top:16px; font-size:var(--s-lead); line-height:1.35; max-width:30ch}
+.status .acts{margin-top:32px}
+.days{grid-column:8/13; margin:48px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px}
+.days li{display:flex; justify-content:space-between; gap:16px; padding:15px 18px; background:var(--navy-2); font-size:var(--s-body)}
+.days li.closed{color:#a9b6d6}
+.days li.today{background:var(--beam); color:var(--navy); font-weight:600}
+.lighthouse{position:absolute; right:var(--m); top:clamp(36px,4.5vw,70px); width:clamp(70px,7vw,112px); overflow:visible; pointer-events:none}
+.where{grid-column:1/13; margin-top:56px; display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.where div{background:var(--navy-2); padding:22px}
+.where b{display:block; font-weight:600; color:var(--beam); margin-bottom:6px}
+
+/* ---------- CHAPITRE : commander (rouge) ---------- */
+.order{background:var(--red); color:var(--paper); min-height:80svh; padding-top:48px; overflow:hidden}
+.strip{display:flex; gap:8px; width:max-content; animation:drift 70s linear infinite}
+.strip img{height:150px; width:auto; object-fit:cover}
+.strip img:nth-child(3n+1){aspect-ratio:3/4}
+.strip img:nth-child(3n+2){aspect-ratio:1}
+.strip img:nth-child(3n){aspect-ratio:3/2}
+@keyframes drift{to{transform:translateX(-50%)}}
+.order h2{margin-top:72px; font-size:var(--s-head)}
+.order .lead{margin-top:18px; font-size:var(--s-lead); line-height:1.35; max-width:40ch}
+.bar3{margin-top:40px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
+.cell{position:relative}
+.cell label{position:absolute; left:20px; top:14px; font-size:var(--s-small); font-weight:600; color:#ffd9d6}
+.cell input{width:100%; height:96px; border:0; border-radius:0; padding:34px 20px 12px; font:600 20px/1.2 var(--font); background:var(--red-2); color:var(--paper); transition:background-color .2s}
+.cell input::placeholder{color:#ffd6d2; font-weight:400}
+.cell input:focus{background:#e9493f; outline:3px solid var(--beam); outline-offset:0}
+.bar3 button{height:96px; border:0; cursor:pointer; background:var(--paper); color:var(--red); font:800 22px/1 var(--font); letter-spacing:-.02em; display:flex; align-items:center; justify-content:center; gap:12px; transition:background-color .2s, transform .25s var(--ease)}
+.bar3 button:hover{background:var(--beam); color:var(--navy)}
+.bar3 button:active{transform:translateY(2px)}
+.bar3 button svg{width:24px; height:24px}
+.fine{margin-top:12px; font-size:var(--s-small); color:#fff; max-width:60ch}
+.fine.ok{color:var(--paper); font-weight:600}
+
+/* ---------- PIED : le nom en blocs ---------- */
+.foot{background:var(--navy); color:var(--paper); padding:clamp(56px,7vw,96px) 0 32px}
+.blocks{display:flex; align-items:flex-end; gap:4px; height:34svh; min-height:200px; max-height:340px}
+.blocks span{flex:1; min-width:0; overflow:hidden; display:flex; align-items:flex-end; justify-content:center; font-weight:800; font-size:clamp(44px, 9vw, 150px); line-height:.8; padding-bottom:.08em; letter-spacing:-.04em}
+.blocks span:nth-child(1){height:100%; background:var(--beam); color:var(--navy)}
+.blocks span:nth-child(2){height:72%; background:var(--red)}
+.blocks span:nth-child(3){height:88%; background:var(--blue)}
+.blocks span:nth-child(4){height:64%; background:var(--sky); color:var(--navy)}
+.blocks span:nth-child(5){height:94%; background:var(--paper); color:var(--navy)}
+.blocks span:nth-child(6){height:78%; background:var(--beam); color:var(--navy)}
+.blocks span:nth-child(7){height:100%; background:var(--red)}
+.cols{margin-top:56px; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:24px; font-size:15px}
+.cols div{grid-column:span 3}
+.cols b{display:block; font-weight:600; color:var(--beam); margin-bottom:8px}
+.cols a{display:block; text-decoration:none; padding:3px 0}
+.cols a:hover{text-decoration:underline}
+.cols p{line-height:1.55; color:#d5ddf0}
+.credit{margin-top:48px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; color:#a9b6d6}
+
+/* entrées de section */
+.js .rv{opacity:0; transform:translateY(24px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
+.js .rv.in{opacity:1; transform:none}
+.js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}
+.js .hl span i{transform:translateY(105%); transition:transform .95s var(--ease)}
+.js .hl span + span i{transition-delay:.11s}
+.js .ready .hl span i{transform:none}
+.js .hero-foot, .js .top{opacity:0; transition:opacity .7s .5s ease}
+.js .ready .hero-foot, .js .ready .top{opacity:1}
+.t-c img{transition:transform 1.4s var(--ease)}
+.t-c:hover img{transform:scale(1.04)}
+.beam-ray{transform-origin:150px 66px; animation:sweep 6s ease-in-out infinite alternate}
+@keyframes sweep{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
+.lighthouse.off .beam-ray{display:none}
+
+@media (max-width:1000px){
+  .top nav a:not(.btn){display:none}
+  .ray{grid-template-columns:1fr; gap:16px}
+  .tabs{flex-direction:row; overflow-x:auto; scrollbar-width:none; margin-inline:calc(var(--m) * -1); padding-inline:var(--m)}
+  .tab{flex:none; min-height:52px; padding:12px 16px; font-size:16px}
+  .tab:hover{transform:none}
+  .panel{grid-template-columns:1fr; min-height:0}
+  .panel img{aspect-ratio:16/10}
+  .days,.status{grid-column:1/13}
+  .status{margin-top:28px}
+  .days{margin-top:8px}
+}
+@media (max-width:720px){
+  .hero{--seam:46%; --hf:19vw; min-height:620px; height:100svh}
+  .hl{padding-inline:12px}
+  .top{padding:16px}
+  .mark{font-size:22px}
+  .top .btn{min-height:44px; padding:10px 14px; font-size:15px}
+  .hero-foot{grid-template-columns:1fr; gap:18px}
+  .hero-foot p{font-size:18px}
+  .board{grid-template-columns:1fr 1fr; grid-template-rows:auto; gap:6px; padding:6px; min-height:0}
+  .t-a{grid-column:1/3; grid-row:auto; min-height:46svh; padding:18px}
+  .t-a h2{font-size:15vw}
+  .t-b,.t-c{grid-column:auto; grid-row:auto; aspect-ratio:1}
+  .t-b{padding:16px}
+  .t-b strong{font-size:17vw}
+  .t-b span{font-size:14px}
+  .story{grid-template-columns:1fr; gap:32px}
+  .story blockquote,.story .txt{grid-column:auto}
+  .duo{grid-template-columns:1fr}
+  .half{min-height:82svh}
+  .half{min-height:0; gap:24px}
+  .half .obj{position:relative; top:auto; right:auto; max-width:none; width:calc(100% + 2 * clamp(24px,3vw,40px)); height:auto; aspect-ratio:4/3; margin-inline:calc(-1 * clamp(24px,3vw,40px))}
+  .where{grid-template-columns:1fr}
+  .lighthouse{width:56px; top:36px}
+  .hours h2{padding-right:80px}
+  .strip img{height:110px}
+  .order h2{margin-top:48px}
+  .bar3{grid-template-columns:1fr}
+  .cell input,.bar3 button{height:64px}
+  .cell input{padding:26px 16px 8px; font-size:18px}
+  .cell label{left:16px; top:9px; font-size:13px}
+  .blocks{height:22svh; min-height:140px}
+  .blocks span{font-size:10.5vw}
+  .cols{grid-template-columns:1fr 1fr; gap:28px 16px}
+  .cols div{grid-column:auto}
+  .cols div:last-child{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important; transition:none!important}
+  .js .rv,.js .hl span i,.js .hero-foot,.js .top{opacity:1!important; transform:none!important}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="hero" id="haut">
+  <div class="top">
+    <a class="mark" href="#haut" aria-label="À l'Ouest, retour en haut">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M11 28h8l-2-18h-4z" fill="#0a1530"/><rect x="12" y="4" width="6" height="5" fill="#d7261e"/><path d="M10 4h10L15 0z" fill="#0a1530"/></svg>
+      À l'Ouest
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="#rayons">Rayons</a>
+      <a href="#salon">Salon de thé</a>
+      <a href="#horaires">Horaires</a>
+      <a class="btn" href="#commander">Commander un livre</a>
+    </nav>
+  </div>
+
+  <h1 class="hl a"><span><i>Cap sur</i></span><span><i>l'Ouest</i></span><span class="vh">, librairie et salon de thé, Paris 14e</span></h1>
+  <div class="hl b" aria-hidden="true"><span><i>Cap sur</i></span><span><i>l'Ouest</i></span></div>
+
+  <div class="hero-foot wrap on-dark">
+    <p>À l'Ouest, librairie générale et salon de thé au <b>15 rue de l'Ouest, Paris 14e</b>. Du mardi au samedi, 10 h 30 – 19 h 30.</p>
+    <div class="acts">
+      <a class="btn beam" href="https://www.google.com/maps/dir/?api=1&amp;destination=15+rue+de+l'Ouest+75014+Paris" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        Itinéraire</a>
+      <a class="btn paper" href="mailto:librairiealouest@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg>
+        Écrire à la librairie</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section aria-labelledby="t-phare">
+    <div class="board">
+      <div class="tile t-a rv"><h2 id="t-phare">Un phare<br><em>dans la rue</em></h2></div>
+      <div class="tile t-b rv d1"><span>Ouverte en mai</span><strong class="tnum">2023</strong></div>
+      <div class="tile t-c rv d2"><img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=900&amp;h=700&amp;fit=crop&amp;q=70" width="900" height="700" alt="Une main tire un livre d'une étagère" loading="lazy"></div>
+    </div>
+    <div class="story">
+      <blockquote class="rv">« La librairie, c'est comme un phare dans un quartier. Il ne faut pas que ça éblouisse, mais que ça guide un peu les gens. »
+        <footer>Le libraire, cité par Paris Commerces</footer>
+      </blockquote>
+      <div class="txt rv d1">
+        <p>Avant les livres, il y avait une confiserie. Le local du 15 rue de l'Ouest est devenu une librairie générale et indépendante, ouverte à tous, avec un coin salon de thé pour lire sur place.</p>
+        <p>Derrière le comptoir, un ancien professeur de français qui a passé vingt ans en classe et continue de faire lire, autrement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch rayons on-dark" id="rayons" aria-labelledby="t-rayons">
+    <div class="wrap">
+      <div class="ch-head rv">
+        <h2 id="t-rayons"><span class="soft">Généraliste,</span>pour n'exclure personne</h2>
+        <a class="btn paper" href="#commander">Commander un titre</a>
+      </div>
+      <div class="ray">
+        <div class="tabs" role="tablist" aria-label="Rayons de la librairie">
+          <button class="tab" role="tab" id="tab-0" aria-controls="p-0" aria-selected="true">Littérature</button>
+          <button class="tab" role="tab" id="tab-1" aria-controls="p-1" aria-selected="false" tabindex="-1">Jeunesse</button>
+          <button class="tab" role="tab" id="tab-2" aria-controls="p-2" aria-selected="false" tabindex="-1">Arts graphiques</button>
+          <button class="tab" role="tab" id="tab-3" aria-controls="p-3" aria-selected="false" tabindex="-1">Poésie &amp; théâtre</button>
+          <button class="tab" role="tab" id="tab-4" aria-controls="p-4" aria-selected="false" tabindex="-1">Science-fiction</button>
+          <button class="tab" role="tab" id="tab-5" aria-controls="p-5" aria-selected="false" tabindex="-1">Sciences humaines</button>
+        </div>
+        <div>
+          <div class="panel" role="tabpanel" id="p-0" aria-labelledby="tab-0">
+            <div><h3>Littérature</h3><p>Romans français et étrangers, nouveautés et fonds. Dites ce que vous avez aimé, on vous oriente.</p><a class="btn paper" href="#commander" data-r="Littérature">Commander en littérature</a></div>
+            <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800&amp;h=1000&amp;fit=crop&amp;q=70" width="800" height="1000" alt="Rangée de romans debout, tranches visibles" loading="lazy">
+          </div>
+          <div class="panel" role="tabpanel" id="p-1" aria-labelledby="tab-1" hidden>
+            <div><h3>Jeunesse</h3><p>Albums, premières lectures, romans ado. Un rayon pour les enfants du quartier et pour ceux qui leur offrent des livres.</p><a class="btn paper" href="#commander" data-r="Jeunesse">Commander en jeunesse</a></div>
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&amp;h=1000&amp;fit=crop&amp;q=70" width="800" height="1000" alt="Étagères de livres colorés" loading="lazy">
+          </div>
+          <div class="panel" role="tabpanel" id="p-2" aria-labelledby="tab-2" hidden>
+            <div><h3>Arts graphiques</h3><p>Beaux livres, illustration, bande dessinée d'auteur : les livres qu'on feuillette avant de les lire.</p><a class="btn paper" href="#commander" data-r="Arts graphiques">Commander en arts</a></div>
+            <img src="https://images.unsplash.com/photo-1474932430478-367dbb6832c1?w=800&amp;h=1000&amp;fit=crop&amp;q=70" width="800" height="1000" alt="Dos de livres anciens reliés" loading="lazy">
+          </div>
+          <div class="panel" role="tabpanel" id="p-3" aria-labelledby="tab-3" hidden>
+            <div><h3>Poésie &amp; théâtre</h3><p>Recueils, pièces, textes à dire à voix haute. Un ancien prof de français ne pouvait pas faire sans.</p><a class="btn paper" href="#commander" data-r="Poésie et théâtre">Commander en poésie</a></div>
+            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&amp;h=1000&amp;fit=crop&amp;q=70" width="800" height="1000" alt="Pile de livres tenue à bout de bras" loading="lazy">
+          </div>
+          <div class="panel" role="tabpanel" id="p-4" aria-labelledby="tab-4" hidden>
+            <div><h3>Science-fiction</h3><p>Classiques du genre et voix récentes, pour partir plus loin que l'Ouest.</p><a class="btn paper" href="#commander" data-r="Science-fiction">Commander en SF</a></div>
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&amp;h=1000&amp;fit=crop&amp;q=70" width="800" height="1000" alt="Rayonnages courbes remplis de livres" loading="lazy">
+          </div>
+          <div class="panel" role="tabpanel" id="p-5" aria-labelledby="tab-5" hidden>
+            <div><h3>Sciences humaines</h3><p>Essais, histoire, société : de quoi comprendre le monde, et en discuter au comptoir.</p><a class="btn paper" href="#commander" data-r="Sciences humaines">Commander un essai</a></div>
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&amp;h=1000&amp;fit=crop&amp;q=70" width="800" height="1000" alt="Allée de bibliothèque éclairée d'ampoules" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="duo" aria-label="Salon de thé et rencontres">
+    <div class="half tea" id="salon">
+      <h2 class="rv">Une tasse, un livre</h2>
+      <img class="obj" src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=1000&amp;h=1200&amp;fit=crop&amp;q=70" width="1000" height="1200" alt="Thé infusé dans un verre, sachets posés autour" loading="lazy">
+      <div class="body rv d1">
+        <p><strong>Le salon de thé</strong>Un livre tout juste choisi se commence mieux assis, une tasse à côté. Le coin salon de thé est là pour ça, rue de l'Ouest.</p>
+        <div class="acts"><a class="btn" href="#horaires">Voir les horaires</a></div>
+      </div>
+    </div>
+    <div class="half meet" id="rencontres">
+      <h2 class="rv">Rencontres &amp; ciné-club</h2>
+      <img class="obj" src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1000&amp;h=1200&amp;fit=crop&amp;q=70" width="1000" height="1200" alt="Livre ouvert au milieu de rayonnages chargés" loading="lazy">
+      <div class="body rv d1">
+        <ul>
+          <li><b>Rencontres d'auteurs.</b> Dernière en date : Christophe Jamin pour <i>Lee Fantôme</i> (Grasset), le 6 mai 2026.</li>
+          <li><b>Ciné-club</b> en partenariat avec le cinéma L'Entrepôt, voisin du 14e.</li>
+        </ul>
+        <div class="acts">
+          <a class="btn" href="https://www.instagram.com/librairiealouest/" target="_blank" rel="noopener">Suivre le programme</a>
+          <a class="btn paper" href="mailto:librairiealouest@gmail.com?subject=Prochaines%20rencontres">Être prévenu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch hours on-dark" id="horaires" aria-labelledby="t-horaires">
+    <svg class="lighthouse" id="phare" viewBox="0 0 300 520" aria-hidden="true">
+      <g class="beam-ray"><path d="M150 66 L300 10 L300 122 Z" fill="#ffd84a" opacity=".55"/><path d="M150 66 L0 10 L0 122 Z" fill="#ffd84a" opacity=".55"/></g>
+      <path d="M118 520h64l-12-400h-40z" fill="#f2f4f7"/>
+      <path d="M121 420h58l-2-60h-54zM125 290h50l-2-60h-46zM128 170h44l-1-40h-42z" fill="#d7261e"/>
+      <rect x="128" y="50" width="44" height="34" fill="#ffd84a"/>
+      <path d="M120 50h60l-30-34z" fill="#d7261e"/>
+      <rect x="118" y="84" width="64" height="10" fill="#f2f4f7"/>
+    </svg>
+    <div class="wrap hours-grid">
+      <h2 id="t-horaires" class="rv">Le phare est-il allumé&nbsp;?</h2>
+      <div class="status rv d1" aria-live="polite">
+        <p class="now" id="now">Du mardi au samedi</p>
+        <p class="sub" id="sub">10 h 30 – 19 h 30. Fermé le dimanche et le lundi.</p>
+        <div class="acts">
+          <a class="btn beam" href="https://www.google.com/maps/dir/?api=1&amp;destination=15+rue+de+l'Ouest+75014+Paris" target="_blank" rel="noopener">Y aller</a>
+          <a class="btn paper" href="mailto:librairiealouest@gmail.com">Écrire</a>
+        </div>
+      </div>
+      <ul class="days tnum rv d2" id="days">
+        <li data-d="1" class="closed"><span>Lundi</span><span>Fermé</span></li>
+        <li data-d="2"><span>Mardi</span><span>10 h 30 – 19 h 30</span></li>
+        <li data-d="3"><span>Mercredi</span><span>10 h 30 – 19 h 30</span></li>
+        <li data-d="4"><span>Jeudi</span><span>10 h 30 – 19 h 30</span></li>
+        <li data-d="5"><span>Vendredi</span><span>10 h 30 – 19 h 30</span></li>
+        <li data-d="6"><span>Samedi</span><span>10 h 30 – 19 h 30</span></li>
+        <li data-d="0" class="closed"><span>Dimanche</span><span>Fermé</span></li>
+      </ul>
+      <div class="where rv d3">
+        <div><b>Adresse</b>15 rue de l'Ouest<br>75014 Paris</div>
+        <div><b>Métro</b>Gaîté ou Pernety, ligne 13</div>
+        <div><b>Courriel</b><a href="mailto:librairiealouest@gmail.com">librairiealouest@gmail.com</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="order on-dark" id="commander" aria-labelledby="t-cmd">
+    <div class="strip" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1474932430478-367dbb6832c1?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="" loading="lazy">
+    </div>
+    <div class="wrap">
+      <h2 id="t-cmd" class="rv">Commander un livre</h2>
+      <p class="lead rv d1">Un titre introuvable, un cadeau à réserver&nbsp;? Indiquez-le ici, votre messagerie prépare le courriel pour la librairie.</p>
+      <form class="bar3 rv d2" id="form" action="mailto:librairiealouest@gmail.com" method="get" enctype="text/plain">
+        <div class="cell"><label for="f-t">Titre</label><input id="f-t" name="titre" required autocomplete="off" placeholder="Le titre du livre"></div>
+        <div class="cell"><label for="f-a">Auteur ou éditeur</label><input id="f-a" name="auteur" autocomplete="off" placeholder="Si vous le savez"></div>
+        <button type="submit">Préparer le courriel
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <p class="fine" id="fine">Rien n'est envoyé depuis cette page : le message s'ouvre dans votre messagerie, vous le relisez avant de l'envoyer.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot on-dark">
+  <div class="wrap">
+    <div class="blocks" aria-label="À l'Ouest" role="img"><span>À</span><span>L'</span><span>O</span><span>U</span><span>E</span><span>S</span><span>T</span></div>
+    <div class="cols">
+      <div><b>La librairie</b><a href="#rayons">Rayons</a><a href="#salon">Salon de thé</a><a href="#rencontres">Rencontres</a><a href="#commander">Commander</a></div>
+      <div><b>Suivre</b><a href="https://www.instagram.com/librairiealouest/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/profile.php?id=100091365022129" target="_blank" rel="noopener">Facebook</a></div>
+      <div><b>Adresse</b><p>15 rue de l'Ouest<br>75014 Paris<br>Mardi – samedi, 10 h 30 – 19 h 30</p></div>
+      <div><b>Contact</b><a href="mailto:librairiealouest@gmail.com">librairiealouest@gmail.com</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=15+rue+de+l'Ouest+75014+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a></div>
+    </div>
+    <div class="credit"><span>À l'Ouest, librairie et salon de thé, Paris 14e</span><span>Photos d'illustration Unsplash · Démo réalisée par Raul Hatos — site non officiel</span></div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  const hero=document.querySelector('.hero');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>hero.classList.add('ready')));
+
+  // apparitions
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // rayons : onglets accessibles
+  const tabs=[...document.querySelectorAll('.tab')];
+  const pick=(t,focus)=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});if(focus)t.focus()};
+  tabs.forEach((t,i)=>{
+    t.addEventListener('click',()=>pick(t));
+    t.addEventListener('keydown',e=>{const k={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];if(k){e.preventDefault();pick(tabs[(i+k+tabs.length)%tabs.length],true)}});
+  });
+  let rayon='';
+  document.querySelectorAll('[data-r]').forEach(a=>a.addEventListener('click',()=>{rayon=a.dataset.r;document.getElementById('f-t').focus({preventScroll:true})}));
+
+  // le phare est-il allumé ? (heure de Paris)
+  const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  const d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), mins=(+p.hour)*60+(+p.minute);
+  const OPEN=630, CLOSE=1170, isDay=d>=2&&d<=6, open=isDay&&mins>=OPEN&&mins<CLOSE;
+  const now=document.getElementById('now'), sub=document.getElementById('sub');
+  document.querySelector('#days [data-d="'+d+'"]').classList.add('today');
+  const names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  const next=()=>{if(isDay&&mins<OPEN)return "aujourd'hui à 10 h 30";let n=(d+1)%7;while(n<2)n++;return (n===(d+1)%7?'demain':names[n])+' à 10 h 30'};
+  if(open){const left=CLOSE-mins;now.textContent='Allumé, entrez.';sub.textContent='Ouvert jusqu’à 19 h 30'+(left<=60?', encore '+left+' min.':'.')}
+  else{now.textContent='Éteint pour l’instant.';now.classList.add('off');sub.textContent='On rallume '+next()+'. Le courriel, lui, reste ouvert.';document.getElementById('phare').classList.add('off')}
+
+  // commande : courriel prérempli
+  const form=document.getElementById('form'), fine=document.getElementById('fine');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const t=form.titre.value.trim(), a=form.auteur.value.trim();
+    if(!t){form.titre.focus();fine.textContent='Indiquez au moins le titre du livre.';return}
+    const body='Bonjour,\n\nPourriez-vous me commander ce livre ?\n\nTitre : '+t+(a?'\nAuteur / éditeur : '+a:'')+(rayon?'\nRayon : '+rayon:'')+'\n\nJe passerai le récupérer rue de l’Ouest.\n\nMerci,\n';
+    location.href='mailto:librairiealouest@gmail.com?subject='+encodeURIComponent('Commande : '+t)+'&body='+encodeURIComponent(body);
+    fine.textContent='Votre messagerie s’ouvre avec la demande pour « '+t+' ». Relisez, signez, envoyez.';fine.classList.add('ok');
+  });
+})();
+</script>
+</body>
+</html>
