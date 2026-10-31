@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Balian Hair · Coiffeur à Alfortville</title>
+<meta name="description" content="Balian Hair, salon de coiffure mixte au 49 rue Victor Hugo à Alfortville. Couleur, balayage, lissage brésilien, coupe homme et enfant. Réservation sur Planity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#f4f3f0;
+  --card:#e8e6e1;
+  --card-deep:#d9d6cf;
+  --ink:#1b1612;
+  --body:#2c2621;
+  --mute:#615850;
+  --accent:#c8102e;
+  --accent-press:#a20b24;
+  --on-accent:#fff;
+  --r-md:16px;
+  --r-lg:32px;
+  --pad:20px;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --text:"Instrument Sans",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--body);font:400 17px/1.55 var(--text);font-feature-settings:"tnum" 0;padding-bottom:40px}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);color:var(--ink);letter-spacing:-.03em;line-height:1;text-wrap:balance}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:var(--r-md);font:600 16px/1 var(--text);text-decoration:none;transition:background .2s,transform .2s var(--ease);white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-red{background:var(--accent);color:var(--on-accent)}
+.btn-red:hover{background:var(--accent-press)}
+.btn-soft{background:var(--card);color:var(--ink)}
+.btn-soft:hover{background:var(--card-deep)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--ground)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.mark{font:800 22px/1 var(--display);letter-spacing:-.04em;color:var(--ink);text-decoration:none}
+.mark b{color:var(--accent)}
+.nav ul{display:none;list-style:none;gap:28px}
+.nav ul a{text-decoration:none;font-weight:600;color:var(--ink)}
+.nav ul a:hover{color:var(--accent)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{padding:24px 0 72px}
+.hero-grid{display:grid;gap:32px}
+.hero h1{font-size:clamp(4rem,17vw,6rem);font-weight:800;letter-spacing:-.045em;line-height:.88}
+.hero h1 span{display:block}
+.lead{margin-top:24px;font-size:20px;line-height:1.45;color:var(--ink);max-width:30ch}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.actions .btn{flex:1 1 auto}
+.stars{display:flex;align-items:center;gap:12px;margin-top:28px;font-weight:600;color:var(--ink)}
+.stars svg{width:96px;height:18px}
+.stars span{color:var(--mute);font-weight:500}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-weight:600;color:var(--ink);font-size:15px}
+.status i{width:9px;height:9px;border-radius:50%;background:#1f8a4c}
+.status.closed i{background:var(--mute)}
+
+.pins{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:8px}
+.pin{position:relative;overflow:hidden;border-radius:var(--r-md);background:var(--card)}
+.pin img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.pin:hover img{transform:scale(1.04)}
+.pins{height:440px}
+.pin-a{grid-row:1/3;border-radius:var(--r-lg)}
+.pins figure{min-height:0}
+.tag{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font:600 13px/1 var(--text);padding:9px 12px;border-radius:999px;white-space:nowrap}
+.tag b{font-weight:700}
+@media (max-width:699px){.pin-b .tag,.pin-c .tag{left:8px;bottom:8px;font-size:12px;padding:8px 10px}}
+
+/* sections */
+section{padding:80px 0}
+.h2{font-size:clamp(2.4rem,9vw,4.6rem);font-weight:800;max-width:22ch}
+.intro{margin-top:18px;font-size:19px;max-width:52ch;color:var(--body)}
+
+/* nuancier */
+.nuance{background:var(--card)}
+.nu-grid{display:grid;gap:36px;margin-top:40px}
+.locks{display:flex;gap:6px;align-items:flex-end;padding:8px 0 4px}
+.lock{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:12px;background:none;border:0;cursor:pointer;font:600 14px/1.2 var(--text);color:var(--ink);text-align:center;padding:4px}
+.lock svg{width:48px;height:160px;transition:transform .5s var(--ease)}
+.lock:hover svg{transform:translateY(-6px)}
+.lock[aria-pressed="true"] svg{transform:translateY(-14px)}
+.lock[aria-pressed="true"] span{color:var(--accent)}
+.lock span{min-height:2.4em}
+.nu-card{background:var(--ground);border-radius:var(--r-lg);padding:28px;display:grid;gap:18px;align-content:start}
+.nu-card h3{font-size:clamp(2rem,7vw,3rem);font-weight:800}
+.nu-card p{font-size:18px;max-width:46ch}
+.nu-list{list-style:none;display:grid;gap:6px}
+.nu-list li{display:flex;justify-content:space-between;gap:16px;padding:14px 16px;background:var(--card);border-radius:12px;font-weight:500;color:var(--ink)}
+.nu-list li b{white-space:nowrap;font-weight:700}
+.nu-list small{display:block;color:var(--mute);font-size:14px;font-weight:500}
+
+/* tarifs */
+.board{columns:1;column-gap:8px;margin-top:40px}
+.board>*{break-inside:avoid;margin-bottom:8px}
+.price{background:var(--card);border-radius:var(--r-md);padding:24px}
+.price h3{font-size:30px;font-weight:800;margin-bottom:10px}
+.price table{width:100%;border-collapse:collapse}
+.price td{padding:11px 0;border-top:1px solid var(--card-deep);vertical-align:top;color:var(--ink)}
+.price tr:first-child td{border-top:0}
+.price td:last-child{text-align:right;font-weight:700;white-space:nowrap;padding-left:14px}
+.price small{display:block;color:var(--mute);font-size:14px}
+.board .pin{border-radius:var(--r-md)}
+.board .pin img{aspect-ratio:4/5}
+.board .pin.tall img{aspect-ratio:3/4.4}
+.note{margin-top:20px;color:var(--mute);font-size:15px}
+
+/* avis */
+.avis{background:var(--accent);color:#fff}
+.avis h2,.avis h3{color:#fff}
+.av-grid{display:grid;gap:40px}
+.big{font:800 clamp(7rem,34vw,13rem)/.8 var(--display);letter-spacing:-.06em;color:#fff}
+.big sup{font-size:.3em;letter-spacing:-.02em;vertical-align:top;margin-left:6px;position:relative;top:.35em}
+.av-sub{margin-top:18px;font-size:20px;font-weight:600;max-width:24ch}
+.scores{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:32px}
+.scores li{background:rgba(0,0,0,.14);border-radius:var(--r-md);padding:18px}
+.scores b{display:block;font:800 36px/1 var(--display);letter-spacing:-.03em}
+.scores span{font-size:15px;font-weight:500}
+.av-photo{border-radius:var(--r-lg);overflow:hidden}
+.av-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.google{display:flex;align-items:baseline;gap:14px;margin-top:20px;font-weight:600}
+.google b{font:800 44px/1 var(--display);letter-spacing:-.03em}
+.avis .btn-white{background:#fff;color:var(--accent);margin-top:28px}
+.avis .btn-white:hover{background:var(--ground)}
+
+/* salon */
+.salon-grid{display:grid;gap:36px}
+.salon-photo{border-radius:var(--r-lg);overflow:hidden}
+.salon-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.team{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;list-style:none}
+.team li{background:var(--card);border-radius:999px;padding:10px 18px;font-weight:600;color:var(--ink)}
+.brands{list-style:none;margin-top:72px;display:flex;flex-wrap:wrap;gap:0 .5em}
+.brands li{font:800 clamp(2.2rem,10vw,5.4rem)/1 var(--display);letter-spacing:-.045em;color:var(--ink)}
+.brands li:nth-child(2){color:var(--accent)}
+.brands-cap{margin-top:16px;color:var(--mute);font-size:16px;max-width:52ch}
+
+/* horaires */
+.acces{background:var(--card)}
+.ac-grid{display:grid;gap:40px;margin-top:40px}
+.hours{width:100%;border-collapse:collapse;font-size:19px}
+.hours th,.hours td{padding:15px 0;border-top:1px solid var(--card-deep);text-align:left;color:var(--ink)}
+.hours th{font-weight:600}
+.hours td{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.off td{color:var(--mute)}
+.hours tr.today th,.hours tr.today td{color:var(--accent);font-weight:700}
+.addr{background:var(--ground);border-radius:var(--r-lg);padding:28px}
+.addr p.where{font:800 clamp(2rem,8vw,3.2rem)/1.02 var(--display);letter-spacing:-.04em;color:var(--ink)}
+.addr .meta{margin-top:16px;font-size:18px}
+.addr .actions{margin-top:24px}
+.tel{display:block;margin-top:24px;font:800 clamp(1.9rem,8vw,2.8rem)/1 var(--display);letter-spacing:-.03em;color:var(--accent);text-decoration:none}
+.tel:hover{text-decoration:underline;text-underline-offset:6px}
+
+/* final */
+.final{padding:96px 0 40px}
+.final-grid{display:grid;gap:32px;align-items:end}
+.final h2{font-size:clamp(2.6rem,10vw,5.2rem);font-weight:800;max-width:12ch}
+.final .pin{aspect-ratio:16/10;border-radius:var(--r-lg)}
+footer{padding:48px 0 32px}
+.foot-name{font:800 clamp(4.2rem,20vw,15rem)/.8 var(--display);letter-spacing:-.06em;color:var(--ink)}
+.foot-name b{color:var(--accent)}
+.foot-row{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:28px;color:var(--mute);font-size:15px}
+.foot-row a{color:var(--ink)}
+.demo{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--ink);color:#d9d2c8;font:500 13px/1 var(--text);text-align:center;padding:13px 16px}
+
+/* reveal */
+.rv{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.pre{opacity:0;transform:translateY(24px)}
+@media (prefers-reduced-motion:reduce){.rv{transition:none}.js .rv.pre{opacity:1;transform:none}*{scroll-behavior:auto}}
+
+@media (min-width:700px){
+  :root{--pad:32px}
+  .board{columns:2}
+  .scores{grid-template-columns:repeat(4,1fr)}
+  .actions .btn{flex:0 0 auto}
+}
+@media (min-width:1000px){
+  :root{--pad:40px}
+  .nav ul{display:flex}
+  .hero{padding:40px 0 120px}
+  .hero-grid{grid-template-columns:4fr 6fr;gap:56px;align-items:center}
+  .hero h1{font-size:9.5rem}
+  .lead{font-size:22px}
+  section{padding:140px 0}
+  .nu-grid{grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+  .lock svg{width:72px;height:280px}
+  .pins{height:min(76vh,700px)}
+  .nu-card{padding:40px}
+  .board{columns:3}
+  .av-grid{grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+  .salon-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .ac-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .addr{padding:44px}
+  .final-grid{grid-template-columns:1fr 1fr;gap:64px}
+  .brand-row{display:grid;grid-template-columns:3fr 1fr;gap:64px;align-items:end;margin-top:72px}
+  .brand-row .brands{margin-top:0}
+  .brand-row .brands-cap{margin:0 0 12px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Balian Hair, accueil">Balian<b>.</b>Hair</a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#couleur">Couleur</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#acces">Horaires</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-red" href="https://www.planity.com/balian-hair-94140-alfortville" target="_blank" rel="noopener">Réserver</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="titre">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="titre" class="rv"><span>Balian</span><span>Hair</span></h1>
+        <p class="lead rv">Salon de coiffure mixte au 49 rue Victor Hugo, à Alfortville. Couleur, balayage, lissage brésilien, coupe homme et enfant.</p>
+        <div class="actions rv">
+          <a class="btn btn-red" href="https://www.planity.com/balian-hair-94140-alfortville" target="_blank" rel="noopener">Prendre rendez-vous</a>
+          <a class="btn btn-soft" href="tel:+33143686060">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            01 43 68 60 60</a>
+        </div>
+        <div class="stars rv">
+          <svg viewBox="0 0 100 18" aria-hidden="true"><g fill="#c8102e"><path id="s" d="M9 0l2.6 5.8 6.4.6-4.8 4.2 1.4 6.3L9 13.6 3.4 16.9l1.4-6.3L0 6.4l6.4-.6z"/><use href="#s" x="20.5"/><use href="#s" x="41"/><use href="#s" x="61.5"/><use href="#s" x="82"/></g></svg>
+          4,9/5 <span>442 avis Planity</span>
+        </div>
+        <p class="status rv" id="status" hidden><i></i><span></span></p>
+      </div>
+      <div class="pins rv">
+        <figure class="pin pin-a">
+          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1100&q=80&auto=format&fit=crop" alt="Une coiffeuse réalise un brushing au sèche-cheveux et à la brosse ronde" width="1100" height="1460">
+          <figcaption class="tag">Shampoing brushing · <b>28 €</b></figcaption>
+        </figure>
+        <figure class="pin pin-b">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&h=700&q=80&auto=format&fit=crop" alt="Chevelure ondulée châtain aux reflets miel, vue de dos" width="700" height="700">
+          <figcaption class="tag">Balayage · <b>sur devis</b></figcaption>
+        </figure>
+        <figure class="pin pin-c">
+          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=700&h=700&q=80&auto=format&fit=crop" alt="Coupe homme dégradée réalisée à la tondeuse" width="700" height="700">
+          <figcaption class="tag">Homme · <b>dès 28 €</b></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="nuance" id="couleur" aria-labelledby="t-couleur">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-couleur">Quelle couleur vous fait envie&nbsp;?</h2>
+      <p class="intro rv">Blond polaire, ombré hair, balayage : choisissez une mèche du nuancier, on vous dit quelle prestation réserver et à quel prix.</p>
+      <div class="nu-grid">
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true"><clipPath id="lk"><path d="M10 8h44c2 50 4 110-6 160-5 24-12 40-16 52-4-12-11-28-16-52C6 118 8 58 10 8z"/></clipPath></svg>
+        <div class="locks rv" role="group" aria-label="Nuancier">
+          <button class="lock" type="button" data-k="polaire" aria-pressed="true"><svg viewBox="0 0 64 220" aria-hidden="true"><g clip-path="url(#lk)"><path d="M10 8h44c2 50 4 110-6 160-5 24-12 40-16 52-4-12-11-28-16-52C6 118 8 58 10 8z" fill="#efe9dc"/><path d="M24 14c1 60 2 120 6 190M38 14c0 60-1 120-5 190" stroke="#000" stroke-opacity=".08" stroke-width="2" fill="none"/></g><rect x="18" y="0" width="28" height="12" rx="6" fill="#1b1612"/></svg><span>Blond polaire</span></button>
+          <button class="lock" type="button" data-k="balayage" aria-pressed="false"><svg viewBox="0 0 64 220" aria-hidden="true"><g clip-path="url(#lk)"><path d="M10 8h44c2 50 4 110-6 160-5 24-12 40-16 52-4-12-11-28-16-52C6 118 8 58 10 8z" fill="#6b4630"/><path d="M20 14c4 50 2 110 10 200l6-6c-4-70 0-130-4-194zM40 14c2 60-2 120 4 180l6-14c-4-50-2-110-2-166z" fill="#d5a865"/><path d="M24 14c1 60 2 120 6 190M38 14c0 60-1 120-5 190" stroke="#000" stroke-opacity=".08" stroke-width="2" fill="none"/></g><rect x="18" y="0" width="28" height="12" rx="6" fill="#1b1612"/></svg><span>Balayage</span></button>
+          <button class="lock" type="button" data-k="ombre" aria-pressed="false"><svg viewBox="0 0 64 220" aria-hidden="true"><g clip-path="url(#lk)"><path d="M10 8h44c2 50 4 110-6 160-5 24-12 40-16 52-4-12-11-28-16-52C6 118 8 58 10 8z" fill="#c99a5b"/><path d="M8 0h48v96H8z" fill="#4a3226"/><path d="M8 88h48v22H8z" fill="#8a5f3c"/><path d="M24 14c1 60 2 120 6 190M38 14c0 60-1 120-5 190" stroke="#000" stroke-opacity=".08" stroke-width="2" fill="none"/></g><rect x="18" y="0" width="28" height="12" rx="6" fill="#1b1612"/></svg><span>Ombré hair</span></button>
+          <button class="lock" type="button" data-k="carmen" aria-pressed="false"><svg viewBox="0 0 64 220" aria-hidden="true"><g clip-path="url(#lk)"><path d="M10 8h44c2 50 4 110-6 160-5 24-12 40-16 52-4-12-11-28-16-52C6 118 8 58 10 8z" fill="#8a3a22"/><path d="M24 14c1 60 2 120 6 190M38 14c0 60-1 120-5 190" stroke="#000" stroke-opacity=".08" stroke-width="2" fill="none"/></g><rect x="18" y="0" width="28" height="12" rx="6" fill="#1b1612"/></svg><span>Sans ammoniaque</span></button>
+          <button class="lock" type="button" data-k="gloss" aria-pressed="false"><svg viewBox="0 0 64 220" aria-hidden="true"><g clip-path="url(#lk)"><path d="M10 8h44c2 50 4 110-6 160-5 24-12 40-16 52-4-12-11-28-16-52C6 118 8 58 10 8z" fill="#3b2a22"/><path d="M22 20c2 50 2 110 6 170l5-2c-3-60-3-118-5-168z" fill="#7a5a45"/><path d="M24 14c1 60 2 120 6 190M38 14c0 60-1 120-5 190" stroke="#000" stroke-opacity=".08" stroke-width="2" fill="none"/></g><rect x="18" y="0" width="28" height="12" rx="6" fill="#1b1612"/></svg><span>Gloss</span></button>
+        </div>
+        <div class="nu-card rv" aria-live="polite">
+          <h3 id="nu-t">Blond polaire</h3>
+          <p id="nu-p">Un blond très clair, presque blanc, obtenu par éclaircissements successifs. Le salon en a fait une de ses spécialités. Le tarif dépend de votre base et de la longueur : il se fixe sur devis, au salon.</p>
+          <ul class="nu-list" id="nu-l">
+            <li><span>Mèches / balayage, toutes techniques<small>2 h</small></span><b>sur devis</b></li>
+            <li><span>Soin Bond Rebuilder<small>15 min, conseillé après décoloration</small></span><b>dès 30 €</b></li>
+          </ul>
+          <div class="actions" style="margin-top:4px">
+            <a class="btn btn-red" id="nu-cta" href="tel:+33143686060">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tarifs" aria-labelledby="t-tarifs">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-tarifs">Prestations et tarifs</h2>
+      <p class="intro rv">Les prix affichés sur la page Planity du salon. « Dès » : le tarif varie selon la longueur et l’épaisseur des cheveux.</p>
+      <div class="board">
+        <div class="price rv">
+          <h3>Femme</h3>
+          <table>
+            <tr><td>Shampoing brushing<small>30 min</small></td><td>28 €</td></tr>
+            <tr><td>Shampoing brushing, cheveux très longs ou épais<small>1 h 30</small></td><td>28 à 38 €</td></tr>
+            <tr><td>Shampoing coupe brushing<small>45 min</small></td><td>dès 44 €</td></tr>
+            <tr><td>Soin<small>10 min</small></td><td>11 €</td></tr>
+          </table>
+        </div>
+        <figure class="pin tall rv">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&q=80&auto=format&fit=crop" alt="Une coiffeuse fait un shampoing à une cliente souriante" loading="lazy" width="800" height="1170">
+          <figcaption class="tag">Coupe brushing · <b>dès 44 €</b></figcaption>
+        </figure>
+        <div class="price rv">
+          <h3>Couleur</h3>
+          <table>
+            <tr><td>CARMEN Rituel 0&nbsp;% ammoniaque, brushing<small>1 h 40</small></td><td>dès 89 €</td></tr>
+            <tr><td>CARMEN Rituel 0&nbsp;% ammoniaque, coupe et brushing<small>1 h 40</small></td><td>dès 105 €</td></tr>
+            <tr><td>Couleur et shampoing brushing, cheveux courts<small>1 h 30</small></td><td>dès 75 €</td></tr>
+            <tr><td>Gloss Création<small>30 min</small></td><td>dès 47 €</td></tr>
+            <tr><td>Mèches / balayage, toutes techniques<small>2 h</small></td><td>sur devis</td></tr>
+          </table>
+        </div>
+        <div class="price rv">
+          <h3>Soins</h3>
+          <table>
+            <tr><td>Protocole sur mesure SEMIdiLINO<small>35 min</small></td><td>dès 30 €</td></tr>
+            <tr><td>Soin Bond Rebuilder<small>15 min</small></td><td>dès 30 €</td></tr>
+            <tr><td>Le rituel détox, thalassothérapie capillaire<small>15 min</small></td><td>dès 18 €</td></tr>
+            <tr><td>Soin capillaire en lotion<small>15 min</small></td><td>15 €</td></tr>
+            <tr><td>Boost cuir chevelu purifiant<small>15 min</small></td><td>dès 15 €</td></tr>
+          </table>
+        </div>
+        <figure class="pin rv">
+          <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop" alt="Shampoing au bac, la coiffeuse rince les cheveux d’une cliente" loading="lazy" width="800" height="1000">
+          <figcaption class="tag">Rituel détox · <b>dès 18 €</b></figcaption>
+        </figure>
+        <div class="price rv">
+          <h3>Lissage et permanente</h3>
+          <table>
+            <tr><td>Lissage brésilien VITAKER<small>1 h</small></td><td>sur devis</td></tr>
+            <tr><td>SOS Hydramax, soin intense VITAKER<small>30 min</small></td><td>dès 30 €</td></tr>
+            <tr><td>Permanente<small>1 h, sur réservation par téléphone</small></td><td>dès 49 €</td></tr>
+          </table>
+        </div>
+        <div class="price rv">
+          <h3>Homme</h3>
+          <table>
+            <tr><td>Shampoing coupe coiffage<small>35 min</small></td><td>dès 28 €</td></tr>
+            <tr><td>Barbe<small>15 min</small></td><td>dès 12 €</td></tr>
+            <tr><td>Soin<small>10 min</small></td><td>8 €</td></tr>
+            <tr><td>Coloration ton sur ton<small>30 min</small></td><td>sur devis</td></tr>
+          </table>
+        </div>
+        <div class="price rv">
+          <h3>Enfants et jeunes</h3>
+          <table>
+            <tr><td>Shampoing coupe fille, moins de 15 ans<small>20 min</small></td><td>24 €</td></tr>
+            <tr><td>Shampoing coupe garçon, jusqu’à 14 ans<small>20 min</small></td><td>20 €</td></tr>
+            <tr><td>Coupe jeune garçon, 15 à 20 ans<small>30 min</small></td><td>23 €</td></tr>
+            <tr><td>Shampoing coupe brushing, moins de 20 ans<small>35 min</small></td><td>dès 35,20 €</td></tr>
+          </table>
+        </div>
+      </div>
+      <p class="note rv">Liste complète et créneaux disponibles sur <a href="https://www.planity.com/balian-hair-94140-alfortville" target="_blank" rel="noopener">Planity</a>.</p>
+    </div>
+  </section>
+
+  <section class="avis" id="avis" aria-labelledby="t-avis">
+    <div class="wrap av-grid">
+      <div>
+        <h2 class="rv" id="t-avis" style="font-size:clamp(2rem,6vw,3rem);font-weight:800;max-width:18ch">442 avis sur Planity, et cette moyenne</h2>
+        <p class="big rv num" aria-label="4,9 sur 5">4,9<sup>/5</sup></p>
+        <ul class="scores rv">
+          <li><b>5,0</b><span>Accueil</span></li>
+          <li><b>4,9</b><span>Propreté</span></li>
+          <li><b>4,9</b><span>Cadre et ambiance</span></li>
+          <li><b>4,9</b><span>Qualité de la prestation</span></li>
+        </ul>
+        <p class="google rv"><b>4,7/5</b> sur Google, plus de 180 avis</p>
+        <a class="btn btn-white rv" href="https://www.planity.com/balian-hair-94140-alfortville" target="_blank" rel="noopener">Lire les avis sur Planity</a>
+      </div>
+      <figure class="av-photo rv">
+        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=900&q=80&auto=format&fit=crop" alt="Brushing à la brosse ronde et au sèche-cheveux" loading="lazy" width="900" height="1125">
+      </figure>
+    </div>
+  </section>
+
+  <section id="salon" aria-labelledby="t-salon">
+    <div class="wrap">
+      <div class="salon-grid">
+        <figure class="salon-photo rv">
+          <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=1100&q=80&auto=format&fit=crop" alt="Intérieur d’un salon de coiffure, fauteuils et miroirs ronds" loading="lazy" width="1100" height="825">
+        </figure>
+        <div>
+          <h2 class="h2 rv" id="t-salon">Chez Sylvie, depuis 2018</h2>
+          <p class="intro rv">Balian Hair coiffe femmes, hommes et enfants au centre d’Alfortville. Sylvie dirige le salon. L’équipe se forme régulièrement et s’est fait un nom sur le lissage brésilien, l’ombré hair et le blond polaire. Pendant les soins, place à la luminothérapie.</p>
+          <ul class="team rv" aria-label="L’équipe">
+            <li>Sylvie</li><li>Lea</li><li>Nare</li><li>Shereen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="brand-row">
+      <ul class="brands" aria-label="Marques partenaires">
+        <li class="rv">L’Oréal</li>
+        <li class="rv">Schwarzkopf</li>
+        <li class="rv">Authentic Beauté</li>
+      </ul>
+      <p class="brands-cap rv">Les trois maisons partenaires du salon, pour la couleur, les soins et les produits à rapporter chez soi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="acces" id="acces" aria-labelledby="t-acces">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-acces">Horaires et accès</h2>
+      <div class="ac-grid">
+        <table class="hours rv" aria-label="Horaires d’ouverture">
+          <tr data-d="1"><th>Lundi</th><td>12 h – 19 h</td></tr>
+          <tr data-d="2"><th>Mardi</th><td>10 h – 19 h 30</td></tr>
+          <tr data-d="3" class="off"><th>Mercredi</th><td>Fermé</td></tr>
+          <tr data-d="4"><th>Jeudi</th><td>10 h – 20 h</td></tr>
+          <tr data-d="5"><th>Vendredi</th><td>10 h – 19 h 30</td></tr>
+          <tr data-d="6"><th>Samedi</th><td>10 h – 19 h 30</td></tr>
+          <tr data-d="0" class="off"><th>Dimanche</th><td>Fermé</td></tr>
+        </table>
+        <div class="addr rv">
+          <p class="where">49 rue Victor Hugo<br>94140 Alfortville</p>
+          <p class="meta">Au centre d’Alfortville. Réservation en ligne ou par téléphone.</p>
+          <a class="tel" href="tel:+33143686060">01 43 68 60 60</a>
+          <div class="actions">
+            <a class="btn btn-red" href="https://www.planity.com/balian-hair-94140-alfortville" target="_blank" rel="noopener">Prendre rendez-vous</a>
+            <a class="btn btn-soft" href="https://www.google.com/maps/search/?api=1&amp;query=Balian+Hair+49+rue+Victor+Hugo+94140+Alfortville" target="_blank" rel="noopener">Itinéraire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contact" aria-labelledby="t-final">
+    <div class="wrap final-grid">
+      <div>
+        <h2 class="rv" id="t-final">Réservez en deux clics</h2>
+        <p class="intro rv">Réservez en ligne sur Planity, à toute heure, ou appelez le salon pendant les horaires d’ouverture.</p>
+        <div class="actions rv">
+          <a class="btn btn-red" href="https://www.planity.com/balian-hair-94140-alfortville" target="_blank" rel="noopener">Prendre rendez-vous</a>
+          <a class="btn btn-soft" href="tel:+33143686060">Appeler le salon</a>
+        </div>
+      </div>
+      <figure class="pin rv">
+        <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1200&q=80&auto=format&fit=crop" alt="Brosses, peigne et sèche-cheveux posés sur un plan blanc" loading="lazy" width="1200" height="750">
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-name" aria-hidden="true">Balian<b>.</b>Hair</p>
+    <div class="foot-row">
+      <span>49 rue Victor Hugo, 94140 Alfortville</span>
+      <a href="tel:+33143686060">01 43 68 60 60</a>
+      <a href="https://www.planity.com/balian-hair-94140-alfortville" target="_blank" rel="noopener">Réservation Planity</a>
+      <span>Photos : Unsplash</span>
+    </div>
+  </div>
+</footer>
+
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<script>
+document.documentElement.classList.add('js');
+// nuancier
+var NU={
+  polaire:{t:'Blond polaire',p:'Un blond très clair, presque blanc, obtenu par éclaircissements successifs. Le salon en a fait une de ses spécialités. Le tarif dépend de votre base et de la longueur : il se fixe sur devis, au salon.',l:[['Mèches / balayage, toutes techniques','2 h','sur devis'],['Soin Bond Rebuilder','15 min, conseillé après décoloration','dès 30 €']],c:['Demander un devis','tel:+33143686060']},
+  balayage:{t:'Balayage',p:'Des mèches peintes à main levée pour éclairer la longueur sans démarcation à la repousse. Toutes les techniques se pratiquent au salon.',l:[['Mèches / balayage, toutes techniques','2 h','sur devis'],['Balayage et shampoing brushing, cheveux courts','2 h, sur réservation par téléphone','sur devis']],c:['Demander un devis','tel:+33143686060']},
+  ombre:{t:'Ombré hair',p:'Racines naturelles, pointes éclaircies, une transition fondue entre les deux. Une des spécialités du salon.',l:[['Mèches / balayage, toutes techniques','2 h','sur devis'],['Gloss Création, pour patiner le résultat','30 min','dès 47 €']],c:['Demander un devis','tel:+33143686060']},
+  carmen:{t:'Couleur 0 % ammoniaque',p:'Le rituel CARMEN colore, nettoie et sublime le cheveu sans ammoniaque, brushing compris. Il se réserve directement en ligne.',l:[['CARMEN Rituel, brushing','1 h 40','dès 89 €'],['CARMEN Rituel, coupe et brushing','1 h 40','dès 105 €'],['Couleur et shampoing brushing, cheveux courts','1 h 30','dès 75 €']],c:['Réserver sur Planity','https://www.planity.com/balian-hair-94140-alfortville']},
+  gloss:{t:'Gloss',p:'Un voile de couleur qui ravive le reflet et la brillance entre deux colorations. Trente minutes suffisent.',l:[['Gloss Création','30 min','dès 47 €'],['SOS Hydramax, soin intense VITAKER','30 min','dès 30 €']],c:['Réserver sur Planity','https://www.planity.com/balian-hair-94140-alfortville']}
+};
+var locks=document.querySelectorAll('.lock'),nt=document.getElementById('nu-t'),np=document.getElementById('nu-p'),nl=document.getElementById('nu-l'),nc=document.getElementById('nu-cta');
+function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+locks.forEach(function(b){b.addEventListener('click',function(){
+  var d=NU[b.dataset.k];
+  locks.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+  nt.textContent=d.t;np.textContent=d.p;
+  nl.innerHTML=d.l.map(function(r){return '<li><span>'+esc(r[0])+'<small>'+esc(r[1])+'</small></span><b>'+esc(r[2])+'</b></li>'}).join('');
+  nc.textContent=d.c[0];nc.href=d.c[1];
+  if(d.c[1].indexOf('http')===0){nc.target='_blank';nc.rel='noopener'}else{nc.removeAttribute('target')}
+})});
+// ouvert maintenant (heure de Paris)
+var H={1:[12,19],2:[10,19.5],4:[10,20],5:[10,19.5],6:[10,19.5]};
+try{
+  var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'})),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+  var row=document.querySelector('.hours tr[data-d="'+d+'"]');if(row)row.classList.add('today');
+  var st=document.getElementById('status'),o=H[d],fmt=function(x){var m=Math.round((x%1)*60);return Math.floor(x)+' h'+(m?' '+m:'')};
+  if(o&&h>=o[0]&&h<o[1]){st.querySelector('span').textContent='Ouvert aujourd’hui jusqu’à '+fmt(o[1])}
+  else{st.classList.add('closed');st.querySelector('span').textContent=(o&&h<o[0])?'Ouvre aujourd’hui à '+fmt(o[0]):'Fermé en ce moment'}
+  st.hidden=false;
+}catch(e){}
+// apparition
+if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el,i){var r=el.getBoundingClientRect();if(r.top>innerHeight){el.classList.add('pre');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)}});
+}
+</script>
+</body>
+</html>
