@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Librairie Vendredi, littérature et livres d'art, rue des Martyrs, Paris 9e</title>
+<meta name="description" content="Librairie Vendredi, 67 rue des Martyrs, Paris 9e. Littérature et livres d'art. Ouverte du mardi au samedi, de 12 h à 20 h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- DESIGN.md « Cal.com » (awesome-design) : toile blanche, encre #111, boutons noirs radius 8px, Cal Sans en titrage + Inter en texte ; accent rouge éphéméride propre au sujet -->
+<style>
+:root{
+  --paper:#f7f7f5;
+  --sheet:#ffffff;
+  --soft:#ecebe7;
+  --ink:#111111;
+  --muted:#55554f;
+  --red:#cf1f17;
+  --red-deep:#a5170f;
+  --on-red:#ffffff;
+  --r:8px;
+  --m:12px;
+  --step-small:clamp(.8125rem,.79rem + .1vw,.875rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2rem,1.3rem + 3.2vw,3.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --display:"Cal Sans","Inter",system-ui,sans-serif;
+  --text:"Inter",system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 var(--step-body)/1.55 var(--text);-webkit-font-smoothing:antialiased}
+.row span,.leaf-num,.leaf-top{font-variant-numeric:tabular-nums}
+::selection{background:var(--red);color:var(--on-red)}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{color:var(--red)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.02em;line-height:1.02;margin:0;text-wrap:balance}
+p{margin:0}
+html{scrollbar-color:var(--ink) var(--soft)}
+
+.demo{font-size:var(--step-small);text-align:center;padding:8px 16px;background:var(--soft);color:var(--muted)}
+
+/* ---------- split ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:var(--m);padding:var(--m)}
+.col{min-width:0}
+.stage{position:sticky;top:var(--m);height:calc(100svh - 2*var(--m) - 37px);border-radius:var(--r);overflow:hidden;background:#222}
+.stage .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
+.stage .ph.on{opacity:1}
+.stage .ph.bw{filter:grayscale(1) contrast(1.05)}
+
+/* ---------- éphéméride ---------- */
+.eph{position:absolute;left:28px;bottom:28px;width:min(300px,calc(100% - 56px));z-index:2}
+.pad{position:relative;height:clamp(280px,40svh,340px)}
+.leaf{position:absolute;inset:0;background:var(--sheet);border-radius:var(--r);box-shadow:0 18px 40px -12px rgba(0,0,0,.45);display:flex;flex-direction:column;overflow:hidden}
+.pad::before{content:"";position:absolute;inset:6px -5px -6px 5px;background:#e3e2dd;border-radius:var(--r);box-shadow:0 18px 40px -16px rgba(0,0,0,.5)}
+.leaf-top{background:var(--red);color:var(--on-red);padding:12px 18px;font-weight:500;font-size:16px;display:flex;justify-content:space-between}
+.leaf-num{font-family:var(--display);font-size:clamp(7.5rem,17svh,10rem);line-height:.86;letter-spacing:-.04em;padding:16px 18px 0;color:var(--ink)}
+.leaf.fri .leaf-num{color:var(--red)}
+.leaf-day{font-family:var(--display);font-size:2rem;line-height:1;padding:4px 18px 0}
+.leaf-status{margin-top:auto;padding:14px 18px 16px;font-size:16px;font-weight:500;background:var(--soft);display:flex;gap:10px;align-items:baseline}
+.leaf-status i{flex:none;width:10px;height:10px;border-radius:50%;background:var(--muted);transform:translateY(-1px)}
+.leaf-status.open i{background:#1b8a3c}
+.leaf-friday{padding:10px 18px 0;font-size:15px;color:var(--muted)}
+.eph-ctl{display:flex;gap:8px;margin-top:14px}
+.eph-ctl button{font:500 15px/1 var(--text);border:0;border-radius:var(--r);padding:12px 14px;min-height:44px;cursor:pointer;background:var(--sheet);color:var(--ink);transition:transform .2s var(--ease),background .2s}
+.eph-ctl button:first-child{background:var(--ink);color:#fff;flex:1}
+.eph-ctl button:hover{transform:translateY(-2px)}
+.eph-ctl button:active{transform:translateY(1px)}
+.eph-ctl button[disabled]{color:var(--muted);cursor:default;transform:none}
+.torn{position:absolute;inset:0;z-index:3;pointer-events:none;transform-origin:0 0;animation:tear .7s var(--ease) forwards}
+@keyframes tear{to{transform:translate(40px,-60px) rotate(-14deg);opacity:0}}
+.cap{position:absolute;right:20px;top:18px;z-index:2;color:#fff;font-size:var(--step-small);background:rgba(0,0,0,.45);padding:6px 10px;border-radius:var(--r);max-width:60%}
+
+/* ---------- hero card ---------- */
+.card{background:var(--sheet);border-radius:var(--r);min-height:calc(100svh - 2*var(--m) - 37px);display:flex;flex-direction:column;overflow:hidden}
+.band{display:flex;height:56px;flex:none}
+.band span{flex:1 0 28px;background:var(--ink)}
+.band span:nth-child(even){background:var(--sheet)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px clamp(20px,4vw,56px);font-size:16px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav a{text-decoration:none;font-weight:500}
+.nav a:hover{text-decoration:underline}
+.hero-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:24px clamp(20px,4vw,56px) 40px}
+.word{font-family:var(--display);font-size:clamp(4.5rem,10.5vw,10rem);line-height:.82;letter-spacing:-.04em;margin:0 0 28px -.04em}
+.hero h1{font-size:var(--step-head);max-width:15ch}
+.hero .lead{margin-top:32px;font-size:var(--step-lead);line-height:1.4;max-width:30ch}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:var(--r);font:600 16px/1 var(--text);text-decoration:none;background:var(--ink);color:#fff;transition:transform .25s var(--ease),background .25s}
+.btn:hover{color:#fff;background:var(--red);transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn.alt{background:var(--soft);color:var(--ink)}
+.btn.alt:hover{background:var(--ink);color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- intro ---------- */
+.intro{padding:160px clamp(20px,4vw,56px) 160px}
+.intro h2{font-size:var(--step-head);max-width:13ch;margin-bottom:40px}
+.intro .txt{max-width:46ch;display:grid;gap:1.1em}
+.intro .txt p:first-child{font-weight:500;font-size:var(--step-lead);line-height:1.4}
+
+/* ---------- rayons ---------- */
+.rayons{background:var(--ink);color:#fff;border-radius:var(--r);padding:clamp(32px,4vw,56px);min-height:76svh;display:flex;flex-direction:column;gap:40px}
+.rayons h2{font-size:var(--step-head)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tabs button{font:500 18px/1 var(--text);color:#c9c9c4;background:transparent;border:0;border-radius:var(--r);padding:12px 14px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}
+.tabs button:hover{color:#fff;background:#262626}
+.tabs button[aria-selected=true]{background:#fff;color:var(--ink)}
+.panel{flex:1;display:flex;flex-direction:column}
+.panel h3{font-size:clamp(2rem,1.4rem + 2vw,3rem);margin-top:auto}
+.panel p{margin-top:28px;max-width:40ch;color:#e6e6e1}
+.panel .mob{display:none}
+.cells{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cells a{display:flex;align-items:center;min-height:72px;padding:0 20px;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:17px;transition:transform .25s var(--ease),background .25s}
+.cells a:first-child{background:var(--red);color:#fff}
+.cells a:first-child:hover{background:#fff;color:var(--ink)}
+.cells a:last-child{background:#262626;color:#fff}
+.cells a:last-child:hover{background:#fff;color:var(--ink)}
+.cells a:hover{transform:translateY(-2px)}
+
+/* ---------- horaires ---------- */
+.hours{padding:180px clamp(20px,4vw,56px) 160px}
+.hours h2{font-size:var(--step-head);margin-bottom:40px}
+.rows{max-width:520px}
+.grp{color:var(--muted);font-size:16px;margin:40px 0 6px}
+.grp:first-child{margin-top:0}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;min-height:44px;padding:8px 0;font-size:17px}
+.row b{font-weight:500;display:flex;align-items:center;gap:10px}
+.row b i{width:16px;height:16px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--muted);flex:none}
+.row.open b i{background:var(--ink);box-shadow:none}
+.row.fri b i{background:var(--red)}
+.row span{color:var(--muted);font-size:16px;text-align:right}
+.row.today{background:var(--soft);margin:0 -12px;padding:8px 12px;border-radius:var(--r)}
+.row.today span{color:var(--ink);font-weight:500}
+.note{margin-top:28px;color:var(--muted);font-size:16px;max-width:46ch}
+
+/* ---------- rue ---------- */
+.rue{position:relative;margin:0 var(--m);border-radius:var(--r);overflow:hidden;min-height:92svh;display:grid;grid-template-columns:1fr 1fr;background:var(--red);color:#fff}
+.rue figure{margin:0;position:relative;min-height:60svh}
+.rue figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rue figcaption{position:absolute;left:16px;bottom:16px;font-size:var(--step-small);background:rgba(0,0,0,.5);padding:6px 10px;border-radius:var(--r)}
+.rue-txt{padding:clamp(32px,5vw,80px);display:flex;flex-direction:column;justify-content:space-between;gap:48px}
+.rue p.rue-num{margin:0;max-width:none;font-family:var(--display);font-size:clamp(9rem,22vw,20rem);line-height:.8;letter-spacing:-.05em}
+.rue h2{font-size:var(--step-head)}
+.rue p{margin-top:24px;max-width:36ch;font-size:var(--step-lead);line-height:1.4}
+.rue .btn{background:#fff;color:var(--ink);margin-top:36px;align-self:flex-start}
+.rue .btn:hover{background:var(--ink);color:#fff}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:#fff;margin:var(--m);border-radius:var(--r);min-height:100svh;padding:clamp(24px,4vw,56px);display:grid;grid-template-rows:auto 1fr auto auto;gap:24px}
+.contact h2{font-size:var(--step-head);max-width:16ch}
+.contact .say{font-size:var(--step-lead);max-width:30ch;margin-top:20px;color:#e6e6e1}
+.mail{align-self:end;font-family:var(--display);font-size:11.4vw;line-height:.95;letter-spacing:-.035em;text-decoration:none;display:block;margin-bottom:6vh;transition:color .3s}
+.mail span{display:block}
+.mail:hover{color:var(--red)}
+.corners{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:16px}
+.corners a{text-decoration:none;font-weight:500}
+.corners a:hover{text-decoration:underline;color:#fff}
+
+/* ---------- footer ---------- */
+footer{position:relative;margin:var(--m);border-radius:var(--r);overflow:hidden;min-height:100svh;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+footer>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) grayscale(.3)}
+.ft-top,.ft-bot{position:relative;padding:32px clamp(20px,4vw,56px)}
+.ft-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:16px}
+.ft-top ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.ft-top a{text-decoration:none}
+.ft-top a:hover{color:#fff;text-decoration:underline}
+.ft-word{font-family:var(--display);font-size:26vw;line-height:.78;letter-spacing:-.05em;margin:0 0 24px -.04em}
+.legal{font-size:var(--step-small);color:#e0e0db;max-width:110ch}
+.legal a{color:#fff}
+
+/* ---------- entrances ---------- */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- phone ---------- */
+@media (max-width:900px){
+  .split{display:flex;flex-direction:column;gap:0}
+  .stage{position:relative;top:0;order:-1;height:66svh;min-height:480px}
+  .eph{left:16px;bottom:16px;width:min(240px,calc(100% - 32px))}
+  .pad{height:276px}
+  .leaf-num{font-size:5.2rem}
+  .leaf-status{font-size:15px;padding:12px 14px}
+  .eph-ctl button{font-size:14px;white-space:nowrap;padding:12px 10px}
+  .leaf-day{font-size:1.7rem}
+  .cap{right:12px;top:12px;max-width:44%}
+  .card{min-height:auto;margin-top:var(--m)}
+  .band{height:40px}
+  .nav ul{display:none}
+  .word{font-size:21vw;margin-bottom:22px}
+  .hero h1{font-size:8.6vw}
+  .acts .btn{flex:1 1 100%;justify-content:center}
+  .intro{padding:96px 8px 96px}
+  .rayons{min-height:auto}
+  .panel .mob{display:block;aspect-ratio:1;object-fit:cover;width:100%;border-radius:var(--r);margin-bottom:24px}
+  .panel h3{margin-top:0}
+  .cells{grid-template-columns:1fr}
+  .cells a{min-height:60px}
+  .hours{padding:112px 8px 96px}
+  .rue{grid-template-columns:1fr;min-height:auto}
+  .rue figure{min-height:56svh}
+  .contact{min-height:86svh}
+  .mail{font-size:11.6vw}
+  .corners{flex-direction:column;gap:12px}
+  footer{min-height:88svh}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<div class="split">
+  <main class="col">
+    <section class="card hero" aria-labelledby="t">
+      <div class="band" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#t" style="font-weight:600">Librairie Vendredi</a>
+        <ul>
+          <li><a href="#rayons">Rayons</a></li>
+          <li><a href="#horaires">Horaires</a></li>
+          <li><a href="#venir">Venir</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero-body">
+        <p class="word rv" aria-hidden="true">Vendredi</p>
+        <h1 id="t" class="rv">Littérature et livres d'art</h1>
+        <p class="lead rv">Librairie au 67 rue des Martyrs, Paris 9e. Ouverte du mardi au samedi, de midi à 20&nbsp;h.</p>
+        <div class="acts rv">
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Librairie+Vendredi+67+rue+des+Martyrs+75009+Paris" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            Itinéraire</a>
+          <a class="btn alt" href="tel:+33148789047">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            01 48 78 90 47</a>
+          <a class="btn alt" href="mailto:librairievendredi@wanadoo.fr?subject=Une%20question%20pour%20la%20librairie">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Écrire</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="librairie" aria-labelledby="t-lib">
+      <h2 id="t-lib" class="rv">Une librairie de la rue des Martyrs</h2>
+      <div class="txt">
+        <p class="rv">Vendredi tient boutique au 67 rue des Martyrs, dans la montée qui relie Notre-Dame-de-Lorette aux pentes de Montmartre.</p>
+        <p class="rv">On y entre pour la littérature et pour les livres d'art&nbsp;: un roman qu'on vous a conseillé, un catalogue qu'on veut feuilleter avant d'offrir, un livre qu'on ne savait pas chercher.</p>
+        <p class="rv">Un titre manque en rayon&nbsp;? Demandez-le au comptoir, par téléphone ou par courriel.</p>
+        <p class="rv">La porte s'ouvre à midi, du mardi au samedi, et ne ferme qu'à 20&nbsp;h&nbsp;: de quoi passer après le travail. <a href="#horaires">Voir les horaires</a></p>
+      </div>
+    </section>
+
+    <section class="rayons" id="rayons" aria-labelledby="t-ray">
+      <h2 id="t-ray" class="rv">Les rayons</h2>
+      <div class="tabs rv" role="tablist" aria-label="Rayons de la librairie">
+        <button role="tab" id="tab-0" aria-selected="true" aria-controls="panel" data-i="0">Littérature</button>
+        <button role="tab" id="tab-1" aria-selected="false" aria-controls="panel" data-i="1" tabindex="-1">Livres d'art</button>
+        <button role="tab" id="tab-2" aria-selected="false" aria-controls="panel" data-i="2" tabindex="-1">Histoire</button>
+      </div>
+      <div class="panel" id="panel" role="tabpanel" aria-labelledby="tab-0" aria-live="polite">
+        <img class="mob" id="ray-img" src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=900&h=900&fit=crop&q=75" alt="Pages de livres ouverts disposées côte à côte" width="900" height="900" loading="lazy">
+        <h3 id="ray-t">Littérature</h3>
+        <p id="ray-p">Romans et récits, d'ici et d'ailleurs. Le cœur de la librairie, celui qu'on parcourt sans liste et dont on ressort avec un livre de plus.</p>
+      </div>
+      <div class="cells rv">
+        <a href="mailto:librairievendredi@wanadoo.fr?subject=Commande%20d'un%20livre&body=Bonjour%2C%0A%0AJe%20cherche%20le%20livre%20suivant%20%3A%0ATitre%20%3A%0AAuteur%20%3A%0A%0AMerci%20!">Demander un livre</a>
+        <a href="tel:+33148789047">Appeler la librairie</a>
+      </div>
+    </section>
+
+    <section class="hours" id="horaires" aria-labelledby="t-hor">
+      <h2 id="t-hor" class="rv">Les horaires</h2>
+      <div class="rows rv" id="rows">
+        <p class="grp">La semaine</p>
+        <div class="row" data-d="2"><b><i></i>Mardi</b><span>12 h – 20 h</span></div>
+        <div class="row" data-d="3"><b><i></i>Mercredi</b><span>12 h – 20 h</span></div>
+        <div class="row" data-d="4"><b><i></i>Jeudi</b><span>12 h – 20 h</span></div>
+        <div class="row fri" data-d="5"><b><i></i>Vendredi</b><span>12 h – 20 h</span></div>
+        <div class="row" data-d="6"><b><i></i>Samedi</b><span>12 h – 20 h</span></div>
+        <div class="row" data-d="0"><b><i></i>Dimanche</b><span>Fermé</span></div>
+        <div class="row" data-d="1"><b><i></i>Lundi</b><span>Fermé</span></div>
+        <p class="grp">Pour venir</p>
+        <div class="row"><b>Adresse</b><span>67 rue des Martyrs, 75009 Paris</span></div>
+        <div class="row"><b>Métro</b><span>Pigalle, Saint-Georges</span></div>
+        <div class="row"><b>Téléphone</b><span><a href="tel:+33148789047">01 48 78 90 47</a></span></div>
+      </div>
+      <p class="note rv">Jours fériés et congés&nbsp;: un coup de fil avant de traverser Paris.</p>
+    </section>
+  </main>
+
+  <aside class="stage" aria-label="Éphéméride : ouverture de la librairie jour par jour">
+    <img class="ph bw on" data-k="hero" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Atget_-_Boutique_librairie._1923-24%2C_1.1969.2140.jpg/1920px-Atget_-_Boutique_librairie._1923-24%2C_1.1969.2140.jpg" alt="Devanture d'une librairie parisienne photographiée par Eugène Atget en 1923-1924" width="1920" height="1521">
+    <img class="ph" data-k="r0" src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1400&q=75" alt="Pages de livres ouverts disposées côte à côte" width="1400" height="933" loading="lazy">
+    <img class="ph" data-k="r1" src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=1400&q=75" alt="Livre illustré ouvert posé sur une pile" width="1400" height="933" loading="lazy">
+    <img class="ph bw" data-k="r2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rue_de_Martyrs_Paris_1.jpg/1920px-Rue_de_Martyrs_Paris_1.jpg" alt="La rue des Martyrs en 2006, façades et commerces" width="1920" height="1440" loading="lazy">
+    <img class="ph" data-k="hours" src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=1400&q=75" alt="Livre ouvert dans la lumière d'une fin d'après-midi" width="1400" height="933" loading="lazy">
+    <p class="cap" id="cap">Eugène Atget, boutique de librairie, Paris, 1923-1924</p>
+
+    <div class="eph" id="eph">
+      <div class="pad" id="pad">
+        <div class="leaf" id="leaf">
+          <div class="leaf-top"><span id="l-month">Du mardi au samedi</span><span id="l-year"></span></div>
+          <div class="leaf-num" id="l-num">12</div>
+          <div class="leaf-day" id="l-day">midi – 20 h</div>
+          <p class="leaf-friday" id="l-fri"></p>
+          <p class="leaf-status" id="l-status"><i></i><span>Ouvert du mardi au samedi, 12 h – 20 h</span></p>
+        </div>
+      </div>
+      <div class="eph-ctl" hidden id="ctl">
+        <button type="button" id="next">Tourner la page</button>
+        <button type="button" id="today" disabled>Aujourd'hui</button>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<section class="rue" id="venir" aria-labelledby="t-rue">
+  <figure>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Rue_des_Martyrs%2C_Paris.jpg/1920px-Rue_des_Martyrs%2C_Paris.jpg" alt="La rue des Martyrs vue depuis son extrémité sud, un dimanche de juin" width="1920" height="2558" loading="lazy">
+    <figcaption>La rue des Martyrs, juin 2022</figcaption>
+  </figure>
+  <div class="rue-txt">
+    <p class="rue-num rv" aria-hidden="true">67</p>
+    <div>
+      <h2 id="t-rue" class="rv">67 rue des Martyrs</h2>
+      <p class="rv">Paris 9e, en haut de la rue, côté Pigalle. Métro Pigalle ou Saint-Georges.</p>
+      <a class="btn rv" href="https://www.google.com/maps/dir/?api=1&destination=Librairie+Vendredi+67+rue+des+Martyrs+75009+Paris" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        Ouvrir l'itinéraire</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="t-con">
+  <div>
+    <h2 id="t-con" class="rv">Écrire à la librairie</h2>
+    <p class="say rv">Un livre à commander, un titre à mettre de côté, une question&nbsp;: un courriel suffit.</p>
+  </div>
+  <span></span>
+  <a class="mail rv" href="mailto:librairievendredi@wanadoo.fr?subject=Une%20question%20pour%20la%20librairie"><span>librairievendredi@</span><span>wanadoo.fr</span></a>
+  <div class="corners">
+    <a href="tel:+33148789047">01 48 78 90 47 · Paris 9e</a>
+    <span>Du mardi au samedi, 12 h – 20 h</span>
+  </div>
+</section>
+
+<footer>
+  <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=1800&q=70" alt="" width="1800" height="1200" loading="lazy">
+  <div class="ft-top">
+    <ul>
+      <li><a href="#rayons">Rayons</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li><a href="#venir">Venir</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <ul>
+      <li>67 rue des Martyrs, 75009 Paris</li>
+      <li><a href="tel:+33148789047">01 48 78 90 47</a></li>
+      <li><a href="mailto:librairievendredi@wanadoo.fr">librairievendredi@wanadoo.fr</a></li>
+    </ul>
+  </div>
+  <div class="ft-bot">
+    <p class="ft-word" aria-hidden="true">Vendredi</p>
+    <p class="legal">Librairie Vendredi · Démo réalisée par Raul Hatos — site non officiel. Photographies&nbsp;: Eugène Atget, « Boutique librairie », 1923-1924, domaine public&nbsp;; « Rue des Martyrs, Paris » par A bit iffy et « Rue de Martyrs Paris 1 » par Karibo, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>, via Wikimedia Commons&nbsp;; autres photographies Unsplash.</p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- éphéméride ---- */
+  var DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  var MONTHS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  var OPEN=12, CLOSE=20;
+  function isOpenDay(d){return d>=2&&d<=6}
+  function parisNow(){
+    var p={};new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',hour12:false})
+      .formatToParts(new Date()).forEach(function(x){p[x.type]=+x.value});
+    return {date:new Date(p.year,p.month-1,p.day),h:p.hour%24,m:p.minute};
+  }
+  function nextOpenLabel(from){
+    for(var i=1;i<=7;i++){var d=new Date(from);d.setDate(d.getDate()+i);if(isOpenDay(d.getDay()))return i===1?'demain':DAYS[d.getDay()];}
+  }
+  var offset=0, leaf=document.getElementById('leaf'), pad=document.getElementById('pad');
+  function render(){
+    var now=parisNow(), d=new Date(now.date); d.setDate(d.getDate()+offset);
+    var wd=d.getDay(), st=document.getElementById('l-status'), txt, open=false;
+    document.getElementById('l-month').textContent=MONTHS[d.getMonth()].replace(/^./,function(c){return c.toUpperCase()});
+    document.getElementById('l-year').textContent=d.getFullYear();
+    document.getElementById('l-num').textContent=d.getDate();
+    document.getElementById('l-day').textContent=DAYS[wd];
+    leaf.classList.toggle('fri',wd===5);
+    var toFri=(5-wd+7)%7;
+    document.getElementById('l-fri').textContent = wd===5 ? "C'est vendredi chez Vendredi." : (toFri===1?'Vendredi, c’est demain.':'Vendredi dans '+toFri+' jours.');
+    if(offset===0){
+      var t=now.h+now.m/60;
+      if(!isOpenDay(wd)) txt='Fermé aujourd’hui · rouvre '+nextOpenLabel(d)+' à 12 h';
+      else if(t<OPEN) txt='Ouvre aujourd’hui à 12 h';
+      else if(t<CLOSE){txt='Ouvert maintenant · jusqu’à 20 h';open=true}
+      else txt='Fermé pour ce soir · rouvre '+nextOpenLabel(d)+' à 12 h';
+    } else {
+      open=isOpenDay(wd); txt=open?'Ouvert de 12 h à 20 h':'Fermé ce jour-là';
+    }
+    st.className='leaf-status'+(open?' open':'');
+    st.lastElementChild.textContent=txt;
+    document.getElementById('today').disabled=offset===0;
+    /* horaires : jour courant */
+    document.querySelectorAll('.row[data-d]').forEach(function(r){
+      var dd=+r.dataset.d; r.classList.toggle('open',isOpenDay(dd)); r.classList.toggle('today',offset===0&&dd===now.date.getDay());
+    });
+  }
+  function tear(step){
+    if(!reduce){
+      var c=leaf.cloneNode(true); c.removeAttribute('id'); c.classList.add('torn');
+      c.querySelectorAll('[id]').forEach(function(n){n.removeAttribute('id')});
+      c.setAttribute('aria-hidden','true'); pad.appendChild(c);
+      setTimeout(function(){c.remove()},750);
+    }
+    offset=step===0?0:offset+1; render();
+  }
+  document.getElementById('ctl').hidden=false;
+  document.getElementById('next').addEventListener('click',function(){tear(1)});
+  document.getElementById('today').addEventListener('click',function(){tear(0)});
+  document.getElementById('l-status').setAttribute('aria-live','polite');
+  render(); setInterval(function(){if(offset===0)render()},60000);
+
+  /* ---- onglets rayons ---- */
+  var RAY=[
+    {t:'Littérature',p:'Romans et récits, d’ici et d’ailleurs. Le cœur de la librairie, celui qu’on parcourt sans liste et dont on ressort avec un livre de plus.',k:'r0',img:'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=900&h=900&fit=crop&q=75',alt:'Pages de livres ouverts disposées côte à côte'},
+    {t:'Livres d’art',p:'Peinture, photographie, catalogues et monographies. Des livres qu’on ouvre sur une table, à feuilleter sur place avant de choisir.',k:'r1',img:'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=900&h=900&fit=crop&q=75',alt:'Livre illustré ouvert posé sur une pile'},
+    {t:'Histoire',p:'Le passé raconté par ceux qui l’étudient, du grand récit à l’histoire d’une rue. Une question sur un titre&nbsp;? Le libraire répond.',k:'r2',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rue_de_Martyrs_Paris_1.jpg/1280px-Rue_de_Martyrs_Paris_1.jpg',alt:'La rue des Martyrs en 2006, façades et commerces'}
+  ];
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]')), cur=0;
+  function sel(i,focus){
+    cur=i; tabs.forEach(function(b,j){b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});
+    if(focus)tabs[i].focus();
+    document.getElementById('panel').setAttribute('aria-labelledby','tab-'+i);
+    document.getElementById('ray-t').textContent=RAY[i].t;
+    document.getElementById('ray-p').innerHTML=RAY[i].p;
+    var im=document.getElementById('ray-img'); im.src=RAY[i].img; im.alt=RAY[i].alt;
+    show(RAY[i].k);
+  }
+  tabs.forEach(function(b,i){
+    b.addEventListener('click',function(){sel(i)});
+    b.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){e.preventDefault();sel((i+1)%3,true)}
+      if(e.key==='ArrowLeft'){e.preventDefault();sel((i+2)%3,true)}
+    });
+  });
+
+  /* ---- scène : la photo suit la section ---- */
+  var CAP={hero:'Eugène Atget, boutique de librairie, Paris, 1923-1924',r0:'Littérature',r1:'Livres d’art',r2:'La rue des Martyrs, 2006',hours:'Midi – 20 h, du mardi au samedi'};
+  var phs=[].slice.call(document.querySelectorAll('.stage .ph')), shown='hero';
+  function show(k){
+    if(k===shown)return; shown=k;
+    phs.forEach(function(p){p.classList.toggle('on',p.dataset.k===k)});
+    document.getElementById('cap').textContent=CAP[k];
+  }
+  var map={t:'hero',librairie:'hero',rayons:null,horaires:'hours'};
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var id=e.target.id||'t', k=map[id];
+      show(k===null?RAY[cur].k:k);
+    })},{rootMargin:'-45% 0px -45% 0px'});
+    ['librairie','rayons','horaires'].forEach(function(id){io.observe(document.getElementById(id))});
+    io.observe(document.querySelector('.hero'));
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var el=e.target, sib=[].slice.call(el.parentNode.querySelectorAll(':scope > .rv')), n=Math.max(0,sib.indexOf(el));
+      el.style.transitionDelay=(n*80)+'ms'; el.classList.add('in'); rv.unobserve(el);
+    })},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){rv.observe(el)});
+  } else document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
