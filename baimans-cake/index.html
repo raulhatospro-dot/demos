@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Baiman's Cake, pâtisserie et salon de thé à Montreuil</title>
+<meta name="description" content="Pâtisserie, salon de thé et ateliers au 71 rue Robespierre, Montreuil. Brunchs du Monde le week-end, gâteaux sur commande.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#f5f1ec; --surface:#ebe7e1; --ink:#111111; --ink-2:#4a4744;
+  --accent:#c4163f; --accent-ink:#ffffff; --night:#111111; --on-night:#f5f1ec;
+  --m:clamp(16px,4vw,48px); --gap:clamp(96px,14vw,200px);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--canvas);color:var(--ink);font:400 17px/1.55 "Schibsted Grotesk",system-ui,sans-serif;overflow-x:hidden}
+::selection{background:var(--accent);color:#fff}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-underline-offset:.2em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.95;text-wrap:balance}
+h2{font-size:clamp(40px,7vw,104px)}
+h3{font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em;line-height:1.1}
+p{max-width:62ch}
+.wrap{padding-inline:var(--m)}
+section{margin-top:var(--gap)}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:var(--on-night);font-size:13px;text-align:center;padding:7px var(--m)}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px var(--m)}
+.mark{font-weight:800;font-size:20px;letter-spacing:-.03em;text-decoration:none}
+nav ul{display:flex;gap:28px;list-style:none;font-weight:500}
+nav ul a{text-decoration:none}
+nav ul a:hover{text-decoration:underline}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:700 16px/1 inherit;font-family:inherit;text-decoration:none;cursor:pointer;border:0;transition:transform .25s var(--ease),background .2s}
+.btn:active{transform:scale(.97)}
+.btn-a{background:var(--accent);color:var(--accent-ink)}
+.btn-a:hover{background:#a30f32}
+.btn-b{background:var(--ink);color:var(--canvas)}
+.btn-b:hover{background:#333}
+.btn-c{background:var(--surface);color:var(--ink)}
+.btn-c:hover{background:#dfd9d0}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr;gap:28px;padding:8px var(--m) 0}
+.hero h1{font-size:clamp(64px,13.5vw,212px);letter-spacing:-.05em;line-height:.86}
+.hero-lede{font-size:clamp(19px,1.8vw,24px);line-height:1.4;max-width:30ch;margin-top:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero-photo{aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
+.hero-photo img{transform:scale(1.06);animation:drift 14s var(--ease) forwards}
+@keyframes drift{to{transform:scale(1)}}
+.hero-facts{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:26px;font-weight:500}
+.hero-facts b{color:var(--accent)}
+@media(min-width:900px){
+  .hero{grid-template-columns:1.25fr 1fr;align-items:end;gap:48px}
+  .hero-photo{aspect-ratio:auto;height:calc(100svh - 150px);min-height:560px}
+}
+
+/* brunch : billets */
+.brunch{background:var(--night);color:var(--on-night);padding:clamp(72px,9vw,128px) var(--m)}
+.brunch-head{display:grid;gap:20px}
+.brunch-head p{font-size:clamp(18px,1.6vw,22px);color:#d9d3cb}
+@media(min-width:900px){.brunch-head{grid-template-columns:1.2fr 1fr;align-items:end;gap:48px}}
+.codes{display:flex;gap:6px;margin-top:48px;overflow-x:auto;scrollbar-width:none}
+.codes button{flex:1 0 auto;min-width:64px;background:#222;color:var(--on-night);border:0;font:800 clamp(22px,3.6vw,52px)/1 "Schibsted Grotesk",sans-serif;letter-spacing:-.03em;padding:18px 16px 14px;cursor:pointer;text-align:left;transition:background .2s,color .2s}
+.codes button small{display:block;font-size:13px;font-weight:500;letter-spacing:0;margin-top:8px;color:#bdb6ad}
+.codes button:hover{background:#2e2e2e}
+.codes button[aria-selected=true]{background:var(--canvas);color:var(--ink)}
+.codes button[aria-selected=true] small{color:var(--ink-2)}
+.ticket{display:grid;grid-template-columns:1fr;background:var(--canvas);color:var(--ink);margin-top:6px}
+.ticket-main{padding:clamp(24px,4vw,56px)}
+.ticket-main h3{font-size:clamp(34px,5vw,72px);letter-spacing:-.04em;line-height:.95}
+.ticket ol{list-style:none;margin-top:28px;display:grid;gap:14px;font-size:clamp(17px,1.4vw,20px)}
+.ticket ol li span{display:block;font-size:14px;font-weight:700;color:var(--accent)}
+.ticket-stub{background:var(--accent);color:#fff;padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:24px;}
+.ticket-stub .price{font-size:clamp(64px,8vw,120px);font-weight:800;letter-spacing:-.05em;line-height:.9}
+.ticket-stub p{font-weight:500}
+.ticket-stub .btn{background:#fff;color:var(--accent);align-self:flex-start}
+.ticket-stub .btn:hover{background:var(--canvas)}
+.panel[hidden]{display:none}
+.hero + .brunch{margin-top:clamp(56px,6vw,88px)}
+.panel{animation:rise .5s var(--ease)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+@media(min-width:900px){.ticket{grid-template-columns:1fr 340px}}
+
+/* comptoir */
+.counter{display:grid;gap:clamp(24px,4vw,56px)}
+.counter-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.counter-grid figure{position:relative;overflow:hidden;background:var(--surface)}
+.counter-grid figure:first-child{grid-column:span 2;aspect-ratio:16/10}
+.counter-grid figure:not(:first-child){aspect-ratio:1}
+.counter-grid figcaption{position:absolute;left:0;bottom:0;background:var(--canvas);padding:8px 14px;font-weight:700;font-size:15px}
+.counter-list{display:grid;gap:28px;align-content:start}
+.counter-list p{font-size:18px}
+.counter-list dl{display:grid;gap:18px}
+.counter-list dt{font-weight:800;font-size:22px;letter-spacing:-.02em}
+.counter-list dd{color:var(--ink-2)}
+@media(min-width:900px){.counter{grid-template-columns:1fr 1.15fr}.counter-grid figure:first-child{aspect-ratio:16/9}}
+
+/* commande */
+.order{background:var(--accent);color:#fff;display:grid}
+.order-photo{min-height:340px}
+.order-body{padding:clamp(40px,6vw,96px) var(--m)}
+.order-body h2{color:#fff}
+.order-body > p{font-size:clamp(18px,1.6vw,22px);margin-top:24px}
+.order-steps{list-style:none;display:grid;gap:18px;margin-top:36px;max-width:560px}
+.order-steps li{background:rgba(0,0,0,.14);padding:18px 22px;font-size:17px}
+.order-steps b{display:block;font-size:20px}
+.season{margin-top:36px;max-width:560px}
+.season h3{font-size:22px}
+.season p{margin-top:8px}
+.order .btn-light{background:#fff;color:var(--accent)}
+.order .btn-light:hover{background:var(--canvas)}
+.order .btn-ghost{background:rgba(0,0,0,.2);color:#fff}
+.order .btn-ghost:hover{background:rgba(0,0,0,.32)}
+.order-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+@media(min-width:900px){.order{grid-template-columns:1fr 1.1fr}.order-photo{min-height:100%}}
+
+/* ateliers */
+.workshops{display:grid;gap:clamp(28px,4vw,64px)}
+.workshops-photo{aspect-ratio:4/3;overflow:hidden}
+.ws-list{display:grid;gap:10px;margin-top:32px}
+.ws{background:var(--surface);padding:22px 24px}
+.ws h3{font-size:22px}
+.ws p{margin-top:6px;color:var(--ink-2)}
+.ws-feature{background:var(--ink);color:var(--canvas)}
+.ws-feature p{color:#d9d3cb}
+@media(min-width:900px){.workshops{grid-template-columns:1.1fr 1fr;align-items:start}.workshops-photo{aspect-ratio:4/5;position:sticky;top:24px}}
+
+/* maison */
+.house{display:grid;gap:28px}
+.house blockquote{font-size:clamp(24px,2.6vw,36px);line-height:1.25;font-weight:500;letter-spacing:-.015em;max-width:30ch}
+.house-facts{display:grid;gap:22px;font-size:18px}
+.house-facts b{display:block;font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+@media(min-width:900px){.house{grid-template-columns:1fr 1fr;gap:64px}}
+
+/* infos */
+.info{display:grid;gap:8px}
+.info > div{background:var(--surface);padding:clamp(24px,3vw,40px)}
+.info h3{font-size:clamp(24px,2.4vw,32px)}
+.hours{margin-top:18px;display:grid;gap:10px;font-variant-numeric:tabular-nums;font-size:18px}
+.hours div{display:flex;justify-content:space-between;gap:16px}
+.hours div.today{color:var(--accent);font-weight:700}
+.note{font-size:14px;color:var(--ink-2);margin-top:16px}
+.info address{font-style:normal;font-size:18px;margin-top:18px}
+.info .btn{margin-top:22px}
+.contact-lines{margin-top:18px;display:grid;gap:10px;font-size:18px}
+.contact-lines a{font-weight:700}
+@media(min-width:900px){.info{grid-template-columns:1.2fr 1fr}.info .hrs{grid-row:span 2}.info .hours{font-size:clamp(18px,1.6vw,22px);gap:14px}}
+
+/* footer */
+footer{margin-top:var(--gap);background:var(--ink);color:var(--on-night);padding:clamp(48px,6vw,88px) var(--m) 28px}
+.foot-name{font-size:clamp(60px,15.5vw,250px);font-weight:800;letter-spacing:-.055em;line-height:.85}
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:40px;font-size:14px;color:#bdb6ad}
+.foot-row a{color:var(--on-night)}
+
+/* entrées */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media(max-width:720px){nav ul{display:none}.btn{padding:0 20px}.codes{gap:4px}.codes button{flex:1 1 0;min-width:0;padding:14px 8px 12px;font-size:21px}.codes button small{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<nav aria-label="Navigation principale">
+  <a class="mark" href="#top">Baiman's Cake</a>
+  <ul>
+    <li><a href="#brunch">Brunchs</a></li>
+    <li><a href="#comptoir">Comptoir</a></li>
+    <li><a href="#commande">Sur commande</a></li>
+    <li><a href="#ateliers">Ateliers</a></li>
+    <li><a href="#infos">Horaires</a></li>
+  </ul>
+  <a class="btn btn-b" href="tel:+33978811065">Appeler</a>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <h1 class="rv">Baiman's Cake</h1>
+    <p class="hero-lede rv">Pâtisserie, salon de thé et ateliers au 71&nbsp;rue Robespierre, à Montreuil.</p>
+    <div class="hero-actions rv">
+      <a class="btn btn-a" href="#commande">Commander un gâteau</a>
+      <a class="btn btn-c" href="https://www.google.com/maps/dir/?api=1&destination=Baiman%27s+Cake+71+rue+Robespierre+93100+Montreuil" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        Itinéraire</a>
+    </div>
+    <p class="hero-facts rv"><span><b>4,8/5</b> sur Google</span><span>Métro Robespierre, ligne 9</span><span>Cuisine halal</span></p>
+  </div>
+  <div class="hero-photo rv">
+    <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=1400&q=78&fit=crop" alt="Gâteau à la crème couronné de mûres et de fleurs" fetchpriority="high">
+  </div>
+</header>
+
+<section class="brunch" id="brunch" aria-labelledby="brunch-t">
+  <div class="brunch-head">
+    <h2 id="brunch-t" class="rv">Cinq brunchs, cinq villes</h2>
+    <p class="rv">Les Brunchs du Monde, chaque week-end&nbsp;: choisissez votre destination. Tout est fait maison et préparé à la commande, boisson comprise.</p>
+  </div>
+
+  <div class="codes" role="tablist" aria-label="Choisir une destination">
+    <button role="tab" id="t-ist" aria-controls="p-ist" aria-selected="true">IST<small>Istanbul</small></button>
+    <button role="tab" id="t-rom" aria-controls="p-rom" aria-selected="false" tabindex="-1">ROM<small>Rome</small></button>
+    <button role="tab" id="t-par" aria-controls="p-par" aria-selected="false" tabindex="-1">PAR<small>Paris</small></button>
+    <button role="tab" id="t-nyc" aria-controls="p-nyc" aria-selected="false" tabindex="-1">NYC<small>New York</small></button>
+    <button role="tab" id="t-lon" aria-controls="p-lon" aria-selected="false" tabindex="-1">LON<small>Londres</small></button>
+  </div>
+
+  <div class="ticket">
+    <div class="ticket-main">
+      <div class="panel" role="tabpanel" id="p-ist" aria-labelledby="t-ist">
+        <h3>Istanbul</h3>
+        <ol>
+          <li><span>Plat</span>Shakshouka au sucuk</li>
+          <li><span>À partager</span>Mezzés&nbsp;: houmous de pois chiche, houmous de betterave, tzatziki, börek au fromage, mini lahmacun</li>
+          <li><span>Dessert</span>Cheesecake baklava</li>
+        </ol>
+      </div>
+      <div class="panel" role="tabpanel" id="p-rom" aria-labelledby="t-rom">
+        <h3>Rome, dolce vita</h3>
+        <ol>
+          <li><span>Plat</span>Lasagnes végétariennes</li>
+          <li><span>À partager</span>Antipasti, focaccia, tomates et mozzarella di bufala</li>
+          <li><span>Dessert</span>Tiramisu</li>
+        </ol>
+      </div>
+      <div class="panel" role="tabpanel" id="p-par" aria-labelledby="t-par">
+        <h3>Paris gourmet</h3>
+        <ol>
+          <li><span>Plat</span>Croque-monsieur ou croque-madame, salade et pommes de terre rôties</li>
+          <li><span>À partager</span>Plateau de trois fromages, pain et beurre, mignardises</li>
+          <li><span>Dessert</span>Crème caramel ou mille-feuille, selon la saison</li>
+        </ol>
+      </div>
+      <div class="panel" role="tabpanel" id="p-nyc" aria-labelledby="t-nyc">
+        <h3>New York</h3>
+        <ol>
+          <li><span>Plat</span>Burger au croissant, sauce américaine, salade, frites et coleslaw maison</li>
+          <li><span>À côté</span>Pain grillé au beurre de cacahuète et confiture</li>
+          <li><span>Dessert</span>Brownie</li>
+        </ol>
+      </div>
+      <div class="panel" role="tabpanel" id="p-lon" aria-labelledby="t-lon">
+        <h3>Londres</h3>
+        <ol>
+          <li><span>Plat</span>Muffin bacon-œuf et salade</li>
+          <li><span>À partager</span>Mini club sandwiches&nbsp;: fromage frais et cheddar, fromage frais et jambon, emmental</li>
+          <li><span>Dessert</span>Pudding maison, crème vanille</li>
+        </ol>
+      </div>
+    </div>
+    <div class="ticket-stub">
+      <div>
+        <div class="price">29&nbsp;€</div>
+        <p>Le brunch complet, avec un café au choix, un thé ou un jus d'orange pressé.</p>
+      </div>
+      <a class="btn" href="tel:+33978811065">Réserver ce week-end</a>
+    </div>
+  </div>
+</section>
+
+<section class="counter wrap" id="comptoir" aria-labelledby="comptoir-t">
+  <div class="counter-list">
+    <h2 id="comptoir-t" class="rv">Au comptoir dès 7h30</h2>
+    <p class="rv">Une grande salle sous de hauts plafonds, avec beaucoup de tables&nbsp;: on y vient seul, en famille ou à plusieurs.</p>
+    <dl class="rv">
+      <div><dt>Viennoiseries</dt><dd>Croissants et pains au chocolat pur beurre. Les croissants des brunchs portent la signature d'Anthony Nguyen, boulanger partenaire de la maison.</dd></div>
+      <div><dt>Pâtisseries</dt><dd>Entremets, tartes et gâteaux faits main, en vitrine chaque jour.</dd></div>
+      <div><dt>Salé</dt><dd>Sandwichs maison, wraps gourmands et bagels.</dd></div>
+      <div><dt>À boire</dt><dd>Thés et cafés choisis avec soin.</dd></div>
+    </dl>
+  </div>
+  <div class="counter-grid">
+    <figure class="rv"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1400&q=75&fit=crop" alt="Croissants saupoudrés de sucre"><figcaption>Viennoiseries</figcaption></figure>
+    <figure class="rv"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=800&q=75&fit=crop" alt="Part d'entremets en couches"><figcaption>Entremets</figcaption></figure>
+    <figure class="rv"><img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=800&q=75&fit=crop" alt="Tartelettes aux fruits frais"><figcaption>Tartelettes</figcaption></figure>
+  </div>
+</section>
+
+<section class="order" id="commande" aria-labelledby="commande-t">
+  <div class="order-photo"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&q=75&fit=crop" alt="Gâteau au chocolat garni de rosaces de crème"></div>
+  <div class="order-body">
+    <h2 id="commande-t" class="rv">Votre gâteau, sur commande</h2>
+    <p class="rv">Anniversaire, fête de famille, réunion de bureau&nbsp;: décrivez-nous l'occasion, on prépare le gâteau.</p>
+    <ol class="order-steps rv">
+      <li><b>Dites-nous la date et le nombre de parts</b>Par téléphone ou par e-mail, le plus tôt possible.</li>
+      <li><b>Choisissez parfums et décor</b>On vous conseille selon la saison et vos envies.</li>
+      <li><b>Retirez-le rue Robespierre</b>Prêt à l'heure convenue ensemble.</li>
+    </ol>
+    <div class="season rv">
+      <h3>Les fêtes de fin d'année</h3>
+      <p>Chaque décembre, la maison propose ses bûches. L'an dernier&nbsp;: vanille caramel pécan, chocolat noisette, pistache fleur d'oranger, coco mangue passion. En janvier, la galette frangipane à la cannelle.</p>
+    </div>
+    <div class="order-actions rv">
+      <a class="btn btn-light" href="mailto:contact@baimans.com?subject=Commande%20de%20g%C3%A2teau&body=Bonjour%2C%0A%0AJe%20souhaite%20commander%20un%20g%C3%A2teau.%0AOccasion%20%3A%20%0ADate%20de%20retrait%20%3A%20%0ANombre%20de%20parts%20%3A%20%0AParfum(s)%20souhait%C3%A9(s)%20%3A%20%0A%0AMerci%20!">Écrire ma commande</a>
+      <a class="btn btn-ghost" href="tel:+33978811065">09 78 81 10 65</a>
+    </div>
+  </div>
+</section>
+
+<section class="workshops wrap" id="ateliers" aria-labelledby="ateliers-t">
+  <div class="workshops-photo rv"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=1200&q=75&fit=crop" alt="Décor à la poche à douille sur un gâteau"></div>
+  <div>
+    <h2 id="ateliers-t" class="rv">Les ateliers</h2>
+    <p class="rv" style="margin-top:24px;font-size:19px">Un grand atelier au fond de la boutique, ouvert à tous, débutants comme passionnés.</p>
+    <div class="ws-list">
+      <div class="ws rv"><h3>Poche à douille et glaçage</h3><p>Les gestes du décor, de la rosace au nappage.</p></div>
+      <div class="ws rv"><h3>Entremets</h3><p>Montage d'un dessert en couches, de l'insert à la finition.</p></div>
+      <div class="ws rv"><h3>Galettes et desserts créatifs</h3><p>Décor de galette en saison, desserts à composer soi-même.</p></div>
+      <div class="ws ws-feature rv"><h3>« Du beurre au cœur », avec Anthony Nguyen</h3><p>Une journée de viennoiserie, de 9h à 17h30&nbsp;: pâte à croissant, feuilletage inversé, croissants, pains au chocolat, pains suisses. Petit-déjeuner et déjeuner compris.</p></div>
+    </div>
+    <a class="btn btn-b rv" style="margin-top:28px" href="mailto:contact@baimans.com?subject=Ateliers%20%3A%20prochaines%20dates">Demander les prochaines dates</a>
+  </div>
+</section>
+
+<section class="house wrap" id="maison" aria-labelledby="maison-t">
+  <div>
+    <h2 id="maison-t" class="rv">La maison d'Amelle</h2>
+    <blockquote class="rv" style="margin-top:32px">Amelle a installé sa pâtisserie dans un ancien espace de coworking, dont elle a gardé les grands volumes et les hauts plafonds.</blockquote>
+  </div>
+  <div class="house-facts rv">
+    <p><b>Plus de dix ans</b>dans le tourisme, avant un CAP de pâtissière.</p>
+    <p><b>Cinq enfants</b>et leurs prénoms réunis dans le nom de la maison.</p>
+    <p><b>Depuis 2021</b>au 71 rue Robespierre, à Montreuil.</p>
+  </div>
+</section>
+
+<section class="info wrap" id="infos" aria-labelledby="infos-t">
+  <h2 id="infos-t" class="rv" style="grid-column:1/-1;margin-bottom:32px">Horaires et accès</h2>
+  <div class="rv hrs">
+    <h3>Horaires</h3>
+    <div class="hours" id="hours">
+      <div data-d="1"><span>Lundi</span><span>7h30 – 20h</span></div>
+      <div data-d="2"><span>Mardi</span><span>7h30 – 20h</span></div>
+      <div data-d="3"><span>Mercredi</span><span>7h30 – 20h</span></div>
+      <div data-d="4"><span>Jeudi</span><span>7h30 – 20h</span></div>
+      <div data-d="5"><span>Vendredi</span><span>7h30 – 20h</span></div>
+      <div data-d="6"><span>Samedi</span><span>7h30 – 20h</span></div>
+      <div data-d="0"><span>Dimanche</span><span>Brunch du week-end</span></div>
+    </div>
+    <p class="note">Horaires indicatifs, à confirmer par téléphone.</p>
+  </div>
+  <div class="rv">
+    <h3>Venir</h3>
+    <address>71 rue Robespierre<br>93100 Montreuil</address>
+    <p class="contact-lines"><span>Métro Robespierre ou Mairie de Montreuil, ligne 9</span></p>
+    <a class="btn btn-b" href="https://www.google.com/maps/dir/?api=1&destination=Baiman%27s+Cake+71+rue+Robespierre+93100+Montreuil" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+  </div>
+  <div class="rv">
+    <h3>Contact</h3>
+    <p class="contact-lines">
+      <a href="tel:+33978811065">09 78 81 10 65</a>
+      <a href="mailto:contact@baimans.com">contact@baimans.com</a>
+      <a href="https://www.instagram.com/baimans.cake/" target="_blank" rel="noopener">Instagram @baimans.cake</a>
+    </p>
+    <a class="btn btn-a" href="tel:+33978811065">Appeler la boutique</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-name" aria-hidden="true">Baiman's Cake</div>
+  <div class="foot-row">
+    <span>71 rue Robespierre, 93100 Montreuil · <a href="tel:+33978811065">09 78 81 10 65</a></span>
+    <span>Démo réalisée par Raul Hatos — site non officiel. Photos d'illustration&nbsp;: Unsplash.</span>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// onglets des brunchs : clavier + clic
+const tabs=[...document.querySelectorAll('[role=tab]')];
+const show=t=>{tabs.forEach(b=>{const on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on})};
+tabs.forEach((b,i)=>{b.addEventListener('click',()=>show(b));b.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){const n=tabs[(i+k+tabs.length)%tabs.length];show(n);n.focus();e.preventDefault()}})});
+show(tabs[0]);
+// jour courant mis en avant
+const today=document.querySelector('#hours [data-d="'+new Date().getDay()+'"]');if(today)today.classList.add('today');
+// entrées échelonnées
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('in')),2500);
+</script>
+</body>
+</html>
