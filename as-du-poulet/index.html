@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>L’As du Poulet · Grillades portugaises, Paris 14e</title>
+<meta name="description" content="L’As du Poulet, 19 rue Delbet, Paris 14e : demi-poulet churrasco, febras, travers de porc, pastéis de nata. Sur place, à emporter et en livraison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#e60000; --red-dk:#b80000; --ink:#25282b; --soft:#f2f2f2; --paper:#fff; --mute:#5e6166;
+  --m:clamp(20px,2.2vw,32px);
+  --f:"Archivo",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--f);font-size:18px;line-height:1.5;color:var(--ink);background:var(--paper);font-variation-settings:"wdth" 100;overflow-x:hidden}
+::selection{background:var(--red);color:#fff}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit;color:inherit;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.num{font-variant-numeric:tabular-nums}
+
+/* demo banner */
+.demo{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:7px var(--m)}
+
+/* buttons: one shape, the pill */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 26px;border-radius:60px;border:2px solid var(--red);background:var(--red);color:#fff;font-weight:700;font-size:17px;text-decoration:none;transition:background .25s var(--ease),transform .25s var(--ease),color .25s}
+.btn:hover{background:var(--red-dk);border-color:var(--red-dk)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px var(--m)}
+.mark{white-space:nowrap;font-weight:900;font-size:17px;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark i{font-style:normal;display:grid;place-items:center;width:30px;height:40px;border-radius:4px;background:var(--red);color:#fff;font-size:18px;line-height:1}
+.nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+.nav ul a{text-decoration:none;font-weight:600;font-size:16px}
+.nav ul a:not(.btn):hover{color:var(--red)}
+.nav .btn{min-height:44px;padding:8px 20px;font-size:16px;white-space:nowrap}
+.nav .short{display:none}
+
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:calc(100svh - 34px);display:grid;grid-template-rows:auto 1fr;grid-template-columns:minmax(0,1fr);background:var(--paper)}
+.hero-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.62fr);gap:var(--m);padding:clamp(16px,3vh,48px) var(--m) var(--m);position:relative;z-index:2}
+.hero h1{font-size:clamp(34px,3.7vw,56px);line-height:1.02;letter-spacing:-.03em;font-weight:850;max-width:15ch;text-wrap:balance}
+.lede{margin-top:22px;font-size:clamp(18px,1.5vw,22px);line-height:1.45;max-width:36ch}
+.status{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-weight:700;font-size:16px}
+.status b{width:11px;height:11px;border-radius:50%;background:#9aa0a6}
+.status.open b{background:#0a8a3a;box-shadow:0 0 0 0 rgba(10,138,58,.5);animation:pulse 2.4s var(--ease) infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(10,138,58,0)}100%{box-shadow:0 0 0 0 rgba(10,138,58,0)}}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-photo{align-self:stretch;justify-self:end;width:100%;max-width:460px;height:100%;min-height:420px;object-fit:cover;border-radius:6px}
+.monument{position:absolute;left:calc(var(--m) * -.4);bottom:-.1em;z-index:1;line-height:.8;white-space:nowrap;pointer-events:none;user-select:none;font-size:clamp(220px,30vw,560px)}
+.monument span{display:block;font-weight:900;font-variation-settings:"wdth" 125;font-size:1em;letter-spacing:-.05em;color:var(--red);transform-origin:left bottom}
+@media (min-width:861px){.hero-top>div:first-child{padding-bottom:clamp(220px,24vw,420px)}}
+.idx{position:absolute;right:var(--m);bottom:var(--m);z-index:2;text-align:center;font-weight:900;color:var(--red);line-height:.9;font-size:44px}
+.idx svg{width:30px;height:30px;display:block;margin:6px auto 0;fill:var(--red)}
+
+/* scroll-linked monument */
+@supports (animation-timeline:scroll()){
+  @media (prefers-reduced-motion:no-preference){
+    .monument span{animation:shrink linear both;animation-timeline:scroll(root);animation-range:0 100vh}
+    @keyframes shrink{to{transform:scale(.93) translateY(-2%)}}
+  }
+}
+
+/* section frame */
+section{position:relative}
+.wrap{padding-inline:var(--m)}
+.h2{font-size:clamp(30px,3vw,44px);line-height:1.05;letter-spacing:-.03em;font-weight:850}
+.intro{font-size:clamp(18px,1.4vw,21px);max-width:52ch;margin-top:16px}
+
+/* poster menu */
+.carte{background:var(--ink);color:#fff;padding:clamp(80px,12vw,180px) 0 clamp(60px,8vw,120px)}
+.carte .h2{color:#fff}
+.carte .intro{color:#d9dadb}
+.poster{list-style:none;margin-top:clamp(40px,5vw,72px)}
+.poster li{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding-inline:var(--m);transition:color .3s var(--ease)}
+.poster li:hover{color:var(--red)}
+.poster strong{font-weight:900;font-variation-settings:"wdth" 70;text-transform:uppercase;font-size:clamp(58px,9.4vw,150px);line-height:.92;letter-spacing:-.035em}
+.poster span{font-size:clamp(22px,2.2vw,32px);font-weight:800;text-align:right;color:#fff;white-space:nowrap;letter-spacing:-.01em}
+.poster span em{font-style:normal;display:block;color:#c7c9cb;font-size:16px;font-weight:500;letter-spacing:0}
+.side{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,64px);margin-top:clamp(64px,7vw,110px);padding-inline:var(--m)}
+.side h3{font-size:24px;font-weight:850;letter-spacing:-.02em;margin-bottom:14px;color:#fff}
+.side ul{list-style:none}
+.side li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;font-size:17px;color:#eceded}
+.side li+li{box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.side li span:last-child{white-space:nowrap}
+.note{padding-inline:var(--m);margin-top:40px;font-size:15px;color:#c7c9cb;max-width:70ch}
+
+/* photo run */
+.run{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:12px;padding:12px var(--m) 0;background:var(--ink)}
+.run figure{position:relative;overflow:hidden;border-radius:6px}
+.run img{width:100%;height:clamp(260px,34vw,520px);object-fit:cover;transition:transform 1.2s var(--ease)}
+.run figure:hover img{transform:scale(1.04)}
+.run figcaption{position:absolute;left:12px;bottom:12px;background:#fff;color:var(--ink);font-size:14px;font-weight:700;padding:5px 12px;border-radius:40px}
+
+/* tablée builder */
+.tablee{padding:clamp(100px,12vw,200px) 0}
+.tab-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(32px,5vw,80px);align-items:start;padding-inline:var(--m)}
+.people{display:flex;align-items:center;gap:18px;margin-top:36px;background:var(--soft);border-radius:6px;padding:18px 22px}
+.people label{font-weight:700;font-size:18px;flex:1}
+.step{display:inline-flex;align-items:center;gap:6px}
+.step button{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:#fff;font-size:22px;font-weight:700;line-height:1;display:grid;place-items:center;transition:background .2s,color .2s,transform .2s var(--ease)}
+.step button:hover{background:var(--ink);color:#fff}
+.step button:active{transform:scale(.92)}
+.step button:disabled{opacity:.35;pointer-events:none}
+.step output{min-width:2.2ch;text-align:center;font-weight:850;font-size:22px}
+.picker{margin-top:28px}
+.picker h3{font-size:20px;font-weight:850;margin:26px 0 6px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
+.row+.row{box-shadow:inset 0 1px 0 #e3e3e3}
+.row .n{flex:1;font-size:17px}
+.row .p{color:var(--mute);font-size:16px;min-width:64px;text-align:right}
+.ticket{position:sticky;top:24px;background:var(--red);color:#fff;border-radius:6px;padding:clamp(24px,3vw,40px)}
+.ticket h3{font-size:clamp(26px,2.4vw,34px);font-weight:900;letter-spacing:-.03em;line-height:1.05}
+.ticket ul{list-style:none;margin:22px 0;min-height:60px}
+.ticket li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:17px}
+.ticket .empty{opacity:.85;font-size:17px}
+.total{display:flex;justify-content:space-between;align-items:baseline;box-shadow:inset 0 2px 0 rgba(255,255,255,.5);padding-top:16px;font-weight:900;font-size:clamp(30px,3vw,42px);letter-spacing:-.02em}
+.total small{font-size:16px;font-weight:600}
+.ticket .actions{margin-top:24px}
+.ticket .btn{background:#fff;color:var(--red);border-color:#fff}
+.ticket .btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.ticket .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.ticket .btn.ghost:hover{background:#fff;color:var(--red)}
+.ticket p.fine{margin-top:18px;font-size:15px;opacity:.9}
+
+/* infos */
+.infos{background:var(--soft);padding:clamp(100px,12vw,200px) 0}
+.i-row{display:grid;grid-template-columns:34% minmax(0,1fr);gap:0;padding-inline:var(--m)}
+.facts{display:grid;gap:20px;font-size:15px;align-content:start}
+.facts dt{color:var(--mute)}
+.facts dd{font-weight:700;font-size:17px}
+.big-p{font-size:clamp(21px,1.8vw,27px);line-height:1.38;max-width:34em}
+.i-row+.i-row{margin-top:clamp(64px,8vw,120px)}
+.hours{display:grid;grid-template-columns:repeat(2,minmax(0,320px));gap:24px 64px}
+.hours h3{font-size:20px;font-weight:850;margin-bottom:8px}
+.hours ul{list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;font-size:17px}
+.hours li span:last-child{text-align:right}
+.hours li+li{box-shadow:inset 0 1px 0 #dcdcdc}
+.hours li.today{color:var(--red);font-weight:800}
+.map-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* contact */
+.contact{background:var(--red);color:#fff;min-height:88svh;display:grid;grid-template-rows:auto 1fr auto auto;padding:clamp(36px,5vw,64px) var(--m)}
+.contact .h2{color:#fff;max-width:20ch}
+.contact .say{font-size:clamp(18px,1.5vw,22px);margin-top:14px;max-width:40ch}
+.mail{align-self:end;display:block;font-weight:800;font-variation-settings:"wdth" 80;font-size:clamp(40px,8.6vw,150px);line-height:.95;letter-spacing:-.04em;text-decoration:none;word-break:break-word;transition:color .3s var(--ease)}
+.mail:hover{color:var(--ink)}
+.c-foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:clamp(36px,5vw,64px);font-size:17px}
+.c-foot a{font-weight:700}
+.c-foot div{display:flex;gap:24px;flex-wrap:wrap}
+
+/* footer */
+footer{background:var(--ink);color:#fff;padding:56px var(--m) 24px;display:grid;gap:clamp(60px,10vw,160px)}
+.f-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;font-size:16px;color:#c7c9cb}
+.f-cols b{display:block;color:#fff;margin-bottom:6px}
+.f-cols a{color:#c7c9cb}
+.f-cols a:hover{color:#fff}
+.wordmark{display:block;width:100%;height:auto}
+.wordmark text{font-family:var(--f);font-weight:900;font-variation-settings:"wdth" 75;fill:#fff;letter-spacing:-6px}
+.legal{font-size:13px;color:#a9acaf;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* entrances */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--d,0) * 75ms)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.status.open b{animation:none}}
+
+/* phone */
+@media (max-width:860px){
+  .nav ul li:not(:last-child){display:none}
+  .nav .long{display:none}.nav .short{display:inline}
+  .hero{min-height:auto}
+  .hero-top{grid-template-columns:1fr;padding-top:20px}
+  .hero h1{max-width:12ch;font-size:clamp(36px,10vw,48px)}
+  .hero-photo{max-width:none;aspect-ratio:4/3;margin-top:28px}
+  .monument{position:relative;left:-4px;bottom:auto;margin:28px 0 -.1em;font-size:63vw}
+  .monument span{font-variation-settings:"wdth" 75}
+  .idx{font-size:30px}.idx svg{width:22px;height:22px}
+  .poster li{flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:22px}
+  .poster strong{font-size:14.2vw}
+  .poster span{text-align:left;font-size:16px}
+  .poster span em{display:inline;margin-left:6px}
+  .side{grid-template-columns:1fr}
+  .run{grid-template-columns:1fr 1fr}
+  .run figure:first-child{grid-column:1/-1}
+  .run img{height:240px}
+  .tab-grid{grid-template-columns:1fr}
+  .ticket{position:static}
+  .i-row{grid-template-columns:1fr;gap:28px}
+  .facts{grid-template-columns:1fr 1fr}
+  .hours{grid-template-columns:1fr}
+  .mail{font-size:11.6vw;margin-top:72px}
+  .contact{min-height:auto}
+  .poster span{font-size:20px}
+  .f-cols{grid-template-columns:1fr 1fr;row-gap:32px}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8.5-5.3-8.5-11.2A4.8 4.8 0 0 1 12 6.6a4.8 4.8 0 0 1 8.5 3.2C20.5 15.7 12 21 12 21z"/></symbol>
+</svg>
+
+<header class="hero" id="top">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="mark" href="#top"><i aria-hidden="true">A</i>L’As du Poulet</a>
+    <ul>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#tablee">Commander</a></li>
+      <li><a href="#infos">Horaires</a></li>
+      <li><a class="btn" href="tel:+33145431919"><svg aria-hidden="true"><use href="#i-tel"/></svg><span class="num long">01 45 43 19 19</span><span class="short">Appeler</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-top">
+    <div>
+      <h1 class="rv">Le demi-poulet churrasco de la rue Delbet</h1>
+      <p class="lede rv" style="--d:1">Grillades portugaises à Paris 14<sup>e</sup>, quartier de la Porte de Vanves. Sur place, à emporter ou livré chez vous.</p>
+      <p class="status rv" style="--d:2" id="status" aria-live="polite"><b aria-hidden="true"></b><span>Mardi au dimanche, midi et soir</span></p>
+      <div class="actions rv" style="--d:3">
+        <a class="btn" href="#tablee"><svg aria-hidden="true"><use href="#i-bag"/></svg>Composer ma commande</a>
+        <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27As+du+Poulet+19+rue+Delbet+75014+Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Itinéraire</a>
+      </div>
+    </div>
+    <img class="hero-photo rv" style="--d:2" src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=1000&amp;h=1250&amp;fit=crop&amp;q=75" width="880" height="1100" alt="Poulet rôti doré dans une poêle en fonte">
+  </div>
+
+  <div class="monument" aria-hidden="true"><span>L’AS</span></div>
+</header>
+
+<main>
+<section class="carte" id="carte" aria-labelledby="carte-t">
+  <div class="wrap">
+    <h2 class="h2 rv" id="carte-t">La carte</h2>
+    <p class="intro rv" style="--d:1">Cinq grillades, servies avec leur garniture. On commence par des accras, on finit par un pudim.</p>
+  </div>
+  <ul class="poster">
+    <li class="rv"><strong>½ poulet</strong><span class="num">13,90 €<em>churrasco</em></span></li>
+    <li class="rv"><strong>Febras</strong><span class="num">12,90 €<em>grillées</em></span></li>
+    <li class="rv"><strong>Poitrine</strong><span class="num">12,90 €<em>grillée</em></span></li>
+    <li class="rv"><strong>Travers</strong><span class="num">13,90 €<em>de porc</em></span></li>
+    <li class="rv"><strong>Mix complet</strong><span class="num">15,90 €<em>un peu de tout</em></span></li>
+  </ul>
+  <div class="side">
+    <div class="rv">
+      <h3>Entrées</h3>
+      <ul class="num">
+        <li><span>Accras de morue</span><span>5,80 €</span></li>
+        <li><span>Beignets de viande</span><span>5,80 €</span></li>
+        <li><span>Beignets de crevettes</span><span>5,80 €</span></li>
+        <li><span>Chorizo grillé, demi</span><span>5,00 €</span></li>
+        <li><span>Chorizo grillé, entier</span><span>9,50 €</span></li>
+      </ul>
+    </div>
+    <div class="rv" style="--d:1">
+      <h3>Desserts</h3>
+      <ul class="num">
+        <li><span>Pudim maison</span><span>5,50 €</span></li>
+        <li><span>Pastéis de nata</span><span>5,50 €</span></li>
+        <li><span>Bolo de bolacha</span><span>5,50 €</span></li>
+      </ul>
+    </div>
+    <div class="rv" style="--d:2">
+      <h3>À boire</h3>
+      <ul class="num">
+        <li><span>Sumol, Compal</span><span>2,90 €</span></li>
+        <li><span>Super Bock, Sagres</span><span>3,00 €</span></li>
+        <li><span>Vin rouge portugais</span><span>12,00 €</span></li>
+        <li><span>Vinho verde</span><span>14,00 €</span></li>
+        <li><span>Vin rosé portugais</span><span>16,00 €</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">Prix relevés sur la carte de livraison. Sur place, la carte et les suggestions du jour peuvent varier : demandez au comptoir.</p>
+</section>
+
+<div class="run" role="group" aria-label="Photos d’ambiance">
+  <figure><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1300&amp;h=900&amp;fit=crop&amp;q=75" width="1300" height="900" alt="Brochettes, poivrons et pommes de terre grillés sur une planche"><figcaption>Le grill</figcaption></figure>
+  <figure><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=900&amp;h=900&amp;fit=crop&amp;q=75" width="900" height="900" alt="Travers de porc grillés tranchés"><figcaption>Les travers</figcaption></figure>
+  <figure><img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=900&amp;h=900&amp;fit=crop&amp;q=75" width="900" height="900" alt="Bière pression versée dans un verre"><figcaption>La pression</figcaption></figure>
+</div>
+
+<section class="tablee" id="tablee" aria-labelledby="tab-t">
+  <div class="tab-grid">
+    <div>
+      <h2 class="h2 rv" id="tab-t">Combien de poulets pour la tablée ?</h2>
+      <p class="intro rv" style="--d:1">Dites combien vous êtes : on compte un demi-poulet par personne. Ajoutez le reste, puis appelez ou envoyez la liste au restaurant.</p>
+      <div class="people rv" style="--d:2">
+        <label for="ppl-out" id="ppl-l">Nous sommes</label>
+        <span class="step" role="group" aria-labelledby="ppl-l">
+          <button type="button" data-ppl="-1" aria-label="Une personne de moins">−</button>
+          <output id="ppl-out" class="num">2</output>
+          <button type="button" data-ppl="1" aria-label="Une personne de plus">+</button>
+        </span>
+      </div>
+      <div class="picker" id="picker"></div>
+    </div>
+    <aside class="ticket" aria-labelledby="tk-t">
+      <h3 id="tk-t">Votre commande</h3>
+      <ul id="tk-list" class="num" aria-live="polite"></ul>
+      <p class="total"><small>Total estimé</small><span id="tk-total" class="num">0,00 €</span></p>
+      <div class="actions">
+        <a class="btn" href="tel:+33145431919"><svg aria-hidden="true"><use href="#i-tel"/></svg>Appeler pour commander</a>
+        <a class="btn ghost" id="tk-mail" href="mailto:asdupoulet@orange.fr"><svg aria-hidden="true"><use href="#i-mail"/></svg>Envoyer par e-mail</a>
+      </div>
+      <p class="fine">Livraison aussi sur <a href="https://www.ubereats.com/fr/store/las-du-poulet/IR7D_cRKQ22DdQAqSNKIRQ" target="_blank" rel="noopener">Uber Eats</a>. Le total reprend les prix de la carte et sert de repère.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="infos" id="infos" aria-labelledby="inf-t">
+  <h2 class="sr" id="inf-t">Infos pratiques</h2>
+  <div class="i-row">
+    <dl class="facts rv">
+      <div><dt>Adresse</dt><dd>19 rue Delbet, 75014 Paris</dd></div>
+      <div><dt>Note des clients</dt><dd class="num">4,8 sur 5 · 3 328 avis</dd></div>
+      <div><dt>Paiement</dt><dd>Carte, sans contact, titres-restaurant</dd></div>
+    </dl>
+    <p class="big-p rv" style="--d:1">Une churrasqueira de quartier dans le 14<sup>e</sup>. Au menu : le demi-poulet churrasco, les febras, la poitrine et les travers grillés, avec frites ou riz. Le soir, la réservation est conseillée : un coup de fil suffit.</p>
+  </div>
+  <div class="i-row">
+    <h3 class="h2 rv" style="font-size:clamp(26px,2.4vw,34px)">Horaires</h3>
+    <div>
+      <div class="hours">
+        <div class="rv">
+          <ul class="num" id="hours">
+            <li data-d="2"><span>Mardi</span><span>11 h 30 – 14 h 30<br>18 h 30 – 22 h 30</span></li>
+            <li data-d="3"><span>Mercredi</span><span>11 h 30 – 14 h 30<br>18 h 30 – 22 h 30</span></li>
+            <li data-d="4"><span>Jeudi</span><span>11 h 30 – 14 h 30<br>18 h 30 – 22 h 30</span></li>
+            <li data-d="5"><span>Vendredi</span><span>11 h 30 – 14 h 30<br>18 h 30 – 22 h 30</span></li>
+            <li data-d="6"><span>Samedi</span><span>11 h 30 – 14 h 30<br>18 h 30 – 22 h 30</span></li>
+            <li data-d="0"><span>Dimanche</span><span>11 h 30 – 14 h 30<br>18 h 30 – 22 h 30</span></li>
+            <li data-d="1"><span>Lundi</span><span>Fermé</span></li>
+          </ul>
+        </div>
+        <div class="rv" style="--d:1">
+          <h3>Sur place</h3>
+          <ul>
+            <li><span>Service à table</span><span>Midi et soir</span></li>
+            <li><span>Réservation</span><span>Conseillée le soir</span></li>
+            <li><span>À emporter</span><span>Commande par téléphone</span></li>
+            <li><span>Livraison</span><span><a href="https://www.ubereats.com/fr/store/las-du-poulet/IR7D_cRKQ22DdQAqSNKIRQ" target="_blank" rel="noopener">Uber Eats</a></span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="map-btns rv">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27As+du+Poulet+19+rue+Delbet+75014+Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Itinéraire Google Maps</a>
+        <a class="btn ghost" href="tel:+33145431919"><svg aria-hidden="true"><use href="#i-tel"/></svg>Réserver une table</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="ct-t">
+  <div>
+    <h2 class="h2" id="ct-t">Une grande tablée, un anniversaire ?</h2>
+    <p class="say">Écrivez-nous le nombre de couverts et le jour : on vous répond avec ce qu’on peut préparer.</p>
+  </div>
+  <span></span>
+  <a class="mail" href="mailto:asdupoulet@orange.fr?subject=Demande%20pour%20une%20tabl%C3%A9e">asdupoulet@<wbr>orange.fr</a>
+  <div class="c-foot">
+    <div><a href="tel:+33145431919" class="num">01 45 43 19 19</a><span>19 rue Delbet, Paris 14<sup>e</sup></span></div>
+    <div><a href="https://www.ubereats.com/fr/store/las-du-poulet/IR7D_cRKQ22DdQAqSNKIRQ" target="_blank" rel="noopener">Uber Eats</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27As+du+Poulet+19+rue+Delbet+75014+Paris" target="_blank" rel="noopener">Itinéraire</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="f-cols">
+    <div><b>L’As du Poulet</b>19 rue Delbet<br>75014 Paris</div>
+    <div><b>Le site</b><a href="#carte">La carte</a><br><a href="#tablee">Commander</a><br><a href="#infos">Horaires</a></div>
+    <div><b>Commander</b><a href="tel:+33145431919">01 45 43 19 19</a><br><a href="https://www.ubereats.com/fr/store/las-du-poulet/IR7D_cRKQ22DdQAqSNKIRQ" target="_blank" rel="noopener">Uber Eats</a></div>
+    <div><b>Horaires</b>Mardi au dimanche<br>11 h 30 – 14 h 30<br>18 h 30 – 22 h 30</div>
+  </div>
+  <svg class="wordmark" viewBox="0 0 1000 150" role="img" aria-label="L’As du Poulet"><text x="-4" y="138" font-size="186" textLength="1004" lengthAdjust="spacingAndGlyphs">L’AS DU POULET</text></svg>
+  <div class="legal"><span>Photos d’illustration : Unsplash.</span><span>Démo réalisée par Raul Hatos — site non officiel</span></div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(()=>{
+  // entrances
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // open now (Europe/Paris), hours from the listing: Tue–Sun 11:30–14:30, 18:30–22:30
+  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).map(p=>[p.type,p.value]));
+  const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(parts.weekday), m=(+parts.hour%24)*60+ +parts.minute;
+  const slots=day===1?[]:[[690,870],[1110,1350]], fmt=x=>`${Math.floor(x/60)} h ${String(x%60).padStart(2,'0')}`;
+  const cur=slots.find(([a,b])=>m>=a&&m<b), next=slots.find(([a])=>m<a);
+  const st=document.getElementById('status');
+  st.querySelector('span').textContent=cur?`Ouvert, jusqu’à ${fmt(cur[1])}`:next?`Fermé, ouvre à ${fmt(next[0])}`:day===0?'Fermé, réouverture mardi midi':day===1?'Fermé le lundi, ouvre mardi à 11 h 30':'Fermé, ouvre demain à 11 h 30';
+  if(cur)st.classList.add('open');
+  const t=document.querySelector(`#hours li[data-d="${day}"]`); if(t)t.classList.add('today');
+
+  // tablée builder, prices from the delivery menu
+  const groups=[
+    ['Grillades',[['poulet','½ poulet churrasco',13.9],['febras','Febras grillées',12.9],['poitrine','Poitrine grillée',12.9],['travers','Travers de porc',13.9],['mix','Mix complet',15.9]]],
+    ['Entrées',[['accras','Accras de morue',5.8],['chorizo','Chorizo grillé entier',9.5]]],
+    ['Desserts et boissons',[['nata','Pastéis de nata',5.5],['pudim','Pudim maison',5.5],['biere','Super Bock ou Sagres',3],['sumol','Sumol ou Compal',2.9]]]
+  ];
+  const q={poulet:2}, eur=n=>n.toFixed(2).replace('.',',')+' €', items=groups.flatMap(g=>g[1]);
+  const pk=document.getElementById('picker');
+  pk.innerHTML=groups.map(([g,list])=>`<h3>${g}</h3>`+list.map(([id,n,p])=>`<div class="row"><span class="n" id="n-${id}">${n}</span><span class="p num">${eur(p)}</span><span class="step" role="group" aria-labelledby="n-${id}"><button type="button" data-id="${id}" data-v="-1" aria-label="Retirer : ${n}">−</button><output class="num" id="q-${id}">0</output><button type="button" data-id="${id}" data-v="1" aria-label="Ajouter : ${n}">+</button></span></div>`).join('')).join('');
+  let ppl=2;
+  const render=()=>{
+    document.getElementById('ppl-out').textContent=ppl;
+    document.querySelector('[data-ppl="-1"]').disabled=ppl<=1;
+    let tot=0, lines=[];
+    items.forEach(([id,n,p])=>{const v=q[id]||0;document.getElementById('q-'+id).textContent=v;document.querySelector(`[data-id="${id}"][data-v="-1"]`).disabled=!v;if(v){tot+=v*p;lines.push([v,n,v*p])}});
+    document.getElementById('tk-list').innerHTML=lines.length?lines.map(([v,n,s])=>`<li><span>${v} × ${n}</span><span>${eur(s)}</span></li>`).join(''):'<li class="empty">Rien pour l’instant. Ajoutez un plat.</li>';
+    document.getElementById('tk-total').textContent=eur(tot);
+    const body=`Bonjour,\n\nNous sommes ${ppl}. Nous aimerions commander :\n`+lines.map(([v,n])=>`- ${v} × ${n}`).join('\n')+`\n\nTotal estimé : ${eur(tot)}\nNom :\nHeure de passage :\n\nMerci !`;
+    document.getElementById('tk-mail').href='mailto:asdupoulet@orange.fr?subject='+encodeURIComponent('Commande à emporter')+'&body='+encodeURIComponent(body);
+  };
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b)return;
+    if(b.dataset.ppl){ppl=Math.max(1,Math.min(30,ppl+ +b.dataset.ppl));q.poulet=ppl;render()}
+    else if(b.dataset.id){q[b.dataset.id]=Math.max(0,(q[b.dataset.id]||0)+ +b.dataset.v);render()}
+  });
+  render();
+})();
+</script>
+</body>
+</html>
