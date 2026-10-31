@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kastoori — cuisine indienne, place Gustave-Toudouze, Paris 9e</title>
+<meta name="description" content="Kastoori, restaurant indien sur la place Gustave-Toudouze (Paris 9e) depuis 1999 : thalis, tandoor, currys, terrasse sur la place. Apportez votre bouteille.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f9fa; --surface:#ecf0f2; --ink:#1f3038; --muted:#4f5e65;
+  --accent:#0d7480; --accent-press:#0a5d67; --accent-ink:#fff;
+  --plaque:#1d4757; --plaque-frame:#2f6b5e;
+  --step-small:clamp(.875rem,.84rem + .1vw,.9375rem);
+  --step-body:clamp(1.0625rem,1.02rem + .25vw,1.25rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2.4rem,1.4rem + 3.4vw,4.25rem);
+  --step-display:clamp(3.6rem,1.2rem + 8.2vw,8rem);
+  --m:6vw; --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.6 "Literata",Georgia,serif;font-optical-sizing:auto;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{padding-inline:var(--m)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* demo bar */
+.demo{background:var(--surface);color:var(--muted);font-size:var(--step-small);text-align:center;padding:.5rem var(--m);line-height:1.4}
+
+/* nav */
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1.25rem var(--m);font-size:.95rem}
+.nav a{text-decoration:none}
+.nav .left{display:flex;gap:1.5rem}
+.nav .left a:hover{text-decoration:underline}
+.word{font-weight:600;font-size:1.35rem;letter-spacing:-.01em}
+.nav .right{justify-self:end}
+
+/* buttons (Mercury pills) */
+.btn{display:inline-flex;align-items:center;gap:.55rem;height:3rem;padding:0 1.4rem;border-radius:32px;font:500 1rem/1 "Literata",serif;text-decoration:none;transition:background .2s,transform .2s var(--ease),color .2s;cursor:pointer;border:0}
+.btn svg{width:1.05em;height:1.05em;flex:none}
+.btn-p{background:var(--accent);color:var(--accent-ink)}
+.btn-p:hover{background:var(--accent-press)}
+.btn-s{background:rgba(13,116,128,.1);color:var(--ink)}
+.btn-s:hover{background:rgba(13,116,128,.18)}
+.btn:active{transform:scale(.97)}
+.btn-sm{height:2.5rem;padding:0 1.1rem;font-size:.95rem}
+
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:repeat(12,1fr);column-gap:1.25rem;padding:0 var(--m);min-height:calc(100svh - 7rem);grid-template-rows:auto auto auto 1fr}
+.hero .ph-s{grid-column:10/13;grid-row:1;align-self:end;margin-top:2vh}
+.hero .ph-s img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.hero h1{grid-column:1/13;grid-row:2;font-size:var(--step-display);line-height:1;letter-spacing:-.035em;font-weight:500;margin-top:1.25rem}
+.lines .line{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.lines [data-line]{display:block}
+.hero .l1{padding-left:calc(100%/12)}
+.hero .l2{padding-left:calc(100%/12*5)}
+.hero .ph-t{grid-column:2/6;grid-row:3/5;margin-top:1.5rem;overflow:hidden;max-height:62vh}
+.hero .ph-t img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.hero .copy{grid-column:6/12;grid-row:3;padding-top:1.75rem;max-width:40ch}
+.hero .copy p{font-size:var(--step-lead);line-height:1.4}
+.hero .acts{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.hero .plaque-mini{grid-column:2/5;grid-row:1;align-self:end;justify-self:start;padding:1.1rem 1.6rem 1rem}
+
+/* the Paris street plaque */
+.plaque{background:var(--plaque);color:#fff;border:6px solid var(--plaque-frame);outline:3px solid #fff;outline-offset:-12px;padding:1.6rem 1.6rem 1.4rem;text-align:center;font-family:"Literata",serif;text-transform:uppercase;line-height:1.05}
+.plaque .arr{display:inline-block;font-size:.85rem;letter-spacing:.04em;margin-bottom:.55rem;font-weight:500}
+.plaque .arr sup{font-size:.6em;text-transform:lowercase}
+.plaque .kind{display:block;font-size:.95rem;letter-spacing:.06em;font-weight:500}
+.plaque .name{display:block;font-size:clamp(1.5rem,1rem + 1.6vw,2.4rem);letter-spacing:.01em;font-weight:600;margin-top:.15rem}
+.plaque .who{display:block;text-transform:none;font-size:.85rem;margin-top:.6rem;font-style:italic;opacity:.92}
+
+/* sections */
+section{scroll-margin-top:1rem}
+.sec{padding-block:clamp(6rem,4rem + 8vw,12rem) 0}
+
+/* menu: statement, table pushed right */
+.menu h2{font-size:var(--step-head);line-height:.98;padding-left:3vw;max-width:16ch}
+.menu .grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:1.25rem;margin-top:6rem;align-items:end}
+.menu .side{grid-column:1/6;grid-row:1;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;gap:3rem}
+.menu .side .second{width:52%;margin-left:auto}
+.menu .side .second img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.menu .side .first img{width:78%;aspect-ratio:4/5;object-fit:cover}
+.menu .side p{margin-top:1rem;font-size:var(--step-small);color:var(--muted);max-width:30ch}
+.menu .tbl{grid-column:7/13}
+.menu .grp{font-size:var(--step-small);color:var(--muted);font-style:italic;margin:2.75rem 0 .75rem}
+.menu .grp:first-child{margin-top:0}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{display:grid;grid-template-columns:1fr auto;gap:1rem;padding:.55rem 0;font-size:1.0625rem;line-height:1.4}
+.menu li span:last-child{color:var(--muted);text-align:right;font-style:italic;font-size:.95rem}
+.menu .note{margin-top:2.5rem;font-size:var(--step-small);color:var(--muted)}
+
+/* BYOB live thing */
+.byob{background:var(--surface);margin-top:clamp(6rem,4rem + 8vw,12rem);padding-block:clamp(4.5rem,3rem + 5vw,8rem)}
+.byob .in{display:grid;grid-template-columns:repeat(12,1fr);column-gap:1.25rem;row-gap:2.5rem}
+.byob .head{grid-column:1/6}
+.byob h2{font-size:var(--step-head)}
+.byob .head p{margin-top:1.5rem;max-width:36ch}
+.byob .ph{grid-column:1/5;margin-top:1rem}
+.byob .ph img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.byob .tool{grid-column:7/13;grid-row:1/3}
+.byob fieldset{border:0;margin:0;padding:0}
+.byob legend{font-size:var(--step-lead);font-weight:500;padding:0;margin-bottom:1.25rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{display:inline-flex;align-items:center;height:2.75rem;padding:0 1.15rem;border-radius:32px;background:var(--bg);cursor:pointer;transition:background .2s,color .2s,transform .2s var(--ease);font-size:1rem}
+.chips label:hover{background:#fff}
+.chips input:checked+label{background:var(--ink);color:#fff}
+.chips input:focus-visible+label{outline:2px solid var(--accent);outline-offset:3px}
+.chips label:active{transform:scale(.97)}
+.pair{margin-top:2.25rem;background:var(--bg);padding:clamp(1.5rem,1rem + 2vw,2.5rem);min-height:15rem}
+.pair .dish{font-size:var(--step-small);color:var(--muted);font-style:italic}
+.pair .bottle{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.5rem);line-height:1.1;letter-spacing:-.02em;font-weight:500;margin-top:.5rem}
+.pair .why{margin-top:1rem;max-width:46ch}
+.pair .alt{margin-top:1.25rem;font-size:var(--step-small);color:var(--muted)}
+.pair.swap .bottle,.pair.swap .why{animation:fadeup .5s var(--ease)}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.byob .rule{margin-top:1.5rem;font-size:var(--step-small);color:var(--muted)}
+
+/* place: wide photo, plaque tile, facts */
+.place h2{font-size:var(--step-head)}
+.place .lead{margin-top:1.5rem;font-size:var(--step-lead);line-height:1.45;max-width:34ch}
+.place .mosaic{display:grid;grid-template-columns:repeat(12,1fr);column-gap:1rem;margin-top:4.5rem;align-items:start}
+.place .wide{grid-column:1/9;position:relative}
+.place .wide img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.place .wide .over{position:absolute;top:0;right:0;width:min(340px,48%);background:var(--bg);padding:1.25rem 1.25rem 1.4rem;font-size:1rem;line-height:1.55}
+.place .tile{grid-column:9/13}
+.place .tile .plaque{padding:2.4rem 1.4rem 2rem}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 1.25rem;margin:2rem 0 0;font-size:var(--step-small)}
+.facts dt{color:var(--muted);font-style:italic}
+.facts dd{margin:.2rem 0 0;font-size:1.0625rem;line-height:1.35}
+.place .cap{margin-top:.75rem;font-size:var(--step-small);color:var(--muted)}
+
+/* hours + contact band */
+.visit .in{display:grid;grid-template-columns:repeat(12,1fr);column-gap:1.25rem;row-gap:3rem}
+.visit .say{grid-column:1/6}
+.visit .say h2{font-size:var(--step-head)}
+.visit .say p{margin-top:1.5rem;max-width:34ch}
+.visit .hours{grid-column:7/13}
+.visit .hours h3{font-size:var(--step-lead);margin-bottom:1rem}
+.visit table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.visit td{padding:.55rem 0;vertical-align:top}
+.visit td:last-child{text-align:right}
+.visit .hnote{margin-top:1rem;font-size:var(--step-small);color:var(--muted)}
+.visit .pic{grid-column:1/4}
+.visit .pic img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.visit .reach{grid-column:4/8;align-self:end}
+.visit .reach a.big{display:block;font-size:clamp(1.3rem,1.05rem + 1vw,1.85rem);line-height:1.3;margin-bottom:.35rem;text-decoration-thickness:1px}
+.visit .reach a.big:hover{color:var(--accent)}
+.visit .reach .city{margin-top:1rem;font-size:var(--step-small);color:var(--muted)}
+.visit .map{grid-column:8/13;background:var(--surface);aspect-ratio:4/3}
+.visit .map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.6)}
+
+/* footer */
+.foot{margin-top:clamp(6rem,4rem + 8vw,12rem);background:var(--plaque);color:#eef4f5;padding:4rem var(--m) 2rem;overflow:hidden}
+.foot .big{font-size:clamp(4rem,1rem + 15vw,15rem);font-weight:500;letter-spacing:-.045em;line-height:.85;margin:0 0 4rem}
+.foot .row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:1.25rem;row-gap:2rem}
+.foot .places{grid-column:1/7;list-style:none;margin:0;padding:0}
+.foot .places a{font-size:clamp(1.4rem,1.1rem + 1vw,2.1rem);text-decoration:none;line-height:1.35;color:#fff}
+.foot .places a:hover{text-decoration:underline}
+.foot .cols{grid-column:8/13;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;font-size:.95rem;line-height:1.7}
+.foot .cols a{text-decoration:none}
+.foot .cols a:hover{text-decoration:underline}
+.foot .cols p{color:#b9cdd2}
+.foot .legal{display:flex;justify-content:space-between;gap:1rem;margin-top:5rem;font-size:.875rem;color:#b9cdd2}
+
+/* reveal */
+@media (prefers-reduced-motion:no-preference){
+  .js .lines [data-line]{transform:translateY(105%);animation:line-up 950ms var(--ease) forwards;animation-delay:calc(var(--i)*110ms + 150ms)}
+  .js .hero .copy,.js .hero .ph-s,.js .hero .ph-t,.js .hero .plaque-mini{opacity:0;animation:fade 900ms var(--ease) forwards;animation-delay:520ms}
+  .js .hero .ph-t{animation-delay:400ms}
+  .js [data-r]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--d,0)*80ms)}
+  .js [data-r].in-view{opacity:1;transform:none}
+  .hero .ph-t img{animation:drift 22s ease-in-out infinite alternate}
+}
+@keyframes line-up{to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes drift{from{transform:scale(1)}to{transform:scale(1.07)}}
+
+/* phone */
+@media (max-width:760px){
+  :root{--m:20px}
+  .nav{grid-template-columns:1fr auto;padding-block:1rem}
+  .nav .left{display:none}
+  .nav .word{justify-self:start}
+  .hero{grid-template-columns:repeat(12,1fr);min-height:0;grid-template-rows:auto}
+  .hero .ph-s{grid-column:6/13;grid-row:1;margin-top:.5rem}
+  .hero h1{grid-row:2;font-size:14vw;margin-top:1rem}
+  .hero .l1{padding-left:0}
+  .hero .l2{padding-left:10vw}
+  .hero .copy{grid-column:1/13;grid-row:3;padding-top:1.25rem;max-width:none}
+  .hero .copy p{font-size:1.125rem}
+  .hero .ph-t{grid-column:1/10;grid-row:4;max-height:none;margin-top:2.25rem}
+  .hero .plaque-mini{grid-column:1/6;grid-row:1;align-self:end;justify-self:stretch;padding:.7rem .4rem .6rem;border-width:4px;outline-offset:-9px}
+  .hero .plaque-mini .arr{font-size:.6rem;margin-bottom:.25rem}.hero .plaque-mini .kind{font-size:.65rem}.hero .plaque-mini .name{font-size:.95rem}
+  .menu .side{gap:2rem}
+  .menu .side .first img{width:100%}
+  .menu .side .second{width:60%}
+  .foot .big{font-size:27vw}
+  .menu h2{padding-left:0;font-size:9.5vw}
+  .menu .grid{margin-top:3rem}
+  .menu .tbl{grid-column:1/13;grid-row:1}
+  .menu .side{grid-column:5/13;grid-row:2;margin-top:3.5rem}
+  .byob .head,.byob .tool{grid-column:1/13;grid-row:auto}
+  .byob .ph{grid-column:1/9;grid-row:auto}
+  .byob h2,.place h2,.visit .say h2{font-size:9.5vw}
+  .place .lead{font-size:1.125rem}
+  .place .mosaic{margin-top:2.5rem;row-gap:2rem}
+  .place .wide,.place .tile{grid-column:1/13}
+  .place .wide img{aspect-ratio:4/3}
+  .place .wide .over{position:static;width:auto;padding:1.25rem 0 0;background:none}
+  .visit .say,.visit .hours,.visit .map{grid-column:1/13}
+  .visit .pic{grid-column:1/5;align-self:start}
+  .visit .reach{grid-column:5/13;align-self:start}
+  .visit .reach a.big{font-size:1.1rem;word-break:break-word}
+  .foot .places,.foot .cols{grid-column:1/13}
+  .foot .big{margin-bottom:2.5rem}
+  .foot .legal{flex-direction:column;margin-top:3rem}
+}
+@media (min-width:761px) and (max-width:1100px){
+  .hero .ph-t{grid-column:1/6}
+  .hero .copy{grid-column:6/13}
+  .place .wide .over{width:min(300px,56%)}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<header class="nav">
+  <nav class="left" aria-label="Sections">
+    <a href="#carte">La carte</a>
+    <a href="#place">La terrasse</a>
+    <a href="#venir">Horaires</a>
+  </nav>
+  <a class="word" href="#top" aria-label="Kastoori, haut de page">Kastoori</a>
+  <div class="right"><a class="btn btn-p btn-sm" href="tel:+33144530610">Réserver</a></div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h-hero">
+    <figure class="ph-s" style="margin-inline:0;margin-bottom:0">
+      <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=900&h=563&fit=crop&q=75" width="900" height="563" alt="Curry au beurre servi en cassolette, avec riz et naan">
+    </figure>
+    <h1 id="h-hero" class="lines">
+      <span class="line l1"><span data-line style="--i:0">Kastoori,</span></span>
+      <span class="line l2"><span data-line style="--i:1">sur la place.</span></span>
+    </h1>
+    <div class="ph-t">
+      <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=900&h=1125&fit=crop&q=75" width="900" height="1125" alt="Plusieurs currys indiens en marmites de cuivre, vus du dessus">
+    </div>
+    <div class="copy">
+      <p>Cuisine indienne au 4, place Gustave-Toudouze, depuis 1999. Thalis, tandoor, terrasse sur la place, et votre bouteille si vous l’apportez.</p>
+      <div class="acts">
+        <a class="btn btn-p" href="tel:+33144530610"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler le 01 44 53 06 10</a>
+        <a class="btn btn-s" href="https://www.google.com/maps/dir/?api=1&destination=Kastoori%2C+4+Place+Gustave+Toudouze%2C+75009+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+      </div>
+    </div>
+    <div class="plaque plaque-mini" aria-hidden="true">
+      <span class="arr">9<sup>e</sup> arr<sup>t</sup></span>
+      <span class="kind">Place</span>
+      <span class="name">Gustave Toudouze</span>
+    </div>
+  </section>
+
+  <section class="sec menu wrap" id="carte" aria-labelledby="h-carte">
+    <h2 id="h-carte" data-r>La carte, du tandoor au thali</h2>
+    <div class="grid">
+      <div class="tbl" data-r style="--d:1">
+        <p class="grp">Les thalis, un plateau complet</p>
+        <ul>
+          <li><span>Thali végétarien</span><span>plusieurs préparations</span></li>
+          <li><span>Thali au poulet</span><span>riz, naan</span></li>
+          <li><span>Thali à l’agneau</span><span>riz, naan</span></li>
+        </ul>
+        <p class="grp">Du four tandoor</p>
+        <ul>
+          <li><span>Poulet tandoori</span><span>mariné, grillé</span></li>
+          <li><span>Brochettes de poulet</span><span>en entrée</span></li>
+          <li><span>Cheese naan</span><span>le classique</span></li>
+        </ul>
+        <p class="grp">Les currys</p>
+        <ul>
+          <li><span>Butter chicken</span><span>sauce tomate et beurre</span></li>
+          <li><span>Poulet tikka masala</span><span>épicé doux</span></li>
+          <li><span>Poulet korma</span><span>crème et noix</span></li>
+          <li><span>Agneau cajou et amandes</span><span>servi en cassolette</span></li>
+          <li><span>Palak paneer</span><span>épinards, fromage frais</span></li>
+          <li><span>Dal</span><span>lentilles mijotées</span></li>
+        </ul>
+        <p class="grp">À boire, sans alcool</p>
+        <ul>
+          <li><span>Lassi</span><span>au yaourt</span></li>
+          <li><span>Chai</span><span>thé aux épices</span></li>
+          <li><span>Jus de fruits frais</span><span>frais</span></li>
+        </ul>
+        <p class="note">Extraits de la carte. Formule déjeuner en semaine, plats à emporter : demandez au comptoir.</p>
+      </div>
+      <div class="side" data-r style="--d:2">
+      <figure class="first" style="margin:0">
+        <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=800&h=1000&fit=crop&q=75" width="800" height="1000" alt="Paneer en sauce orangée sur riz basmati">
+        <figcaption><p>La cuisine est ouverte sur la salle : on voit les plats partir du feu.</p></figcaption>
+      </figure>
+      <figure class="second" style="margin:0">
+        <img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=600&h=600&fit=crop&q=75" width="600" height="600" alt="Bol de riz basmati entre deux currys">
+      </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="byob" id="bouteille" aria-labelledby="h-byob">
+    <div class="in wrap">
+      <div class="head" data-r>
+        <h2 id="h-byob">Vous apportez la bouteille</h2>
+        <p>Kastoori ne sert pas d’alcool. Passez chez votre caviste, venez avec votre vin : on le débouche à table contre un petit droit de bouchon.</p>
+      </div>
+      <div class="ph" data-r style="--d:1">
+        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&h=800&fit=crop&q=75" width="800" height="800" alt="Curry de viande à la coriandre fraîche, dans une poêle en fonte">
+      </div>
+      <div class="tool" data-r style="--d:2">
+        <fieldset>
+          <legend>Que commandez-vous ?</legend>
+          <div class="chips" id="chips">
+            <input type="radio" name="dish" id="d-butter" value="butter" checked><label for="d-butter">Butter chicken</label>
+            <input type="radio" name="dish" id="d-tikka" value="tikka"><label for="d-tikka">Tikka masala</label>
+            <input type="radio" name="dish" id="d-tandoori" value="tandoori"><label for="d-tandoori">Tandoori</label>
+            <input type="radio" name="dish" id="d-agneau" value="agneau"><label for="d-agneau">Agneau, korma</label>
+            <input type="radio" name="dish" id="d-veg" value="veg"><label for="d-veg">Palak paneer, dal</label>
+            <input type="radio" name="dish" id="d-thali" value="thali"><label for="d-thali">Un thali</label>
+          </div>
+        </fieldset>
+        <div class="pair" id="pair" aria-live="polite">
+          <p class="dish" id="p-dish">Avec un butter chicken</p>
+          <p class="bottle" id="p-bottle">Un blanc rond et parfumé</p>
+          <p class="why" id="p-why">Viognier, chenin demi-sec ou pinot gris : un peu de gras et de fruit pour répondre à la sauce beurre-tomate, sans tanin qui durcirait les épices.</p>
+          <p class="alt" id="p-alt">Sans alcool : un lassi.</p>
+        </div>
+        <p class="rule">Nos suggestions, pas une règle : venez avec ce que vous aimez.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec place wrap" id="place" aria-labelledby="h-place">
+    <h2 id="h-place" data-r>Une terrasse sur la place</h2>
+    <p class="lead" data-r style="--d:1">Une petite place triangulaire du 9<sup>e</sup>, au bout de la rue Clauzel, à deux pas de la rue des Martyrs. Les tables sortent dès les beaux jours.</p>
+    <div class="mosaic">
+      <figure class="wide" data-r style="--d:1;margin:0">
+        <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1400&h=875&fit=crop&q=75" width="1400" height="875" alt="Tables de terrasse dressées sur une rue pavée de Paris">
+        <p class="over">L’hiver, la terrasse se ferme et se chauffe : on dîne dehors, au sec. Aux beaux soirs, appelez avant de venir.</p>
+      </figure>
+      <div class="tile" data-r style="--d:2">
+        <div class="plaque" role="img" aria-label="Plaque de rue : Place Gustave Toudouze, 9e arrondissement">
+          <span class="arr">9<sup>e</sup> arr<sup>t</sup></span>
+          <span class="kind">Place</span>
+          <span class="name">Gustave Toudouze</span>
+          <span class="who">écrivain, 1847-1904</span>
+        </div>
+        <dl class="facts">
+          <div><dt>Adresse</dt><dd>4, place Gustave-Toudouze</dd></div>
+          <div><dt>Métro</dt><dd>Saint-Georges (ligne 12)</dd></div>
+          <div><dt>Sur la place</dt><dd>depuis 1999</dd></div>
+          <div><dt>À deux pas</dt><dd>la rue des Martyrs</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec visit wrap" id="venir" aria-labelledby="h-venir">
+    <div class="in">
+      <div class="say" data-r>
+        <h2 id="h-venir">Midi et soir, sur la place</h2>
+        <p>Une table en terrasse, un thali à emporter, un groupe à placer : le plus simple reste d’appeler.</p>
+      </div>
+      <div class="hours" data-r style="--d:1">
+        <h3>Horaires</h3>
+        <table>
+          <caption class="sr">Horaires d’ouverture</caption>
+          <tbody>
+            <tr><td>Déjeuner</td><td>12 h – 14 h 30</td></tr>
+            <tr><td>Dîner</td><td>19 h – 23 h</td></tr>
+          </tbody>
+        </table>
+        <p class="hnote">Horaires à confirmer par téléphone, surtout le lundi et les jours fériés.</p>
+      </div>
+      <div class="pic" data-r>
+        <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&h=600&fit=crop&q=75" width="600" height="600" alt="Tasse de thé aux épices, cardamome et cannelle autour">
+      </div>
+      <div class="reach" data-r style="--d:1">
+        <a class="big" href="tel:+33144530610">01 44 53 06 10</a>
+        <a class="big" href="mailto:kastoori@outlook.com?subject=R%C3%A9servation%20chez%20Kastoori&body=Bonjour%2C%0A%0AJe%20souhaite%20r%C3%A9server%20une%20table%20pour%20%5Bnombre%5D%20personnes%20le%20%5Bdate%5D%20%C3%A0%20%5Bheure%5D%2C%20si%20possible%20en%20terrasse.%0A%0AMerci%20!">kastoori@outlook.com</a>
+        <a class="big" href="https://www.facebook.com/Kastoori/" target="_blank" rel="noopener">Facebook</a>
+        <p class="city">4, place Gustave-Toudouze, 75009 Paris</p>
+      </div>
+      <div class="map" data-r style="--d:2">
+        <iframe title="Kastoori sur Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kastoori,+4+Place+Gustave+Toudouze,+75009+Paris&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="big" aria-hidden="true">Kastoori</p>
+  <div class="row">
+    <ul class="places">
+      <li><a href="tel:+33144530610">01 44 53 06 10</a></li>
+      <li><a href="mailto:kastoori@outlook.com">kastoori@outlook.com</a></li>
+      <li><a href="https://www.google.com/maps/dir/?api=1&destination=Kastoori%2C+4+Place+Gustave+Toudouze%2C+75009+Paris" target="_blank" rel="noopener">4, place Gustave-Toudouze</a></li>
+    </ul>
+    <div class="cols">
+      <div><a href="#carte">La carte</a><br><a href="#bouteille">Votre bouteille</a><br><a href="#place">La terrasse</a><br><a href="#venir">Horaires</a></div>
+      <div><p>Cuisine indienne<br>Paris 9<sup>e</sup>, métro Saint-Georges<br>Sur place et à emporter</p></div>
+    </div>
+  </div>
+  <div class="legal"><span>Démo réalisée par Raul Hatos — site non officiel. Photos : Unsplash.</span><a href="#top">Haut de page</a></div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var io='IntersectionObserver' in window ? new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'}) : null;
+  document.querySelectorAll('[data-r]').forEach(function(el){io?io.observe(el):el.classList.add('in-view')});
+
+  var P={
+    butter:['Avec un butter chicken','Un blanc rond et parfumé','Viognier, chenin demi-sec ou pinot gris : un peu de gras et de fruit pour répondre à la sauce beurre-tomate, sans tanin qui durcirait les épices.','Sans alcool : un lassi.'],
+    tikka:['Avec un poulet tikka masala','Un blanc aromatique','Gewurztraminer ou riesling d’Alsace : le fruit et une pointe de sucre calment le piquant et accompagnent la sauce.','Sans alcool : un lassi.'],
+    tandoori:['Avec un poulet tandoori','Un rosé de caractère ou un rouge léger','Tavel, ou un gamay servi frais : assez de fruit pour la marinade, assez de fraîcheur pour la braise du four.','Sans alcool : un jus de fruits frais.'],
+    agneau:['Avec l’agneau ou un korma','Un rouge souple, peu tannique','Pinot noir, côtes-du-rhône ou grenache : la rondeur suit la crème et les fruits secs sans écraser les épices douces.','Sans alcool : un lassi.'],
+    veg:['Avec un palak paneer ou un dal','Un blanc sec et vif','Riesling sec, sauvignon de Loire ou grüner veltliner : la fraîcheur répond aux épinards et aux lentilles.','Sans alcool : un chai.'],
+    thali:['Avec un thali','Un blanc demi-sec, qui va avec tout','Un thali passe du doux au piquant en une bouchée : chenin demi-sec ou pinot gris suivent tout le plateau.','Sans alcool : un lassi, partagé.']
+  };
+  var box=document.getElementById('pair'),ids=['p-dish','p-bottle','p-why','p-alt'];
+  document.getElementById('chips').addEventListener('change',function(e){
+    var v=P[e.target.value];if(!v)return;
+    ids.forEach(function(id,i){document.getElementById(id).textContent=v[i]});
+    box.classList.remove('swap');void box.offsetWidth;box.classList.add('swap');
+  });
+})();
+</script>
+</body>
+</html>
