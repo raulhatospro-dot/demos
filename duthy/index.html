@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Duthy, pâtisserie à Ivry-sur-Seine</title>
+<meta name="description" content="Duthy, pâtisserie au 58 avenue Maurice Thorez à Ivry-sur-Seine : macarons, gâteaux d'anniversaire et pièces sur commande.">
+<!-- DESIGN.md « Clay » (awesome-design) : toile claire, encre presque noire, champs de couleur saturés pleine largeur, rayons généreux et pilules.
+     Couleurs reprises du sujet : les quatre parfums de macarons cités par Gault&Millau. Un seul motif : le macaron, qui sert de masque, de bouton et de sélecteur. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#fbf8f4; --soft:#f3eee7; --ink:#1c1512; --body:#2e2622;
+  --pink:#d81b60; --pink-soft:#ffd9e4;
+  --field:#dcae90; --field-ink:#1c1512; --field-soft:rgba(28,21,18,.8);
+  --m:clamp(16px,4vw,56px); --max:1320px;
+  --r-xl:28px; --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--canvas);color:var(--ink);font:400 17px/1.55 Gabarito,system-ui,sans-serif;}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1.5px}
+::selection{background:var(--pink);color:#fff}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--m)}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.95;text-wrap:balance}
+h2{font-size:clamp(40px,6.4vw,92px)}
+.lead{font-size:clamp(18px,1.6vw,21px);max-width:34ch;line-height:1.45}
+
+/* boutons : pilules, une seule couleur */
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;font:600 16px/1 Gabarito,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.97)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#3a2c26}
+.btn-soft{background:var(--soft);color:var(--ink)}
+.btn-soft:hover{background:#e9e2d8}
+.btn-pink{background:var(--pink);color:#fff}
+.btn-pink:hover{background:#b8154f}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.word{font-weight:900;font-size:28px;letter-spacing:-.04em;text-decoration:none}
+.nav ul{display:flex;gap:28px;list-style:none;font-weight:500}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline}
+.nav .btn{height:44px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;min-height:calc(100svh - 110px);padding-bottom:56px}
+.hero h1{font-size:clamp(64px,10.5vw,152px);font-weight:900;letter-spacing:-.045em;line-height:.86}
+.hero h1 span{display:block;font-size:.36em;font-weight:700;letter-spacing:-.03em;line-height:1;margin-top:.35em}
+.hero .lead{margin-top:32px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;font-weight:500;font-size:15px}
+.status{display:inline-flex;align-items:center;gap:8px}
+.status i{width:10px;height:10px;border-radius:50%;background:#9a9089}
+.status.open i{background:#2f9e57;box-shadow:0 0 0 4px rgba(47,158,87,.18)}
+.stars{display:inline-flex;align-items:center;gap:6px}
+.stars svg{width:16px;height:16px;fill:var(--ink)}
+.hero-art{position:relative;aspect-ratio:1;width:min(100%,640px);justify-self:end}
+.hero-photo{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--soft)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:drift 18s var(--ease) infinite alternate}
+@keyframes drift{to{transform:scale(1.12) translate(-2%,1%)}}
+.hero-mac{position:absolute;width:38%;left:-8%;bottom:-2%;filter:drop-shadow(0 18px 24px rgba(28,21,18,.22));transition:transform .5s var(--ease)}
+.hero-mac:hover{transform:rotate(-8deg) scale(1.04)}
+.hero-cap{position:absolute;right:4%;top:6%;background:var(--canvas);border-radius:999px;padding:10px 16px;font-weight:600;font-size:14px;box-shadow:0 8px 20px rgba(28,21,18,.12)}
+
+/* macarons : le champ prend la couleur du parfum choisi */
+.flav{background:var(--field);color:var(--field-ink);transition:background-color .6s var(--ease),color .4s;padding:clamp(88px,11vw,160px) 0}
+.flav-head{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:end}
+.flav-head p{color:var(--field-soft);font-size:19px;max-width:40ch}
+.quote{margin-top:18px;font-size:clamp(22px,2.2vw,30px);font-weight:600;line-height:1.2;letter-spacing:-.015em;max-width:24ch}
+.quote cite{display:block;font-style:normal;font-size:15px;font-weight:500;margin-top:10px;letter-spacing:0;color:var(--field-soft)}
+.flav-body{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);margin-top:clamp(56px,7vw,96px);align-items:center}
+.stage{position:relative;aspect-ratio:1;max-width:520px;width:100%}
+.stage svg{width:100%;height:100%;transition:transform .7s var(--ease)}
+.stage.pop svg{animation:pop .7s var(--ease)}
+@keyframes pop{0%{transform:rotate(-14deg) scale(.86)}100%{transform:none}}
+.flav-name{font-size:clamp(40px,5vw,72px);font-weight:800;letter-spacing:-.04em;line-height:.95}
+.flav-note{margin-top:16px;font-size:20px;max-width:30ch;color:var(--field-soft)}
+.picker{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:36px;max-width:520px}
+.pick{background:none;border:0;cursor:pointer;color:inherit;font:600 14px/1.2 Gabarito,sans-serif;display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 4px 12px;border-radius:20px;transition:background-color .25s,transform .25s var(--ease)}
+.pick svg{width:64px;height:64px;transition:transform .35s var(--ease)}
+.pick:hover svg{transform:translateY(-4px) rotate(-6deg)}
+.pick[aria-pressed=true]{background:rgba(255,255,255,.4)}
+.box{margin-top:32px;background:rgba(255,255,255,.32);border-radius:var(--r-xl);padding:22px 22px 24px;max-width:520px}
+.box-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:600}
+.box-top span{font-weight:500;color:var(--field-soft);font-size:15px}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:16px 0 18px}
+.slot{aspect-ratio:1;border-radius:50%;background:rgba(28,21,18,.1);display:grid;place-items:center;border:0;padding:0;cursor:pointer}
+.slot svg{width:100%;height:100%;animation:drop .45s var(--ease)}
+@keyframes drop{from{transform:translateY(-18px) scale(.6);opacity:0}}
+.slot:disabled{cursor:default}
+.box-actions{display:flex;flex-wrap:wrap;gap:10px}
+.flav .btn-soft{background:var(--ink);color:#fff}
+.flav .btn-line{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.box small{display:block;margin-top:14px;font-size:14px;color:var(--field-soft)}
+
+/* sur commande */
+.cmd{padding:clamp(96px,12vw,180px) 0}
+.cmd-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,88px);align-items:start}
+.cmd .lead{margin-top:24px}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px}
+.mosaic img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%}
+.mosaic img:first-child{grid-column:span 2;aspect-ratio:2/1;border-radius:999px}
+.since{margin-top:32px;font-size:clamp(22px,2vw,28px);font-weight:600;letter-spacing:-.015em;line-height:1.2;max-width:26ch}
+form{background:var(--soft);border-radius:var(--r-xl);padding:clamp(22px,3vw,40px)}
+form h3{font-size:clamp(28px,2.8vw,40px)}
+fieldset{border:0;margin-top:26px}
+legend,label{display:block;font-weight:600;font-size:15px;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{margin:0;display:inline-flex;align-items:center;height:44px;padding:0 18px;border-radius:999px;background:#fff;cursor:pointer;font-weight:500;transition:background-color .2s,color .2s}
+.chips input:checked+label{background:var(--ink);color:#fff}
+.chips input:focus-visible+label{outline:3px solid var(--pink);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.field{margin-top:22px}
+.row .field{margin-top:0}
+input[type=text],input[type=tel],input[type=date]{width:100%;height:52px;border:0;border-radius:14px;background:#fff;padding:0 16px;font:400 17px Gabarito,sans-serif;color:var(--ink);accent-color:var(--pink)}
+input::placeholder{color:#6f6560}
+.stepper{display:flex;align-items:center;gap:6px;background:#fff;border-radius:999px;height:52px;padding:4px;width:max-content}
+.stepper button{width:44px;height:44px;border-radius:50%;border:0;background:var(--soft);font:600 22px/1 Gabarito,sans-serif;cursor:pointer;color:var(--ink)}
+.stepper button:hover{background:#e6ded3}
+.stepper output{min-width:92px;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}
+.form-foot{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.form-note{margin-top:16px;font-size:15px;color:#4d433e}
+
+/* horaires */
+.visit{background:var(--pink-soft);padding:clamp(88px,11vw,160px) 0}
+.visit-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,88px);align-items:start;margin-top:48px}
+.hours{list-style:none;font-size:clamp(19px,1.7vw,23px)}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:14px 20px;border-radius:999px;font-variant-numeric:tabular-nums}
+.hours li.closed{color:#6b5a5f}
+.hours li.today{background:var(--ink);color:#fff;font-weight:600}
+.addr{font-size:clamp(26px,2.6vw,38px);font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.contact-list{list-style:none;margin-top:28px;display:grid;gap:12px;font-size:18px}
+.contact-list a{font-weight:600}
+.visit .actions{margin-top:28px}
+.map{margin-top:40px;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:16/9;background:#f6c9d6}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* pied */
+footer{padding:clamp(72px,9vw,128px) 0 40px}
+.big{font-size:clamp(96px,27vw,420px);font-weight:900;letter-spacing:-.06em;line-height:.8}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px;margin-top:40px;font-size:15px}
+.foot p{max-width:56ch}
+.demo{background:var(--ink);color:#fff;text-align:center;font-size:13px;line-height:1.3;padding:9px 16px}
+
+/* entrées */
+.rise{opacity:1;transform:none}
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rise{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* téléphone */
+@media (max-width:860px){
+  .nav ul{display:none}
+  .hero .wrap{grid-template-columns:1fr;min-height:0;padding-top:12px;gap:36px}
+  .hero-art{width:100%;justify-self:center}
+  .hero .actions .btn{flex:1 1 auto;justify-content:center}
+  .flav-head,.flav-body,.cmd-grid,.visit-grid{grid-template-columns:1fr}
+  .stage{max-width:300px;margin:0 auto}
+  .picker{gap:4px}
+  .pick svg{width:54px;height:54px}
+  .row{grid-template-columns:1fr}
+  .row .field{margin-top:0}
+  .hours li{padding:12px 16px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="wrap nav">
+  <a class="word" href="#top" aria-label="Duthy, accueil">Duthy</a>
+  <nav aria-label="Navigation principale"><ul>
+    <li><a href="#macarons">Macarons</a></li>
+    <li><a href="#commande">Sur commande</a></li>
+    <li><a href="#horaires">Horaires</a></li>
+  </ul></nav>
+  <a class="btn btn-ink" href="tel:+33143909900"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1 class="rise">Duthy<span>pâtisserie à Ivry-sur-Seine</span></h1>
+      <p class="lead rise">Macarons, gâteaux d'anniversaire et pièces sur commande, au 58 avenue Maurice&nbsp;Thorez.</p>
+      <div class="actions rise">
+        <a class="btn btn-ink" href="#commande">Commander un gâteau</a>
+        <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&destination=Duthy+P%C3%A2tisserie+58+avenue+Maurice+Thorez+94200+Ivry-sur-Seine" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Itinéraire</a>
+      </div>
+      <div class="meta rise">
+        <span class="status" id="status"><i></i><span>Du mercredi au samedi, dès 9 h 30</span></span>
+        <span class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>4,7 sur Google, 173 avis</span>
+      </div>
+    </div>
+    <div class="hero-art rise">
+      <div class="hero-photo"><img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=1200&q=75&auto=format&fit=crop" alt="Macarons aux couleurs pastel serrés les uns contre les autres" width="1200" height="1200" fetchpriority="high"></div>
+      <span class="hero-cap">Recommandée par Gault&amp;Millau</span>
+      <svg class="hero-mac" id="heroMac" viewBox="0 0 200 200" aria-hidden="true"></svg>
+    </div>
+  </div>
+</section>
+
+<section class="flav" id="macarons" aria-labelledby="mac-title">
+  <div class="wrap">
+    <div class="flav-head">
+      <h2 id="mac-title" class="rise">Les macarons qui ont fait parler le guide</h2>
+      <div class="rise">
+        <p class="quote">« Elle sait si bien rouler les macarons qu'on ne peut que la recommander. »<cite>Gault&amp;Millau, à propos de Duthy</cite></p>
+      </div>
+    </div>
+    <div class="flav-body">
+      <div class="stage rise" id="stage"><svg viewBox="0 0 200 200" id="bigMac" role="img" aria-label="Macaron au chocolat intense"></svg></div>
+      <div class="rise">
+        <p class="flav-name" id="flavName" aria-live="polite">Chocolat intense</p>
+        <p class="flav-note" id="flavNote">Pour celles et ceux qui ne jurent que par le cacao.</p>
+        <div class="picker" role="group" aria-label="Choisir un parfum" id="picker"></div>
+        <div class="box">
+          <div class="box-top">Votre sélection <span id="count">0 macaron</span></div>
+          <div class="slots" id="slots" aria-label="Macarons choisis, touchez-en un pour le retirer"></div>
+          <div class="box-actions">
+            <button class="btn btn-soft" type="button" id="add">Ajouter ce parfum</button>
+            <a class="btn btn-line" id="reserve" href="mailto:duthy.patisserie@gmail.com">Réserver par e-mail</a>
+          </div>
+          <small>Parfums cités par Gault&amp;Millau. La vitrine change selon les jours : la pâtisserie vous confirme ce qui est disponible.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cmd" id="commande" aria-labelledby="cmd-title">
+  <div class="wrap cmd-grid">
+    <div>
+      <h2 id="cmd-title" class="rise">Votre gâteau, sur mesure</h2>
+      <p class="lead rise">Anniversaire, baptême, fête de famille : Duthy prépare des gâteaux sur commande, décorés pour l'occasion.</p>
+      <div class="mosaic rise">
+        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=1000&q=72&auto=format&fit=crop" alt="Part de gâteau à étages, crème et cacao" width="1000" height="500">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=72&auto=format&fit=crop" alt="Gâteau au chocolat nappé et décoré de rosaces" width="600" height="600">
+        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600&q=72&auto=format&fit=crop" alt="Gâteau blanc à deux étages couvert de fruits rouges" width="600" height="600">
+      </div>
+      <p class="since rise">Dans les avis Google, des clients racontent y commander leur gâteau d'anniversaire depuis plus de dix ans.</p>
+    </div>
+
+    <form id="cakeForm" class="rise" novalidate>
+      <h3>Préparer ma demande</h3>
+      <fieldset>
+        <legend>L'occasion</legend>
+        <div class="chips">
+          <input type="radio" name="occ" id="o1" value="Anniversaire" checked><label for="o1">Anniversaire</label>
+          <input type="radio" name="occ" id="o2" value="Baptême"><label for="o2">Baptême</label>
+          <input type="radio" name="occ" id="o3" value="Mariage"><label for="o3">Mariage</label>
+          <input type="radio" name="occ" id="o4" value="Autre fête"><label for="o4">Autre fête</label>
+        </div>
+      </fieldset>
+      <div class="row">
+        <div class="field">
+          <label id="parts-l">Nombre de parts</label>
+          <div class="stepper" role="group" aria-labelledby="parts-l">
+            <button type="button" id="minus" aria-label="Une part de moins">−</button>
+            <output id="parts" aria-live="polite">10 parts</output>
+            <button type="button" id="plus" aria-label="Une part de plus">+</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="date">Pour quel jour ?</label>
+          <input type="date" id="date">
+        </div>
+      </div>
+      <div class="field">
+        <label for="gout">Parfum ou envie</label>
+        <input type="text" id="gout" placeholder="Trois chocolats, fruits rouges, à vous de proposer…">
+      </div>
+      <div class="field">
+        <label for="plaque">Inscription sur le gâteau</label>
+        <input type="text" id="plaque" placeholder="Joyeux anniversaire Lina">
+      </div>
+      <div class="row">
+        <div class="field"><label for="nom">Votre nom</label><input type="text" id="nom" autocomplete="name"></div>
+        <div class="field"><label for="tel">Votre téléphone</label><input type="tel" id="tel" autocomplete="tel"></div>
+      </div>
+      <div class="form-foot">
+        <button class="btn btn-pink" type="submit">Envoyer ma demande</button>
+        <a class="btn btn-soft" href="tel:+33143909900" style="background:#fff">01 43 90 99 00</a>
+      </div>
+      <p class="form-note">Votre messagerie s'ouvre avec la demande déjà rédigée. Le prix et le délai vous sont confirmés par la pâtisserie.</p>
+    </form>
+  </div>
+</section>
+
+<section class="visit" id="horaires" aria-labelledby="visit-title">
+  <div class="wrap">
+    <h2 id="visit-title" class="rise">Passer en boutique</h2>
+    <div class="visit-grid">
+      <div class="rise">
+        <ul class="hours" id="hours">
+          <li data-d="1" class="closed"><span>Lundi</span><span>fermé</span></li>
+          <li data-d="2" class="closed"><span>Mardi</span><span>fermé</span></li>
+          <li data-d="3"><span>Mercredi</span><span>9 h 30 – 19 h</span></li>
+          <li data-d="4"><span>Jeudi</span><span>9 h 30 – 19 h</span></li>
+          <li data-d="5"><span>Vendredi</span><span>9 h 30 – 19 h</span></li>
+          <li data-d="6"><span>Samedi</span><span>9 h 30 – 19 h 30</span></li>
+          <li data-d="0" class="closed"><span>Dimanche</span><span>fermé</span></li>
+        </ul>
+      </div>
+      <div class="rise">
+        <p class="addr">58 avenue Maurice Thorez<br>94200 Ivry-sur-Seine</p>
+        <ul class="contact-list">
+          <li>Téléphone : <a href="tel:+33143909900">01 43 90 99 00</a></li>
+          <li>E-mail : <a href="mailto:duthy.patisserie@gmail.com">duthy.patisserie@gmail.com</a></li>
+          <li>Facebook : <a href="https://www.facebook.com/duthy.patisserie" target="_blank" rel="noopener">duthy.patisserie</a></li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&destination=Duthy+P%C3%A2tisserie+58+avenue+Maurice+Thorez+94200+Ivry-sur-Seine" target="_blank" rel="noopener">Ouvrir l'itinéraire</a>
+          <a class="btn btn-soft" style="background:#fff" href="tel:+33143909900">Appeler</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big" aria-hidden="true">Duthy</p>
+    <div class="foot">
+      <p>Duthy, pâtisserie. 58 avenue Maurice Thorez, 94200 Ivry-sur-Seine. <a href="tel:+33143909900">01 43 90 99 00</a></p>
+      <p>Photographies d'illustration : Unsplash. Macarons dessinés pour cette page.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const F={
+  choc:{n:'Chocolat intense',t:'Pour celles et ceux qui ne jurent que par le cacao.',shell:'#5b3426',foot:'#4a291e',fill:'#2a1610',field:'#dcae90',ink:'#1c1512',soft:'rgba(28,21,18,.8)'},
+  matcha:{n:'Thé vert matcha',t:'L’amertume douce du thé vert japonais.',shell:'#8db35c',foot:'#7aa04b',fill:'#f1f0d8',field:'#b5d08c',ink:'#1c1512',soft:'rgba(28,21,18,.78)'},
+  sesame:{n:'Sésame noir et mandarine',t:'Le grillé du sésame, la fraîcheur de l’agrume.',shell:'#2c2a27',foot:'#1f1d1b',fill:'#f7a440',field:'#f28b2b',ink:'#1c1512',soft:'rgba(28,21,18,.8)'},
+  olive:{n:'Huile d’olive',t:'Le plus inattendu des quatre : fruité, végétal.',shell:'#d9d07a',foot:'#c7bd63',fill:'#7d7a33',field:'#e6df98',ink:'#1c1512',soft:'rgba(28,21,18,.78)'}
+};
+// macaron dessiné : coque, collerette (pied), garniture, coque
+function mac(f){
+  // macaron vu de trois quarts : coque, collerette, garniture, collerette, coque
+  const ruff=(cy)=>{let d='';for(let a=0.05;a<=Math.PI-0.05;a+=Math.PI/26)d+=`<circle cx="${(100+71*Math.cos(a)).toFixed(1)}" cy="${(cy+33*Math.sin(a)).toFixed(1)}" r="4" fill="${f.foot}"/>`;return d};
+  return `<ellipse cx="100" cy="166" rx="66" ry="10" fill="rgba(0,0,0,.16)"/>
+  <ellipse cx="100" cy="130" rx="72" ry="34" fill="${f.foot}"/>${ruff(124)}
+  <ellipse cx="100" cy="114" rx="69" ry="33" fill="${f.fill}"/>
+  ${ruff(100)}<ellipse cx="100" cy="92" rx="74" ry="36" fill="${f.shell}"/>
+  <ellipse cx="80" cy="78" rx="30" ry="10" fill="rgba(255,255,255,.18)" transform="rotate(-8 80 78)"/>`;
+}
+const keys=Object.keys(F);let cur='choc';const box=[];
+const $=id=>document.getElementById(id);
+const sec=$('macarons'),picker=$('picker');
+keys.forEach(k=>{const b=document.createElement('button');b.type='button';b.className='pick';b.dataset.k=k;b.setAttribute('aria-pressed',k===cur);
+  b.innerHTML=`<svg viewBox="0 0 200 200" aria-hidden="true">${mac(F[k])}</svg>${F[k].n.replace(' et ','<br>et ')}`;b.onclick=()=>pick(k);picker.appendChild(b)});
+function pick(k){cur=k;const f=F[k];
+  sec.style.setProperty('--field',f.field);sec.style.setProperty('--field-ink',f.ink);sec.style.setProperty('--field-soft',f.soft);
+  $('bigMac').innerHTML=mac(f);$('bigMac').setAttribute('aria-label','Macaron '+f.n.toLowerCase());
+  $('flavName').textContent=f.n;$('flavNote').textContent=f.t;
+  const s=$('stage');s.classList.remove('pop');void s.offsetWidth;s.classList.add('pop');
+  picker.querySelectorAll('.pick').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));}
+function draw(){const s=$('slots');s.innerHTML='';
+  for(let i=0;i<12;i++){const b=document.createElement('button');b.type='button';b.className='slot';
+    if(box[i]){b.innerHTML=`<svg viewBox="0 0 200 200" aria-hidden="true">${mac(F[box[i]])}</svg>`;b.setAttribute('aria-label','Retirer '+F[box[i]].n);b.onclick=()=>{box.splice(i,1);draw()}}
+    else{b.disabled=true;b.setAttribute('aria-hidden','true')}
+    s.appendChild(b)}
+  $('count').textContent=box.length+(box.length>1?' macarons':' macaron')+' sur 12';
+  $('add').disabled=box.length>=12;$('add').textContent=box.length>=12?'Boîte pleine':'Ajouter ce parfum';
+  const c={};box.forEach(k=>c[k]=(c[k]||0)+1);
+  const lines=Object.entries(c).map(([k,n])=>`- ${n} × ${F[k].n}`).join('\n');
+  $('reserve').href='mailto:duthy.patisserie@gmail.com?subject='+encodeURIComponent('Réservation de macarons')+'&body='+encodeURIComponent('Bonjour,\n\nJe voudrais réserver '+(box.length?box.length+' macarons :\n'+lines:'des macarons')+'\n\nJe passerais les chercher le : \nMon nom : \nMon téléphone : \n\nMerci !');}
+$('add').onclick=()=>{if(box.length<12){box.push(cur);draw()}};
+pick('choc');draw();
+$('heroMac').innerHTML=mac(F.sesame);
+let hi=0;$('heroMac').addEventListener('click',()=>{hi=(hi+1)%4;$('heroMac').innerHTML=mac(F[keys[hi]])});
+
+// formulaire de commande → e-mail rédigé
+let parts=10;const out=$('parts');
+const setP=n=>{parts=Math.max(4,Math.min(60,n));out.textContent=parts+' parts'};
+$('minus').onclick=()=>setP(parts-2);$('plus').onclick=()=>setP(parts+2);
+$('date').min=new Date().toISOString().slice(0,10);
+$('cakeForm').addEventListener('submit',e=>{e.preventDefault();
+  const occ=document.querySelector('input[name=occ]:checked').value,v=id=>$(id).value.trim();
+  const dt=v('date')?new Date(v('date')+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}):'à définir ensemble';
+  const body=`Bonjour,\n\nJe souhaite commander un gâteau.\n\nOccasion : ${occ}\nNombre de parts : ${parts}\nPour le : ${dt}\nParfum ou envie : ${v('gout')||'je vous laisse proposer'}\nInscription : ${v('plaque')||'aucune'}\n\nNom : ${v('nom')}\nTéléphone : ${v('tel')}\n\nPouvez-vous me confirmer le prix et le délai ?\nMerci !`;
+  location.href='mailto:duthy.patisserie@gmail.com?subject='+encodeURIComponent('Commande de gâteau : '+occ.toLowerCase())+'&body='+encodeURIComponent(body);});
+
+// ouvert maintenant ? (heure de Paris)
+(function(){const H={3:[570,1140],4:[570,1140],5:[570,1140],6:[570,1170]};
+  const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const g=t=>p.find(x=>x.type===t).value;const day={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[g('weekday')];const m=(+g('hour'))*60+(+g('minute'));
+  const li=document.querySelector(`#hours li[data-d="${day}"]`);if(li)li.classList.add('today');
+  const st=$('status'),txt=st.querySelector('span');const h=H[day];
+  const fmt=x=>Math.floor(x/60)+' h'+(x%60?' '+(x%60):'');
+  if(h&&m>=h[0]&&m<h[1]){st.classList.add('open');txt.textContent='Ouvert, jusqu’à '+fmt(h[1])}
+  else{let n=day,i=0;do{n=(n+1)%7;i++}while(!H[n]&&i<8);
+    const names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+    txt.textContent=(h&&m<h[0])?'Fermé, ouvre à 9 h 30':'Fermé, réouverture '+names[n]+' à 9 h 30'}})();
+
+// entrées
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+</script>
+</body>
+</html>
