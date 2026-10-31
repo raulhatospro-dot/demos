@@ -1,0 +1,2885 @@
+{
+ "url": "index.html",
+ "at": "2026-10-31T16:57:53.314Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.68,
+    0.68,
+    0.74,
+    1,
+    0.7,
+    0.54,
+    0.79,
+    0.8
+   ],
+   "motion": {
+    "elements": 35,
+    "css": 5,
+    "transitions": 30,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 6562,
+     "screens": 7.3,
+     "words": 556,
+     "img": 9,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "photo-1608949621253-4eedba1d6b95?w=1200&h=1400&q",
+      "photo-1639744093483-86714cd62a3b?w=1200&h=1400&q",
+      "photo-1618650180691-e53a882fb3c0?w=1200&h=1400&q",
+      "photo-1785304968261-59785f669889?w=1100&h=1300&q",
+      "photo-1572957917999-9ee842634d24?w=1000&h=667&q="
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Le croque en grand.",
+     "words": 4,
+     "chars": 19,
+     "lines": 2,
+     "size": 152,
+     "vw": 10.6,
+     "font": "Archivo",
+     "weight": 850,
+     "tracking": -0.02,
+     "leading": 0.92,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.44,
+     "top": 239,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Le croque en grand.",
+     "words": 4,
+     "lines": 2,
+     "size": 152,
+     "font": "Archivo"
+    },
+    "headings": [
+     {
+      "text": "Faste",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 30.4,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 900,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 58,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Le croque en grand.",
+      "words": 4,
+      "chars": 19,
+      "lines": 2,
+      "size": 152,
+      "vw": 10.6,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 239,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Pain de mie doré, béchamel maison, fromage qui file : le croque, pris au sérieux par un chef de bistrot.",
+      "words": 20,
+      "chars": 104,
+      "lines": 3,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Archivo",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.22,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.55,
+      "top": 1038,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Vu en coupe",
+      "words": 3,
+      "chars": 11,
+      "lines": 1,
+      "size": 85.8,
+      "vw": 6,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.49,
+      "top": 1466,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Le jambon",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.49,
+      "top": 1572,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Le Haut-Dog",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.49,
+      "top": 1624,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Le Plaisant Pastrami",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.49,
+      "top": 1675,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Le veggie",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.49,
+      "top": 1726,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Les épinards",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.49,
+      "top": 1777,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "La carte",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 85.8,
+      "vw": 6,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 2308,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Les croques",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 2483,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "À côté",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.08,
+      "top": 2987,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Desserts et boissons",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.28,
+      "top": 3334,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Un chef de bistrot au comptoir",
+      "words": 6,
+      "chars": 30,
+      "lines": 2,
+      "size": 85.8,
+      "vw": 6,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 4158,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Horaires et accès",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 85.8,
+      "vw": 6,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 4963,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "52 rue du Faubourg Saint-Martin",
+      "words": 5,
+      "chars": 31,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 5145,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "On passe quand ?",
+      "words": 4,
+      "chars": 16,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.35,
+      "top": 5145,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "F A S T E",
+      "words": 5,
+      "chars": 9,
+      "lines": 1,
+      "size": 110.4,
+      "vw": 7.7,
+      "font": "Archivo",
+      "weight": 900,
+      "tracking": -0.016,
+      "leading": 0.8,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 6008,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 18,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 6,
+     "centered": 1,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Archivo",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      15,
+      16,
+      18,
+      19,
+      26,
+      30,
+      36,
+      44,
+      52,
+      86,
+      110,
+      152
+     ],
+     "sizeCount": 13,
+     "notLoaded": [],
+     "body": {
+      "font": "Archivo",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": -0.006,
+      "contrast": 8.8
+     },
+     "measureChars": 60,
+     "max": {
+      "size": 152,
+      "vw": 10.6,
+      "font": "Archivo",
+      "text": "Le croque en grand."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.05,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffd43b",
+       "top": 154,
+       "hsl": {
+        "h": 47,
+        "s": 1,
+        "l": 0.62
+       }
+      },
+      {
+       "color": "#f4e3c3",
+       "top": 894,
+       "hsl": {
+        "h": 39,
+        "s": 0.69,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#141210",
+       "top": 2167,
+       "hsl": {
+        "h": 30,
+        "s": 0.11,
+        "l": 0.07
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#141210",
+       "share": 0.49
+      },
+      {
+       "color": "#b9b1a6",
+       "share": 0.31
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.11
+      },
+      {
+       "color": "#4d4740",
+       "share": 0.07
+      },
+      {
+       "color": "#8a8279",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#141210",
+      "hsl": {
+       "h": 30,
+       "s": 0.11,
+       "l": 0.07
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 54,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Appeler",
+      "Itinéraire",
+      "Voir la carte"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.31
+     },
+     {
+      "type": "img",
+      "ratio": 0.31
+     },
+     {
+      "type": "img",
+      "ratio": 0.31
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "archivo"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 6562,
+    "margins": {
+     "left": 46,
+     "right": 46
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 114,
+      "height": 780,
+      "words": 41,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Le croque en grand.",
+       "size": 152,
+       "tag": "h1"
+      },
+      "left": 46,
+      "right": 841,
+      "textLeft": 46,
+      "textRight": 841,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.intro",
+      "tag": "section",
+      "top": 894,
+      "height": 429,
+      "words": 19,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Pain de mie",
+       "size": 36,
+       "tag": "p"
+      },
+      "left": 345,
+      "right": 345,
+      "textLeft": 345,
+      "textRight": 345,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#coupe.cut",
+      "tag": "section",
+      "top": 1323,
+      "height": 844,
+      "words": 57,
+      "media": 0,
+      "middle": 199,
+      "heading": {
+       "text": "Vu en coupe",
+       "size": 86,
+       "tag": "h2"
+      },
+      "left": 279,
+      "right": 301,
+      "textLeft": 279,
+      "textRight": 301,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "ul.items",
+      "tag": "ul",
+      "top": 2571,
+      "height": 320,
+      "words": 80,
+      "media": 0,
+      "middle": 286,
+      "heading": null,
+      "left": 46,
+      "right": 254,
+      "textLeft": 130,
+      "textRight": 254,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "ul.items",
+      "tag": "ul",
+      "top": 3074,
+      "height": 164,
+      "words": 22,
+      "media": 0,
+      "middle": 405,
+      "heading": null,
+      "left": 130,
+      "right": 276,
+      "textLeft": 130,
+      "textRight": 276,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "ul.items",
+      "tag": "ul",
+      "top": 3422,
+      "height": 185,
+      "words": 52,
+      "media": 0,
+      "middle": 490,
+      "heading": null,
+      "left": 130,
+      "right": 238,
+      "textLeft": 130,
+      "textRight": 238,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#chef.chef",
+      "tag": "section",
+      "top": 3895,
+      "height": 1067,
+      "words": 81,
+      "media": 1,
+      "middle": 72,
+      "heading": {
+       "text": "Un chef de bistrot au comptoir",
+       "size": 86,
+       "tag": "h2"
+      },
+      "left": 46,
+      "right": 86,
+      "textLeft": 756,
+      "textRight": 86,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#venir.where",
+      "tag": "section",
+      "top": 4963,
+      "height": 973,
+      "words": 80,
+      "media": 1,
+      "middle": 118,
+      "heading": {
+       "text": "52 rue du Faubourg Saint-Martin",
+       "size": 44,
+       "tag": "h3"
+      },
+      "left": 102,
+      "right": 102,
+      "textLeft": 102,
+      "textRight": 102,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.end",
+      "tag": "footer",
+      "top": 5936,
+      "height": 627,
+      "words": 43,
+      "media": 0,
+      "middle": 182,
+      "heading": null,
+      "left": 46,
+      "right": 46,
+      "textLeft": 46,
+      "textRight": 46,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 2020,
+      "height": 280
+     },
+     {
+      "top": 3756,
+      "height": 272
+     },
+     {
+      "top": 5772,
+      "height": 600
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Le croque en grand.",
+      "size": 152,
+      "top": 239,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 46,
+      "n": 8
+     },
+     {
+      "x": 756,
+      "n": 3
+     },
+     {
+      "x": 692,
+      "n": 2
+     },
+     {
+      "x": 836,
+      "n": 2
+     },
+     {
+      "x": 102,
+      "n": 1
+     },
+     {
+      "x": 915,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 17,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.11,
+    "voidBox": {
+     "x": 600,
+     "y": 120,
+     "w": 180,
+     "h": 780
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.6,
+    0.73,
+    0.53,
+    1,
+    0.86,
+    0.76,
+    0.72,
+    0.79,
+    0.82
+   ],
+   "motion": {
+    "elements": 35,
+    "css": 5,
+    "transitions": 30,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 8550,
+     "screens": 8.3,
+     "words": 547,
+     "img": 9,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "photo-1608949621253-4eedba1d6b95?w=1200&h=1400&q",
+      "photo-1639744093483-86714cd62a3b?w=1200&h=1400&q",
+      "photo-1618650180691-e53a882fb3c0?w=1200&h=1400&q",
+      "photo-1785304968261-59785f669889?w=1100&h=1300&q",
+      "photo-1572957917999-9ee842634d24?w=1000&h=667&q="
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Le croque en grand.",
+     "words": 4,
+     "chars": 19,
+     "lines": 2,
+     "size": 94.7,
+     "vw": 12.3,
+     "font": "Archivo",
+     "weight": 850,
+     "tracking": -0.02,
+     "leading": 0.92,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.61,
+     "top": 750,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Le croque en grand.",
+     "words": 4,
+     "lines": 2,
+     "size": 94.7,
+     "font": "Archivo"
+    },
+    "headings": [
+     {
+      "text": "Faste",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 30.4,
+      "vw": 4,
+      "font": "Archivo",
+      "weight": 900,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.08,
+      "top": 58,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Le croque en grand.",
+      "words": 4,
+      "chars": 19,
+      "lines": 2,
+      "size": 94.7,
+      "vw": 12.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.61,
+      "top": 750,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Vu en coupe",
+      "words": 3,
+      "chars": 11,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 7.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 2587,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Le jambon",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 2667,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Le Haut-Dog",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 2667,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Le Plaisant Pastrami",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.26,
+      "top": 2667,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Le veggie",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.12,
+      "top": 2667,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Les épinards",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.16,
+      "top": 2667,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "La carte",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 7.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 3197,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Les croques",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 39.2,
+      "vw": 5.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.23,
+      "top": 3433,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "À côté",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 39.2,
+      "vw": 5.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.12,
+      "top": 3911,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Desserts et boissons",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 39.2,
+      "vw": 5.1,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 4237,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Un chef de bistrot au comptoir",
+      "words": 6,
+      "chars": 30,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 7.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 5800,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Horaires et accès",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 7.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 6336,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "52 rue du Faubourg Saint-Martin",
+      "words": 5,
+      "chars": 31,
+      "lines": 1,
+      "size": 33,
+      "vw": 4.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 6467,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "On passe quand ?",
+      "words": 4,
+      "chars": 16,
+      "lines": 1,
+      "size": 33,
+      "vw": 4.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 7162,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "F A S T E",
+      "words": 5,
+      "chars": 9,
+      "lines": 1,
+      "size": 63.4,
+      "vw": 8.3,
+      "font": "Archivo",
+      "weight": 900,
+      "tracking": -0.018,
+      "leading": 0.8,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 7876,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 17,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 5,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Archivo",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      18,
+      23,
+      24,
+      26,
+      30,
+      33,
+      39,
+      56,
+      63,
+      95
+     ],
+     "sizeCount": 14,
+     "notLoaded": [],
+     "body": {
+      "font": "Archivo",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": -0.006,
+      "contrast": 8.8
+     },
+     "measureChars": 60,
+     "max": {
+      "size": 94.7,
+      "vw": 12.3,
+      "font": "Archivo",
+      "text": "Le croque en grand."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.02,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Feuilles fraîches, assaisonnement maison.",
+      "above": "Desserts et boissons",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 4117
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffd43b",
+       "top": 114,
+       "hsl": {
+        "h": 47,
+        "s": 1,
+        "l": 0.62
+       }
+      },
+      {
+       "color": "#f4e3c3",
+       "top": 1223,
+       "hsl": {
+        "h": 39,
+        "s": 0.69,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#141210",
+       "top": 3044,
+       "hsl": {
+        "h": 30,
+        "s": 0.11,
+        "l": 0.07
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#141210",
+       "share": 0.48
+      },
+      {
+       "color": "#b9b1a6",
+       "share": 0.31
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.12
+      },
+      {
+       "color": "#4d4740",
+       "share": 0.07
+      },
+      {
+       "color": "#8a8279",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#141210",
+      "hsl": {
+       "h": 30,
+       "s": 0.11,
+       "l": 0.07
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 1,
+     "radius": "pill",
+     "height": 54,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Appeler"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.41
+     },
+     {
+      "type": "img",
+      "ratio": 0.41
+     },
+     {
+      "type": "img",
+      "ratio": 0.41
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "archivo"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 8550,
+    "margins": {
+     "left": 25,
+     "right": 25
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 114,
+      "height": 1109,
+      "words": 41,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 25,
+      "right": 78,
+      "textLeft": 25,
+      "textRight": 326,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.intro",
+      "tag": "section",
+      "top": 1223,
+      "height": 413,
+      "words": 19,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Pain de mie",
+       "size": 24,
+       "tag": "p"
+      },
+      "left": 122,
+      "right": 147,
+      "textLeft": 122,
+      "textRight": 147,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#coupe.cut",
+      "tag": "section",
+      "top": 1636,
+      "height": 1407,
+      "words": 57,
+      "media": 0,
+      "middle": 24,
+      "heading": null,
+      "left": 25,
+      "right": 0,
+      "textLeft": 25,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.menu-head",
+      "tag": "div",
+      "top": 3197,
+      "height": 164,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 25,
+      "right": 304,
+      "textLeft": 25,
+      "textRight": 304,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "ul.items",
+      "tag": "ul",
+      "top": 3511,
+      "height": 328,
+      "words": 80,
+      "media": 0,
+      "middle": 53,
+      "heading": null,
+      "left": 25,
+      "right": 30,
+      "textLeft": 93,
+      "textRight": 30,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "ul.items",
+      "tag": "ul",
+      "top": 3988,
+      "height": 177,
+      "words": 22,
+      "media": 0,
+      "middle": 150,
+      "heading": null,
+      "left": 93,
+      "right": 77,
+      "textLeft": 93,
+      "textRight": 77,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "ul.items",
+      "tag": "ul",
+      "top": 4315,
+      "height": 201,
+      "words": 52,
+      "media": 0,
+      "middle": 164,
+      "heading": null,
+      "left": 93,
+      "right": 37,
+      "textLeft": 93,
+      "textRight": 37,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.foot",
+      "tag": "div",
+      "top": 4612,
+      "height": 124,
+      "words": 20,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 25,
+      "right": 252,
+      "textLeft": 25,
+      "textRight": 252,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#chef.chef",
+      "tag": "section",
+      "top": 4889,
+      "height": 1447,
+      "words": 81,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 25,
+      "right": 25,
+      "textLeft": 25,
+      "textRight": 68,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#venir.where",
+      "tag": "section",
+      "top": 6336,
+      "height": 1458,
+      "words": 80,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "52 rue du Faubourg Saint-Martin",
+       "size": 33,
+       "tag": "h3"
+      },
+      "left": 55,
+      "right": 55,
+      "textLeft": 55,
+      "textRight": 55,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.end",
+      "tag": "footer",
+      "top": 7794,
+      "height": 756,
+      "words": 43,
+      "media": 0,
+      "middle": 94,
+      "heading": null,
+      "left": 25,
+      "right": 25,
+      "textLeft": 25,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 1492,
+      "height": 624
+     },
+     {
+      "top": 4720,
+      "height": 320
+     },
+     {
+      "top": 7624,
+      "height": 628
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Le croque en grand.",
+      "size": 95,
+      "top": 750,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 25,
+      "n": 14
+     },
+     {
+      "x": 55,
+      "n": 3
+     }
+    ],
+    "leftBlocks": 17,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    0.75,
+    0.72,
+    0.66,
+    1,
+    1,
+    0.84,
+    0.45,
+    0.86,
+    0.78,
+    0.89
+   ],
+   "motion": {
+    "elements": 35,
+    "css": 5,
+    "transitions": 30,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 8004,
+     "screens": 9.5,
+     "words": 547,
+     "img": 9,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "photo-1608949621253-4eedba1d6b95?w=1200&h=1400&q",
+      "photo-1639744093483-86714cd62a3b?w=1200&h=1400&q",
+      "photo-1618650180691-e53a882fb3c0?w=1200&h=1400&q",
+      "photo-1785304968261-59785f669889?w=1100&h=1300&q",
+      "photo-1572957917999-9ee842634d24?w=1000&h=667&q="
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Le croque en grand.",
+     "words": 4,
+     "chars": 19,
+     "lines": 2,
+     "size": 64,
+     "vw": 16.4,
+     "font": "Archivo",
+     "weight": 850,
+     "tracking": -0.02,
+     "leading": 0.92,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.81,
+     "top": 642,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Le croque en grand.",
+     "words": 4,
+     "lines": 2,
+     "size": 64,
+     "font": "Archivo"
+    },
+    "headings": [
+     {
+      "text": "Faste",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 30.4,
+      "vw": 7.8,
+      "font": "Archivo",
+      "weight": 900,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 58,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Le croque en grand.",
+      "words": 4,
+      "chars": 19,
+      "lines": 2,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 642,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Pain de mie doré, béchamel maison, fromage qui file : le croque, pris au sérieux par un chef de bistrot.",
+      "words": 20,
+      "chars": 104,
+      "lines": 4,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Archivo",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.22,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1207,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Vu en coupe",
+      "words": 3,
+      "chars": 11,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2017,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Le jambon",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 2081,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Le Haut-Dog",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.31,
+      "top": 2081,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Le Plaisant Pastrami",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.51,
+      "top": 2081,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Le veggie",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.24,
+      "top": 2081,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Les épinards",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.015,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.32,
+      "top": 2081,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "La carte",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2546,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Les croques",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 2764,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "À côté",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 3543,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Desserts et boissons",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.63,
+      "top": 3966,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Un chef de bistrot au comptoir",
+      "words": 6,
+      "chars": 30,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5234,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Horaires et accès",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5873,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "52 rue du Faubourg Saint-Martin",
+      "words": 5,
+      "chars": 31,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 5986,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "On passe quand ?",
+      "words": 4,
+      "chars": 16,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Archivo",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 6513,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "F A S T E",
+      "words": 5,
+      "chars": 9,
+      "lines": 1,
+      "size": 41.6,
+      "vw": 10.7,
+      "font": "Archivo",
+      "weight": 900,
+      "tracking": -0.019,
+      "leading": 0.8,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 7288,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 18,
+     "maxLines": 4,
+     "over2Lines": 0,
+     "statements": 6,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Archivo",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      24,
+      26,
+      28,
+      30,
+      32,
+      40,
+      42,
+      64
+     ],
+     "sizeCount": 15,
+     "notLoaded": [],
+     "body": {
+      "font": "Archivo",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": -0.005,
+      "contrast": 8.8
+     },
+     "measureChars": 35,
+     "max": {
+      "size": 64,
+      "vw": 16.4,
+      "font": "Archivo",
+      "text": "Le croque en grand."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.02,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Feuilles fraîches, assaisonnement maison.",
+      "above": "Desserts et boissons",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 3846
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffd43b",
+       "top": 114,
+       "hsl": {
+        "h": 47,
+        "s": 1,
+        "l": 0.62
+       }
+      },
+      {
+       "color": "#f4e3c3",
+       "top": 1072,
+       "hsl": {
+        "h": 39,
+        "s": 0.69,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#141210",
+       "top": 2420,
+       "hsl": {
+        "h": 30,
+        "s": 0.11,
+        "l": 0.07
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#141210",
+       "share": 0.48
+      },
+      {
+       "color": "#b9b1a6",
+       "share": 0.31
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.12
+      },
+      {
+       "color": "#4d4740",
+       "share": 0.07
+      },
+      {
+       "color": "#8a8279",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#141210",
+      "hsl": {
+       "h": 30,
+       "s": 0.11,
+       "l": 0.07
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 1,
+     "radius": "pill",
+     "height": 54,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Appeler"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.41
+     },
+     {
+      "type": "img",
+      "ratio": 0.41
+     },
+     {
+      "type": "img",
+      "ratio": 0.41
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "archivo"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 8004,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 114,
+      "height": 958,
+      "words": 41,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 38,
+      "textLeft": 16,
+      "textRight": 38,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.intro",
+      "tag": "section",
+      "top": 1072,
+      "height": 389,
+      "words": 19,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Pain de mie",
+       "size": 24,
+       "tag": "p"
+      },
+      "left": 16,
+      "right": 24,
+      "textLeft": 16,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#coupe.cut",
+      "tag": "section",
+      "top": 1460,
+      "height": 960,
+      "words": 53,
+      "media": 0,
+      "middle": 254,
+      "heading": null,
+      "left": 16,
+      "right": 0,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.menu-head",
+      "tag": "div",
+      "top": 2546,
+      "height": 145,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 20,
+      "textLeft": 16,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "ul.items",
+      "tag": "ul",
+      "top": 2835,
+      "height": 637,
+      "words": 80,
+      "media": 0,
+      "middle": 16,
+      "heading": null,
+      "left": 16,
+      "right": 22,
+      "textLeft": 84,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "ul.items",
+      "tag": "ul",
+      "top": 3614,
+      "height": 280,
+      "words": 22,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 84,
+      "right": 76,
+      "textLeft": 84,
+      "textRight": 76,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "ul.items",
+      "tag": "ul",
+      "top": 4037,
+      "height": 337,
+      "words": 52,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 84,
+      "right": 28,
+      "textLeft": 84,
+      "textRight": 28,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.foot",
+      "tag": "div",
+      "top": 4470,
+      "height": 121,
+      "words": 20,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 32,
+      "textLeft": 16,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#chef.chef",
+      "tag": "section",
+      "top": 4717,
+      "height": 1156,
+      "words": 81,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Un chef de bistrot au comptoir",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 31,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#venir.where",
+      "tag": "section",
+      "top": 5873,
+      "height": 1347,
+      "words": 80,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "52 rue du Faubourg Saint-Martin",
+       "size": 28,
+       "tag": "h3"
+      },
+      "left": 44,
+      "right": 44,
+      "textLeft": 44,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.end",
+      "tag": "footer",
+      "top": 7220,
+      "height": 783,
+      "words": 43,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 21,
+      "textLeft": 16,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 1340,
+      "height": 356
+     },
+     {
+      "top": 4572,
+      "height": 268
+     },
+     {
+      "top": 7072,
+      "height": 560
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Le croque en grand.",
+      "size": 64,
+      "top": 642,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 14
+     },
+     {
+      "x": 44,
+      "n": 3
+     }
+    ],
+    "leftBlocks": 17,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "13 different font sizes (13, 15, 16, 18, 19, 26, 30, 36, 44, 52, 86, 110, 152).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "font-not-dealt",
+   "width": 1440,
+   "message": "The sheet dealt Switzer and Switzer, but the page renders Archivo.",
+   "fix": "Load the dealt face (the link on the sheet) and put it first in font-family. A build that falls back to a default face lands on the default look."
+  },
+  {
+   "level": "FAIL",
+   "id": "blank-gap",
+   "width": 1440,
+   "message": "1 stretch(es) of the page hold nothing at all: 600px at 5772px (the screen is 900px tall).",
+   "fix": "Close the gap: a section gap is 120–240px on desktop and 72–112px on a phone. Look for a min-height: 100vh on a short section, an empty grid row, a hidden element still holding its space, or a reveal that never fired. A deliberate rest is a placed picture or colour field, not nothing.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 768,
+   "message": "1 eyebrow/kicker label(s) above headings: \"Feuilles fraîches, assaisonnement maison.\" above \"Desserts et boissons\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/hatos/business/demos/faste/.taste-skill/inspect/desktop-fold.jpg",
+   "pages": [
+    "/Users/hatos/business/demos/faste/.taste-skill/inspect/desktop-page-01.jpg",
+    "/Users/hatos/business/demos/faste/.taste-skill/inspect/desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/hatos/business/demos/faste/.taste-skill/inspect/tablet-fold.jpg",
+   "pages": [
+    "/Users/hatos/business/demos/faste/.taste-skill/inspect/tablet-page-01.jpg",
+    "/Users/hatos/business/demos/faste/.taste-skill/inspect/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/hatos/business/demos/faste/.taste-skill/inspect/mobile-fold.jpg",
+   "pages": [
+    "/Users/hatos/business/demos/faste/.taste-skill/inspect/mobile-page-01.jpg",
+    "/Users/hatos/business/demos/faste/.taste-skill/inspect/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

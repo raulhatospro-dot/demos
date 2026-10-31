@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Le Chef Thaï · Restaurant thaïlandais, Paris 3e</title>
+<meta name="description" content="Le Chef Thaï, cuisine thaïlandaise au wok et à la minute du chef Sombat, 59 rue des Gravilliers, Paris 3e. Carte midi et soir, réservation, livraison.">
+<meta name="theme-color" content="#9fe870">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+/* Système adapté du DESIGN.md « Wise » (awesome-design) : sans très gras (900) en titrage,
+   un vert citron vif en champ de marque, neutres teintés de vert, boutons pilule, photos aux angles de 24px.
+   Adapté : le citron vert devient la couleur du combava et du basilic thaï, le rouge sert au piment. */
+:root{
+  --canvas:#f3f6ef;
+  --paper:#ffffff;
+  --soft:#e6ebe1;
+  --lime:#9fe870;
+  --lime-pale:#e2f6d5;
+  --ink:#0e0f0c;
+  --forest:#163300;
+  --body:#2f322d;
+  --mute:#5b5f58;
+  --chili:#d03238;
+  --yellow:#ffd11a;
+  --green:#2ead4b;
+  --m:clamp(16px,3vw,48px);
+  --r:24px;
+  --gap:clamp(96px,14vw,200px);
+  --t-hero:clamp(4rem,11.5vw,11rem);
+  --t-h2:clamp(2.5rem,6vw,5.5rem);
+  --t-h3:clamp(1.5rem,2.2vw,2rem);
+  --t-lead:clamp(1.25rem,1.1rem + .6vw,1.625rem);
+  --t-body:clamp(1rem,.97rem + .15vw,1.125rem);
+  --t-small:.9375rem;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--canvas);color:var(--ink);font:400 var(--t-body)/1.55 Figtree,system-ui,sans-serif;font-feature-settings:"tnum" 0}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius:6px}
+::selection{background:var(--lime);color:var(--ink)}
+h1,h2,h3{font-weight:900;letter-spacing:-.03em;line-height:.92;text-wrap:balance}
+h2{font-size:var(--t-h2)}
+h3{font-size:var(--t-h3);line-height:1.05;letter-spacing:-.02em}
+.wrap{padding-inline:var(--m);max-width:1680px;margin-inline:auto}
+.num{font-variant-numeric:tabular-nums}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#d9dcd5;font-size:.8125rem;text-align:center;padding:7px var(--m)}
+.demo b{color:var(--lime);font-weight:600}
+
+/* navigation */
+.nav{position:sticky;top:0;z-index:20;background:var(--lime);}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.brand{font-weight:900;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none;margin-right:auto}
+.nav nav{display:flex;gap:28px}
+.nav nav a{text-decoration:none;font-weight:600;font-size:var(--t-small)}
+.nav nav a:hover{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:860px){.nav nav{display:none}}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:999px;font:600 1rem/1.2 Figtree,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-ink{background:var(--ink);color:var(--lime)}
+.btn-ink:hover{background:var(--forest)}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{background:#b8f08f}
+.btn-soft{background:rgba(14,15,12,.08);color:var(--ink)}
+.btn-soft:hover{background:rgba(14,15,12,.14)}
+.btn-sm{min-height:40px;padding:8px 18px;font-size:.9375rem}
+
+/* hero */
+.hero{background:var(--lime)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,4vw,64px);align-items:stretch;padding-block:clamp(32px,5vw,72px) clamp(48px,6vw,96px)}
+.hero h1{font-size:var(--t-hero);line-height:.86;letter-spacing:-.045em}
+.hero-txt{display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.lead{font-size:var(--t-lead);line-height:1.35;font-weight:600;max-width:30ch;margin-top:32px;color:var(--forest)}
+.status{display:flex;align-items:center;gap:10px;font-weight:600;margin-top:28px}
+.status i{width:12px;height:12px;border-radius:50%;background:var(--forest);flex:none}
+.status.closed i{background:var(--chili)}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.rating{margin-top:20px;font-size:var(--t-small);color:var(--forest)}
+.rating strong{font-weight:800}
+.hero-img{position:relative;min-height:520px;border-radius:var(--r);overflow:hidden;background:var(--forest)}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.1) translate(-1.5%,-1%)}}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-img{min-height:0;aspect-ratio:4/3;order:-1}
+  .hero-txt{gap:28px}
+  .lead{margin-top:20px}
+}
+
+/* scène partagée : l'assiette fixe à gauche, la carte qui défile à droite */
+.stage{display:grid;grid-template-columns:1fr 1fr;margin-top:var(--gap)}
+.plate{position:sticky;top:64px;height:calc(100svh - 64px);padding:0 0 var(--m) var(--m)}
+.plate figure{position:relative;height:100%;border-radius:var(--r);overflow:hidden;background:var(--forest)}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s var(--ease),transform .9s var(--ease)}
+.plate img.out{opacity:0;transform:scale(1.04)}
+.plate figcaption{position:absolute;left:16px;bottom:16px;right:16px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.plate figcaption span{background:var(--paper);color:var(--ink);font-weight:800;padding:8px 16px;border-radius:999px;font-size:1rem}
+.col{padding:0 var(--m) 0 clamp(32px,5vw,96px);min-width:0}
+@media (max-width:860px){
+  .stage{grid-template-columns:1fr}
+  .plate{display:none}
+  .col{padding:0 var(--m)}
+}
+
+/* composer */
+.composer h2{margin-bottom:20px}
+.composer>p{max-width:46ch;color:var(--body)}
+.box{background:var(--paper);border-radius:var(--r);padding:clamp(20px,2.4vw,36px);margin-top:32px}
+fieldset{border:0;padding:0;margin:0 0 26px}
+legend{font-weight:800;font-size:1.0625rem;margin-bottom:12px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.chips span{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;background:var(--soft);font-weight:600;transition:background-color .2s,color .2s,transform .2s var(--ease)}
+.chips label:hover span{background:#d8dfd1}
+.chips input:checked+span{background:var(--ink);color:var(--lime)}
+.chips input:focus-visible+span{outline:3px solid var(--forest);outline-offset:2px}
+.chips input:disabled+span{opacity:.4;cursor:not-allowed}
+.chips label:active span{transform:scale(.96)}
+.dot{width:12px;height:12px;border-radius:50%;flex:none}
+select{appearance:none;width:100%;min-height:52px;padding:12px 44px 12px 18px;border-radius:16px;border:0;background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%230e0f0c' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 18px center;font:600 1rem Figtree,sans-serif;color:var(--ink);cursor:pointer}
+.total{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;background:var(--lime);border-radius:20px;padding:20px 24px;margin-top:8px}
+.total output{display:block;font-weight:900;font-size:clamp(3rem,6vw,4.75rem);line-height:.9;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.total p{font-weight:600;color:var(--forest);max-width:32ch}
+.note{font-size:var(--t-small);color:var(--mute);margin-top:14px}
+
+/* carte */
+.menu{margin-top:var(--gap)}
+.menu-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 32px;margin-bottom:12px}
+.menu-head p{color:var(--body);max-width:38ch}
+.tabs{margin-top:28px}
+.cat{padding-top:36px}
+.cat h3{margin-bottom:8px}
+.cat .desc{color:var(--body);max-width:52ch;margin-bottom:14px}
+.rows{list-style:none;padding:0}
+.rows li,.rows-head{display:grid;grid-template-columns:1fr 5.5rem 5.5rem;gap:12px;align-items:baseline;padding:11px 0}
+.rows li+li{background:linear-gradient(var(--soft),var(--soft)) top/100% 2px no-repeat}
+.rows li b,.rows li i{font-style:normal;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.rows li i{color:var(--mute);font-weight:400;font-size:var(--t-small)}
+.rows li small{display:block;color:var(--mute);font-size:var(--t-small)}
+.rows-head{font-weight:800;font-size:var(--t-small);padding:14px 0 10px}
+.rows-head span:not(:first-child){text-align:right}
+.formules{background:var(--forest);color:var(--paper);border-radius:var(--r);padding:clamp(20px,2.4vw,32px);margin-top:56px}
+.formules h3{color:var(--lime)}
+.formules p{color:#cfe6c0;margin:8px 0 16px}
+.formules ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 32px}
+.formules li{display:flex;justify-content:space-between;gap:16px;font-weight:600}
+.formules li b{color:var(--lime);font-variant-numeric:tabular-nums}
+@media (max-width:560px){.formules ul{grid-template-columns:1fr}.rows li,.rows-head{grid-template-columns:1fr 4.3rem 4.3rem;gap:8px}}
+
+/* ardoise */
+.ardoise{background:var(--forest);color:var(--paper);margin-top:var(--gap);padding-block:clamp(72px,10vw,140px)}
+.ardoise .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(32px,6vw,96px)}
+.ardoise h2{color:var(--lime)}
+.ardoise .intro p{font-size:var(--t-lead);line-height:1.4;margin-top:24px;color:#e6f2dc;max-width:24ch}
+.ardoise .intro img{border-radius:var(--r);margin-top:40px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.slate{list-style:none;padding:0;columns:2;column-gap:48px}
+.slate li{break-inside:avoid;padding:0 0 28px}
+.slate strong{display:block;font-weight:800;font-size:1.25rem;letter-spacing:-.01em;color:var(--paper)}
+.slate span{display:block;color:#c3d9b4;margin:4px 0 6px}
+.slate em{font-style:normal;font-weight:600;color:var(--lime);font-variant-numeric:tabular-nums}
+@media (max-width:860px){.ardoise .wrap{grid-template-columns:1fr}.ardoise .intro img{aspect-ratio:16/10}}
+@media (max-width:560px){.slate{columns:1}}
+
+/* histoire */
+.story{margin-top:var(--gap)}
+.story h2{max-width:14ch}
+.duo{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,4vw,64px);margin-top:56px}
+.person{border-top:0;padding-top:0}
+.person p{max-width:52ch}
+.person:nth-child(2){padding:clamp(24px,3vw,44px);background:var(--lime);border-radius:var(--r)}
+.person:first-child{padding-block:clamp(24px,3vw,44px)}
+.person h3{font-size:clamp(2.5rem,4.5vw,4rem);line-height:.9;margin-bottom:6px}
+.person .role{font-weight:800;color:var(--forest);margin-bottom:20px}
+.person p+p{margin-top:14px}
+.credo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;margin-top:clamp(48px,6vw,96px)}
+.credo blockquote{font-weight:800;font-size:clamp(1.5rem,2.6vw,2.25rem);line-height:1.15;letter-spacing:-.02em;max-width:22ch}
+.credo blockquote cite{display:block;font-style:normal;font-weight:600;font-size:1rem;color:var(--mute);margin-top:16px;letter-spacing:0}
+.credo img{border-radius:var(--r);aspect-ratio:3/2;object-fit:cover;width:100%}
+.press{margin-top:40px;color:var(--body)}
+.press a{font-weight:700}
+@media (max-width:860px){.duo,.credo{grid-template-columns:1fr}}
+
+/* infos */
+.infos{margin-top:var(--gap)}
+.infos-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);margin-top:48px}
+.hours{list-style:none;padding:0;background:var(--paper);border-radius:var(--r);padding:12px clamp(20px,2.4vw,32px)}
+.hours li{display:grid;grid-template-columns:7.5rem 1fr;gap:12px;padding:12px 0;font-variant-numeric:tabular-nums}
+.hours li+li{background:linear-gradient(var(--soft),var(--soft)) top/100% 2px no-repeat}
+.hours li.today{font-weight:800;background:var(--lime-pale);margin-inline:-14px;padding-inline:14px;border-radius:12px}
+.hours li.today+li{background:none}
+.facts{display:grid;gap:12px;margin-top:20px}
+.facts p{background:var(--soft);border-radius:16px;padding:16px 20px}
+.facts strong{display:block;font-weight:800}
+.map{border-radius:var(--r);overflow:hidden;background:var(--soft);min-height:520px;position:relative;display:grid;place-items:center;text-align:center;padding:24px}
+.map>a{font-weight:800;font-size:1.25rem}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.addr{margin-top:20px;font-size:var(--t-lead);font-weight:800;line-height:1.2;letter-spacing:-.01em}
+.addr small{display:block;font-size:1rem;font-weight:400;color:var(--body);margin-top:6px;letter-spacing:0}
+.contact-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+@media (max-width:860px){.infos-grid{grid-template-columns:1fr}.map{min-height:300px}}
+@media (max-width:420px){.hours li{grid-template-columns:5.5rem 1fr;font-size:.9375rem}.hours li span:last-child{white-space:nowrap}}
+
+/* pied */
+footer{margin-top:var(--gap);background:var(--lime);padding-block:clamp(48px,6vw,88px) 28px}
+footer .big{font-weight:900;font-size:clamp(4rem,15vw,15rem);letter-spacing:-.05em;line-height:.85}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px;margin-top:40px;font-size:var(--t-small);color:var(--forest)}
+.foot a{font-weight:700}
+
+/* apparition */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.js .rv.in{opacity:1;transform:none}
+.bump{animation:bump .35s var(--ease)}
+@keyframes bump{40%{transform:scale(1.06)}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par <b>Raul Hatos</b> — site non officiel</p>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Le Chef Thaï</a>
+    <nav aria-label="Sections">
+      <a href="#composer">Composer</a>
+      <a href="#carte">La carte</a>
+      <a href="#ardoise">L’ardoise</a>
+      <a href="#histoire">Histoire</a>
+      <a href="#infos">Infos</a>
+    </nav>
+    <a class="btn btn-ink btn-sm" href="https://www.thefork.fr/restaurant/le-chef-thai-r392983" target="_blank" rel="noopener">Réserver</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-txt">
+      <div>
+        <h1 class="rv">Le Chef Thaï</h1>
+        <p class="lead rv" style="--i:1">Cuisine thaïlandaise au wok, à la minute, par le chef Sombat. 59 rue des Gravilliers, Paris 3e.</p>
+        <p class="status rv" style="--i:2" id="status"><i></i><span>Du lundi au samedi, midi et soir</span></p>
+      </div>
+      <div class="rv" style="--i:3">
+        <div class="actions">
+          <a class="btn btn-ink" href="https://www.thefork.fr/restaurant/le-chef-thai-r392983" target="_blank" rel="noopener">Réserver une table</a>
+          <a class="btn btn-soft" href="tel:+33171702930">Appeler le 01 71 70 29 30</a>
+          <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Chef+Tha%C3%AF%2C+59+rue+des+Gravilliers%2C+75003+Paris" target="_blank" rel="noopener">Itinéraire</a>
+        </div>
+        <p class="rating"><strong>4,7 sur Google</strong> · 1 244 avis</p>
+      </div>
+    </div>
+    <figure class="hero-img">
+      <img src="https://images.unsplash.com/photo-1637806930600-37fa8892069d?w=1400&amp;q=75&amp;auto=format&amp;fit=crop" alt="Pad thaï aux pousses de soja, ciboulette et cacahuètes concassées" width="1400" height="1050" fetchpriority="high">
+    </figure>
+  </div>
+</section>
+
+<div class="stage">
+  <div class="plate" aria-hidden="true">
+    <figure>
+      <img id="plateImg" src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=1200&amp;q=75&amp;auto=format&amp;fit=crop" alt="">
+      <figcaption><span id="plateCap">Pad Thaï</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="col">
+    <section class="composer" id="composer" data-photo="padthai">
+      <h2 class="rv">Composez votre assiette</h2>
+      <p class="rv" style="--i:1">Choisissez votre plat, sa garniture et votre formule : le prix de la carte 2026 s’affiche tout de suite.</p>
+
+      <form class="box rv" style="--i:2" id="builder" onsubmit="return false">
+        <fieldset>
+          <legend>Quand venez-vous ?</legend>
+          <div class="chips">
+            <label><input type="radio" name="svc" value="m" checked><span>Midi, du lundi au vendredi</span></label>
+            <label><input type="radio" name="svc" value="s"><span>Soir et samedi</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Votre plat</legend>
+          <div class="chips" id="dishes"></div>
+        </fieldset>
+        <fieldset>
+          <legend><label for="garn">Garniture</label></legend>
+          <select id="garn"></select>
+        </fieldset>
+        <fieldset id="spiceSet">
+          <legend>Votre curry</legend>
+          <div class="chips">
+            <label><input type="radio" name="spice" value="jaune" checked><span><i class="dot" style="background:var(--yellow)"></i>Jaune, doux</span></label>
+            <label><input type="radio" name="spice" value="vert"><span><i class="dot" style="background:var(--green)"></i>Vert, moyen</span></label>
+            <label><input type="radio" name="spice" value="rouge"><span><i class="dot" style="background:var(--chili)"></i>Rouge, relevé</span></label>
+          </div>
+        </fieldset>
+        <fieldset id="formSet">
+          <legend><label for="formule">Formule du midi</label></legend>
+          <select id="formule">
+            <option value="0">Le plat seul</option>
+            <option value="16.9">Plat + boisson soft</option>
+            <option value="17.9">Plat + dessert</option>
+            <option value="19.4">Plat + boisson soft + dessert</option>
+            <option value="17.9">Plat + riz + boisson soft</option>
+            <option value="18.9">Plat + riz + dessert</option>
+            <option value="21.4">Plat + riz + boisson soft + dessert</option>
+          </select>
+        </fieldset>
+        <fieldset id="riceSet">
+          <legend>Avec du riz ?</legend>
+          <div class="chips">
+            <label><input type="radio" name="rice" value="0" checked><span>Sans riz</span></label>
+            <label><input type="radio" name="rice" value="4"><span>Riz thaï parfumé · 4,00 €</span></label>
+            <label><input type="radio" name="rice" value="4.5"><span>Riz gluant · 4,50 €</span></label>
+          </div>
+        </fieldset>
+        <div class="total" aria-live="polite">
+          <output id="price" class="num">14,90 €</output>
+          <p id="recap">Pad Thaï au poulet, le plat seul</p>
+        </div>
+        <p class="note" id="supNote">Formules du midi hors jours fériés. Certains plats ajoutent un supplément à la formule, il est déjà compté.</p>
+      </form>
+    </section>
+
+    <section class="menu" id="carte">
+      <div class="menu-head">
+        <h2 class="rv">La carte</h2>
+        <p class="rv" style="--i:1">Toute la carte se prend aussi à emporter. Prix en euros, carte 2026.</p>
+      </div>
+      <div class="chips tabs" id="menuTabs" role="radiogroup" aria-label="Rubriques de la carte"></div>
+      <div id="menuCats" aria-live="polite"></div>
+      <div class="formules rv" data-photo="formule">
+        <h3>Les formules du midi</h3>
+        <p>Du lundi au vendredi, hors jours fériés. Supplément indiqué sur certains plats.</p>
+        <ul>
+          <li>Plat + boisson soft <b>16,90</b></li>
+          <li>Plat + riz + boisson soft <b>17,90</b></li>
+          <li>Plat + dessert <b>17,90</b></li>
+          <li>Plat + riz + dessert <b>18,90</b></li>
+          <li>Plat + soft + dessert <b>19,40</b></li>
+          <li>Plat + riz + soft + dessert <b>21,40</b></li>
+        </ul>
+      </div>
+      <noscript><p class="note">La carte détaillée s’affiche avec JavaScript. Réservations et questions : 01 71 70 29 30.</p></noscript>
+    </section>
+  </div>
+</div>
+
+<section class="ardoise" id="ardoise">
+  <div class="wrap">
+    <div class="intro">
+      <h2 class="rv">L’ardoise du soir</h2>
+      <p class="rv" style="--i:1">Les suggestions du chef, hors menu du midi. Elles changent avec lui, demandez-les en salle.</p>
+      <img class="rv" style="--i:2" src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=1000&amp;q=75&amp;auto=format&amp;fit=crop" alt="Curry rouge au lait de coco, basilic thaï et piments séchés" width="1000" height="1250">
+    </div>
+    <ul class="slate">
+      <li class="rv"><strong>Curry Panaeng</strong><span>Feuilles de citron, haricots verts, carottes, poivrons rouges, lait de coco.</span><em>Légumes ou poulet 18,40 · Bœuf 19,40 · Crevettes 19,90</em></li>
+      <li class="rv"><strong>Curry Massaman</strong><span>Carottes, pommes de terre et cacahuètes, au lait de coco.</span><em>Légumes ou poulet 18,40 · Crevettes 19,90</em></li>
+      <li class="rv"><strong>Salade d’ananas à la thaï</strong><span>Crudités, soja, citronnelle, menthe, coriandre, coco râpée, cacahuètes.</span><em>Nature 15,40 · Poulet 17,40 · Crevettes 18,90</em></li>
+      <li class="rv"><strong>Salade de bœuf à la thaï</strong><span>Salade verte, carottes, tomates, oignons, coriandre.</span><em>19,90</em></li>
+      <li class="rv"><strong>Salade de vermicelles</strong><span>Menthe, coriandre, oignons rouges, carottes, cacahuètes.</span><em>Tofu 15,40 · Poulet 16,40 · Bœuf 17,90 · Crevettes 18,90</em></li>
+      <li class="rv"><strong>Soupe de vermicelles</strong><span>Vermicelles de soja, pousses de soja, légumes, ciboulette, coriandre. Bouillon citronnelle, lait de coco ou sukiyaki.</span><em>De 17,40 à 18,90</em></li>
+      <li class="rv"><strong>Soupe de riz</strong><span>Crevettes et porc haché, gingembre, coriandre, chou, œuf, carottes.</span><em>18,90</em></li>
+      <li class="rv"><strong>Riz sauté à l’ananas et aux noix de cajou</strong><span>Avec carottes, brocoli, oignons, chou, œufs.</span><em>Poulet 18,90 · Crevettes 19,40</em></li>
+      <li class="rv"><strong>Riz sauté au canard</strong><span>Au basilic thaï ou à la sauce « Pric Pao ».</span><em>20,90</em></li>
+      <li class="rv"><strong>Woks de l’ardoise</strong><span>Canard sauté au basilic thaï, saumon à la citronnelle, crevettes au basilic, bœuf au gingembre, poulet ananas et noix de cajou.</span><em>De 17,40 à 20,90</em></li>
+    </ul>
+  </div>
+</section>
+
+<section class="story wrap" id="histoire">
+  <h2 class="rv">Sombat en cuisine, Gregor en salle</h2>
+  <div class="duo">
+    <article class="person rv">
+      <h3>Sombat</h3>
+      <p class="role">Le chef</p>
+      <p>Il a grandi au milieu des rizières, dans le nord-est de la Thaïlande. Sa grand-mère lui apprend les recettes de la cuisine traditionnelle, paysanne et joyeuse.</p>
+      <p>Avec ce savoir-faire dans ses valises, il vient en France se former aux papilles occidentales. Il devient commis, cuisinier, puis chef, avant de se lancer à son compte.</p>
+    </article>
+    <article class="person rv" style="--i:1">
+      <h3>Gregor</h3>
+      <p class="role">En salle</p>
+      <p>Ancien rédacteur de mode, il s’est reconverti par amour à la restauration. Après quinze ans dans le luxe, il voulait une table conviviale et simple, qui laisse toute la place à la cuisine du chef.</p>
+      <p>Allemand d’origine, il sert la bière de sa Forêt-Noire natale, à côté de bières françaises, thaïes et laotiennes.</p>
+    </article>
+  </div>
+  <div class="credo">
+    <blockquote class="rv"><p>« Du plaisir gustatif pour un voyage plein de saveurs. »</p><cite>Le credo de la maison</cite></blockquote>
+    <img class="rv" style="--i:1" src="https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?w=1200&amp;q=75&amp;auto=format&amp;fit=crop" alt="Table de plats thaïlandais : salade de papaye, soupe, viandes sautées et herbes fraîches" width="1200" height="800">
+  </div>
+  <p class="press rv">Ils en ont parlé : <a href="http://www.grazia.fr/galerie/le-chef-thai-paname-brewing-company-et-buddha-bar-nos-3-restos-coup-de-coeur-de-la-semaine-834982/(page)/1" target="_blank" rel="noopener">Grazia</a>, <a href="https://www.lebonbon.fr/paris/les-tops-food-et-drink/restaurant-thailandais-a-paris-meilleures-adresses/" target="_blank" rel="noopener">Le Bonbon</a>, <a href="http://lifestyle.paris/paris-les-10-bonnes-adresses-de-lactrice-gwendoline-hamon/" target="_blank" rel="noopener">Lifestyle Paris</a>.</p>
+</section>
+
+<section class="infos wrap" id="infos">
+  <h2 class="rv">Venir, réserver, emporter</h2>
+  <div class="infos-grid">
+    <div class="rv">
+      <ul class="hours" id="hours">
+        <li data-d="1"><span>Lundi</span><span>12:00 – 14:30 · 18:30 – 22:30</span></li>
+        <li data-d="2"><span>Mardi</span><span>12:00 – 14:30 · 18:30 – 22:30</span></li>
+        <li data-d="3"><span>Mercredi</span><span>12:00 – 14:30 · 18:30 – 22:30</span></li>
+        <li data-d="4"><span>Jeudi</span><span>12:00 – 14:30 · 18:30 – 22:30</span></li>
+        <li data-d="5"><span>Vendredi</span><span>12:00 – 14:30 · 18:30 – 22:30</span></li>
+        <li data-d="6"><span>Samedi</span><span>12:00 – 14:30 · 18:30 – 22:30</span></li>
+        <li data-d="0"><span>Dimanche</span><span>Fermé</span></li>
+      </ul>
+      <div class="facts">
+        <p><strong>La cuisine ferme 30 minutes avant</strong>À 14:00 le midi, à 22:00 le soir.</p>
+        <p><strong>Groupes de 6 personnes et plus</strong>Appelez si aucun créneau n’apparaît en ligne, ou écrivez à contact@chef-thai.com (réponse sous 24 h).</p>
+        <p><strong>Livraison avec Deliveroo</strong>Du lundi au samedi, 12:00 – 14:45 et 18:30 – 21:45. Toute la carte existe aussi à emporter.</p>
+        <p><strong>Bon à savoir</strong>Les animaux ne sont pas acceptés. Poussettes et trottinettes selon la place disponible.</p>
+      </div>
+    </div>
+    <div class="rv" style="--i:1">
+      <div class="map">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Le+Chef+Tha%C3%AF+59+rue+des+Gravilliers+75003+Paris" target="_blank" rel="noopener">Voir le plan sur Google Maps</a>
+        <iframe title="Plan : Le Chef Thaï, 59 rue des Gravilliers" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.685096922866!2d2.352407615674582!3d48.864214979288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1aef54f5d5%3A0x130572b9883c6b34!2s59+Rue+des+Gravilliers%2C+75003+Paris!5e0!3m2!1sfr!2sfr!4v1453221795847"></iframe>
+      </div>
+      <p class="addr">59 rue des Gravilliers, 75003 Paris<small>Dans le Haut-Marais, près du métro Arts et Métiers.</small></p>
+      <div class="contact-list">
+        <a class="btn btn-lime" href="https://www.thefork.fr/restaurant/le-chef-thai-r392983" target="_blank" rel="noopener">Réserver en ligne</a>
+        <a class="btn btn-soft" href="tel:+33171702930">01 71 70 29 30</a>
+        <a class="btn btn-soft" href="mailto:contact@chef-thai.com?subject=R%C3%A9servation%20au%20Chef%20Tha%C3%AF">contact@chef-thai.com</a>
+        <a class="btn btn-soft" href="https://www.instagram.com/le_chef_thai/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn btn-soft" href="https://www.facebook.com/Restaurant-Le-Chef-Tha%C3%AF-781381205342005/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big" aria-hidden="true">Le Chef Thaï</p>
+    <div class="foot">
+      <span>59 rue des Gravilliers, 75003 Paris · 01 71 70 29 30 · Du lundi au samedi</span>
+      <span>Démo réalisée par Raul Hatos, site non officiel. Photos d’illustration : Unsplash.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const U=id=>`https://images.unsplash.com/photo-${id}?w=1200&q=75&auto=format&fit=crop`;
+const PH={
+  entrees:['1562565652-a0d8f0c59eb4','Entrées'],soupes:['1548943487-a2e4e43b4853','Tom yam'],
+  padthai:['1559314809-0d155014e29e','Pad Thaï'],seeyew:['1583032015879-e5022cb87c3b','Pad See-Yew'],
+  mama:['1585032226651-759b368d7246','Mama Noodles'],mamacurry:['1569562211093-4ed0d0758f12','Mama Currys'],
+  riz:['1512058564366-18510be2db19','Riz sautés'],wok:['1626804475297-41608ea09aeb','Woks'],
+  curry:['1455619452474-d2be8b1e70cd','Currys'],desserts:['1637806930600-37fa8892069d','Desserts'],formule:['1637806930600-37fa8892069d','Formules du midi']
+};
+// [nom, prix midi, prix soir, supplément formule midi] ; null = absent de ce service
+const MENU=[
+ {id:'entrees',t:'Entrées',d:'Salades avec sauce poisson et cacahuètes.',r:[['Nems au poulet, 3 pièces',11.9,11.9],['Nems végétariens, 3 pièces',11.9,11.9],['Salade de papaye nature',12.4,12.4],['Salade de papaye aux crevettes',14.4,14.4],['Salade de vermicelles, porc haché et herbes thaï',15.4,15.4]]},
+ {id:'soupes',t:'Soupes',d:'À la citronnelle (tom yam) ou au lait de coco et à la citronnelle (tom ka).',r:[['Au poulet',11.9,11.9],['Végétarienne',11.9,11.9],['Aux crevettes',12.4,12.4],['Aux fruits de mer',13.4,13.4]]},
+ {id:'padthai',t:'Pad Thaï',dish:1,d:'Pâtes de riz, sauce tamarin, cacahuètes, œufs, ciboulette et soja.',r:[['Au poulet',14.9,17.4,0],['Au tofu et légumes',14.9,17.4,0],['Au bœuf',15.9,18.4,1],['Aux crevettes',15.9,18.4,1],['Au saumon frit',17.9,20.4,3],['Saint-Jacques, crevettes et calamars',17.9,20.4,3]]},
+ {id:'seeyew',t:'Pad See-Yew',dish:1,d:'Pâtes de riz, sauce huître, œufs, brocoli, chou, pak-choï.',r:[['Tofu et basilic thaï',14.9,17.4,0],['Bœuf',15.9,18.4,1],['Calamars',15.9,18.4,1]]},
+ {id:'mama',t:'Mama Noodles',dish:1,d:'Nouilles de blé, sauce soja noire, courgettes, basilic, oignons, champignons, céleri et ail.',r:[['Au poulet',14.9,17.4,0],['Au tofu et légumes',14.9,17.4,0],['Au bœuf',15.9,18.4,1],['Saint-Jacques, crevettes et calamars',17.9,20.4,3]]},
+ {id:'mamacurry',t:'Mama Currys',dish:1,curry:1,d:'Nouilles de blé, légumes, sauce curry au choix : jaune (doux), vert (moyen) ou rouge (relevé).',r:[['Au poulet',15.9,18.9,2],['Au tofu',15.9,18.9,2],['Aux crevettes',17.4,19.9,3]]},
+ {id:'riz',t:'Riz sautés',dish:1,d:'Avec carottes, brocoli, oignons, chou, tomates et œufs.',r:[['Au poulet',14.9,17.9,0],['Poulet et basilic thaï',15.9,18.4,1],['Poulet à la confiture de chili « Pric Pao »',15.9,18.4,1],['Tofu et légumes',14.9,17.4,0],['Au bœuf',15.9,18.9,1],['Aux crevettes',15.9,18.9,1],['Au saumon frit',17.9,20.4,3]]},
+ {id:'wok',t:'Woks',dish:1,rice:1,d:'Avec carottes, champignons, oignons, courgettes et céleri. Riz en supplément le soir.',r:[['Poulet et basilic thaï',15.4,17.4,0],['Poulet à la confiture de chili « Pric Pao »',15.4,17.4,0],['Poulet sauté à l’ail',15.4,17.4,0],['Tofu, légumes et basilic thaï',15.9,17.4,1],['Bœuf à la citronnelle',15.9,18.4,1],['Bœuf et basilic thaï',15.9,18.4,1],['Bœuf et brocoli',15.9,18.4,1],['Bœuf et chou pak-choï',15.9,18.4,1],['Porc haché et basilic thaï, œuf au plat',15.9,18.4,1],['Saumon au gingembre',17.9,20.9,2.5],['Canard à la confiture de chili « Pric Pao »',17.9,20.9,2.5]]},
+ {id:'curry',t:'Currys',dish:1,rice:1,curry:1,d:'Jaune (doux), vert (moyen) ou rouge (relevé), au lait de coco et aux légumes. Riz en supplément le soir.',r:[['Au poulet',15.4,17.4,0],['Tofu et légumes',15.4,17.4,0],['Au bœuf',15.9,18.4,1],['Boulettes de poisson',15.4,17.4,0],['Aux crevettes',15.9,19.9,1],['Au saumon frit',17.9,20.9,2.5],['Saint-Jacques, crevettes et calamars',17.9,20.9,2.5],['Magret de canard',17.9,20.9,2.5],['Massaman de bœuf, pommes de terre, carottes, cacahuètes',16.9,19.4,2,'massaman']]},
+ {id:'accomp',t:'Riz en accompagnement',d:'Pour les woks, les currys et les plats du chef.',r:[['Riz thaï parfumé',4,4],['Riz gluant',4.5,4.5]]},
+ {id:'desserts',t:'Desserts',r:[['Fromage blanc et coulis de mangue',5,6.4],['Flan au lait de coco, sauce caramel',5,6.4],['Flan au taro et lait de coco',5.5,7.9],['Riz noir au lait de coco, nature',5.5,7.9],['Riz noir au lait de coco, aux longanes',6.5,8.4],['Perles de tapioca, coco et ananas ou longanes',5.5,8.4],['Perles de tapioca, coco et mangue fraîche',6.9,8.9],['Riz gluant au lait de coco, mangue fraîche',7.9,9.9]]}
+];
+const eur=n=>n.toFixed(2).replace('.',',');
+
+// carte
+const cats=document.getElementById('menuCats');
+const catHTML=c=>`<section class="cat" id="c-${c.id}"><h3>${c.t}</h3>${c.d?`<p class="desc">${c.d}</p>`:''}<div class="rows-head" aria-hidden="true"><span></span><span>Midi</span><span>Soir</span></div><ul class="rows">${c.r.map(r=>`<li><span>${r[0]}${r[3]?`<small>Formule midi : +${eur(r[3])}</small>`:''}</span><b aria-label="midi">${eur(r[1])}</b><b aria-label="soir">${eur(r[2])}</b></li>`).join('')}</ul></section>`;
+const tabs=document.getElementById('menuTabs');
+tabs.innerHTML=MENU.map((c,i)=>`<label><input type="radio" name="cat" value="${i}"${c.id==='padthai'?' checked':''}><span>${c.t}</span></label>`).join('');
+const pick=i=>{cats.innerHTML=catHTML(MENU[i]);show(PH[MENU[i].id]?MENU[i].id:'padthai')};
+tabs.addEventListener('change',e=>pick(e.target.value));
+// assiette fixe
+const img=document.getElementById('plateImg'),cap=document.getElementById('plateCap');let cur='padthai';
+function show(k){if(!PH[k]||k===cur)return;cur=k;img.classList.add('out');const n=new Image();n.src=U(PH[k][0]);n.onload=n.onerror=()=>{img.src=n.src;cap.textContent=PH[k][1];img.classList.remove('out')}}
+
+pick(MENU.findIndex(c=>c.id==='padthai'));
+// composer
+const f=document.getElementById('builder'),dishes=document.getElementById('dishes'),garn=document.getElementById('garn'),
+ formule=document.getElementById('formule'),price=document.getElementById('price'),recap=document.getElementById('recap');
+const D=MENU.filter(c=>c.dish);
+dishes.innerHTML=D.map((c,i)=>`<label><input type="radio" name="dish" value="${c.id}"${i?'':' checked'}><span>${c.t}</span></label>`).join('');
+const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}));
+if(now.getDay()===0||now.getDay()===6||now.getHours()>=15)f.svc.value='s';
+function fillGarn(){const c=D.find(c=>c.id===f.dish.value);garn.innerHTML=c.r.map((r,i)=>`<option value="${i}">${r[0]}</option>`).join('')}
+function calc(){
+  const c=D.find(c=>c.id===f.dish.value),r=c.r[garn.value],m=f.svc.value==='m';
+  const massaman=r[4]==='massaman';
+  document.getElementById('spiceSet').hidden=!c.curry||massaman;
+  document.getElementById('formSet').hidden=!m;
+  document.getElementById('riceSet').hidden=m||!c.rice;
+  document.getElementById('supNote').hidden=!m;
+  let total,parts=[];
+  if(m){const base=+formule.value;total=base?base+r[3]:r[1];parts.push(formule.options[formule.selectedIndex].text.toLowerCase().replace('plat','le plat'))}
+  else{const rice=c.rice?+f.rice.value:0;total=r[2]+rice;parts.push(rice?(rice===4?'avec riz thaï parfumé':'avec riz gluant'):'le plat seul')}
+  const spice=c.curry&&!massaman?`, curry ${f.spice.value}`:'';
+  const txt=eur(total)+' €';
+  if(price.textContent!==txt){price.textContent=txt;price.classList.remove('bump');void price.offsetWidth;price.classList.add('bump')}
+  recap.textContent=`${c.t}, ${r[0].charAt(0).toLowerCase()+r[0].slice(1)}${spice}. ${parts[0].charAt(0).toUpperCase()+parts[0].slice(1)}.`;
+  show(c.id);
+}
+f.addEventListener('change',e=>{if(e.target.name==='dish')fillGarn();calc()});
+fillGarn();calc();
+// self-check : Pad Thaï bœuf, formule plat+soft = 16,90 + 1,00
+console.assert(16.9+D[0].r[2][3]===17.9,'formule midi');
+
+// statut d'ouverture (heure de Paris)
+(function(){
+  const d=now.getDay(),t=now.getHours()*60+now.getMinutes(),st=document.getElementById('status'),s=st.querySelector('span');
+  document.querySelector(`#hours li[data-d="${d}"]`).classList.add('today');
+  const open=d!==0&&((t>=720&&t<870)||(t>=1110&&t<1350));
+  if(open)s.textContent=`Ouvert en ce moment · jusqu’à ${t<870?'14:30':'22:30'}`;
+  else{st.classList.add('closed');
+    if(d!==0&&t<720)s.textContent='Fermé · ouvre à 12:00 aujourd’hui';
+    else if(d!==0&&t>=870&&t<1110)s.textContent='Fermé · réouverture à 18:30 ce soir';
+    else s.textContent=`Fermé · ouvre ${d===6||d===0?'lundi':'demain'} à 12:00`;}
+})();
+
+// l'assiette suit la carte
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;show(t.id==='composer'?f.dish.value:t.id==='menuCats'?(PH[MENU[document.querySelector('input[name=cat]:checked').value].id]?MENU[document.querySelector('input[name=cat]:checked').value].id:'padthai'):t.dataset.photo)}),{rootMargin:'-45% 0px -45% 0px'});
+['composer','menuCats'].forEach(i=>io.observe(document.getElementById(i)));io.observe(document.querySelector('.formules'));
+document.getElementById('composer').addEventListener('focusin',()=>show(f.dish.value));
+// apparitions
+const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rv.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>rv.observe(el));
+</script>
+</body>
+</html>

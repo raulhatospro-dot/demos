@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Alix et Mika · tartares coupés au couteau, Montmartre</title>
+<meta name="description" content="Alix et Mika, restaurant de tartares sur mesure coupés au couteau, 37 rue Lamarck, Paris 18e. Choisissez votre base, votre style, votre taille.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#e9e4d9;      /* bone, le papier de la carte */
+  --paper:#f7f4ee;
+  --paper-2:#efeae0;
+  --ink:#1c3338;         /* le bleu-vert de leur carte */
+  --ink-2:#27474e;
+  --soft:#4c5f63;
+  --on-ink:#f3efe6;
+  --on-ink-soft:#b9c8c6;
+  --red:#b3302a;         /* bœuf cru */
+  --red-2:#9a2722;
+  --on-red:#fff8f2;
+  --gut:clamp(16px,3vw,40px);
+  --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --s-body:clamp(1rem,.97rem + .2vw,1.125rem);
+  --s-lead:clamp(1.25rem,1.1rem + .6vw,1.625rem);
+  --s-head:clamp(2.5rem,1.6rem + 4vw,5rem);
+  --s-mega:clamp(4.25rem,2rem + 10vw,10.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --pill:999px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 var(--s-body)/1.55 Barlow,system-ui,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+::selection{background:var(--red);color:var(--on-red)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3{font-family:"Barlow Condensed",sans-serif;font-weight:700;margin:0;line-height:.95;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tnum{font-variant-numeric:tabular-nums}
+.wrap{padding-inline:var(--gut);max-width:1440px;margin-inline:auto}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:var(--on-ink-soft);font-size:var(--s-small);padding:7px var(--gut);text-align:center}
+
+/* boutons : une forme, la pilule */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:0 24px;border-radius:var(--pill);font:600 var(--s-body)/1 Barlow,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .3s var(--ease),background-color .25s,color .25s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-red{background:var(--red);color:var(--on-red)}
+.btn-red:hover{background:var(--red-2)}
+.btn-ink{background:var(--ink);color:var(--on-ink)}
+.btn-ink:hover{background:var(--ink-2)}
+.btn-soft{background:var(--paper-2);color:var(--ink)}
+.btn-soft:hover{background:#e3dccf}
+
+/* navigation */
+.nav{position:sticky;top:0;z-index:30;background:var(--ink);color:var(--on-ink)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.mark{font:italic 700 1.75rem/1 "Barlow Condensed",sans-serif;text-decoration:none;letter-spacing:-.01em}
+.mark span{color:var(--on-ink-soft);font-style:normal;font-weight:600;font-size:.6em;margin:0 .15em}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:28px}
+.nav ul a{text-decoration:none;font-weight:500;color:var(--on-ink-soft);transition:color .2s}
+.nav ul a:hover{color:var(--on-ink)}
+.nav .btn{min-height:44px;padding:0 18px}
+@media (min-width:900px){.nav ul{display:flex}}
+
+/* HERO : la carte posée sur le comptoir */
+.hero{background:var(--ink);color:var(--on-ink);padding-bottom:0;overflow:hidden}
+.hero .wrap{display:grid;gap:20px;padding-top:20px}
+.sheet{background:var(--paper);color:var(--ink);padding:36px 24px 40px;position:relative;
+  --sc:14px;
+  -webkit-mask:radial-gradient(circle var(--sc) at 0 0,#0000 98%,#000) top left,radial-gradient(circle var(--sc) at 100% 0,#0000 98%,#000) top right,radial-gradient(circle var(--sc) at 0 100%,#0000 98%,#000) bottom left,radial-gradient(circle var(--sc) at 100% 100%,#0000 98%,#000) bottom right;
+  -webkit-mask-size:51% 51%;-webkit-mask-repeat:no-repeat;
+  mask:radial-gradient(circle var(--sc) at 0 0,#0000 98%,#000) top left,radial-gradient(circle var(--sc) at 100% 0,#0000 98%,#000) top right,radial-gradient(circle var(--sc) at 0 100%,#0000 98%,#000) bottom left,radial-gradient(circle var(--sc) at 100% 100%,#0000 98%,#000) bottom right;
+  mask-size:51% 51%;mask-repeat:no-repeat}
+.hero h1{margin-top:64px;font-size:var(--s-mega);font-style:italic;line-height:.86;letter-spacing:-.02em}
+.hero h1 .et{font-style:normal;font-weight:600;font-size:.42em;vertical-align:.45em;margin:0 .06em;color:var(--red)}
+.cut{font:700 clamp(1.125rem,1rem + .5vw,1.5rem)/1 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-top:14px}
+.hero .lead{font-size:var(--s-lead);line-height:1.3;margin-top:26px;max-width:24ch}
+.facts{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:22px;color:var(--soft);font-size:var(--s-small)}
+.facts strong{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero-pic{position:relative;min-height:360px;margin-inline:calc(var(--gut) * -1)}
+.hero-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-pic figcaption{position:absolute;left:var(--gut);bottom:16px;background:var(--paper);color:var(--ink);font-size:var(--s-small);padding:6px 12px;border-radius:var(--pill)}
+@media (min-width:900px){
+  .hero .wrap{grid-template-columns:repeat(12,1fr);gap:0 24px;padding-top:24px;padding-bottom:24px;min-height:calc(100svh - 64px - 34px);align-items:stretch}
+  .sheet{grid-column:1 / span 6;padding:64px 56px 56px;align-self:stretch;--sc:22px;display:flex;flex-direction:column;justify-content:center}
+  .hero-pic{grid-column:7 / -1;margin:0;min-height:auto}
+}
+
+.price{position:absolute;top:20px;right:20px;width:80px;height:80px;border-radius:50%;background:var(--ink);color:var(--on-ink);display:grid;place-content:center;text-align:center;transform:rotate(-8deg);font:italic 700 1.75rem/1 "Barlow Condensed",sans-serif}
+.price small{display:block;font:500 .75rem/1.15 Barlow,sans-serif;font-style:normal;color:var(--on-ink-soft);margin-top:3px}
+@media (min-width:900px){.hero h1{margin-top:0}.price{top:32px;right:32px;width:112px;height:112px;font-size:2.25rem}.price small{font-size:.8125rem}}
+/* titres de section */
+.sec{padding-block:clamp(88px,10vw,168px)}
+.sec-head{display:grid;gap:16px;margin-bottom:clamp(36px,4vw,64px)}
+.sec-head h2{font-size:var(--s-head)}
+.sec-head p{max-width:52ch;font-size:var(--s-lead);line-height:1.35;color:var(--soft)}
+@media (min-width:900px){.sec-head{grid-template-columns:7fr 5fr;align-items:end;gap:24px}}
+
+/* COMPOSEUR */
+.comp{display:grid;gap:28px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:1000px){.comp{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:start}}
+.step{background:var(--paper);padding:26px 20px 28px;margin-bottom:12px}
+@media (min-width:600px){.step{padding:32px 32px 34px}}
+.step h3{font-size:clamp(1.75rem,1.4rem + 1.2vw,2.5rem);margin-bottom:6px}
+.step .hint{color:var(--soft);font-size:var(--s-small);margin-bottom:18px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;gap:.5em;min-height:46px;padding:0 18px;border-radius:var(--pill);background:var(--paper-2);font-weight:500;transition:background-color .2s,color .2s,transform .3s var(--ease)}
+.chip span b{font-weight:600;color:var(--red)}
+.chip:hover span{background:#e2dbcd}
+.chip input:checked + span{background:var(--ink);color:var(--on-ink)}
+.chip input:checked + span b{color:#ffb1a4}
+.chip input:focus-visible + span{outline:3px solid var(--red);outline-offset:2px}
+.chip input:active + span{transform:scale(.96)}
+.styles{display:grid;gap:8px}
+@media (min-width:600px){.styles{grid-template-columns:1fr 1fr}}
+.sty{position:relative}
+.sty input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;z-index:1}
+.sty div{height:100%;padding:14px 16px 15px;border-radius:14px;background:var(--paper-2);transition:background-color .2s,color .2s}
+.sty strong{display:flex;justify-content:space-between;gap:8px;font:700 1.375rem/1.05 "Barlow Condensed",sans-serif}
+.sty strong em{font-style:normal;color:var(--red);font-size:.85em}
+.sty small{display:block;font-size:.9375rem;line-height:1.4;color:var(--soft);margin-top:4px}
+.sty:hover div{background:#e2dbcd}
+.sty input:checked + div{background:var(--ink);color:var(--on-ink)}
+.sty input:checked + div small{color:var(--on-ink-soft)}
+.sty input:checked + div em{color:#ffb1a4}
+.sty input:focus-visible + div{outline:3px solid var(--red);outline-offset:2px}
+
+/* le ticket */
+.ticket{background:var(--ink);color:var(--on-ink);padding:30px 26px 0;position:relative}
+@media (min-width:1000px){.ticket{position:sticky;top:88px}}
+.ticket h3{font-size:clamp(1.75rem,1.4rem + 1.2vw,2.5rem)}
+.ticket .sub{color:var(--on-ink-soft);font-size:var(--s-small);margin-top:4px}
+.lines{list-style:none;margin:22px 0 0;padding:0}
+.lines li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #ffffff2e}
+.lines li > span:last-child{white-space:nowrap}
+.lines .what{color:var(--on-ink-soft);font-size:var(--s-small);display:block}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding:20px 0 6px}
+.total span{font-size:var(--s-small);color:var(--on-ink-soft)}
+.total output{font:700 clamp(3rem,2.4rem + 2vw,4.25rem)/1 "Barlow Condensed",sans-serif}
+.ticket .note{color:var(--on-ink-soft);font-size:var(--s-small);padding-bottom:22px}
+.stub{margin:0 -26px;padding:22px 26px 26px;background:var(--red);color:var(--on-red);position:relative;
+  -webkit-mask:radial-gradient(circle 12px at 0 0,#0000 98%,#000) left top / 51% 100% no-repeat,radial-gradient(circle 12px at 100% 0,#0000 98%,#000) right top / 51% 100% no-repeat;
+  mask:radial-gradient(circle 12px at 0 0,#0000 98%,#000) left top / 51% 100% no-repeat,radial-gradient(circle 12px at 100% 0,#0000 98%,#000) right top / 51% 100% no-repeat}
+.stub::before{content:"";position:absolute;left:18px;right:18px;top:-1px;border-top:4px dotted var(--ink)}
+.stub p{font-size:var(--s-small);margin-bottom:14px}
+.stub .btn{width:100%;background:var(--on-red);color:var(--red-2)}
+.stub .btn:hover{background:#fff}
+.bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:25;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--ink);color:var(--on-ink);border-radius:var(--pill);padding:8px 8px 8px 22px;box-shadow:0 10px 30px -10px #0008;transform:translateY(140%);transition:transform .45s var(--ease)}
+.bar.on{transform:none}
+.bar b{font:700 1.5rem/1 "Barlow Condensed",sans-serif}
+.bar span{font-size:var(--s-small);color:var(--on-ink-soft);display:block}
+.bar .btn{min-height:44px;padding:0 18px}
+@media (min-width:1000px){.bar{display:none}}
+
+/* trois gestes : feuilles empilées */
+.gest{background:var(--ground)}
+.leaf{position:sticky;top:64px;display:grid;overflow:hidden}
+.leaf + .leaf{top:112px}
+.leaf + .leaf + .leaf{top:160px}
+.leaf:nth-child(1){background:var(--paper);color:var(--ink)}
+.leaf:nth-child(2){background:var(--ink);color:var(--on-ink)}
+.leaf:nth-child(3){background:var(--red);color:var(--on-red)}
+.leaf .txt{padding:22px var(--gut) 32px;display:flex;flex-direction:column;justify-content:flex-start;gap:16px}
+.leaf h3{font-size:clamp(2.25rem,1.2rem + 4.4vw,5.5rem);line-height:.92}
+.leaf p{font-size:var(--s-lead);line-height:1.35;max-width:30ch}
+.leaf img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+@media (min-width:900px){
+  .leaf{grid-template-columns:1fr 1fr;min-height:82svh}
+  .leaf .txt{padding:28px var(--gut) 56px;justify-content:space-between}
+  .leaf{min-height:72svh}
+  .leaf img{aspect-ratio:auto}
+}
+
+/* LA CARTE */
+.carte{background:var(--paper);padding:clamp(28px,4vw,64px) clamp(20px,4vw,64px)}
+.cols{display:grid;gap:44px}
+@media (min-width:760px){.cols{grid-template-columns:1fr 1fr;gap:44px 56px}}
+@media (min-width:1180px){.cols{grid-template-columns:1fr 1fr 1fr}}
+.grp h3{font-size:clamp(1.75rem,1.4rem + 1vw,2.25rem);padding-bottom:10px;margin-bottom:6px;border-bottom:3px solid var(--ink)}
+.grp ul{list-style:none;margin:0;padding:0}
+.grp li{display:flex;justify-content:space-between;gap:18px;padding:9px 0}
+.grp li small{display:block;color:var(--soft);font-size:.9375rem;line-height:1.4}
+.grp li > span:last-child{font-weight:600;white-space:nowrap}
+.formules{display:grid;gap:12px;margin-top:56px}
+@media (min-width:900px){.formules{grid-template-columns:1fr 1fr}}
+.formule{background:var(--ink);color:var(--on-ink);padding:28px 26px 30px}
+.formule:nth-child(2){background:var(--red);color:var(--on-red)}
+.formule h3{font-size:clamp(2rem,1.6rem + 1.4vw,3rem);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
+.formule h3 span{font-size:.62em}
+.formule ul{margin:16px 0 0;padding-left:1.1em}
+.formule li{margin:4px 0}
+.formule p{margin-top:16px;font-size:var(--s-small);opacity:.85}
+.carte-note{margin-top:28px;color:var(--soft);font-size:var(--s-small);max-width:70ch}
+
+/* la maison */
+.maison{background:var(--ink);color:var(--on-ink)}
+.maison .grid{display:grid;gap:36px}
+@media (min-width:900px){.maison .grid{grid-template-columns:5fr 7fr;gap:56px;align-items:center}}
+.maison h2{font-size:var(--s-head)}
+.maison .letter p{font-size:var(--s-lead);line-height:1.4;margin-top:22px;max-width:36ch}
+.maison .letter p + p{font-size:var(--s-body);line-height:1.6;color:var(--on-ink-soft);max-width:52ch}
+.maison .sign{margin-top:28px;font:italic 700 1.75rem/1.1 "Barlow Condensed",sans-serif}
+.maison .sign small{display:block;font:400 var(--s-small)/1.4 Barlow,sans-serif;color:var(--on-ink-soft);margin-top:4px}
+.duo{display:grid;grid-template-columns:3fr 2fr;gap:12px}
+.duo figure{margin:0}
+.duo img{width:100%;height:100%;object-fit:cover}
+.duo figure:first-child{aspect-ratio:3/4}
+.duo figure:last-child{align-self:end;aspect-ratio:3/4}
+.duo figcaption{font-size:var(--s-small);color:var(--on-ink-soft);margin-top:8px}
+
+/* horaires + venir */
+.venir .grid{display:grid;gap:12px}
+@media (min-width:900px){.venir .grid{grid-template-columns:5fr 7fr}}
+.hours{background:var(--paper);padding:28px 24px 30px}
+@media (min-width:600px){.hours{padding:36px 36px 38px}}
+.now{display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:0 16px;border-radius:var(--pill);background:var(--paper-2);font-weight:600;margin-bottom:20px}
+.now i{width:10px;height:10px;border-radius:50%;background:var(--soft)}
+.now.open i{background:#2e8a4a;box-shadow:0 0 0 4px #2e8a4a33}
+.now.closed i{background:var(--red)}
+.hours table{width:100%;border-collapse:collapse}
+.hours th,.hours td{text-align:left;padding:11px 0;border-bottom:1px solid #1c33381f;vertical-align:top;font-weight:400}
+.hours th{font-weight:600;width:42%}
+.hours tr.today th,.hours tr.today td{color:var(--red);font-weight:600}
+.hours td.off{color:var(--soft)}
+.where{background:var(--paper);display:grid}
+.where iframe{width:100%;height:100%;min-height:300px;border:0;filter:grayscale(.35) contrast(1.05)}
+.where .addr{padding:24px 24px 28px;display:grid;gap:14px}
+@media (min-width:600px){.where .addr{padding:30px 36px 34px}}
+.addr h3{font-size:clamp(1.75rem,1.4rem + 1vw,2.25rem)}
+.addr p{color:var(--soft)}
+.addr p strong{color:var(--ink);font-weight:600}
+
+/* privatisation : le coupon */
+.coupon{background:var(--red);color:var(--on-red);display:grid;position:relative;
+  -webkit-mask:radial-gradient(circle 18px at 0 50%,#0000 98%,#000) left / 51% 100% no-repeat,radial-gradient(circle 18px at 100% 50%,#0000 98%,#000) right / 51% 100% no-repeat;
+  mask:radial-gradient(circle 18px at 0 50%,#0000 98%,#000) left / 51% 100% no-repeat,radial-gradient(circle 18px at 100% 50%,#0000 98%,#000) right / 51% 100% no-repeat}
+.coupon .l{padding:32px 26px 28px;border-bottom:5px dotted var(--ground)}
+.coupon .r{padding:28px 26px 32px;display:grid;gap:10px}
+.coupon h2{font-size:clamp(2.25rem,1.6rem + 2.6vw,4rem)}
+.coupon .l p{margin-top:16px;max-width:36ch;font-size:var(--s-lead);line-height:1.35}
+.coupon input,.coupon textarea{width:100%;min-height:54px;border:0;border-radius:12px;background:#c94a43;color:var(--on-red);font:400 var(--s-body)/1.4 Barlow,sans-serif;padding:14px 16px}
+.coupon textarea{min-height:96px;resize:vertical}
+.coupon ::placeholder{color:#ffe1da}
+.coupon input:focus,.coupon textarea:focus{outline:3px solid var(--on-red);outline-offset:1px}
+.coupon .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.coupon .btn{width:100%;min-height:56px;background:var(--ink);color:var(--on-ink)}
+.coupon .btn:hover{background:var(--ink-2)}
+@media (min-width:900px){
+  .coupon{grid-template-columns:46fr 54fr;
+    -webkit-mask:radial-gradient(circle 18px at 46% 0,#0000 98%,#000) top / 100% 51% no-repeat,radial-gradient(circle 18px at 46% 100%,#0000 98%,#000) bottom / 100% 51% no-repeat;
+    mask:radial-gradient(circle 18px at 46% 0,#0000 98%,#000) top / 100% 51% no-repeat,radial-gradient(circle 18px at 46% 100%,#0000 98%,#000) bottom / 100% 51% no-repeat}
+  .coupon .l{padding:52px 48px;border-bottom:0;border-right:5px dotted var(--ground);display:flex;flex-direction:column;justify-content:space-between}
+  .coupon .r{padding:48px}
+}
+
+/* rideau + pied */
+main{position:relative;z-index:2;background:var(--ground)}
+.foot{position:sticky;bottom:0;z-index:1;background:var(--ink);color:var(--on-ink)}
+.foot .wrap{padding-top:clamp(56px,7vw,96px);padding-bottom:28px}
+.foot .big{font:italic 700 clamp(4rem,1.5rem + 13vw,13rem)/.82 "Barlow Condensed",sans-serif;letter-spacing:-.02em}
+.foot .big span{font-style:normal;font-weight:600;font-size:.4em;vertical-align:.5em;color:#ff8f80}
+.foot .row{display:grid;gap:24px;margin-top:36px}
+@media (min-width:900px){.foot .row{grid-template-columns:repeat(3,1fr)}}
+.foot .row a{display:block;text-decoration:none;font-size:var(--s-lead);line-height:1.35}
+.foot .row a:hover{text-decoration:underline}
+.foot .row p{color:var(--on-ink-soft)}
+.foot .imprint{margin-top:44px;color:var(--on-ink-soft);font-size:var(--s-small);display:flex;flex-wrap:wrap;gap:6px 22px}
+
+/* entrées */
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rise.in{opacity:1;transform:none}
+.hero-pic img{animation:drift 18s var(--ease) both}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise{opacity:1;transform:none;transition:none}
+  .hero-pic img{animation:none}
+  .bar{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Alix et Mika, accueil">Alix<span>et</span>Mika</a>
+    <ul>
+      <li><a href="#composer">Composer</a></li>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#maison">La maison</a></li>
+      <li><a href="#venir">Horaires et accès</a></li>
+    </ul>
+    <a class="btn btn-red" href="tel:+33173711990">Réserver</a>
+  </div>
+</nav>
+
+<main id="top">
+<header class="hero">
+  <div class="wrap">
+    <div class="sheet">
+      <p class="price" aria-label="Tartare sur mesure à partir de 16 euros">16 €<small>le tartare<br>sur mesure</small></p>
+      <h1>Alix<span class="et">et</span>Mika</h1>
+      <p class="cut">French cut lovers</p>
+      <p class="lead">Des tartares coupés au couteau et composés à votre goût, en haut de Montmartre.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="tel:+33173711990"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Réserver au 01 73 71 19 90</a>
+        <a class="btn btn-soft" href="#composer">Composer mon tartare</a>
+      </div>
+      <div class="facts">
+        <span><strong>4,7 sur 5</strong> · 506 avis Google</span>
+        <span><strong>37 rue Lamarck</strong> · Paris 18e</span>
+        <span>Métro 12 · Lamarck–Caulaincourt</span>
+      </div>
+    </div>
+    <figure class="hero-pic" style="margin-top:0;margin-bottom:0">
+      <img src="https://images.unsplash.com/photo-1546010361-3b7b468209e3?w=1600&q=75&auto=format&fit=crop" width="1600" height="1067" alt="Un tartare de bœuf dressé en cercle, surmonté de persil">
+      <figcaption>Bœuf, coupé au couteau</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="sec" id="composer" aria-labelledby="t-comp">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <h2 id="t-comp">Composez votre tartare</h2>
+      <p>Une base, un style, une taille. Préparez votre commande ici, montrez-la au serveur, c’est réglé.</p>
+    </div>
+    <form class="comp" id="builder" onsubmit="return false">
+      <div>
+        <div class="step rise">
+          <h3>La taille</h3>
+          <p class="hint">M est compris dans le prix de base de 16 €.</p>
+          <fieldset><legend class="sr">Taille</legend><div class="chips" id="f-size"></div></fieldset>
+        </div>
+        <div class="step rise">
+          <h3>La base</h3>
+          <p class="hint">Poisson, viande, ou la version végétarienne à la burrata.</p>
+          <fieldset><legend class="sr">Base</legend><div class="chips" id="f-base"></div></fieldset>
+        </div>
+        <div class="step rise">
+          <h3>Le style</h3>
+          <p class="hint">L’assaisonnement qui fait voyager votre tartare.</p>
+          <fieldset><legend class="sr">Style</legend><div class="styles" id="f-style"></div></fieldset>
+        </div>
+        <div class="step rise">
+          <h3>Les extras</h3>
+          <p class="hint">Autant que vous voulez.</p>
+          <fieldset><legend class="sr">Extras</legend><div class="chips" id="f-extra"></div></fieldset>
+        </div>
+        <div class="step rise">
+          <h3>L’accompagnement</h3>
+          <p class="hint">Les frites sont doublement cuites dans la graisse de canard.</p>
+          <fieldset><legend class="sr">Accompagnement</legend><div class="chips" id="f-side"></div></fieldset>
+        </div>
+        <div class="step rise">
+          <h3>La cuisson</h3>
+          <p class="hint">Tous les tartares peuvent être servis aller-retour.</p>
+          <fieldset><legend class="sr">Cuisson</legend><div class="chips" id="f-cook"></div></fieldset>
+        </div>
+      </div>
+
+      <aside class="ticket" id="ticket" aria-labelledby="t-ticket">
+        <h3 id="t-ticket">Votre tartare</h3>
+        <p class="sub">Tous nos produits sont frais et varient selon arrivage.</p>
+        <ul class="lines" id="lines" aria-live="polite"></ul>
+        <div class="total"><span>Total</span><output id="total" class="tnum" for="builder">16 €</output></div>
+        <p class="note">Prix de la carte en ligne du restaurant, à confirmer sur place.</p>
+        <div class="stub">
+          <p>Envie de le goûter ce soir&nbsp;? Réservez votre table par téléphone.</p>
+          <a class="btn" href="tel:+33173711990">Appeler le 01 73 71 19 90</a>
+        </div>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<div class="bar" id="bar" aria-hidden="true">
+  <div><span id="bar-what">Bœuf · Français · M</span><b id="bar-total" class="tnum">16 €</b></div>
+  <a class="btn btn-red" href="#ticket" tabindex="-1">Voir</a>
+</div>
+
+<section class="gest" aria-labelledby="t-gest">
+  <h2 id="t-gest" class="sr">Notre façon de faire</h2>
+  <div class="leaf">
+    <div class="txt"><h3>Coupé au couteau</h3><p>Jamais haché. Chaque tartare est taillé à la main, pour garder le grain et la mâche du produit.</p></div>
+    <img loading="lazy" src="https://images.unsplash.com/photo-1584818110620-0b9c3f2f5f2c?w=1400&q=75&auto=format&fit=crop" width="1400" height="934" alt="Un couteau de cuisine tranche un pavé de saumon sur une planche">
+  </div>
+  <div class="leaf">
+    <div class="txt"><h3>Frais, selon arrivage</h3><p>Saumon, thon albacore, poisson blanc, bœuf, veau&nbsp;: la base change avec ce que le marché apporte.</p></div>
+    <img loading="lazy" src="https://images.unsplash.com/photo-1779635593350-47a648e174ce?w=1400&q=75&auto=format&fit=crop" width="1400" height="934" alt="Des cuillères de tartare de thon alignées sur une ardoise">
+  </div>
+  <div class="leaf">
+    <div class="txt"><h3>Frites à la graisse de canard</h3><p>Double cuisson, pour un tartare qui se mange comme à la brasserie, en mieux.</p></div>
+    <img loading="lazy" src="https://images.unsplash.com/photo-1606755456206-b25206cde27e?w=1400&q=75&auto=format&fit=crop" width="1400" height="934" alt="Des frites dorées servies dans un gobelet en métal">
+  </div>
+</section>
+
+<section class="sec" id="carte" aria-labelledby="t-carte">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <h2 id="t-carte">La carte</h2>
+      <p>Entrées à partager, plateaux de dégustation et desserts maison autour du tartare sur mesure à 16&nbsp;€.</p>
+    </div>
+    <div class="carte rise">
+      <div class="cols">
+        <div class="grp">
+          <h3>Entrées</h3>
+          <ul>
+            <li><span>Croquette Saint-Marcellin</span><span>13</span></li>
+            <li><span>Burrata crémeuse</span><span>12</span></li>
+            <li><span>Œuf parfait et sa crème du jour</span><span>10</span></li>
+            <li><span>Assiette à partager<small>Croquette, burrata, œuf parfait</small></span><span>29</span></li>
+            <li><span>Foie gras pour deux</span><span>29</span></li>
+          </ul>
+        </div>
+        <div class="grp">
+          <h3>Plateaux dégustation</h3>
+          <ul>
+            <li><span>Méga plateau, pour deux<small>Bœuf français, bœuf croustillant, veau italien, veau romesco, thon niçois, saumon tropical, saumon poke, poisson blanc grec, poisson blanc oriental</small></span><span>49</span></li>
+            <li><span>Plateau dégustation, une personne<small>Bœuf croustillant, veau italien, thon romesco, saumon poke</small></span><span>24</span></li>
+            <li><span>Plateau poissons, une personne<small>Poisson blanc tropical, thon romesco, saumon poke</small></span><span>20</span></li>
+          </ul>
+        </div>
+        <div class="grp">
+          <h3>Plats et fromages</h3>
+          <ul>
+            <li><span>Faux-filet, 300 g</span><span>28</span></li>
+            <li><span>Salade du chef<small>Burrata, tomates, concombres, échalotes, câpres, basilic</small></span><span>18</span></li>
+            <li><span>Fromage du moment<small>Une personne / deux personnes</small></span><span>14 / 22</span></li>
+          </ul>
+        </div>
+        <div class="grp">
+          <h3>Accompagnements</h3>
+          <ul>
+            <li><span>Frites double cuisson, graisse de canard</span><span>6</span></li>
+            <li><span>Umami<small>Quinoa et boulgour, pickles</small></span><span>5</span></li>
+            <li><span>Salade du marché</span><span>5</span></li>
+            <li><span>Pickles de concombre</span><span>5</span></li>
+            <li><span>Trio<small>Frites, umami, salade</small></span><span>13</span></li>
+          </ul>
+        </div>
+        <div class="grp">
+          <h3>Desserts</h3>
+          <ul>
+            <li><span>Panna cotta, chocolat blanc, citron vert</span><span>9</span></li>
+            <li><span>Tiramisu, spéculoos, Nocciolata</span><span>9</span></li>
+            <li><span>Fondant au chocolat</span><span>9</span></li>
+            <li><span>Pâte de spéculoos, fromage blanc et brisures de spéculoos</span><span>9</span></li>
+            <li><span>Café ou thé gourmand</span><span>15</span></li>
+            <li><span>Prosecco gourmand</span><span>19</span></li>
+            <li><span>Champagne gourmand</span><span>22</span></li>
+            <li><span>Assiette de desserts<small>Panna cotta, fondant, fromage blanc, tiramisu</small></span><span>17</span></li>
+          </ul>
+        </div>
+        <div class="grp">
+          <h3>Digestifs, 4 cl</h3>
+          <ul>
+            <li><span>Poire Williams</span><span>10</span></li>
+            <li><span>Baileys</span><span>8</span></li>
+            <li><span>Get 27</span><span>8</span></li>
+            <li><span>Amaretto</span><span>8</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="formules">
+        <div class="formule">
+          <h3>Menu découverte <span>36 € / pers.</span></h3>
+          <ul>
+            <li>Pour deux personnes</li>
+            <li>Une entrée à partager</li>
+            <li>Un méga plateau pour deux</li>
+            <li>Deux accompagnements</li>
+            <li>Un dessert à partager</li>
+          </ul>
+        </div>
+        <div class="formule">
+          <h3>Formule à volonté <span>50 € / pers.</span></h3>
+          <ul>
+            <li>Une entrée au choix</li>
+            <li>Tartare M à volonté, sur commande</li>
+            <li>Un accompagnement au choix</li>
+          </ul>
+          <p>Pour toute la table. Rien ne s’emporte, et tout plat non terminé est facturé 5 €, reversés à une association.</p>
+        </div>
+      </div>
+      <p class="carte-note">Prix en euros, relevés sur la carte publiée par le restaurant. Ils peuvent évoluer&nbsp;: la carte du jour fait foi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec maison" id="maison" aria-labelledby="t-maison">
+  <div class="wrap grid">
+    <div class="letter rise">
+      <h2 id="t-maison">Le temple du tartare</h2>
+      <p>Le tartare, ce totem de la brasserie parisienne, a trouvé son adresse rue Lamarck.</p>
+      <p>Alix Guilmoto et Mickael Bokobza l’ont imaginé comme un atelier&nbsp;: on choisit sa base, puis son style, une suite d’assaisonnements et de garnitures qui fait voyager le tartare partout dans le monde. La salle mêle le bois et le bleu, et sa longue façade vitrée la baigne de lumière, à deux pas du Sacré-Cœur et de la place Dalida.</p>
+      <p class="sign">Alix et Mika<small>37 rue Lamarck, Paris 18e</small></p>
+    </div>
+    <div class="duo rise">
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1679925288389-b889bf155ebf?w=900&q=75&auto=format&fit=crop" width="900" height="1200" alt="Une rue pavée de Montmartre, le dôme du Sacré-Cœur au fond"><figcaption>Montmartre, côté Sacré-Cœur</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1742071234266-399bdd7dd9fd?w=700&q=75&auto=format&fit=crop" width="700" height="933" alt="Une rue en pente de Montmartre bordée d’immeubles haussmanniens"><figcaption>Les rues en pente du 18e</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec venir" id="venir" aria-labelledby="t-venir">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <h2 id="t-venir">Horaires et accès</h2>
+      <p>Le soir du mercredi au dimanche, et le midi le week-end.</p>
+    </div>
+    <div class="grid rise">
+      <div class="hours">
+        <p class="now" id="now"><i></i><span>Horaires</span></p>
+        <table>
+          <caption class="sr">Horaires d’ouverture</caption>
+          <tbody id="hrows">
+            <tr data-d="1"><th scope="row">Lundi</th><td class="off">Fermé</td></tr>
+            <tr data-d="2"><th scope="row">Mardi</th><td class="off">Fermé</td></tr>
+            <tr data-d="3"><th scope="row">Mercredi</th><td>19 h – 22 h 30</td></tr>
+            <tr data-d="4"><th scope="row">Jeudi</th><td>19 h – 22 h 30</td></tr>
+            <tr data-d="5"><th scope="row">Vendredi</th><td>19 h – 22 h 30</td></tr>
+            <tr data-d="6"><th scope="row">Samedi</th><td>12 h – 14 h 30<br>19 h – 22 h 30</td></tr>
+            <tr data-d="0"><th scope="row">Dimanche</th><td>12 h – 14 h 30<br>19 h – 22 h 30</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="where">
+        <iframe title="Plan d’accès à Alix et Mika, 37 rue Lamarck" loading="lazy" src="https://www.google.com/maps?q=Alix+et+Mika,+37+rue+Lamarck,+75018+Paris&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="addr">
+          <h3>37 rue Lamarck, 75018 Paris</h3>
+          <p><strong>Métro 12</strong>, station Lamarck–Caulaincourt, à quelques pas.</p>
+          <div class="actions" style="margin-top:4px">
+            <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&destination=Alix+et+Mika+37+rue+Lamarck+75018+Paris" target="_blank" rel="noopener">Itinéraire</a>
+            <a class="btn btn-soft" href="tel:+33173711990">01 73 71 19 90</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="privatiser" aria-labelledby="t-priv" style="padding-top:0">
+  <div class="wrap">
+    <form class="coupon rise" id="priv">
+      <div class="l">
+        <h2 id="t-priv">Privatiser le restaurant</h2>
+        <p>Anniversaire, pot d’équipe, dîner de famille&nbsp;: dites-nous la date et le nombre de convives.</p>
+      </div>
+      <div class="r">
+        <label class="sr" for="p-nom">Votre nom</label>
+        <input id="p-nom" name="nom" placeholder="Votre nom" autocomplete="name" required>
+        <div class="two">
+          <div><label class="sr" for="p-date">Date souhaitée</label><input id="p-date" name="date" placeholder="Date souhaitée" required></div>
+          <div><label class="sr" for="p-nb">Nombre de convives</label><input id="p-nb" name="nb" inputmode="numeric" placeholder="Convives" required></div>
+        </div>
+        <label class="sr" for="p-msg">Votre message</label>
+        <textarea id="p-msg" name="msg" placeholder="L’occasion, vos envies, un numéro pour vous rappeler"></textarea>
+        <button class="btn" type="submit">Envoyer la demande par e-mail</button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="big" aria-hidden="true">Alix<span>et</span>Mika</p>
+    <div class="row">
+      <div><a href="https://www.google.com/maps/dir/?api=1&destination=Alix+et+Mika+37+rue+Lamarck+75018+Paris" target="_blank" rel="noopener">37 rue Lamarck<br>75018 Paris</a><p>Métro 12, Lamarck–Caulaincourt</p></div>
+      <div><a href="tel:+33173711990">01 73 71 19 90</a><a href="mailto:alixetmikarestaurant@gmail.com">alixetmikarestaurant@gmail.com</a></div>
+      <div><p>Mercredi à vendredi, 19 h – 22 h 30<br>Samedi et dimanche, 12 h – 14 h 30 et 19 h – 22 h 30</p></div>
+    </div>
+    <p class="imprint"><span>Démo réalisée par Raul Hatos — site non officiel</span><span>Photos d’illustration&nbsp;: Unsplash (Call Me Fred, Blake Wisz, Tom Podmore et autres)</span></p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const SIZES=[["M · 180 g",0],["L · 260 g",7],["XL · 360 g",12]];
+const BASES=[["Saumon",0],["Thon albacore",0],["Poisson blanc",0],["Mix poissons",1],["Bœuf",0],["Veau",0],["Mix viandes",1],["Quinoa, boulgour et burrata",2]];
+const STYLES=[
+ ["Français",0,"Sauce cocktail, échalotes, persil, cornichons, câpres, tabasco"],
+ ["Italien",0,"Tomates confites, parmesan, échalotes, huile d’olive, basilic, câpres, tabasco"],
+ ["Croustillant",0,"Aïoli truffé, chorizo, pommes paille, échalotes, persil, cornichons, câpres, tabasco"],
+ ["Poke",0,"Sauce soja, huile de noisette, cives, échalotes, graines"],
+ ["Oriental",0,"Quinoa, boulgour, concombres, tomates, échalotes, huile d’olive, coriandre"],
+ ["Tropical",0,"Citron vert, tomates confites, échalotes, coriandre, ananas, piments"],
+ ["Romesco",0,"Piquillos, noisettes, tomates, ail, huile d’olive, persil, câpres"],
+ ["Niçois",1,"Tomates, échalotes, olives, œuf, anchois, huile d’olive, persil"],
+ ["Grec",2,"Concombres, feta, tomates confites, échalotes, huile d’olive, menthe"],
+ ["Cendrillon",3,"Graines de courge, tomates confites, feta, échalotes, persil, huile d’olive, citron"],
+ ["Mexicain",4,"Avocat, coriandre, citron, échalotes, tomates confites, piments"],
+ ["Forestier",4,"Mayonnaise aux cèpes, échalotes, cornichons, câpres, tabasco, persil"],
+ ["Sud-Ouest",8,"Foie gras, confiture de figues, persil, échalotes, piment d’Espelette"]];
+const EXTRAS=[["½ burrata",5],["Foie gras",8],["Avocat",4],["Jaune d’œuf",1.5],["Pommes paille",1.5],["Parmesan",2],["Chorizo",2],["Ananas",1],["Tomates confites",2],["Câpres",1],["Herbes",.5]];
+const SIDES=[["Sans",0],["Frites",6],["Umami",5],["Salade du marché",5],["Pickles",5],["Trio",13]];
+const COOK=[["Cru",0],["Aller-retour",0]];
+const eur=n=>(Number.isInteger(n)?n:n.toFixed(2).replace('.',','))+" €";
+const plus=n=>n?` <b>+${eur(n).replace(' €','')}</b>`:'';
+function chips(id,name,list,type,checked){
+  document.getElementById(id).innerHTML=list.map((x,i)=>`<label class="chip"><input type="${type}" name="${name}" value="${i}"${checked===i?' checked':''}><span>${x[0]}${id==='f-side'||id==='f-extra'?(x[1]?` <b>${eur(x[1]).replace(' €','')}&nbsp;€</b>`:''):plus(x[1])}</span></label>`).join('');
+}
+chips('f-size','size',SIZES,'radio',0);
+chips('f-base','base',BASES,'radio',4);
+chips('f-extra','extra',EXTRAS,'checkbox',-1);
+chips('f-side','side',SIDES,'radio',1);
+chips('f-cook','cook',COOK,'radio',0);
+document.getElementById('f-style').innerHTML=STYLES.map((s,i)=>`<label class="sty"><input type="radio" name="style" value="${i}"${i?'':' checked'}><div><strong>${s[0]}${s[1]?`<em>+${s[1]} €</em>`:''}</strong><small>${s[2]}</small></div></label>`).join('');
+const f=document.getElementById('builder');
+function update(){
+  const g=n=>+(f.querySelector(`[name=${n}]:checked`)||{value:0}).value;
+  const sz=SIZES[g('size')],b=BASES[g('base')],st=STYLES[g('style')],sd=SIDES[g('side')],ck=COOK[g('cook')];
+  const ex=[...f.querySelectorAll('[name=extra]:checked')].map(e=>EXTRAS[+e.value]);
+  const rows=[[`Tartare ${b[0].toLowerCase()} · ${sz[0]}`,16+b[1]+sz[1],ck[1]===0&&ck[0]!=='Cru'?'Servi aller-retour':''],[`Style ${st[0].toLowerCase()}`,st[1],st[2]]];
+  ex.forEach(e=>rows.push([e[0],e[1],'Extra']));
+  if(sd[1]) rows.push([sd[0],sd[1],'Accompagnement']);
+  const tot=rows.reduce((a,r)=>a+r[1],0);
+  document.getElementById('lines').innerHTML=rows.map(r=>`<li><span>${r[0]}${r[2]?`<span class="what">${r[2]}</span>`:''}</span><span class="tnum">${r[1]?eur(r[1]):'inclus'}</span></li>`).join('');
+  document.getElementById('total').textContent=eur(tot);
+  document.getElementById('bar-total').textContent=eur(tot);
+  document.getElementById('bar-what').textContent=`${b[0]} · ${st[0]} · ${sz[0].split(' ')[0]}`;
+}
+f.addEventListener('change',update);update();
+
+/* barre mobile : visible pendant le composeur, tant que le ticket n'est pas à l'écran */
+const bar=document.getElementById('bar'),sec=document.getElementById('composer'),tk=document.getElementById('ticket');
+let inSec=false,tkVis=false;const sync=()=>bar.classList.toggle('on',inSec&&!tkVis);
+new IntersectionObserver(e=>{inSec=e[0].isIntersecting;sync()},{rootMargin:'-40% 0px -40% 0px'}).observe(sec);
+new IntersectionObserver(e=>{tkVis=e[0].isIntersecting;sync()}).observe(tk);
+
+/* ouvert maintenant ? heure de Paris */
+(function(){
+  const p=Object.fromEntries(new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  const d=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'].indexOf(p.weekday);
+  const m=(+p.hour%24)*60+ +p.minute;
+  const H={3:[[1140,1350]],4:[[1140,1350]],5:[[1140,1350]],6:[[720,870],[1140,1350]],0:[[720,870],[1140,1350]]};
+  const row=document.querySelector(`#hrows tr[data-d="${d}"]`);if(row)row.classList.add('today');
+  const now=document.getElementById('now');const t=now.querySelector('span');
+  const open=(H[d]||[]).find(([a,b])=>m>=a&&m<b);
+  const fmt=x=>`${Math.floor(x/60)} h${x%60?' '+(x%60):''}`;
+  if(open){now.classList.add('open');t.textContent=`Ouvert, jusqu’à ${fmt(open[1])}`}
+  else{now.classList.add('closed');const next=(H[d]||[]).find(([a])=>m<a);t.textContent=next?`Fermé, ouvre à ${fmt(next[0])}`:'Fermé pour le moment'}
+})();
+
+/* privatisation : ouvre un e-mail prérempli */
+document.getElementById('priv').addEventListener('submit',e=>{
+  e.preventDefault();const v=n=>e.target.elements[n].value.trim();
+  const body=`Bonjour,\n\nJe souhaite privatiser Alix et Mika.\nDate : ${v('date')}\nNombre de convives : ${v('nb')}\n\n${v('msg')}\n\n${v('nom')}`;
+  location.href=`mailto:alixetmikarestaurant@gmail.com?subject=${encodeURIComponent('Demande de privatisation, '+v('date'))}&body=${encodeURIComponent(body)}`;
+});
+
+/* entrées */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%3)*70+'ms';io.observe(el)});
+</script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Faste · Croque-monsieur, Paris 10e</title>
+<meta name="description" content="Faste, le comptoir de croque-monsieur du chef Nicolas Duquenoy, 52 rue du Faubourg Saint-Martin, Paris 10e. Sur place ou à emporter.">
+<meta name="theme-color" content="#ffd43b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --ink:#141210;
+  --soft:#4d4740;
+  --night:#141210;          /* la plaque du four */
+  --night-soft:#b9b1a6;
+  --cheese:#ffd43b;         /* le fromage qui file */
+  --crust:#ff7b1c;          /* le dessus gratiné */
+  --pickle:#9fdc7f;         /* cornichon, estragon */
+  --bread:#f4e3c3;          /* la mie */
+  --m:clamp(16px,3.2vw,48px);
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2.5rem,1.4rem + 4.4vw,5.5rem);
+  --step-giant:clamp(4rem,1.6rem + 9vw,9.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+  /* la tranche de pain de mie : le seul motif de la page */
+  --slice:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M9 100V41C1 37-1 21 6 13 17 2 35 0 50 0s33 2 44 13c7 8 5 24-3 28v59z'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:var(--step-body);line-height:1.5;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+::selection{background:var(--cheese);color:var(--ink)}
+:focus-visible{outline:3px solid var(--crust);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-weight:850;font-stretch:72%;letter-spacing:-.02em;line-height:.92;text-wrap:balance}
+h2{font-size:var(--step-head)}
+p{text-wrap:pretty}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.slice{-webkit-mask:var(--slice) center/100% 100% no-repeat;mask:var(--slice) center/100% 100% no-repeat}
+
+/* bandeau démo */
+.demo{background:var(--night);color:#fff;font-size:.8125rem;text-align:center;padding:7px var(--m)}
+
+/* boutons : pilule pleine, une seule forme */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:54px;padding:0 1.5em;border-radius:999px;font:700 1rem/1 "Archivo",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s,color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--crust);color:var(--ink)}
+.btn-cheese{background:var(--cheese);color:var(--ink)}
+.btn-cheese:hover{background:#fff}
+.btn-soft{background:#f1eee8;color:var(--ink)}
+.btn-soft:hover{background:var(--cheese)}
+.btn:active{transform:scale(.96)}
+
+/* navigation */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px var(--m)}
+.word{font-weight:900;font-stretch:68%;font-size:1.9rem;letter-spacing:-.02em;line-height:1;text-decoration:none}
+.nav ul{display:flex;gap:clamp(18px,2.4vw,36px);list-style:none;padding:0;font-weight:600;font-size:var(--step-small)}
+.nav ul a{text-decoration:none;padding:6px 0}
+.nav ul a:hover{text-decoration:underline}
+.nav .btn{min-height:44px;font-size:.9375rem}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,4vw,64px);align-items:end;padding:clamp(16px,3vw,40px) var(--m) 0;min-height:calc(100svh - 120px)}
+.hero-copy{padding-bottom:clamp(40px,7vh,96px)}
+.hero h1{font-size:var(--step-giant);max-width:10ch}
+.hero .lead{font-size:var(--step-lead);line-height:1.3;max-width:30ch;margin-top:36px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:28px;font-size:var(--step-small);font-weight:600}
+.hero .facts span{display:inline-flex;align-items:center;gap:8px}
+.hero .facts svg{width:16px;height:16px}
+.hero-slice{position:relative;align-self:stretch;margin-right:calc(var(--m) * -1);min-height:560px}
+.hero-slice .bg{position:absolute;inset:0 0 -40px 0;background:var(--cheese)}
+.hero-slice .pics{position:absolute;inset:7% 9% -40px 9%}
+.hero-slice .pics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
+.hero-slice .pics img.on{opacity:1}
+
+/* intro : une phrase avec vignettes */
+.intro{padding:clamp(120px,16vh,200px) var(--m) clamp(100px,14vh,180px);background:var(--bread)}
+.intro p{font-size:clamp(1.5rem,1rem + 1.7vw,2.25rem);line-height:1.22;font-weight:600;letter-spacing:-.02em;max-width:38ch;margin-inline:auto;text-align:center}
+.intro .th{display:inline-block;width:2.1em;height:1.6em;vertical-align:-.45em;margin:0 .12em;object-fit:cover}
+.nw{white-space:nowrap}
+
+/* coupe */
+.cut{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);padding:clamp(120px,15vh,200px) var(--m);align-items:center}
+.cut h2{margin-bottom:28px}
+.cut .pick{display:flex;flex-direction:column;gap:2px;list-style:none;padding:0}
+.cut .pick button{all:unset;cursor:pointer;font-weight:850;font-stretch:72%;font-size:clamp(1.75rem,1.1rem + 2.2vw,2.75rem);line-height:1.12;color:#8a8279;letter-spacing:-.015em;transition:color .2s}
+.cut .pick button:hover{color:var(--ink)}
+.cut .pick button[aria-pressed="true"]{color:var(--ink)}
+.cut .pick button[aria-pressed="true"]::after{content:"";display:inline-block;width:.42em;height:.42em;margin-left:.3em;vertical-align:.12em;background:var(--crust);-webkit-mask:var(--slice) center/100% 100%;mask:var(--slice) center/100% 100%}
+.cut .pick button:focus-visible{outline:3px solid var(--crust);outline-offset:4px}
+.cut .note{margin-top:20px;max-width:42ch;color:var(--soft)}
+.stage{position:relative;aspect-ratio:1/1;display:grid;place-items:center}
+.stage .shape{position:absolute;inset:0;background:var(--cheese);transition:background-color .5s var(--ease)}
+.stack{position:relative;width:64%;display:flex;flex-direction:column;gap:4px;margin-top:10%}
+.layer{display:flex;align-items:center;justify-content:flex-end;min-height:30px;border-radius:10px;padding:0 14px;font-weight:700;font-size:var(--step-small);color:var(--ink);transform-origin:center;animation:drop .5s var(--ease) both}
+.layer.bread{background:var(--bread);min-height:58px;border-radius:22px 22px 10px 10px}
+.layer.bread.top{background:#e9a24c;border-radius:26px 26px 10px 10px}
+.layer.bread.bottom{border-radius:10px 10px 18px 18px}
+.layer span{background:#fff;padding:3px 10px;border-radius:999px}
+@keyframes drop{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+.cut .what{margin-top:24px;font-size:var(--step-lead);font-weight:600;line-height:1.3;min-height:2.6em}
+
+/* carte */
+.menu{background:var(--night);color:#fff;padding:clamp(120px,15vh,200px) var(--m)}
+.menu-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:24px}
+.menu-head p{color:var(--night-soft);max-width:44ch;justify-self:end}
+.cat{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:96px 0 40px}
+.cat h3{font-size:clamp(2rem,1.3rem + 2.4vw,3.25rem)}
+.cat .count{color:var(--night-soft);font-size:var(--step-small);font-weight:600}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:36px 64px;list-style:none;padding:0}
+.item{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:start}
+.item .dot{width:64px;height:64px;object-fit:cover}
+.item .dot.flat{background:var(--cheese)}
+.item .dot.flat.o{background:var(--crust)}
+.item .dot.flat.g{background:var(--pickle)}
+.item .dot.flat.b{background:var(--bread)}
+.item b{display:block;font-size:1.125rem;line-height:1.25;font-weight:700}
+.item p{color:var(--night-soft);font-size:1rem;margin-top:4px;max-width:40ch}
+.menu .foot{margin-top:96px;display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between}
+.menu .foot p{color:var(--night-soft);max-width:52ch}
+
+/* le chef */
+.chef{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);padding:clamp(120px,15vh,200px) var(--m);align-items:center}
+.chef figure{aspect-ratio:4/5}
+.chef figure img{width:100%;height:100%;object-fit:cover}
+.chef h2{margin-bottom:32px}
+.chef p+p{margin-top:18px}
+.chef p{max-width:52ch}
+.chef .big{font-size:var(--step-lead);line-height:1.3;font-weight:600}
+.suppliers{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;list-style:none;padding:0}
+.suppliers li{background:#f1eee8;border-radius:999px;padding:8px 16px;font-weight:600;font-size:var(--step-small)}
+
+/* le ticket : adresse et horaires */
+.where{padding:0 var(--m) clamp(96px,12vh,150px)}
+.where>h2{margin-bottom:48px}
+.ticket{--notch:radial-gradient(circle 16px at 54% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 16px at 54% 100%,#0000 98%,#000) bottom/100% 51% no-repeat;-webkit-mask:var(--notch);mask:var(--notch);background:var(--cheese);display:grid;grid-template-columns:54% 46%}
+.ticket>div{padding:clamp(28px,4vw,56px)}
+.ticket .left{display:flex;flex-direction:column;gap:28px}
+.ticket .right{border-left:6px dotted var(--bg);display:flex;flex-direction:column;gap:24px}
+.ticket h3{font-size:clamp(1.75rem,1.2rem + 1.8vw,2.75rem)}
+.ticket address{font-style:normal;font-size:var(--step-lead);line-height:1.3;font-weight:600}
+.ticket .actions{display:flex;flex-wrap:wrap;gap:10px}
+.hours{width:100%;border-collapse:collapse;font-size:var(--step-body)}
+.hours th{text-align:left;font-weight:600;padding:9px 0}
+.hours td{text-align:right;padding:9px 0;font-variant-numeric:tabular-nums}
+.hours tr+tr{border-top:1px solid rgba(20,18,16,.2)}
+.hours tr.today th,.hours tr.today td{font-weight:800}
+.ticket .small{font-size:1rem}
+.ticket .photo{aspect-ratio:16/9;width:100%;object-fit:cover}
+
+/* pied de page : FASTE en tranches */
+.end{background:var(--bread);padding:clamp(56px,8vh,96px) var(--m) 28px}
+.mark{display:flex;gap:6px;align-items:flex-end;height:clamp(150px,34svh,320px)}
+.mark span{flex:1;display:grid;place-items:end center;font-weight:900;font-stretch:62%;font-size:clamp(2.6rem,.6rem + 7vw,8rem);line-height:.8;color:var(--ink);padding-bottom:6%;-webkit-mask:var(--slice) center/100% 100% no-repeat;mask:var(--slice) center/100% 100% no-repeat}
+.mark span:nth-child(1){height:100%;background:var(--cheese)}
+.mark span:nth-child(2){height:78%;background:var(--crust)}
+.mark span:nth-child(3){height:90%;background:var(--pickle)}
+.mark span:nth-child(4){height:70%;background:#fff}
+.mark span:nth-child(5){height:96%;background:var(--cheese)}
+.end .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:56px;font-size:var(--step-small)}
+.end .cols b{display:block;margin-bottom:8px;font-size:1rem}
+.end .cols a{display:block;text-decoration:none;padding:3px 0}
+.end .cols a:hover{text-decoration:underline}
+.end .last{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;font-size:.8125rem;color:var(--soft)}
+
+/* entrées */
+.rise{opacity:1;transform:none}
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0) * 75ms)}
+.js .rise.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero{grid-template-columns:1fr;min-height:0;padding-top:0}
+  .hero-slice{order:-1;margin:0 calc(var(--m) * -1);min-height:0;height:44svh}
+  .hero-slice .bg{inset:0 var(--m)}
+  .hero-slice .pics{inset:7% calc(var(--m) + 7%) 0}
+  .hero-copy{padding-bottom:16px}
+  .hero h1{margin-top:32px}
+  .hero .lead{margin-top:24px}
+  .intro p{text-align:left;font-size:1.5rem}
+  .cut,.chef{grid-template-columns:minmax(0,1fr)}
+  .cut .stage{order:-1}
+  .cut .pick{flex-direction:row;overflow-x:auto;gap:24px;padding-bottom:8px;scrollbar-width:none}
+  .cut .pick button{font-size:1.625rem;white-space:nowrap}
+  .cut .txt{margin-top:40px}
+  .menu-head{grid-template-columns:1fr}
+  .menu-head p{justify-self:start}
+  .items{gap:28px 40px}
+  .item{grid-template-columns:52px 1fr;gap:16px}
+  .item .dot{width:52px;height:52px}
+  .cat{margin-top:72px}
+  .chef figure{aspect-ratio:1/1}
+  .ticket{grid-template-columns:1fr;--notch:radial-gradient(circle 16px at 0 46%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 16px at 100% 46%,#0000 98%,#000) right/51% 100% no-repeat}
+  .ticket .right{border-left:0;border-top:6px dotted var(--bg)}
+  .end .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .items{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rise{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="nav">
+  <a class="word" href="#top" aria-label="Faste, accueil">Faste</a>
+  <nav aria-label="Principale"><ul>
+    <li><a href="#coupe">Les croques</a></li>
+    <li><a href="#carte">La carte</a></li>
+    <li><a href="#chef">Le chef</a></li>
+    <li><a href="#venir">Horaires et accès</a></li>
+  </ul></nav>
+  <a class="btn btn-ink" href="tel:+33974972962">Appeler</a>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-copy">
+    <h1 class="rise">Le croque en grand.</h1>
+    <p class="lead rise" style="--i:1">Faste, c’est le comptoir de croques du chef Nicolas Duquenoy, rue du Faubourg Saint-Martin. Sur place ou à emporter, sans réservation.</p>
+    <div class="actions rise" style="--i:2">
+      <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Faste%2C+52+rue+du+Faubourg+Saint-Martin%2C+75010+Paris" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+      <a class="btn btn-soft" href="#carte">Voir la carte</a>
+    </div>
+    <p class="facts rise" style="--i:3">
+      <span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3l-5.9 3.2 1.3-6.5L2.5 9.4l6.6-.8z"/></svg>4,9 sur Google</span>
+      <span>52 rue du Faubourg Saint-Martin, Paris 10e</span>
+    </p>
+  </div>
+  <div class="hero-slice" aria-hidden="false">
+    <div class="bg slice"></div>
+    <div class="pics slice">
+      <img class="on" src="https://images.unsplash.com/photo-1608949621253-4eedba1d6b95?w=1200&amp;h=1400&amp;q=75&amp;auto=format&amp;fit=crop" width="1200" height="1400" alt="Une main tient un croque doré, coupé, au fromage fondu">
+      <img src="https://images.unsplash.com/photo-1639744093483-86714cd62a3b?w=1200&amp;h=1400&amp;q=75&amp;auto=format&amp;fit=crop" width="1200" height="1400" alt="Le fromage file entre deux moitiés de sandwich grillé" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1618650180691-e53a882fb3c0?w=1200&amp;h=1400&amp;q=75&amp;auto=format&amp;fit=crop" width="1200" height="1400" alt="Gros plan sur un pain de mie toasté et son fromage fondu" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="intro" aria-labelledby="intro-t">
+  <h2 id="intro-t" class="sr">L’esprit Faste</h2>
+  <p class="rise">Pain de mie <img class="th slice" src="https://images.unsplash.com/photo-1618650180691-e53a882fb3c0?w=240&amp;h=180&amp;q=70&amp;auto=format&amp;fit=crop" width="160" height="130" alt="">&nbsp;doré, béchamel maison, fromage <span class="nw">qui file <img class="th slice" src="https://images.unsplash.com/photo-1639744093483-86714cd62a3b?w=240&amp;h=180&amp;q=70&amp;auto=format&amp;fit=crop" width="160" height="130" alt="">&nbsp;:</span> le croque, pris au sérieux par un chef de bistrot.</p>
+</section>
+
+<section class="cut" id="coupe" aria-labelledby="coupe-t">
+  <div class="stage">
+    <div class="shape slice" id="shape"></div>
+    <div class="stack" id="stack"></div>
+  </div>
+  <div class="txt">
+    <h2 id="coupe-t" class="rise">Vu en coupe</h2>
+    <ul class="pick" id="pick" aria-label="Choisir un croque">
+      <li><button type="button" data-k="jambon" aria-pressed="true">Le jambon</button></li>
+      <li><button type="button" data-k="hautdog" aria-pressed="false">Le Haut-Dog</button></li>
+      <li><button type="button" data-k="pastrami" aria-pressed="false">Le Plaisant Pastrami</button></li>
+      <li><button type="button" data-k="veggie" aria-pressed="false">Le veggie</button></li>
+      <li><button type="button" data-k="epinards" aria-pressed="false">Les épinards</button></li>
+    </ul>
+    <p class="what" id="what" aria-live="polite"></p>
+    <p class="note">Touchez un nom pour voir ce qu’il y a entre les deux tranches. La carte bouge avec les saisons : demandez le croque du moment au comptoir.</p>
+  </div>
+</section>
+
+<section class="menu" id="carte" aria-labelledby="carte-t">
+  <div class="menu-head">
+    <h2 id="carte-t" class="rise">La carte</h2>
+    <p class="rise" style="--i:1">Des croques en version complète, en demi à partager ou en dégustation, des salades maison et des desserts faits sur place.</p>
+  </div>
+
+  <div class="cat"><h3>Les croques</h3><span class="count">une sélection</span></div>
+  <ul class="items">
+    <li class="item rise"><img class="dot slice" src="https://images.unsplash.com/photo-1608949621253-4eedba1d6b95?w=160&amp;h=160&amp;q=70&amp;auto=format&amp;fit=crop" width="160" height="160" alt=""><div><b>Le jambon</b><p>Jambon blanc de la Maison Mauriac, béchamel, fromage. Le classique, en tranches épaisses.</p></div></li>
+    <li class="item rise" style="--i:1"><img class="dot slice" src="https://images.unsplash.com/photo-1639744093483-86714cd62a3b?w=160&amp;h=160&amp;q=70&amp;auto=format&amp;fit=crop" width="160" height="160" alt=""><div><b>Le Haut-Dog</b><p>Saucisse fumée, compotée d’oignons, emmental, béchamel à la moutarde, oignons frits.</p></div></li>
+    <li class="item rise"><span class="dot slice flat o"></span><div><b>Le Plaisant Pastrami</b><p>Pastrami de chez Will’s Deli, cheddar, cornichon, condiment relevé.</p></div></li>
+    <li class="item rise" style="--i:1"><span class="dot slice flat g"></span><div><b>Le veggie</b><p>Champignons poêlés, comté, estragon, moutarde.</p></div></li>
+    <li class="item rise"><span class="dot slice flat"></span><div><b>Les épinards</b><p>Épinards et deux fromages.</p></div></li>
+    <li class="item rise" style="--i:1"><span class="dot slice flat b"></span><div><b>Chèvre-miel, raclette, truffe…</b><p>Les autres recettes tournent au fil de l’année. La dégustation permet de goûter plusieurs croques d’un coup.</p></div></li>
+  </ul>
+
+  <div class="cat"><h3>À côté</h3><span class="count">salades maison</span></div>
+  <ul class="items">
+    <li class="item rise"><span class="dot slice flat g"></span><div><b>Salade orientale</b><p>Faite maison, pour accompagner le croque.</p></div></li>
+    <li class="item rise" style="--i:1"><span class="dot slice flat b"></span><div><b>Coleslaw</b><p>Le chou croquant qui répond au fromage fondu.</p></div></li>
+    <li class="item rise"><span class="dot slice flat g"></span><div><b>Sucrine</b><p>Feuilles fraîches, assaisonnement maison.</p></div></li>
+  </ul>
+
+  <div class="cat"><h3>Desserts et boissons</h3><span class="count">faits maison</span></div>
+  <ul class="items">
+    <li class="item rise"><span class="dot slice flat o"></span><div><b>Tarte aux fruits de saison</b><p>Selon le marché.</p></div></li>
+    <li class="item rise" style="--i:1"><span class="dot slice flat"></span><div><b>Financier, cookie chocolat</b><p>Pour finir sur une note sucrée, ou à emporter avec le café.</p></div></li>
+    <li class="item rise"><span class="dot slice flat b"></span><div><b>Pudding aux fruits rouges</b><p>Le dessert maison de la vitrine.</p></div></li>
+    <li class="item rise" style="--i:1"><span class="dot slice flat g"></span><div><b>Ginger beer et bières</b><p>Ginger beer UMA, bières de la Brasserie de la Goutte d’Or, brassées dans le 18e.</p></div></li>
+  </ul>
+
+  <div class="foot">
+    <p>Prix affichés au comptoir. Allergies : dites-le en commandant, la cuisine vous guide.</p>
+    <a class="btn btn-cheese" href="https://www.instagram.com/faste_croque_monsieur/" target="_blank" rel="noopener">Le croque du moment sur Instagram</a>
+  </div>
+</section>
+
+<section class="chef" id="chef" aria-labelledby="chef-t">
+  <figure class="rise"><img class="slice" src="https://images.unsplash.com/photo-1785304968261-59785f669889?w=1100&amp;h=1300&amp;q=75&amp;auto=format&amp;fit=crop" width="1100" height="1300" alt="Un croque emballé dans son papier, posé au soleil sur une table" loading="lazy"></figure>
+  <div>
+    <h2 id="chef-t" class="rise">Un chef de bistrot au comptoir</h2>
+    <p class="big rise" style="--i:1">Nicolas Duquenoy a fait sa réputation sur la blanquette de veau et l’œuf mayo, deux plats qui lui ont valu des prix. Chez Faste, il applique la même rigueur au croque-monsieur.</p>
+    <p class="rise" style="--i:2">Les classiques côtoient ses propres créations, et chaque recette est pensée pour un goût et une texture à elle. Les produits viennent de maisons choisies une par une :</p>
+    <ul class="suppliers rise" style="--i:3">
+      <li>Pain Eric Kayser</li><li>Jambon Maison Mauriac</li><li>Pastrami Will’s Deli</li><li>Ginger beer UMA</li><li>Brasserie de la Goutte d’Or</li>
+    </ul>
+  </div>
+</section>
+
+<section class="where" id="venir" aria-labelledby="venir-t">
+  <h2 id="venir-t" class="rise">Horaires et accès</h2>
+  <div class="ticket rise" style="--i:1">
+    <div class="left">
+      <h3>52 rue du Faubourg Saint-Martin</h3>
+      <address>75010 Paris<br>Métro Strasbourg – Saint-Denis ou Château-d’Eau, à deux pas de la Porte Saint-Martin.</address>
+      <div class="actions">
+        <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Faste%2C+52+rue+du+Faubourg+Saint-Martin%2C+75010+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+      </div>
+      <img class="photo" src="https://images.unsplash.com/photo-1572957917999-9ee842634d24?w=1000&amp;h=667&amp;q=72&amp;auto=format&amp;fit=crop" width="1000" height="667" alt="La Porte Saint-Martin, arc de pierre au bout de la rue du Faubourg Saint-Martin" loading="lazy">
+    </div>
+    <div class="right">
+      <h3>On passe quand&nbsp;?</h3>
+      <table class="hours" id="hours">
+        <caption class="sr">Horaires d’ouverture</caption>
+        <tbody>
+          <tr data-d="2"><th scope="row">Mardi</th><td>dès 12 h</td></tr>
+          <tr data-d="3"><th scope="row">Mercredi</th><td>dès 12 h</td></tr>
+          <tr data-d="4"><th scope="row">Jeudi</th><td>dès 12 h</td></tr>
+          <tr data-d="5"><th scope="row">Vendredi</th><td>dès 12 h</td></tr>
+          <tr data-d="6"><th scope="row">Samedi</th><td>dès 12 h</td></tr>
+          <tr data-d="0"><th scope="row">Dimanche et lundi</th><td>fermé</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Sans réservation : on entre, on commande, on mange sur place ou on emporte. Quelques tables en terrasse aux beaux jours.</p>
+      <div class="actions">
+        <a class="btn btn-ink" href="tel:+33974972962">09 74 97 29 62</a>
+        <a class="btn btn-soft" href="mailto:hello@faste-restaurant.fr">Écrire un e-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="end" aria-labelledby="end-t">
+  <h2 id="end-t" class="mark" aria-label="Faste"><span>F</span><span>A</span><span>S</span><span>T</span><span>E</span></h2>
+  <div class="cols">
+    <div><b>Faste</b>Croque-monsieur du chef Nicolas Duquenoy</div>
+    <div><b>Adresse</b>52 rue du Faubourg Saint-Martin<br>75010 Paris</div>
+    <div><b>Contact</b><a href="tel:+33974972962">09 74 97 29 62</a><a href="mailto:hello@faste-restaurant.fr">hello@faste-restaurant.fr</a></div>
+    <div><b>Suivre</b><a href="https://www.instagram.com/faste_croque_monsieur/" target="_blank" rel="noopener">Instagram @faste_croque_monsieur</a><a href="#carte">La carte</a></div>
+  </div>
+  <div class="last"><span>© Faste, Paris 10e · Photos d’illustration Unsplash</span><span>Démo réalisée par Raul Hatos — site non officiel</span></div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// entrées
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rise').forEach(el=>io.observe(el));
+
+// fondu lent des photos du héros
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pics=[...document.querySelectorAll('.hero-slice img')];let p=0;
+if(!reduce)setInterval(()=>{if(document.hidden)return;pics[p].classList.remove('on');p=(p+1)%pics.length;pics[p].classList.add('on')},5600);
+
+// vu en coupe : couches de bas en haut affichées de haut en bas
+const B={k:'bread',t:'Pain de mie'};
+const R={
+  jambon:{c:'#ffd43b',w:'Le classique de la maison',l:[{k:'bread top',t:'Fromage gratiné'},{c:'#fff3c4',t:'Béchamel'},{c:'#f6b8b0',t:'Jambon blanc Maison Mauriac',h:44},{c:'#ffe27a',t:'Fromage'},{k:'bread bottom',t:'Pain de mie'}]},
+  hautdog:{c:'#ff7b1c',w:'Saucisse fumée et oignons, deux façons',l:[{k:'bread top',t:'Oignons frits'},{c:'#fff3c4',t:'Béchamel moutarde'},{c:'#ffe27a',t:'Emmental'},{c:'#c98a5a',t:'Compotée d’oignons'},{c:'#b4553a',t:'Saucisse fumée',h:44},{k:'bread bottom',t:'Pain de mie'}]},
+  pastrami:{c:'#f6b8b0',w:'Le pastrami de chez Will’s Deli',l:[{k:'bread top',t:'Pain de mie'},{c:'#e8a13a',t:'Cheddar'},{c:'#9fdc7f',t:'Cornichon'},{c:'#e2584a',t:'Condiment relevé'},{c:'#c45a5a',t:'Pastrami Will’s Deli',h:50},{k:'bread bottom',t:'Pain de mie'}]},
+  veggie:{c:'#9fdc7f',w:'Sans viande, avec du caractère',l:[{k:'bread top',t:'Comté gratiné'},{c:'#e7c94a',t:'Moutarde'},{c:'#c7e8a8',t:'Estragon'},{c:'#9b7b5c',t:'Champignons poêlés',h:46},{k:'bread bottom',t:'Pain de mie'}]},
+  epinards:{c:'#c7e8a8',w:'Le vert, deux fromages',l:[{k:'bread top',t:'Fromage gratiné'},{c:'#ffe27a',t:'Deuxième fromage'},{c:'#5f9a4a',t:'Épinards',h:44},{c:'#fff3c4',t:'Premier fromage'},{k:'bread bottom',t:'Pain de mie'}]}
+};
+const stack=document.getElementById('stack'),shape=document.getElementById('shape'),what=document.getElementById('what');
+function show(k){
+  const r=R[k];shape.style.background=r.c;what.textContent=r.w;
+  stack.innerHTML=r.l.map((x,i)=>`<div class="layer ${x.k||''}" style="${x.c?'background:'+x.c+';':''}${x.h?'min-height:'+x.h+'px;':''}animation-delay:${i*60}ms"><span>${x.t}</span></div>`).join('');
+  document.querySelectorAll('#pick button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));
+}
+document.getElementById('pick').addEventListener('click',e=>{const b=e.target.closest('button');if(b)show(b.dataset.k)});
+show('jambon');
+
+// jour courant dans les horaires
+const d=new Date().getDay();document.querySelectorAll('#hours tr').forEach(tr=>{const v=+tr.dataset.d;if(v===d||(v===0&&d===1))tr.classList.add('today')});
+</script>
+</body>
+</html>
