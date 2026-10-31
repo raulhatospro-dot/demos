@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Fournil Didot · Boulangerie, 103 rue Didot, Paris 14e</title>
+<meta name="description" content="Fournil Didot, boulangerie au 103 rue Didot (Paris 14e). Premier prix du Grand Prix de la baguette de tradition française de la Ville de Paris 2026. Ouvert du lundi au samedi, 6 h 30 – 20 h 30.">
+<!-- DESIGN.md « Uber » (awesome-design) : duo noir et blanc, sans géométrique, boutons pilule ; accent unique : le bleu émaillé des plaques de rue parisiennes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#ffffff;
+  --soft:#efefef;
+  --pressed:#e2e2e2;
+  --ink:#000000;
+  --body:#262626;
+  --mute:#5e5e5e;
+  --plaque:#1f3a78;
+  --plaque-deep:#172c5c;
+  --plaque-line:#2f7d4f;
+  --on-plaque:#ffffff;
+  --open:#1d7a46;
+  --pad:20px;
+  --font:"Archivo",system-ui,"Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px}
+body{background:var(--canvas);color:var(--body);font:400 17px/1.55 var(--font)}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--plaque);color:#fff}
+:focus-visible{outline:3px solid var(--plaque);outline-offset:3px;border-radius:4px}
+h1,h2,h3{color:var(--ink);font-weight:800;letter-spacing:-.035em;line-height:.95;text-wrap:balance;font-stretch:88%}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:600 16px/1 var(--font);text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .2s var(--ease),color .2s;white-space:nowrap}
+.btn:active{transform:scale(.96)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#282828}
+.btn-soft{background:var(--soft);color:var(--ink)}
+.btn-soft:hover{background:var(--pressed)}
+.btn-white{background:#fff;color:var(--plaque)}
+.btn-white:hover{background:#dfe6f5}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:var(--canvas)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.mark{display:flex;align-items:center;gap:10px;font:800 21px/1 var(--font);font-stretch:80%;letter-spacing:-.02em;color:var(--ink);text-decoration:none;text-transform:uppercase}
+.mark svg{width:30px;height:20px;flex:none}
+.nav ul{display:none;list-style:none;gap:28px}
+.nav ul a{text-decoration:none;font-weight:600;color:var(--ink);padding:6px 0;background:linear-gradient(var(--ink),var(--ink)) 0 100%/0 2px no-repeat;transition:background-size .3s var(--ease)}
+.nav ul a:hover{background-size:100% 2px}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* état ouvert/fermé */
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:var(--ink)}
+.status i{width:10px;height:10px;border-radius:50%;background:var(--mute);flex:none}
+.status.is-open i{background:var(--open);box-shadow:0 0 0 0 rgba(29,122,70,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(29,122,70,0)}100%{box-shadow:0 0 0 0 rgba(29,122,70,0)}}
+
+/* hero */
+.hero{padding:12px 0 0}
+.hero-grid{display:grid;gap:28px}
+.hero h1{font-size:clamp(3.6rem,17vw,10rem);font-stretch:72%;font-weight:900;letter-spacing:-.03em;line-height:.84;text-transform:uppercase}
+.hero .prize{margin-top:20px;font-size:clamp(1.5rem,6.4vw,2.5rem);font-weight:700;font-stretch:90%;letter-spacing:-.025em;line-height:1.05;color:var(--plaque);text-wrap:balance;max-width:19ch}
+.hero .lede{margin-top:20px;font-size:18px;max-width:34ch;color:var(--body)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero .cta .btn{flex:1 1 auto}
+.hero .status{margin-top:22px}
+.hero-pic{position:relative;margin:0 calc(var(--pad)*-1)}
+.hero-pic img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero-pic figcaption{position:absolute;left:var(--pad);bottom:16px;background:#fff;color:var(--ink);font-size:14px;font-weight:600;padding:8px 12px}
+
+/* plaque de rue */
+.plaque{display:block;width:100%;height:auto}
+
+/* le prix */
+.award{background:var(--plaque);color:var(--on-plaque);margin-top:0;padding:88px 0 96px}
+.award h2{color:#fff;font-size:clamp(3rem,14vw,9rem);font-stretch:72%;font-weight:900;text-transform:uppercase;line-height:.86}
+.award-grid{display:grid;gap:40px}
+.award p{color:#e6ebf7;font-size:18px;max-width:46ch}
+.award p strong{color:#fff}
+.award dl{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px;margin-top:8px}
+.award dt{font-size:15px;color:#c3cde6}
+.award dd{font-size:clamp(1.6rem,5vw,2.4rem);font-weight:800;font-stretch:85%;letter-spacing:-.02em;color:#fff;line-height:1.05;margin-top:4px}
+.award .src{font-size:14px;color:#c3cde6;margin-top:28px}
+.award .src a{color:#fff}
+.criteria{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.criteria li{list-style:none;background:var(--plaque-deep);color:#fff;border-radius:999px;padding:9px 16px;font-size:15px;font-weight:600}
+
+/* la recette */
+.recipe{padding:104px 0}
+.recipe-grid{display:grid;gap:36px}
+.recipe h2{font-size:clamp(2.6rem,10vw,5.6rem)}
+.recipe .big{margin-top:40px;font-size:clamp(5.5rem,30vw,15rem);font-weight:900;font-stretch:65%;letter-spacing:-.04em;line-height:.8;color:var(--ink)}
+.recipe .big small{font-size:.32em;font-weight:800;letter-spacing:-.02em;margin-left:.15em}
+.recipe .big-note{font-size:20px;font-weight:600;color:var(--ink);margin-top:14px;max-width:24ch}
+.recipe p{max-width:52ch}
+.recipe figure img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.recipe blockquote{margin-top:28px;font-size:clamp(1.4rem,4.6vw,2rem);font-weight:700;font-stretch:90%;letter-spacing:-.02em;line-height:1.15;color:var(--ink);max-width:22ch}
+.recipe cite{display:block;font-style:normal;font-size:16px;font-weight:500;color:var(--mute);margin-top:12px;letter-spacing:0}
+.recipe .bio{margin-top:20px}
+
+/* au comptoir */
+.counter{background:var(--soft);padding:104px 0}
+.counter h2{font-size:clamp(2.6rem,10vw,5.6rem);max-width:12ch}
+.counter-intro{margin-top:18px;max-width:48ch}
+.breads{display:grid;gap:40px;margin-top:48px}
+.bread figure{overflow:hidden;background:var(--pressed)}
+.bread img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.bread:hover img{transform:scale(1.04)}
+.bread h3{font-size:clamp(1.7rem,5vw,2.3rem);margin-top:18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.bread h3 span{font-size:.7em;font-weight:700;color:var(--plaque);white-space:nowrap}
+.bread p{margin-top:8px;max-width:40ch}
+.bread .tiny{font-size:14px;color:var(--mute);margin-top:6px}
+
+/* commander */
+.order{padding:104px 0}
+.order-grid{display:grid;gap:40px;align-items:start}.order-grid>*{min-width:0}
+.order h2{font-size:clamp(2.6rem,10vw,5.6rem);max-width:11ch}
+.order-lede{margin-top:18px;max-width:42ch}
+.order-pic{margin-top:32px}
+.order-pic img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.panel{background:var(--soft);border-radius:28px;padding:28px 22px}
+.field+.field{margin-top:28px}
+.field>label,.field>.lab{display:block;font-weight:700;color:var(--ink);font-size:17px;margin-bottom:12px}
+.stepper{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.stepper button{width:56px;height:56px;border-radius:50%;border:0;background:var(--ink);color:#fff;font:700 26px/1 var(--font);cursor:pointer;transition:transform .15s var(--ease),background .2s;flex:none}
+.stepper button:hover{background:#282828}
+.stepper button:active{transform:scale(.92)}
+.stepper button:disabled{background:var(--pressed);color:var(--mute);cursor:not-allowed}
+.stepper output{font-size:56px;font-weight:900;font-stretch:70%;color:var(--ink);min-width:2.2ch;text-align:center;line-height:1}
+.stepper .unit{font-weight:600;color:var(--ink)}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin;scrollbar-color:var(--pressed) transparent}
+.days button,.slots button{border:0;background:#fff;color:var(--ink);border-radius:999px;font:600 15px/1 var(--font);cursor:pointer;transition:background .2s,color .2s}
+.days button{padding:12px 16px;min-height:48px;flex:none}
+.days button:hover,.slots button:hover{background:var(--pressed)}
+.days button[aria-pressed=true],.slots button[aria-pressed=true]{background:var(--plaque);color:#fff}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.slots button{min-height:46px}
+.slots button:disabled{opacity:.35;cursor:not-allowed;background:#fff}
+input[type=text]{width:100%;min-height:52px;border:0;border-radius:14px;background:#fff;padding:0 16px;font:500 17px var(--font);color:var(--ink)}
+input[type=text]::placeholder{color:#767676}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:28px;padding-top:22px;border-top:2px solid var(--pressed)}
+.total b{font-size:32px;font-weight:900;font-stretch:80%;color:var(--ink)}
+.total span{color:var(--mute);font-size:15px;max-width:22ch}
+.panel .btn{width:100%;margin-top:18px}
+.panel .alt{text-align:center;font-size:15px;color:var(--mute);margin-top:14px}
+.panel .alt a{color:var(--ink);font-weight:600}
+
+/* horaires + venir */
+.visit{background:var(--plaque);color:#fff;padding:96px 0}
+.visit h2{color:#fff;font-size:clamp(2.6rem,10vw,5.6rem)}
+.visit-grid{display:grid;gap:44px}
+.hours{list-style:none;margin-top:28px}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;font-size:18px;color:#e6ebf7;border-bottom:1px solid rgba(255,255,255,.18)}
+.hours li.today{color:#fff;font-weight:800}
+.hours li.today span:first-child::after{content:" · aujourd’hui";font-weight:500;color:#c3cde6}
+.visit .addr{font-size:clamp(1.6rem,5vw,2.4rem);font-weight:800;font-stretch:85%;letter-spacing:-.02em;line-height:1.1;margin-top:24px}
+.visit .addr+p{color:#e6ebf7;margin-top:10px}
+.visit .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.visit .btn-line{background:var(--plaque-deep);color:#fff}
+.visit .btn-line:hover{background:#0f1f44}
+.map{margin-top:32px;background:var(--plaque-deep)}
+.map iframe{display:block;width:100%;height:320px;border:0;filter:grayscale(.35) contrast(1.05)}
+
+/* pied */
+footer{padding:72px 0 36px}
+.foot-name{font-size:min(10.4vw,9.4rem);font-weight:900;font-stretch:66%;letter-spacing:-.035em;line-height:.82;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.foot-grid{display:grid;gap:22px;margin-top:36px;font-size:16px}
+.foot-grid a{text-decoration-thickness:1px;text-underline-offset:3px}
+.foot-grid h3{font-size:16px;letter-spacing:0;font-stretch:100%;font-weight:700;line-height:1.3;margin-bottom:6px}
+.credits{font-size:13px;color:var(--mute);margin-top:36px;max-width:90ch}
+.credits a{color:var(--mute)}
+
+/* apparition */
+.rise{opacity:1;transform:none}
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .rise{opacity:1;transform:none;transition:none}
+  .status.is-open i{animation:none}
+  *{scroll-behavior:auto!important}
+}
+
+@media (min-width:720px){
+  :root{--pad:32px}
+  .hero-pic{margin:0}
+  .breads{grid-template-columns:repeat(3,1fr);gap:28px}
+  .bread:nth-child(2){margin-top:72px}
+  .award dl{grid-template-columns:repeat(4,1fr)}
+}
+@media (min-width:1024px){
+  :root{--pad:40px}
+  .nav ul{display:flex}
+  .hero{padding:20px 0 0}
+  .hero-grid{grid-template-columns:5fr 6fr;gap:48px;align-items:stretch}
+  .hero-copy{padding:36px 0 56px;display:flex;flex-direction:column;justify-content:center}
+  .hero .cta .btn{flex:0 0 auto}
+  .hero-pic img{height:100%;aspect-ratio:auto;min-height:620px}
+  .award{padding:140px 0}
+  .award-grid{grid-template-columns:7fr 5fr;gap:64px;align-items:end}
+  .recipe{padding:160px 0}
+  .recipe-grid{grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .counter{padding:160px 0}
+  .counter-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}
+  .order{padding:160px 0}
+  .order-grid{grid-template-columns:6fr 5fr;gap:72px}
+  .panel{padding:40px}
+  .visit{padding:150px 0}
+  .visit-grid{grid-template-columns:5fr 6fr;gap:80px}
+  .map{margin-top:0}
+  .map iframe{height:100%;min-height:560px}
+  .foot-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Fournil Didot, accueil">
+      <svg viewBox="0 0 30 20" aria-hidden="true"><rect x="0" y="0" width="30" height="20" rx="2" fill="#1f3a78"/><rect x="2.5" y="2.5" width="25" height="15" rx="1" fill="none" stroke="#2f7d4f" stroke-width="1.2"/><rect x="5" y="9" width="20" height="2.4" fill="#fff"/></svg>
+      Fournil Didot
+    </a>
+    <ul>
+      <li><a href="#prix">Le prix</a></li>
+      <li><a href="#comptoir">Au comptoir</a></li>
+      <li><a href="#reserver">Réserver</a></li>
+      <li><a href="#venir">Horaires</a></li>
+    </ul>
+    <a class="btn btn-ink" href="tel:+33156082276">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      Appeler
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 class="rise">Fournil Didot</h1>
+        <p class="prize rise">Premier prix de la baguette de Paris 2026</p>
+        <p class="lede rise">Boulangerie au 103, rue Didot, dans le 14<sup>e</sup>. Sa baguette de tradition a été élue la meilleure de Paris en février 2026.</p>
+        <div class="cta rise">
+          <a class="btn btn-ink" href="#reserver">Réserver mes baguettes</a>
+          <a class="btn btn-soft" href="tel:+33156082276">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            <span class="num">01 56 08 22 76</span>
+          </a>
+        </div>
+        <p class="status rise" data-status><i></i><span>Lundi – samedi, 6 h 30 – 20 h 30</span></p>
+      </div>
+      <figure class="hero-pic">
+        <img src="https://images.unsplash.com/photo-1568471173242-461f0a730452?w=1600&q=75&auto=format&fit=crop" alt="Baguettes de tradition dorées, posées côte à côte" fetchpriority="high">
+        <figcaption>La tradition, croustillante et dorée</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="award" id="prix">
+    <div class="wrap award-grid">
+      <div class="rise">
+        <h2>Première sur 143 baguettes</h2>
+      </div>
+      <div class="rise">
+        <p>Le 26 février 2026, le jury du <strong>33<sup>e</sup> Grand Prix de la baguette de tradition française de la Ville de Paris</strong> a classé premier le boulanger du Fournil Didot, Sithamparappillai Jegatheepan.</p>
+        <ul class="criteria" aria-label="Critères du jury">
+          <li>Aspect</li><li>Goût</li><li>Cuisson</li><li>Mie et alvéolage</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap">
+      <dl class="rise" style="margin-top:56px">
+        <div><dt>Classement</dt><dd>1<sup>er</sup> prix</dd></div>
+        <div><dt>Candidates</dt><dd class="num">143</dd></div>
+        <div><dt>Dotation</dt><dd class="num">4 000 €</dd></div>
+        <div><dt>Pendant un an</dt><dd>Baguettes de l’Élysée</dd></div>
+      </dl>
+      <p class="src">Source : <a href="https://www.paris.fr/pages/la-meilleure-baguette-de-paris-2026-se-deguste-dans-le-14e-arrondissement-34064">paris.fr, « La meilleure baguette de Paris 2026 se déguste dans le 14<sup>e</sup> arrondissement »</a></p>
+    </div>
+  </section>
+
+  <section class="recipe" id="recette">
+    <div class="wrap recipe-grid">
+      <div>
+        <h2 class="rise">Eau, farine, sel, levure. Et du temps.</h2>
+        <p class="big rise num" aria-label="14 heures de fermentation à 5 degrés">14<small>h</small></p>
+        <p class="big-note rise">de fermentation à 5 °C pour chaque baguette de tradition.</p>
+        <blockquote class="rise">« Une tradition, ça ne se fait pas du jour au lendemain. »<cite>Sithamparappillai Jegatheepan, boulanger du Fournil Didot</cite></blockquote>
+      </div>
+      <div>
+        <figure class="rise"><img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=1400&q=75&auto=format&fit=crop" alt="Mains qui pétrissent une pâte à pain sur un plan fariné" loading="lazy"></figure>
+        <p class="bio rise">Sithamparappillai Jegatheepan a commencé par la pâtisserie en 2008, puis il a ouvert le Fournil Didot en 2018. Son secret, il le résume en un mot : la fermentation. Une pâte qui repose longtemps au froid donne une croûte fine et craquante et une mie aérée.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="counter" id="comptoir">
+    <div class="wrap">
+      <div class="counter-head">
+        <h2 class="rise">Au comptoir</h2>
+        <p class="counter-intro rise">La tradition primée, et à côté d’elle des pains bio et des pains aux farines spéciales. La gamme du jour se découvre sur place.</p>
+      </div>
+      <div class="breads">
+        <article class="bread rise">
+          <figure><img src="https://images.unsplash.com/photo-1597079910443-60c43fc4f729?w=1000&q=75&auto=format&fit=crop" alt="Baguettes farinées alignées" loading="lazy"></figure>
+          <h3>La tradition <span class="num">1,30 €</span></h3>
+          <p>Celle du Grand Prix. Croûte fine, mie alvéolée, à manger le jour même.</p>
+          <p class="tiny">Prix relevé en février 2026.</p>
+        </article>
+        <article class="bread rise">
+          <figure><img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=1000&q=75&auto=format&fit=crop" alt="Pain de campagne rond à la croûte farinée" loading="lazy"></figure>
+          <h3>Les pains bio</h3>
+          <p>Une gamme de pains issus de l’agriculture biologique, à côté des baguettes.</p>
+        </article>
+        <article class="bread rise">
+          <figure><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=1000&q=75&auto=format&fit=crop" alt="Corbeille de pains variés" loading="lazy"></figure>
+          <h3>Les farines spéciales</h3>
+          <p>Des pains aux farines choisies, pour changer de la baguette.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="reserver">
+    <div class="wrap order-grid">
+      <div>
+        <h2 class="rise">Réservez vos baguettes</h2>
+        <p class="order-lede rise">Un repas, un anniversaire, un buffet ? Choisissez le nombre de traditions et l’heure de passage. La demande part par email à la boulangerie, qui vous la confirme.</p>
+        <figure class="order-pic rise"><img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1400&q=75&auto=format&fit=crop" alt="Étagères de boulangerie garnies de baguettes et de pains" loading="lazy"></figure>
+      </div>
+      <form class="panel rise" id="order" action="mailto:fournildidot@gmail.com" method="get">
+        <div class="field">
+          <span class="lab" id="qty-lab">Combien de traditions ?</span>
+          <div class="stepper" role="group" aria-labelledby="qty-lab">
+            <button type="button" data-step="-1" aria-label="Une baguette de moins">−</button>
+            <output id="qty" class="num" aria-live="polite">4</output>
+            <button type="button" data-step="1" aria-label="Une baguette de plus">+</button>
+            <span class="unit" id="qty-unit">baguettes</span>
+          </div>
+        </div>
+        <div class="field">
+          <span class="lab" id="day-lab">Quel jour ?</span>
+          <div class="days" id="days" role="group" aria-labelledby="day-lab"></div>
+        </div>
+        <div class="field">
+          <span class="lab" id="slot-lab">Vers quelle heure ?</span>
+          <div class="slots" id="slots" role="group" aria-labelledby="slot-lab"></div>
+        </div>
+        <div class="field">
+          <label for="name">À quel nom ?</label>
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="Votre nom">
+        </div>
+        <div class="total">
+          <span>Environ, à régler sur place</span>
+          <b class="num" id="total">5,20 €</b>
+        </div>
+        <a class="btn btn-ink" id="send" href="mailto:fournildidot@gmail.com">Envoyer la demande</a>
+        <p class="alt">ou par téléphone au <a href="tel:+33156082276" class="num">01 56 08 22 76</a></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="visit" id="venir">
+    <div class="wrap visit-grid">
+      <div>
+        <h2 class="rise">Horaires et accès</h2>
+        <ul class="hours num rise" id="hours">
+          <li data-d="1"><span>Lundi</span><span>6 h 30 – 20 h 30</span></li>
+          <li data-d="2"><span>Mardi</span><span>6 h 30 – 20 h 30</span></li>
+          <li data-d="3"><span>Mercredi</span><span>6 h 30 – 20 h 30</span></li>
+          <li data-d="4"><span>Jeudi</span><span>6 h 30 – 20 h 30</span></li>
+          <li data-d="5"><span>Vendredi</span><span>6 h 30 – 20 h 30</span></li>
+          <li data-d="6"><span>Samedi</span><span>6 h 30 – 20 h 30</span></li>
+          <li data-d="0"><span>Dimanche</span><span>Fermé</span></li>
+        </ul>
+        <p class="addr rise">103, rue Didot<br>75014 Paris</p>
+        <p class="rise">Près de la porte de Vanves.</p>
+        <div class="cta rise">
+          <a class="btn btn-white" href="https://www.google.com/maps/dir/?api=1&destination=Fournil+Didot+103+rue+Didot+75014+Paris">Itinéraire</a>
+          <a class="btn btn-line" href="mailto:fournildidot@gmail.com">fournildidot@gmail.com</a>
+        </div>
+      </div>
+      <div class="map rise">
+        <svg class="plaque" viewBox="0 0 600 210" role="img" aria-label="Plaque de rue : 14e arrondissement, rue Didot">
+          <rect width="600" height="210" rx="14" fill="#1f3a78"/>
+          <rect x="12" y="12" width="576" height="186" rx="8" fill="none" stroke="#2f7d4f" stroke-width="5"/>
+          <rect x="22" y="22" width="556" height="166" rx="4" fill="none" stroke="#fff" stroke-width="3"/>
+          <text x="300" y="68" text-anchor="middle" fill="#fff" font-family="Archivo, sans-serif" font-weight="600" font-size="28">14<tspan dy="-10" font-size="17">e</tspan><tspan dy="10"> Arr</tspan><tspan dy="-10" font-size="17">t</tspan></text>
+          <line x1="200" y1="86" x2="400" y2="86" stroke="#fff" stroke-width="2"/>
+          <text x="300" y="158" text-anchor="middle" fill="#fff" font-family="Archivo, sans-serif" font-weight="800" font-size="70" style="font-stretch:75%">RUE DIDOT</text>
+        </svg>
+        <iframe title="Carte : Fournil Didot, 103 rue Didot, Paris 14e" loading="lazy" src="https://maps.google.com/maps?q=Fournil%20Didot%2C%20103%20rue%20Didot%2C%2075014%20Paris&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-name" aria-hidden="true">Fournil Didot</p>
+    <div class="foot-grid">
+      <div><h3>Adresse</h3>103, rue Didot<br>75014 Paris</div>
+      <div><h3>Contact</h3><a href="tel:+33156082276" class="num">01 56 08 22 76</a><br><a href="mailto:fournildidot@gmail.com">fournildidot@gmail.com</a></div>
+      <div><h3>Ouvert</h3>Du lundi au samedi<br>6 h 30 – 20 h 30</div>
+      <div><h3>Distinction</h3>1<sup>er</sup> prix, Grand Prix de la baguette de tradition française de la Ville de Paris 2026</div>
+    </div>
+    <p class="credits">Démo réalisée par Raul Hatos — site non officiel, sans lien avec la boulangerie. Photographies d’illustration : Unsplash. Faits : <a href="https://www.paris.fr/pages/la-meilleure-baguette-de-paris-2026-se-deguste-dans-le-14e-arrondissement-34064">paris.fr</a>, <a href="https://www.lebonbon.fr/paris/actu/meilleure-baguette-tradition-paris-2026-14e/">Le Bonbon</a>, <a href="https://en.ara.cat/food/the-sri-lankan-immigrant-baker-who-makes-baguettes-for-emmanuel-macron_1_5682846.html">Ara</a>.</p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var OPEN=6*60+30, CLOSE=20*60+30, PRICE=1.30, MAX=60;
+  var DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  var MONTHS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  // heure de Paris, quel que soit le fuseau du visiteur
+  function parisNow(){var d=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}));return d}
+  var now=parisNow(), mins=now.getHours()*60+now.getMinutes(), dow=now.getDay();
+  function hm(m){return Math.floor(m/60)+' h '+String(m%60).padStart(2,'0')}
+
+  // statut ouvert / fermé
+  var st=document.querySelector('[data-status]'), txt=st.querySelector('span');
+  if(dow!==0 && mins>=OPEN && mins<CLOSE){st.classList.add('is-open');txt.textContent='Ouvert, jusqu’à 20 h 30'}
+  else{
+    var next = (dow!==0 && mins<OPEN) ? 'aujourd’hui' : (dow===6||dow===0 ? (dow===6?'lundi':'demain') : 'demain');
+    txt.textContent='Fermé · ouvre '+next+' à 6 h 30';
+  }
+  var li=document.querySelector('#hours [data-d="'+dow+'"]'); if(li) li.classList.add('today');
+
+  // réservation
+  var qty=4, day=null, slot=null;
+  var qEl=document.getElementById('qty'), uEl=document.getElementById('qty-unit'), tEl=document.getElementById('total');
+  var daysEl=document.getElementById('days'), slotsEl=document.getElementById('slots'), send=document.getElementById('send'), nameEl=document.getElementById('name');
+  var minus=document.querySelector('[data-step="-1"]'), plus=document.querySelector('[data-step="1"]');
+  function euro(n){return n.toFixed(2).replace('.',',')+' €'}
+
+  // prochains jours ouverts (lundi-samedi) ; aujourd'hui seulement s'il reste au moins une heure
+  var list=[], d=new Date(now);
+  if(dow===0 || mins>CLOSE-60) d.setDate(d.getDate()+1);
+  while(list.length<6){ if(d.getDay()!==0) list.push(new Date(d)); d.setDate(d.getDate()+1); }
+  list.forEach(function(x,i){
+    var b=document.createElement('button'); b.type='button';
+    var same=x.toDateString()===now.toDateString();
+    var tom=new Date(now); tom.setDate(tom.getDate()+1);
+    b.textContent=same?'Aujourd’hui':x.toDateString()===tom.toDateString()?'Demain':DAYS[x.getDay()].slice(0,3)+'. '+x.getDate();
+    b.dataset.label=DAYS[x.getDay()]+' '+x.getDate()+' '+MONTHS[x.getMonth()];
+    b.dataset.today=same?'1':'';
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',function(){pick(b)});
+    daysEl.appendChild(b);
+  });
+  function pick(b){
+    daysEl.querySelectorAll('button').forEach(function(o){o.setAttribute('aria-pressed',o===b?'true':'false')});
+    day=b; buildSlots(); update();
+  }
+  function buildSlots(){
+    slotsEl.innerHTML='';
+    var first=OPEN+30, earliest=day.dataset.today?Math.max(first,Math.ceil((mins+60)/30)*30):first;
+    for(var m=first;m<=CLOSE-30;m+=60){
+      var b=document.createElement('button'); b.type='button'; b.textContent=hm(m).replace(' h 00',' h'); b.dataset.m=m;
+      b.disabled=m<earliest; b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',function(e){slot=e.currentTarget; slotsEl.querySelectorAll('button').forEach(function(o){o.setAttribute('aria-pressed',o===slot?'true':'false')}); update();});
+      slotsEl.appendChild(b);
+    }
+    slot=slotsEl.querySelector('button:not(:disabled)'); if(slot) slot.setAttribute('aria-pressed','true');
+  }
+  function update(){
+    qEl.textContent=qty; uEl.textContent=qty>1?'baguettes':'baguette';
+    tEl.textContent=euro(qty*PRICE);
+    minus.disabled=qty<=1; plus.disabled=qty>=MAX;
+    var when=(day?day.dataset.label:'')+(slot?' vers '+slot.textContent:'');
+    var body='Bonjour,\n\nJe souhaiterais réserver '+qty+' baguette'+(qty>1?'s':'')+' de tradition pour le '+when+'.\n\nNom : '+(nameEl.value||'')+'\n\nMerci de me confirmer la réservation.\n';
+    send.href='mailto:fournildidot@gmail.com?subject='+encodeURIComponent('Réservation de '+qty+' tradition'+(qty>1?'s':'')+' – '+when)+'&body='+encodeURIComponent(body);
+  }
+  document.querySelectorAll('[data-step]').forEach(function(b){b.addEventListener('click',function(){qty=Math.min(MAX,Math.max(1,qty+(+b.dataset.step)));update();})});
+  nameEl.addEventListener('input',update);
+  document.getElementById('order').addEventListener('submit',function(e){e.preventDefault();send.click()});
+  pick(daysEl.querySelector('button'));
+
+  // apparitions au défilement
+  var els=document.querySelectorAll('.rise');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.querySelectorAll(':scope > .rise'));e.target.style.transitionDelay=(Math.max(0,sib.indexOf(e.target))*80)+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
