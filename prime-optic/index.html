@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Prime Optic · Opticien face à la Gare du Nord</title>
+<meta name="description" content="Prime Optic, opticien au 105 boulevard de Magenta, Paris 10e, face à la Gare du Nord. Lunettes de vue, solaires, verres et lentilles. Ouvert tous les jours de 10 h à 19 h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#e7e6e2;      /* pierre de la façade d'en face */
+  --paper:#f7f5f1;
+  --ink:#121212;
+  --ink-2:#45433f;
+  --signal:#ffe600;     /* jaune de signalétique */
+  --board:#151515;
+  --cell:#232323;
+  --m:clamp(16px,3.4vw,48px);
+  --gap:clamp(96px,12vw,200px);
+  --t-small:.9375rem;
+  --t-body:clamp(1.0625rem,1rem + .2vw,1.1875rem);
+  --t-lead:clamp(1.25rem,1.05rem + .7vw,1.625rem);
+  --t-head:clamp(2.125rem,1.4rem + 2.9vw,3.75rem);
+  --t-hero:clamp(2.375rem,1.4rem + 3.5vw,4.25rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--ink) var(--stone)}
+body{background:var(--stone);color:var(--ink);font:400 var(--t-body)/1.55 "Red Hat Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+::selection{background:var(--signal);color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px var(--signal)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{padding-inline:var(--m);max-width:1600px;margin-inline:auto}
+h1,h2,h3{font-family:"Red Hat Display",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1;text-wrap:balance}
+h2{font-size:var(--t-head)}
+p{text-wrap:pretty}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#d9d6cf;font-size:.8125rem;text-align:center;padding:7px var(--m)}
+.demo a{color:#fff}
+
+/* boutons : carrés, deux formats */
+.btn{display:inline-flex;align-items:center;gap:.65em;min-height:54px;padding:0 1.4em;font:700 1rem/1 "Red Hat Display",sans-serif;text-decoration:none;border:2px solid var(--ink);transition:transform .25s var(--ease),background-color .2s,color .2s}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-sig{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+.btn-sig:hover{background:var(--ink);border-color:var(--ink);color:var(--signal)}
+.btn-line:hover{background:var(--ink);color:var(--stone)}
+.btn:active{transform:scale(.97)}
+
+/* navigation */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:20px}
+.mark{display:flex;align-items:center;gap:10px;font:800 1.25rem/1 "Red Hat Display",sans-serif;letter-spacing:-.02em;text-decoration:none}
+.mark svg{width:38px;height:auto}
+.nav ul{display:none;gap:clamp(18px,2.4vw,36px);list-style:none;padding:0;font-weight:500}
+.nav ul a{text-decoration:none;padding:6px 0;text-decoration:underline 2px transparent;text-underline-offset:.35em;transition:text-decoration-color .2s}
+.nav ul a:hover{text-decoration-color:var(--ink)}
+.nav .btn{min-height:46px;padding:0 1.1em}
+.nav .btn span{display:none}
+@media (min-width:900px){.nav ul{display:flex}.nav .btn span{display:inline}}
+
+/* hero */
+.hero{display:grid;gap:36px;padding-top:clamp(20px,4vw,56px)}
+.hero h1{font-size:var(--t-hero);max-width:16ch}
+.hero .lead{font-size:var(--t-lead);line-height:1.4;max-width:30ch;margin-top:28px;color:var(--ink)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero .addr{margin-top:28px;font-size:var(--t-small);color:var(--ink-2)}
+.hero-pic{position:relative;min-height:440px}
+.hero-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.board{position:absolute;left:12px;right:12px;bottom:12px;background:var(--board);color:#f2efe8;padding:18px 18px 16px;box-shadow:0 18px 40px -18px rgba(0,0,0,.55)}
+.board .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:var(--t-small)}
+.board .row + .row{margin-top:10px}
+.board .lbl{color:#bdb9b0}
+.flap{display:inline-flex;gap:3px}
+.flap b{display:inline-grid;place-items:center;min-width:1.15em;height:1.6em;padding:0 .14em;background:var(--cell);color:var(--signal);font:800 1.25rem/1 "Red Hat Display",sans-serif;font-variant-numeric:tabular-nums;position:relative;overflow:hidden}
+.flap b::after{content:"";position:absolute;left:0;right:0;top:50%;height:50%;background:rgba(0,0,0,.28);pointer-events:none}
+.flap b.sp{background:none;min-width:.3em}
+.flap b.sp::after{display:none}
+.board .status{font:800 clamp(1.5rem,1.2rem + 1.2vw,2.25rem)/1 "Red Hat Display",sans-serif;color:var(--signal);letter-spacing:-.02em}
+.board .status.closed{color:#f2efe8}
+@media (min-width:900px){
+  .hero{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:stretch;gap:clamp(40px,5vw,88px)}
+  .hero > div:first-child{padding-block:clamp(24px,5vw,72px);display:flex;flex-direction:column;justify-content:center}
+  .hero-pic{min-height:min(76vh,720px)}
+  .board{left:-48px;right:auto;bottom:32px;width:min(420px,90%);padding:22px 24px 20px}
+}
+
+/* services */
+.services{margin-top:var(--gap);display:grid;gap:48px}
+.services h2{max-width:13ch}
+.services .intro{margin-top:24px;max-width:46ch;font-size:var(--t-lead);line-height:1.4}
+.svc{list-style:none;padding:0;margin-top:48px;display:grid;gap:0}
+.svc li{display:grid;grid-template-columns:1fr;gap:6px;padding:22px 0}
+.svc li + li{border-top:2px solid var(--ink)}
+.svc h3{font-size:clamp(1.375rem,1.15rem + .8vw,1.875rem);letter-spacing:-.02em}
+.svc p{max-width:52ch;color:var(--ink)}
+.svc-pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.svc-pics img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.svc-pics img:first-child{grid-column:1/-1;aspect-ratio:16/10}
+@media (min-width:900px){
+  .services{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(48px,6vw,112px);align-items:start}
+  .svc-pics{position:sticky;top:24px}
+  .svc li{grid-template-columns:minmax(0,15ch) minmax(0,1fr);gap:32px;align-items:baseline}
+}
+
+/* lecteur d'ordonnance */
+.rx{margin-top:var(--gap);background:var(--signal);padding-block:clamp(64px,8vw,128px)}
+.rx-grid{display:grid;gap:44px}
+.rx h2{max-width:14ch}
+.rx .intro{margin-top:22px;max-width:44ch;font-size:var(--t-lead);line-height:1.4}
+.ctrls{display:grid;gap:22px;margin-top:40px}
+.ctrl label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:600}
+.ctrl output{font:800 1.5rem/1 "Red Hat Display",sans-serif;letter-spacing:-.02em;min-width:5ch;text-align:right}
+.ctrl small{display:block;font-size:var(--t-small);color:#3b3a10;margin-top:2px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer;margin-top:4px}
+input[type=range]::-webkit-slider-runnable-track{height:6px;background:var(--ink)}
+input[type=range]::-moz-range-track{height:6px;background:var(--ink)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;margin-top:-12px;background:var(--paper);border:4px solid var(--ink);border-radius:50%;transition:transform .2s var(--ease)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;background:var(--paper);border:4px solid var(--ink);border-radius:50%}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
+input[type=range]:focus-visible{outline:3px solid var(--ink);outline-offset:4px;box-shadow:none}
+.rx-out{background:var(--paper);padding:clamp(22px,3vw,40px)}
+.rx-out svg{width:100%;height:auto;display:block}
+.rx-out .read{margin-top:24px;display:grid;gap:14px}
+.rx-out .read p{max-width:56ch}
+.rx-out .read strong{font-family:"Red Hat Display",sans-serif;font-weight:800}
+.rx-out .note{margin-top:20px;font-size:var(--t-small);color:var(--ink-2)}
+@media (min-width:900px){.rx-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(48px,6vw,112px);align-items:start}}
+
+/* avis */
+.avis{margin-top:var(--gap);display:grid;gap:40px;align-items:center}
+.score{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.score .big{font:800 clamp(6rem,4rem + 9vw,11rem)/.8 "Red Hat Display",sans-serif;letter-spacing:-.045em}
+.score .of{font:700 1.5rem/1.1 "Red Hat Display",sans-serif;padding-bottom:.4em}
+.stars{display:flex;gap:6px;margin-top:28px}
+.stars svg{width:clamp(30px,4vw,44px);height:auto}
+.avis h2{margin-top:32px;max-width:16ch}
+.avis p.lead{margin-top:20px;max-width:44ch;font-size:var(--t-lead);line-height:1.4}
+.avis .btn{margin-top:32px}
+.avis img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (min-width:900px){.avis{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(48px,6vw,112px)}}
+
+/* horaires */
+.hours{margin-top:var(--gap);background:var(--board);color:#f2efe8}
+.hours-grid{display:grid}
+.hours-txt{padding:clamp(56px,7vw,112px) var(--m)}
+.hours h2{color:#fff;max-width:14ch}
+.hours .lead{margin-top:20px;font-size:var(--t-lead);line-height:1.4;color:#e4e0d8;max-width:36ch}
+.week{margin-top:44px;width:100%;max-width:560px;border-collapse:separate;border-spacing:0 6px}
+.week th,.week td{padding:12px 14px;background:var(--cell);font-weight:500;text-align:left}
+.week td{text-align:right;color:var(--signal);font:700 1.125rem/1 "Red Hat Display",sans-serif;font-variant-numeric:tabular-nums}
+.week tr.today th,.week tr.today td{background:var(--signal);color:var(--ink)}
+.week tr.today th::after{content:" · aujourd’hui";font-weight:600}
+.access{margin-top:40px;display:grid;gap:8px;max-width:46ch;color:#e4e0d8}
+.access strong{color:#fff}
+.hours-pic{min-height:360px;position:relative}
+.hours-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){.hours-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.hours-txt{padding-right:clamp(32px,4vw,72px)}}
+
+/* contact */
+.contact{margin-top:var(--gap);display:grid;gap:40px}
+.contact h2{max-width:14ch}
+.contact dl{margin-top:40px;display:grid;gap:26px}
+.contact dt{font-size:var(--t-small);color:var(--ink-2);font-weight:600}
+.contact dd{font:700 clamp(1.25rem,1.1rem + .6vw,1.625rem)/1.25 "Red Hat Display",sans-serif;letter-spacing:-.015em;margin-top:4px}
+.contact dd a{text-decoration-color:var(--signal);text-decoration-thickness:4px;text-underline-offset:.18em}
+.contact dd a:hover{text-decoration-color:var(--ink)}
+.contact .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.map{min-height:380px;background:var(--paper);position:relative;display:grid;place-items:center}
+.map{background:var(--ink);color:#fff;align-content:center;justify-items:start;gap:32px;padding:clamp(28px,4vw,56px)}
+.map-addr{font:700 clamp(1.25rem,1rem + 1vw,2rem)/1.15 "Red Hat Display",sans-serif;letter-spacing:-.02em}
+.map-addr span{display:block;font-weight:800;font-size:clamp(7rem,4rem + 12vw,15rem);line-height:.82;letter-spacing:-.05em;color:var(--signal);margin-bottom:.15em}
+.map .btn{position:relative;cursor:pointer}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;filter:grayscale(1) contrast(1.05)}
+@media (min-width:900px){.contact{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(48px,6vw,112px)}.map,.map iframe{min-height:560px}}
+
+/* pied de page */
+footer{margin-top:var(--gap);padding-bottom:28px}
+footer .name{font:800 clamp(3.25rem,.5rem + 15.5vw,16rem)/.9 "Red Hat Display",sans-serif;letter-spacing:-.045em;white-space:nowrap}
+footer .meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;margin-top:48px;font-size:var(--t-small);color:var(--ink-2)}
+
+/* barre d'appel mobile */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1fr 1fr;transform:translateY(110%);transition:transform .4s var(--ease)}
+.callbar.on{transform:none}
+.callbar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;font:700 1rem/1 "Red Hat Display",sans-serif;text-decoration:none}
+.callbar a:first-child{background:var(--signal);color:var(--ink)}
+.callbar a:last-child{background:var(--ink);color:#fff}
+.callbar svg{width:18px;height:18px}
+@media (min-width:900px){.callbar{display:none}}
+
+/* mouvement */
+.rise{opacity:1}
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease) var(--d,0ms),transform .8s var(--ease) var(--d,0ms)}
+.js .rise.in{opacity:1;transform:none}
+.hero-pic img{transform-origin:50% 60%;animation:drift 18s var(--ease) both}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+.flap b.flip{animation:flip .5s var(--ease) both}
+@keyframes flip{0%{transform:rotateX(90deg);opacity:.2}100%{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .js .rise{opacity:1;transform:none;transition:none}
+  .hero-pic img,.flap b.flip{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="wrap nav">
+  <a class="mark" href="#top" aria-label="Prime Optic, accueil">
+    <svg viewBox="0 0 48 20" aria-hidden="true"><circle cx="11" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="37" cy="10" r="8" fill="var(--signal)" stroke="currentColor" stroke-width="3"/><path d="M19 9q5-4 10 0" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+    Prime Optic
+  </a>
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#ordonnance">Ordonnance</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-sig" href="tel:+33140162115" aria-label="Appeler le 01 40 16 21 15">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    <span>01 40 16 21 15</span>
+  </a>
+</header>
+
+<main id="top">
+  <section class="wrap hero" aria-labelledby="titre">
+    <div>
+      <h1 id="titre" class="rise">Votre opticien, face à la Gare du Nord</h1>
+      <p class="lead rise" style="--d:90ms">Lunettes de vue, solaires, verres et lentilles. Ouvert tous les jours, de 10&nbsp;h à 19&nbsp;h.</p>
+      <div class="ctas rise" style="--d:160ms">
+        <a class="btn btn-sig" href="tel:+33140162115">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Appeler la boutique
+        </a>
+        <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=105+boulevard+de+Magenta+75010+Paris" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg>
+          Itinéraire
+        </a>
+      </div>
+      <p class="addr rise" style="--d:220ms">105 boulevard de Magenta, 75010 Paris</p>
+    </div>
+    <div class="hero-pic">
+      <img src="https://images.unsplash.com/photo-1554168603-11104d546b86?w=1600&amp;q=75&amp;auto=format&amp;fit=crop" alt="La grande halle de la Gare du Nord, sa verrière et ses quais" width="1600" height="1067" fetchpriority="high">
+      <div class="board" role="status" aria-live="polite">
+        <div class="row"><span class="lbl">Prime Optic · 105 bd de Magenta</span></div>
+        <div class="row" style="margin-top:12px"><span class="status" id="st">Ouvert tous les jours</span></div>
+        <div class="row"><span class="lbl" id="st-sub">De 10&nbsp;h à 19&nbsp;h</span><span class="flap" id="flap" aria-hidden="true"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap services" id="services" aria-labelledby="svc-title">
+    <div>
+      <h2 id="svc-title" class="rise">Tout pour bien voir, au même comptoir</h2>
+      <p class="intro rise" style="--d:90ms">Un large choix de marques en vitrine, des verres taillés pour votre ordonnance et des lentilles toujours en stock pour repartir le jour même.</p>
+      <ul class="svc">
+        <li class="rise"><h3>Lunettes de vue</h3><p>Montures pour homme, femme et enfant. On les essaie avec vous, face au miroir, jusqu’à trouver celle qui vous ressemble.</p></li>
+        <li class="rise"><h3>Verres correcteurs</h3><p>Unifocaux ou progressifs, amincis de dernière génération pour les fortes corrections, avec traitements antireflet et anti-rayures.</p></li>
+        <li class="rise"><h3>Lunettes de soleil</h3><p>Solaires de marque pour la ville comme pour les départs en vacances depuis le quai d’en face.</p></li>
+        <li class="rise"><h3>Lentilles de contact</h3><p>Lentilles et produits d’entretien&nbsp;: solutions, étuis, tout ce qu’il faut pour les porter sans gêne.</p></li>
+      </ul>
+    </div>
+    <div class="svc-pics">
+      <img class="rise" src="https://images.unsplash.com/photo-1486250944723-86bca2b15b06?w=1200&amp;q=75&amp;auto=format&amp;fit=crop" alt="Montures de couleurs alignées sur un présentoir" width="1200" height="750" loading="lazy">
+      <img class="rise" style="--d:80ms" src="https://images.unsplash.com/photo-1488310371179-2efa381746d2?w=700&amp;q=75&amp;auto=format&amp;fit=crop" alt="Lunettes écaille posées sur un magazine ouvert" width="700" height="875" loading="lazy">
+      <img class="rise" style="--d:160ms" src="https://images.unsplash.com/photo-1534312464681-8240444efc26?w=700&amp;q=75&amp;auto=format&amp;fit=crop" alt="Lunettes écaille posées sur un ordinateur portable" width="700" height="875" loading="lazy">
+    </div>
+  </section>
+
+  <section class="rx" id="ordonnance" aria-labelledby="rx-title">
+    <div class="wrap rx-grid">
+      <div>
+        <h2 id="rx-title" class="rise">Votre ordonnance, enfin lisible</h2>
+        <p class="intro rise" style="--d:90ms">Reportez les chiffres d’une ligne de votre ordonnance. Le verre se dessine et chaque valeur s’explique en clair.</p>
+        <form class="ctrls rise" style="--d:160ms" id="rxf" onsubmit="return false">
+          <div class="ctrl">
+            <label for="sph">Sphère<output id="o-sph" for="sph">−2,25</output></label>
+            <small>Myopie si le chiffre est négatif, hypermétropie s’il est positif</small>
+            <input type="range" id="sph" min="-10" max="8" step="0.25" value="-2.25">
+          </div>
+          <div class="ctrl">
+            <label for="cyl">Cylindre<output id="o-cyl" for="cyl">−0,75</output></label>
+            <small>Entre parenthèses sur l’ordonnance, quand il y a un astigmatisme</small>
+            <input type="range" id="cyl" min="-4" max="4" step="0.25" value="-0.75">
+          </div>
+          <div class="ctrl">
+            <label for="axe">Axe<output id="o-axe" for="axe">180°</output></label>
+            <small>Le chiffre suivi de «&nbsp;°&nbsp;», entre 0 et 180</small>
+            <input type="range" id="axe" min="0" max="180" step="5" value="180">
+          </div>
+          <div class="ctrl">
+            <label for="add">Addition<output id="o-add" for="add">0</output></label>
+            <small>Notée «&nbsp;Add&nbsp;», à partir de 40-45 ans en général</small>
+            <input type="range" id="add" min="0" max="3.5" step="0.25" value="0">
+          </div>
+        </form>
+      </div>
+      <div class="rx-out rise" style="--d:120ms">
+        <svg viewBox="0 0 520 260" role="img" aria-labelledby="lens-t">
+          <title id="lens-t">Schéma du verre&nbsp;: coupe de profil et vue de face avec l’axe</title>
+          <text x="40" y="24" font-family="Red Hat Text" font-size="19" fill="#45433f">Profil du verre</text>
+          <path id="lens" fill="#cfe4ea" stroke="#121212" stroke-width="3" d=""/>
+          <line x1="20" y1="140" x2="230" y2="140" stroke="#121212" stroke-width="1" stroke-dasharray="4 6" opacity=".5"/>
+          <text x="300" y="24" font-family="Red Hat Text" font-size="19" fill="#45433f">Vue de face, axe</text>
+          <circle cx="400" cy="140" r="96" fill="#cfe4ea" stroke="#121212" stroke-width="3"/>
+          <g id="axis" transform="rotate(0 400 140)">
+            <line x1="292" y1="140" x2="508" y2="140" stroke="#121212" stroke-width="4"/>
+            <circle cx="508" cy="140" r="6" fill="#121212"/>
+          </g>
+          <text x="400" y="256" text-anchor="middle" font-family="Red Hat Display" font-weight="700" font-size="19" fill="#121212" id="axis-l">180°</text>
+        </svg>
+        <div class="read" id="read" aria-live="polite"></div>
+        <p class="note">Lecture indicative. En boutique, l’opticien vérifie votre ordonnance avec vous.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap avis" id="avis" aria-labelledby="avis-title">
+    <div>
+      <div class="score rise">
+        <span class="big" aria-hidden="true">4,7</span>
+        <span class="of" aria-hidden="true">sur 5</span>
+      </div>
+      <div class="stars rise" style="--d:80ms" role="img" aria-label="Note de 4,7&nbsp;sur&nbsp;5">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#121212"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#121212"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#121212"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#121212"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="c7"><rect width="16.8" height="24"/></clipPath></defs><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="none" stroke="#121212" stroke-width="1.6"/><path clip-path="url(#c7)" d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#121212"/></svg>
+      </div>
+      <h2 id="avis-title" class="rise" style="--d:120ms">Plus de 180 clients ont laissé leur avis</h2>
+      <p class="lead rise" style="--d:160ms">Une note de 4,7&nbsp;sur&nbsp;5 sur Google. Lisez-les avant de passer, puis jugez par vous-même.</p>
+      <a class="btn btn-line rise" style="--d:200ms" href="https://www.google.com/maps/search/?api=1&amp;query=Prime+Optic+105+boulevard+de+Magenta+75010+Paris" target="_blank" rel="noopener">Lire les avis sur Google</a>
+    </div>
+    <img class="rise" src="https://images.unsplash.com/photo-1500841737808-4411cada455e?w=1000&amp;q=75&amp;auto=format&amp;fit=crop" alt="Une paire de lunettes posée sur un comptoir clair" width="1000" height="1250" loading="lazy">
+  </section>
+
+  <section class="hours" id="horaires" aria-labelledby="h-title">
+    <div class="hours-grid">
+      <div class="hours-txt">
+        <h2 id="h-title" class="rise">Ouvert 7&nbsp;jours sur&nbsp;7, de 10&nbsp;h à 19&nbsp;h</h2>
+        <p class="lead rise" style="--d:90ms">Dimanche compris. Un train à prendre, une branche cassée&nbsp;: passez entre deux rendez-vous.</p>
+        <table class="week rise" style="--d:160ms" id="week">
+          <caption class="sr">Horaires d’ouverture de la semaine</caption>
+          <tbody>
+            <tr data-d="1"><th scope="row">Lundi</th><td>10:00 – 19:00</td></tr>
+            <tr data-d="2"><th scope="row">Mardi</th><td>10:00 – 19:00</td></tr>
+            <tr data-d="3"><th scope="row">Mercredi</th><td>10:00 – 19:00</td></tr>
+            <tr data-d="4"><th scope="row">Jeudi</th><td>10:00 – 19:00</td></tr>
+            <tr data-d="5"><th scope="row">Vendredi</th><td>10:00 – 19:00</td></tr>
+            <tr data-d="6"><th scope="row">Samedi</th><td>10:00 – 19:00</td></tr>
+            <tr data-d="0"><th scope="row">Dimanche</th><td>10:00 – 19:00</td></tr>
+          </tbody>
+        </table>
+        <div class="access rise" style="--d:200ms">
+          <p><strong>En transports&nbsp;:</strong> Gare du Nord, métro 4 et 5, RER B et D. Magenta, RER E.</p>
+          <p><strong>Adresse&nbsp;:</strong> 105 boulevard de Magenta, 75010 Paris.</p>
+        </div>
+      </div>
+      <div class="hours-pic">
+        <img src="https://images.unsplash.com/photo-1486915585284-e6cb5cd1ec87?w=1400&amp;q=75&amp;auto=format&amp;fit=crop" alt="Les quais de la Gare du Nord sous la verrière, en fin de journée" width="1400" height="933" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap contact" id="contact" aria-labelledby="c-title">
+    <div>
+      <h2 id="c-title" class="rise">Passez, ou appelez avant</h2>
+      <dl>
+        <div class="rise"><dt>Téléphone</dt><dd><a href="tel:+33140162115">01 40 16 21 15</a></dd></div>
+        <div class="rise" style="--d:60ms"><dt>Adresse</dt><dd>105 boulevard de Magenta<br>75010 Paris</dd></div>
+        <div class="rise" style="--d:120ms"><dt>Instagram</dt><dd><a href="https://www.instagram.com/prime_optic_off/" target="_blank" rel="noopener">@prime_optic_off</a></dd></div>
+        <div class="rise" style="--d:180ms"><dt>Facebook</dt><dd><a href="https://www.facebook.com/Prime-Optic" target="_blank" rel="noopener">Prime Optic</a></dd></div>
+      </dl>
+      <div class="ctas">
+        <a class="btn btn-sig" href="tel:+33140162115">Appeler</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=105+boulevard+de+Magenta+75010+Paris" target="_blank" rel="noopener">Itinéraire</a>
+      </div>
+    </div>
+    <div class="map">
+      <p class="map-addr" aria-hidden="true"><span>105</span>boulevard de Magenta<br>face à la Gare du Nord</p>
+      <button class="btn btn-sig" id="mapbtn" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg>
+        Afficher le plan
+      </button>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p class="name" aria-hidden="true">Prime Optic</p>
+  <div class="meta">
+    <span>Opticien · 105 boulevard de Magenta, 75010 Paris · 01 40 16 21 15</span>
+    <span>Démo réalisée par Raul Hatos — site non officiel. Photos&nbsp;: Unsplash.</span>
+  </div>
+</footer>
+
+<div class="callbar" id="callbar">
+  <a href="tel:+33140162115"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Appeler</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=105+boulevard+de+Magenta+75010+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/></svg>Itinéraire</a>
+</div>
+
+<script>
+(function(){
+  /* --- état d'ouverture, heure de Paris (10:00-19:00 tous les jours) --- */
+  var OPEN=600, CLOSE=1140;
+  function paris(){
+    var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+    var o={};p.forEach(function(x){o[x.type]=x.value});
+    var days={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6};
+    return {d:days[o.weekday],m:(+o.hour)*60+(+o.minute)};
+  }
+  function dur(min){var h=Math.floor(min/60),m=min%60;return (h?h+' h ':'')+(h&&m<10?'0':'')+m+(h?'':' min')}
+  function flap(txt){
+    var el=document.getElementById('flap');el.innerHTML='';
+    txt.split('').forEach(function(c,i){var b=document.createElement('b');if(c===' ')b.className='sp';b.textContent=c;b.style.animationDelay=(i*55)+'ms';b.classList.add('flip');el.appendChild(b)});
+  }
+  function tick(){
+    var t=paris(),st=document.getElementById('st'),sub=document.getElementById('st-sub');
+    var row=document.querySelector('#week tr[data-d="'+t.d+'"]');
+    document.querySelectorAll('#week tr').forEach(function(r){r.classList.remove('today')});
+    if(row)row.classList.add('today');
+    if(t.m>=OPEN&&t.m<CLOSE){st.textContent='Ouvert maintenant';st.classList.remove('closed');sub.textContent='Ferme à 19 h, dans';flap(dur(CLOSE-t.m))}
+    else{st.textContent='Fermé pour le moment';st.classList.add('closed');sub.textContent='Rouvre à';flap('10:00')}
+  }
+  tick();setInterval(tick,60000);
+
+  /* --- lecteur d'ordonnance --- */
+  var $=function(id){return document.getElementById(id)};
+  function fr(v,sign){var s=Math.abs(v).toFixed(2).replace('.',',').replace(/,00$/,'').replace(/(,\d)0$/,'$1');if(v===0)return '0';return (sign?(v<0?'−':'+'):'')+s}
+  function lens(sph,cyl){
+    var p=Math.abs(sph)+Math.abs(cyl)/2, k=7, base=10, tc, te;
+    if(sph<0){tc=base;te=base+k*p}else if(sph>0){te=base;tc=base+k*sph+Math.abs(cyl)*k/2}else{tc=te=base+Math.abs(cyl)*k/2}
+    var cx=125,y0=36,y1=244,cy=140;
+    var lx=cx-tc/2,cl=2*lx-(cx-te/2),rx=cx+tc/2,cr=2*rx-(cx+te/2);
+    return 'M'+(cx-te/2)+' '+y0+' Q'+cl+' '+cy+' '+(cx-te/2)+' '+y1+' L'+(cx+te/2)+' '+y1+' Q'+cr+' '+cy+' '+(cx+te/2)+' '+y0+' Z';
+  }
+  function grade(v,lim){return v<lim[0]?'faible':v<=lim[1]?'moyenne':'forte'}
+  function render(){
+    var sph=+$('sph').value,cyl=+$('cyl').value,axe=+$('axe').value,add=+$('add').value;
+    $('o-sph').textContent=fr(sph,1);$('o-cyl').textContent=fr(cyl,1);$('o-axe').textContent=axe+'°';$('o-add').textContent=add?'+'+fr(add):'0';
+    $('lens').setAttribute('d',lens(sph,cyl));
+    $('axis').setAttribute('transform','rotate('+(-axe)+' 400 140)');
+    $('axis').style.opacity=cyl?1:.18;$('axis-l').textContent=cyl?'Axe '+axe+'°':'Pas d’astigmatisme';
+    var out=[];
+    if(sph<0)out.push('<p><strong>Sphère '+fr(sph,1)+' : myopie '+grade(-sph,[3,6])+'.</strong> Vous voyez net de près, flou de loin. Le verre est plus épais sur les bords qu’au centre.</p>');
+    else if(sph>0)out.push('<p><strong>Sphère '+fr(sph,1)+' : hypermétropie '+grade(sph,[2,5])+'.</strong> L’œil force pour faire la mise au point, surtout de près. Le verre est plus épais au centre.</p>');
+    else out.push('<p><strong>Sphère 0 :</strong> pas de myopie ni d’hypermétropie sur cet œil.</p>');
+    if(cyl)out.push('<p><strong>Cylindre '+fr(cyl,1)+', axe '+axe+'° : astigmatisme.</strong> L’image est un peu étirée dans une direction. L’axe indique l’orientation de la correction dans le verre, pas sa force.</p>');
+    if(add)out.push('<p><strong>Addition +'+fr(add)+' : presbytie.</strong> Une correction en plus pour voir de près, en verres progressifs ou en lunettes de lecture.</p>');
+    if(Math.abs(sph)+Math.abs(cyl)>=4)out.push('<p><strong>Correction forte :</strong> un verre aminci limite l’épaisseur et le poids de vos lunettes.</p>');
+    $('read').innerHTML=out.join('');
+  }
+  ['sph','cyl','axe','add'].forEach(function(id){$(id).addEventListener('input',render)});
+  render();
+
+  /* --- plan Google chargé à la demande --- */
+  $('mapbtn').addEventListener('click',function(){
+    var f=document.createElement('iframe');f.title='Plan : 105 boulevard de Magenta, Paris 10e';
+    f.src='https://maps.google.com/maps?q=105%20boulevard%20de%20Magenta%2075010%20Paris&z=16&output=embed';
+    this.parentNode.appendChild(f);f.focus();
+  });
+
+  /* --- apparitions et barre d'appel --- */
+  var els=document.querySelectorAll('.rise');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }else els.forEach(function(e){e.classList.add('in')});
+  var cb=$('callbar'),hero=document.querySelector('.hero .ctas');
+  new IntersectionObserver(function(es){cb.classList.toggle('on',!es[0].isIntersecting&&es[0].boundingClientRect.top<0)}).observe(hero);
+})();
+</script>
+</body>
+</html>

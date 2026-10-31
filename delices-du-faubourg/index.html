@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Délices du Faubourg · Boulangerie-pâtisserie, Paris 10e</title>
+<meta name="description" content="Délices du Faubourg, boulangerie-pâtisserie au 156, rue du Faubourg-Saint-Martin, Paris 10e, près de la Gare de l'Est. Chouquettes, roulé pistache, pains, viennoiseries, sandwichs.">
+<meta name="theme-color" content="#f1a32c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#f5f3ef;     /* farine */
+  --ink:#16120e;         /* croûte brûlée */
+  --soft:#4a423a;
+  --crust:#f1a32c;       /* la chouquette dorée */
+  --crust-deep:#d4801a;
+  --crust-ink:#16120e;
+  --sugar:#ffffff;
+  --pista:#93a85d;       /* uniquement dans le dessin du roulé */
+  --m:clamp(16px,3.4vw,48px);
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.05rem + .8vw,1.75rem);
+  --step-head:clamp(2.25rem,1.3rem + 3.6vw,4.75rem);
+  --step-giant:clamp(3.6rem,1.2rem + 7.4vw,7.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,sans-serif;font-size:var(--step-body);line-height:1.45;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+::selection{background:var(--crust);color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{padding-inline:var(--m)}
+h1,h2,h3{font-weight:800;letter-spacing:-.045em;line-height:.9;text-wrap:balance}
+h2{font-size:var(--step-head)}
+p{text-wrap:pretty}
+
+/* bouton : la forme de la chouquette, toujours ronde */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:54px;padding:0 1.6em;border-radius:999px;font:600 1rem/1 "Schibsted Grotesk",sans-serif;letter-spacing:-.01em;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#3a2f25}
+.btn-soft{background:var(--surface);color:var(--ink)}
+.btn-soft:hover{background:#ebe7df}
+.btn-crust{background:var(--crust);color:var(--crust-ink)}
+.btn-crust:hover{background:#f6b448}
+.btn:active{transform:scale(.96)}
+
+/* navigation */
+.nav{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--m)}
+.wordmark{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.125rem;letter-spacing:-.03em;text-decoration:none}
+.wordmark svg{width:26px;height:26px}
+.nav ul{display:flex;gap:clamp(18px,2.4vw,36px);list-style:none;padding:0;font-weight:600;font-size:var(--step-small)}
+.nav ul a{text-decoration:none;padding:6px 0}
+.nav ul a:hover{text-decoration:underline}
+.nav .btn{min-height:44px;padding:0 1.2em;font-size:.9375rem}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* hero : une chouquette géante entre par la droite */
+.hero{overflow-x:clip;position:relative;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding:0 var(--m) clamp(48px,7vw,96px);min-height:calc(100svh - 84px);align-content:center}
+.hero-text{grid-column:1/7;position:relative;z-index:2;padding-block:40px}
+.hero h1{font-size:var(--step-giant);line-height:.86}
+.hero .lead{margin-top:36px;font-size:var(--step-lead);line-height:1.3;letter-spacing:-.02em;max-width:24em}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.rating{display:flex;align-items:center;gap:12px;margin-top:32px;font-size:var(--step-small);font-weight:600}
+.rating .score{font-size:1.5rem;font-weight:800;letter-spacing:-.03em}
+.rating .stars{display:inline-flex;gap:3px}
+.rating .stars svg{width:17px;height:17px}
+.hero-art{grid-column:7/13;position:relative;align-self:stretch;min-height:520px}
+.hero-photo{position:absolute;top:50%;left:4%;width:min(64vw,118svh);aspect-ratio:1;transform:translateY(-50%);border-radius:50%;overflow:hidden;background:var(--surface)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:62% 70%;animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.04) translate(0,0)}to{transform:scale(1.12) translate(-2%,1.5%)}}
+.hero-chou{position:absolute;width:clamp(150px,19vw,290px);left:-8%;bottom:4%;z-index:2;animation:bob 6s ease-in-out infinite alternate}
+@keyframes bob{from{transform:rotate(-6deg) translateY(0)}to{transform:rotate(4deg) translateY(-10px)}}
+@media (max-width:860px){
+  .hero{display:flex;flex-direction:column;min-height:auto;padding-top:0}
+  .hero-art{order:-1;min-height:0;height:min(96vw,520px);margin-inline:calc(var(--m) * -1)}
+  .hero-photo{width:112vw;max-width:600px;left:auto;right:-26vw;top:0;transform:none}
+  .hero-chou{width:38vw;left:var(--m);bottom:-6%}
+  .hero-text{padding-top:28px}
+  .hero .lead{margin-top:24px}
+  .hero .actions .btn{flex:1 1 auto}
+}
+
+/* bande dorée : les deux spécialités */
+.band{background:var(--crust);color:var(--crust-ink);padding:clamp(80px,11vw,170px) var(--m);overflow:hidden}
+.band h2{max-width:12em}
+.band .intro{margin-top:28px;font-size:var(--step-lead);line-height:1.3;max-width:30em;letter-spacing:-.02em}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);margin-top:clamp(56px,7vw,110px)}
+.spec{display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,40px);align-content:start}
+.spec svg{width:min(72%,420px);height:auto}
+.spec h3{font-size:clamp(2rem,1.2rem + 2.6vw,3.6rem)}
+.spec p{margin-top:16px;max-width:26em}
+.spec .src{margin-top:14px;font-weight:600;font-size:var(--step-small)}
+@media (max-width:860px){
+  .duo{grid-template-columns:1fr}
+  .spec svg{width:70vw}
+}
+
+/* le goûter au compte */
+.count{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding:clamp(96px,12vw,180px) var(--m)}
+.count-ctrl{grid-column:1/6}
+.count-ctrl p.lead{margin-top:24px;font-size:var(--step-lead);line-height:1.3;letter-spacing:-.02em;max-width:20em}
+.field{margin-top:40px}
+.field-label{display:block;font-weight:600;margin-bottom:14px}
+.stepper{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border-radius:999px;padding:6px}
+.stepper button{width:52px;height:52px;border-radius:50%;border:0;background:#fff;color:var(--ink);font:800 1.5rem/1 "Schibsted Grotesk",sans-serif;cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+.stepper button:hover{background:var(--crust)}
+.stepper button:active{transform:scale(.9)}
+.stepper button:disabled{opacity:.35;cursor:default;background:#fff}
+.stepper output{min-width:4.2em;text-align:center;font-weight:800;font-size:1.375rem;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.appetite{display:flex;flex-wrap:wrap;gap:8px;border:0;padding:0}
+.appetite legend{font-weight:600;margin-bottom:14px;padding:0}
+.appetite label{position:relative}
+.appetite input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.appetite span{display:inline-flex;align-items:center;min-height:48px;padding:0 1.2em;border-radius:999px;background:var(--surface);font-weight:600;transition:background-color .2s,color .2s}
+.appetite input:checked+span{background:var(--ink);color:#fff}
+.appetite input:focus-visible+span{outline:3px solid var(--ink);outline-offset:3px}
+.appetite label:hover span{background:#ebe7df}
+.appetite input:checked:hover+span,.appetite label:hover input:checked+span{background:var(--ink)}
+.count-out{grid-column:7/13;align-self:center;background:var(--surface);border-radius:clamp(28px,4vw,56px);padding:clamp(28px,4vw,56px);min-height:440px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.total{font-weight:800;letter-spacing:-.05em;line-height:.9}
+.total b{display:block;font-size:clamp(4.5rem,2.4rem + 7vw,8.5rem);font-variant-numeric:tabular-nums}
+.total span{font-size:var(--step-lead);letter-spacing:-.02em}
+.pile{display:flex;flex-wrap:wrap;gap:4px;align-content:flex-start;min-height:120px}
+.pile svg{width:clamp(28px,2.6vw,38px);height:clamp(28px,2.6vw,38px);animation:pop .35s var(--ease) both}
+@keyframes pop{from{transform:scale(.2);opacity:0}to{transform:none;opacity:1}}
+.count-out .note{font-size:var(--step-small);color:var(--soft);max-width:34em}
+.count-out .note a{font-weight:600;color:var(--ink)}
+@media (max-width:860px){
+  .count{display:block}
+  .count-out{margin-top:40px;min-height:0}
+  .pile svg{width:29px;height:29px}
+}
+
+/* la carte : index avec aperçu */
+.menu{padding:clamp(40px,6vw,96px) var(--m) clamp(96px,12vw,180px);display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
+.menu-head{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,72px)}
+.menu-head p{max-width:28em;color:var(--soft)}
+.cats{grid-column:1/8;list-style:none;padding:0}
+.cat{padding:28px 0;transition:opacity .24s}
+.cats:hover .cat:not(:hover),.cats.focusing .cat:not(.on){opacity:.38}
+.cat-title{display:flex;align-items:center;gap:18px}
+.cat-title h3{font-size:clamp(2rem,1.3rem + 2.4vw,3.4rem);cursor:default}
+.cat-title .thumb{display:none;width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none}
+.cat-title .n{margin-left:auto;font-weight:600;font-size:var(--step-small);color:var(--soft)}
+.items{list-style:none;padding:0;margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:18px 40px}
+.items li{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:baseline}
+.items li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--crust);transform:translateY(1px)}
+.items b{font-weight:600}
+.items small{display:block;font-size:var(--step-small);color:var(--soft);margin-top:2px}
+.preview{grid-column:9/13;position:relative}
+.preview-frame{position:sticky;top:12vh;aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--surface)}
+.preview-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .24s ease,transform .6s var(--ease)}
+.preview-frame img.on{opacity:1;transform:none}
+.preview-cap{position:sticky;top:calc(12vh + 100%);margin-top:16px;font-size:var(--step-small);color:var(--soft)}
+@media (max-width:860px){
+  .cats{grid-column:1/-1}
+  .preview{display:none}
+  .cat-title .thumb{display:block;width:56px;height:56px}
+  .items{grid-template-columns:1fr}
+  .cats:hover .cat:not(:hover),.cats.focusing .cat:not(.on){opacity:1}
+}
+
+/* pratique : grande photo ronde coupée par le bord */
+.practical{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding:0 var(--m) clamp(96px,12vw,180px);overflow:hidden;align-items:center}
+.practical-photo{grid-column:1/6;margin-left:calc(var(--m) * -1 - 8vw);aspect-ratio:1;border-radius:50%;overflow:hidden;max-height:82svh}
+.practical-photo img{width:100%;height:100%;object-fit:cover}
+.practical-text{grid-column:7/13}
+.points{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:36px 40px;margin-top:48px}
+.points b{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.125rem}
+.points b::before{content:"";width:.7em;height:.7em;border-radius:50%;background:var(--crust);flex:none}
+.points li:nth-child(3n+2) b::before{background:var(--ink)}
+.points li:nth-child(3n) b::before{background:var(--crust-deep)}
+.points p{margin-top:6px;color:var(--soft);font-size:var(--step-small);padding-left:calc(.7em + 10px)}
+@media (max-width:860px){
+  .practical{display:block}
+  .practical-photo{width:86vw;margin-left:-14vw;max-height:none}
+  .practical-text{margin-top:48px}
+  .points{grid-template-columns:1fr;gap:26px}
+}
+
+/* le ticket : venir, appeler, horaires */
+.visit{padding:0 var(--m) clamp(96px,12vw,180px)}
+.ticket{--notch:30px;position:relative;display:grid;grid-template-columns:46% 1fr;background:var(--ink);color:#fff;border-radius:28px;
+  -webkit-mask:radial-gradient(circle var(--notch) at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--notch) at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle var(--notch) at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--notch) at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+.ticket::after{content:"";position:absolute;left:46%;top:calc(var(--notch) + 12px);bottom:calc(var(--notch) + 12px);width:0;border-left:5px dotted rgba(255,255,255,.4);transform:translateX(-50%)}
+.ticket-a,.ticket-b{padding:clamp(32px,4.4vw,64px)}
+.ticket h2{color:#fff}
+.ticket .addr{margin-top:28px;font-size:var(--step-lead);line-height:1.3;letter-spacing:-.02em}
+.ticket .addr span{display:block;color:#d9d2c8;font-size:var(--step-body);margin-top:10px;letter-spacing:-.01em}
+.ticket .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.ticket .btn-soft{background:#2e2620;color:#fff}
+.ticket .btn-soft:hover{background:#41372e}
+.ticket h3{font-size:clamp(1.75rem,1.2rem + 1.6vw,2.6rem)}
+.ticket-b p{margin-top:16px;color:#e9e3da;max-width:28em}
+.ticket-b .tel{display:inline-block;margin-top:24px;font-weight:800;font-size:clamp(2rem,1.3rem + 2.4vw,3.4rem);letter-spacing:-.04em;line-height:1;text-decoration:none;color:var(--crust);font-variant-numeric:tabular-nums}
+.ticket-b .tel:hover{text-decoration:underline}
+.pay{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.pay li{background:#2e2620;border-radius:999px;padding:10px 16px;font-size:var(--step-small);font-weight:600}
+@media (max-width:860px){
+  .ticket{grid-template-columns:1fr;
+    -webkit-mask:radial-gradient(circle var(--notch) at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--notch) at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;
+    mask:radial-gradient(circle var(--notch) at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--notch) at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat}
+  .ticket .ticket-a{padding-bottom:56px}
+  .ticket .ticket-b{padding-top:56px}
+  .ticket::after{left:calc(var(--notch) + 12px);right:calc(var(--notch) + 12px);top:50%;bottom:auto;height:0;width:auto;border-left:0;border-top:5px dotted rgba(255,255,255,.4);transform:translateY(-50%)}
+  .ticket .actions .btn{flex:1 1 auto}
+}
+
+/* fin de page : le nom en grand sur le doré */
+.close{background:var(--crust);color:var(--crust-ink);padding:clamp(64px,8vw,120px) var(--m) 32px;overflow:hidden}
+.close .mark{display:flex;align-items:flex-end;gap:clamp(8px,1.4vw,20px);font-weight:800;letter-spacing:-.06em;line-height:.8;font-size:clamp(3.2rem,1rem + 10.6vw,11.5rem);white-space:nowrap}
+.close .mark svg{width:.78em;height:.78em;flex:none;transform:translateY(-.02em)}
+.close .mark-2{padding-left:.9em}
+.close-cols{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-top:clamp(48px,6vw,80px)}
+.close-cols ul{grid-column:1/7;list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;font-weight:600}
+.close-cols ul a{text-decoration:none}
+.close-cols ul a:hover{text-decoration:underline}
+.close-cols .contact{grid-column:8/13;font-size:var(--step-body)}
+.close-cols .contact a{font-weight:600}
+.legal{margin-top:56px;font-size:var(--step-small);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:860px){
+  .close .mark{font-size:15.5vw}
+  .close-cols{display:block}
+  .close-cols .contact{margin-top:32px}
+}
+.demo{background:var(--ink);color:#cfc7bc;text-align:center;font-size:.8125rem;padding:12px var(--m)}
+
+/* entrées */
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .rise{opacity:1;transform:none;transition:none}
+  .hero-photo img,.hero-chou,.pile svg{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- une chouquette : pâte dorée, bosses de cuisson, grains de sucre -->
+    <symbol id="chou" viewBox="0 0 100 100">
+      <circle cx="50" cy="52" r="44" fill="#d4801a"/>
+      <circle cx="50" cy="49" r="43" fill="#f1a32c"/>
+      <circle cx="32" cy="36" r="17" fill="#f6b84e"/>
+      <circle cx="62" cy="30" r="15" fill="#f6b84e"/>
+      <circle cx="70" cy="58" r="16" fill="#e8962a"/>
+      <circle cx="38" cy="66" r="15" fill="#e8962a"/>
+      <g fill="#fff">
+        <ellipse cx="28" cy="30" rx="4.5" ry="3.2" transform="rotate(-20 28 30)"/>
+        <ellipse cx="44" cy="22" rx="4" ry="3" transform="rotate(15 44 22)"/>
+        <ellipse cx="60" cy="24" rx="4.6" ry="3.4" transform="rotate(-35 60 24)"/>
+        <ellipse cx="74" cy="38" rx="4" ry="3" transform="rotate(25 74 38)"/>
+        <ellipse cx="36" cy="44" rx="4.2" ry="3" transform="rotate(40 36 44)"/>
+        <ellipse cx="54" cy="40" rx="4.8" ry="3.4" transform="rotate(-10 54 40)"/>
+        <ellipse cx="22" cy="50" rx="3.6" ry="2.8" transform="rotate(-50 22 50)"/>
+        <ellipse cx="68" cy="50" rx="4.4" ry="3.2" transform="rotate(10 68 50)"/>
+        <ellipse cx="48" cy="58" rx="4" ry="3" transform="rotate(60 48 58)"/>
+        <ellipse cx="80" cy="56" rx="3.4" ry="2.6" transform="rotate(-25 80 56)"/>
+        <ellipse cx="30" cy="62" rx="4" ry="3" transform="rotate(20 30 62)"/>
+        <ellipse cx="62" cy="70" rx="4.2" ry="3" transform="rotate(-40 62 70)"/>
+        <ellipse cx="44" cy="76" rx="3.6" ry="2.6" transform="rotate(5 44 76)"/>
+      </g>
+    </symbol>
+    <symbol id="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" fill="currentColor"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 3.5h3l1.5 4.2-2 1.5a12 12 0 0 0 5.7 5.7l1.5-2 4.2 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <a class="wordmark" href="#top" aria-label="Délices du Faubourg, retour en haut"><svg aria-hidden="true"><use href="#chou"/></svg>Délices du Faubourg</a>
+  <ul>
+    <li><a href="#specialites">Spécialités</a></li>
+    <li><a href="#carte">La carte</a></li>
+    <li><a href="#venir">Venir</a></li>
+  </ul>
+  <a class="btn btn-ink" href="tel:+33140369240"><svg aria-hidden="true"><use href="#i-tel"/></svg>Appeler</a>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="t-hero">
+    <div class="hero-text">
+      <h1 id="t-hero" class="rise">Délices du Faubourg</h1>
+      <p class="lead rise" style="--i:1">Boulangerie-pâtisserie au 156, rue du Faubourg-Saint-Martin, à deux pas de la Gare de l'Est. Chouquettes, roulé pistache, pains et sandwichs à emporter.</p>
+      <div class="actions rise" style="--i:2">
+        <a class="btn btn-ink" href="tel:+33140369240"><svg aria-hidden="true"><use href="#i-tel"/></svg>01 40 36 92 40</a>
+        <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&amp;destination=156+rue+du+Faubourg+Saint-Martin+75010+Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Itinéraire</a>
+      </div>
+      <p class="rating rise" style="--i:3"><span class="score">4,5</span><span class="stars" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg style="opacity:.45"><use href="#star"/></svg></span><span>sur 5, plus de 490 avis Google</span></p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-photo"><img src="https://images.unsplash.com/photo-1597528662465-55ece5734101?w=1400&amp;q=78&amp;auto=format&amp;fit=crop" width="1400" height="1400" alt="" fetchpriority="high"></div>
+      <svg class="hero-chou" viewBox="0 0 100 100"><use href="#chou"/></svg>
+    </div>
+  </section>
+
+  <section class="band" id="specialites" aria-labelledby="t-spec">
+    <h2 id="t-spec" class="rise">Les deux qu'on vient chercher</h2>
+    <p class="intro rise" style="--i:1">Dans les avis des clients, deux noms reviennent sans cesse. Les voici.</p>
+    <div class="duo">
+      <article class="spec rise" style="--i:2">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#chou"/></svg>
+        <div>
+          <h3>Chouquettes</h3>
+          <p>Pâte à choux légère, grains de sucre perlé croquants sur le dessus. Le goûter le plus simple qui soit, au bureau comme à la sortie de l'école.</p>
+          <p class="src">La spécialité la plus citée dans les avis.</p>
+        </div>
+      </article>
+      <article class="spec rise" style="--i:3">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="52" r="45" fill="#d4801a"/>
+          <circle cx="50" cy="49" r="44" fill="#93a85d"/>
+          <path d="M50 49m0 0a4 4 0 0 1 8 0a8 8 0 0 1-16 0a12 12 0 0 1 24 0a16 16 0 0 1-32 0a20 20 0 0 1 40 0a24 24 0 0 1-48 0a28 28 0 0 1 56 0a32 32 0 0 1-64 0a36 36 0 0 1 72 0" fill="none" stroke="#f1a32c" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50 49m0 0a4 4 0 0 1 8 0a8 8 0 0 1-16 0a12 12 0 0 1 24 0a16 16 0 0 1-32 0a20 20 0 0 1 40 0a24 24 0 0 1-48 0a28 28 0 0 1 56 0a32 32 0 0 1-64 0a36 36 0 0 1 72 0" fill="none" stroke="#f6c46a" stroke-width="2.4" stroke-linecap="round" transform="translate(-.8 -1.2)"/>
+        </svg>
+        <div>
+          <h3>Roulé pistache</h3>
+          <p>Un feuilletage enroulé sur sa crème à la pistache. Les clients en retiennent surtout la pâte, croustillante couche après couche.</p>
+          <p class="src">Cité pour son feuilletage.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="count" id="gouter" aria-labelledby="t-count">
+    <div class="count-ctrl">
+      <h2 id="t-count" class="rise">Combien de chouquettes&nbsp;?</h2>
+      <p class="lead rise" style="--i:1">Un goûter à l'école, une réunion, un train à prendre en groupe&nbsp;: comptez vos invités, on fait le calcul.</p>
+      <div class="field rise" style="--i:2">
+        <span class="field-label" id="l-guests">Nombre de personnes</span>
+        <div class="stepper" role="group" aria-labelledby="l-guests">
+          <button type="button" data-step="-1" aria-label="Une personne de moins">−</button>
+          <output id="guests" aria-live="polite">8</output>
+          <button type="button" data-step="1" aria-label="Une personne de plus">+</button>
+        </div>
+      </div>
+      <fieldset class="field appetite rise" style="--i:3">
+        <legend>Appétit</legend>
+        <label><input type="radio" name="app" value="3"><span>Raisonnable</span></label>
+        <label><input type="radio" name="app" value="5" checked><span>Gourmand</span></label>
+        <label><input type="radio" name="app" value="8"><span>Très gourmand</span></label>
+      </fieldset>
+    </div>
+    <div class="count-out rise" style="--i:2">
+      <p class="total" aria-live="polite"><b id="total">40</b><span id="total-txt">chouquettes pour 8 personnes gourmandes</span></p>
+      <div class="pile" id="pile" aria-hidden="true"></div>
+      <noscript><p>Comptez trois chouquettes par personne pour un goûter raisonnable, cinq pour des gourmands.</p></noscript>
+      <p class="note">Pour une grande quantité, un coup de fil avant de passer&nbsp;: <a href="tel:+33140369240">01 40 36 92 40</a>.</p>
+    </div>
+  </section>
+
+  <section class="menu" id="carte" aria-labelledby="t-menu">
+    <div class="menu-head">
+      <h2 id="t-menu" class="rise">La carte</h2>
+      <p class="rise" style="--i:1">Ce que les clients citent le plus souvent. La vitrine change avec les jours&nbsp;; les prix sont affichés en boutique.</p>
+    </div>
+    <ul class="cats" id="cats">
+      <li class="cat rise" data-img="0">
+        <div class="cat-title"><img class="thumb" src="https://images.unsplash.com/photo-1597079910443-60c43fc4f729?w=200&amp;h=200&amp;q=70&amp;auto=format&amp;fit=crop" width="64" height="64" alt=""><h3 tabindex="0">Boulangerie</h3></div>
+        <ul class="items">
+          <li><span><b>Baguette</b><small>Pour le dîner ou le sandwich du lendemain.</small></span></li>
+          <li><span><b>Pains du jour</b><small>Selon la fournée.</small></span></li>
+        </ul>
+      </li>
+      <li class="cat rise" data-img="1">
+        <div class="cat-title"><img class="thumb" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=200&amp;h=200&amp;q=70&amp;auto=format&amp;fit=crop" width="64" height="64" alt=""><h3 tabindex="0">Viennoiseries</h3></div>
+        <ul class="items">
+          <li><span><b>Chouquettes</b><small>Pâte à choux et sucre perlé.</small></span></li>
+          <li><span><b>Roulé pistache</b><small>Feuilletage et crème pistache.</small></span></li>
+          <li><span><b>Pain au chocolat aux amandes</b><small>Le classique, version amandes.</small></span></li>
+        </ul>
+      </li>
+      <li class="cat rise" data-img="2">
+        <div class="cat-title"><img class="thumb" src="https://images.unsplash.com/photo-1626803775151-61d756612f97?w=200&amp;h=200&amp;q=70&amp;auto=format&amp;fit=crop" width="64" height="64" alt=""><h3 tabindex="0">Pâtisseries</h3></div>
+        <ul class="items">
+          <li><span><b>Tarte au chocolat</b><small>Pour finir un repas ou l'emporter.</small></span></li>
+          <li><span><b>Tarte au citron meringuée</b><small>Acidulée sous sa meringue.</small></span></li>
+        </ul>
+      </li>
+      <li class="cat rise" data-img="3">
+        <div class="cat-title"><img class="thumb" src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=200&amp;h=200&amp;q=70&amp;auto=format&amp;fit=crop" width="64" height="64" alt=""><h3 tabindex="0">Salé et café</h3></div>
+        <ul class="items">
+          <li><span><b>Sandwichs</b><small>À emporter avant le train.</small></span></li>
+          <li><span><b>Paninis</b><small>Servis chauds.</small></span></li>
+          <li><span><b>Croque-monsieur</b><small>Pour le déjeuner sur le pouce.</small></span></li>
+          <li><span><b>Café et petit-déjeuner</b><small>Le matin, sur le chemin.</small></span></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="preview" aria-hidden="true">
+      <div class="preview-frame" id="frame">
+        <img class="on" src="https://images.unsplash.com/photo-1597079910443-60c43fc4f729?w=900&amp;h=900&amp;q=75&amp;auto=format&amp;fit=crop" width="900" height="900" alt="">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=900&amp;h=900&amp;q=75&amp;auto=format&amp;fit=crop" width="900" height="900" alt="">
+        <img src="https://images.unsplash.com/photo-1626803775151-61d756612f97?w=900&amp;h=900&amp;q=75&amp;auto=format&amp;fit=crop" width="900" height="900" alt="">
+        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=900&amp;h=900&amp;q=75&amp;auto=format&amp;fit=crop" width="900" height="900" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="practical" aria-labelledby="t-prat">
+    <div class="practical-photo rise"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=1200&amp;h=1200&amp;q=75&amp;auto=format&amp;fit=crop" width="1200" height="1200" alt="Corbeille de pains et de viennoiseries dorés"></div>
+    <div class="practical-text">
+      <h2 id="t-prat" class="rise">Sur le chemin de la gare</h2>
+      <ul class="points">
+        <li class="rise" style="--i:1"><b>À emporter</b><p>Tout se prend au comptoir, pour le quai ou pour la maison.</p></li>
+        <li class="rise" style="--i:2"><b>Café et petit-déjeuner</b><p>Un café avec la viennoiserie du matin.</p></li>
+        <li class="rise" style="--i:3"><b>Titres-restaurant</b><p>Cartes Pluxee acceptées pour le déjeuner.</p></li>
+        <li class="rise" style="--i:4"><b>Carte et sans contact</b><p>Carte bancaire, téléphone ou montre.</p></li>
+        <li class="rise" style="--i:5"><b>Accès fauteuil roulant</b><p>L'entrée de la boutique est accessible.</p></li>
+        <li class="rise" style="--i:6"><b>Gare de l'Est</b><p>La boutique est à quelques pas de la gare, sur le faubourg.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="visit" id="venir" aria-labelledby="t-visit">
+    <div class="ticket rise">
+      <div class="ticket-a">
+        <h2 id="t-visit">Passez nous voir</h2>
+        <p class="addr">156, rue du Faubourg-Saint-Martin<br>75010 Paris<span>Près de la Gare de l'Est, Paris 10e</span></p>
+        <div class="actions">
+          <a class="btn btn-crust" href="https://www.google.com/maps/dir/?api=1&amp;destination=156+rue+du+Faubourg+Saint-Martin+75010+Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Itinéraire</a>
+          <a class="btn btn-soft" href="https://www.google.com/maps/search/?api=1&amp;query=D%C3%A9lices+du+Faubourg+156+rue+du+Faubourg+Saint-Martin+Paris" target="_blank" rel="noopener">Voir sur la carte</a>
+        </div>
+      </div>
+      <div class="ticket-b" id="horaires">
+        <h3>Horaires</h3>
+        <p>Les horaires d'ouverture seront affichés ici. En attendant, un appel suffit pour savoir si la boutique est ouverte.</p>
+        <a class="tel" href="tel:+33140369240">01 40 36 92 40</a>
+        <ul class="pay" aria-label="Paiements acceptés">
+          <li>Carte bancaire</li><li>Sans contact</li><li>Pluxee</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="close">
+  <p class="mark" aria-label="Délices du Faubourg"><svg aria-hidden="true"><use href="#chou"/></svg><span aria-hidden="true">Délices du</span></p>
+  <p class="mark mark-2" aria-hidden="true">Faubourg</p>
+  <div class="close-cols">
+    <ul>
+      <li><a href="#specialites">Spécialités</a></li>
+      <li><a href="#gouter">Le goûter au compte</a></li>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#venir">Venir</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li><a href="https://www.facebook.com/search/top?q=Les%20D%C3%A9lices%20Des%20Faubourgs" target="_blank" rel="noopener">Facebook</a></li>
+    </ul>
+    <p class="contact">156, rue du Faubourg-Saint-Martin, 75010 Paris<br><a href="tel:+33140369240">01 40 36 92 40</a></p>
+  </div>
+  <p class="legal"><span>Délices du Faubourg, boulangerie-pâtisserie, Paris 10e</span><span>Photographies d'illustration&nbsp;: Unsplash</span></p>
+</footer>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<script>
+document.documentElement.classList.add('js');
+// entrées : une fois, à l'arrivée de chaque élément
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rise').forEach(el=>io.observe(el));
+
+// le goûter au compte
+const g=document.getElementById('guests'),tot=document.getElementById('total'),txt=document.getElementById('total-txt'),pile=document.getElementById('pile');
+const minus=document.querySelector('[data-step="-1"]'),plus=document.querySelector('[data-step="1"]');
+const words={3:'raisonnables',5:'gourmandes',8:'très gourmandes'};
+let n=8;
+function render(){
+  const per=+document.querySelector('input[name=app]:checked').value, t=n*per;
+  g.textContent=n; tot.textContent=t;
+  txt.textContent=`chouquettes pour ${n} personne${n>1?'s':''} ${n>1?words[per]:words[per].replace(/s$/,'')}`;
+  minus.disabled=n<=1; plus.disabled=n>=40;
+  const shown=Math.min(t,120), have=pile.children.length;
+  for(let i=have;i<shown;i++){const s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 100 100');s.style.animationDelay=Math.min((i-have)*12,400)+'ms';s.innerHTML='<use href="#chou"/>';pile.append(s)}
+  while(pile.children.length>shown)pile.lastChild.remove();
+}
+document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>{n=Math.max(1,Math.min(40,n+ +b.dataset.step));render()}));
+document.querySelectorAll('input[name=app]').forEach(r=>r.addEventListener('change',render));
+render();
+
+// la carte : survoler une catégorie change la photo ronde
+const frame=[...document.querySelectorAll('#frame img')],cats=document.getElementById('cats');
+function show(li){frame.forEach((im,i)=>im.classList.toggle('on',i==li.dataset.img));cats.querySelectorAll('.cat').forEach(c=>c.classList.toggle('on',c===li))}
+cats.querySelectorAll('.cat').forEach(li=>{
+  li.addEventListener('mouseenter',()=>show(li));
+  li.querySelector('h3').addEventListener('focus',()=>{cats.classList.add('focusing');show(li)});
+  li.querySelector('h3').addEventListener('blur',()=>cats.classList.remove('focusing'));
+});
+</script>
+</body>
+</html>
