@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>House of 3 Brothers · Pâtisserie allemande, Paris 10e</title>
+<meta name="description" content="House of 3 Brothers, pâtisserie allemande au 25, rue de Lancry, Paris 10e, près du canal Saint-Martin. Käsekuchen, cakes de famille, gâteaux entiers sur commande, traiteur.">
+<meta name="theme-color" content="#1d4a3e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Système adapté du DESIGN.md « Nike » (awesome-design) : géométrique type Futura (Jost, hommage à Paul Renner),
+   noir/blanc absolus, une surface grise, boutons pilule noirs, la couleur réservée aux photos.
+   Adapté : le vert des passerelles du canal Saint-Martin remplace le gris comme fond de champ. */
+:root{
+  --ground:#1d4a3e;      /* vert des passerelles du canal */
+  --ground-2:#245a4b;
+  --paper:#f7f7f5;
+  --paper-2:#ebebe8;
+  --ink:#121212;
+  --ink-soft:#45454a;
+  --on-ground:#f7f7f5;
+  --crust:#c98a3a;       /* uniquement dans les dessins de gâteaux */
+  --curd:#f4e4b6;
+  --base:#9a6328;
+  --m:clamp(16px,2.6vw,40px);
+  --s-small:clamp(.9375rem,.9rem + .1vw,1rem);
+  --s-body:clamp(1.0625rem,1rem + .2vw,1.1875rem);
+  --s-lead:clamp(1.25rem,1.08rem + .6vw,1.625rem);
+  --s-head:clamp(2.125rem,1.3rem + 3vw,4.25rem);
+  --s-mega:clamp(3.4rem,.6rem + 11vw,13rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Jost",system-ui,sans-serif;font-size:var(--s-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+h1,h2,h3{font-weight:500;letter-spacing:-.025em;line-height:1;text-wrap:balance}
+h2{font-size:var(--s-head)}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+::selection{background:var(--curd);color:var(--ink)}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:9;background:var(--paper);padding:8px 14px}
+
+/* boutons : pilule noire, une seule forme sur toute la page */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:0 1.5em;border-radius:999px;border:0;font:500 1rem/1 "Jost",sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background-color .2s,color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:active{transform:scale(.96)}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:var(--ground)}
+.btn-soft{background:var(--paper-2);color:var(--ink)}.btn-soft:hover{background:#e0ddd5}
+.btn-paper{background:var(--paper);color:var(--ink)}.btn-paper:hover{background:#fff}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#d8d6d0;font-size:.8125rem;text-align:center;padding:8px var(--m);margin:0}
+
+/* marque : trois barres, trois frères */
+.mark{display:inline-flex;align-items:flex-end;gap:3px;height:1em}
+.mark i{display:block;width:.22em;background:currentColor}
+.mark i:nth-child(1){height:.62em}.mark i:nth-child(2){height:.82em}.mark i:nth-child(3){height:1em}
+
+/* navigation */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px var(--m)}
+.word{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.0625rem;letter-spacing:.02em;text-transform:uppercase;text-decoration:none}
+.word .mark{font-size:1.4rem}
+.nav ul{display:flex;gap:clamp(18px,2.2vw,34px);list-style:none;padding:0;font-weight:500}
+.nav ul a{text-decoration:underline 2px transparent;text-underline-offset:6px;transition:text-decoration-color .2s}
+.nav ul a:hover{text-decoration-color:currentColor}
+.nav .btn{min-height:44px;padding:0 1.15em}
+@media (max-width:900px){.nav ul{display:none}.word{font-size:.9375rem;white-space:nowrap}}
+
+/* ---------- hero : la carte rayée à côté de la boutique ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:0 var(--m) 12px}
+.card{background:var(--paper-2);display:flex;flex-direction:column;min-height:calc(100svh - 120px)}
+.stripe{display:flex;height:56px;flex:none}
+.stripe i{flex:1;background:var(--ground)}
+.stripe i:nth-child(even){background:transparent}
+.card-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(32px,5vw,72px) clamp(24px,4.4vw,72px)}
+.card-name{display:flex;align-items:flex-end;gap:.18em;font-weight:600;font-size:clamp(2.6rem,1rem + 4.6vw,5.6rem);letter-spacing:-.03em;line-height:.86;text-transform:uppercase}
+.card-name .mark{font-size:.9em;gap:.06em;margin-bottom:.06em}
+.card-name .mark i{width:.2em}
+.hero h1{margin-top:clamp(28px,4vh,44px);font-size:clamp(1.9rem,1rem + 2.2vw,3.25rem);line-height:1.04;max-width:16ch}
+.hero .lead{margin-top:24px;font-size:var(--s-lead);line-height:1.38;max-width:30ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:36px;font-weight:500}
+.hero .facts a{text-decoration:none}.hero .facts a:hover{text-decoration:underline}
+.stage{position:sticky;top:12px;height:calc(100svh - 120px);overflow:hidden;background:var(--ground);margin:0}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.07);transition:opacity 1.6s ease,transform 7s linear}
+.stage img.on{opacity:1;transform:scale(1)}
+.stage figcaption{position:absolute;left:16px;bottom:16px;background:var(--paper);padding:8px 14px;font-size:var(--s-small);font-weight:500}
+@media (max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr);padding:0 var(--m) 12px}
+  .stage figcaption{display:none}
+  .stage{order:-1;position:relative;top:0;height:38svh;min-height:260px}
+  .card{min-height:0;margin:-24px 12px 0;position:relative;z-index:2}
+  .stripe{height:40px}
+  .card-body{padding:32px 22px 30px;text-align:left}
+  .card-name{font-size:11vw}
+  .hero h1{font-size:7.4vw;margin-top:26px}
+  .hero .cta .btn{flex:1 1 auto}
+}
+
+/* ---------- maison : titre, note, rangée de faits ---------- */
+.house{padding:clamp(96px,11vw,170px) var(--m) clamp(96px,10vw,150px)}
+.house-top{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end}
+.house-top h2{grid-column:1/8;font-size:clamp(2.75rem,1.2rem + 5vw,5.75rem);line-height:.95}
+.house-top .note{grid-column:9/13;font-size:var(--s-body)}
+.house-top .note p+p{margin-top:14px}
+.house-row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-top:clamp(64px,8vw,120px);align-items:start}
+.facts-row{grid-column:1/8;display:grid;grid-template-columns:1fr 1fr;gap:48px 32px}
+.fact b{display:block;font-weight:500;font-size:clamp(1.75rem,1.1rem + 2vw,2.75rem);letter-spacing:-.03em;line-height:1}
+.fact span{display:block;margin-top:10px;color:var(--ink-soft);font-size:var(--s-small);max-width:24ch}
+.house-photo{grid-column:8/13;aspect-ratio:5/4;overflow:hidden;background:var(--paper-2)}
+.house-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.4s var(--ease)}
+.house-photo.in img{transform:none}
+@media (max-width:900px){
+  .house-top,.house-row{display:block}
+  .house-top h2{font-size:11vw}
+  .house-top .note{margin-top:24px}
+  .facts-row{gap:32px 20px}
+  .fact b{font-size:1.625rem}
+  .house-photo{margin-top:48px}
+}
+
+/* ---------- étiquettes : les fiches posées au bord ---------- */
+.labels{position:relative;min-height:96svh;overflow:hidden;color:var(--on-ground);background:var(--ground);display:flex;flex-direction:column}
+.labels > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.labels-text{position:relative;margin:clamp(72px,10vw,140px) var(--m) 0 18%;max-width:34ch;background:rgba(12,22,18,.62);padding:28px 32px}
+.labels-text h2{font-size:clamp(2rem,1.2rem + 2.6vw,3.5rem)}
+.labels-text p{margin-top:18px;font-size:var(--s-lead);line-height:1.35}
+.slips{position:relative;margin-top:auto;display:flex;align-items:flex-end;gap:12px;padding:56px var(--m) 0}
+.slip{flex:1;min-width:0;background:var(--paper);color:var(--ink);padding:22px 20px 28px;font-size:1rem;line-height:1.45;transform-origin:bottom center;transition:transform .4s var(--ease)}
+.slip:nth-child(1){height:38svh}.slip:nth-child(2){height:30svh;transform:rotate(-1.5deg)}.slip:nth-child(3){height:44svh}
+.slip:nth-child(4){height:33svh;transform:rotate(1.2deg)}.slip:nth-child(5){height:41svh}.slip:nth-child(6){height:28svh;transform:rotate(-1deg)}
+.slip:hover{transform:translateY(-14px) rotate(0)}
+.slip b{display:block;font-weight:600;font-size:1rem;line-height:1.2}
+.slip .dash{display:block;margin:10px 0;letter-spacing:.2em;color:var(--ink-soft)}
+.slip .size{display:block;margin-top:10px;font-weight:600}
+@media (max-width:900px){
+  .labels{min-height:100svh}
+  .labels-text{margin:56px var(--m) 0;padding:22px 20px}
+  .labels-text h2{font-size:8.6vw}
+  .labels-text p{font-size:1.125rem}
+  .slips{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:12px;padding:40px var(--m) 0}
+  .slip{font-size:.9375rem;padding:18px 16px 22px}
+  .slip:nth-child(n){height:auto}
+  .slip:nth-child(even){margin-top:28px}
+}
+
+/* ---------- la carte : la feuille imprimée ---------- */
+.menu{background:var(--paper-2);padding:clamp(96px,11vw,170px) var(--m);display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
+.menu-aside{grid-column:1/6;position:sticky;top:40px}
+.menu-aside h2{font-size:var(--s-head)}
+.menu-aside p{margin-top:20px;max-width:30ch}
+.menu-aside figure{margin-top:40px;aspect-ratio:1;overflow:hidden;max-width:420px}
+.menu-aside img{width:100%;height:100%;object-fit:cover}
+.sheet{grid-column:7/13;background:var(--paper);padding:clamp(40px,4.4vw,64px);
+  -webkit-mask:radial-gradient(circle 11px at 12px 0,#0000 98%,#000) top/24px 51% repeat-x,radial-gradient(circle 11px at 12px 100%,#0000 98%,#000) bottom/24px 51% repeat-x; /* taste-skill-ignore: masque des bords festonnés */
+  mask:radial-gradient(circle 11px at 12px 0,#0000 98%,#000) top/24px 51% repeat-x,radial-gradient(circle 11px at 12px 100%,#0000 98%,#000) bottom/24px 51% repeat-x} /* taste-skill-ignore: masque des bords festonnés */
+.sheet h3{font-size:1.375rem;text-align:center}
+.sheet .grp + .grp{margin-top:52px}
+.sheet .grp > p{text-align:center;color:var(--ink-soft);font-size:var(--s-small);margin-top:4px}
+.sheet ul{list-style:none;padding:0;margin-top:22px;display:grid;gap:18px}
+.sheet li{display:grid;grid-template-columns:1fr auto;column-gap:16px;align-items:baseline}
+.sheet li b{font-weight:500}
+.sheet li em{font-style:normal;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:var(--s-small);font-weight:500}
+.sheet li span{grid-column:1/-1;font-size:var(--s-small);color:var(--ink-soft);margin-top:2px;max-width:46ch}
+.sheet .foot{margin-top:52px;text-align:center;font-size:var(--s-small);color:var(--ink-soft)}
+@media (max-width:900px){
+  .menu{display:block;padding:96px 10px}
+  .menu-aside{position:static;padding:0 6px}
+  .menu-aside figure{display:none}
+  .sheet{margin-top:44px;padding:44px 22px}
+}
+
+/* ---------- commande : le bon de commande ---------- */
+.order{background:var(--ground);color:var(--on-ground);padding:clamp(96px,11vw,170px) var(--m);display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:center}
+.order-head{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-bottom:clamp(48px,6vw,88px);align-items:end}
+.order-head h2{grid-column:1/8}
+.order-head p{grid-column:9/13;font-size:var(--s-body)}
+.slipform{grid-column:1/7;background:var(--paper);color:var(--ink);padding:clamp(28px,3.6vw,52px);
+  -webkit-mask:radial-gradient(circle 11px at 12px 0,#0000 98%,#000) top/24px 51% repeat-x,radial-gradient(circle 11px at 12px 100%,#0000 98%,#000) bottom/24px 51% repeat-x; /* taste-skill-ignore: masque des bords festonnés */
+  mask:radial-gradient(circle 11px at 12px 0,#0000 98%,#000) top/24px 51% repeat-x,radial-gradient(circle 11px at 12px 100%,#0000 98%,#000) bottom/24px 51% repeat-x} /* taste-skill-ignore: masque des bords festonnés */
+.f{border:0;padding:0;margin:0}
+.f + .f{margin-top:30px}
+.f legend,.f .lab{display:block;font-weight:600;margin-bottom:12px;padding:0}
+.choices{display:flex;flex-wrap:wrap;gap:8px}
+.choices label{position:relative}
+.choices input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+.choices span{display:inline-flex;align-items:center;min-height:44px;padding:0 1em;border-radius:999px;background:var(--paper-2);font-weight:500;font-size:.9375rem;transition:background-color .2s,color .2s}
+.choices label:hover span{background:#e0ddd5}
+.choices input:checked + span{background:var(--ink);color:#fff}
+.choices input:focus-visible + span{outline:3px solid var(--ink);outline-offset:3px}
+.stepper{display:inline-flex;align-items:center;gap:6px;background:var(--paper-2);border-radius:999px;padding:5px}
+.stepper button{width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--ink);font:500 1.5rem/1 "Jost",sans-serif;cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+.stepper button:hover{background:var(--curd)}
+.stepper button:active{transform:scale(.9)}
+.stepper button:disabled{opacity:.35;cursor:default;background:#fff}
+.stepper output{min-width:3.4em;text-align:center;font-weight:600;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.row2 label{display:block}
+.row2 input{display:block;width:100%;margin-top:8px;min-height:48px;padding:0 14px;font:400 1rem "Jost",sans-serif;color:var(--ink);background:var(--paper-2);border:2px solid transparent;border-radius:12px}
+.row2 input:focus{outline:none;border-color:var(--ink)}
+.send{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.send small{display:block;width:100%;font-size:var(--s-small);color:var(--ink-soft);margin-top:6px}
+.cake-view{grid-column:8/13;text-align:center}
+.cake-view svg{width:min(100%,440px);height:auto;overflow:visible}
+.cake-view .slice{transition:fill .35s ease}
+.verdict{margin-top:28px;font-size:var(--s-lead);line-height:1.3}
+.verdict b{display:block;font-weight:500;font-size:clamp(2.25rem,1.4rem + 2.6vw,3.75rem);letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+@media (max-width:900px){
+  .order{display:flex;flex-direction:column;padding:96px 12px}
+  .order-head{display:block;padding:0 4px;order:-2;margin-bottom:40px}
+  .order-head p{margin-top:20px}
+  .cake-view{order:-1;margin-bottom:36px;width:100%}
+  .cake-view svg{width:72vw}
+  .slipform{width:100%;padding:40px 20px}
+  .row2{grid-template-columns:1fr}
+  .send .btn{flex:1 1 auto}
+}
+
+/* ---------- traiteur : la liste imprimée ---------- */
+.guests{background:var(--paper);padding:clamp(96px,11vw,170px) var(--m) 0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;overflow:hidden}
+.guests-text{grid-column:1/6;padding-bottom:clamp(96px,10vw,150px)}
+.guests-text p{margin-top:22px;max-width:34ch}
+.guests-text ul{list-style:none;padding:0;margin-top:36px;display:grid;gap:22px}
+.guests-text li b{display:block;font-weight:600}
+.guests-text li span{color:var(--ink-soft);font-size:var(--s-small)}
+.guests-text .btn{margin-top:40px}
+.list-card{grid-column:7/13;align-self:start;background:var(--ground);color:var(--on-ground);padding:clamp(32px,4vw,56px);transform:rotate(1.5deg);transform-origin:top left;margin-bottom:-80px;text-align:center}
+.list-card h3{font-size:1.75rem}
+.list-card figure{margin:28px 0;aspect-ratio:16/9;overflow:hidden}
+.list-card img{width:100%;height:100%;object-fit:cover}
+.list-card p{font-size:clamp(1.125rem,1rem + .4vw,1.375rem);line-height:1.7}
+.list-card .sub{margin-top:28px;font-size:var(--s-small);opacity:.85;line-height:1.5}
+.list-card .press{margin-top:40px}
+@media (max-width:900px){
+  .guests{display:block;padding:96px 16px 0}
+  .guests-text{padding-bottom:56px}
+  .list-card{width:96%;margin:0 auto -60px;transform:rotate(1deg);padding:32px 22px}
+  .list-card p{font-size:1.0625rem}
+}
+
+/* ---------- venir : la carte de visite sur photo ---------- */
+.visit{position:relative;min-height:100svh;background:var(--ground)}
+.visit > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visit-card{position:relative;margin-left:auto;margin-right:clamp(16px,5vw,72px);top:clamp(40px,7vw,72px);width:min(420px,calc(100% - 32px));background:var(--paper);display:flex;flex-direction:column}
+.visit-card .in{padding:32px}
+.visit-card h2{font-size:2rem}
+.visit-card address{font-style:normal;margin-top:16px;font-size:1.0625rem}
+.days{list-style:none;padding:0;margin-top:24px;display:grid;gap:4px}
+.days li{display:flex;justify-content:space-between;gap:12px;padding:8px 10px;margin:0 -10px;border-radius:8px;font-variant-numeric:tabular-nums}
+.days li span:last-child{text-align:right}
+.days li.today{background:var(--paper-2);font-weight:600}
+.days li.off span:last-child{color:var(--ink-soft)}
+.visit-card .tel{display:inline-block;margin-top:22px;font-weight:500;font-size:1.75rem;letter-spacing:-.02em;text-decoration:none;font-variant-numeric:tabular-nums}
+.visit-card .tel:hover{text-decoration:underline}
+.visit-card .mail{display:block;margin-top:4px;font-weight:500;word-break:break-all}
+.visit-card .go{border-radius:0;min-height:56px;width:100%}
+.visit-card .go:hover{background:var(--ground)}
+@media (max-width:900px){
+  .visit{min-height:0;padding-bottom:12px}
+  .visit > img{position:relative;height:70svh}
+  .visit-card{top:0;margin:-80px 16px 0;width:auto}
+  .visit-card .in{padding:26px 22px}
+}
+
+/* ---------- pied : le dos de la carte ---------- */
+.back{background:var(--ground);color:var(--ink);padding:clamp(64px,8vw,120px) var(--m) clamp(48px,6vw,96px)}
+.back-panel{background:var(--paper);position:relative;padding:clamp(56px,6vw,88px) clamp(24px,4vw,64px) 28px;margin:0 auto;max-width:1240px;
+  -webkit-mask:radial-gradient(circle 50px at 50px 0,#0000 98%,#000) top/100px 100% repeat-x;mask:radial-gradient(circle 50px at 50px 0,#0000 98%,#000) top/100px 100% repeat-x} /* taste-skill-ignore: masque des bords festonnés */
+.back-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:28px}
+.back h2{font-size:clamp(2rem,1.4rem + 2vw,3rem)}
+.back .msg p{margin-top:16px;max-width:36ch}
+.addr{list-style:none;padding:0;display:grid;gap:12px;font-size:1.125rem;align-content:start;position:relative;padding-top:8px}
+.addr a{text-decoration:none;font-weight:500}.addr a:hover{text-decoration:underline}
+.stamp{position:absolute;right:clamp(24px,4vw,64px);top:clamp(40px,4.4vw,64px);width:88px;aspect-ratio:3/4;background:#fff;padding:6px;transform:rotate(3deg)}
+.stamp img{width:100%;height:100%;object-fit:cover}
+.big{margin-top:clamp(56px,7vw,96px);font-weight:600;text-transform:uppercase;letter-spacing:-.04em;line-height:.82;font-size:clamp(3rem,.4rem + 10vw,11.5rem);display:flex;align-items:flex-start;gap:.14em}
+.big .l2{display:block}
+.big .mark{margin-top:.08em}
+.big .mark{font-size:.8em;gap:.06em}.big .mark i{width:.2em}
+.imprint{margin-top:40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;font-size:var(--s-small);color:var(--ink-soft)}
+@media (max-width:900px){
+  .back{padding:56px 10px 40px}
+  .back-panel{padding:64px 22px 24px;-webkit-mask-size:16.66% 100%;mask-size:16.66% 100%}
+  .back-grid{grid-template-columns:1fr;gap:36px}
+  .stamp{width:64px;top:48px;right:22px}
+  .back h2{max-width:8ch}
+  .big{font-size:12vw}
+}
+
+/* entrées */
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise{opacity:1;transform:none;transition:none}
+  .stage img{transition:none;transform:none}
+  .house-photo img{transform:none}
+  .slip,.slip:hover{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 3.5h3l1.5 4.2-2 1.5a12 12 0 0 0 5.7 5.7l1.5-2 4.2 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <a class="word" href="#main" aria-label="House of 3 Brothers, retour en haut"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>House of 3 Brothers</a>
+  <ul>
+    <li><a href="#carte">La carte</a></li>
+    <li><a href="#commande">Commander</a></li>
+    <li><a href="#traiteur">Traiteur</a></li>
+    <li><a href="#venir">Venir</a></li>
+  </ul>
+  <a class="btn btn-ink" href="tel:+33180061411"><svg aria-hidden="true"><use href="#i-tel"/></svg>Appeler</a>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="t-hero">
+    <div class="card">
+      <div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="card-body">
+        <p class="card-name rise" aria-hidden="true"><span class="mark"><i></i><i></i><i></i></span><span>House of<br>3&nbsp;Brothers</span></p>
+        <h1 id="t-hero" class="rise" style="--i:1">Pâtisserie allemande, rue de Lancry</h1>
+        <p class="lead rise" style="--i:2">Käsekuchen, cakes et pain d’épices faits sur les recettes de famille, à la part au comptoir ou en gâteau entier sur commande. Au 25, rue de Lancry, à deux pas du canal Saint-Martin.</p>
+        <div class="cta rise" style="--i:3">
+          <a class="btn btn-ink" href="#commande"><svg aria-hidden="true"><use href="#i-mail"/></svg>Commander un gâteau</a>
+          <a class="btn btn-paper" href="tel:+33180061411"><svg aria-hidden="true"><use href="#i-tel"/></svg>01 80 06 14 11</a>
+        </div>
+        <p class="facts rise" style="--i:4">
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=House+of+3+Brothers+25+rue+de+Lancry+75010+Paris" target="_blank" rel="noopener">Itinéraire</a>
+          <a href="#horaires">Horaires</a>
+          <a href="#traiteur">Traiteur et événements</a>
+        </p>
+      </div>
+    </div>
+    <figure class="stage" id="stage">
+      <img class="on" src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=1400&amp;h=1600&amp;q=78&amp;auto=format&amp;fit=crop" width="1400" height="1600" alt="Part de gâteau au fromage nappée de fruits rouges" fetchpriority="high">
+      <img src="https://images.unsplash.com/photo-1578775887804-699de7086ff9?w=1400&amp;h=1600&amp;q=78&amp;auto=format&amp;fit=crop" width="1400" height="1600" alt="Gâteau au fromage aux framboises, servi à la cuillère" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1567327613485-fbc7bf196198?w=1400&amp;h=1600&amp;q=78&amp;auto=format&amp;fit=crop" width="1400" height="1600" alt="Parts de tarte aux myrtilles sur une serviette rayée" loading="lazy">
+      <figcaption id="stage-cap">Le Käsekuchen, la spécialité de la maison</figcaption>
+    </figure>
+  </section>
+
+  <section class="house" id="maison" aria-labelledby="t-house">
+    <div class="house-top">
+      <h2 id="t-house" class="rise">Trois frères, une maison</h2>
+      <div class="note rise" style="--i:1">
+        <p>Né en Allemagne, Mirko Schmitt a ouvert la pâtisserie en décembre 2014 pour retrouver les goûters d’enfance partagés avec ses frères, Alexander et Ulrich.</p>
+        <p>Avant les fourneaux, il a été designer de mode et directeur artistique. Il cuisine aujourd’hui les recettes de sa grand-mère Rosa et de sa grand-tante Léonie, avec de bons produits et des emballages soignés.</p>
+      </div>
+    </div>
+    <div class="house-row">
+      <div class="facts-row">
+        <p class="fact rise"><b>Décembre 2014</b><span>Ouverture de la pâtisserie, rue de Lancry.</span></p>
+        <p class="fact rise" style="--i:1"><b>Rosa et Léonie</b><span>La grand-mère et la grand-tante dont viennent les recettes.</span></p>
+        <p class="fact rise" style="--i:2"><b>Käsekuchen</b><span>Le gâteau au fromage blanc allemand, sur sablé beurre-amande.</span></p>
+        <p class="fact rise" style="--i:3"><b>30 personnes</b><span>La maison se privatise pour vos événements.</span></p>
+      </div>
+      <figure class="house-photo rise" style="--i:2"><img src="https://images.unsplash.com/photo-1597528662465-55ece5734101?w=1000&amp;h=1250&amp;q=75&amp;auto=format&amp;fit=crop" width="1000" height="1250" alt="Plan de travail fariné, rouleau à pâtisserie et fouet" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="labels" id="recettes" aria-labelledby="t-labels">
+    <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=2000&amp;q=72&amp;auto=format&amp;fit=crop" width="2000" height="1333" alt="" loading="lazy">
+    <div class="labels-text rise">
+      <h2 id="t-labels">Ce qu’il y a dedans</h2>
+      <p>Fromage blanc traditionnel, sablé beurre-amande, chocolat noir Valrhona 67&nbsp;%, jus de citron frais. Chaque gâteau a sa fiche, comme à la maison.</p>
+    </div>
+    <div class="slips" role="list">
+      <article class="slip" role="listitem"><b>Käsekuchen nature</b><span class="dash" aria-hidden="true">· · · · · · ·</span>Fromage blanc traditionnel, vanille légère, cuit sur un sablé beurre-amande.<span class="size">6, 12 ou 14 parts</span></article>
+      <article class="slip" role="listitem"><b>Käsekuchen citron-pavot</b><span class="dash" aria-hidden="true">· · · · · · ·</span>Fromage blanc, citron et graines de pavot, sur sablé beurre-amande.<span class="size">6, 12 ou 14 parts</span></article>
+      <article class="slip" role="listitem"><b>Käsekuchen crumble chocolat</b><span class="dash" aria-hidden="true">· · · · · · ·</span>Vanille légère sous un crumble au chocolat noir Valrhona 67&nbsp;%.<span class="size">6, 12 ou 14 parts</span></article>
+      <article class="slip" role="listitem"><b>Le Katzi</b><span class="dash" aria-hidden="true">· · · · · · ·</span>Cake au chocolat fondant, noisettes torréfiées, pépites de chocolat et une pointe de rhum.<span class="size">14 parts</span></article>
+      <article class="slip" role="listitem"><b>Citron « Intense »</b><span class="dash" aria-hidden="true">· · · · · · ·</span>Jus et zestes de citron frais, nappé d’un glaçage chaud citron-sucre.<span class="size">10 ou 14 parts</span></article>
+      <article class="slip" role="listitem"><b>Pain d’épices « Léonie »</b><span class="dash" aria-hidden="true">· · · · · · ·</span>Le pain d’épices de la grand-tante, écorces de citron et d’orange confites.<span class="size">5, 10 ou 15 parts</span></article>
+    </div>
+  </section>
+
+  <section class="menu" id="carte" aria-labelledby="t-menu">
+    <div class="menu-aside">
+      <h2 id="t-menu" class="rise">La carte</h2>
+      <p class="rise" style="--i:1">À la part au comptoir, ou en gâteau entier à commander. À droite, le nombre de parts de chaque format.</p>
+      <figure class="rise" style="--i:2"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&amp;h=900&amp;q=75&amp;auto=format&amp;fit=crop" width="900" height="900" alt="Panna cotta aux fraises en verrines" loading="lazy"></figure>
+    </div>
+    <div class="sheet rise" style="--i:1">
+      <div class="grp">
+        <h3>Käsekuchen</h3>
+        <p>Le gâteau au fromage blanc allemand</p>
+        <ul>
+          <li><b>Nature</b><em>6 · 12 · 14</em><span>Vanille légère, sablé beurre-amande.</span></li>
+          <li><b>Citron-pavot</b><em>6 · 12 · 14</em><span>Citron et graines de pavot.</span></li>
+          <li><b>Crumble et fruits</b><em>6 · 12 · 14</em><span>Fruits de saison, pommes, raisins secs, crumble.</span></li>
+          <li><b>Nature au crumble chocolat</b><em>6 · 12 · 14</em><span>Chocolat noir Valrhona 67&nbsp;%.</span></li>
+        </ul>
+      </div>
+      <div class="grp">
+        <h3>Cakes de famille</h3>
+        <p>Les recettes de Rosa et de Léonie</p>
+        <ul>
+          <li><b>Le Katzi, chocolat</b><em>14</em><span>Fondant, noisettes torréfiées, pointe de rhum.</span></li>
+          <li><b>Citron « Intense »</b><em>10 · 14</em><span>Glaçage chaud citron-sucre.</span></li>
+          <li><b>Pistaches « Intense »</b><em>14</em><span>Pâte de pistache naturelle, glaçage citron, pistaches concassées.</span></li>
+          <li><b>Carrot cake</b><em>8 · 12</em><span>Noix, raisins, cannelle, glaçage au cream cheese.</span></li>
+          <li><b>Pain d’épices « Léonie »</b><em>5 · 10 · 15</em><span>Épices douces, écorces d’agrumes confites.</span></li>
+        </ul>
+      </div>
+      <div class="grp">
+        <h3>Frais et salé</h3>
+        <p>Pour un repas ou un buffet</p>
+        <ul>
+          <li><b>Panna cotta fruits rouges</b><em>6 · 8 · 16</em><span>Crème vanille légère et fruits rouges, sur pâte briochée.</span></li>
+          <li><b>Tarte salée épinards et feta</b><em>6 · 12</em><span>Fromage frais aux herbes, épinards, tomates cerises.</span></li>
+          <li><b>Flammekueche</b><em>6 à 8</em><span>Traditionnelle lardons et oignons rouges, ou crème de truffe et pomme de terre.</span></li>
+        </ul>
+      </div>
+      <p class="foot">Le midi, sur place&nbsp;: tartes salées, salades et soupes.<br>Nombre de parts par format.</p>
+    </div>
+  </section>
+
+  <section class="order" id="commande" aria-labelledby="t-order">
+    <div class="order-head">
+      <h2 id="t-order" class="rise">Commander un gâteau entier</h2>
+      <p class="rise" style="--i:1">Choisissez le gâteau, dites pour combien de personnes&nbsp;: on vous indique le format. Votre messagerie s’ouvre avec la commande déjà écrite.</p>
+    </div>
+    <form class="slipform rise" id="orderform" action="mailto:cake@houseofthreebrothers.com" method="post" enctype="text/plain">
+      <fieldset class="f">
+        <legend>Le gâteau</legend>
+        <div class="choices" id="cakes">
+          <label><input type="radio" name="cake" value="kk-nature" checked><span>Käsekuchen nature</span></label>
+          <label><input type="radio" name="cake" value="kk-pavot"><span>Käsekuchen citron-pavot</span></label>
+          <label><input type="radio" name="cake" value="kk-fruits"><span>Käsekuchen crumble et fruits</span></label>
+          <label><input type="radio" name="cake" value="kk-choco"><span>Käsekuchen crumble chocolat</span></label>
+          <label><input type="radio" name="cake" value="katzi"><span>Le Katzi</span></label>
+          <label><input type="radio" name="cake" value="citron"><span>Citron « Intense »</span></label>
+          <label><input type="radio" name="cake" value="pistache"><span>Pistaches « Intense »</span></label>
+          <label><input type="radio" name="cake" value="carrot"><span>Carrot cake</span></label>
+          <label><input type="radio" name="cake" value="panna"><span>Panna cotta fruits rouges</span></label>
+        </div>
+      </fieldset>
+      <div class="f">
+        <span class="lab" id="l-guests">Nombre de personnes</span>
+        <div class="stepper" role="group" aria-labelledby="l-guests">
+          <button type="button" data-step="-1" aria-label="Une personne de moins">−</button>
+          <output id="guests" aria-live="polite">10</output>
+          <button type="button" data-step="1" aria-label="Une personne de plus">+</button>
+        </div>
+      </div>
+      <div class="f row2">
+        <label><span class="lab">Retrait le</span><input type="date" id="date" name="date"></label>
+        <label><span class="lab">Votre nom</span><input type="text" id="name" name="name" autocomplete="name"></label>
+      </div>
+      <div class="send">
+        <a class="btn btn-ink" id="sendmail" href="mailto:cake@houseofthreebrothers.com?subject=Commande%20de%20g%C3%A2teau"><svg aria-hidden="true"><use href="#i-mail"/></svg>Envoyer par e-mail</a>
+        <a class="btn btn-soft" href="tel:+33180061411"><svg aria-hidden="true"><use href="#i-tel"/></svg>Par téléphone</a>
+        <small>Retrait en boutique, 25 rue de Lancry. La maison confirme chaque commande par retour.</small>
+      </div>
+    </form>
+    <div class="cake-view" aria-live="polite">
+      <svg id="cake" viewBox="-110 -110 220 220" role="img" aria-label="Le gâteau vu du dessus, découpé en parts"></svg>
+      <p class="verdict"><b id="v-size">12 parts</b><span id="v-txt">Format L pour 10 personnes, il en reste 2.</span></p>
+    </div>
+  </section>
+
+  <section class="guests" id="traiteur" aria-labelledby="t-guests">
+    <div class="guests-text">
+      <h2 id="t-guests" class="rise">Traiteur et événements</h2>
+      <p class="rise" style="--i:1">Un shooting, un showroom, un anniversaire&nbsp;: la maison s’occupe du buffet, de la décoration et du service. Et la boutique se privatise jusqu’à 30 personnes.</p>
+      <ul>
+        <li class="rise" style="--i:2"><b>Buffet sucré et salé</b><span>Käsekuchen, cakes, tartes salées, flammekueche.</span></li>
+        <li class="rise" style="--i:3"><b>Décoration et service</b><span>Le regard d’un ancien directeur artistique.</span></li>
+        <li class="rise" style="--i:4"><b>Privatisation</b><span>La boutique, rue de Lancry, jusqu’à 30 personnes.</span></li>
+      </ul>
+      <a class="btn btn-ink rise" style="--i:5" href="mailto:cake@houseofthreebrothers.com?subject=Demande%20traiteur%20%2F%20privatisation"><svg aria-hidden="true"><use href="#i-mail"/></svg>Demander un devis</a>
+    </div>
+    <div class="list-card rise" style="--i:2">
+      <h3>Ils ont fait appel à la maison</h3>
+      <figure><img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=1200&amp;h=675&amp;q=72&amp;auto=format&amp;fit=crop" width="1200" height="675" alt="Grand saladier de salade composée pour un buffet" loading="lazy"></figure>
+      <p>AMI&nbsp;· Apple&nbsp;· De Fursac&nbsp;· Lanvin&nbsp;· Levi’s&nbsp;· Merci&nbsp;· Olivier Desforges&nbsp;· Paris International Art Fair&nbsp;· Peclers Paris</p>
+      <h3 class="press">Ils en ont parlé</h3>
+      <p>ELLE&nbsp;· Télérama&nbsp;· Madame Air France&nbsp;· À Nous Paris&nbsp;· Vitalfood&nbsp;· Gault&amp;Millau</p>
+      <p class="sub">Références traiteur et parutions presse citées par la maison.</p>
+    </div>
+  </section>
+
+  <section class="visit" id="venir" aria-labelledby="t-visit">
+    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=2000&amp;q=72&amp;auto=format&amp;fit=crop" width="2000" height="1333" alt="Table de salon de thé près d’une grande fenêtre" loading="lazy">
+    <div class="visit-card rise" id="horaires">
+      <div class="in">
+        <h2 id="t-visit">Passer à la maison</h2>
+        <address>25, rue de Lancry<br>75010 Paris, près du canal Saint-Martin</address>
+        <ul class="days" id="days" aria-label="Horaires d’ouverture">
+          <li data-d="2"><span>Mardi au vendredi</span><span>11h–14h · 16h–20h</span></li>
+          <li data-d="6"><span>Samedi</span><span>11h–20h</span></li>
+          <li data-d="0" class="off"><span>Dimanche et lundi</span><span>Fermé</span></li>
+        </ul>
+        <a class="tel" href="tel:+33180061411">01 80 06 14 11</a>
+        <a class="mail" href="mailto:cake@houseofthreebrothers.com">cake@houseofthreebrothers.com</a>
+      </div>
+      <a class="btn btn-ink go" href="https://www.google.com/maps/dir/?api=1&amp;destination=House+of+3+Brothers+25+rue+de+Lancry+75010+Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Itinéraire</a>
+    </div>
+  </section>
+</main>
+
+<footer class="back" aria-labelledby="t-back">
+  <div class="back-panel">
+    <figure class="stamp" aria-hidden="true"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=240&amp;h=320&amp;q=70&amp;auto=format&amp;fit=crop" width="240" height="320" alt="" loading="lazy"></figure>
+    <div class="back-grid">
+      <div class="msg">
+        <h2 id="t-back">Bis bald&nbsp;!</h2>
+        <p>À bientôt rue de Lancry, pour une part de Käsekuchen au comptoir ou un gâteau entier pour vos invités.</p>
+      </div>
+      <ul class="addr">
+        <li><a href="tel:+33180061411">01 80 06 14 11</a></li>
+        <li><a href="mailto:cake@houseofthreebrothers.com">cake@houseofthreebrothers.com</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=House+of+3+Brothers+25+rue+de+Lancry+Paris" target="_blank" rel="noopener">25, rue de Lancry, 75010 Paris</a></li>
+        <li><a href="#commande">Commander un gâteau</a></li>
+      </ul>
+    </div>
+    <p class="big" aria-hidden="true"><span class="mark"><i></i><i></i><i></i></span><span>House of <span class="l2">3&nbsp;Brothers</span></span></p>
+    <p class="imprint"><span>House of 3 Brothers, pâtisserie allemande, Paris 10e</span><span>Photographies d’illustration&nbsp;: Unsplash</span></p>
+  </div>
+</footer>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<script>
+document.documentElement.classList.add('js');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// entrées
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rise').forEach(el=>io.observe(el));
+
+// photo du hero : fondu lent entre trois vues
+const imgs=[...document.querySelectorAll('#stage img')],cap=document.getElementById('stage-cap');
+const caps=['Le Käsekuchen, la spécialité de la maison','Fromage blanc et fruits rouges','Des fruits de saison sur les gâteaux'];
+let k=0;
+if(!reduce) setInterval(()=>{if(document.hidden)return;imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on');cap.textContent=caps[k]},5600);
+
+// horaires : la ligne du jour
+const d=new Date().getDay();
+const row=d>=2&&d<=5?'2':d===6?'6':'0';
+document.querySelector(`#days li[data-d="${row}"]`).classList.add('today');
+
+// bon de commande
+const CAKES={
+  'kk-nature':{n:'Käsekuchen nature',shape:'round',sizes:[['M',6],['L',12],['XL',14]]},
+  'kk-pavot':{n:'Käsekuchen citron-pavot',shape:'round',sizes:[['M',6],['L',12],['XL',14]]},
+  'kk-fruits':{n:'Käsekuchen crumble et fruits',shape:'round',sizes:[['M',6],['L',12],['XL',14]]},
+  'kk-choco':{n:'Käsekuchen crumble chocolat',shape:'round',sizes:[['M',6],['L',12],['XL',14]]},
+  'katzi':{n:'Le Katzi',shape:'loaf',sizes:[['',14]]},
+  'citron':{n:'Citron « Intense »',shape:'loaf',sizes:[['L',10],['XL',14]]},
+  'pistache':{n:'Pistaches « Intense »',shape:'loaf',sizes:[['',14]]},
+  'carrot':{n:'Carrot cake',shape:'round',sizes:[['L',8],['XL',12]]},
+  'panna':{n:'Panna cotta fruits rouges',shape:'round',sizes:[['M',6],['L',8],['XL',16]]}
+};
+// choisit le plus petit format qui couvre les invités, sinon plusieurs gâteaux du plus grand
+function pick(c,g){
+  const s=c.sizes.find(([,p])=>p>=g);
+  if(s) return {label:s[0],parts:s[1],count:1};
+  const big=c.sizes[c.sizes.length-1];
+  return {label:big[0],parts:big[1],count:Math.ceil(g/big[1])};
+}
+console.assert(pick(CAKES['kk-nature'],10).parts===12&&pick(CAKES['kk-nature'],30).count===3&&pick(CAKES.katzi,3).parts===14,'pick');
+
+const svg=document.getElementById('cake'),out=document.getElementById('guests'),vs=document.getElementById('v-size'),vt=document.getElementById('v-txt');
+const minus=document.querySelector('[data-step="-1"]'),plus=document.querySelector('[data-step="1"]');
+const send=document.getElementById('sendmail'),date=document.getElementById('date'),nameI=document.getElementById('name');
+let guests=10;
+const t=new Date();t.setDate(t.getDate()+2);date.min=t.toISOString().slice(0,10);
+
+function draw(c,parts,served){
+  const fill=i=>i<served?'#f4e4b6':'#e8d39c';
+  let h='';
+  if(c.shape==='round'){
+    h+='<circle r="104" fill="#9a6328"/><circle r="98" fill="#c98a3a"/>';
+    for(let i=0;i<parts;i++){
+      const a0=(i/parts)*2*Math.PI-Math.PI/2,a1=((i+1)/parts)*2*Math.PI-Math.PI/2,r=90,g=.012;
+      const x0=Math.cos(a0+g)*r,y0=Math.sin(a0+g)*r,x1=Math.cos(a1-g)*r,y1=Math.sin(a1-g)*r;
+      h+=`<path class="slice" d="M0 0L${x0.toFixed(2)} ${y0.toFixed(2)}A${r} ${r} 0 ${parts<2?1:0} 1 ${x1.toFixed(2)} ${y1.toFixed(2)}Z" fill="${fill(i)}"/>`;
+    }
+  }else{
+    h+='<rect x="-106" y="-46" width="212" height="92" fill="#9a6328"/><rect x="-102" y="-42" width="204" height="84" fill="#c98a3a"/>';
+    const w=196/parts;
+    for(let i=0;i<parts;i++) h+=`<rect class="slice" x="${(-98+i*w+1).toFixed(2)}" y="-38" width="${(w-2).toFixed(2)}" height="76" fill="${fill(i)}"/>`;
+  }
+  svg.innerHTML=h;
+}
+function render(){
+  const id=document.querySelector('input[name=cake]:checked').value,c=CAKES[id],p=pick(c,guests);
+  out.textContent=guests;minus.disabled=guests<=1;plus.disabled=guests>=60;
+  const total=p.parts*p.count,rest=total-guests;
+  const fmt=(p.label?'format '+p.label:'format unique');
+  vs.textContent=(p.count>1?p.count+' × ':'')+p.parts+' parts';
+  vt.textContent=`${c.n}, ${fmt}${p.count>1?' (×'+p.count+')':''} pour ${guests} personne${guests>1?'s':''}`+(rest>0?`, il en reste ${rest}.`:'.');
+  draw(c,p.parts,Math.min(guests,p.parts));
+  const body=`Bonjour,\n\nJe souhaite commander :\n${p.count>1?p.count+' × ':''}${c.n}, ${fmt} (${p.parts} parts)\nPour ${guests} personne${guests>1?'s':''}\nRetrait le : ${date.value?new Date(date.value+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}):'à préciser'}\n\nNom : ${nameI.value||''}\n\nMerci !`;
+  send.href='mailto:cake@houseofthreebrothers.com?subject='+encodeURIComponent('Commande : '+c.n+', '+total+' parts')+'&body='+encodeURIComponent(body);
+}
+document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>{guests=Math.max(1,Math.min(60,guests+ +b.dataset.step));render()}));
+document.querySelectorAll('input[name=cake]').forEach(r=>r.addEventListener('change',render));
+[date,nameI].forEach(i=>i.addEventListener('input',render));
+document.getElementById('orderform').addEventListener('submit',e=>{e.preventDefault();location.href=send.href});
+render();
+</script>
+</body>
+</html>
