@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>A la Ferme de Passy · Fromager, 39 rue de l'Annonciation</title>
+<meta name="description" content="A la Ferme de Passy, fromagerie de Michel Daho au 39 rue de l'Annonciation, Paris 16e. Lait cru, chèvres, brebis, fromages frais et affinés.">
+<!-- Démo non officielle. Direction taste-skill « The page is the object » (seed 53620586) : la façade à colombages devient la carte du fromager.
+     Système emprunté au DESIGN.md « Claude » (awesome-design) : échelle de surfaces en aplats tonaux, aucune ombre au repos, texte courant 17-19px, une seule action pleine. Palette ramenée au bois de la façade. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#472913;        /* bois de la façade */
+  --surface:#55321a;
+  --paper:#e4e0cf;     /* torchis, papier du fromager */
+  --paper-2:#d8d2bc;
+  --ink:#2b170a;
+  --ink-soft:#6b5a45;
+  --on-bg:#e4e0cf;
+  --on-bg-soft:#c9b89c;
+  --accent:#525e1b;    /* olive */
+  --accent-press:#414b14;
+  --ochre:#c79a3e;
+  --m:clamp(16px,2.2vw,32px);
+  --step-small:clamp(.8125rem,.79rem + .1vw,.875rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2.25rem,1.3rem + 3.6vw,4.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--on-bg);font:400 var(--step-body)/1.5 "Schibsted Grotesk",system-ui,sans-serif;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+::selection{background:var(--ochre);color:var(--ink)}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+img{display:block;max-width:100%;height:auto}
+.tab{font-variant-numeric:tabular-nums}
+h1,h2,h3{font-weight:800;letter-spacing:-.045em;line-height:.92;text-wrap:balance}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:var(--on-bg-soft);font-size:var(--step-small);text-align:center;padding:6px var(--m)}
+
+/* barre */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px var(--m);font-weight:600}
+.bar .mark{font-weight:800;letter-spacing:-.03em;text-decoration:none;font-size:1.0625rem}
+.bar nav{display:flex;gap:28px}
+.bar nav a{text-decoration:none;opacity:.85}
+.bar nav a:hover{opacity:1;text-decoration:underline}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;background:var(--accent);color:var(--paper);font-weight:600;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:600;transition:background .3s var(--ease),transform .3s var(--ease)}
+.btn:hover{background:var(--accent-press)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:none}
+.bar .btn{min-height:42px;padding:0 18px}
+
+/* colombage : la bande de poutres */
+.beams{display:flex;height:64px;background:var(--paper);border-top:12px solid var(--bg);border-bottom:12px solid var(--bg)}
+.beams i{flex:1}
+.beams i.p{flex:0 0 12px;background:var(--bg)}
+.beams i.x{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' preserveAspectRatio='none'%3E%3Cpath d='M0 10L10 0' stroke='%23472913' stroke-width='10' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.beams i.r{transform:scaleX(-1)}
+
+/* héro */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 var(--m) var(--m)}
+.card{background:var(--paper);color:var(--ink);display:flex;flex-direction:column;min-height:calc(100svh - 120px)}
+.card-in{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px clamp(20px,4vw,64px)}
+.sign{font-weight:600;font-size:var(--step-small);color:var(--ink-soft);margin-bottom:14px}
+.hero h1{font-size:clamp(2.75rem,1.6rem + 3.6vw,5rem);letter-spacing:-.05em;line-height:.88}
+.sub{font-size:var(--step-lead);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-top:22px;max-width:26ch}
+.hero .lede{max-width:40ch;margin:18px auto 30px;color:var(--ink)}
+.open{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:var(--step-small);margin-bottom:22px;color:var(--ink)}
+.open i{width:10px;height:10px;border-radius:50%;background:var(--ink-soft)}
+.open.is-open i{background:var(--accent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:26px;font-weight:600}
+.links a{text-decoration:underline;text-decoration-color:var(--ochre)}
+.links a:hover{text-decoration-color:var(--ink)}
+.stage{position:sticky;top:12px;height:calc(100svh - 24px);overflow:hidden;background:var(--surface)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
+.stage img.on{opacity:1}
+.stage figcaption{position:absolute;left:0;bottom:0;background:var(--paper);color:var(--ink);font-size:var(--step-small);font-weight:600;padding:8px 14px}
+
+/* au 39 : bande ocre */
+.at39{background:var(--ochre);color:var(--ink);padding:clamp(80px,10vw,140px) var(--m) clamp(80px,9vw,120px)}
+.row1{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:end}
+.row1 h2{grid-column:1/8;font-size:var(--step-head)}
+.row1 p{grid-column:9/13;max-width:34ch}
+.facts{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:32px;margin-top:clamp(64px,8vw,120px)}
+.facts dt{font-size:clamp(1.75rem,1.2rem + 1.8vw,2.75rem);font-weight:800;letter-spacing:-.04em;line-height:1}
+.facts dd{font-size:var(--step-small);font-weight:600;margin-top:8px;max-width:22ch}
+.pair{display:grid;grid-template-columns:7fr 5fr;gap:12px;margin-top:clamp(56px,7vw,96px)}
+.pair img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+
+/* le comptoir */
+.counter{padding:clamp(100px,12vw,200px) var(--m);display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,80px);align-items:start}
+.counter .col{container-type:inline-size}
+.giant{font-size:21.5cqw;line-height:.8;letter-spacing:-.06em;font-weight:800;color:var(--paper);margin-left:-.04em}
+.counter .intro{margin:28px 0 24px;max-width:40ch;color:var(--on-bg)}
+details{background:var(--surface);margin-bottom:6px}
+details[open]{background:var(--paper);color:var(--ink)}
+details[open] .items li small{color:var(--ink-soft)}
+summary{list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 18px;cursor:pointer;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary span:last-child{font-size:1.5rem;line-height:1;transition:transform .4s var(--ease)}
+details[open] summary span:last-child{transform:rotate(45deg)}
+summary:hover{background:rgba(228,224,207,.06)}
+details[open] summary:hover{background:transparent}
+.items{padding:2px 18px 22px}
+.items li{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:7px 0}
+.items li small{display:block;color:var(--on-bg-soft);font-size:var(--step-small);font-weight:400}
+.items li em{font-style:normal;font-weight:600;white-space:nowrap}
+.counter figure{position:sticky;top:24px}
+.counter figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.counter figcaption{font-size:var(--step-small);color:var(--on-bg-soft);margin-top:10px}
+
+/* le plateau : la feuille du fromager */
+.planner{background:var(--surface);padding:clamp(100px,11vw,180px) var(--m);display:grid;grid-template-columns:1fr minmax(0,600px) 1fr;gap:clamp(24px,4vw,64px);align-items:center}
+.planner .side{align-self:stretch}
+.planner .side img{width:100%;height:100%;min-height:320px;object-fit:cover}
+.sheet{background:var(--paper);color:var(--ink);padding:56px clamp(20px,4vw,52px) 60px;
+  --s:14px; /* taste-skill-ignore : masque de bord festonné, pas un remplissage */
+  -webkit-mask:radial-gradient(var(--s) at 50% 0,#0000 98%,#000) 50% 0/calc(var(--s)*2.4) 51% repeat-x,radial-gradient(var(--s) at 50% 100%,#0000 98%,#000) 50% 100%/calc(var(--s)*2.4) 51% repeat-x; /* taste-skill-ignore : festons */
+  mask:radial-gradient(var(--s) at 50% 0,#0000 98%,#000) 50% 0/calc(var(--s)*2.4) 51% repeat-x,radial-gradient(var(--s) at 50% 100%,#0000 98%,#000) 50% 100%/calc(var(--s)*2.4) 51% repeat-x} /* taste-skill-ignore : festons */
+.sheet h2{font-size:clamp(2.25rem,1.6rem + 2.2vw,3.5rem);text-align:center}
+.sheet>p{text-align:center;max-width:36ch;margin:14px auto 36px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:36px}
+.fields label{font-weight:600;font-size:var(--step-small);display:grid;gap:6px}
+select{font:inherit;font-weight:600;color:var(--ink);background:var(--paper-2);border:0;min-height:52px;padding:0 40px 0 14px;appearance:none;-webkit-appearance:none;border-radius:0;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%232b170a' stroke-width='2.2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+select:hover{background-color:#cfc8b0}
+.out h3{font-size:1.25rem;letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
+.lead-row{display:flex;align-items:baseline;gap:10px;padding:9px 0}
+.lead-row span:first-child{font-size:1.1875rem;font-weight:600}
+.lead-row i{flex:1;border-bottom:4px dotted var(--ink-soft);transform:translateY(-4px);min-width:20px}
+.lead-row b{font-weight:800;white-space:nowrap}
+.out .note{font-size:var(--step-small);color:var(--ink-soft);margin-top:14px;max-width:44ch}
+.out [data-o]{transition:opacity .35s var(--ease)}
+.sheet .btn{width:100%;margin-top:28px}
+
+/* venir */
+.visit{position:relative;min-height:100svh;overflow:hidden}
+.visit>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 6s var(--ease)}
+.visit.in>img{transform:scale(1)}
+.vcard{position:relative;margin:60px 60px 60px auto;width:400px;background:var(--paper);color:var(--ink);padding:32px 32px 0;display:flex;flex-direction:column}
+.vcard h2{font-size:clamp(2rem,1.5rem + 1.6vw,2.75rem);margin-bottom:18px}
+.vcard address{font-style:normal;margin-bottom:20px}
+.hours{width:100%;border-collapse:collapse;margin-bottom:18px}
+.hours td{padding:6px 0;border-bottom:1px solid var(--paper-2)}
+.hours td:last-child{text-align:right}
+.hours tr.today td{font-weight:800}
+.vcard .tel{font-weight:800;font-size:1.375rem;letter-spacing:-.02em;text-decoration:none;margin-bottom:6px}
+.vcard .mail{margin-bottom:24px;word-break:break-all}
+.vcard .btn{margin:0 -32px;min-height:56px}
+
+/* dos de la carte */
+.back{padding:clamp(100px,11vw,180px) var(--m) var(--m)}
+.backcard{position:relative;max-width:1180px;margin:0 auto;background:var(--paper);color:var(--ink);padding:72px clamp(20px,5vw,72px) 28px;
+  --s:50px; /* taste-skill-ignore : festons */ -webkit-mask:radial-gradient(var(--s) at 50% 0,#0000 98%,#000) 50% 0/calc(var(--s)*2) 100% repeat-x;mask:radial-gradient(var(--s) at 50% 0,#0000 98%,#000) 50% 0/calc(var(--s)*2) 100% repeat-x;padding-top:110px}
+.backgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.backcard h2{font-size:clamp(2rem,1.5rem + 1.6vw,2.75rem);margin-bottom:16px}
+.backcard p{max-width:38ch}
+.addr{display:grid;gap:12px;font-size:1.125rem;align-content:start;padding-top:8px;position:relative;padding-right:110px}
+.addr a{text-decoration:none;font-weight:600}
+.addr a:hover{text-decoration:underline;text-decoration-color:var(--ochre)}
+.stamp{position:absolute;top:0;right:0;width:88px;background:var(--paper);padding:6px;outline:2px dotted var(--ink-soft);outline-offset:-1px;transform:rotate(4deg)}
+.stamp img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.imprint{text-align:center;font-size:var(--step-small);color:var(--ink-soft);margin-top:72px}
+.bigname{font-weight:800;letter-spacing:-.06em;line-height:.8;font-size:9.2vw;color:var(--paper);padding:56px var(--m) 24px;white-space:nowrap;overflow:hidden}
+
+/* entrées */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .bar nav{display:none}
+  .hero{grid-template-columns:1fr;padding-top:0}
+  .stage{position:relative;top:0;height:48svh;order:-1}
+  .card{min-height:0;margin:-24px 12px 0;position:relative;z-index:1}
+  .row1 p{max-width:none}
+  .beams{height:40px}
+  .card-in{padding:36px 20px 32px}
+  .row1{grid-template-columns:1fr}
+  .row1 h2,.row1 p{grid-column:auto}
+  .facts{grid-template-columns:1fr 1fr;row-gap:32px}
+  .pair{grid-template-columns:1fr}
+  .counter{grid-template-columns:1fr}
+  .counter figure{position:relative;top:0}
+  .planner{grid-template-columns:1fr}
+  .planner .side{display:none}
+  .planner .side.keep{display:block;order:3}
+  .visit{min-height:0;display:flex;flex-direction:column}
+  .visit>img{position:relative;height:70svh}
+  .vcard{margin:-80px 16px 0;width:auto}
+  .backgrid{grid-template-columns:1fr;gap:36px}
+  .backcard{--s:30px;padding-top:80px}
+  .addr{padding-right:80px}
+  .stamp{width:64px}
+  .bigname{font-size:15vw;white-space:normal}
+}
+@media (max-width:420px){.fields{grid-template-columns:1fr}.vcard{padding:26px 22px 0}.vcard .btn{margin:0 -22px}}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .js .rv{opacity:1;transform:none}
+  .visit>img{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="bar">
+  <a class="mark" href="#top">A la Ferme de Passy</a>
+  <nav aria-label="Sections">
+    <a href="#comptoir">Le comptoir</a>
+    <a href="#plateau">Votre plateau</a>
+    <a href="#venir">Horaires et accès</a>
+  </nav>
+  <a class="btn" href="tel:+33142881493">01 42 88 14 93</a>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="t-hero">
+    <div class="card">
+      <div class="beams" aria-hidden="true"><i class="p"></i><i class="x"></i><i class="p"></i><i></i><i class="p"></i><i class="x r"></i><i class="p"></i><i class="x"></i><i class="p"></i><i></i><i class="p"></i><i class="x r"></i><i class="p"></i></div>
+      <div class="card-in">
+        <h1 id="t-hero" class="rv">A la Ferme de&nbsp;Passy</h1>
+        <p class="sub rv">Michel Daho, artisan fromager au 39, rue de l'Annonciation</p>
+        <p class="lede rv">Lait cru, chèvres, brebis, fromages frais et pâtes affinées, coupés au comptoir dans la rue commerçante de Passy, à deux pas de La&nbsp;Muette.</p>
+        <p class="open rv" id="open" aria-live="polite"><i></i><span>Ouvert du mardi au dimanche dès 8 h 30</span></p>
+        <a class="btn rv" href="tel:+33142881493"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Appeler la boutique</a>
+        <div class="links rv">
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=A+la+Ferme+de+Passy,+39+Rue+de+l%27Annonciation,+75016+Paris" target="_blank" rel="noopener">Itinéraire</a>
+          <a href="#plateau">Prévoir un plateau</a>
+          <a href="mailto:dahomichel@hotmail.fr?subject=Commande%20%C3%A0%20la%20Ferme%20de%20Passy">Écrire</a>
+        </div>
+      </div>
+    </div>
+    <figure class="stage" id="stage">
+      <img class="on" src="https://images.unsplash.com/photo-1634487359989-3e90c9432133?w=1600&amp;q=75&amp;auto=format&amp;fit=crop" width="1600" height="1067" alt="Pâte molle à croûte fleurie entamée, sur son papier">
+      <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=1600&amp;q=75&amp;auto=format&amp;fit=crop" width="1600" height="1067" alt="Deux tommes à croûte naturelle posées l'une sur l'autre" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1626957341926-98752fc2ba90?w=1600&amp;q=75&amp;auto=format&amp;fit=crop" width="1600" height="1067" alt="Pointe de fromage persillé" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="at39" aria-labelledby="t-39">
+    <div class="row1">
+      <h2 id="t-39" class="rv">Une boutique de rue, à colombages</h2>
+      <p class="rv">On la reconnaît à sa façade en pans de bois, entre les primeurs et les pâtissiers de la rue de l'Annonciation. Au-dessus de la vitrine, l'enseigne dit l'essentiel : artisan fromager, Michel Daho.</p>
+    </div>
+    <dl class="facts">
+      <div class="rv"><dt class="tab">8 h 30</dt><dd>Ouverture, du mardi au dimanche</dd></div>
+      <div class="rv"><dt class="tab">13 h 30</dt><dd>Fermeture le dimanche</dd></div>
+      <div class="rv"><dt>Lundi</dt><dd>Boutique fermée</dd></div>
+      <div class="rv"><dt>La Muette</dt><dd>Métro 9, à 5 minutes à pied</dd></div>
+    </dl>
+    <div class="pair">
+      <img class="rv" src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=1400&amp;q=75&amp;auto=format&amp;fit=crop" width="1400" height="1050" alt="Pointe de bleu, figues fraîches et noix" loading="lazy">
+      <img class="rv" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=1000&amp;q=75&amp;auto=format&amp;fit=crop" width="1000" height="750" alt="Lait versé d'un pichet dans un verre" loading="lazy">
+    </div>
+  </section>
+
+  <section class="counter" id="comptoir" aria-labelledby="t-comptoir">
+    <div class="col">
+      <h2 id="t-comptoir" class="giant rv">Comptoir</h2>
+      <p class="intro rv">La sélection change avec les saisons et les arrivages. Voici comment elle se range au comptoir ; pour ce qui est à point cette semaine, le fromager vous le dira mieux qu'une page.</p>
+      <details open class="rv">
+        <summary><span>Lait de vache</span><span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li><span>Pâtes molles à croûte fleurie<small>Bries, camemberts, coulommiers, brie truffé.</small></span><em>à la coupe</em></li>
+          <li><span>Pâtes pressées et grandes meules<small>Tommes, montagnes, longues affinages.</small></span><em>à la coupe</em></li>
+          <li><span>Croûtes lavées<small>Les fromages qui ont du caractère, et une odeur.</small></span><em>à la pièce</em></li>
+        </ul>
+      </details>
+      <details class="rv">
+        <summary><span>Lait de chèvre</span><span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li><span>Chèvres de la Loire et d'ailleurs<small>Bûches, pyramides, crottins, du frais au sec.</small></span><em>à la pièce</em></li>
+          <li><span>Chèvres cendrés<small>Selles-sur-cher et autres chèvres passés à la cendre.</small></span><em>à la pièce</em></li>
+        </ul>
+      </details>
+      <details class="rv">
+        <summary><span>Lait de brebis</span><span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li><span>Pyrénées et Pays basque<small>Ossau-iraty et tommes de brebis.</small></span><em>à la coupe</em></li>
+          <li><span>Persillés de brebis<small>Pour ceux qui aiment le bleu franc.</small></span><em>à la coupe</em></li>
+        </ul>
+      </details>
+      <details class="rv">
+        <summary><span>Au lait cru</span><span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li><span>Fromages au lait cru<small>Demandez au comptoir : la mention figure sur l'étiquette de chaque fromage.</small></span><em>selon arrivage</em></li>
+        </ul>
+      </details>
+      <details class="rv">
+        <summary><span>Frais et crèmerie</span><span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li><span>Fromages frais<small>Faisselles, frais de chèvre, à manger dans la semaine.</small></span><em>à la pièce</em></li>
+        </ul>
+      </details>
+    </div>
+    <figure class="rv">
+      <img src="https://images.unsplash.com/photo-1589881133595-a3c085cb731d?w=1200&amp;q=75&amp;auto=format&amp;fit=crop" width="1200" height="1500" alt="Morceaux de pâte pressée sur une ardoise, grains de grenade" loading="lazy">
+      <figcaption>À la coupe : dites combien de personnes, le fromager taille.</figcaption>
+    </figure>
+  </section>
+
+  <section class="planner" id="plateau" aria-labelledby="t-plateau">
+    <div class="side"><img src="https://images.unsplash.com/photo-1559561853-08451507cbe7?w=900&amp;q=75&amp;auto=format&amp;fit=crop" width="900" height="1200" alt="Fromage frais en tranches et bol de crème" loading="lazy"></div>
+    <form class="sheet rv" id="planner" aria-describedby="plan-help" onsubmit="return false">
+      <h2 id="t-plateau">Votre plateau, à l'heure</h2>
+      <p id="plan-help">Dites quand vous recevez. On vous dit quand passer au 39 et quand sortir le fromage du frigo.</p>
+      <div class="fields">
+        <label>Le jour du repas
+          <select id="pd">
+            <option value="2">Mardi</option><option value="3">Mercredi</option><option value="4">Jeudi</option><option value="5">Vendredi</option><option value="6" selected>Samedi</option><option value="0">Dimanche</option><option value="1">Lundi</option>
+          </select>
+        </label>
+        <label>Passage à table
+          <select id="pt">
+            <option value="12:30">12 h 30</option><option value="13:00">13 h</option><option value="19:30">19 h 30</option><option value="20:00">20 h</option><option value="20:30" selected>20 h 30</option><option value="21:00">21 h</option>
+          </select>
+        </label>
+      </div>
+      <div class="out" aria-live="polite">
+        <h3>Le programme</h3>
+        <div class="lead-row"><span>Passer au 39</span><i></i><b data-o="when">samedi</b></div>
+        <div class="lead-row"><span>Entre</span><i></i><b class="tab" data-o="slot">8 h 30 et 19 h 30</b></div>
+        <div class="lead-row"><span>Sortir du frigo</span><i></i><b class="tab" data-o="out">19 h 30</b></div>
+        <div class="lead-row"><span>En attendant</span><i></i><b data-o="keep">dans son papier</b></div>
+        <p class="note" data-o="note">Un fromage se goûte à température ambiante : comptez environ une heure hors du réfrigérateur, sous cloche ou dans son papier.</p>
+      </div>
+      <a class="btn" id="plan-call" href="tel:+33142881493">Commander par téléphone</a>
+    </form>
+    <div class="side keep"><img src="https://images.unsplash.com/photo-1624806992066-5ffcf7ca186b?w=900&amp;q=75&amp;auto=format&amp;fit=crop" width="900" height="1200" alt="Petits fromages frais moulés, en train d'égoutter" loading="lazy"></div>
+  </section>
+
+  <section class="visit" id="venir" aria-labelledby="t-venir">
+    <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=2000&amp;q=75&amp;auto=format&amp;fit=crop" width="2000" height="1333" alt="Grande planche de fromages, olives, raisin et baguette" loading="lazy">
+    <div class="vcard rv">
+      <h2 id="t-venir">Venir au 39</h2>
+      <address>39 rue de l'Annonciation<br>75016 Paris · Métro La Muette</address>
+      <table class="hours tab" aria-label="Horaires d'ouverture">
+        <tbody>
+          <tr data-d="2,3,4,5,6"><td>Mardi au samedi</td><td>8 h 30 – 19 h 30</td></tr>
+          <tr data-d="0"><td>Dimanche</td><td>8 h 30 – 13 h 30</td></tr>
+          <tr data-d="1"><td>Lundi</td><td>Fermé</td></tr>
+        </tbody>
+      </table>
+      <a class="tel tab" href="tel:+33142881493">01 42 88 14 93</a>
+      <a class="mail" href="mailto:dahomichel@hotmail.fr">dahomichel@hotmail.fr</a>
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=A+la+Ferme+de+Passy,+39+Rue+de+l%27Annonciation,+75016+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+    </div>
+  </section>
+</main>
+
+<footer class="back" aria-labelledby="t-back">
+  <div class="backcard">
+    <div class="backgrid">
+      <div>
+        <h2 id="t-back" class="rv">À bientôt au comptoir</h2>
+        <p class="rv">Une fête, un dîner, un plateau pour dix : passez, appelez ou écrivez la veille, et le fromager vous prépare la coupe.</p>
+      </div>
+      <div class="addr rv">
+        <figure class="stamp"><img src="https://images.unsplash.com/photo-1634487359989-3e90c9432133?w=300&amp;q=70&amp;auto=format&amp;fit=crop" width="300" height="400" alt="Pâte molle à croûte fleurie" loading="lazy"></figure>
+        <a href="tel:+33142881493" class="tab">01 42 88 14 93</a>
+        <a href="mailto:dahomichel@hotmail.fr">dahomichel@hotmail.fr</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=A+la+Ferme+de+Passy,+39+Rue+de+l%27Annonciation,+75016+Paris" target="_blank" rel="noopener">39 rue de l'Annonciation</a>
+        <a href="#venir">75016 Paris</a>
+      </div>
+    </div>
+    <p class="imprint">A la Ferme de Passy · Démo réalisée par Raul Hatos — site non officiel · Photos d'illustration Unsplash</p>
+  </div>
+  <p class="bigname" aria-hidden="true">Ferme de Passy</p>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// horaires : 0 = dimanche ; [ouverture, fermeture] en minutes
+const H={0:[510,810],1:null,2:[510,1170],3:[510,1170],4:[510,1170],5:[510,1170],6:[510,1170]};
+const DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+const fmt=m=>{const h=Math.floor(m/60),mn=m%60;return h+' h'+(mn?' '+String(mn).padStart(2,'0'):'')};
+function paris(){const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t).value;return{d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m:(+g('hour'))%24*60+(+g('minute'))}}
+// statut en direct
+(function(){const el=document.getElementById('open'),s=el.querySelector('span'),n=paris(),h=H[n.d];
+  if(h&&n.m>=h[0]&&n.m<h[1]){el.classList.add('is-open');s.textContent='Ouvert maintenant, jusqu’à '+fmt(h[1])}
+  else{let d=n.d,k=0;if(h&&n.m<h[0]){s.textContent='Fermé, ouvre aujourd’hui à '+fmt(h[0]);}else{do{d=(d+1)%7;k++}while(!H[d]);s.textContent='Fermé, ouvre '+(k===1?'demain':DAYS[d])+' à '+fmt(H[d][0])}}
+  document.querySelectorAll('.hours tr').forEach(tr=>{if(tr.dataset.d.split(',').includes(String(n.d)))tr.classList.add('today')});
+})();
+// plateau à l'heure
+(function(){const d=document.getElementById('pd'),t=document.getElementById('pt'),o=k=>document.querySelector('[data-o="'+k+'"]');
+  function run(){let day=+d.value;const [hh,mm]=t.value.split(':').map(Number),meal=hh*60+mm;let when,slot,keep='dans son papier',note;
+    const h=H[day];
+    if(h&&meal-60>h[0]){when=DAYS[day]+', le jour même';slot=fmt(h[0])+' et '+fmt(Math.min(h[1],meal-60));note='Le plus frais possible : achetez le jour même, puis comptez une heure hors du réfrigérateur avant de servir.'}
+    else{let p=day;do{p=(p+6)%7}while(!H[p]);when=DAYS[p]+(p===(day+6)%7?', la veille':' matin');slot=fmt(H[p][0])+' et '+fmt(H[p][1]);keep='au bas du frigo';
+      note=day===1?'Le lundi, la boutique est fermée : passez le dimanche matin, avant 13 h 30, et gardez le fromage dans son papier, en bas du réfrigérateur.':'La boutique ouvre trop tard pour ce repas : passez la veille et gardez le fromage dans son papier, en bas du réfrigérateur.'}
+    o('when').textContent=when;o('slot').textContent=slot;o('out').textContent=fmt(meal-60);o('keep').textContent=keep;o('note').textContent=note;
+}
+  d.addEventListener('change',run);t.addEventListener('change',run);run();
+})();
+// fondu lent des photos du héro
+(function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const imgs=[...document.querySelectorAll('#stage img')];let i=0,tm;
+  const tick=()=>{imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on')};
+  const start=()=>{clearInterval(tm);tm=setInterval(tick,6000)};start();
+  document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(tm):start());
+})();
+// entrées
+(function(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('section,footer').forEach(sec=>{sec.querySelectorAll('.rv').forEach((el,k)=>{el.style.transitionDelay=Math.min(k,6)*75+'ms';io.observe(el)})});
+  const v=document.querySelector('.visit');new IntersectionObserver((es,ob)=>es.forEach(e=>{if(e.isIntersecting){v.classList.add('in');ob.disconnect()}}),{threshold:.2}).observe(v);
+})();
+</script>
+</body>
+</html>
