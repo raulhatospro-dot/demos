@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>La Boulangerie Méditerranéenne · Boulangerie-café au levain, 73 bd de Courcelles, Paris 8e</title>
+<meta name="description" content="Boulangerie-café au levain naturel près des Ternes : pains bio, brioches, focaccia, börek, manouché, montecaos et tropézienne. Ouverte depuis juillet 2025.">
+<!-- DESIGN.md « Clay » (awesome-design) : toile claire, une famille display ronde et appuyée, aplats saturés d'une seule couleur par bloc, médias à 24px. Couleurs reprises du sujet : bleu de la mer, orange de la fleur d'oranger, pistache, grenade, zaatar. Direction taste-skill « The split stage » (seed 1994566293), palette redessinée depuis le sujet. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;700;800;900&family=Rethink+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --lime:#f4f4f1;        /* chaux */
+  --lime-2:#e7e7e2;
+  --ink:#0d1b3d;         /* encre marine */
+  --soft:#3f4a66;
+  --sea:#1f4fbf;         /* la mer */
+  --sea-deep:#183f9a;
+  --on-sea:#ffffff;
+  --sea-soft:#dce5fb;
+  --orange:#ff6b1a;      /* fleur d'oranger, portokalopita */
+  --orange-2:#ff8a47;
+  --pistache:#b8d27a;
+  --grenade:#c42a4a;
+  --zaatar:#56642a;
+  --turquoise:#2a9d8f;
+  --r:24px;
+  --m:clamp(16px,3.2vw,40px);
+  --f-d:"Gabarito",system-ui,sans-serif;
+  --f-t:"Rethink Sans",system-ui,sans-serif;
+  --s-small:.9375rem;
+  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --s-lead:clamp(1.25rem,1.1rem + .6vw,1.625rem);
+  --s-head:clamp(2.125rem,1.4rem + 3vw,4rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--lime);color:var(--ink);font:400 var(--s-body)/1.55 var(--f-t);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
+::selection{background:var(--orange);color:var(--ink)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-d);font-weight:800;letter-spacing:-.025em;line-height:.98;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{padding-inline:var(--m)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#fff;font-size:var(--s-small);text-align:center;padding:8px var(--m)}
+
+/* navigation */
+.nav{position:sticky;top:0;z-index:20;background:var(--lime);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--m)}
+.brand{font-family:var(--f-d);font-weight:800;font-size:1rem;letter-spacing:-.01em;text-decoration:none;line-height:1.1}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:28px}
+.nav ul a{text-decoration:none;font-weight:600;font-size:1rem}
+.nav ul a:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:999px;font:700 1rem/1 var(--f-t);white-space:nowrap;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s}
+.btn:active{transform:scale(.96)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn--go{background:var(--orange);color:var(--ink)}
+.btn--go:hover{background:var(--orange-2)}
+.btn--ink{background:var(--ink);color:#fff}
+.btn--ink:hover{background:#1c2e5c}
+.btn--line{background:var(--lime-2);color:var(--ink)}
+.btn--line:hover{background:#dcdcd6}
+.nav .btn{min-height:42px;padding:10px 18px}
+
+/* hero */
+.hero{position:relative;padding:8px var(--m) 0;display:flex;flex-direction:column}
+.hero__name{order:1}.hero__body{order:2}
+.hero__pic{margin:0;border-radius:var(--r);overflow:hidden;height:44svh;min-height:300px;background:var(--lime-2)}
+.hero__pic img{width:100%;height:100%;object-fit:cover}
+.hero__name{position:relative;z-index:2;margin-top:-.62em;font-size:clamp(2.4rem,10.2vw,11rem);line-height:.86;letter-spacing:-.04em;font-weight:900;color:var(--ink)}
+.hero__name span{display:block}
+.hero__name .l1{width:max-content;background:var(--lime);padding:.12em .16em 0 0;border-top-right-radius:18px}
+.hero__body{padding:18px 0 8px;display:grid;gap:18px}
+.hero__lead{font-size:var(--s-lead);line-height:1.35;max-width:30ch}
+.status{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1rem}
+.status i{width:12px;height:12px;border-radius:50%;background:var(--zaatar);flex:none;box-shadow:0 0 0 0 rgba(86,100,42,.5);animation:beat 2.4s var(--ease) infinite}
+.status.closed i{background:var(--grenade);animation:none}
+@keyframes beat{0%{box-shadow:0 0 0 0 rgba(86,100,42,.45)}70%{box-shadow:0 0 0 12px rgba(86,100,42,0)}100%{box-shadow:0 0 0 0 rgba(86,100,42,0)}}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+
+/* le tour */
+.tour{padding:clamp(96px,12vw,200px) var(--m) clamp(72px,8vw,140px)}
+.tour__head{display:grid;gap:18px;margin-bottom:36px;max-width:52ch}
+.tour__head h2{font-size:var(--s-head)}
+.tour__head p{color:var(--soft)}
+.tour__grid{display:grid;gap:24px}
+.map{position:relative;border-radius:var(--r);overflow:hidden;background:var(--sea);aspect-ratio:1000/493}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .land{fill:#e8e4d6}
+.route{fill:none;stroke:var(--orange);stroke-width:4;stroke-linecap:round;stroke-dasharray:2 12;transition:d .7s var(--ease)}
+.pin{position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center}
+.pin b{width:14px;height:14px;border-radius:50%;background:var(--ink);border:3px solid var(--lime);transition:transform .35s var(--ease),background-color .2s}
+.pin:hover b{transform:scale(1.35)}
+.pin[aria-pressed="true"] b{background:var(--orange);transform:scale(1.6)}
+.pin span{position:absolute;left:50%;top:calc(50% + 14px);transform:translateX(-50%);font:700 .875rem/1 var(--f-t);color:var(--ink);background:var(--lime);padding:4px 7px;border-radius:999px;white-space:nowrap;opacity:0;transition:opacity .2s}
+.pin[aria-pressed="true"] span,.pin:hover span,.pin:focus-visible span{opacity:1}
+.paris{position:absolute;left:21%;top:0;transform:translateX(-50%);font:700 .875rem/1 var(--f-t);background:var(--orange);color:var(--ink);padding:6px 10px;border-radius:0 0 12px 12px}
+.shores{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.shores button{font:600 .9375rem/1 var(--f-t);color:var(--ink);background:var(--lime-2);border:0;border-radius:999px;padding:12px 16px;min-height:44px;cursor:pointer;transition:background-color .2s,transform .2s var(--ease)}
+.shores button:hover{background:#dcdcd6}
+.shores button:active{transform:scale(.96)}
+.shores button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.shore{border-radius:var(--r);padding:clamp(24px,3vw,40px);color:var(--ink)}
+.js .shore[hidden]{display:none}
+.shore h3{font-size:clamp(1.75rem,1.2rem + 2vw,2.75rem);margin-bottom:6px}
+.shore .where{font-weight:600;margin-bottom:22px}
+.shore ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.shore li{display:grid;gap:2px}
+.shore li strong{font:700 1.1875rem/1.2 var(--f-d)}
+.shore li span{font-size:1rem}
+.shore blockquote{margin:24px 0 0;font-style:italic;font-size:1rem;max-width:44ch}
+.shore blockquote footer{font-style:normal;font-size:.9375rem;margin-top:6px}
+.f-orange{background:var(--orange)}
+.f-pistache{background:var(--pistache)}
+.f-grenade{background:var(--grenade);color:#fff}
+.f-sea{background:var(--sea);color:#fff}
+.f-zaatar{background:var(--zaatar);color:#fff}
+.f-ink{background:var(--ink);color:#fff}
+.f-turquoise{background:var(--turquoise)}
+.panel{display:grid;gap:16px;align-content:start}
+.tally{font-size:1rem;color:var(--soft)}
+
+/* les pains */
+.pains{padding:clamp(72px,8vw,140px) var(--m);display:grid;gap:40px}
+.pains__text h2{font-size:var(--s-head);margin-bottom:18px}
+.pains__text > p{max-width:46ch}
+.rows{list-style:none;margin:36px 0 0;padding:0;max-width:560px}
+.rows li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:9px 0}
+.rows li:nth-child(odd){background:transparent}
+.rows .n{display:flex;align-items:baseline;gap:10px;font-weight:600}
+.rows .n::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--c,var(--orange));flex:none;transform:translateY(1px)}
+.rows .v{font-size:.9375rem;color:var(--soft);text-align:right;font-variant-numeric:tabular-nums}
+.pains__pic{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--lime-2)}
+.pains__pic img{width:100%;height:100%;object-fit:cover}
+
+/* comptoir */
+.comptoir{background:var(--orange);padding:clamp(72px,9vw,160px) var(--m)}
+.comptoir h2{font-size:var(--s-head);max-width:14ch}
+.comptoir__top{display:grid;gap:32px;margin-bottom:44px}
+.comptoir__top .comptoir__intro{margin-bottom:0}
+.comptoir__pic{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;background:var(--orange-2)}
+.comptoir__pic img{width:100%;height:100%;object-fit:cover}
+.comptoir__intro{margin:20px 0 44px;max-width:46ch;font-size:var(--s-lead);line-height:1.35}
+.formules{display:grid;gap:12px;margin-bottom:48px}
+.formule{background:var(--ink);color:#fff;border-radius:var(--r);padding:24px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.formule strong{font:900 clamp(2.5rem,1.8rem + 3vw,4.5rem)/1 var(--f-d);letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.formule p{font-size:1rem;max-width:26ch}
+.formule p b{display:block;font:700 1.25rem/1.2 var(--f-d);margin-bottom:4px}
+.cols{display:grid;gap:36px}
+.cols h3{font-size:1.625rem;margin-bottom:14px}
+.cols ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.cols li{font-size:1rem}
+.cols small{display:block;font-size:.9375rem;margin-top:14px}
+
+/* galerie */
+.gal{padding:clamp(96px,12vw,200px) 0 clamp(72px,8vw,140px)}
+.gal__head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:0 var(--m);margin-bottom:28px}
+.gal__head h2{font-size:clamp(1.75rem,1.2rem + 2vw,2.75rem)}
+.gal__head p{color:var(--soft);font-size:1rem;white-space:nowrap}
+.strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:0 var(--m);height:62svh;max-height:640px;min-height:360px;scrollbar-width:none;cursor:grab}
+.strip::-webkit-scrollbar{display:none}
+.strip > *{flex:none;scroll-snap-align:start;margin:0}
+.strip figure{border-radius:var(--r);overflow:hidden;background:var(--lime-2);height:100%}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.strip figure:hover img{transform:scale(1.04)}
+.m-tall{width:72vw}
+.m-wide{width:88vw}
+.m-pair{width:64vw;display:grid;grid-template-rows:1fr 1fr;gap:8px}
+.m-pair figure{height:auto;min-height:0}
+
+/* la maison */
+.maison{padding:clamp(72px,8vw,140px) var(--m);display:grid;gap:40px}
+.maison h2{font-size:var(--s-head);margin-bottom:24px;max-width:13ch}
+.maison__text{display:grid;gap:18px;max-width:58ch}
+.sister{background:var(--pistache);border-radius:var(--r);padding:clamp(24px,3vw,40px);display:grid;gap:14px;align-content:start}
+.sister h3{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.25rem)}
+.timeline{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:14px}
+.timeline li{display:grid;grid-template-columns:7.5ch 1fr;gap:12px;align-items:baseline}
+.timeline b{font:800 1.25rem/1 var(--f-d);font-variant-numeric:tabular-nums}
+
+/* venir */
+.venir{background:var(--sea);color:var(--on-sea);padding:clamp(72px,9vw,160px) var(--m)}
+.venir h2{font-size:var(--s-head);max-width:16ch}
+.venir__lead{margin:20px 0 44px;font-size:var(--s-lead);line-height:1.35;max-width:40ch}
+.venir__grid{display:grid;gap:36px}
+.hours{width:100%;border-collapse:collapse;font-size:1rem;font-variant-numeric:tabular-nums}
+.hours th{text-align:left;font-weight:600;padding:12px 14px}
+.hours td{text-align:right;padding:12px 14px}
+.hours tr{background:transparent}
+.hours tr.today{background:var(--sea-deep)}
+.hours tr.today th,.hours tr.today td{font-weight:700}
+.hours tr.today th::after{content:" · aujourd'hui";font-weight:400}
+.hours caption{text-align:left;font:800 1.625rem/1.1 var(--f-d);margin-bottom:12px;letter-spacing:-.02em}
+.hours-note{font-size:.9375rem;margin-top:12px;color:var(--sea-soft)}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:22px;align-content:start}
+.facts b{display:block;font:800 1.25rem/1.2 var(--f-d)}
+.cells{display:grid;gap:8px;margin-top:48px}
+.cell{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:84px;padding:16px 22px;border-radius:var(--r);background:var(--sea-deep);color:#fff;text-decoration:none;transition:background-color .2s,transform .25s var(--ease)}
+.cell:hover{background:#12317a}
+.cell:active{transform:scale(.98)}
+.cell span{font-size:.9375rem;color:var(--sea-soft)}
+.cell b{font:700 1.1875rem/1.2 var(--f-d);overflow-wrap:anywhere}
+.cell--go{background:var(--orange);color:var(--ink)}
+.cell--go span{color:var(--ink)}
+.cell--go:hover{background:var(--orange-2)}
+
+/* pied */
+.foot{position:relative;min-height:88svh;color:#fff;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.foot > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.6)}
+.foot__top,.foot__bottom{position:relative;padding:32px var(--m)}
+.foot__top{display:grid;gap:22px;font-size:1rem}
+.foot__top a{text-decoration:none}
+.foot__top a:hover{text-decoration:underline}
+.foot__top ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.foot__name{font:900 clamp(2.6rem,11.4vw,11rem)/.86 var(--f-d);letter-spacing:-.04em;margin:0 0 18px}
+.foot__name span{display:block}
+.foot__legal{font-size:.9375rem;max-width:64ch;color:#fff}
+
+/* entrées (contenu visible sans script) */
+.js [data-in]{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
+.js [data-in].on{opacity:1;transform:none}
+
+@media (min-width:760px){
+  .m-tall{width:min(30vw,420px)}
+  .m-pair{width:min(30vw,420px)}
+  .m-wide{width:min(56vw,860px)}
+  .formules{grid-template-columns:1fr 1fr}
+  .comptoir__top{grid-template-columns:1fr 1fr;align-items:end;gap:clamp(32px,5vw,80px)}
+  .cols{grid-template-columns:repeat(3,1fr)}
+  .cells{grid-template-columns:repeat(3,1fr)}
+  .foot__top{grid-template-columns:1fr 1fr}
+  .foot__top > :last-child{justify-self:end;text-align:right}
+}
+@media (min-width:1024px){
+  .nav ul{display:flex}
+  .hero{display:grid;grid-template-columns:47% 1fr;grid-template-rows:auto auto;min-height:calc(100svh - 110px);padding-top:4px;padding-bottom:28px;column-gap:clamp(32px,4vw,64px)}
+  .hero__pic{grid-column:1;grid-row:1 / 3;height:auto;min-height:0}
+  .hero__body{grid-column:2;grid-row:1;align-self:center;padding:40px 0 0}
+  .hero__name{grid-column:1 / 3;grid-row:2;align-self:end;margin:0 0 0 18vw;font-size:clamp(4rem,8.2vw,9.5rem)}
+  .hero__name .l1{padding:.12em .2em 0 .14em;border-radius:18px 18px 0 0}
+  .hero__name .l2{width:max-content;background:var(--lime);padding:0 .2em .06em .14em;border-radius:0 18px 0 0}
+  .tour__grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:start;gap:clamp(28px,3vw,48px)}
+  .tour__map{position:sticky;top:96px}
+  .pains{grid-template-columns:1fr 1fr;align-items:center;gap:clamp(40px,6vw,96px)}
+  .maison{grid-template-columns:1.3fr 1fr;align-items:start;gap:clamp(40px,6vw,96px)}
+  .venir__grid{grid-template-columns:1.1fr 1fr;gap:clamp(40px,6vw,96px)}
+}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion:no-preference){
+    .hero__name{animation:shrink linear both;animation-timeline:view();animation-range:exit 0% exit 100%;transform-origin:left bottom}
+    @keyframes shrink{to{transform:scale(.93)}}
+    .hero__pic img{animation:drift linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+    @keyframes drift{to{transform:scale(1.08) translateY(3%)}}
+    .foot__name{animation:grow linear both;animation-timeline:view();animation-range:entry 0% entry 100%;transform-origin:left bottom}
+    @keyframes grow{from{transform:scale(.94)}to{transform:none}}
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js [data-in]{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div class="demo" role="note">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="nav">
+  <a class="brand" href="#top">La Boulangerie<br>Méditerranéenne</a>
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#tour">La vitrine</a></li>
+      <li><a href="#pains">Les pains</a></li>
+      <li><a href="#comptoir">Le comptoir</a></li>
+      <li><a href="#maison">La maison</a></li>
+      <li><a href="#venir">Venir</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn--go" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Boulangerie+M%C3%A9diterran%C3%A9enne%2C+73+boulevard+de+Courcelles%2C+75008+Paris" target="_blank" rel="noopener">Itinéraire</a>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h-name">
+  <figure class="hero__pic">
+    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=1400&amp;q=75&amp;auto=format&amp;fit=crop" width="1400" height="1600" alt="Pains au levain, miches farinées et baguettes en corbeille" fetchpriority="high">
+  </figure>
+  <div class="hero__body">
+    <p class="status" id="status"><i aria-hidden="true"></i><span>73, boulevard de Courcelles · Paris 8e</span></p>
+    <p class="hero__lead">Boulangerie-café au levain naturel, près des Ternes. Pains bio, brioches et snacking de toutes les rives de la Méditerranée.</p>
+    <div class="actions">
+      <a class="btn btn--ink" href="#tour">Voir la vitrine</a>
+      <a class="btn btn--line" href="tel:+33668157022"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>06 68 15 70 22</a>
+    </div>
+  </div>
+  <h1 class="hero__name" id="h-name"><span class="l1">la boulangerie</span><span class="l2">méditerranéenne</span></h1>
+</section>
+
+<section class="tour" id="tour" aria-labelledby="h-tour">
+  <div class="tour__head">
+    <h2 id="h-tour" data-in>Le tour de la Méditerranée</h2>
+    <p data-in style="--i:1">Nice, Rome, Alger, Athènes, Istanbul, Beyrouth : chaque rive a sa place dans la vitrine. Touchez un port pour voir ce qu’il y a mis.</p>
+  </div>
+  <div class="tour__grid">
+    <div class="tour__map" data-in style="--i:2">
+      <div class="map" id="map">
+        <svg viewBox="0 0 1000 493" preserveAspectRatio="none" aria-hidden="true">
+          <path class="land" d="M693 321L697 321L699 319L700 319L701 321L699 322L701 323L702 323L703 325L705 326L707 326L709 325L711 325L713 324L719 325L721 326L726 327L730 328L732 327L736 326L736 331L737 333L739 331L742 330L745 330L748 327L748 332L747 334L745 336L743 336L738 336L733 336L724 337L715 338L713 336L713 334L710 333L707 332L697 330L694 329L690 330L687 329L686 324L687 321L689 322L690 319L692 320ZM684 223L685 227L688 229L694 231L699 232L700 234L701 235L701 238L702 241L703 244L705 246L707 247L709 247L710 250L708 252L707 251L705 250L701 247L701 245L699 242L698 240L694 239L691 239L689 238L688 235L687 234L685 232L682 230L680 228L677 227L675 226L673 227L671 226L674 225L677 222L680 221L684 223ZM932 319L920 328L919 331L920 332L921 334L922 337L920 337L917 337L915 337L910 342L908 343L906 344L903 345L900 346L899 348L898 348L897 347L893 346L888 345L886 343L883 338L883 334L885 335L887 334L889 332L891 331L894 332L896 331L897 328L898 325L902 326L906 327L909 327L913 326L923 323L926 321L928 320L931 318L934 317L932 319ZM228 200L230 201L232 200L235 201L235 202L234 204L233 206L231 209L230 211L228 213L226 214L222 212L220 211L219 208L216 206L213 209L213 207L211 206L220 198L223 196L228 195L228 196L228 198ZM374 169L375 170L377 178L378 180L377 181L374 186L374 189L375 191L375 193L375 196L373 212L373 215L372 218L371 218L368 217L365 216L363 217L361 215L360 221L359 223L357 225L355 225L353 224L350 223L349 221L348 219L346 216L346 214L346 209L347 206L347 204L347 202L349 201L349 198L348 197L346 196L346 194L346 193L348 190L348 185L346 184L346 181L345 180L344 178L342 177L341 175L341 172L342 169L344 169L348 170L350 170L353 168L356 167L360 162L362 161L363 160L364 158L366 160L370 161L371 162L372 164L373 165L372 167L374 169ZM370 114L370 118L371 120L372 132L369 138L368 144L367 147L365 152L364 154L360 152L357 151L356 149L356 147L357 146L354 144L353 142L354 141L354 139L351 139L352 137L353 136L352 133L350 132L350 131L352 129L351 127L351 125L353 121L355 119L359 118L362 117L364 116L366 117L367 115L367 110L368 108L370 109L370 112ZM507 244L506 248L500 257L499 259L499 261L498 262L497 264L497 266L497 269L498 271L500 272L498 273L500 275L501 276L501 279L499 281L497 284L497 287L494 288L492 287L489 288L486 286L483 285L480 280L478 278L475 276L472 276L470 276L467 275L463 272L458 269L455 268L453 266L450 265L448 263L444 263L441 262L439 260L437 257L438 253L439 249L442 248L443 246L446 249L448 250L451 248L453 245L456 245L458 247L460 248L465 251L467 251L471 250L473 250L478 250L481 250L483 249L486 248L488 246L491 246L494 246L497 246L499 245L502 245L506 242L509 243L507 244ZM-22 -28L1022 -28L1022 -24L1022 -17L1022 -7L1022 -5L1022 -3L1022 2L1022 7L1022 10L1022 16L1022 25L1022 28L1022 33L1022 40L1022 46L1022 49L1022 52L1022 56L1022 61L1022 64L1022 66L1022 69L1022 81L1022 83L1022 85L1022 89L1022 93L1022 96L1022 100L1022 107L1022 110L1022 113L1022 115L1022 117L1022 114L1022 112L1022 101L1022 99L1022 101L1022 105L1022 100L1022 103L1022 108L1022 113L1022 117L1022 119L1022 122L1022 127L1022 131L1022 134L1022 137L1022 140L1022 142L1022 145L1022 148L1022 151L1022 154L1022 157L1022 162L1022 167L1022 169L1022 173L1022 175L1022 180L1022 182L1022 184L1022 188L1022 190L1022 193L1022 197L1022 200L1022 202L1022 206L1022 209L1022 212L1022 214L1022 216L1022 218L1022 220L1022 225L1022 228L1022 230L1022 231L1022 233L1022 246L1022 254L1022 260L1022 271L1022 278L1022 281L1022 287L1022 290L1022 294L1022 297L1022 299L1022 302L1022 304L1022 306L1022 309L1022 317L1022 322L1022 327L1022 331L1022 333L1022 336L1022 338L1022 340L1022 338L1022 336L1022 337L1022 339L1022 342L1022 344L1022 341L1022 344L1022 347L1022 349L1022 352L1022 349L1022 348L1022 346L1022 344L1022 347L1022 352L1022 350L1022 353L1022 356L1022 353L1022 351L1022 348L1022 346L1022 344L1022 341L1022 338L1022 335L1022 332L1022 330L1022 327L1022 323L1022 321L1022 319L1022 317L1022 314L1022 311L1022 309L1022 307L1022 305L1022 303L1022 301L1022 298L1022 296L1022 291L1022 288L1022 286L1022 283L1022 280L1022 279L1022 280L1022 284L1022 282L1022 280L1022 276L1022 274L1022 271L1022 268L1022 264L1022 262L1022 259L1022 257L1022 254L1022 258L1022 254L1022 251L1022 253L1022 256L1022 258L1022 255L1022 253L1022 250L1022 248L1022 244L1022 242L1022 237L1022 235L1022 232L1022 230L1022 228L1022 226L1022 214L1022 210L1022 207L1022 206L1022 202L1022 201L1022 204L1022 202L1022 200L1022 198L1022 194L1022 196L1022 198L1022 200L1022 203L1022 205L1022 212L1022 215L1022 218L1022 220L1022 221L1022 224L1022 225L1022 227L1022 229L1022 225L1022 219L1022 216L1022 212L1022 209L1022 207L1022 205L1022 203L1022 201L1022 198L1022 195L1022 192L1022 190L1022 184L1022 180L1022 177L1022 174L1022 170L1022 166L1022 169L1022 172L1022 174L1022 177L1022 187L1022 194L1022 197L1022 201L1022 203L1022 206L1022 211L1022 216L1022 218L1022 220L1022 217L1022 218L1022 226L1022 231L1022 233L1022 239L1022 242L1022 246L1022 248L1022 253L1022 256L1022 258L1022 260L1022 265L1022 270L1022 274L1022 275L1022 272L1022 269L1022 265L1022 262L1022 260L1022 256L1022 259L1022 262L1022 265L1022 266L1022 264L1022 266L1022 270L1022 274L1022 277L1022 279L1022 282L1022 284L1022 281L1022 284L1022 287L1022 289L1022 291L1022 292L1022 295L1022 298L1022 303L1022 305L1022 302L1022 304L1022 307L1022 310L1022 312L1022 314L1022 315L1022 318L1022 323L1022 326L1022 333L1022 336L1022 341L1022 343L1022 348L1022 351L1022 356L1022 360L1022 369L1022 373L1022 375L1022 379L1022 387L1022 393L1022 398L1022 400L1022 403L1022 406L1022 409L1022 411L1022 416L1022 418L1022 420L1022 422L1022 425L1022 427L1022 430L1022 426L1022 421L1022 419L1022 423L1022 424L1022 421L1022 424L1022 427L1022 429L1022 432L1022 436L1022 441L1022 446L1022 449L1022 453L1022 455L1022 459L1022 463L1022 465L1022 468L1022 471L1022 475L1022 470L1022 472L1022 479L1022 482L1022 485L1022 491L1022 493L1022 490L1022 493L1022 503L1022 501L1022 504L1022 507L1022 509L1022 511L1022 514L1022 517L1022 521L1022 515L1022 511L1022 509L1022 507L1022 505L1022 503L1022 501L1022 498L1022 495L1022 492L1022 488L1022 482L1022 477L1022 473L1022 478L1022 475L1022 470L1022 468L1022 465L1022 467L1022 469L1022 472L1022 475L1022 477L1022 479L1022 478L1022 479L1022 483L1022 487L1022 490L1022 493L1022 495L1022 497L1022 499L1022 501L1022 508L1022 510L1022 514L1022 516L1022 518L1022 520L1018 521L1013 521L1011 521L1007 521L1005 521L1003 521L1001 521L998 521L996 521L993 521L995 521L992 521L987 521L983 521L981 521L978 521L972 521L968 521L963 521L961 521L957 521L953 521L948 521L946 521L940 521L938 521L935 521L939 521L939 515L943 497L943 493L943 491L942 494L940 495L938 500L935 514L931 521L928 521L926 521L922 521L916 521L912 521L908 521L904 520L903 516L903 514L902 508L901 505L896 499L895 496L894 494L893 492L891 484L889 479L887 481L887 483L886 486L884 489L885 492L889 496L890 498L891 502L891 507L891 509L894 513L895 516L896 518L897 520L899 521L903 521L907 521L910 521L914 521L917 521L919 521L922 521L929 521L934 521L937 521L941 521L948 521L953 521L955 521L958 521L961 521L958 521L956 521L959 521L962 521L964 521L971 521L976 521L985 521L987 521L991 521L994 521L992 521L994 521L997 521L999 521L1002 521L1005 521L1009 521L1013 521L1016 521L1018 521L1022 521L1020 521L1014 521L1012 521L1008 521L1000 521L994 521L990 521L987 521L983 521L978 521L976 521L974 521L972 521L969 521L966 521L963 521L958 521L952 521L943 521L941 521L938 521L936 521L938 521L941 521L943 521L946 521L950 521L952 521L954 521L956 521L952 521L954 521L956 521L954 521L950 521L947 521L944 521L935 521L918 521L911 521L907 521L898 521L894 521L891 521L894 521L895 521L898 521L896 521L892 521L888 521L885 521L883 521L877 521L875 521L871 521L861 521L858 521L854 521L851 521L846 521L842 521L838 521L831 521L828 521L825 521L820 521L812 521L806 521L797 521L791 521L783 521L781 521L772 521L766 521L755 521L751 521L741 521L737 521L734 521L732 521L730 521L723 521L719 521L717 521L715 521L710 521L701 521L690 521L687 521L682 521L680 521L673 521L668 521L664 521L661 521L657 521L647 521L642 521L637 521L635 521L631 521L627 521L624 521L619 521L617 521L607 521L605 521L603 521L599 521L593 521L591 521L588 521L583 521L580 521L579 521L575 521L574 521L572 521L570 521L572 521L569 521L565 521L563 521L562 521L559 521L561 521L563 521L565 521L567 521L569 521L567 521L560 521L555 521L547 521L544 521L538 521L533 521L528 521L524 521L517 521L514 521L511 521L502 521L499 521L497 521L494 521L491 521L489 521L486 521L483 521L481 521L483 521L479 521L471 521L469 521L460 521L456 521L453 521L450 521L437 521L434 521L429 521L426 521L422 521L424 521L426 521L429 521L433 521L435 521L438 521L447 521L449 521L453 521L459 521L463 521L465 521L467 521L464 521L462 521L457 521L454 521L451 521L449 521L451 521L457 521L451 521L446 521L439 521L436 521L433 521L435 521L439 521L445 521L450 521L446 521L442 521L439 521L436 521L434 521L432 521L430 521L428 521L426 521L425 521L423 521L420 521L413 521L407 521L405 521L403 521L401 521L396 521L390 521L382 521L377 521L382 521L379 521L377 521L375 521L373 521L369 521L366 521L370 521L367 521L365 521L363 521L361 521L367 521L369 521L371 521L370 521L367 521L364 521L361 521L358 521L356 521L353 521L356 521L358 521L360 521L363 521L366 521L368 521L370 521L372 521L376 521L378 521L382 521L377 521L372 521L370 521L368 521L367 521L371 521L373 521L371 521L368 521L371 521L373 521L376 521L378 521L379 521L375 521L377 521L374 521L372 521L374 521L376 521L374 521L372 521L370 521L368 521L365 521L362 521L360 521L358 521L355 521L353 521L350 521L347 521L345 521L343 521L344 521L338 521L333 521L329 521L327 521L325 521L321 521L319 521L316 521L318 521L315 521L313 521L311 521L309 521L311 521L309 521L306 521L305 521L303 521L299 521L297 521L294 521L291 521L288 521L283 521L281 521L278 521L280 521L278 521L281 521L278 521L275 521L279 521L277 521L274 521L272 521L267 521L261 521L257 521L250 521L236 521L242 521L236 521L234 521L232 521L220 521L209 521L198 521L194 521L187 521L184 521L182 521L180 521L174 521L172 521L163 521L154 521L149 521L146 521L142 521L139 521L133 521L124 521L120 521L117 521L112 521L110 521L106 521L103 521L96 521L91 521L88 521L84 521L88 521L86 521L83 521L70 521L68 521L65 521L59 521L55 521L65 521L67 521L53 521L47 521L44 521L39 521L37 521L39 521L43 521L32 521L24 521L21 521L10 521L3 521L2 521L-1 521L-5 521L-10 521L-12 521L-15 521L-22 521L-22 515L-22 509L-22 505L-22 496L-22 489L-22 484L-22 480L-22 476L-22 469L-22 466L-22 462L-22 458L-22 455L-22 448L-22 438L-22 430L-22 419L-22 415L-22 408L-22 405L-22 396L-22 388L-22 386L-22 383L-13 375L-3 370L2 366L5 361L15 343L23 317L24 314L28 313L31 313L33 312L36 310L39 311L37 312L37 315L39 319L43 323L49 328L53 330L60 332L68 329L72 329L74 328L77 330L81 330L85 329L88 327L91 325L91 327L93 331L96 332L98 333L103 333L107 333L112 334L114 334L120 331L124 328L127 326L130 322L133 320L137 317L148 312L149 312L153 313L156 313L158 311L161 306L164 303L169 300L175 298L179 295L186 293L202 292L210 290L216 291L221 287L224 285L236 285L242 282L264 282L267 283L270 285L274 288L276 289L279 289L286 285L294 283L298 281L299 278L303 277L305 279L313 282L318 281L320 280L319 277L324 278L328 279L332 283L335 283L340 282L350 281L356 279L361 275L363 274L375 270L378 270L378 272L378 275L380 274L379 272L382 272L384 272L386 273L386 278L390 283L389 286L391 287L394 285L395 283L399 281L403 278L406 277L406 280L407 283L406 284L404 287L400 294L396 296L394 299L393 300L393 303L393 307L395 311L398 314L400 314L405 318L404 321L405 323L405 327L407 329L404 335L401 340L398 345L394 349L387 355L385 357L383 359L383 361L383 363L386 369L389 373L392 374L398 374L398 376L398 379L401 378L402 378L404 375L406 377L408 383L410 384L409 386L412 387L416 388L419 390L423 391L433 397L437 398L444 399L453 396L456 396L462 398L464 399L468 399L475 402L477 402L481 406L483 407L498 411L500 413L502 417L503 423L504 426L506 432L508 435L510 438L513 440L520 443L527 444L534 444L547 448L558 452L561 454L566 457L577 467L583 470L587 471L591 471L598 467L600 465L607 456L609 451L610 448L610 445L609 442L607 439L606 434L605 427L606 422L607 419L609 416L615 409L621 405L631 400L636 400L639 399L643 395L645 395L648 396L656 396L659 397L663 399L669 401L672 402L676 404L677 409L677 412L681 416L692 417L694 418L698 421L700 421L707 422L712 421L716 422L718 423L720 425L722 430L723 432L724 435L728 436L739 433L752 436L759 437L770 440L776 444L778 445L783 445L786 447L798 449L805 452L808 454L811 455L813 455L815 454L819 452L822 450L830 444L833 443L834 443L836 443L837 441L839 440L840 437L844 437L852 434L844 438L847 439L850 438L854 437L855 433L858 434L866 437L868 437L873 435L876 436L879 441L874 436L874 438L871 442L874 443L877 444L878 446L879 448L881 447L883 445L882 443L884 443L888 447L890 448L892 448L896 447L902 445L903 448L907 447L914 447L919 445L925 442L930 436L932 434L937 425L939 416L942 404L944 398L946 394L946 391L947 389L948 386L949 382L951 379L955 368L958 364L958 358L962 352L965 351L966 349L966 347L964 340L964 338L964 335L965 330L964 328L964 324L961 320L963 312L964 310L965 308L964 303L962 299L964 296L967 293L971 289L971 287L970 285L967 282L964 284L962 286L959 287L958 289L956 291L953 291L948 290L943 287L940 285L937 285L935 285L928 291L922 298L920 299L914 303L911 304L909 303L901 305L897 305L894 307L888 305L885 303L883 300L879 295L877 293L871 290L862 285L859 284L853 284L846 283L845 285L844 293L843 295L842 299L840 301L838 300L833 301L827 303L824 303L817 300L814 299L812 296L812 293L810 291L810 288L808 287L807 289L805 289L803 288L797 285L793 285L791 288L789 289L787 290L788 286L782 287L779 289L776 288L774 287L777 286L778 285L785 285L787 284L788 282L792 279L789 278L779 279L772 279L770 280L770 277L771 276L776 275L776 272L773 271L771 269L769 268L769 265L767 262L766 261L769 259L770 254L769 251L768 251L763 249L760 247L757 245L755 247L751 245L749 244L749 240L751 240L751 238L750 235L750 233L753 233L755 235L755 237L755 239L756 241L757 239L759 240L761 240L766 239L763 238L762 237L760 235L759 233L759 231L762 229L764 225L762 224L760 223L761 221L761 219L758 215L758 213L760 210L762 208L760 206L752 207L749 208L744 209L744 206L745 204L745 197L746 194L749 193L752 188L758 182L764 183L767 181L770 181L772 183L775 185L780 184L783 183L781 180L784 179L786 180L786 181L785 183L793 182L801 183L803 183L809 183L808 180L807 180L804 179L808 176L810 175L820 174L828 173L817 171L815 170L812 167L810 165L811 162L811 160L812 159L816 159L830 161L839 160L850 163L860 162L862 161L864 156L878 148L883 145L889 142L898 140L905 137L907 136L926 138L938 138L944 135L947 136L946 138L947 140L949 143L950 145L956 147L964 145L967 146L970 153L973 156L975 157L978 158L979 156L984 155L989 157L990 160L998 162L1006 163L1009 165L1020 167L1022 167L1022 165L1022 162L1022 166L1022 162L1022 160L1022 158L1022 153L1022 151L1022 145L1022 142L1022 140L1022 138L1022 133L1022 125L1022 118L1022 116L1022 113L1022 110L1022 106L1022 105L1022 99L1022 96L1022 88L1022 83L1022 72L1018 69L1015 68L1008 60L1005 61L1002 61L1000 60L998 59L997 57L995 54L993 52L988 49L981 48L980 46L986 44L987 43L985 42L983 41L984 40L986 39L988 40L991 43L994 44L1003 41L1004 37L1003 35L1004 33L1008 29L1010 23L1012 21L1013 24L1014 23L1015 20L1018 20L1020 21L1022 20L1018 16L1013 12L1011 12L1007 8L1006 5L1008 5L1011 5L1015 3L1016 3L1019 3L1022 4L1022 2L1021 -0L1022 -2L1022 -6L1022 -9L1022 -11L1022 -13L1022 -11L1022 -12L1022 -11L1016 -8L1007 -8L1001 -8L996 -3L994 -3L990 -2L987 -1L984 2L982 1L979 1L976 2L973 4L971 4L967 4L962 5L953 12L950 17L947 19L945 20L949 16L950 15L950 12L949 10L945 15L943 16L940 17L940 21L941 23L942 26L944 31L950 39L952 41L954 42L956 42L961 40L963 40L967 41L968 39L970 38L973 38L976 39L979 40L978 43L976 45L976 47L975 49L971 51L968 50L963 51L962 50L959 48L957 48L954 48L952 52L947 54L946 57L941 56L937 57L932 59L928 64L923 68L919 69L916 68L914 67L909 64L910 62L911 60L913 54L912 52L911 49L908 46L905 46L903 46L897 41L894 41L890 42L888 40L895 34L902 30L905 29L909 27L914 24L913 22L912 20L910 21L908 21L905 19L903 18L898 19L894 19L887 20L884 19L877 15L875 15L873 15L871 14L875 13L876 12L877 11L873 10L870 9L868 8L866 7L870 7L874 8L879 8L885 9L886 8L889 6L884 7L879 6L877 5L876 3L875 0L876 -2L875 -5L873 -8L873 -10L871 -12L873 -8L873 -6L874 -4L874 2L874 4L871 5L869 5L866 4L867 1L865 2L863 5L861 5L857 5L849 7L849 9L848 12L847 14L843 20L836 27L832 29L829 30L827 30L824 30L823 32L823 34L824 36L825 42L825 44L824 46L823 52L823 54L822 56L810 58L811 55L810 53L811 52L809 52L807 54L807 57L806 58L806 62L805 64L806 63L806 65L802 69L801 71L801 80L800 86L799 94L797 97L794 96L789 97L787 101L786 102L785 103L784 108L784 115L782 116L775 123L778 125L780 127L783 131L786 135L787 138L786 141L788 145L791 149L794 152L808 158L810 159L810 161L809 164L808 165L804 166L793 163L790 163L788 164L785 166L781 165L775 166L774 170L770 174L763 178L759 180L752 186L749 190L746 192L747 190L747 188L747 185L750 183L752 181L758 178L759 176L755 176L750 177L747 176L744 176L743 174L742 172L738 170L730 169L726 167L725 167L721 165L719 166L714 169L712 169L709 167L707 167L705 168L702 171L698 173L695 172L691 172L691 174L692 176L694 178L693 180L694 182L697 182L701 184L703 187L704 190L702 188L700 186L698 185L695 184L693 183L691 184L693 188L695 189L696 191L697 193L695 195L693 193L689 187L684 186L684 190L689 195L683 194L681 191L681 188L676 185L672 182L671 180L672 177L670 177L668 178L666 180L666 182L666 183L665 186L665 190L665 193L670 199L672 204L674 206L676 208L679 212L681 214L681 217L679 219L677 218L678 216L674 213L672 214L671 215L672 217L673 219L673 221L676 221L673 224L670 225L667 225L665 225L667 227L669 228L675 230L677 232L680 232L682 236L687 237L690 241L693 242L696 243L697 244L697 247L697 252L698 256L698 259L696 260L694 257L691 254L687 250L685 250L684 251L678 252L676 253L676 255L677 257L677 259L679 262L680 262L682 262L683 264L684 265L685 267L680 269L678 270L676 269L676 267L675 266L673 265L671 264L669 263L668 264L669 268L671 271L674 279L676 283L676 286L675 289L677 292L678 295L676 294L674 293L670 288L669 285L665 286L663 292L663 295L661 294L660 289L657 283L655 282L655 280L654 278L651 280L650 282L650 285L649 287L646 283L642 277L642 274L645 270L644 268L642 264L639 261L637 260L636 257L634 256L632 255L632 253L636 250L638 245L642 246L644 246L646 243L648 241L651 242L657 245L664 248L668 249L670 251L672 252L672 249L677 249L678 247L676 245L674 245L670 244L669 243L665 241L661 238L660 240L659 241L657 241L651 239L647 240L645 241L642 241L640 242L638 239L637 237L637 239L633 241L632 240L631 236L629 232L626 229L624 228L624 226L627 224L631 226L633 225L632 223L631 221L627 221L624 222L623 221L620 218L617 215L614 213L611 207L609 204L607 202L607 199L606 197L603 193L595 188L593 186L592 184L592 182L593 183L594 180L592 176L593 171L595 167L595 162L595 159L594 156L594 153L595 149L597 147L597 143L595 141L592 141L588 138L587 135L582 130L576 126L576 124L574 125L569 122L565 119L558 114L552 113L545 109L540 108L542 108L544 108L556 113L554 111L552 110L547 105L542 102L537 97L530 95L526 93L523 93L520 94L518 94L516 92L516 90L513 87L509 85L506 82L499 75L497 72L500 72L503 72L505 72L503 70L500 69L494 63L492 60L492 56L492 52L491 49L486 45L484 43L481 42L479 42L478 43L477 47L474 51L473 53L471 56L469 56L466 52L464 48L463 45L461 38L462 37L466 35L467 33L464 29L460 31L454 29L452 31L450 33L447 34L444 36L441 37L438 38L439 36L435 37L433 39L433 41L432 44L433 45L436 50L439 52L438 54L437 56L436 57L434 56L433 59L434 68L436 73L438 76L443 80L447 82L456 89L461 91L462 92L465 97L468 103L470 113L472 117L476 122L484 130L491 135L498 139L504 139L516 139L518 139L521 140L521 142L520 144L518 145L515 148L515 151L517 153L529 159L542 164L546 166L550 170L561 175L563 178L569 183L572 188L573 191L571 194L571 197L570 199L567 198L564 196L559 186L550 185L548 184L545 182L544 180L540 179L538 181L535 184L532 190L529 198L529 201L530 204L535 206L539 209L542 211L542 218L543 222L542 225L538 224L534 225L531 228L529 230L530 237L529 239L523 244L520 248L519 250L518 252L511 253L509 250L509 246L510 243L513 242L515 237L514 233L515 232L518 230L521 229L522 224L519 222L518 218L517 212L514 204L512 197L510 194L508 192L503 192L501 192L493 187L493 185L494 183L493 180L492 178L491 176L489 175L486 175L482 176L481 177L482 173L479 171L475 170L474 171L473 169L469 162L466 159L462 159L458 157L455 157L451 158L450 157L446 154L441 152L432 142L429 138L423 134L419 129L416 126L411 125L409 126L407 125L409 124L408 122L403 116L400 114L399 111L396 109L394 109L394 106L394 104L394 102L392 98L389 94L388 84L386 81L383 79L376 77L366 71L364 71L358 68L354 68L349 70L344 76L339 82L337 83L331 85L326 86L321 88L319 89L312 96L308 98L307 101L305 103L303 103L299 104L295 106L293 105L288 105L285 103L279 102L277 98L274 98L272 98L271 97L269 96L267 97L265 97L263 98L261 97L256 96L252 95L250 92L248 91L245 92L244 94L242 95L231 103L228 106L226 111L226 113L227 120L229 124L230 126L232 129L230 129L228 132L230 134L230 138L228 141L225 143L209 152L205 156L204 157L193 160L184 163L180 164L176 168L173 170L175 171L177 173L174 176L171 176L166 185L161 191L158 193L156 197L150 207L150 210L153 220L154 223L157 225L161 227L162 229L160 231L156 234L149 238L146 242L145 245L143 246L142 251L141 254L139 257L139 259L141 261L139 263L136 263L127 263L120 268L117 273L114 281L110 286L108 287L105 284L102 284L99 285L97 286L95 287L92 287L87 286L84 286L80 288L77 287L71 286L59 287L56 290L52 293L46 293L41 296L40 297L38 301L37 304L35 303L35 306L33 307L31 307L27 305L23 303L22 302L19 298L17 296L16 293L16 291L14 290L13 287L15 284L17 282L14 284L11 281L3 274L3 272L2 273L-4 273L-9 274L-11 274L-19 279L-21 279L-22 277L-22 279L-22 275L-22 267L-22 262L-22 258L-22 254L-22 252L-22 246L-22 242L-22 238L-22 236L-22 238L-22 235L-22 232L-22 230L-22 228L-22 225L-22 222L-22 220L-22 222L-22 227L-22 230L-22 226L-22 223L-22 219L-22 215L-22 213L-22 210L-22 207L-22 199L-22 190L-22 189L-22 186L-22 177L-22 172L-22 168L-22 164L-22 163L-22 161L-22 157L-22 149L-22 147L-22 143L-22 142L-22 138L-22 134L-22 131L-22 129L-22 127L-22 125L-22 123L-22 121L-22 119L-22 115L-22 112L-22 109L-22 107L-22 103L-22 101L-22 99L-22 97L-22 94L-22 92L-22 89L-19 88L-16 86L-13 88L-11 87L-9 88L-6 91L-1 93L2 92L9 91L12 92L17 91L21 91L26 90L30 92L38 93L43 94L56 96L60 96L67 95L70 94L72 95L76 94L78 94L80 95L89 98L91 96L93 95L99 97L105 99L108 99L113 98L116 97L121 96L124 92L127 79L129 64L131 61L133 60L131 58L130 60L131 47L131 42L133 36L136 38L139 40L140 42L142 49L143 50L145 51L144 50L143 49L141 40L140 38L138 36L131 32L130 29L132 29L134 30L133 28L133 25L132 17L132 14L129 14L128 13L126 13L117 8L114 3L111 -0L110 -2L112 -7L111 -9L108 -10L109 -12L112 -14L114 -13L116 -12L118 -12L113 -15L104 -14L103 -14L101 -15L100 -17L103 -19L102 -20L100 -21L97 -21L95 -20L96 -23L93 -23L91 -23L88 -23L86 -25L84 -25L83 -26L80 -26L78 -27L70 -28L66 -28L62 -28L60 -28L58 -28L52 -28L56 -28L59 -28L56 -28L58 -28L62 -28L59 -28L56 -28L51 -28L55 -28L66 -28L71 -28L74 -28L78 -28L79 -28L85 -28L90 -28L95 -28L97 -28L102 -28L111 -28L112 -28L114 -28L116 -28L125 -28L122 -28L119 -28L117 -28L119 -28L122 -28L127 -28L129 -28L132 -28L136 -28L140 -28L146 -28L154 -28L157 -28L160 -28L167 -28L164 -28L160 -28L171 -28L178 -28L185 -28L189 -28L191 -28L193 -28L195 -28L197 -28L200 -28L212 -28L214 -28L224 -28L230 -28L233 -28L234 -28L238 -28L241 -28L245 -28L247 -28L250 -28L252 -28L250 -28L247 -28L243 -28L240 -28L238 -28L235 -28L237 -28L241 -28L245 -28L250 -28L253 -28L251 -28L249 -28L247 -28L251 -28L246 -28L248 -28L250 -28L252 -28L256 -28L258 -28L260 -28L262 -28L264 -28L266 -28L271 -28L278 -28L280 -28L282 -28L289 -28L293 -28L300 -28L305 -28L310 -28L313 -28L316 -28L319 -28L316 -28L319 -28L321 -28L329 -28L337 -28L341 -28L343 -28L345 -28L347 -28L349 -28L351 -28L357 -28L364 -28L367 -28L373 -28L375 -28L377 -28L374 -28L367 -28L364 -28L361 -28L359 -28L357 -28L355 -28L352 -28L356 -28L358 -28L357 -28L355 -28L352 -28L350 -28L352 -28L345 -28L340 -28L342 -28L340 -28L342 -28L348 -28L349 -28L352 -28L357 -28L359 -28L361 -28L363 -28L364 -28L362 -28L359 -28L357 -28L354 -28L351 -28L348 -28L345 -28L343 -28L347 -28L351 -28L355 -28L358 -28L360 -28L366 -28L369 -28L372 -28L378 -28L381 -28L388 -28L394 -28L396 -28L393 -28L390 -28L393 -28L401 -28L403 -28L401 -28L399 -28L396 -28L394 -28L392 -28L389 -28L387 -28L384 -28L382 -28L380 -28L383 -28L380 -28L378 -28L374 -28L371 -28L374 -28L376 -28L380 -28L382 -28L381 -28L379 -28L385 -28L390 -28L398 -28L404 -28L406 -28L400 -28L403 -28L407 -28L413 -28L420 -28L422 -28L429 -28L434 -28L435 -28L440 -28L444 -28L447 -28L450 -28L453 -28L460 -28L466 -28L468 -28L471 -28L472 -28L478 -28L483 -28L485 -28L480 -28L476 -28L473 -28L470 -28L468 -28L473 -28L477 -28L481 -28L488 -28L501 -28L515 -28L518 -28L521 -28L523 -28L525 -28L529 -28L537 -28L540 -28L545 -28L558 -28L564 -28L569 -28L574 -28L579 -28L577 -28L573 -28L575 -28L577 -28L581 -28L584 -28L593 -28L597 -28L601 -28L604 -28L605 -28L609 -28L616 -28L618 -28L622 -28L626 -28L630 -28L631 -28L626 -28L620 -28L622 -28L624 -28L627 -28L629 -28L633 -28L631 -28L635 -28L637 -28L639 -28L646 -28L650 -28L657 -28L664 -28L666 -28L675 -28L677 -28L681 -28L689 -28L695 -28L698 -28L703 -28L705 -28L703 -28L707 -28L709 -28L705 -28L703 -28L699 -28L697 -28L691 -28L690 -28L687 -28L689 -28L686 -28L684 -28L686 -28L689 -28L692 -28L698 -28L701 -28L705 -28L710 -28L716 -28L729 -28L731 -28L733 -28L737 -28L752 -28L756 -28L761 -28L763 -28L772 -28L784 -28L787 -28L789 -28L791 -28L794 -28L796 -28L798 -28L800 -28L803 -28L806 -28L808 -28L811 -28L824 -28L834 -28L831 -28L829 -28L825 -28L822 -28L817 -28L811 -28L805 -28L801 -28L798 -28L800 -28L798 -28L791 -28L782 -28L779 -28L776 -28L770 -28L766 -28L763 -28L758 -28L755 -28L754 -28L755 -28L753 -28L750 -28L746 -28L742 -28L741 -28L742 -28L740 -28L738 -28L736 -28L734 -28L731 -28L729 -28L725 -28L723 -28L718 -28L716 -28L710 -28L708 -28L707 -28L704 -28L697 -28L690 -28L687 -28L685 -28L681 -28L678 -28L675 -28L677 -28L678 -28L676 -28L674 -28L672 -28L670 -28L667 -28L662 -28L664 -28L657 -28L650 -28L648 -28L646 -28L643 -28L641 -28L639 -28L637 -28L639 -28L641 -28L643 -28L640 -28L638 -28L635 -28L637 -28L633 -28L640 -28L644 -28L642 -28L647 -28L649 -28L654 -28L659 -28L657 -28L659 -28L664 -28L669 -28L674 -28L677 -28L680 -28L685 -28L688 -28L694 -28L697 -28L703 -28L706 -28L709 -28L711 -28L713 -28L718 -28L722 -28L724 -28L726 -28L727 -28L725 -28L727 -28L725 -28L715 -28L714 -28L712 -28L710 -28L706 -28L702 -28L700 -28L694 -28L690 -28L687 -28L684 -28L679 -28L676 -28L672 -28L668 -28L666 -28L664 -28L662 -28L660 -28L658 -28L654 -28L650 -28L645 -28L642 -28L639 -28L641 -28L639 -28L636 -28L634 -28L635 -28L638 -28L641 -28L635 -28L630 -28L624 -28L622 -28L617 -28L615 -28L611 -28L605 -28L602 -28L599 -28L596 -28L592 -28L590 -28L585 -28L580 -28L577 -28L575 -28L571 -28L569 -28L573 -28L567 -28L566 -28L563 -28L561 -28L559 -28L561 -28L558 -28L555 -28L554 -28L552 -28L549 -28L551 -28L554 -28L552 -28L549 -28L548 -28L550 -28L547 -28L544 -28L546 -28L547 -28L550 -28L552 -28L554 -28L556 -28L559 -28L561 -28L565 -28L567 -28L571 -28L574 -28L579 -28L582 -28L584 -28L582 -28L578 -28L576 -28L571 -28L568 -28L565 -28L561 -28L565 -28L567 -28L569 -28L572 -28L574 -28L571 -28L569 -28L564 -28L561 -28L558 -28L554 -28L550 -28L547 -28L542 -28L539 -28L531 -28L524 -28L522 -28L524 -28L526 -28L528 -28L532 -28L535 -28L538 -28L535 -28L532 -28L534 -28L533 -28L530 -28L528 -28L525 -28L522 -28L517 -28L515 -28L513 -28L511 -28L508 -28L506 -28L502 -28L496 -28L490 -28L487 -28L485 -28L483 -28L481 -28L478 -28L480 -28L476 -28L474 -28L468 -28L457 -28L447 -28L449 -28L446 -28L440 -28L438 -28L443 -28L445 -28L443 -28L444 -28L446 -28L443 -28L440 -28L436 -28L430 -28L428 -28L426 -28L424 -28L421 -28L417 -28L415 -28L412 -28L410 -28L408 -28L411 -28L413 -28L407 -28L404 -28L401 -28L399 -28L396 -28L394 -28L391 -28L388 -28L384 -28L381 -28L379 -28L374 -28L372 -28L374 -28L372 -28L367 -28L368 -28L367 -28L365 -28L358 -28L349 -28L344 -28L341 -28L338 -28L334 -28L325 -28L319 -28L315 -28L312 -28L310 -28L309 -28L305 -28L308 -28L306 -28L303 -28L301 -28L293 -28L292 -28L286 -28L283 -28L289 -28L294 -28L297 -28L300 -28L294 -28L293 -28L290 -28L291 -28L293 -28L297 -28L299 -28L302 -28L298 -28L296 -28L293 -28L289 -28L286 -28L282 -28L280 -28L278 -28L274 -28L275 -28L279 -28L280 -28L283 -28L287 -28L289 -28L292 -28L297 -28L293 -28L291 -28L288 -28L287 -28L292 -28L294 -28L300 -28L304 -28L307 -28L310 -28L313 -28L310 -28L300 -28L296 -28L291 -28L289 -28L288 -28L285 -28L282 -28L278 -28L276 -28L274 -28L272 -28L274 -28L276 -28L278 -28L281 -28L285 -28L283 -28L279 -28L276 -28L274 -28L282 -28L284 -28L280 -28L275 -28L272 -28L270 -28L272 -28L274 -28L276 -28L281 -28L292 -28L299 -28L302 -28L306 -28L310 -28L312 -28L314 -28L316 -28L327 -28L324 -28L322 -28L318 -28L313 -28L310 -28L307 -28L304 -28L301 -28L294 -28L284 -28L280 -28L277 -28L272 -28L270 -28L274 -28L275 -28L277 -28L273 -28L270 -28L268 -28L269 -28L272 -28L280 -28L288 -28L293 -28L303 -28L309 -28L301 -28L295 -28L285 -28L280 -28L276 -28L273 -28L275 -28L278 -28L281 -28L286 -28L288 -28L290 -28L292 -28L294 -28L297 -28L305 -28L308 -28L302 -28L298 -28L295 -28L297 -28L300 -28L302 -28L306 -28L309 -28L314 -28L321 -28L326 -28L327 -28L329 -28L326 -28L333 -28L339 -28L324 -28L320 -28L317 -28L315 -28L310 -28L313 -28L315 -28L323 -28L327 -28L329 -28L331 -28L334 -28L339 -28L342 -28L344 -28L351 -28L345 -28L342 -28L341 -28L343 -28L350 -28L348 -28L346 -28L350 -28L352 -28L356 -28L363 -28L367 -28L371 -28L373 -28L375 -28L378 -28L381 -28L382 -28L386 -28L390 -28L395 -28L398 -28L400 -28L403 -28L407 -28L410 -28L413 -28L409 -28L411 -28L415 -28L411 -28L409 -28L406 -28L403 -28L406 -28L403 -28L390 -28L383 -28L380 -28L378 -28L374 -28L372 -28L375 -28L379 -28L381 -28L382 -28L387 -28L395 -28L401 -28L403 -28L407 -28L410 -28L412 -28L416 -28L419 -28L417 -28L413 -28L411 -28L415 -28L431 -28L434 -28L438 -28L444 -28L448 -28L445 -28L443 -28L438 -28L436 -28L435 -28L433 -28L430 -28L432 -28L435 -28L441 -28L445 -28L449 -28L445 -28L458 -28L465 -28L467 -28L470 -28L473 -28L465 -28L461 -28L459 -28L452 -28L454 -28L456 -28L460 -28L463 -28L467 -28L471 -28L465 -28L468 -28L469 -28L472 -28L474 -28L476 -28L480 -28L483 -28L485 -28L489 -28L504 -28L501 -28L490 -28L485 -28L483 -28L485 -28L489 -28L494 -28L497 -28L501 -28L504 -28L507 -28L510 -28L505 -28L502 -28L500 -28L502 -28L495 -28L491 -28L489 -28L496 -28L497 -28L501 -28L503 -28L506 -28L508 -28L502 -28L505 -28L509 -28L514 -28L517 -28L520 -28L523 -28L525 -28L523 -28L521 -28L526 -28L531 -28L536 -28L538 -28L541 -28L547 -28L550 -28L552 -28L550 -28L544 -28L530 -28L537 -28L542 -28L548 -28L550 -28L555 -28L564 -28L566 -28L568 -28L570 -28L573 -28L576 -28L581 -28L579 -28L576 -28L579 -28L582 -28L584 -28L589 -28L600 -28L604 -28L606 -28L608 -28L610 -28L612 -28L614 -28L608 -28L611 -28L618 -28L623 -28L622 -28L619 -28L626 -28L629 -28L633 -28L635 -28L639 -28L642 -28L647 -28L650 -28L647 -28L643 -28L638 -28L641 -28L647 -28L652 -28L657 -28L659 -28L661 -28L667 -28L671 -28L673 -28L675 -28L678 -28L680 -28L682 -28L689 -28L694 -28L698 -28L703 -28L705 -28L703 -28L707 -28L711 -28L714 -28L720 -28L723 -28L725 -28L728 -28L732 -28L734 -28L736 -28L734 -28L730 -28L725 -28L722 -28L719 -28L724 -28L728 -28L741 -28L747 -28L753 -28L756 -28L758 -28L754 -28L756 -28L764 -28L766 -28L767 -28L771 -28L776 -28L770 -28L777 -28L781 -28L782 -28L790 -28L795 -28L793 -28L785 -28L791 -28L793 -28L796 -28L800 -28L803 -28L805 -28L811 -28L814 -28L816 -28L818 -28L823 -28L825 -28L827 -28L831 -28L833 -28L837 -28L841 -28L845 -28L852 -28L842 -28L837 -28L830 -28L804 -28L823 -28L825 -28L827 -28L831 -28L833 -28L836 -28L839 -28L841 -28L845 -28L847 -28L851 -28L855 -28L864 -28L866 -28L869 -28L872 -28L874 -28L876 -28L885 -28L889 -28L898 -28L899 -28L897 -28L893 -28L880 -28L878 -28L884 -28L891 -28L896 -28L899 -28L905 -28L908 -28L909 -28L906 -28L903 -28L906 -28L909 -28L913 -28L927 -28L929 -28L941 -28L944 -28L948 -28L950 -28L963 -28L980 -28L1005 -28L1019 -28L1021 -28L1022 -28L1020 -28L1009 -28L1003 -28L995 -28L988 -28L984 -28L975 -28L955 -28L952 -28L940 -28L935 -28L932 -28L930 -28L925 -28L919 -28L916 -28L912 -28L911 -28L902 -28L899 -28L895 -28L897 -28L885 -28L874 -28L876 -28L881 -28L884 -28L888 -28L892 -28L896 -28L897 -28L903 -28L908 -28L911 -28L914 -28L910 -28L907 -28L912 -28L924 -28L930 -28L937 -28L939 -28L935 -28L934 -28L931 -28L933 -28L936 -28L939 -28L943 -28L941 -28L945 -28L950 -28L954 -28L958 -28L962 -28L970 -28L973 -28L982 -28L988 -28L997 -28L1003 -28L1011 -28L1013 -28L1011 -28L1008 -28L1005 -28L998 -28L995 -28L993 -28L990 -28L984 -28L980 -28L978 -28L981 -28L984 -28L986 -28L990 -28L992 -28L1001 -28L1011 -28L1014 -28L1016 -28L1020 -28L1022 -28L-22 -28ZM479 307L476 307L478 306L479 307ZM471 174L469 173L471 173ZM428 286L426 286L426 284L428 284L428 286ZM532 108L536 109L539 109L541 109L543 110L541 111L539 110L536 111L533 111L532 109ZM544 105L542 105L532 105L529 104L526 103L529 102L532 102L541 104L544 105ZM534 101L531 101L528 100L526 99L527 97L530 97L536 98L537 100L534 101ZM877 17L880 18L877 18L870 17L867 15L866 14L865 12L867 14L877 17ZM783 310L781 310L780 309L781 306L780 304L781 302L782 300L785 298L790 296L792 297L790 302L788 304L789 306L786 306L783 310ZM768 323L767 325L766 323L766 319L768 316L768 314L769 313L769 316L768 318L769 320L769 323ZM783 292L782 291L783 290L784 291ZM764 280L762 281L763 279L762 277L763 278L764 279ZM763 287L765 284L769 282L772 283L768 285L765 286L763 287ZM731 280L729 281L728 280L727 277L731 274L732 275L732 278L731 280ZM725 277L724 280L721 278L722 276L724 275L725 277ZM730 297L729 298L728 296L728 295L730 295ZM728 289L726 287L726 285L728 287ZM760 256L763 257L765 257L765 259L764 259L761 261L758 259L755 259L756 257L758 256L760 256ZM742 264L744 261L746 261L749 260L748 262L746 263L742 264ZM738 285L736 285L738 284L740 282L742 281L743 282L741 283L738 285ZM752 291L750 292L749 293L748 292L749 291L750 290L752 291ZM705 263L703 264L703 262L704 260L706 261L705 263ZM706 269L705 267L706 266L707 268L706 269ZM709 286L709 288L704 289L704 287L706 287L709 286ZM718 265L718 268L717 267L717 265ZM719 258L718 260L717 257L715 256L713 254L712 252L714 251L716 253L718 253L719 257ZM725 262L724 264L720 262L719 260L721 261L724 261ZM713 281L712 279L714 281ZM744 245L742 246L739 244L740 242L741 241L741 239L738 236L738 234L742 234L744 235L745 237L745 242L744 244ZM751 213L750 215L753 217L755 219L755 221L753 220L754 222L752 223L750 223L745 222L744 220L747 218L746 217L743 220L739 218L738 217L740 214L742 214L745 213L749 211L751 213ZM692 219L689 220L687 216L692 219ZM694 218L694 216L696 215L695 217L694 218ZM712 228L709 228L707 225L707 223L709 224L710 226L712 228ZM734 182L732 182L729 180L732 179L734 181ZM729 194L727 197L727 199L725 199L725 197L724 198L722 199L720 198L721 196L720 194L724 194L726 195L727 194L729 193ZM714 176L711 177L708 175L710 172L713 171L714 173L714 175ZM741 190L736 191L734 190L736 188L739 187L741 189ZM411 343L407 345L408 344L410 341L411 343ZM404 373L402 374L400 373L399 369L403 368L405 370L404 372ZM131 26L130 28L129 26L127 24L126 22L128 23L131 26ZM391 112L392 114L391 116L390 115L387 116L385 116L385 114L388 114L390 113ZM348 220L347 223L345 221L345 219L347 220ZM343 164L342 165L343 162L345 162L343 164ZM254 198L246 195L244 195L244 193L249 192L252 193L254 196L254 198ZM193 232L191 232L189 232L189 230L191 230L193 231ZM190 225L189 226L186 226L185 223L187 221L188 220L192 219L194 221L191 224ZM485 312L482 313L480 311L480 308L482 309L484 311ZM500 78L497 77L496 76L500 78ZM490 52L487 53L486 51L483 50L482 49L484 47L485 45L486 46L488 49L490 52ZM491 58L487 58L487 56L489 56L491 58ZM499 70L497 70L495 69L492 66L492 64L489 61L491 62L495 65L497 67L500 70ZM499 82L492 76L499 82ZM503 81L504 83L501 81L500 80L503 81ZM483 61L481 58L479 54L480 52L478 47L480 47L480 49L482 52L482 55L482 59L483 61ZM553 115L556 117L547 114L549 114L553 115ZM620 240L621 243L622 244L624 247L624 249L620 247L618 248L618 246L617 245L616 245L616 241L618 242L619 240L619 238L620 240ZM627 256L629 259L627 258L625 260L623 258L621 256L622 253L624 255L626 255ZM622 233L621 234L619 232L620 229L621 227L623 228L623 233ZM624 241L621 239L621 237L623 238L623 240ZM609 210L609 212L606 211L604 209L602 206L599 202L600 200L603 199L605 200L604 203L605 205L605 208L607 210ZM687 253L685 254L685 251L686 252ZM675 302L673 303L672 299L673 297L674 298L676 301L675 302ZM728 267L726 267L726 265L729 266L728 267ZM708 276L706 276L707 274L709 274L708 276Z"/>
+          <path class="route" id="route" d="M210 0 Q 260 40 321 88"/>
+        </svg>
+        <span class="paris" aria-hidden="true">Paris 8e</span>
+      </div>
+    </div>
+    <div class="panel">
+      <ul class="shores" id="shores" aria-label="Choisir une rive">
+        <li><button type="button" data-shore="provence" aria-pressed="true">Provence</button></li>
+        <li><button type="button" data-shore="italie" aria-pressed="false">Italie</button></li>
+        <li><button type="button" data-shore="espagne" aria-pressed="false">Espagne</button></li>
+        <li><button type="button" data-shore="algerie" aria-pressed="false">Algérie</button></li>
+        <li><button type="button" data-shore="grece" aria-pressed="false">Grèce</button></li>
+        <li><button type="button" data-shore="turquie" aria-pressed="false">Turquie</button></li>
+        <li><button type="button" data-shore="levant" aria-pressed="false">Levant</button></li>
+      </ul>
+      <div aria-live="polite">
+        <article class="shore f-orange" data-shore="provence" data-x="321" data-y="88" data-city="Nice">
+          <h3>Provence et Côte d’Azur</h3>
+          <p class="where">De Marseille à Nice, en passant par Saint-Tropez</p>
+          <ul>
+            <li><strong>Pan-bagnat</strong><span>et sa version maison, la focaccia-bagnat au thon</span></li>
+            <li><strong>Pissaladière</strong><span>la tarte niçoise aux oignons</span></li>
+            <li><strong>Tropézienne</strong><span>revisitée à la fleur d’oranger</span></li>
+            <li><strong>Pompe à l’huile</strong><span>la brioche provençale à l’huile d’olive</span></li>
+          </ul>
+        </article>
+        <article class="shore f-pistache" data-shore="italie" data-x="438" data-y="140" data-city="Rome" hidden>
+          <h3>Italie</h3>
+          <p class="where">De Gênes à Rome</p>
+          <ul>
+            <li><strong>Focaccia</strong><span>à l’huile d’olive, nature ou en sandwich</span></li>
+            <li><strong>Maritozzo</strong><span>la petite brioche romaine fourrée</span></li>
+            <li><strong>Panettone</strong><span>la grande brioche aux fruits confits</span></li>
+          </ul>
+        </article>
+        <article class="shore f-grenade" data-shore="espagne" data-x="147" data-y="241" data-city="Alicante" hidden>
+          <h3>Espagne</h3>
+          <p class="where">Le Levante, pays du turrón</p>
+          <ul>
+            <li><strong>Brioche au turon</strong><span>une brioche garnie de nougat espagnol</span></li>
+          </ul>
+        </article>
+        <article class="shore f-ink" data-shore="algerie" data-x="226" data-y="286" data-city="Alger" hidden>
+          <h3>Algérie</h3>
+          <p class="where">D’Oran à Alger</p>
+          <ul>
+            <li><strong>Montecaos</strong><span>les sablés algériens</span></li>
+            <li><strong>Mouna aux amandes</strong><span>la brioche des fêtes d’Oran</span></li>
+            <li><strong>Matlouh</strong><span>le pain-galette de semoule</span></li>
+          </ul>
+          <blockquote>« Mon père est né en Algérie, il nous racontait toujours des histoires de sa vie là-bas. »<footer>David Batty, fondateur, à Gault&amp;Millau</footer></blockquote>
+        </article>
+        <article class="shore f-sea" data-shore="grece" data-x="691" data-y="251" data-city="Athènes" hidden>
+          <h3>Grèce</h3>
+          <p class="where">Athènes et les îles</p>
+          <ul>
+            <li><strong>Portokalopita</strong><span>le gâteau grec à l’orange</span></li>
+          </ul>
+        </article>
+        <article class="shore f-turquoise" data-shore="turquie" data-x="808" data-y="165" data-city="Istanbul" hidden>
+          <h3>Turquie</h3>
+          <p class="where">Istanbul, sur le Bosphore</p>
+          <ul>
+            <li><strong>Börek épinards-feta</strong><span>le feuilleté aux épinards et à la feta</span></li>
+            <li><strong>Börek du moment</strong><span>classiques et revisités</span></li>
+          </ul>
+        </article>
+        <article class="shore f-zaatar" data-shore="levant" data-x="955" data-y="368" data-city="Beyrouth" hidden>
+          <h3>Levant</h3>
+          <p class="where">Beyrouth et la côte libanaise</p>
+          <ul>
+            <li><strong>Manouché</strong><span>la galette libanaise</span></li>
+            <li><strong>Pita</strong><span>nature ou en sandwich</span></li>
+            <li><strong>Brioche au zaatar</strong><span>et le cold brew au zaatar au comptoir</span></li>
+            <li><strong>Brownie tahini-sésame</strong><span>et le latte tahini-vanille</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="tally">La vitrine change avec les saisons : demandez au comptoir ce qui sort du four aujourd’hui.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pains" id="pains" aria-labelledby="h-pains">
+  <div class="pains__text">
+    <h2 id="h-pains" data-in>Les pains, tous au levain</h2>
+    <p data-in style="--i:1">Une gamme courte, sur levain naturel, à base de farines bio ou raisonnées et de blés anciens. Des fermentations lentes, pour la mie comme pour la croûte.</p>
+    <ul class="rows">
+      <li data-in style="--i:2;--c:var(--orange)"><span class="n">Signature</span><span class="v">huile d’olive, thym, fleur de fenouil</span></li>
+      <li data-in style="--i:2;--c:var(--zaatar)"><span class="n">Tourte de meule</span><span class="v">nature ou aux graines</span></li>
+      <li data-in style="--i:3;--c:var(--pistache)"><span class="n">Petit épeautre</span><span class="v">blé ancien</span></li>
+      <li data-in style="--i:3;--c:var(--orange)"><span class="n">Khorasan</span><span class="v">blé ancien, goût de noisette</span></li>
+      <li data-in style="--i:4;--c:var(--grenade)"><span class="n">Pain Apollon</span><span class="v">farine de seigle</span></li>
+      <li data-in style="--i:4;--c:var(--sea)"><span class="n">Miche dattes-noisette</span><span class="v">fruits et fruits secs</span></li>
+      <li data-in style="--i:5;--c:var(--zaatar)"><span class="n">Pain complet</span><span class="v">farine complète</span></li>
+      <li data-in style="--i:5;--c:var(--ink)"><span class="n">Hallah</span><span class="v">pain brioché tressé</span></li>
+    </ul>
+  </div>
+  <figure class="pains__pic" data-in style="--i:2">
+    <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=1000&amp;q=75&amp;auto=format&amp;fit=crop" width="1000" height="1250" alt="Grosse miche ronde au levain, croûte farinée et grignes ouvertes" loading="lazy">
+  </figure>
+</section>
+
+<section class="comptoir" id="comptoir" aria-labelledby="h-comptoir">
+  <div class="comptoir__top">
+    <div>
+      <h2 id="h-comptoir" data-in>Le comptoir, du café au déjeuner</h2>
+      <p class="comptoir__intro" data-in style="--i:1">Trente places assises, un salon lumineux et une terrasse sur le boulevard. Viennoiseries faites sur place au beurre AOP.</p>
+    </div>
+    <figure class="comptoir__pic" data-in style="--i:2"><img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=1200&amp;q=72&amp;auto=format&amp;fit=crop" width="1200" height="750" alt="Matcha latte servi dans une tasse" loading="lazy"></figure>
+  </div>
+  <div class="formules">
+    <div class="formule" data-in style="--i:2"><p><b>Formule du midi</b>la plus légère des deux</p><strong>9,90 €</strong></div>
+    <div class="formule" data-in style="--i:3"><p><b>Formule complète</b>un sandwich, deux choux ou un cookie, une boisson</p><strong>13,90 €</strong></div>
+  </div>
+  <div class="cols">
+    <div data-in style="--i:2">
+      <h3>Sandwichs et salé</h3>
+      <ul>
+        <li>Focaccia-bagnat au thon</li>
+        <li>Hallah au poulet mariné</li>
+        <li>Quiche tomate, feta, aubergine</li>
+        <li>Börek et tartes aux herbes</li>
+        <li>Plat du jour et salades</li>
+      </ul>
+    </div>
+    <div data-in style="--i:3">
+      <h3>Douceurs</h3>
+      <ul>
+        <li>Tarte pistache-fleur d’oranger</li>
+        <li>Pain au chocolat gianduja</li>
+        <li>Babka au chocolat</li>
+        <li>Flan vanille revisité</li>
+        <li>Cookie XL aux cacahuètes</li>
+        <li>Foya chocolat, praliné, noisettes</li>
+      </ul>
+    </div>
+    <div data-in style="--i:4">
+      <h3>À boire</h3>
+      <ul>
+        <li>Café de la Brûlerie de Belleville</li>
+        <li>Latte tahini-vanille</li>
+        <li>Latte praliné-tonka</li>
+        <li>Cold brew au zaatar</li>
+        <li>Matcha à la fleur d’oranger</li>
+        <li>Thé glacé menthe-jasmin</li>
+        <li>Chocolat chaud maison</li>
+      </ul>
+      <small>Carte des boissons imaginée avec le mixologue Nicolas Lasjuilliarias.</small>
+    </div>
+  </div>
+</section>
+
+<section class="gal" aria-labelledby="h-gal">
+  <div class="gal__head">
+    <h2 id="h-gal">Un air de Méditerranée</h2>
+    <p>7 photos · faites glisser</p>
+  </div>
+  <div class="strip" id="strip" tabindex="0" aria-label="Galerie de photos, défilement horizontal">
+    <figure class="m-tall"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="1200" alt="Ruelle blanchie à la chaux descendant vers la mer bleue" loading="lazy"></figure>
+    <div class="m-pair">
+      <figure><img src="https://images.unsplash.com/photo-1767114915974-3481fa23cbb0?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="675" alt="Galettes de pain, houmous et coupelles d’épices sur une planche" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1579005162638-11c872e1586e?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="675" alt="Verre de thé ambré posé sur un tapis tissé rouge et bleu" loading="lazy"></figure>
+    </div>
+    <figure class="m-wide"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1600&amp;q=72&amp;auto=format&amp;fit=crop" width="1600" height="1000" alt="Village blanc accroché à la falaise au-dessus de la mer, au coucher du soleil" loading="lazy"></figure>
+    <div class="m-pair">
+      <figure><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="675" alt="Croissants dorés sur un plan de travail" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="675" alt="Mains qui pétrissent une pâte sur un plan fariné" loading="lazy"></figure>
+    </div>
+    <figure class="m-tall"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="1200" alt="Table de salon de thé près d’une grande fenêtre" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="maison" id="maison" aria-labelledby="h-maison">
+  <div>
+    <h2 id="h-maison" data-in>Un journaliste passé au fournil</h2>
+    <div class="maison__text">
+      <p data-in style="--i:1">David Batty a été journaliste gastronomique pendant une quinzaine d’années. Après 2020, il passe son CAP de boulanger à l’école Ferrandi et ouvre une première Boulangerie Méditerranéenne à Montrouge.</p>
+      <p data-in style="--i:2">L’idée tient en une phrase : une boulangerie de quartier qui explore les recettes de tout le pourtour méditerranéen. Du levain naturel, des ingrédients bio, raisonnés ou en circuit court, et des spécialités que l’on trouve rarement à Paris.</p>
+      <p data-in style="--i:3">En juillet 2025, la maison s’installe boulevard de Courcelles, à deux pas de la place des Ternes, avec deux fois plus de places assises et une terrasse.</p>
+    </div>
+  </div>
+  <aside class="sister" data-in style="--i:2" aria-labelledby="h-sister">
+    <h3 id="h-sister">Deux adresses, une même vitrine</h3>
+    <ol class="timeline">
+      <li><b>2022</b><span>Ouverture à Montrouge, 22 rue Edgar-Quinet, face à la mairie</span></li>
+      <li><b>2025</b><span>Ouverture à Paris 8e, 73 boulevard de Courcelles</span></li>
+    </ol>
+    <p>Suivez les sorties du four sur Instagram : <a href="https://www.instagram.com/boulangerielbm/" target="_blank" rel="noopener">@boulangerielbm</a></p>
+  </aside>
+</section>
+
+<section class="venir" id="venir" aria-labelledby="h-venir">
+  <h2 id="h-venir" data-in>Venir boulevard de Courcelles</h2>
+  <p class="venir__lead" data-in style="--i:1">Au 73, entre la place des Ternes et le parc Monceau. Métro Ternes ou Courcelles, ligne 2.</p>
+  <div class="venir__grid">
+    <div data-in style="--i:2">
+      <table class="hours" id="hours">
+        <caption>Horaires</caption>
+        <tbody>
+          <tr data-d="1"><th scope="row">Lundi</th><td>8 h – 19 h 30</td></tr>
+          <tr data-d="2"><th scope="row">Mardi</th><td>8 h – 19 h 30</td></tr>
+          <tr data-d="3"><th scope="row">Mercredi</th><td>8 h – 19 h 30</td></tr>
+          <tr data-d="4"><th scope="row">Jeudi</th><td>8 h – 19 h 30</td></tr>
+          <tr data-d="5"><th scope="row">Vendredi</th><td>8 h – 19 h 30</td></tr>
+          <tr data-d="6"><th scope="row">Samedi</th><td>8 h – 18 h 30</td></tr>
+          <tr data-d="0"><th scope="row">Dimanche</th><td>Fermé</td></tr>
+        </tbody>
+      </table>
+      <p class="hours-note">Horaires susceptibles de varier les jours fériés.</p>
+    </div>
+    <ul class="facts" data-in style="--i:3">
+      <li><b>30 places et une terrasse</b>Pour un café, un déjeuner ou un goûter sur place.</li>
+      <li><b>À emporter</b>Pains, viennoiseries, sandwichs et boissons.</li>
+      <li><b>La maison sœur</b>22 rue Edgar-Quinet, Montrouge.</li>
+    </ul>
+  </div>
+  <div class="cells">
+    <a class="cell" href="tel:+33668157022"><span>Appeler</span><b>06 68 15 70 22</b></a>
+    <a class="cell" href="mailto:lbm.courcelles@gmail.com?subject=Question%20pour%20la%20boulangerie%20de%20Courcelles"><span>Écrire</span><b>lbm.courcelles@gmail.com</b></a>
+    <a class="cell cell--go" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Boulangerie+M%C3%A9diterran%C3%A9enne%2C+73+boulevard+de+Courcelles%2C+75008+Paris" target="_blank" rel="noopener"><span>Itinéraire</span><b>73 bd de Courcelles, 75008</b></a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1800&amp;q=70&amp;auto=format&amp;fit=crop" width="1800" height="1200" alt="" loading="lazy">
+  <div class="foot__top">
+    <ul>
+      <li><a href="#tour">La vitrine</a></li>
+      <li><a href="#pains">Les pains</a></li>
+      <li><a href="#comptoir">Le comptoir</a></li>
+      <li><a href="https://www.instagram.com/boulangerielbm/" target="_blank" rel="noopener">Instagram @boulangerielbm</a></li>
+    </ul>
+    <ul>
+      <li>73, boulevard de Courcelles, 75008 Paris</li>
+      <li><a href="tel:+33668157022">06 68 15 70 22</a></li>
+      <li><a href="mailto:lbm.courcelles@gmail.com">lbm.courcelles@gmail.com</a></li>
+    </ul>
+  </div>
+  <div class="foot__bottom">
+    <p class="foot__name" aria-hidden="true"><span>la boulangerie</span><span>méditerranéenne</span></p>
+    <p class="foot__legal">Démo réalisée par Raul Hatos — site non officiel. Photos d’illustration Unsplash. Carte : Natural Earth (domaine public). Carte des produits établie d’après la presse (Gault&amp;Millau, Gilles Pudlowski, Zepros, Do It In Paris) ; à confirmer par la boutique.</p>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  // statut d'ouverture, heure de Paris
+  const H={0:null,1:[480,1170],2:[480,1170],3:[480,1170],4:[480,1170],5:[480,1170],6:[480,1110]};
+  const fmt=m=>`${Math.floor(m/60)} h${m%60?' '+String(m%60).padStart(2,'0'):''}`;
+  const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}));
+  const d=now.getDay(),m=now.getHours()*60+now.getMinutes(),t=H[d];
+  const st=document.getElementById('status');
+  let txt;
+  if(t&&m>=t[0]&&m<t[1])txt=`Ouvert · jusqu’à ${fmt(t[1])}`;
+  else{let k=d,first=true;while(true){const h=H[k];if(h&&(!first||m<h[0]))break;k=(k+1)%7;first=false}
+    st.classList.add('closed');
+    const days=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+    txt=`Fermé · ouvre ${k===d?"aujourd’hui":k===(d+1)%7?'demain':days[k]} à ${fmt(H[k][0])}`}
+  st.querySelector('span').textContent=txt+' · 73 bd de Courcelles';
+  const row=document.querySelector(`#hours tr[data-d="${d}"]`);if(row)row.classList.add('today');
+
+  // le tour : rives
+  const map=document.getElementById('map'),route=document.getElementById('route');
+  const arts=[...document.querySelectorAll('.shore')],chips=[...document.querySelectorAll('#shores button')];
+  const pins=arts.map(a=>{const b=document.createElement('button');b.type='button';b.className='pin';b.dataset.shore=a.dataset.shore;
+    b.style.left=a.dataset.x/10+'%';b.style.top=a.dataset.y/4.93+'%';b.setAttribute('aria-label',a.dataset.city+' : '+a.querySelector('h3').textContent);
+    b.innerHTML='<b></b><span>'+a.dataset.city+'</span>';map.appendChild(b);return b});
+  const pick=k=>{arts.forEach(a=>a.hidden=a.dataset.shore!==k);
+    [...chips,...pins].forEach(b=>b.setAttribute('aria-pressed',b.dataset.shore===k));
+    const a=arts.find(x=>x.dataset.shore===k),x=+a.dataset.x,y=+a.dataset.y;
+    route.setAttribute('d',`M210 0 Q ${(210+x)/2+40} ${y*.25} ${x} ${y}`)};
+  [...chips,...pins].forEach(b=>b.addEventListener('click',()=>pick(b.dataset.shore)));
+  pick('provence');
+
+  // galerie : glisser à la souris
+  const s=document.getElementById('strip');let down=false,x0=0,l0=0;
+  s.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down=true;x0=e.clientX;l0=s.scrollLeft;s.style.cursor='grabbing'});
+  addEventListener('pointerup',()=>{down=false;s.style.cursor=''});
+  s.addEventListener('pointermove',e=>{if(down){s.scrollLeft=l0-(e.clientX-x0);e.preventDefault()}});
+
+  // entrées
+  const els=document.querySelectorAll('[data-in]');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('on'));return}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>io.observe(e));
+})();
+</script>
+</body>
+</html>
