@@ -2,481 +2,526 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>L'Arc Café · café-brasserie, 27 avenue Carnot, Paris 17e</title>
-<meta name="description" content="L'Arc Café, café-brasserie au 27, avenue Carnot, Paris 17e, à deux pas de l'Arc de Triomphe. Petit-déjeuner, déjeuner, dîner et terrasse sous les arbres.">
-<meta name="theme-color" content="#1f3c88">
+<title>L’Arc Café · brasserie, 27 avenue Carnot, Paris 17e</title>
+<meta name="description" content="L’Arc Café, brasserie au 27 avenue Carnot (Paris 17e), à 250 m de l’Arc de Triomphe. Petit-déjeuner dès 7 h, cuisine en continu, terrasse sous les arbres, dîner jusqu’à minuit.">
+<meta name="theme-color" content="#f2f2ef">
+<meta property="og:title" content="L’Arc Café · brasserie de l’avenue Carnot">
+<meta property="og:description" content="Du premier expresso à 7 h au dîner jusqu’à minuit, en terrasse sous les arbres, à 250 m de l’Arc de Triomphe.">
+<meta property="og:image" content="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/arc-cafe-facade-terrasse.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231c4a37'/%3E%3Cpath d='M0 22a4 4 0 0 0 8 0a4 4 0 0 0 8 0a4 4 0 0 0 8 0a4 4 0 0 0 8 0V32H0z' fill='%23f2f2ef'/%3E%3Ctext x='16' y='17' font-family='Georgia' font-size='15' font-weight='700' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Système adapté du DESIGN.md « Wired » (awesome-design) : duo éditorial encre / blanc, coins carrés,
-   boutons noirs pleins, titres hauts et étroits, texte courant en serif humaniste.
-   Adapté : le bleu émaillé des plaques de rue parisiennes remplace le bleu lien, le vert des platanes
-   sert de seul champ de couleur. Motif unique : l'étoile des douze avenues de la place Charles-de-Gaulle. */
+/* Monde : la devanture du 27 avenue Carnot. Store vert bouteille festonné, lettrage blanc,
+   chaises en rotin bleu et blanc, assiettes en faïence bleue, bois chaud de la salle.
+   Motif unique : le feston du store, en bord des bandeaux verts. */
 :root{
-  --paper:#ffffff;
-  --stone:#efeeea;       /* pierre de taille haussmannienne, gris, pas crème */
-  --stone-2:#e2e0da;
-  --ink:#111111;
-  --ink-2:#3a3a3a;
-  --enamel:#1f3c88;      /* bleu des plaques de rue */
-  --enamel-2:#18306e;
-  --on-enamel:#ffffff;
-  --leaf:#264d36;        /* vert des platanes et du cadre des plaques */
-  --on-leaf:#f3f4ef;
-  --open:#1d6b3a;
-  --closed:#a3261b;
-  --m:clamp(16px,3vw,48px);
-  --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
-  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --s-lead:clamp(1.3rem,1.1rem + .8vw,1.875rem);
-  --s-head:clamp(2.4rem,1.4rem + 4vw,5.25rem);
-  --s-mega:clamp(4.2rem,1rem + 12vw,12.5rem);
+  --ground:#f2f2ef;
+  --ground-2:#e5e6e1;
+  --ink:#14231b;
+  --ink-2:#3d4a43;
+  --awning:#1c4a37;
+  --awning-2:#163d2d;
+  --on-awning:#ffffff;
+  --faience:#244a8f;
+  --open:#1f7a45;
+  --closed:#a3311f;
+  --m:clamp(16px,3.2vw,48px);
+  --display:"Fraunces",Georgia,serif;
+  --text:"Figtree",system-ui,sans-serif;
+  --s-sm:.9375rem;
+  --s-body:clamp(1rem,.96rem + .2vw,1.125rem);
+  --s-lead:clamp(1.0625rem,1rem + .35vw,1.3125rem);
+  --s-h2:clamp(2.1rem,1.4rem + 2.6vw,3.9rem);
+  --s-h1:clamp(2.5rem,1.6rem + 3.2vw,4.6rem);
   --ease:cubic-bezier(.16,1,.3,1);
-  --display:"Archivo",system-ui,sans-serif;
-  --text:"Newsreader",Georgia,serif;
+  --scallop-g:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M0 0h28v0a14 14 0 0 1-28 0z' fill='%23f2f2ef'/%3E%3C/svg%3E");
+  --scallop:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M0 0h28v0a14 14 0 0 1-28 0z' fill='%231c4a37'/%3E%3C/svg%3E");
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--text);font-size:var(--s-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
-img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
-::selection{background:var(--enamel);color:var(--on-enamel)}
-:focus-visible{outline:3px solid var(--enamel);outline-offset:3px}
-h1,h2,h3{font-family:var(--display);font-stretch:68%;font-weight:800;letter-spacing:-.02em;line-height:.92;margin:0;text-wrap:balance}
-h2{font-size:var(--s-head)}
-h3{font-size:var(--s-lead);line-height:1.05;letter-spacing:-.01em}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--text);font-size:var(--s-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip;touch-action:manipulation}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1.5px}
+::selection{background:var(--awning);color:#fff}
+:focus-visible{outline:3px solid var(--faience);outline-offset:3px}
+.on-green :focus-visible,.bar :focus-visible{outline-color:#fff}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.02;margin:0;text-wrap:balance;font-variation-settings:"opsz" 120}
+h2{font-size:var(--s-h2)}
+h3{font-size:clamp(1.3rem,1.15rem + .5vw,1.6rem);line-height:1.15;letter-spacing:-.01em}
 p{margin:0}
-.wrap{width:100%;max-width:1440px;margin:0 auto;padding:0 var(--m)}
-.num{font-variant-numeric:tabular-nums}
+.num,.price,time{font-variant-numeric:tabular-nums}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--m)}
+.skip{position:absolute;left:var(--m);top:-60px;background:var(--ink);color:#fff;padding:12px 18px;z-index:20;text-decoration:none;font-weight:600}
+.skip:focus{top:8px}
 
 /* bandeau démo */
-.demo{margin:0;background:var(--stone);color:var(--ink-2);font:500 13px/1.3 var(--display);font-stretch:100%;text-align:center;padding:7px var(--m)}
+.demo{background:var(--ground-2);color:var(--ink-2);font-size:14px;line-height:1.3;text-align:center;padding:7px var(--m)}
 
-/* nav */
-.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px var(--m);max-width:1440px;margin:0 auto;position:relative;z-index:3}
-.mark{font:800 22px/1 var(--display);font-stretch:70%;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.mark svg{width:26px;height:26px}
-.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font:600 16px/1 var(--display);font-stretch:90%}
-.nav ul a{text-decoration:none}
-.nav ul a:hover{text-decoration:underline}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 24px;font:700 16px/1 var(--display);font-stretch:95%;letter-spacing:.01em;text-decoration:none;border:2px solid var(--ink);background:var(--ink);color:#fff;transition:background .25s var(--ease),color .25s var(--ease),transform .2s var(--ease)}
-.btn:hover{background:var(--enamel);border-color:var(--enamel)}
-.btn:active{transform:translateY(1px)}
-.btn.ghost{background:transparent;color:var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* barre = le store */
+.bar{background:var(--awning);color:var(--on-awning);position:relative;z-index:3}
+.bar::after{content:"";position:absolute;left:0;right:0;top:100%;height:14px;background:var(--scallop) repeat-x;background-size:28px 14px}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:68px}
+.mark{font:700 clamp(1.35rem,1.2rem + .5vw,1.7rem)/1 var(--display);letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.bar ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:600;font-size:16px}
+.bar ul a{text-decoration:none;padding:12px 0}
+.bar ul a:hover{text-decoration:underline}
+.bar .call{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;background:#fff;color:var(--awning);font-weight:700;text-decoration:none;border-radius:999px;transition:transform .15s var(--ease)}
+.bar .call:active{transform:scale(.96)}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:700 16px/1 var(--text);text-decoration:none;border:2px solid var(--awning);background:var(--awning);color:#fff;cursor:pointer;transition:background-color .2s var(--ease),color .2s var(--ease),transform .15s var(--ease)}
+.btn:hover{background:var(--awning-2)}
+.btn:active{transform:scale(.96)}
+.btn.line{background:transparent;color:var(--awning)}
+.btn.line:hover{background:var(--awning);color:#fff}
 .btn svg{width:18px;height:18px;flex:none}
-.nav .btn{min-height:44px;padding:10px 18px}
 
-/* hero */
-.hero{position:relative;overflow:hidden;min-height:min(92svh,940px);display:flex;align-items:flex-end}
-.star{position:absolute;pointer-events:none}
-.hero .star{width:max(118vh,900px);height:max(118vh,900px);right:calc(-1 * max(40vh,300px));top:50%;transform:translateY(-50%)}
-.ray{fill:var(--stone)}
-.ray.carnot{fill:var(--enamel)}
-.hero-text{position:relative;z-index:2;padding:0 var(--m) clamp(40px,8vh,96px);max-width:1440px;margin:0 auto;width:100%}
-.hero h1{font-size:var(--s-mega);font-stretch:62%;letter-spacing:-.03em;line-height:.86;max-width:7ch}
-.hero .lead{font-size:var(--s-lead);line-height:1.3;max-width:24ch;margin-top:36px}
-.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.status{display:inline-flex;align-items:center;gap:10px;margin-top:24px;font:600 16px/1.2 var(--display);font-stretch:95%}
-.dot{width:12px;height:12px;border-radius:50%;background:var(--ink-2);flex:none}
+/* héros */
+.hero{padding:clamp(40px,5vw,72px) 0 clamp(56px,6vw,96px)}
+.hero .wrap{display:grid;gap:28px}
+.hero h1{font-size:var(--s-h1);font-weight:600;max-width:13ch}
+.hero .lead{font-size:var(--s-lead);max-width:44ch;margin-top:18px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:26px;max-width:540px}
+.tile{background:var(--ground-2);padding:14px 16px;border-radius:14px}
+.tile b{display:block;font:600 clamp(1.5rem,1.3rem + .6vw,1.9rem)/1.05 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.tile span{display:block;font-size:var(--s-sm);margin-top:4px;color:var(--ink-2);line-height:1.35}
+.tile.green{background:var(--awning);color:#fff}
+.tile.green span{color:#dfe9e3}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.status{display:flex;align-items:center;gap:10px;margin-top:18px;font-weight:600;font-size:16px}
+.dot{width:11px;height:11px;border-radius:50%;background:var(--ink-2);flex:none}
 .dot.on{background:var(--open)}
 .dot.off{background:var(--closed)}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:8px}
+.collage figure{margin:0;position:relative;overflow:hidden;border-radius:18px;background:var(--ground-2)}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage .big{grid-column:1/-1;aspect-ratio:16/8.4}
+.collage .sm{aspect-ratio:4/3;align-self:start}
+.collage figcaption{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font-size:14px;font-weight:600;padding:6px 12px;border-radius:999px}
+.hero .photo-m{display:none}
 
-/* intro statement */
-.intro{padding-block:clamp(96px,16vh,200px)}
-.intro p{font-family:var(--display);font-stretch:85%;font-weight:600;font-size:clamp(1.5rem,1rem + 1.6vw,2.25rem);line-height:1.22;letter-spacing:-.01em;max-width:30ch}
-.thumb{display:inline-block;width:1.15em;height:1.15em;border-radius:50%;vertical-align:-.2em;margin:0 .12em;overflow:hidden;background:var(--stone)}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.intro .grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:end}
-.intro .side{font-family:var(--text);font-weight:400;font-stretch:100%;font-size:var(--s-body);line-height:1.55;max-width:38ch;color:var(--ink)}
-.intro .side strong{font-family:var(--display);font-stretch:85%;font-size:clamp(2.6rem,2rem + 2vw,4rem);line-height:1;display:block;margin-bottom:6px;letter-spacing:-.02em}
-
-/* moment / live */
-.moment{background:var(--enamel);color:var(--on-enamel);padding:clamp(72px,12vh,160px) 0;position:relative;overflow:hidden}
-.moment .star{width:900px;height:900px;left:-420px;bottom:-480px;opacity:.13}
-.moment .star .ray,.moment .star .ray.carnot{fill:#fff}
-.moment .grid{display:grid;gap:48px;position:relative}
-.moment h2{max-width:11ch}
-.moment .intro-l{margin-top:24px;max-width:36ch;font-size:var(--s-body)}
-.days{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;border:0}
-.days legend{font:700 16px/1 var(--display);margin-bottom:14px;padding:0}
-.days label{position:relative}
-.days input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.days span{display:inline-flex;align-items:center;justify-content:center;min-width:56px;min-height:48px;padding:0 14px;font:700 16px/1 var(--display);font-stretch:90%;background:var(--enamel-2);color:#fff;transition:background .2s var(--ease),color .2s var(--ease)}
-.days input:checked + span{background:#fff;color:var(--enamel)}
-.days input:focus-visible + span{outline:3px solid #fff;outline-offset:3px}
-.slider{margin-top:32px}
-.slider label{display:flex;justify-content:space-between;align-items:baseline;font:700 16px/1 var(--display);margin-bottom:12px}
-.slider output{font-size:clamp(2rem,1.6rem + 1.4vw,3rem);font-stretch:70%;letter-spacing:-.02em}
+/* moments : module interactif */
+.on-green{background:var(--awning);color:#fff;position:relative}
+.on-green::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:var(--scallop-g) repeat-x;background-size:28px 14px}
+.moments{padding:clamp(88px,10vw,150px) 0 clamp(80px,9vw,140px)}
+.moments .wrap{display:grid;gap:40px}
+.moments .intro p{margin-top:16px;max-width:40ch;font-size:var(--s-lead);color:#e3ece7}
+.picker{margin-top:30px}
+.picker .lab{font-weight:700;display:block;margin-bottom:12px}
+.days{display:flex;flex-wrap:wrap;gap:6px}
+.days button{min-width:56px;min-height:48px;padding:0 14px;border:0;border-radius:999px;background:var(--awning-2);color:#fff;font:700 16px/1 var(--text);cursor:pointer;transition:background-color .2s var(--ease),color .2s var(--ease),transform .15s var(--ease)}
+.days button:active{transform:scale(.96)}
+.days button[aria-pressed=true]{background:#fff;color:var(--awning)}
+.hour{margin-top:26px}
+.hour label{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;margin-bottom:6px}
+.hour output{font:600 clamp(1.8rem,1.5rem + 1vw,2.4rem)/1 var(--display)}
 input[type=range]{width:100%;height:48px;background:transparent;-webkit-appearance:none;appearance:none;margin:0;cursor:pointer}
-input[type=range]::-webkit-slider-runnable-track{height:8px;background:var(--enamel-2)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;border-radius:50%;background:#fff;margin-top:-12px}
-input[type=range]::-moz-range-track{height:8px;background:var(--enamel-2)}
-input[type=range]::-moz-range-thumb{width:32px;height:32px;border:0;border-radius:50%;background:#fff}
-.verdict{background:#fff;color:var(--ink);padding:clamp(24px,3vw,40px)}
-.verdict .state{display:flex;align-items:center;gap:14px;font:800 clamp(2.4rem,1.8rem + 2.4vw,4rem)/1 var(--display);font-stretch:66%;letter-spacing:-.02em}
-.verdict .state .dot{width:18px;height:18px}
-.verdict .when{margin-top:10px;font-size:var(--s-body)}
-.verdict .serve{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
-.verdict .serve img{width:96px;height:96px;border-radius:50%;object-fit:cover}
-.verdict .serve h3{font-size:clamp(1.4rem,1.2rem + .6vw,1.75rem)}
-.verdict .serve p{margin-top:6px}
-.verdict .fine{margin-top:24px;font-size:var(--s-small);color:var(--ink-2)}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:var(--awning-2)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;margin-top:-12px}
+input[type=range]::-moz-range-track{height:6px;background:var(--awning-2)}
+input[type=range]::-moz-range-thumb{width:30px;height:30px;border:0;border-radius:50%;background:#fff}
+.verdict{background:var(--ground);color:var(--ink);border-radius:22px;overflow:hidden;display:grid}
+.verdict .ph{aspect-ratio:16/10;background:var(--ground-2)}
+.verdict .ph img{width:100%;height:100%;object-fit:cover}
+.verdict .body{padding:clamp(22px,2.6vw,36px)}
+.state{display:flex;align-items:center;gap:12px;font:600 clamp(1.7rem,1.4rem + 1vw,2.3rem)/1 var(--display)}
+.state .dot{width:15px;height:15px}
+.when{margin-top:8px;color:var(--ink-2)}
+.verdict h3{margin-top:22px}
+.verdict ul{list-style:none;margin:12px 0 0;padding:0}
+.verdict li{display:flex;justify-content:space-between;gap:16px;padding:9px 0}
+
+.verdict .fine{margin-top:16px;font-size:var(--s-sm);color:var(--ink-2)}
 
 /* carte */
-.carte{padding-block:clamp(96px,16vh,200px) clamp(64px,10vh,120px)}
-.carte .head{display:grid;gap:24px;align-items:end;margin-bottom:56px}
-.carte .head p{max-width:42ch}
-.menu{display:grid;gap:56px}
-.course h3{display:flex;align-items:center;gap:14px;margin-bottom:20px}
-.course h3 svg{width:.8em;height:.8em;flex:none}
-.course ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.course li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:10px 0;background:linear-gradient(var(--paper),var(--paper))}
-.course li img,.course li .ph{width:56px;height:56px;border-radius:50%;object-fit:cover;background:var(--stone)}
-.course li .ph{display:grid;place-items:center;background:var(--enamel);color:#fff}
-.course li .ph svg{width:24px;height:24px}
-.course li b{font:700 clamp(1.1rem,1rem + .35vw,1.3rem)/1.15 var(--display);font-stretch:85%;display:block}
-.course li small{font-size:var(--s-small);color:var(--ink-2);display:block;margin-top:2px}
-.carte .note{margin-top:48px;font-size:var(--s-small);color:var(--ink-2);max-width:60ch}
+.carte{padding:clamp(96px,11vw,170px) 0 clamp(72px,8vw,120px)}
+.carte .head{display:grid;gap:18px;margin-bottom:36px}
+.carte .head p{max-width:52ch;font-size:var(--s-lead)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{flex:none;min-height:46px;padding:0 18px;border-radius:999px;border:2px solid var(--awning);background:transparent;color:var(--awning);font:700 16px/1 var(--text);cursor:pointer;transition:background-color .2s var(--ease),color .2s var(--ease),transform .15s var(--ease)}
+.tabs button:active{transform:scale(.96)}
+.tabs button[aria-selected=true]{background:var(--awning);color:#fff}
+.board{display:grid;gap:32px;margin-top:28px}
+.panel ul{list-style:none;margin:0;padding:0;columns:1;column-gap:48px}
+.panel li{break-inside:avoid;display:grid;grid-template-columns:1fr auto;gap:3px 18px;padding:11px 0}
+.panel li b{font-weight:600;font-size:clamp(1.05rem,1rem + .2vw,1.15rem)}
+.panel li small{grid-column:1/-1;font-size:var(--s-sm);color:var(--ink-2);line-height:1.4}
+.panel li .price{font-weight:700;white-space:nowrap}
+.panel .pnote{margin-top:16px;font-size:var(--s-sm);color:var(--ink-2)}
+.board figure{margin:0;border-radius:18px;overflow:hidden;background:var(--ground-2);aspect-ratio:4/3}
+.board figure img{width:100%;height:100%;object-fit:cover;transition:opacity .35s var(--ease)}
+.carte .src{margin-top:28px;font-size:var(--s-sm);color:var(--ink-2)}
+.js .panel[hidden]{display:none}
 
-/* terrasse */
-.terrasse{background:var(--leaf);color:var(--on-leaf);padding:clamp(72px,12vh,160px) 0}
-.terrasse .grid{display:grid;gap:48px;align-items:center}
-.terrasse figure{margin:0;position:relative}
-.terrasse figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.terrasse figure .disc{position:absolute;width:42%;aspect-ratio:1;border-radius:50%;overflow:hidden;right:-6%;bottom:-8%;border:8px solid var(--leaf)}
-.terrasse figure .disc img{aspect-ratio:1;height:100%}
-.terrasse figcaption{margin-top:14px;font-size:var(--s-small);opacity:.9}
-.terrasse h2{max-width:10ch}
-.terrasse .txt p{margin-top:24px;max-width:40ch}
-.terrasse .facts{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 32px}
-.terrasse .facts b{display:block;font:800 clamp(1.4rem,1.2rem + .8vw,2rem)/1 var(--display);font-stretch:75%;margin-bottom:6px}
-.terrasse .facts span{font-size:var(--s-small)}
+/* le soir */
+.soir{background:var(--ground-2);padding:clamp(88px,10vw,150px) 0}
+.soir .wrap{display:grid;gap:36px}
+.soir .txt p{margin-top:16px;max-width:46ch;font-size:var(--s-lead)}
+.soir .facts{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:10px}
+.soir .facts li{display:flex;gap:12px;align-items:baseline}
+.soir .facts b{min-width:8.5ch;font-weight:700}
+.mosaic{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.mosaic figure{margin:0;position:relative;border-radius:16px;overflow:hidden;background:var(--ground)}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic .a{grid-column:1/-1;aspect-ratio:16/10}
+.mosaic .b,.mosaic .c,.mosaic .d,.mosaic .e,.mosaic .f{aspect-ratio:1/1}
+.mosaic .f{display:none}
+.mosaic figcaption{position:absolute;left:8px;bottom:8px;background:#fff;color:var(--ink);font-size:14px;font-weight:600;padding:5px 10px;border-radius:999px}
 
-/* venir */
-.venir{padding-block:clamp(96px,16vh,200px)}
-.venir .grid{display:grid;gap:48px;align-items:center}
-.map{position:relative;width:100%;max-width:640px;aspect-ratio:1;margin:0 auto}
-.map svg{width:100%;height:100%;overflow:visible}
-.map .ray{fill:var(--stone-2)}
-.map .ray.carnot{fill:var(--enamel)}
-.map text{font:600 22px var(--display);font-stretch:85%;fill:var(--ink-2)}
-.map text.hl{fill:var(--enamel);font-weight:800;font-size:26px}
-.venir dl{margin:32px 0 0;display:grid;gap:22px}
-.venir dt{font:700 16px/1.2 var(--display);font-stretch:90%}
-.venir dd{margin:4px 0 0}
-.venir .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+/* venir / horaires */
+.venir{padding:clamp(96px,11vw,170px) 0}
+.venir .wrap{display:grid;gap:48px}
+.venir .addr{font:600 clamp(1.5rem,1.2rem + 1vw,2.1rem)/1.15 var(--display);margin-top:18px}
+.lines{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
+.lines li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline}
+.pill{display:inline-flex;min-width:30px;height:30px;padding:0 8px;align-items:center;justify-content:center;border-radius:999px;background:var(--faience);color:#fff;font-weight:700;font-size:14px}
+.near{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.near li{background:var(--ground-2);border-radius:14px;padding:12px 14px;font-size:var(--s-sm);line-height:1.35}
+.near b{display:block;font-size:16px}
+.hours{width:100%;border-collapse:collapse;margin-top:22px;font-size:clamp(1.05rem,1rem + .3vw,1.25rem)}
+.hours th,.hours td{padding:13px 0;text-align:left;border-bottom:1px solid #d9d8cf;font-weight:500}
+.hours td{text-align:right;font-weight:700}
+.hours tr.today th,.hours tr.today td{color:var(--awning)}
+.hours tr.today th{font-weight:800}
+.hnote{margin-top:14px;font-size:var(--s-sm);color:var(--ink-2)}
+.contact{margin-top:36px;display:grid;gap:10px}
+.contact a{display:flex;align-items:center;gap:12px;min-height:48px;text-decoration:none;font-weight:600}
+.contact a:hover span{text-decoration:underline}
+.contact svg{width:22px;height:22px;flex:none;color:var(--awning)}
 
-/* horaires + contact */
-.infos{background:var(--stone);padding:clamp(72px,12vh,160px) 0}
-.infos .grid{display:grid;gap:56px}
-.hours{width:100%;border-collapse:collapse;margin-top:32px;font-family:var(--display);font-stretch:90%;font-size:clamp(1.1rem,1rem + .4vw,1.375rem)}
-.hours th,.hours td{padding:14px 0;text-align:left;border-bottom:1px solid var(--stone-2)}
-.hours td{text-align:right;font-weight:600}
-.hours tr.today th,.hours tr.today td{color:var(--enamel);font-weight:800}
-.hours tr.today th::after{content:" · aujourd’hui";font-weight:600}
-.infos .fine{margin-top:20px;font-size:var(--s-small);color:var(--ink-2);max-width:48ch}
-.contact-list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:4px}
-.contact-list a{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:14px;padding:16px 0;text-decoration:none;font:700 clamp(1.15rem,1rem + .5vw,1.5rem)/1.2 var(--display);font-stretch:85%}
-.contact-list a span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;transition:background .2s var(--ease)}
-.contact-list a:hover span{background:var(--enamel)}
-.contact-list a svg{width:20px;height:20px}
-.contact-list small{display:block;font:400 var(--s-small)/1.3 var(--text);color:var(--ink-2);margin-top:2px}
-.rating{margin-top:36px;font-size:var(--s-body)}
-.rating b{font:800 clamp(2.6rem,2rem + 2vw,4rem)/1 var(--display);font-stretch:70%;margin-right:10px;letter-spacing:-.02em}
+/* pied */
+.foot{padding:72px 0 40px}
+.foot .name{font:700 clamp(3rem,1.5rem + 7vw,8.5rem)/.95 var(--display);letter-spacing:-.03em;color:#fff}
+.foot .meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;margin-top:28px;color:#dfe9e3;font-size:var(--s-sm)}
+.foot a{color:#fff}
 
-/* footer */
-footer{background:var(--ink);color:#fff;padding:clamp(64px,10vh,120px) 0 40px;overflow:hidden}
-footer .big{font:800 clamp(4rem,0rem + 17vw,16rem)/.84 var(--display);font-stretch:62%;letter-spacing:-.03em;white-space:nowrap}
-footer .row{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;margin-top:40px;font-size:var(--s-small);color:#d6d6d6}
-footer a{color:#fff}
-
-/* motion */
-.rv{opacity:1}
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.js .rv.in{opacity:1;transform:none}
-.hero .star .ray{transform-origin:0 0;transform:scaleX(1);transition:transform 1.4s var(--ease)}
-.js .hero .star:not(.in) .ray{transform:scaleX(.2)}
-.hero .star .photo{transition:transform 1.6s var(--ease)}
-.js .hero .star:not(.in) .photo{transform:scale(.7)}
+/* apparitions */
+.js .rv{opacity:0;transform:translateY(22px)}
+.js .rv.in{opacity:1;transform:none;transition:opacity .8s var(--ease) var(--d,0s),transform .8s var(--ease) var(--d,0s)}
+.js .zoom img{transform:scale(1.07)}
+.js .zoom.in img{transform:none;transition:transform 1.8s var(--ease)}
 @media (prefers-reduced-motion:reduce){
-  .js .rv{opacity:1;transform:none;transition:none}
-  .js .hero .star:not(.in) .ray,.js .hero .star:not(.in) .photo{transform:none}
   html{scroll-behavior:auto}
+  .js .rv,.js .zoom img{opacity:1;transform:none;transition:none}
+  .js .rv.in,.js .zoom.in img{transition:none}
+  *{transition-duration:0s!important}
 }
 
-/* desktop */
-@media (min-width:900px){
-  .hero-text{padding-bottom:clamp(56px,10vh,120px)}
-  .intro .grid{grid-template-columns:1.6fr 1fr;gap:80px}
-  .moment .grid{grid-template-columns:1fr 1.05fr;gap:80px;align-items:start}
-  .carte .head{grid-template-columns:1fr 1fr}
-  .menu{grid-template-columns:1fr 1fr;gap:64px 96px}
-  .terrasse .grid{grid-template-columns:1fr 1fr;gap:96px}
-  .venir .grid{grid-template-columns:1.1fr 1fr;gap:96px}
-  .infos .grid{grid-template-columns:1fr 1fr;gap:120px}
+/* largeurs */
+@media (max-width:759px){
+  .bar ul{display:none}
+  .bar .call span{display:none}
+  .bar .call{padding:0 14px}
+  .hero{padding-top:30px}
+  .hero .photo-m{display:block;margin:20px 0 0;border-radius:16px;overflow:hidden;aspect-ratio:16/10;background:var(--ground-2)}
+  .hero .photo-m img{width:100%;height:100%;object-fit:cover}
+  .hero .collage .big{display:none}
+  .actions .btn{flex:1 1 100%}
+  .hero .wrap > div:first-child{display:flex;flex-direction:column}
+  .hero .actions{order:3}.hero .status{order:4;margin-bottom:6px}.hero .tiles{order:5}
+  .near{grid-template-columns:1fr}
 }
-@media (max-width:899px){
-  .nav ul{display:none}
-  .hero{min-height:auto;display:block;padding-top:min(84vw,440px)}
-  .hero .star{width:132vw;height:132vw;right:-56vw;top:-10vw;transform:none}
-  .hero h1{max-width:none;font-size:25vw;white-space:nowrap}
-  .hero .actions .btn{flex:1 1 100%}
-  .terrasse figure .disc{right:-2%;width:38%}
+@media (min-width:760px){
+  .panel ul{columns:2}
+  .mosaic{grid-template-columns:repeat(3,1fr)}
+  .mosaic .a{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+  .mosaic .b,.mosaic .c,.mosaic .d,.mosaic .e,.mosaic .f{aspect-ratio:4/3}
+  .mosaic .f{display:block}
+}
+@media (min-width:1000px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(32px,4vw,64px);align-items:center}
+  .moments .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,80px);align-items:center}
+  .verdict{grid-template-columns:1fr}
+  .board{grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:56px;align-items:start}
+  .board figure{position:sticky;top:24px;aspect-ratio:3/4}
+  .soir .wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:clamp(40px,5vw,72px);align-items:center}
+  .venir .wrap{grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,96px)}
+}
+@media (min-width:1000px) and (max-width:1199px){
+  .hero h1{font-size:clamp(2.4rem,1rem + 3vw,3.3rem)}
+  .tile b{font-size:1.45rem}
+  .bar ul{gap:20px}
+}
+@media (min-width:1280px){
+  .verdict{grid-template-columns:.85fr 1.15fr}
+  .verdict .ph{aspect-ratio:auto;min-height:100%}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <!-- les douze avenues de l'Étoile, angles stylisés tous les 30°, Carnot vers le nord-ouest -->
-    <symbol id="rays" viewBox="-500 -500 1000 1000">
-      <g>
-        <rect class="ray" x="0" y="-34" width="520" height="68" transform="rotate(15)"/>
-        <rect class="ray" x="0" y="-26" width="520" height="52" transform="rotate(45)"/>
-        <rect class="ray" x="0" y="-26" width="520" height="52" transform="rotate(75)"/>
-        <rect class="ray" x="0" y="-26" width="520" height="52" transform="rotate(105)"/>
-        <rect class="ray" x="0" y="-26" width="520" height="52" transform="rotate(135)"/>
-        <rect class="ray" x="0" y="-30" width="520" height="60" transform="rotate(165)"/>
-        <rect class="ray" x="0" y="-30" width="520" height="60" transform="rotate(195)"/>
-        <rect class="ray carnot" x="0" y="-30" width="520" height="60" transform="rotate(225)"/>
-        <rect class="ray" x="0" y="-26" width="520" height="52" transform="rotate(255)"/>
-        <rect class="ray" x="0" y="-26" width="520" height="52" transform="rotate(285)"/>
-        <rect class="ray" x="0" y="-26" width="520" height="52" transform="rotate(315)"/>
-        <rect class="ray" x="0" y="-26" width="520" height="52" transform="rotate(345)"/>
-      </g>
-    </symbol>
-    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 3h3.5l1.8 4.6-2.3 1.5a11 11 0 0 0 6 6l1.5-2.3L20 14.6V18a2 2 0 0 1-2.2 2A16 16 0 0 1 3 5.2 2 2 0 0 1 5 3z"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
-    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
-    <symbol id="i-star" viewBox="-10 -10 20 20"><g fill="currentColor"><rect x="-1.1" y="-10" width="2.2" height="20"/><rect x="-1.1" y="-10" width="2.2" height="20" transform="rotate(30)"/><rect x="-1.1" y="-10" width="2.2" height="20" transform="rotate(60)"/><rect x="-1.1" y="-10" width="2.2" height="20" transform="rotate(90)"/><rect x="-1.1" y="-10" width="2.2" height="20" transform="rotate(120)"/><rect x="-1.1" y="-10" width="2.2" height="20" transform="rotate(150)"/><circle r="4"/></g></symbol>
-  </defs>
-</svg>
-
-<header class="nav">
-  <a class="mark" href="#top" aria-label="L'Arc Café, accueil"><svg aria-hidden="true"><use href="#i-star"/></svg>L'Arc Café</a>
-  <ul>
-    <li><a href="#carte">La carte</a></li>
-    <li><a href="#terrasse">La terrasse</a></li>
-    <li><a href="#horaires">Horaires</a></li>
-    <li><a href="#venir">Venir</a></li>
-  </ul>
-  <a class="btn" href="tel:+33143805051"><svg aria-hidden="true"><use href="#i-tel"/></svg>Réserver</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#" translate="no">L’Arc Café</a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#moments">Quand passer</a></li>
+        <li><a href="#carte">La carte</a></li>
+        <li><a href="#soir">La terrasse</a></li>
+        <li><a href="#venir">Horaires et accès</a></li>
+      </ul>
+    </nav>
+    <a class="call" href="tel:+33153817743"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="num">01&nbsp;53&nbsp;81&nbsp;77&nbsp;43</span><b class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Appeler</b></a>
+  </div>
 </header>
 
-<main id="top">
+<main id="contenu">
 <section class="hero" aria-labelledby="t-hero">
-  <svg class="star" viewBox="-500 -500 1000 1000" aria-hidden="true">
-    <defs><clipPath id="place"><circle r="190"/></clipPath></defs>
-    <use href="#rays" x="-500" y="-500" width="1000" height="1000"/>
-    <g class="photo">
-      <circle r="204" fill="#fff"/>
-      <image href="https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?w=900&h=900&q=75&auto=format&fit=crop&crop=center" x="-260" y="-190" width="520" height="380" preserveAspectRatio="xMidYMid slice" clip-path="url(#place)"/>
-    </g>
-    <circle cx="-339" cy="-339" r="22" fill="#fff"/><circle cx="-339" cy="-339" r="12" fill="var(--ink)"/>
-  </svg>
-  <div class="hero-text">
-    <h1 id="t-hero">L'Arc Café</h1>
-    <p class="lead">Café-brasserie au 27, avenue Carnot, à deux pas de l'Arc de Triomphe. Du premier café au dîner, en terrasse.</p>
-    <div class="actions">
-      <a class="btn" href="tel:+33143805051"><svg aria-hidden="true"><use href="#i-tel"/></svg>Appeler · 01 43 80 50 51</a>
-      <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27Arc%20Caf%C3%A9%2C%2027%20avenue%20Carnot%2C%2075017%20Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Itinéraire</a>
-    </div>
-    <p class="status" id="status" aria-live="polite"><span class="dot"></span><span>Ouvert tous les jours</span></p>
-  </div>
-</section>
-
-<section class="intro wrap" aria-label="L'Arc Café en bref">
-  <div class="grid">
-    <p class="rv">Un croissant <span class="thumb"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=120&h=120&q=70&auto=format&fit=crop" alt="" width="60" height="60"></span> le matin, une salade niçoise <span class="thumb"><img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=120&h=120&q=70&auto=format&fit=crop" alt="" width="60" height="60"></span> à midi, un verre en terrasse <span class="thumb"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=120&h=120&q=70&auto=format&fit=crop" alt="" width="60" height="60"></span> le soir : la même adresse, du matin jusqu’à minuit.</p>
-    <p class="side rv"><strong>Avenue Carnot</strong>L’une des douze avenues qui partent de la place Charles-de-Gaulle. Le café tient l’angle au numéro 27, à quelques minutes à pied de l’Arc.</p>
-  </div>
-</section>
-
-<section class="moment" id="moment" aria-labelledby="t-moment">
-  <svg class="star" viewBox="-500 -500 1000 1000" aria-hidden="true"><use href="#rays" x="-500" y="-500" width="1000" height="1000"/></svg>
-  <div class="wrap grid">
+  <div class="wrap">
     <div>
-      <h2 id="t-moment" class="rv">Vous passez quand ?</h2>
-      <p class="intro-l rv">Choisissez un jour et une heure : on vous dit si c’est ouvert et ce qu’on prend à ce moment-là.</p>
-      <form class="rv" style="margin-top:40px" onsubmit="return false">
-        <fieldset class="days">
-          <legend>Le jour</legend>
-          <label><input type="radio" name="d" value="1"><span>Lun</span></label>
-          <label><input type="radio" name="d" value="2"><span>Mar</span></label>
-          <label><input type="radio" name="d" value="3"><span>Mer</span></label>
-          <label><input type="radio" name="d" value="4"><span>Jeu</span></label>
-          <label><input type="radio" name="d" value="5"><span>Ven</span></label>
-          <label><input type="radio" name="d" value="6"><span>Sam</span></label>
-          <label><input type="radio" name="d" value="0"><span>Dim</span></label>
-        </fieldset>
-        <div class="slider">
-          <label for="h"><span>L’heure</span><output id="ho" for="h" class="num">12 h 30</output></label>
-          <input type="range" id="h" min="6" max="25.5" step=".5" value="12.5" aria-valuetext="12 h 30">
+      <h1 id="t-hero" class="rv">La brasserie de l’avenue Carnot</h1>
+      <p class="lead rv" style="--d:.08s"><span translate="no">L’Arc Café</span>, au 27 avenue Carnot, à 250&nbsp;m de l’Arc de Triomphe&nbsp;: petit-déjeuner dès 7&nbsp;h, cuisine en continu, dîner jusqu’à minuit, en salle ou en terrasse sous les arbres.</p>
+      <figure class="photo-m rv" style="--d:.12s"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/arc-cafe-facade-terrasse.jpg" alt="La terrasse de L’Arc Café sous son store vert, avenue Carnot" width="1344" height="756"></figure>
+      <div class="tiles rv" style="--d:.16s">
+        <div class="tile green"><b class="num">10&nbsp;€</b><span>la formule petit-déjeuner, de 7&nbsp;h à 11&nbsp;h&nbsp;30</span></div>
+        <div class="tile"><b class="num">22&nbsp;€</b><span>le tartare de bœuf français, frites maison</span></div>
+        <div class="tile"><b class="num">11&nbsp;€</b><span>spritz et cocktails, en terrasse</span></div>
+        <div class="tile"><b class="num">7&nbsp;j/7</b><span>jusqu’à minuit, 23&nbsp;h le dimanche</span></div>
+      </div>
+      <div class="actions rv" style="--d:.22s">
+        <a class="btn" href="https://xn--larc-caf-i1a.com/?reservation">Réserver une table</a>
+        <a class="btn line" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27Arc%20Caf%C3%A9%2C%2027%20avenue%20Carnot%2C%2075017%20Paris"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+      </div>
+      <p class="status rv" style="--d:.28s" id="status" aria-live="polite"><span class="dot on" aria-hidden="true"></span>Ouvert 7 jours sur 7, dès 7&nbsp;h en semaine</p>
+    </div>
+    <div class="collage">
+      <figure class="big zoom rv" style="--d:.05s"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/arc-cafe-facade-terrasse.jpg" alt="La devanture et la terrasse de L’Arc Café, store vert festonné, au pied des immeubles haussmanniens" width="1344" height="756"><figcaption>27 avenue Carnot</figcaption></figure>
+      <figure class="sm rv" style="--d:.15s"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Item/22534/Attached%20Files/Optimized/arc-cafe-magret.jpg" alt="Magret de canard, haricots verts et pommes de terre" width="896" height="672"><figcaption>Magret entier · <span class="num">26&nbsp;€</span></figcaption></figure>
+      <figure class="sm rv" style="--d:.22s"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/galerie-arc-cafe-planche.jpg" alt="Planche de fromages et charcuteries avec un verre de vin rouge" width="896" height="672"><figcaption>Planche mixte · <span class="num">21&nbsp;€</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="on-green moments" id="moments" aria-labelledby="t-moments">
+  <div class="wrap">
+    <div class="intro">
+      <h2 id="t-moments" class="rv">Vous passez quand&nbsp;?</h2>
+      <p class="rv" style="--d:.08s">Choisissez le jour et l’heure&nbsp;: la page vous dit si la porte est ouverte et ce que la cuisine sert à ce moment-là.</p>
+      <div class="picker rv" style="--d:.14s">
+        <span class="lab" id="lab-day">Le jour</span>
+        <div class="days" role="group" aria-labelledby="lab-day">
+          <button type="button" data-d="1" aria-pressed="false">Lun</button>
+          <button type="button" data-d="2" aria-pressed="false">Mar</button>
+          <button type="button" data-d="3" aria-pressed="false">Mer</button>
+          <button type="button" data-d="4" aria-pressed="false">Jeu</button>
+          <button type="button" data-d="5" aria-pressed="false">Ven</button>
+          <button type="button" data-d="6" aria-pressed="false">Sam</button>
+          <button type="button" data-d="0" aria-pressed="false">Dim</button>
         </div>
-      </form>
-    </div>
-    <div class="verdict rv" aria-live="polite">
-      <p class="state"><span class="dot on" id="vdot"></span><span id="vstate">Ouvert</span></p>
-      <p class="when num" id="vwhen">Jusqu’à minuit.</p>
-      <div class="serve">
-        <img id="vimg" src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=200&h=200&q=70&auto=format&fit=crop" alt="" width="96" height="96">
-        <div><h3 id="vtitle">Déjeuner</h3><p id="vtext">Omelette, croque-monsieur, salade niçoise ou plat du jour.</p></div>
+        <div class="hour">
+          <label for="h"><span>L’heure</span><output id="ho" for="h" class="num">12 h 30</output></label>
+          <input type="range" id="h" min="6" max="24.5" step="0.5" value="12.5">
+        </div>
       </div>
-      <p class="fine">Horaires publiés en ligne, à confirmer au 01 43 80 50 51.</p>
+    </div>
+    <div class="verdict rv" style="--d:.1s" aria-live="polite">
+      <div class="ph"><img id="vimg" src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/galerie-arc-cafe-salade-cesar.jpg" alt="Salade César dans une assiette en faïence bleue" width="896" height="672" loading="lazy"></div>
+      <div class="body">
+        <p class="state"><span class="dot on" id="vdot" aria-hidden="true"></span><span id="vstate">Ouvert</span></p>
+        <p class="when" id="vwhen">Cuisine en continu jusqu’à minuit.</p>
+        <h3 id="vtitle">Le déjeuner</h3>
+        <ul id="vlist" class="num">
+          <li><span>Croque-monsieur, frites maison</span><span class="price">16&nbsp;€</span></li>
+          <li><span>Salade César</span><span class="price">20&nbsp;€</span></li>
+          <li><span>Tartare de bœuf français</span><span class="price">22&nbsp;€</span></li>
+        </ul>
+        <p class="fine">D’après les horaires et la carte publiés par la maison.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="carte wrap" id="carte" aria-labelledby="t-carte">
-  <div class="head">
-    <h2 id="t-carte" class="rv">La carte</h2>
-    <p class="rv">Une carte de brasserie qui va de l’omelette au plat du jour, du croissant au café gourmand. Ce que les habitués commandent le plus :</p>
+<section class="carte" id="carte" aria-labelledby="t-carte">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="t-carte" class="rv">La carte, prix compris</h2>
+      <p class="rv" style="--d:.08s">Une cuisine de brasserie faite maison, du croque au levain à la côte de bœuf à partager, et les glaces de la maison Pedone pour finir.</p>
+    </div>
+    <div class="tabs rv" style="--d:.12s" role="tablist" aria-label="Rubriques de la carte">
+      <button type="button" role="tab" id="tb-matin" aria-controls="p-matin" aria-selected="true" data-img="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Item/22537/Attached%20Files/Optimized/arc-cafe-creme-brulee.jpg" data-alt="Cappuccino et crème brûlée sur une table en bois">Le matin</button>
+      <button type="button" role="tab" id="tb-entrees" aria-controls="p-entrees" aria-selected="false" data-img="galerie-arc-cafe-oeufs-cocotte.jpg" data-alt="Œufs cocotte forestier et mouillettes">Entrées</button>
+      <button type="button" role="tab" id="tb-plats" aria-controls="p-plats" aria-selected="false" data-img="galerie-arc-cafe-plat.jpg" data-alt="Un plat servi dans une assiette en faïence bleue, verre de vin blanc">Plats</button>
+      <button type="button" role="tab" id="tb-salades" aria-controls="p-salades" aria-selected="false" data-img="galerie-arc-cafe-salade-cesar.jpg" data-alt="Salade César au poulet croustillant">Salades et croques</button>
+      <button type="button" role="tab" id="tb-desserts" aria-controls="p-desserts" aria-selected="false" data-img="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Item/22537/Attached%20Files/Optimized/arc-cafe-creme-brulee.jpg" data-alt="Crème brûlée vanille bourbon et cappuccino">Desserts</button>
+      <button type="button" role="tab" id="tb-bar" aria-controls="p-bar" aria-selected="false" data-img="galerie-arc-cafe-vins.jpg" data-alt="Bouteilles de vin, dont un Clos de l’Ours">Au bar</button>
+    </div>
+    <div class="board">
+      <div class="panels num">
+        <div class="panel" role="tabpanel" id="p-matin" aria-labelledby="tb-matin">
+          <ul>
+            <li><b>Breakfast</b><span class="price">10&nbsp;€</span><small>Boisson chaude au choix, orange pressée, fromage blanc, tartine ou croissant</small></li>
+            <li><b>Big Breakfast</b><span class="price">13,50&nbsp;€</span><small>La formule, plus un œuf au plat ou une omelette jambon ou fromage (mixte&nbsp;: +&nbsp;1&nbsp;€)</small></li>
+            <li><b>Expresso Massaya bio</b><span class="price">2,80&nbsp;€</span><small>Décaféiné Solela bio au même prix</small></li>
+            <li><b>Noisette</b><span class="price">3&nbsp;€</span></li>
+            <li><b>Café crème</b><span class="price">4,90&nbsp;€</span></li>
+            <li><b>Cappuccino</b><span class="price">6&nbsp;€</span></li>
+            <li><b>Chocolat chaud</b><span class="price">5&nbsp;€</span></li>
+            <li><b>Matcha latte, chaï latte</b><span class="price">6&nbsp;€</span></li>
+            <li><b>Orange ou citron pressé</b><span class="price">5,50&nbsp;€</span></li>
+            <li><b>Thé, tisane</b><span class="price">5&nbsp;€</span></li>
+          </ul>
+          <p class="pnote">Formules servies tous les jours jusqu’à 11&nbsp;h&nbsp;30. Boissons chaudes&nbsp;: +&nbsp;0,50&nbsp;€ à partir de 16&nbsp;h.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="p-entrees" aria-labelledby="tb-entrees" hidden>
+          <ul>
+            <li><b>Soupe à l’oignon</b><span class="price">12&nbsp;€</span><small>Emmental râpé et croûtons</small></li>
+            <li><b>Œufs mayonnaise maison</b><span class="price">7&nbsp;€</span></li>
+            <li><b>Escargots, les 6 · les 12</b><span class="price">12&nbsp;€ · 21&nbsp;€</span></li>
+            <li><b>Terrine de campagne de chez Anne</b><span class="price">11&nbsp;€</span></li>
+            <li><b>Burrata crémeuse</b><span class="price">12&nbsp;€</span><small>Tomates anciennes et fruits de saison</small></li>
+            <li><b>Œufs cocotte forestier</b><span class="price">11&nbsp;€</span><small>Lard grillé et mouillettes</small></li>
+            <li><b>Camembert rôti aux herbes</b><span class="price">11&nbsp;€</span><small>Miel, noix, toasts et pommes grenaille</small></li>
+            <li><b>Truite rose en gravlax</b><span class="price">13&nbsp;€</span><small>Baies et fines herbes</small></li>
+            <li><b>Tataki de bœuf</b><span class="price">13&nbsp;€</span><small>Julienne de légumes</small></li>
+            <li><b>Avocado toast</b><span class="price">11&nbsp;€</span><small>Œuf poché et pickles de gingembre</small></li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-plats" aria-labelledby="tb-plats" hidden>
+          <ul>
+            <li><b>Tartare de bœuf français</b><span class="price">22&nbsp;€</span><small>Frites maison et salade verte</small></li>
+            <li><b>Pièce du boucher</b><span class="price">23&nbsp;€</span><small>Sauce au poivre, pommes grenaille</small></li>
+            <li><b>Entrecôte de bœuf, 300&nbsp;g et plus</b><span class="price">34&nbsp;€</span><small>Frites maison et salade verte</small></li>
+            <li><b>Magret de canard entier</b><span class="price">26&nbsp;€</span><small>Sauce miel et agrumes, gratin de pommes de terre et patate douce</small></li>
+            <li><b>Suprême de poulet aux morilles</b><span class="price">24&nbsp;€</span><small>Risotto crémeux</small></li>
+            <li><b>Côte de cochon fermière</b><span class="price">22&nbsp;€</span><small>Sauce moutarde, piperade au piment d’Espelette</small></li>
+            <li><b>Brochette de gambas</b><span class="price">24&nbsp;€</span><small>Riz safrané</small></li>
+            <li><b>Steak de thon, sauce vierge</b><span class="price">23&nbsp;€</span><small>Ratatouille maison</small></li>
+            <li><b>Cheeseburger de l’Arc</b><span class="price">22&nbsp;€</span><small>Au bœuf ou au poulet, frites maison</small></li>
+            <li><b>Burger végétarien</b><span class="price">21&nbsp;€</span></li>
+            <li><b>Bucatini à la sauce tomate</b><span class="price">20&nbsp;€</span><small>Burrata, parmesan et pignons de pin</small></li>
+            <li><b>Côte de bœuf 1,2&nbsp;kg et ses sauces</b><span class="price">78&nbsp;€</span><small>À partager, garniture au choix</small></li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-salades" aria-labelledby="tb-salades" hidden>
+          <ul>
+            <li><b>Salade César</b><span class="price">20&nbsp;€</span><small>Romaine, poulet croustillant, œuf dur, parmesan</small></li>
+            <li><b>Salade niçoise</b><span class="price">22&nbsp;€</span><small>Thon rouge frais, anchois, olives kalamata, artichauts poivrade</small></li>
+            <li><b>Salade Seguin</b><span class="price">20&nbsp;€</span><small>Toasts de cabécou, poitrine fumée, noix, miel</small></li>
+            <li><b>Salade italienne</b><span class="price">20&nbsp;€</span><small>Jambon de pays, burrata, melon, tomates anciennes</small></li>
+            <li><b>Poke bowl végétarien d’été</b><span class="price">19&nbsp;€</span><small>Riz, avocat, lentilles du Puy, mangue, falafels</small></li>
+            <li><b>Croque-monsieur</b><span class="price">16&nbsp;€</span><small>Pain de campagne au levain, jambon blanc, emmental</small></li>
+            <li><b>Croque-madame</b><span class="price">17&nbsp;€</span><small>Le même, avec son œuf sur le plat</small></li>
+            <li><b>Omelette</b><span class="price">16&nbsp;€</span><small>Nature, emmental, jambon ou champignons</small></li>
+            <li><b>Omelette complète</b><span class="price">17&nbsp;€</span></li>
+          </ul>
+          <p class="pnote">Croques et omelettes servis avec frites maison et salade verte.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="p-desserts" aria-labelledby="tb-desserts" hidden>
+          <ul>
+            <li><b>Crème brûlée vanille bourbon</b><span class="price">9&nbsp;€</span><small>Caramélisée au sucre de canne</small></li>
+            <li><b>Tiramisu au café</b><span class="price">9,50&nbsp;€</span></li>
+            <li><b>Tarte tatin</b><span class="price">10&nbsp;€</span><small>Et sa glace vanille bourbon</small></li>
+            <li><b>Moelleux au chocolat</b><span class="price">10&nbsp;€</span><small>Et son sorbet mandarine</small></li>
+            <li><b>Mousse au chocolat</b><span class="price">8&nbsp;€</span></li>
+            <li><b>Flan à la gousse de vanille</b><span class="price">7,50&nbsp;€</span></li>
+            <li><b>Café gourmand</b><span class="price">10&nbsp;€</span><small>Tiramisu, crème brûlée, mousse au chocolat</small></li>
+            <li><b>Crêpes maison</b><span class="price">6,50&nbsp;€</span><small>Sucre, chocolat, confiture, citron ou caramel beurre salé</small></li>
+            <li><b>Boule de glace ou sorbet Pedone</b><span class="price">3,50&nbsp;€</span><small>Noisette du Piémont, fraise des bois, caffè espresso…</small></li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-bar" aria-labelledby="tb-bar" hidden>
+          <ul>
+            <li><b>Spritz Aperol, sureau ou limoncello</b><span class="price">11&nbsp;€</span></li>
+            <li><b>Mojito, margarita, paloma, moscow mule</b><span class="price">11&nbsp;€</span></li>
+            <li><b>French 75</b><span class="price">14&nbsp;€</span><small>Champagne brut, citron, gin</small></li>
+            <li><b>Espresso martini, pornstar martini</b><span class="price">13&nbsp;€</span></li>
+            <li><b>Mocktails</b><span class="price">9&nbsp;€</span><small>Virgin mojito, Bora Bora, pink lemonade</small></li>
+            <li><b>Demory Paris IPA, 25&nbsp;cl</b><span class="price">5,90&nbsp;€</span></li>
+            <li><b>1664, 25&nbsp;cl · 50&nbsp;cl</b><span class="price">5&nbsp;€ · 9,50&nbsp;€</span></li>
+            <li><b>Chardonnay La Hupe, 15&nbsp;cl</b><span class="price">6,50&nbsp;€</span><small>IGP Pays d’Oc, aussi en pichet et en bouteille</small></li>
+            <li><b>Planche apéritive</b><span class="price">23&nbsp;€</span><small>Burrata, guacamole, éperlans, falafels, olives kalamata</small></li>
+            <li><b>Éperlans frits, sauce tartare</b><span class="price">9&nbsp;€</span></li>
+            <li><b>Assiette de frites maison</b><span class="price">5&nbsp;€</span></li>
+          </ul>
+        </div>
+        <p class="src">Carte «&nbsp;été 2026&nbsp;» publiée par la maison&nbsp;; prix et plats du moment à confirmer sur place.</p>
+      </div>
+      <figure class="rv" style="--d:.1s"><img id="cimg" src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Item/22537/Attached%20Files/Optimized/arc-cafe-creme-brulee.jpg" alt="Cappuccino et crème brûlée sur une table en bois" width="896" height="672" loading="lazy"></figure>
+    </div>
   </div>
-  <div class="menu">
-    <div class="course rv">
-      <h3><svg aria-hidden="true"><use href="#i-star"/></svg>Le matin</h3>
-      <ul>
-        <li><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=120&h=120&q=70&auto=format&fit=crop" alt="Croissants" width="56" height="56" loading="lazy"><div><b>Croissant</b><small>avec un café, au comptoir ou en terrasse</small></div></li>
-        <li><img src="https://images.unsplash.com/photo-1535140728325-a4d3707eee61?w=120&h=120&q=70&auto=format&fit=crop" alt="Petit-déjeuner servi sur une table" width="56" height="56" loading="lazy"><div><b>Petit-déjeuner</b><small>servi dès l’ouverture</small></div></li>
-      </ul>
-    </div>
-    <div class="course rv">
-      <h3><svg aria-hidden="true"><use href="#i-star"/></svg>La brasserie</h3>
-      <ul>
-        <li><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=120&h=120&q=70&auto=format&fit=crop" alt="Œuf sur pain grillé" width="56" height="56" loading="lazy"><div><b>Omelettes et croque-monsieur</b><small>les classiques du midi</small></div></li>
-        <li><img src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?w=120&h=120&q=70&auto=format&fit=crop" alt="Burger" width="56" height="56" loading="lazy"><div><b>Burger au chorizo grillé</b><small>bœuf, chorizo</small></div></li>
-        <li><span class="ph" aria-hidden="true"><svg><use href="#i-star"/></svg></span><div><b>Escargots</b><small>pour ouvrir le repas</small></div></li>
-        <li><span class="ph" aria-hidden="true"><svg><use href="#i-star"/></svg></span><div><b>Plat du jour</b><small>affiché sur place</small></div></li>
-      </ul>
-    </div>
-    <div class="course rv">
-      <h3><svg aria-hidden="true"><use href="#i-star"/></svg>Les salades</h3>
-      <ul>
-        <li><img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=120&h=120&q=70&auto=format&fit=crop" alt="Salade composée" width="56" height="56" loading="lazy"><div><b>Salade niçoise</b><small>le grand classique d’été</small></div></li>
-        <li><span class="ph" aria-hidden="true"><svg><use href="#i-star"/></svg></span><div><b>Salade vegan</b><small>une option sans produit animal</small></div></li>
-      </ul>
-    </div>
-    <div class="course rv">
-      <h3><svg aria-hidden="true"><use href="#i-star"/></svg>Les desserts</h3>
-      <ul>
-        <li><span class="ph" aria-hidden="true"><svg><use href="#i-star"/></svg></span><div><b>Crème brûlée à la vanille</b></div></li>
-        <li><span class="ph" aria-hidden="true"><svg><use href="#i-star"/></svg></span><div><b>Mousse au chocolat</b></div></li>
-        <li><span class="ph" aria-hidden="true"><svg><use href="#i-star"/></svg></span><div><b>Tiramisu, dame blanche</b></div></li>
-        <li><span class="ph" aria-hidden="true"><svg><use href="#i-star"/></svg></span><div><b>Café gourmand</b><small>avec ses mignardises</small></div></li>
-      </ul>
-    </div>
-    <div class="course rv">
-      <h3><svg aria-hidden="true"><use href="#i-star"/></svg>Au bar</h3>
-      <ul>
-        <li><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=120&h=120&q=70&auto=format&fit=crop" alt="Verres de vin rouge" width="56" height="56" loading="lazy"><div><b>Vins, bières, cocktails</b><small>à l’heure de l’apéritif</small></div></li>
-      </ul>
-    </div>
-  </div>
-  <p class="note">Plats relevés dans les avis publics de l’établissement. Prix, carte du moment et plat du jour : sur place ou par téléphone.</p>
 </section>
 
-<section class="terrasse" id="terrasse" aria-labelledby="t-terr">
-  <div class="wrap grid">
-    <figure class="rv">
-      <img src="https://images.unsplash.com/photo-1509439581779-6298f75bf6e5?w=1100&h=1375&q=75&auto=format&fit=crop" alt="L'Arc de Triomphe sous un ciel bleu" width="1100" height="1375" loading="lazy">
-      <div class="disc"><img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=500&h=500&q=70&auto=format&fit=crop" alt="Tables de terrasse sur un trottoir parisien" width="500" height="500" loading="lazy"></div>
-      <figcaption>L’Arc de Triomphe, au bout de l’avenue Carnot.</figcaption>
-    </figure>
+<section class="soir" id="soir" aria-labelledby="t-soir">
+  <div class="wrap">
     <div class="txt">
-      <h2 id="t-terr" class="rv">La terrasse sous les arbres</h2>
-      <p class="rv">Une grande terrasse à l’angle, à l’ombre des arbres de l’avenue. Une adresse calme, à deux pas de l’Étoile : on y prend un petit-déjeuner au soleil, un déjeuner rapide entre deux rendez-vous ou un dernier verre le soir.</p>
-      <div class="facts rv">
-        <div><b>Sur place</b><span>salle et terrasse</span></div>
-        <div><b>À emporter</b><span>et en livraison</span></div>
-        <div><b>Groupes</b><span>réservation par téléphone</span></div>
-        <div><b>Paiement</b><span>carte, sans contact, titres-restaurant</span></div>
-      </div>
+      <h2 id="t-soir" class="rv">Le soir, le store s’allume</h2>
+      <p class="rv" style="--d:.08s">Quand le soleil tombe sur l’avenue Carnot, la terrasse reste servie jusqu’à minuit&nbsp;: grandes tablées, dîner à deux ou dernier verre sous les arbres. Dedans, murs vert bouteille, lampes basses et bois chaud.</p>
+      <ul class="facts rv num" style="--d:.14s">
+        <li><b>18–20&nbsp;h</b><span>apéritif, spritz et planches à partager</span></li>
+        <li><b>Minuit</b><span>dernier service du lundi au samedi</span></li>
+        <li><b>23&nbsp;h</b><span>le dimanche</span></li>
+        <li><b>Terrasse</b><span>ombragée, face à l’avenue, midi et soir</span></li>
+      </ul>
+    </div>
+    <div class="mosaic">
+      <figure class="a zoom rv"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/galerie-arc-cafe-facade-nuit.jpg" alt="La façade de L’Arc Café éclairée le soir, terrasse pleine" width="1195" height="896" loading="lazy"><figcaption>La façade, le soir</figcaption></figure>
+      <figure class="b rv" style="--d:.06s"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/galerie-arc-cafe-salle.jpg" alt="La salle aux murs verts, lampes de table allumées" width="1195" height="896" loading="lazy"><figcaption>La salle</figcaption></figure>
+      <figure class="c rv" style="--d:.12s"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/galerie-arc-cafe-ours.jpg" alt="Un grand ours en peluche tient l’ardoise du jour sur le trottoir" width="896" height="672" loading="lazy"><figcaption>L’ours et l’ardoise</figcaption></figure>
+      <figure class="d rv" style="--d:.18s"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/galerie-arc-cafe-terrasse.jpg" alt="La terrasse sous le store vert et les plantes" width="1195" height="896" loading="lazy"><figcaption>La terrasse</figcaption></figure>
+      <figure class="e rv" style="--d:.24s"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/galerie-arc-cafe-ardoise.jpg" alt="L’ardoise des suggestions écrite à la craie" width="896" height="672" loading="lazy"><figcaption>Les suggestions</figcaption></figure>
+      <figure class="f rv" style="--d:.3s"><img src="https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/galerie-arc-cafe-vins.jpg" alt="Bouteilles de vin alignées, dont un Clos de l’Ours" width="896" height="672" loading="lazy"><figcaption>La cave</figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="venir wrap" id="venir" aria-labelledby="t-venir">
-  <div class="grid">
-    <div class="map rv" role="img" aria-label="Plan stylisé des douze avenues de l'Étoile, avenue Carnot en bleu vers le nord-ouest, L'Arc Café au bout">
-      <svg viewBox="-500 -500 1000 1000" aria-hidden="true">
-        <use href="#rays" x="-500" y="-500" width="1000" height="1000"/>
-        <circle r="120" fill="var(--paper)"/>
-        <circle r="96" fill="var(--stone-2)"/>
-        <text x="0" y="6" text-anchor="middle" style="font-size:17px;fill:var(--ink)">Arc de Triomphe</text>
-        <text transform="rotate(15) translate(150 -40)">Champs-Élysées</text>
-        <text transform="rotate(45) translate(150 -34)">Marceau</text>
-        <text transform="rotate(75) translate(150 -34)">Iéna</text>
-        <text transform="rotate(105) translate(390 46) rotate(180)">Kléber</text>
-        <text transform="rotate(135) translate(420 46) rotate(180)">Victor-Hugo</text>
-        <text transform="rotate(165) translate(330 48) rotate(180)">Foch</text>
-        <text transform="rotate(195) translate(400 48) rotate(180)">Grande-Armée</text>
-        <text class="hl" transform="rotate(225) translate(340 52) rotate(180)">Avenue Carnot</text>
-        <text transform="rotate(255) translate(400 44) rotate(180)">Mac-Mahon</text>
-        <text transform="rotate(285) translate(150 -34)">Wagram</text>
-        <text transform="rotate(315) translate(150 -34)">Hoche</text>
-        <text transform="rotate(345) translate(150 -34)">Friedland</text>
-        <circle cx="-339" cy="-339" r="26" fill="var(--paper)"/><circle cx="-339" cy="-339" r="15" fill="var(--ink)"/>
-        <text x="-339" y="-384" text-anchor="middle" style="font-size:28px;font-weight:800;fill:var(--ink)">L’Arc Café · n° 27</text>
-      </svg>
+<section class="venir" id="venir" aria-labelledby="t-venir">
+  <div class="wrap">
+    <div>
+      <h2 id="t-venir" class="rv">Horaires et accès</h2>
+      <p class="addr rv" style="--d:.06s">27, avenue Carnot<br>75017 Paris</p>
+      <ul class="lines rv" style="--d:.1s">
+        <li><span class="pill">1</span><span>Argentine, à 250&nbsp;m</span></li>
+        <li><span class="pill">RER&nbsp;A</span><span>Charles de Gaulle – Étoile (lignes 1, 2, 6), à 400&nbsp;m</span></li>
+        <li><span class="pill">2</span><span>Ternes, à 600&nbsp;m</span></li>
+      </ul>
+      <ul class="near num rv" style="--d:.14s">
+        <li><b>Arc de Triomphe</b>250&nbsp;m, 3&nbsp;min à pied</li>
+        <li><b>Champs-Élysées</b>400&nbsp;m, 5&nbsp;min</li>
+        <li><b>Salle Wagram</b>550&nbsp;m, 7&nbsp;min</li>
+        <li><b>Palais des Congrès</b>800&nbsp;m, 10&nbsp;min</li>
+      </ul>
+      <div class="actions rv" style="--d:.18s">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27Arc%20Caf%C3%A9%2C%2027%20avenue%20Carnot%2C%2075017%20Paris">Itinéraire Google Maps</a>
+      </div>
     </div>
     <div>
-      <h2 class="rv" id="t-venir">27, avenue Carnot</h2>
-      <dl class="rv">
-        <div><dt>Adresse</dt><dd>27, avenue Carnot, 75017 Paris</dd></div>
-        <div><dt>Métro et RER</dt><dd>Charles de Gaulle – Étoile (lignes 1, 2, 6 et RER A)</dd></div>
-        <div><dt>Accès</dt><dd>Une marche à l’entrée, avec rampe fixe. Stationnement à proximité.</dd></div>
-      </dl>
-      <div class="actions rv">
-        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=L%27Arc%20Caf%C3%A9%2C%2027%20avenue%20Carnot%2C%2075017%20Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Itinéraire Google Maps</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="infos" id="horaires" aria-labelledby="t-h">
-  <div class="wrap grid">
-    <div class="rv">
-      <h2 id="t-h">Horaires</h2>
-      <table class="hours num">
+      <h3 class="rv">Ouvert tous les jours</h3>
+      <table class="hours num rv" style="--d:.06s">
+        <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Horaires d’ouverture</caption>
         <tbody>
-          <tr data-d="1"><th scope="row">Lundi</th><td>8 h – minuit</td></tr>
-          <tr data-d="2"><th scope="row">Mardi</th><td>8 h – minuit</td></tr>
-          <tr data-d="3"><th scope="row">Mercredi</th><td>8 h – minuit</td></tr>
-          <tr data-d="4"><th scope="row">Jeudi</th><td>8 h – minuit</td></tr>
-          <tr data-d="5"><th scope="row">Vendredi</th><td>9 h – minuit</td></tr>
-          <tr data-d="6"><th scope="row">Samedi</th><td>9 h – 23 h</td></tr>
-          <tr data-d="0"><th scope="row">Dimanche</th><td>8 h – minuit</td></tr>
+          <tr data-d="1"><th scope="row">Lundi</th><td>7&nbsp;h – minuit</td></tr>
+          <tr data-d="2"><th scope="row">Mardi</th><td>7&nbsp;h – minuit</td></tr>
+          <tr data-d="3"><th scope="row">Mercredi</th><td>7&nbsp;h – minuit</td></tr>
+          <tr data-d="4"><th scope="row">Jeudi</th><td>7&nbsp;h – minuit</td></tr>
+          <tr data-d="5"><th scope="row">Vendredi</th><td>7&nbsp;h – minuit</td></tr>
+          <tr data-d="6"><th scope="row">Samedi</th><td>9&nbsp;h – minuit</td></tr>
+          <tr data-d="0"><th scope="row">Dimanche</th><td>9&nbsp;h – 23&nbsp;h</td></tr>
         </tbody>
       </table>
-      <p class="fine">Ouvert sept jours sur sept. Les jours fériés, un coup de fil avant de venir.</p>
-    </div>
-    <div class="rv">
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li><a href="tel:+33143805051"><span><svg aria-hidden="true"><use href="#i-tel"/></svg></span><div>01 43 80 50 51<small>réservation et renseignements</small></div></a></li>
-        <li><a href="mailto:adresto75@gmail.com?subject=Demande%20%C3%A0%20L%27Arc%20Caf%C3%A9"><span><svg aria-hidden="true"><use href="#i-mail"/></svg></span><div>adresto75@gmail.com<small>groupes, événements, questions</small></div></a></li>
-        <li><a href="https://www.instagram.com/bistrot_arc_cafe/" target="_blank" rel="noopener"><span><svg aria-hidden="true"><use href="#i-ig"/></svg></span><div>@bistrot_arc_cafe<small>la terrasse et les plats du jour sur Instagram</small></div></a></li>
-      </ul>
-      <p class="rating num"><b>4,0</b>sur 5, d’après 2 939 avis en ligne.</p>
+      <p class="hnote">Service continu. Réservation conseillée le soir et pour la terrasse.</p>
+      <div class="contact rv" style="--d:.1s">
+        <a href="tel:+33153817743"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="num">01&nbsp;53&nbsp;81&nbsp;77&nbsp;43</span></a>
+        <a href="mailto:adresto75@gmail.com?subject=Demande%20pour%20L%E2%80%99Arc%20Caf%C3%A9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>adresto75@gmail.com</span></a>
+        <a href="https://www.instagram.com/bistrot_arc_cafe/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>@bistrot_arc_cafe</span></a>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer>
+<footer class="on-green foot">
   <div class="wrap">
-    <p class="big" aria-hidden="true">L'Arc Café</p>
-    <div class="row">
-      <p>27, avenue Carnot, 75017 Paris · <a href="tel:+33143805051">01 43 80 50 51</a></p>
-      <p>Photographies d’illustration : Unsplash.</p>
-      <p>Démo réalisée par Raul Hatos — site non officiel</p>
+    <p class="name" translate="no">L’Arc Café</p>
+    <div class="meta">
+      <span>27, avenue Carnot, 75017 Paris · <a class="num" href="tel:+33153817743">01&nbsp;53&nbsp;81&nbsp;77&nbsp;43</a></span>
+      <span>Photographies&nbsp;: L’Arc Café (larc-café.com)</span>
+      <span>Démo réalisée par Raul Hatos — site non officiel</span>
     </div>
   </div>
 </footer>
@@ -484,60 +529,59 @@ footer a{color:#fff}
 <script>
 document.documentElement.classList.add('js');
 (function(){
-  // horaires publiés (Sluurpy) : [ouverture, fermeture] en heures, 24 = minuit
-  var H={0:[8,24],1:[8,24],2:[8,24],3:[8,24],4:[8,24],5:[9,24],6:[9,23]};
+  var NB=' ';
+  // horaires publiés par la maison&nbsp;: [ouverture, fermeture], 24 = minuit&nbsp;; 0 = dimanche
+  var H={0:[9,23],1:[7,24],2:[7,24],3:[7,24],4:[7,24],5:[7,24],6:[9,24]};
   var NAMES=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-  var U='https://images.unsplash.com/photo-';
+  var IMG='https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Establishment/340/Attached%20Files/Optimized/';
   var M=[
-    {to:11,t:'Petit-déjeuner',x:'Croissant, café et petit-déjeuner, en terrasse si le temps le permet.',i:'1555507036-ab1f4038808a'},
-    {to:15,t:'Déjeuner',x:'Omelette, croque-monsieur, salade niçoise ou plat du jour.',i:'1505253716362-afaea1d3d1af'},
-    {to:18.5,t:'Pause de l’après-midi',x:'Café gourmand, crème brûlée, mousse au chocolat ou dame blanche.',i:'1535140728325-a4d3707eee61'},
-    {to:99,t:'Dîner et apéritif',x:'Burger au chorizo, escargots, un verre de vin ou un cocktail en terrasse.',i:'1510812431401-41d2bd2722f3'}
+    {to:11.5,t:'Le petit-déjeuner',i:'arc-cafe-matin.jpg',a:'La terrasse le matin, sous le store vert',l:[['Breakfast, boisson, orange pressée, croissant','10'],['Big Breakfast, avec œuf ou omelette','13,50'],['Cappuccino','6']]},
+    {to:18,t:'Le déjeuner',i:'galerie-arc-cafe-salade-cesar.jpg',a:'Salade César dans une assiette en faïence bleue',l:[['Croque-monsieur, frites maison','16'],['Salade César','20'],['Tartare de bœuf français','22']]},
+    {to:20,t:'L’apéritif',i:'arc-cafe-terrasse-aperitif.jpg',a:'Planche et verre de rosé en terrasse',l:[['Spritz Aperol','11'],['Planche mixte','21'],['Planche apéritive','23']]},
+    {to:99,t:'Le dîner',i:'https://t4bstorage1.blob.core.windows.net/publict4bfiles/linkooc/Item/22534/Attached%20Files/Optimized/arc-cafe-magret.jpg',a:'Magret de canard, haricots verts',l:[['Magret de canard entier','26'],['Entrecôte, 300 g et plus','34'],['Côte de bœuf 1,2 kg, à partager','78']]}
   ];
-  function fmt(h){h=h%24;var hh=Math.floor(h),mm=Math.round((h-hh)*60);return hh===0&&mm===0?'minuit':hh+' h'+(mm?' '+String(mm).padStart(2,'0'):'');}
-  function isOpen(d,h){ // h may exceed 24 (after midnight belongs to next day)
-    if(h>=24){d=(d+1)%7;h-=24;}
-    var r=H[d];return h>=r[0]&&h<r[1];
-  }
-  function nextOpen(d,h){
-    if(h>=24){d=(d+1)%7;h-=24;}
-    if(h<H[d][0])return (d===todayD()?'aujourd’hui':NAMES[d])+' à '+fmt(H[d][0]);
-    var n=(d+1)%7;return NAMES[n]+' à '+fmt(H[n][0]);
-  }
-  function paris(){var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());var o={};p.forEach(function(x){o[x.type]=x.value});var wd={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6}[o.weekday];return {d:wd==null?new Date().getDay():wd,h:+o.hour+(+o.minute)/60};}
-  function todayD(){return paris().d;}
+  function fmt(h){h=h%24;var hh=Math.floor(h),mm=Math.round((h-hh)*60);if(hh===0&&mm===0)return 'minuit';return hh+NB+'h'+(mm?NB+String(mm).padStart(2,'0'):'');}
+  function norm(d,h){return h>=24?[(d+1)%7,h-24]:[d,h];}
+  function isOpen(d,h){var x=norm(d,h);var r=H[x[0]];return x[1]>=r[0]&&x[1]<r[1];}
+  function nextOpen(d,h){var x=norm(d,h);d=x[0];h=x[1];if(h<H[d][0])return NAMES[d]+' à '+fmt(H[d][0]);var n=(d+1)%7;return NAMES[n]+' à '+fmt(H[n][0]);}
+  function paris(){try{var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());var o={};p.forEach(function(x){o[x.type]=x.value});var wd={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6}[o.weekday];return {d:wd==null?new Date().getDay():wd,h:+o.hour+(+o.minute)/60};}catch(e){var n=new Date();return {d:n.getDay(),h:n.getHours()+n.getMinutes()/60};}}
   var now=paris();
-  // statut du héros
   var st=document.getElementById('status');
   var o=isOpen(now.d,now.h);
-  st.innerHTML='<span class="dot '+(o?'on':'off')+'"></span><span>'+(o?'Ouvert maintenant · jusqu’à '+fmt(H[now.d][1]):'Fermé · ouvre '+nextOpen(now.d,now.h))+'</span>';
-  // jour du tableau
-  var tr=document.querySelector('.hours tr[data-d="'+now.d+'"]');if(tr)tr.classList.add('today');
-  // module « vous passez quand »
-  var range=document.getElementById('h'),out=document.getElementById('ho');
-  var radios=document.querySelectorAll('input[name=d]');
-  radios.forEach(function(r){if(+r.value===now.d)r.checked=true;});
-  var start=Math.min(25.5,Math.max(6,Math.round(now.h*2)/2));range.value=start;
+  st.innerHTML='<span class="dot '+(o?'on':'off')+'" aria-hidden="true"></span>'+(o?'Ouvert maintenant, jusqu’à '+fmt(H[now.d][1]):'Fermé pour l’instant, ouvre '+nextOpen(now.d,now.h).replace(NAMES[now.d]+' ','aujourd’hui '));
+  var tr=document.querySelector('.hours tr[data-d="'+now.d+'"]');if(tr){tr.classList.add('today');tr.querySelector('th').textContent+=', aujourd’hui';}
+
+  // module «&nbsp;Vous passez quand&nbsp;?&nbsp;»
+  var range=document.getElementById('h'),out=document.getElementById('ho'),days=document.querySelectorAll('.days button'),day=now.d;
+  function setDay(d){day=d;days.forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.d===d?'true':'false')});upd();}
+  days.forEach(function(b){b.addEventListener('click',function(){setDay(+b.dataset.d)})});
+  range.value=Math.min(24.5,Math.max(6,Math.round(now.h*2)/2));
+  var vimg=document.getElementById('vimg'),cur='';
   function upd(){
-    var d=+document.querySelector('input[name=d]:checked').value,h=+range.value;
-    var label=fmt(h)+(h>=24?' (nuit)':'');out.textContent=label;range.setAttribute('aria-valuetext',label);
-    var op=isOpen(d,h);
+    var h=+range.value,label=fmt(h)+(h>=24?' (nuit)':'');
+    out.textContent=label;range.setAttribute('aria-valuetext',label);
+    var op=isOpen(day,h),x=norm(day,h);
     document.getElementById('vdot').className='dot '+(op?'on':'off');
     document.getElementById('vstate').textContent=op?'Ouvert':'Fermé';
-    var dd=h>=24?(d+1)%7:d;
-    document.getElementById('vwhen').textContent=op?'Jusqu’à '+fmt(H[dd][1])+' ce '+NAMES[dd]+'.':'Réouverture '+nextOpen(d,h).replace('aujourd’hui','le '+NAMES[dd])+'.';
-    var m=M.filter(function(x){return (h%24<6?99:h)<x.to})[0];
-    if(!op){m={t:'En attendant',x:'Le café rouvre bientôt. Pour un groupe ou une réservation, appelez dès l’ouverture.',i:'1559925393-8be0ec4767c8'};}
+    document.getElementById('vwhen').textContent=op?'Jusqu’à '+fmt(H[x[0]][1])+' ce '+NAMES[x[0]]+', cuisine en continu.':'Réouverture '+nextOpen(day,h)+'.';
+    var m=op?M.filter(function(e){return (h>=24?99:h)<e.to})[0]:{t:'En attendant l’ouverture',i:'galerie-arc-cafe-facade-nuit.jpg',a:'La façade de L’Arc Café le soir',l:[['Formule Breakfast, dès l’ouverture','10'],['Expresso Massaya bio','2,80'],['Big Breakfast','13,50']]};
     document.getElementById('vtitle').textContent=m.t;
-    document.getElementById('vtext').textContent=m.x;
-    document.getElementById('vimg').src=U+m.i+'?w=200&h=200&q=70&auto=format&fit=crop';
+    document.getElementById('vlist').innerHTML=m.l.map(function(r){return '<li><span>'+r[0]+'</span><span class="price">'+r[1]+NB+'€</span></li>'}).join('');
+    if(cur!==m.i){cur=m.i;vimg.src=(m.i.indexOf('http')?IMG+m.i:m.i);vimg.alt=m.a;}
   }
-  range.addEventListener('input',upd);radios.forEach(function(r){r.addEventListener('change',upd)});upd();
+  range.addEventListener('input',upd);
+  setDay(now.d);
+
+  // onglets de la carte
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]')),cimg=document.getElementById('cimg');
+  function sel(t,focus){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on;});if(focus)t.focus();cimg.src=(t.dataset.img.indexOf('http')?IMG+t.dataset.img:t.dataset.img);cimg.alt=t.dataset.alt;}
+  tabs.forEach(function(b,i){b.addEventListener('click',function(){sel(b)});b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(k){e.preventDefault();sel(tabs[(i+k+tabs.length)%tabs.length],true);}});});
+  tabs.forEach(function(b){b.tabIndex=b.getAttribute('aria-selected')==='true'?0:-1});
+
   // apparitions
-  var star=document.querySelector('.hero .star');requestAnimationFrame(function(){requestAnimationFrame(function(){star.classList.add('in')})});
-  var els=document.querySelectorAll('.rv');
+  var els=document.querySelectorAll('.rv,.zoom');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.querySelectorAll(':scope > .rv'));e.target.style.transitionDelay=(Math.max(0,sib.indexOf(e.target))*80)+'ms';e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
