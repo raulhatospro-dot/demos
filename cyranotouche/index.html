@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cyranotouche · Retouches et sur-mesure, 34 rue Dauphine, Paris 6e</title>
+<meta name="description" content="Cyranotouche, retoucherie et tailleur sur mesure au 34 rue Dauphine, Paris 6e. Ourlets, retouches, costumes et tenues de mariage sur mesure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#f4f6f8;      /* craie de tailleur, froide */
+  --panel:#e6ebf0;
+  --ink:#0d253d;         /* laine marine */
+  --ink-2:#273951;
+  --muted:#4f6076;
+  --tape:#f2c230;        /* jaune du mètre ruban */
+  --tape-press:#dcac16;
+  --navy-field:#0d253d;
+  --navy-ink:#eef2f6;
+  --navy-muted:#a9b8c8;
+  --r-img:4px;
+  --m:clamp(20px,2.4vw,32px);
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.375rem,1.15rem + .8vw,1.75rem);
+  --step-head:clamp(2rem,1.4rem + 2.4vw,3.25rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;font-weight:300;font-size:var(--step-body);line-height:1.5;letter-spacing:-.005em;font-feature-settings:"tnum" 0}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}
+::selection{background:var(--tape);color:var(--ink)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
+.navy :focus-visible,.contact :focus-visible{outline-color:var(--tape)}
+h1,h2,h3{font-weight:400;letter-spacing:-.03em;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+.tnum{font-variant-numeric:tabular-nums}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* bandeau démo */
+.demo{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:50;background:var(--ink);color:var(--navy-ink);font-size:13px;padding:7px 14px;border-radius:999px;white-space:nowrap;opacity:.92}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 22px;border-radius:999px;font:inherit;font-size:var(--step-small);font-weight:500;text-decoration:none;cursor:pointer;border:0;transition:background-color .25s var(--ease),transform .25s var(--ease),color .25s}
+.btn:active{transform:scale(.97)}
+.btn-tape{background:var(--tape);color:var(--ink)}
+.btn-tape:hover{background:var(--tape-press)}
+.btn-ink{background:var(--ink);color:var(--navy-ink)}
+.btn-ink:hover{background:var(--ink-2)}
+.btn-soft{background:var(--panel);color:var(--ink)}
+.btn-soft:hover{background:#d6dee6}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ====== SCÈNE PARTAGÉE ====== */
+.stage{display:grid;grid-template-columns:47% 1fr;position:relative}
+.still{position:relative}
+.still-frame{position:sticky;top:var(--m);height:calc(100svh - 2 * var(--m));margin:var(--m) 0 var(--m) var(--m);border-radius:var(--r-img);overflow:hidden;background:#11161c}
+.still-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s var(--ease),transform 8s linear;transform:scale(1.04)}
+.still-frame img.on{opacity:1;transform:scale(1)}
+.still-cap{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;font-size:13px;background:rgba(9,18,28,.55);padding:4px 10px;border-radius:999px}
+.col{padding:0 var(--m) 0 clamp(40px,6vw,96px);min-width:0}
+
+/* nav */
+.nav{position:absolute;top:0;right:0;left:47%;display:flex;justify-content:flex-end;align-items:center;gap:clamp(16px,2vw,30px);padding:26px var(--m);font-size:15px;font-weight:400;z-index:5}
+.nav a{text-decoration:none}
+.nav a:not(.btn):hover{text-decoration:underline}
+.nav .btn{min-height:42px}
+
+/* hero */
+.hero{min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:center;padding-top:96px;padding-bottom:clamp(170px,19vw,260px)}
+.hero-lead{font-size:clamp(1.75rem,1.1rem + 1.5vw,2.25rem);line-height:1.18;max-width:21ch;letter-spacing:-.03em;font-weight:300}
+.hero-lead strong{font-weight:400}
+.hero-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.open-now{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:var(--step-small);color:var(--ink-2)}
+.dot{width:9px;height:9px;border-radius:50%;background:#9aa7b4;flex:none}
+.dot.is-open{background:#1f9d5a;box-shadow:0 0 0 0 rgba(31,157,90,.5);animation:pulse 2.4s var(--ease) infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(31,157,90,0)}100%{box-shadow:0 0 0 0 rgba(31,157,90,0)}}
+.wordmark{position:absolute;right:var(--m);bottom:40px;margin:0;font-size:clamp(72px,7.3vw,150px);font-weight:400;letter-spacing:-.055em;line-height:.8;color:var(--ink);white-space:nowrap;z-index:6;transform-origin:right bottom;pointer-events:none}
+@supports (animation-timeline:scroll()){
+  @media (prefers-reduced-motion:no-preference){
+    .wordmark{animation:shrink linear both;animation-timeline:scroll(root);animation-range:0 100svh}
+    @keyframes shrink{to{scale:.93;opacity:.0}}
+  }
+}
+
+/* sections de la colonne */
+.sec{padding:clamp(96px,11vw,170px) 0}
+.sec h2{font-size:var(--step-head);margin-bottom:28px}
+
+/* intro */
+.intro{max-width:38ch}
+.intro p{margin-bottom:1.15em;color:var(--ink-2)}
+.intro p:first-child{color:var(--ink);font-weight:400}
+.intro .fin{font-size:var(--step-lead);line-height:1.3;color:var(--ink);letter-spacing:-.02em;margin-top:1.6em}
+
+/* liste prestations */
+.list{max-width:560px}
+.grp{margin-top:44px}
+.grp:first-of-type{margin-top:8px}
+.grp h3{font-size:var(--step-small);font-weight:500;color:var(--muted);letter-spacing:0;margin-bottom:6px}
+.row{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:baseline;padding:9px 0}
+.row b{font-weight:400;display:flex;align-items:baseline;gap:10px}
+.row b::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--tape);flex:none;transform:translateY(-1px)}
+.row span{text-align:right;color:var(--muted);font-size:var(--step-small)}
+.list-note{margin-top:40px;color:var(--ink-2);max-width:44ch}
+
+/* outil quelle retouche */
+.tool{background:var(--panel);border-radius:var(--r-img);padding:clamp(22px,3vw,40px);max-width:620px}
+.tool h2{margin-bottom:12px}
+.tool .sub{color:var(--ink-2);margin-bottom:26px;max-width:44ch}
+fieldset{border:0;padding:0;margin:0 0 24px}
+legend{font-weight:500;font-size:var(--step-small);padding:0;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip label{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border-radius:999px;background:var(--ground);font-size:var(--step-small);cursor:pointer;transition:background-color .2s,color .2s,transform .2s var(--ease)}
+.chip label:hover{background:#fff}
+.chip input:checked+label{background:var(--ink);color:var(--navy-ink)}
+.chip input:focus-visible+label{outline:2px solid var(--ink);outline-offset:2px}
+.chip input:active+label{transform:scale(.96)}
+.qty{display:inline-flex;align-items:center;gap:4px;background:var(--ground);border-radius:999px;padding:3px}
+.qty button{width:38px;height:38px;border-radius:50%;border:0;background:transparent;font:inherit;font-size:20px;cursor:pointer;color:var(--ink)}
+.qty button:hover{background:#fff}
+.qty output{min-width:2ch;text-align:center;font-variant-numeric:tabular-nums}
+textarea{width:100%;min-height:84px;border:0;border-radius:var(--r-img);background:var(--ground);padding:12px 14px;font:inherit;font-size:var(--step-small);color:var(--ink);resize:vertical}
+textarea:focus{outline:2px solid var(--ink);outline-offset:1px}
+.ticket{margin-top:8px;background:#fff;padding:22px 22px 30px;clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),95% 100%,90% calc(100% - 10px),85% 100%,80% calc(100% - 10px),75% 100%,70% calc(100% - 10px),65% 100%,60% calc(100% - 10px),55% 100%,50% calc(100% - 10px),45% 100%,40% calc(100% - 10px),35% 100%,30% calc(100% - 10px),25% 100%,20% calc(100% - 10px),15% 100%,10% calc(100% - 10px),5% 100%,0 calc(100% - 10px))}
+.ticket-head{display:flex;justify-content:space-between;gap:12px;font-size:var(--step-small);color:var(--muted);margin-bottom:10px}
+.ticket-line{font-size:var(--step-lead);line-height:1.25;letter-spacing:-.02em;min-height:1.25em}
+.ticket-line.empty{color:var(--muted)}
+.ticket-tip{margin-top:12px;font-size:var(--step-small);color:var(--ink-2);display:flex;gap:10px}
+.ticket-tip svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--ink)}
+.send{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.send .btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.copied{font-size:var(--step-small);color:var(--muted);align-self:center}
+
+/* ====== RUBAN : comment ça se passe (pleine largeur, champ marine) ====== */
+.navy{background:var(--navy-field);color:var(--navy-ink);padding:clamp(100px,12vw,190px) var(--m)}
+.navy-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;max-width:1360px;margin:0 auto;align-items:start}
+.navy-text{grid-column:1/6}
+.navy h2{font-size:clamp(2.5rem,1.6rem + 3.2vw,4.25rem);margin-bottom:24px}
+.navy-text p{color:var(--navy-muted);max-width:32ch}
+.navy-text p+p{margin-top:1em}
+.navy-text a{color:var(--navy-ink)}
+.slip{grid-column:7/12;background:var(--ground);color:var(--ink);padding:30px 30px 40px;font-size:16px;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),96% 100%,92% calc(100% - 12px),88% 100%,84% calc(100% - 12px),80% 100%,76% calc(100% - 12px),72% 100%,68% calc(100% - 12px),64% 100%,60% calc(100% - 12px),56% 100%,52% calc(100% - 12px),48% 100%,44% calc(100% - 12px),40% 100%,36% calc(100% - 12px),32% 100%,28% calc(100% - 12px),24% 100%,20% calc(100% - 12px),16% 100%,12% calc(100% - 12px),8% 100%,4% calc(100% - 12px),0 100%)}
+.slip-top{font-size:var(--step-small);color:var(--muted)}
+.slip-name{font-size:28px;letter-spacing:-.04em;margin:0 0 2px}
+.slip h3{font-size:16px;font-weight:500;letter-spacing:0;margin:28px 0 8px}
+.lead{display:flex;align-items:baseline;gap:8px;padding:5px 0}
+.lead::after{content:"";order:2;flex:1;height:4px;background:radial-gradient(circle,var(--muted) 1.2px,transparent 1.6px) 0 0/8px 4px repeat-x;opacity:.6;transform:translateY(-3px)}
+.lead span:first-child{order:1}
+.lead span:last-child{order:3;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.slip-end{margin:26px -30px 0;background:var(--ink);color:var(--ground);min-height:44px;display:flex;align-items:center;justify-content:space-between;padding:10px 30px;gap:12px}
+
+/* ====== CONTACT pleine page ====== */
+.contact{position:relative;min-height:115svh;background:#0b1622}
+.contact>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card{position:sticky;top:60px;margin:0 60px 0 auto;width:min(420px,100%);background:var(--ground);color:var(--ink);border-radius:var(--r-img);padding:32px 32px 0;overflow:hidden;z-index:2;transform:translateY(60px)}
+.card h2{font-size:30px;font-weight:300;letter-spacing:-.035em;margin-bottom:16px}
+.card address{font-style:normal;margin-bottom:18px}
+.hours{width:100%;border-collapse:collapse;font-size:16px;font-variant-numeric:tabular-nums;margin-bottom:16px}
+.hours th{text-align:left;font-weight:400;padding:5px 0;vertical-align:top}
+.hours td{text-align:right;padding:5px 0;color:var(--ink-2)}
+.hours tr.today th,.hours tr.today td{font-weight:500;color:var(--ink)}
+.card-note{font-size:var(--step-small);color:var(--muted);margin-bottom:16px}
+.tels{display:grid;gap:4px;margin-bottom:22px}
+.tels a{font-size:20px;text-decoration:none;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.tels a:hover{text-decoration:underline}
+.tels small{font-size:var(--step-small);color:var(--muted)}
+.card-btns{display:grid;grid-template-columns:1fr 1fr;margin:0 -32px}
+.card-btns .btn{border-radius:0;min-height:56px}
+
+/* footer */
+footer{padding:30svh var(--m) 64px;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:end;font-size:15px;color:var(--muted)}
+footer nav{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+footer nav a{color:var(--ink);text-decoration:none}
+footer nav a:hover{text-decoration:underline}
+footer .r{text-align:right}
+.big-name{grid-column:1/-1;font-size:clamp(64px,15.6vw,260px);letter-spacing:-.06em;line-height:.8;color:var(--ink);margin:0 0 28px -.04em;font-weight:400}
+
+/* entrées */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.still-frame img{transition:opacity .01s}.dot.is-open{animation:none}}
+
+/* ====== TÉLÉPHONE ====== */
+@media (max-width:860px){
+  .stage{display:block}
+  .still{position:relative;height:58svh}
+  .still-frame{position:absolute;inset:12px 12px 0 12px;height:auto;margin:0;top:12px}
+  .nav{left:0;padding:22px 24px;justify-content:space-between}
+  .nav .hide-m{display:none}
+  .nav a.mbrand{display:inline;color:#fff;font-weight:500}
+  .nav .btn{min-height:40px;padding:0 16px}
+  .wordmark{position:relative;right:auto;bottom:auto;display:block;font-size:14.4vw;color:var(--ink);animation:none!important}
+  .col{padding:0 20px}
+  .hero{min-height:0;padding:0 0 64px;display:flex}
+  .hero .wordmark{order:-1;margin:18px 0 22px -2px}
+  .hero-lead{font-size:20px}
+  .hero-acts .btn{flex:1 1 auto}
+  .sec{padding:72px 0}
+  .intro{max-width:none;padding-right:12%}
+  .list{max-width:none}
+  .row{grid-template-columns:1fr;padding:10px 0}
+  .row span{text-align:left;padding-left:19px}
+  .navy-grid{display:block}
+  .slip{margin-top:44px;padding:24px 20px 34px}
+  .slip-end{margin:22px -20px 0;padding:10px 20px}
+  .contact{min-height:0;background:var(--ground);padding-bottom:16px}
+  .contact>img{position:relative;height:70svh;inset:auto}
+  .card{position:relative;top:auto;margin:-80px 16px 0;width:auto;transform:none;padding:24px 22px 0}
+  .card-btns{margin:0 -22px}
+  footer{display:block;padding:20svh 20px 90px}
+  footer>*{margin-top:8px}
+  footer nav{justify-content:flex-start;gap:8px 18px}
+  footer .r{text-align:left}
+  .big-name{margin-bottom:18px}
+}
+@media (min-width:861px){.nav a.mbrand{display:none}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<div class="stage">
+  <div class="still" aria-hidden="false">
+    <div class="still-frame">
+      <img class="on" data-k="hero" src="https://images.unsplash.com/photo-1718184021018-d2158af6b321?w=1200&h=1500&q=75&auto=format&fit=crop" width="1200" height="1500" alt="Des ciseaux de tailleur coupent un lainage marine le long d’un mètre ruban jaune">
+      <img data-k="retouches" src="https://images.unsplash.com/photo-1497997092403-f091fcf5b6c4?w=1200&h=1500&q=75&auto=format&fit=crop" width="1200" height="1500" alt="Le pied-de-biche d’une machine à coudre sur un tissu noir" loading="lazy">
+      <img data-k="mesure" src="https://images.unsplash.com/photo-1633655442356-ab2dbc69c772?w=1200&h=1500&q=75&auto=format&fit=crop" width="1200" height="1500" alt="Une main pose des boutons sur un nuancier de lainages pour costume" loading="lazy">
+      <img data-k="outil" src="https://images.unsplash.com/photo-1470167290877-7d5d3446de4c?w=1200&h=1500&q=75&auto=format&fit=crop" width="1200" height="1500" alt="Une main tient un mètre ruban enroulé" loading="lazy">
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="mbrand" href="#top">Cyranotouche</a>
+    <a class="hide-m" href="#prestations">Prestations</a>
+    <a class="hide-m" href="#quelle-retouche">Quelle retouche ?</a>
+    <a class="hide-m" href="#horaires">Horaires</a>
+    <a class="btn btn-ink" href="tel:+33699383144">Appeler</a>
+  </nav>
+
+  <div class="col" id="top">
+    <header class="hero" data-photo="hero">
+      <p class="hero-lead rv"><strong>Retouches, ourlets et costumes sur mesure</strong>, 34&nbsp;rue&nbsp;Dauphine.</p>
+      <div class="hero-acts rv">
+        <a class="btn btn-tape" href="#quelle-retouche">Préparer ma retouche</a>
+        <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&destination=Cyranotouche%2C%2034%20rue%20Dauphine%2C%2075006%20Paris" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+      </div>
+      <p class="open-now rv" id="openNow"><span class="dot" aria-hidden="true"></span><span>Lun. 16 h – 19 h 30 · mar. au sam. 10 h 30 – 13 h et 14 h 30 – 19 h 30</span></p>
+      <h1 class="wordmark">cyranotouche</h1>
+    </header>
+
+    <section class="sec" data-photo="hero" aria-labelledby="t-intro">
+      <h2 id="t-intro" class="sr">La boutique</h2>
+      <div class="intro">
+        <p class="rv">Cyranotouche, c’est une retoucherie et un atelier de tailleur rue Dauphine, la rue qui descend du Pont-Neuf au carrefour de Buci.</p>
+        <p class="rv">On y apporte un jean trop long, une veste qui baille, un pantalon qui ne ferme plus. On en repart avec un vêtement qui tombe juste, après un essayage quand il le faut.</p>
+        <p class="rv">On y commande aussi ce qui n’existe pas encore : un costume, une tenue de mariage, un vêtement d’enfant, coupés à vos mesures.</p>
+        <p class="rv">Avant la rue Dauphine, la boutique était rue de l’Arbre-Sec, dans le 1<sup>er</sup>. Même enseigne, même métier.</p>
+        <p class="fin rv">Un tailleur près de vous, et près de la Seine.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="prestations" data-photo="retouches" aria-labelledby="t-presta">
+      <div class="list">
+        <h2 id="t-presta" class="rv">Ce qu’on y fait</h2>
+        <div class="grp rv">
+          <h3>Retouches</h3>
+          <div class="row"><b>Ourlets</b><span>pantalon, jean, jupe, robe</span></div>
+          <div class="row"><b>Reprendre ou élargir la taille</b><span>pantalon, jupe</span></div>
+          <div class="row"><b>Raccourcir les manches</b><span>veste, manteau, chemise</span></div>
+          <div class="row"><b>Recintrer une veste</b><span>costume, veste</span></div>
+          <div class="row"><b>Ajuster après une perte de poids</b><span>pantalons, chemises</span></div>
+        </div>
+        <div class="grp rv" data-photo="mesure">
+          <h3>Sur mesure</h3>
+          <div class="row"><b>Costume homme</b><span>coupé à vos mesures</span></div>
+          <div class="row"><b>Tenue de mariage</b><span>pour le jour J</span></div>
+          <div class="row"><b>Vêtements d’enfant</b><span>cérémonie, sur mesure</span></div>
+          <div class="row"><b>Tissus</b><span>à choisir en boutique</span></div>
+        </div>
+        <p class="list-note rv">Le prix et le délai se donnent au comptoir, une fois le vêtement vu. Une retouche qui ne figure pas ici ? Décrivez-la juste en dessous.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="quelle-retouche" data-photo="outil" aria-labelledby="t-tool">
+      <form class="tool rv" id="tool" onsubmit="return false">
+        <h2 id="t-tool">Quelle retouche ?</h2>
+        <p class="sub">Trois choix, et votre demande part par SMS ou par e-mail, prête à lire.</p>
+
+        <fieldset>
+          <legend>Le vêtement</legend>
+          <div class="chips" id="garments"></div>
+        </fieldset>
+        <fieldset id="fsWork" hidden>
+          <legend id="workLegend">La retouche</legend>
+          <div class="chips" id="works"></div>
+        </fieldset>
+        <fieldset id="fsQty" hidden>
+          <legend>Combien de pièces ?</legend>
+          <div class="qty"><button type="button" id="minus" aria-label="Une pièce de moins">−</button><output id="qty" aria-live="polite">1</output><button type="button" id="plus" aria-label="Une pièce de plus">+</button></div>
+        </fieldset>
+        <fieldset>
+          <legend><label for="note">Un détail ? (facultatif)</label></legend>
+          <textarea id="note" maxlength="400" placeholder="Ex. : raccourcir de 3 cm, garder l’ourlet d’origine du jean"></textarea>
+        </fieldset>
+
+        <div class="ticket" aria-live="polite">
+          <div class="ticket-head"><span>Demande de retouche</span><span id="tDate" class="tnum"></span></div>
+          <p class="ticket-line empty" id="tLine">Choisissez un vêtement.</p>
+          <p class="ticket-tip" id="tTip" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span></span></p>
+        </div>
+        <div class="send">
+          <a class="btn btn-ink" id="sms" href="sms:+33699383144" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/></svg>Envoyer par SMS</a>
+          <a class="btn btn-soft" id="mail" href="mailto:cyranotouche.ha@gmail.com" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Par e-mail</a>
+          <span class="copied" id="copied"></span>
+        </div>
+        <noscript><p>Écrivez à <a href="mailto:cyranotouche.ha@gmail.com">cyranotouche.ha@gmail.com</a> ou appelez le <a href="tel:+33699383144">06 99 38 31 44</a>.</p></noscript>
+      </form>
+    </section>
+  </div>
+</div>
+
+<section class="navy" aria-labelledby="t-slip">
+  <div class="navy-grid">
+    <div class="navy-text">
+      <h2 id="t-slip" class="rv">Déposer, essayer, récupérer</h2>
+      <p class="rv">Une retouche se passe en boutique, rue Dauphine. Le vêtement est vu, épinglé sur vous si besoin, puis repris à l’atelier.</p>
+      <p class="rv">Pour un ourlet, venez avec les chaussures que vous porterez avec : la bonne longueur en dépend.</p>
+    </div>
+    <div class="slip rv" role="group" aria-label="Le parcours d’une retouche">
+      <p class="slip-name">Votre retouche</p>
+      <p class="slip-top">Cyranotouche, 34 rue Dauphine</p>
+      <h3>Au comptoir</h3>
+      <div class="lead"><span>Vous montrez la pièce</span><span>sur place</span></div>
+      <div class="lead"><span>Essayage, épingles, craie</span><span>si besoin</span></div>
+      <div class="lead"><span>Prix et délai annoncés</span><span>avant le travail</span></div>
+      <h3>À l’atelier</h3>
+      <div class="lead"><span>Coupe, couture, repassage</span><span>à la main et à la machine</span></div>
+      <h3>Au retour</h3>
+      <div class="lead"><span>Dernier essayage</span><span>si vous voulez</span></div>
+      <div class="slip-end"><span>Un vêtement à votre taille</span><span>au jour convenu</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="horaires" aria-labelledby="t-contact">
+  <img src="https://images.unsplash.com/photo-1542044801-30d3e45ae49a?w=2400&h=1500&q=75&auto=format&fit=crop" width="2400" height="1500" alt="Un mur de bobines de fil, du brun au rose et au bleu" loading="lazy">
+  <div class="card">
+    <h2 id="t-contact">Passer à la boutique</h2>
+    <address>34 rue Dauphine<br>75006 Paris · métro Odéon ou Pont-Neuf</address>
+    <table class="hours" id="hours">
+      <caption class="sr">Horaires d’ouverture</caption>
+      <tr data-d="1"><th scope="row">Lundi</th><td>16:00 – 19:30</td></tr>
+      <tr data-d="2,3,4,5,6"><th scope="row">Mardi – samedi</th><td>10:30 – 13:00<br>14:30 – 19:30</td></tr>
+      <tr data-d="0"><th scope="row">Dimanche</th><td>Fermé</td></tr>
+    </table>
+    <p class="card-note">Jours fériés : appelez avant de passer.</p>
+    <div class="tels">
+      <a href="tel:+33699383144">06 99 38 31 44</a>
+      <a href="tel:+33143299247">01 43 29 92 47</a>
+      <a href="mailto:cyranotouche.ha@gmail.com" style="font-size:16px">cyranotouche.ha@gmail.com</a>
+    </div>
+    <div class="card-btns">
+      <a class="btn btn-tape" href="https://www.google.com/maps/dir/?api=1&destination=Cyranotouche%2C%2034%20rue%20Dauphine%2C%2075006%20Paris" target="_blank" rel="noopener">Itinéraire</a>
+      <a class="btn btn-ink" href="tel:+33699383144">Appeler</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="big-name" aria-hidden="true">cyranotouche</p>
+  <span>Retouches et sur-mesure, Paris 6e</span>
+  <nav aria-label="Pied de page"><a href="#prestations">Prestations</a><a href="#quelle-retouche">Quelle retouche ?</a><a href="#horaires">Horaires</a><a href="mailto:cyranotouche.ha@gmail.com">E-mail</a></nav>
+  <span class="r">UTPV, Un Tailleur Près de Vous · Photos Unsplash</span>
+</footer>
+
+<p class="demo">Démo réalisée par Raul Hatos · site non officiel</p>
+
+<script>
+(()=>{
+  const $=s=>document.querySelector(s);
+  // ---- photo fixe qui change avec la section + entrées
+  const imgs=[...document.querySelectorAll('.still-frame img')];
+  const show=k=>imgs.forEach(i=>i.classList.toggle('on',i.dataset.k===k));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)show(e.target.dataset.photo)}),{rootMargin:'-45% 0px -45% 0px'});
+  document.querySelectorAll('[data-photo]').forEach(s=>io.observe(s));
+  const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const sibs=[...e.target.parentElement.children].filter(c=>c.classList.contains('rv'));e.target.style.transitionDelay=Math.max(0,sibs.indexOf(e.target))*80+'ms';e.target.classList.add('in');rv.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(el=>rv.observe(el));
+  // ---- données de l'outil
+  const G={
+    "Pantalon":["Ourlet","Reprendre la taille","Élargir la taille","Fuseler la jambe","Fermeture éclair"],
+    "Jean":["Ourlet","Ourlet d’origine conservé","Reprendre la taille","Fermeture éclair"],
+    "Jupe":["Raccourcir","Reprendre la taille","Élargir la taille","Fermeture éclair"],
+    "Robe":["Raccourcir","Reprendre","Bretelles","Fermeture éclair"],
+    "Veste":["Raccourcir les manches","Recintrer","Boutons","Doublure"],
+    "Costume":["Ourlet du pantalon","Raccourcir les manches","Recintrer la veste","Reprendre la taille"],
+    "Manteau":["Raccourcir les manches","Raccourcir","Boutons","Doublure"],
+    "Chemise":["Raccourcir les manches","Cintrer"],
+    "Sur mesure":["Costume","Tenue de mariage","Vêtement d’enfant"]
+  };
+  const TIP={
+    "Ourlet":"Venez avec les chaussures que vous porterez avec le vêtement.",
+    "Ourlet du pantalon":"Venez avec les chaussures que vous porterez avec le costume.",
+    "Ourlet d’origine conservé":"Venez avec les chaussures que vous porterez avec ce jean.",
+    "Raccourcir":"Venez avec les chaussures que vous porterez avec.",
+    "Recintrer":"Prévoyez un essayage : on épingle la veste sur vous.",
+    "Recintrer la veste":"Prévoyez un essayage : on épingle la veste sur vous.",
+    "Cintrer":"Prévoyez un essayage : on épingle la chemise sur vous.",
+    "Reprendre":"Prévoyez un essayage sur place.",
+    "Reprendre la taille":"Prévoyez un essayage sur place.",
+    "Élargir la taille":"Prévoyez un essayage sur place.",
+    "Tenue de mariage":"Prenez rendez-vous tôt : un sur-mesure demande plusieurs essayages.",
+    "Costume":"Comptez plusieurs essayages pour un costume sur mesure.",
+    "Vêtement d’enfant":"Venez avec l’enfant pour la prise de mesures."
+  };
+    const gWrap=$('#garments'),wWrap=$('#works');let g=null,w=null,q=1;
+  const chip=(name,val,i)=>{const id=name+'-'+i;return `<span class="chip"><input type="radio" name="${name}" id="${id}" value="${val}"><label for="${id}">${val}</label></span>`};
+  gWrap.innerHTML=Object.keys(G).map((k,i)=>chip('g',k,i)).join('');
+  const today=new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'long',timeZone:'Europe/Paris'});
+  $('#tDate').textContent=today;
+  function render(){
+    const line=$('#tLine'),tip=$('#tTip');
+    let txt;
+    if(!g){txt='Choisissez un vêtement.'}
+    else if(!w){txt=g==='Sur mesure'?'Sur mesure : que voulez-vous faire faire ?':`${q>1?q+' × ':''}${g.toLowerCase()} : quelle retouche ?`}
+    else if(g==='Sur mesure'){txt=`${w}, sur mesure`}
+    else{txt=`${q>1?q+' × ':''}${g} · ${w.toLowerCase()}`}
+    line.textContent=txt;line.classList.toggle('empty',!w);
+    const t=w&&TIP[w];tip.hidden=!t;if(t)tip.querySelector('span').textContent=t;
+    $('#fsQty').hidden=!g||g==='Sur mesure';
+    const ok=!!w,note=$('#note').value.trim();
+    const sms=$('#sms'),mail=$('#mail');
+    sms.setAttribute('aria-disabled',!ok);mail.setAttribute('aria-disabled',!ok);
+    if(!ok)return;
+    const body=`Bonjour,\n\n${g==='Sur mesure'?'Je souhaite un devis pour : '+w.toLowerCase()+', sur mesure.':`Retouche : ${q} ${g.toLowerCase()}${q>1?'s':''}, ${w?w.toLowerCase():''}.`}${note?'\nDétail : '+note:''}\n\nQuand puis-je passer à la boutique ?\nMerci !`;
+    {
+      sms.href='sms:+33699383144?&body='+encodeURIComponent(body);
+      mail.href='mailto:cyranotouche.ha@gmail.com?subject='+encodeURIComponent('Retouche : '+(g==='Sur mesure'?w:g+' · '+w))+'&body='+encodeURIComponent(body);
+    }
+  }
+  gWrap.addEventListener('change',e=>{
+    g=e.target.value;w=null;
+    $('#workLegend').textContent=g==='Sur mesure'?'Quoi ?':'La retouche';
+    wWrap.innerHTML=G[g].map((k,i)=>chip('w',k,i)).concat(g==='Sur mesure'?[]:[chip('w','Autre',99)]).join('');
+    $('#fsWork').hidden=false;render();
+  });
+  wWrap.addEventListener('change',e=>{w=e.target.value;render()});
+  $('#plus').onclick=()=>{q=Math.min(9,q+1);$('#qty').textContent=q;render()};
+  $('#minus').onclick=()=>{q=Math.max(1,q-1);$('#qty').textContent=q;render()};
+  $('#note').addEventListener('input',render);
+  render();
+
+  // ---- ouvert maintenant (heure de Paris)
+  const H={1:[[960,1170]],2:[[630,780],[870,1170]],3:[[630,780],[870,1170]],4:[[630,780],[870,1170]],5:[[630,780],[870,1170]],6:[[630,780],[870,1170]],0:[]};
+  const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday),min=(+p.hour%24)*60+ +p.minute;
+  const fmt=m=>Math.floor(m/60)+' h'+(m%60?' '+String(m%60).padStart(2,'0'):'');
+  const slot=H[day].find(([a,b])=>min>=a&&min<b);
+  let msg;
+  if(slot)msg=`Ouvert maintenant, jusqu’à ${fmt(slot[1])}`;
+  else{
+    const later=H[day].find(([a])=>a>min);
+    if(later)msg=`Fermé, ouvre aujourd’hui à ${fmt(later[0])}`;
+    else{for(let k=1;k<=7;k++){const d=(day+k)%7;if(H[d].length){msg=`Fermé, ouvre ${k===1?'demain':['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'][d]} à ${fmt(H[d][0][0])}`;break}}}
+  }
+  const on=$('#openNow');on.querySelector('span:last-child').textContent=msg;on.querySelector('.dot').classList.toggle('is-open',!!slot);
+  document.querySelectorAll('#hours tr').forEach(tr=>{if(tr.dataset.d.split(',').includes(String(day)))tr.classList.add('today')});
+
+})();
+</script>
+</body>
+</html>
