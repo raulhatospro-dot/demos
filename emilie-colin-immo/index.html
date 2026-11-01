@@ -4,492 +4,559 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Les maisons d'Emilie · Émilie Colin, conseillère immobilière SAFTI aux Lilas</title>
-<meta name="description" content="Émilie Colin, conseillère immobilière indépendante du réseau SAFTI aux Lilas, à Romainville, au Pré-Saint-Gervais et à Bagnolet. Estimation, vente, achat.">
+<title>Les maisons d’Emilie · Émilie Colin, conseillère immobilière SAFTI aux Lilas</title>
+<meta name="description" content="Émilie Colin, conseillère immobilière indépendante SAFTI et décoratrice d’intérieur aux Lilas : 28 biens en vente aux Lilas, à Romainville, au Pré-Saint-Gervais et dans l’Est parisien.">
+<meta name="theme-color" content="#dcd3e6">
+<meta property="og:title" content="Les maisons d’Emilie · Émilie Colin, SAFTI Les Lilas">
+<meta property="og:description" content="28 biens en vente aux Lilas et dans l’Est parisien. Barème d’honoraires, estimation, contact.">
+<meta property="og:image" content="https://cdn.safti.fr/bien-photo/61/97/1697464/ba66afbd99714ac50beab0313f97a4a07f2fb95f/g.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%234a2d5a'/%3E%3Cpath d='M7 25V14l9-7 9 7v11h-6v-7h-6v7z' fill='%23dcd3e6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.safti.fr">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#edccbe; --surface:#e6bfae; --ink:#351a2b; --muted:#6c4857;
-  --field:#351a2b; --field-2:#43233a; --field-ink:#edccbe; --field-muted:#c9a6a4;
-  --m:16px; --gap:120px;
-  --s-small:clamp(.8125rem,.79rem + .1vw,.875rem);
-  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --s-head:clamp(2rem,1.3rem + 3.2vw,4rem);
-  --s-mono:clamp(3.4rem,18vw,17rem);
+  --paper:#f6f4f8; --lilas:#dcd3e6; --lilas-2:#cbbfdb; --ink:#1d1722; --muted:#4b4252;
+  --plum:#4a2d5a; --plum-2:#3a2247; --on-plum:#f6f1fa;
+  --night:#241a2b; --on-night:#efe9f4; --night-2:#33263c; --night-muted:#c9bdd3;
+  --leaf:#3d6b45;
+  --m:16px; --gap:112px;
+  --s-sm:.9375rem; --s-body:1.0625rem; --s-lead:clamp(1.1875rem,1.05rem + .5vw,1.4375rem);
+  --s-h2:clamp(2rem,1.3rem + 2.6vw,3.5rem); --s-h1:clamp(2.6rem,1.5rem + 4vw,5.25rem);
   --ease:cubic-bezier(.16,1,.3,1);
 }
-@media (min-width:760px){:root{--m:32px;--gap:180px}}
+@media (min-width:760px){:root{--m:32px;--gap:160px;--s-body:1.125rem;--s-sm:1rem}}
+@media (min-width:1280px){:root{--m:48px;--gap:192px}}
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:var(--s-body);line-height:1.5;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--ink);color:var(--bg)}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,sans-serif;font-size:var(--s-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;touch-action:manipulation;caret-color:var(--plum)}
+::selection{background:var(--plum);color:var(--on-plum)}
 img{display:block;max-width:100%;height:auto}
-a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
-:focus-visible{outline:3px solid currentColor;outline-offset:3px}
-h1,h2,h3,p{margin:0}
-h2{font-size:var(--s-head);font-weight:400;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1.5px}
+:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+.dark :focus-visible,.btn.fill:focus-visible{outline-color:#fff}
+.btn.fill:focus-visible{outline-color:var(--ink)}
+.dark .btn.fill:focus-visible{outline-color:#fff}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1;text-wrap:balance}
+h2{font-size:var(--s-h2)}
+h3{font-size:1.375rem;letter-spacing:-.02em;line-height:1.15}
+p{max-width:54ch}
+sup{font-size:.68em;line-height:0}
 .num{font-variant-numeric:tabular-nums}
-.btn{display:inline-flex;align-items:center;gap:.6em;min-height:52px;padding:0 26px;border-radius:999px;background:var(--ink);color:var(--bg);font-family:inherit;font-weight:500;font-size:1.0625rem;line-height:1;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .25s}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(0) scale(.98)}
-.btn.on-dark{background:var(--field-ink);color:var(--field)}
-.btn svg{width:18px;height:18px}
+.wrap{padding-inline:var(--m);max-width:1560px;margin-inline:auto}
+.skip{position:absolute;left:var(--m);top:-64px;z-index:20;background:var(--ink);color:#fff;padding:12px 16px}
+.skip:focus{top:8px}
+.demo{max-width:none;background:var(--night);color:var(--on-night);font-size:var(--s-sm);text-align:center;padding:8px var(--m)}
 
-/* demo strip */
-.demo{background:var(--ink);color:var(--field-muted);font-size:var(--s-small);padding:7px var(--m);text-align:center}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:0 22px;border:0;border-radius:999px;font:700 1rem/1 "Schibsted Grotesk",sans-serif;text-decoration:none;cursor:pointer;background:var(--paper);color:var(--ink);transition:transform .2s var(--ease),background-color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.fill{background:var(--plum);color:var(--on-plum)}
+.btn:hover{background:#fff}.btn.fill:hover{background:var(--plum-2)}
+.btn:active{transform:scale(.96)}
 
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:calc(100svh - 34px);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto 1fr auto;background:#2a1522;color:#f6e3da;overflow:hidden;isolation:isolate}
-.hero-img{position:absolute;inset:0;z-index:-2}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 55%;animation:drift 22s ease-out both}
-@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(32,14,26,.46)}
-.bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px var(--m) 0;font-size:.9375rem}
-.bar .domain{font-weight:500}
-.bar nav{display:flex;gap:18px}
-.bar nav a{text-decoration:none;opacity:.92}
-.bar nav a:hover{text-decoration:underline}
-.hero h1{grid-row:2/5;grid-column:1;display:grid;grid-template-rows:auto 1fr auto;font-weight:600}
-.l1{grid-row:1}.l2{grid-row:3}
-.line{display:block;overflow:hidden;font-size:var(--s-mono);line-height:.86;letter-spacing:-.045em;white-space:nowrap;padding-bottom:.06em}
-.line>span{display:block;animation:rise .95s var(--ease) both}
-.l1{padding:28px var(--m) 0}
-.l2{padding:0 var(--m) 14px;text-align:right}
-.l2>span{animation-delay:.11s}
-@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
-.hero-mid{grid-row:3;grid-column:1;position:relative;z-index:1;align-self:center;padding:28px var(--m);max-width:34rem;animation:fade .8s .55s var(--ease) both}
-.hero-mid p{color:#f6e3da;font-size:1.0625rem;line-height:1.5;margin-bottom:22px;max-width:40ch}
-.hero-mid .btn{background:#f6e3da;color:var(--ink)}
-.hero-mid .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
-.hero-mid .call{font-weight:500;color:#f6e3da}
-@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media (min-width:760px){
-  .l1{padding-top:44px}
-  .l2{text-align:left;padding-left:28vw;padding-bottom:20px}
-  .hero-mid{margin-left:30vw;padding-left:0}
-  .hero-mid p{color:#f6e3da;font-size:1.125rem}
+/* header */
+.top{position:sticky;top:0;z-index:10;background:var(--lilas)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.brand b{font-size:1.25rem;font-weight:800;letter-spacing:-.025em}
+.brand span{font-size:var(--s-sm);color:var(--muted)}
+.nav{display:none;gap:30px}
+.nav a{text-decoration:none;font-weight:500;padding:12px 0}
+.nav a:hover{text-decoration:underline}
+.top .btn{min-height:46px;padding:0 18px}
+.top .lg{display:none}
+@media (min-width:600px){.top .lg{display:inline}.top .sm{display:none}}
+@media (min-width:1100px){.nav{display:flex}}
+
+/* hero */
+.hero{background:var(--lilas);padding:8px 0 64px}
+.hero .wrap{display:grid;gap:28px}
+.h-photos{display:grid;grid-template-columns:1.5fr 1fr;gap:10px;order:-1}
+.ph{position:relative;margin:0;overflow:hidden;background:var(--lilas-2)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph figcaption{position:absolute;left:10px;bottom:10px;background:var(--paper);color:var(--ink);font-size:var(--s-sm);line-height:1.3;padding:6px 10px;max-width:calc(100% - 20px)}
+.h-a{grid-row:span 2;aspect-ratio:auto;min-height:260px}
+.h-b{aspect-ratio:4/3}
+.h-c{aspect-ratio:1}
+.h-c img{object-position:50% 25%}
+.hero h1{font-size:var(--s-h1);line-height:.95;letter-spacing:-.045em}
+.lead{font-size:var(--s-lead);line-height:1.4;margin-top:22px;max-width:38ch}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.tile{background:var(--paper);padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;text-decoration:none;min-width:0}
+.tile b{font-size:clamp(1.6rem,1.2rem + 1.1vw,2.25rem);font-weight:800;letter-spacing:-.035em;line-height:1}
+.tile span{font-size:var(--s-sm);line-height:1.35;color:var(--muted)}
+.tile.pl{background:var(--plum);color:var(--on-plum)}
+.tile.pl span{color:#dccfe6}
+a.tile{transition:transform .25s var(--ease)}
+a.tile:hover{transform:translateY(-3px)}
+a.tile:active{transform:scale(.97)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.acts .btn{flex:1 1 210px}
+.status{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:var(--s-sm)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--leaf);flex:none}
+@media (max-width:999px){.h-photos figcaption{display:none}}
+@media (max-width:759px){
+  .h-photos{grid-template-columns:1.6fr 1fr}
+  .h-a{min-height:0;aspect-ratio:auto}
+  .h-photos figcaption{display:none}
+  .brand span{display:none}
+  .ph figcaption{font-size:.8125rem;padding:4px 8px;left:8px;bottom:8px}
 }
-
-/* ---------- intro ---------- */
-.intro{padding:var(--gap) var(--m) calc(var(--gap)*.7)}
-.intro-top{display:grid;gap:24px}
-.intro-top h2{font-weight:300;font-size:clamp(2.6rem,1.4rem + 4.6vw,4.75rem)}
-.intro-top p{max-width:32ch}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:36px 20px;margin-top:72px}
-.fact b{display:block;font-weight:300;font-size:clamp(1.75rem,1rem + 2.6vw,2.75rem);letter-spacing:-.03em;line-height:1}
-.fact span{display:block;margin-top:8px;font-size:var(--s-small);color:var(--muted);max-width:22ch}
-.src{margin-top:40px;font-size:var(--s-small);color:var(--muted)}
-@media (min-width:900px){
-  .intro-top{grid-template-columns:repeat(12,1fr);align-items:end}
-  .intro-top h2{grid-column:1/8}
-  .intro-top p{grid-column:9/13;font-size:1rem}
-  .facts{display:flex;justify-content:space-between;margin-top:120px}
-}
-
-/* ---------- secteur poster ---------- */
-.poster{background:var(--field);color:var(--field-ink);padding:72px var(--m) 80px}
-.poster h2{font-size:var(--s-lead);font-weight:500;letter-spacing:-.01em;margin-bottom:28px;color:var(--field-ink)}
-.poster ul{list-style:none;margin:0;padding:0}
-.poster li button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;width:100%;padding:2px 0 18px;transition:color .25s}
-.poster .city{font-size:clamp(2.6rem,12vw,9.4rem);font-weight:600;letter-spacing:-.045em;line-height:.92;text-transform:lowercase;transition:transform .35s var(--ease),color .25s}
-.poster .det{font-size:.9375rem;color:var(--field-muted);margin-top:6px}
-.poster li button:hover .city,.poster li button:focus-visible .city{color:#f6b9a2;transform:translateX(.08em)}
-.poster li button[aria-pressed="true"] .city{color:#f6b9a2}
-.poster li button:focus-visible{outline:3px solid var(--field-ink);outline-offset:4px}
-@media (min-width:760px){
-  .poster li button{flex-direction:row;justify-content:space-between;align-items:baseline;padding:0}
-  .poster .det{font-size:1.125rem;margin:0}
-}
-
-/* ---------- biens ---------- */
-.biens{padding:var(--gap) var(--m) 0}
-.biens-head{display:grid;gap:18px;margin-bottom:48px}
-.biens-head p{max-width:46ch}
-.filter-note{font-weight:500}
-.filter-note button{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:.18em;cursor:pointer}
-.ads{list-style:none;margin:0;padding:0}
-.ad:nth-child(odd) a{background:var(--surface)}
-.ad a{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:20px var(--m);margin:0 calc(var(--m)*-1);text-decoration:none;transition:background-color .25s,transform .3s var(--ease)}
-.ad a:hover{background:var(--ink);color:var(--bg)}
-.ad a:hover .where{color:var(--field-muted)}
-.ad .what{font-size:var(--s-lead);font-weight:500;letter-spacing:-.02em;line-height:1.15}
-.ad .where{grid-column:1;color:var(--muted);font-size:1rem}
-.ad .price{grid-column:2;grid-row:1/3;align-self:center;font-size:var(--s-lead);font-weight:300;letter-spacing:-.02em;white-space:nowrap}
-.ad .go{grid-column:1/3;font-size:var(--s-small);font-weight:500;margin-top:6px}
-.ad[hidden]{display:none}
-@media (min-width:900px){
-  .biens-head{grid-template-columns:repeat(12,1fr);align-items:end}
-  .biens-head h2{grid-column:1/7}
-  .biens-head .txt{grid-column:8/13}
-  .ad a{grid-template-columns:5fr 4fr 3fr 2fr;align-items:baseline;padding:26px var(--m)}
-  .ad .where{grid-column:2}.ad .price{grid-column:3;grid-row:1;text-align:right}.ad .go{grid-column:4;margin:0;text-align:right}
-}
-.all{margin-top:28px}
-.all a{font-weight:500}
-
-/* ---------- about ---------- */
-.about{padding:var(--gap) var(--m) 0}
-.about-row{display:grid;gap:36px}
-.about .para{font-size:clamp(1.1875rem,.9rem + 1.1vw,1.625rem);line-height:1.38;letter-spacing:-.01em;max-width:44ch}
-.about .para + .para{margin-top:20px}
-.side{display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:.9375rem}
-.side dt{color:var(--muted)}
-.side dd{margin:0;font-weight:500}
-.sold{margin-top:96px;display:grid;gap:28px}
-.sold h3{font-size:var(--s-lead);font-weight:500;letter-spacing:-.02em}
-.sold ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:1rem}
-.sold li{display:flex;justify-content:space-between;gap:16px}
-.sold li span:last-child{color:var(--muted);text-align:right}
-.pics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:96px}
-.pics figure{margin:0}
-.pics img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
-.pics figure:first-child{grid-column:1/3}
-.pics figure:first-child img{aspect-ratio:16/10}
-@media (min-width:900px){
-  .about-row{grid-template-columns:34% 1fr;gap:0}
-  .side{grid-template-columns:1fr;align-content:start;max-width:200px}
-  .sold{grid-template-columns:34% 1fr}
-  .sold ul{grid-template-columns:1fr 1fr;column-gap:64px;max-width:920px}
-  .pics{grid-template-columns:2fr 1fr 1fr;margin-top:140px}
-  .pics figure:first-child{grid-column:auto}
-  .pics figure:first-child img,.pics img{aspect-ratio:auto;height:560px}
-}
-
-/* ---------- estimer ---------- */
-.est{margin-top:var(--gap);background:var(--field);color:var(--field-ink);display:grid}
-.est-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
-.est-body{padding:64px var(--m) 72px}
-.est h2{color:var(--field-ink);margin-bottom:16px}
-.est .lead{color:var(--field-muted);max-width:42ch;margin-bottom:40px}
-form{display:grid;gap:26px}
-fieldset{border:0;margin:0;padding:0;min-width:0}
-legend,label.lbl{display:block;font-weight:500;margin-bottom:10px;padding:0}
-.inp{width:100%;min-height:54px;padding:12px 16px;background:var(--field-2);color:var(--field-ink);border:2px solid transparent;border-radius:0;font:inherit;font-size:1.0625rem;transition:border-color .2s}
-.inp::placeholder{color:#b8949a}
-.inp:focus{outline:none;border-color:var(--field-ink)}
-.inp[aria-invalid="true"]{border-color:#f6b9a2}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{position:relative}
-.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.chips span{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:999px;background:var(--field-2);font-size:1rem;transition:background-color .2s,color .2s}
-.chips input:hover + span{background:#563049}
-.chips input:checked + span{background:var(--field-ink);color:var(--field)}
-.chips input:focus-visible + span{outline:3px solid var(--field-ink);outline-offset:3px}
-.row2{display:grid;gap:26px}
-.unit{position:relative}
-.unit .inp{padding-right:52px}
-.unit i{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-style:normal;color:var(--field-muted)}
-.err{color:#f6b9a2;font-size:.9375rem;margin-top:8px;min-height:1.2em}
-.preview{background:var(--field-2);padding:20px;font-size:.9375rem;line-height:1.55;color:var(--field-ink);white-space:pre-line}
-.preview b{display:block;margin-bottom:6px;color:var(--field-muted);font-weight:500}
-.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
-.form-foot small{font-size:var(--s-small);color:var(--field-muted);max-width:36ch}
-@media (min-width:760px){.row2{grid-template-columns:1fr 1fr}}
 @media (min-width:1000px){
-  .est{grid-template-columns:5fr 7fr}
-  .est-img img{aspect-ratio:auto;position:sticky;top:0;height:100svh}
-  .est-body{padding:120px 64px 120px 64px}
+  .hero{padding:24px 0 72px}
+  .hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:48px;align-items:center}
+  .h-photos{order:0;grid-template-columns:1.35fr 1fr;height:min(calc(100vh - 150px),720px);min-height:540px}
+  .h-a{min-height:0}
+  .h-b,.h-c{aspect-ratio:auto}
+}
+@media (min-width:1000px) and (max-width:1399px){
+  .hero{padding-top:12px}
+  .hero h1{font-size:4.6vw}
+  .lead{font-size:1.1875rem;margin-top:16px}
+  .tiles{margin-top:22px;gap:8px}
+  .tile{padding:12px 16px 14px}
+  .tile b{font-size:1.625rem}
+  .acts{margin-top:16px}
+  .acts .btn{flex-basis:160px;padding:0 16px;white-space:nowrap}
+  .status{margin-top:14px}
+  .h-photos{height:min(calc(100vh - 140px),660px);min-height:520px}
 }
 
-/* ---------- témoignages ---------- */
-.voices{background:var(--surface);padding:96px var(--m) 48px;display:grid;grid-template-rows:auto auto}
-.voices h2{font-size:var(--s-lead);font-weight:500;letter-spacing:-.01em;margin-bottom:40px}
-.voices .main{font-size:clamp(1.5rem,1rem + 1.4vw,2.25rem);line-height:1.2;letter-spacing:-.02em;font-weight:300;max-width:26ch;margin:0}
-@media (min-width:600px){.voices .main{max-width:40ch}}
-.voices .main cite,.small cite{display:block;font-style:normal;font-size:1rem;font-weight:500;margin-top:18px;letter-spacing:0}
-.voices .main cite span,.small cite span{display:block;font-weight:400;color:var(--muted)}
-.corners{display:grid;gap:40px;margin-top:96px}
-.small{margin:0;font-size:1rem;line-height:1.5;max-width:38ch}
-.voices .note{margin-top:48px;font-size:var(--s-small);color:var(--muted)}
-.voices .note a{font-weight:500;color:var(--ink)}
-@media (min-width:900px){
-  .voices{padding:120px var(--m) 40px}
-  .voices .main{margin:0 auto;text-align:center;max-width:40ch}
-  .voices h2{text-align:center}
-  .corners{grid-template-columns:repeat(12,1fr)}
-  .corners .small:first-child{grid-column:1/5}
-  .corners .small:last-child{grid-column:9/13}
-}
-@media (max-width:899px){.corners .small:last-child{margin-left:25%}}
+/* sections */
+.sec{padding-top:var(--gap)}
+.head{display:grid;gap:18px;margin-bottom:40px}
+.head p{font-size:var(--s-lead);line-height:1.4}
+@media (min-width:1000px){.head{grid-template-columns:1fr 1fr;align-items:end;gap:48px}}
 
-/* ---------- contact rows ---------- */
-.contact h2{padding:120px var(--m) 32px;font-size:var(--s-lead);font-weight:500;letter-spacing:-.01em}
-.rows{list-style:none;margin:0;padding:0}
-.rows a,.rows li>span{display:flex;align-items:flex-end;min-height:84px;padding:0 var(--m) 14px;font-size:clamp(1.6rem,6.4vw,5.5rem);letter-spacing:-.04em;line-height:1;text-decoration:none;font-weight:400;transition:background-color .25s,padding-left .35s var(--ease)}
-.rows>li:nth-child(odd){background:var(--surface)}
-.rows a:hover{background:var(--ink);color:var(--bg);padding-left:calc(var(--m) + 12px)}
-.rows .k{font-style:normal;margin-left:auto;padding-left:16px;font-size:1rem;letter-spacing:0;color:var(--muted);align-self:flex-end;padding-bottom:.4em}
-.rows a:hover .k{color:var(--field-muted)}
-.rows .hello{background:var(--ink);color:var(--bg);justify-content:space-between;align-items:center;padding-top:14px}
-.rows .hello span{display:inline-flex;align-items:center;gap:.35em}
-.round{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--bg);color:var(--ink);transition:transform .3s var(--ease)}
-.rows .hello:hover .round{transform:rotate(-45deg)}
-.round svg{width:24px;height:24px}
-@media (min-width:760px){.rows{list-style:none;margin:0;padding:0}
-.rows a,.rows li>span{min-height:140px;padding-bottom:20px}.round{width:.9em;height:.9em}.round svg{width:.4em;height:.4em}}
+/* listings */
+.filters{display:grid;gap:14px;margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 16px;border:0;border-radius:999px;background:var(--lilas);color:var(--ink);font:500 .9375rem/1 "Schibsted Grotesk",sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background-color .2s,transform .2s var(--ease)}
+.chip small{font-size:.8125rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip:hover{background:var(--lilas-2)}
+.chip:active{transform:scale(.96)}
+.chip[aria-pressed="true"]{background:var(--plum);color:var(--on-plum)}
+.chip[aria-pressed="true"] small{color:#dccfe6}
+.budget{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.budget label{font-weight:700}
+.budget input{width:min(320px,100%);accent-color:var(--plum);height:44px}
+.budget output{font-weight:700;min-width:11ch}
+.count{font-size:var(--s-sm);color:var(--muted)}
+.ads{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px 14px}
+.ad a{display:flex;flex-direction:column;gap:5px;text-decoration:none;height:100%}
+.ad-img{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:var(--lilas);margin-bottom:8px}
+.ad-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.ad a:hover .ad-img img{transform:scale(1.04)}
+.tag{position:absolute;left:8px;top:8px;background:var(--paper);font-size:.8125rem;font-weight:700;padding:4px 9px}
+.tag.c{background:var(--plum);color:var(--on-plum)}
+.ad-price{font-size:1.375rem;font-weight:800;letter-spacing:-.02em}
+.ad-title{font-weight:500;line-height:1.3}
+.ad-meta{font-size:var(--s-sm);color:var(--muted)}
+.ad a:hover .ad-title{text-decoration:underline}
+.ad[hidden]{display:none}
+.empty{margin-top:12px;font-size:var(--s-lead)}
+.after{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:40px}
 
-/* ---------- footer ---------- */
-footer{background:var(--field);color:var(--field-ink);overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);padding-top:88px}
-.f-top{display:grid;gap:36px;padding:0 var(--m)}
-.f-top h2{color:var(--field-ink);font-size:clamp(2.6rem,1.4rem + 4.4vw,5rem);font-weight:500;margin-bottom:28px}
-.f-links{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;margin:0;padding:0;font-size:1rem}
-.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding:140px var(--m) 18px;font-size:var(--s-small);color:var(--field-muted)}
-.legal a{color:var(--field-ink)}
-.wordmark{font-size:clamp(5rem,34vw,34rem);font-weight:600;letter-spacing:-.055em;line-height:.8;white-space:nowrap;transform:translateY(22%);padding-left:var(--m);margin:0}
-@media (min-width:900px){
-  .f-top{grid-template-columns:repeat(12,1fr)}
-  .f-top>div{grid-column:1/8}
-  .f-links{grid-column:10/13;flex-direction:column;align-content:start;gap:8px}
-}
+/* secteur */
+.sect{display:grid;gap:36px}
+.towns{display:grid}
+.town{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:16px 0;align-items:baseline}
+.town+.town{border-top:2px solid var(--lilas)}
+.town b{font-size:clamp(1.375rem,1.1rem + 1vw,2rem);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.town .n{font-weight:700;font-size:1.125rem}
+.town span.r{grid-column:1/-1;color:var(--muted);font-size:var(--s-sm)}
+.sect-side{display:grid;gap:16px;align-content:start}
+.sect-side .ph{aspect-ratio:4/5}
+@media (min-width:1000px){.sect{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,.8fr);gap:48px;align-items:start}}
+@media (min-width:760px) and (max-width:999px){.sect{grid-template-columns:1fr 1fr}.sect>div:first-child{grid-column:1/-1}}
+.sect-text p+p{margin-top:16px}
+.big{font-size:var(--s-lead);line-height:1.4}
 
-/* ---------- entrances ---------- */
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+/* honoraires */
+.dark{background:var(--night);color:var(--on-night)}
+.fees{margin-top:var(--gap);padding:88px 0}
+.fees .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:44px}
+@media (min-width:1000px){.fees .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}}
+.fees p{color:var(--night-muted)}
+.fees h2+p{margin-top:20px;color:var(--on-night);font-size:var(--s-lead);line-height:1.4}
+table{border-collapse:collapse;width:100%;margin-top:28px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:12px 0;font-weight:400}
+td:last-child{text-align:right;font-weight:700}
+tbody tr+tr{border-top:1px solid var(--night-2)}
+thead th{font-size:var(--s-sm);color:var(--night-muted);padding-top:0}
+thead th:last-child{text-align:right}
+tr.on td,tr.on th{color:#fff}
+tr.on{background:var(--night-2)}
+tr.on th{padding-left:10px}tr.on td:last-child{padding-right:10px}
+.calc{background:var(--lilas);color:var(--ink);padding:28px}
+.calc label{display:block;font-weight:700;font-size:1.25rem;letter-spacing:-.02em}
+.field{display:flex;align-items:center;gap:10px;margin-top:14px;background:var(--paper);padding:0 16px}
+.field input{flex:1;min-width:0;width:100%;border:0;background:transparent;font:800 clamp(1.75rem,1.3rem + 1.5vw,2.5rem)/1 "Schibsted Grotesk",sans-serif;letter-spacing:-.03em;color:var(--ink);padding:14px 0;font-variant-numeric:tabular-nums}
+.field input:focus{outline:0}
+.field:focus-within{outline:3px solid var(--plum);outline-offset:3px}
+.field span{font-weight:800;font-size:1.75rem}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.presets .chip{background:var(--lilas-2)}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.res div{background:var(--paper);padding:16px}
+.res div.pl{background:var(--plum);color:var(--on-plum)}
+.res b{display:block;font-size:clamp(1.5rem,1.2rem + 1vw,2.125rem);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.res span{font-size:var(--s-sm)}
+.fees .calc-note{margin-top:16px;font-size:var(--s-sm);color:var(--muted)}
+.connect{margin-top:28px;padding-top:24px;border-top:2px solid var(--night-2)}
+.connect b{color:#fff}
+.fees a{color:#fff}
+
+/* vendre */
+.deco{display:grid;gap:36px}
+.deco-ph{display:grid;grid-template-columns:1.3fr 1fr;gap:10px}
+.deco-ph .ph{aspect-ratio:4/5}
+.deco-ph .ph:first-child{aspect-ratio:auto}
+.deco-ph .ph:last-child img{object-fit:contain;background:#fff}
+.lists{display:grid;gap:36px;margin-top:36px}
+.lists li{padding:12px 0 12px 30px;position:relative;line-height:1.4}
+.lists li+li{border-top:2px solid var(--lilas)}
+.lists li::before{content:"";position:absolute;left:0;top:18px;width:14px;height:14px;background:var(--plum);clip-path:polygon(50% 0,100% 45%,100% 100%,0 100%,0 45%)}
+.lists h3{margin-bottom:8px}
+@media (min-width:760px){.lists{grid-template-columns:1fr 1fr;gap:40px}}
+@media (min-width:1000px){.deco{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px;align-items:center}.deco-ph{order:-1;grid-template-columns:1fr;grid-template-rows:1.5fr 1fr;height:clamp(560px,52vw,760px)}.deco-ph .ph{aspect-ratio:auto}}
+
+/* contact */
+.contact{display:grid;gap:36px;padding-bottom:120px}
+.who{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;margin-top:28px}
+.who .ph{aspect-ratio:1}
+.who p{font-size:var(--s-sm)}
+.c-list{display:grid;gap:4px;margin-top:24px}
+.c-list a{font-size:clamp(1.5rem,1.2rem + 1vw,2.25rem);font-weight:800;letter-spacing:-.03em;text-decoration:none;line-height:1.25;overflow-wrap:anywhere}
+.c-list a:hover{text-decoration:underline}
+.socials{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:22px}
+.socials a{padding:10px 0;font-weight:500}
+.rating{margin-top:18px;font-size:var(--s-sm);color:var(--muted)}
+form.est{background:var(--lilas);padding:28px;display:grid;gap:16px;align-content:start}
+form.est h3{font-size:1.75rem}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fl label{display:block;font-weight:700;font-size:var(--s-sm);margin-bottom:6px}
+.fl input,.fl select,.fl textarea{width:100%;min-height:50px;border:0;background:var(--paper);padding:12px 14px;font:400 1rem/1.4 "Schibsted Grotesk",sans-serif;color:var(--ink);border-radius:0}
+.fl textarea{min-height:96px;resize:vertical}
+.fl input:focus-visible,.fl select:focus-visible,.fl textarea:focus-visible{outline:3px solid var(--plum);outline-offset:0}
+form.est small{font-size:.875rem;color:var(--muted)}
+@media (min-width:1000px){.contact{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}}
+
+/* footer */
+.foot{padding:72px 0 40px}
+.foot-name{font-size:clamp(2.5rem,1rem + 7vw,8rem);font-weight:800;letter-spacing:-.05em;line-height:.9;max-width:none}
+.foot-places{margin-top:18px;font-size:var(--s-lead);color:var(--on-night)}
+.foot small{display:block;margin-top:40px;font-size:var(--s-sm);line-height:1.6;color:var(--night-muted);max-width:62ch}
+
+/* motion */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .rv.in{opacity:1;transform:none}
+.h-a img{animation:drift 1.4s var(--ease) both}
+@keyframes drift{from{transform:scale(1.06)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .js .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .h-a img{animation:none}
+  *{transition-duration:0s!important}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Aller au contenu</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<header class="hero">
-  <div class="hero-img"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=2000&q=70&auto=format&fit=crop" width="2000" height="1333" alt="Pièce à vivre lumineuse, fauteuil rouge et grandes fenêtres sur un immeuble ancien"></div>
-  <div class="bar">
-    <span class="domain">lesmaisonsdemilie.fr</span>
-    <nav aria-label="Navigation principale"><a href="#biens">Biens</a><a href="#estimer">Estimer</a><a href="#contact">Contact</a></nav>
-  </div>
-  <h1>
-    <span class="line l1"><span>Les maisons</span></span>
-    <span class="line l2"><span>d'Emilie</span></span>
-  </h1>
-  <div class="hero-mid">
-      <p>Émilie Colin, conseillère immobilière indépendante du réseau SAFTI, vend et trouve des maisons et des appartements aux Lilas, à Romainville, au Pré-Saint-Gervais et à Bagnolet.</p>
-      <div class="acts"><a class="btn" href="#estimer">Faire estimer mon bien</a><a class="call num" href="tel:+33187661824">01 87 66 18 24</a></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#main"><b translate="no">Les maisons d’Emilie</b><span>Émilie Colin · conseillère SAFTI</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#biens">Biens en vente</a><a href="#secteur">Secteur</a><a href="#honoraires">Honoraires</a><a href="#vendre">Vendre, acheter</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn fill" href="tel:+33187661824"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="lg num">01&nbsp;87&nbsp;66&nbsp;18&nbsp;24</span><span class="sm">Appeler</span></a>
   </div>
 </header>
 
-<main>
-<section class="intro" aria-labelledby="t-intro">
-  <div class="intro-top">
-    <h2 id="t-intro" class="rv">Vendre ici, avec quelqu'un d'ici</h2>
-    <p class="rv">Émilie vit dans l'Est parisien depuis plus de trente ans. Décoratrice d'intérieur, elle prépare chaque bien pour qu'il se vende : photos soignées, visite en 3D, home staging.</p>
-  </div>
-  <div class="facts">
-    <div class="fact rv"><b class="num">4,9 / 5</b><span>note moyenne sur 90 avis Google</span></div>
-    <div class="fact rv"><b class="num">78</b><span>témoignages clients publiés sur SAFTI</span></div>
-    <div class="fact rv"><b class="num">30 ans</b><span>de vie dans l'Est parisien</span></div>
-    <div class="fact rv"><b>7 j / 7</b><span>joignable, week-end compris</span></div>
-  </div>
-  <p class="src">Chiffres relevés sur sa page conseillère SAFTI le 1<sup>er</sup> novembre 2026.</p>
-</section>
-
-<section class="poster" aria-labelledby="t-secteur">
-  <h2 id="t-secteur">Son secteur, ville par ville</h2>
-  <ul>
-    <li><button type="button" data-city="Les Lilas" aria-pressed="false"><span class="city">les lilas</span><span class="det num">93260 · <em data-count="Les Lilas"></em></span></button></li>
-    <li><button type="button" data-city="Le Pré-Saint-Gervais" aria-pressed="false"><span class="city">le pré</span><span class="det num">93310 · <em data-count="Le Pré-Saint-Gervais"></em></span></button></li>
-    <li><button type="button" data-city="Romainville" aria-pressed="false"><span class="city">romainville</span><span class="det num">93230 · <em data-count="Romainville"></em></span></button></li>
-    <li><button type="button" data-city="Bagnolet" aria-pressed="false"><span class="city">bagnolet</span><span class="det num">93170 · <em data-count="Bagnolet"></em></span></button></li>
-  </ul>
-</section>
-
-<section class="biens" id="biens" aria-labelledby="t-biens">
-  <div class="biens-head">
-    <h2 id="t-biens" class="rv">En vente en ce moment</h2>
-    <div class="txt rv">
-      <p>Une sélection de ses annonces aux Lilas et alentour. Chaque fiche ouvre l'annonce complète, photos comprises, sur safti.fr.</p>
-      <p class="filter-note" aria-live="polite" hidden></p>
-    </div>
-  </div>
-  <ul class="ads">
-    <li class="ad" data-city="Les Lilas"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1727607" target="_blank" rel="noopener"><span class="what">Maison 5 pièces, 104&nbsp;m²</span><span class="where">Les Lilas · jardin de 120&nbsp;m²</span><span class="price num">495 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Le Pré-Saint-Gervais"><a href="https://www.safti.fr/annonces/achat/appartement/le-pre-saint-gervais-93310/1726982" target="_blank" rel="noopener"><span class="what">Appartement 3 pièces, 72&nbsp;m²</span><span class="where">Le Pré-Saint-Gervais · 2 chambres</span><span class="price num">475 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Les Lilas"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/1724685" target="_blank" rel="noopener"><span class="what">Appartement 2 pièces, 48&nbsp;m²</span><span class="where">Les Lilas · 1 chambre</span><span class="price num">325 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Les Lilas"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1718713" target="_blank" rel="noopener"><span class="what">Maison 4 pièces, 116&nbsp;m²</span><span class="where">Les Lilas · terrain de 548&nbsp;m²</span><span class="price num">870 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Le Pré-Saint-Gervais"><a href="https://www.safti.fr/annonces/achat/appartement/le-pre-saint-gervais-93310/1714664" target="_blank" rel="noopener"><span class="what">Appartement 4 pièces, 74&nbsp;m²</span><span class="where">Le Pré-Saint-Gervais · 2 chambres</span><span class="price num">475 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Les Lilas"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1697464" target="_blank" rel="noopener"><span class="what">Maison 10 pièces, 290&nbsp;m²</span><span class="where">Les Lilas · terrain de 404&nbsp;m²</span><span class="price num">1 595 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Les Lilas"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1692875" target="_blank" rel="noopener"><span class="what">Maison 5 pièces, 124&nbsp;m²</span><span class="where">Les Lilas · terrain de 176&nbsp;m²</span><span class="price num">710 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Romainville"><a href="https://www.safti.fr/annonces/achat/appartement/romainville-93230/1690827" target="_blank" rel="noopener"><span class="what">Appartement 5 pièces, 155&nbsp;m²</span><span class="where">Romainville</span><span class="price num">599 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Bagnolet"><a href="https://www.safti.fr/annonces/achat/appartement/bagnolet-93170/1691004" target="_blank" rel="noopener"><span class="what">Appartement 4 pièces, 90&nbsp;m²</span><span class="where">Bagnolet · 3 chambres</span><span class="price num">375 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Les Lilas"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/861317" target="_blank" rel="noopener"><span class="what">Appartement 4 pièces, 87&nbsp;m²</span><span class="where">Les Lilas · 3 chambres</span><span class="price num">590 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Romainville"><a href="https://www.safti.fr/annonces/achat/appartement/romainville-93230/1622442" target="_blank" rel="noopener"><span class="what">Appartement 5 pièces, 115&nbsp;m²</span><span class="where">Romainville · 3 chambres</span><span class="price num">539 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-    <li class="ad" data-city="Les Lilas"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1668438" target="_blank" rel="noopener"><span class="what">Maison 5 pièces, 136&nbsp;m²</span><span class="where">Les Lilas · terrain de 136&nbsp;m²</span><span class="price num">695 000 €</span><span class="go">Voir sur safti.fr</span></a></li>
-  </ul>
-  <p class="all">Toutes ses annonces, Paris 11<sup>e</sup>, 19<sup>e</sup> et 20<sup>e</sup> compris : <a href="https://www.safti.fr/votre-conseiller-safti/emilie-colin" target="_blank" rel="noopener">sa page conseillère SAFTI</a>. Prix relevés le 1<sup>er</sup> novembre 2026.</p>
-</section>
-
-<section class="about" aria-labelledby="t-about">
-  <h2 id="t-about" class="rv" style="margin-bottom:48px">Une conseillère qui sait mettre en scène</h2>
-  <div class="about-row">
-    <dl class="side rv">
-      <div><dt>Réseau</dt><dd>Mandataire SAFTI</dd></div>
-      <div><dt>Basée aux</dt><dd>Lilas (93260)</dd></div>
-      <div><dt>Autre métier</dt><dd>Décoratrice d'intérieur</dd></div>
-      <div><dt>Statut</dt><dd>Agent commercial, RSAC Bobigny</dd></div>
-    </dl>
+<main id="main">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
     <div>
-      <p class="para rv">Studio, appartement, maison, loft : Émilie connaît l'Est parisien rue par rue, des Lilas à Romainville et au Pré-Saint-Gervais, jusqu'à Bagnolet, Pantin, Vincennes et les 11<sup>e</sup>, 18<sup>e</sup>, 19<sup>e</sup> et 20<sup>e</sup> arrondissements.</p>
-      <p class="para rv">Côté vendeur, elle estime le bien au juste prix, le met en valeur et choisit les acquéreurs avec soin, jusqu'à l'acte chez le notaire. Côté acheteur, elle affine la recherche, ouvre l'accès à des biens parfois avant leur mise en ligne et négocie pour vous.</p>
+      <h1 id="h1">Acheter et vendre aux&nbsp;Lilas</h1>
+      <p class="lead">Avec Émilie Colin, conseillère immobilière indépendante du réseau SAFTI et décoratrice d’intérieur.</p>
+      <div class="tiles">
+        <a class="tile pl" href="#biens"><b class="num">28&nbsp;biens</b><span>en vente, de 82&nbsp;000 à 1&nbsp;595&nbsp;000&nbsp;€</span></a>
+        <a class="tile" href="#secteur"><b>Les Lilas</b><span>Romainville, Le Pré, Paris 11<sup>e</sup>, 18<sup>e</sup>, 19<sup>e</sup>, 20<sup>e</sup></span></a>
+        <a class="tile" href="#honoraires"><b class="num">5 à 10&nbsp;%</b><span>d’honoraires vendeur, barème SAFTI</span></a>
+        <a class="tile" href="#biens"><b class="num">12</b><span>exclusivités parmi ses annonces</span></a>
+      </div>
+      <div class="acts">
+        <a class="btn fill" href="#biens">Voir les 28 biens</a>
+        <a class="btn" href="#estimer">Faire estimer mon bien</a>
+      </div>
+      <p class="status"><span class="dot" aria-hidden="true"></span><span>Joignable 7&nbsp;j/7 au <a class="num" href="tel:+33187661824">01&nbsp;87&nbsp;66&nbsp;18&nbsp;24</a> ou sur <a href="https://wa.me/33187661824" target="_blank" rel="noopener">WhatsApp</a></span></p>
     </div>
-  </div>
-  <div class="sold">
-    <h3 class="rv">Vendus récemment</h3>
-    <ul class="rv">
-      <li><span>Appartement 3 pièces, 64&nbsp;m²</span><span>Pantin</span></li>
-      <li><span>Appartement 4 pièces, 88&nbsp;m²</span><span>Paris 20<sup>e</sup></span></li>
-      <li><span>Appartement 1 pièce, 27&nbsp;m²</span><span>Les Lilas</span></li>
-      <li><span>Maison 7 pièces, 120&nbsp;m²</span><span>Montreuil</span></li>
-      <li><span>Appartement 2 pièces, 48&nbsp;m²</span><span>Les Lilas</span></li>
-      <li><span>Appartement 3 pièces, 76&nbsp;m²</span><span>Romainville</span></li>
-      <li><span>Appartement 4 pièces, 98&nbsp;m²</span><span>Bagnolet</span></li>
-      <li><span>Appartement 3 pièces, 61&nbsp;m²</span><span>Le Pré-Saint-Gervais</span></li>
-      <li><span>Appartement 5 pièces, 130&nbsp;m²</span><span>Les Lilas</span></li>
-      <li><span>Maison 8 pièces, 140&nbsp;m²</span><span>Romainville</span></li>
-    </ul>
-  </div>
-  <div class="pics">
-    <figure class="rv"><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1400&q=70&auto=format&fit=crop" width="1400" height="934" loading="lazy" alt="Salon clair, parquet en point de Hongrie et canapé bleu sous de hautes fenêtres"></figure>
-    <figure class="rv"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=70&auto=format&fit=crop" width="800" height="1000" loading="lazy" alt="Fauteuil jaune, lampadaire et cadre noir et blanc contre un mur clair"></figure>
-    <figure class="rv"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=70&auto=format&fit=crop" width="800" height="1000" loading="lazy" alt="Salon avec bibliothèque, plantes suspendues et table ronde en bois"></figure>
+    <div class="h-photos">
+      <figure class="ph h-a"><img src="https://cdn.safti.fr/bien-photo/61/97/1697464/ba66afbd99714ac50beab0313f97a4a07f2fb95f/g.jpg" alt="Séjour sous charpente d’une maison-loft aux Lilas, fauteuils en cuir et mezzanine" width="1920" height="1439" fetchpriority="high"><figcaption>Maison-loft, Les Lilas · <span class="num">1&nbsp;595&nbsp;000&nbsp;€</span></figcaption></figure>
+      <figure class="ph h-b"><img src="https://cdn.safti.fr/bien-photo/61/55/1655825/0ab904a7ffea73b79a4bf4162e19f221bd8f6e80/g.jpg" alt="Terrasse plantée sur le toit d’un appartement aux Lilas, parasol et salon de jardin" width="1920" height="1440"><figcaption>Terrasse de 100&nbsp;m², Les Lilas</figcaption></figure>
+      <figure class="ph h-c"><img src="https://cdn.safti.fr/agent-photo/minisite/01KYJEMZBPRZ0M2151AYJX4BDQ/grand.jpeg" alt="Portrait d’Émilie Colin" width="380" height="380"><figcaption>Émilie Colin</figcaption></figure>
+    </div>
   </div>
 </section>
 
-<section class="est" id="estimer" aria-labelledby="t-est">
-  <div class="est-img"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1400&q=70&auto=format&fit=crop" width="1400" height="1750" loading="lazy" alt="Salon épuré aux murs blancs, canapé noir et commode ancienne"></div>
-  <div class="est-body">
-    <h2 id="t-est">Faire estimer mon bien</h2>
-    <p class="lead">Quatre réponses et votre demande est prête à partir. Émilie vient voir le bien avant de vous donner un prix : pas d'estimation automatique ici.</p>
-    <form id="f" novalidate>
-      <div>
-        <label class="lbl" for="adr">Adresse du bien</label>
-        <input class="inp" id="adr" name="adr" autocomplete="street-address" placeholder="Rue et ville" aria-describedby="adr-err">
-        <p class="err" id="adr-err"></p>
+<section class="sec wrap" id="biens" aria-labelledby="h-biens">
+  <div class="head">
+    <h2 id="h-biens" class="rv">Ses 28 biens en vente</h2>
+    <p class="rv">Toutes les annonces de sa page SAFTI, relevées le 2&nbsp;novembre 2026, prix honoraires inclus. Chaque fiche ouvre l’annonce complète&nbsp;: photos, DPE, visite.</p>
+  </div>
+  <div class="filters" role="group" aria-label="Filtrer les biens">
+    <div class="chips" id="cities">
+      <button class="chip" type="button" data-city="" aria-pressed="true">Toutes les villes</button>
+      <button class="chip" type="button" data-city="Les Lilas" aria-pressed="false">Les Lilas<small>13</small></button>
+      <button class="chip" type="button" data-city="Le Pré-Saint-Gervais" aria-pressed="false">Le Pré<small>3</small></button>
+      <button class="chip" type="button" data-city="Romainville" aria-pressed="false">Romainville<small>3</small></button>
+      <button class="chip" type="button" data-city="Paris" aria-pressed="false">Paris<small>3</small></button>
+      <button class="chip" type="button" data-city="Autres" aria-pressed="false">Autres villes<small>6</small></button>
+    </div>
+    <div class="budget">
+      <div class="chips" id="kinds">
+        <button class="chip" type="button" data-kind="" aria-pressed="true">Tout</button>
+        <button class="chip" type="button" data-kind="maison" aria-pressed="false">Maisons<small>8</small></button>
+        <button class="chip" type="button" data-kind="appart" aria-pressed="false">Appartements<small>19</small></button>
       </div>
-      <fieldset>
-        <legend>Type de bien</legend>
-        <div class="chips">
-          <label><input type="radio" name="type" value="Appartement" checked><span>Appartement</span></label>
-          <label><input type="radio" name="type" value="Maison"><span>Maison</span></label>
-          <label><input type="radio" name="type" value="Loft"><span>Loft</span></label>
-          <label><input type="radio" name="type" value="Studio"><span>Studio</span></label>
+      <label for="max">Budget maximum</label>
+      <input type="range" id="max" min="100000" max="1600000" step="25000" value="1600000" aria-describedby="maxv">
+      <output id="maxv" for="max" class="num">sans limite</output>
+    </div>
+    <p class="count num" id="count" aria-live="polite">28 biens affichés</p>
+  </div>
+  <ul class="ads" id="ads">
+<li class="ad" data-city="Les Lilas" data-kind="maison" data-price="495000"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1727607" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/71/27/1727607/9c0531df6451f6eae946af4ad3235e2ca634cf0c/g.jpg" alt="Maison à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">495 000 €</span><span class="ad-title">Maison avec cour, à rénover entièrement</span><span class="ad-meta num">Maison · Les Lilas · 5 pièces · 104 m² · terrain 120 m²</span></a></li>
+<li class="ad" data-city="Le Pré-Saint-Gervais" data-kind="appart" data-price="475000"><a href="https://www.safti.fr/annonces/achat/appartement/le-pre-saint-gervais-93310/1726982" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/71/26/1726982/b44b2e48193cf15e8883071adc850c446cb38183/rg_nobn.jpg" alt="Appartement à Le Pré-Saint-Gervais : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag">Exclusivité</span></span><span class="ad-price num">475 000 €</span><span class="ad-title">Grand 3 pièces, balcon et cave</span><span class="ad-meta num">Appartement · Le Pré-Saint-Gervais · 3 pièces · 72 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="appart" data-price="325000"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/1724685" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/71/24/1724685/2cdd1fca1ccb9cfb011022340549bbfa6525e873/rg_nobn.jpg" alt="Appartement à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag">Exclusivité</span></span><span class="ad-price num">325 000 €</span><span class="ad-title">Grand 2 pièces en parfait état</span><span class="ad-meta num">Appartement · Les Lilas · 2 pièces · 48 m²</span></a></li>
+<li class="ad" data-city="Paris" data-kind="appart" data-price="249000"><a href="https://www.safti.fr/annonces/achat/appartement/paris-20e-arrondissement-75020/1697472" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/97/1697472/034399c4b0cf78449d38015c2d92c99730f4c66a/g.jpg" alt="Appartement à Paris 20e : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag">Exclusivité</span></span><span class="ad-price num">249 000 €</span><span class="ad-title">Petit 2 pièces, quartier Gambetta</span><span class="ad-meta num">Appartement · Paris 20e · 2 pièces · 27 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="maison" data-price="870000"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1718713" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/71/18/1718713/bed3547b96a06c14ea68a37c468fcb0135d9517e/g.jpg" alt="Maison à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">870 000 €</span><span class="ad-title">Maison de ville, terrasse et box</span><span class="ad-meta num">Maison · Les Lilas · 4 pièces · 116 m² · terrain 548 m²</span></a></li>
+<li class="ad" data-city="Le Pré-Saint-Gervais" data-kind="appart" data-price="475000"><a href="https://www.safti.fr/annonces/achat/appartement/le-pre-saint-gervais-93310/1714664" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/71/14/1714664/91dbe5350ba93d56a6d5e32ed5f58a9299b0890c/g.jpg" alt="Appartement à Le Pré-Saint-Gervais : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">475 000 €</span><span class="ad-title">Appartement atypique avec courette privative</span><span class="ad-meta num">Appartement · Le Pré-Saint-Gervais · 4 pièces · 74 m²</span></a></li>
+<li class="ad" data-city="Paris" data-kind="appart" data-price="279000"><a href="https://www.safti.fr/annonces/achat/appartement/paris-19e-arrondissement-75019/1711283" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/71/11/1711283/4d829d95e608e2d5e01b38e70ae7739aade8e298/g.jpg" alt="Appartement à Paris 19e : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">279 000 €</span><span class="ad-title">2-3 pièces près du parc de la Villette</span><span class="ad-meta num">Appartement · Paris 19e · 2 pièces · 46 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="maison" data-price="1595000"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1697464" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/97/1697464/ba66afbd99714ac50beab0313f97a4a07f2fb95f/g.jpg" alt="Maison à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">1 595 000 €</span><span class="ad-title">Maison-loft, 5 chambres, jardin et garage</span><span class="ad-meta num">Maison · Les Lilas · 10 pièces · 290 m² · terrain 404 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="maison" data-price="710000"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1692875" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/92/1692875/b0bf43505b411fdbb86638cc180dd24386d0ea07/g.jpg" alt="Maison à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">710 000 €</span><span class="ad-title">Maison 3 chambres, combles, jardin</span><span class="ad-meta num">Maison · Les Lilas · 5 pièces · 124 m² · terrain 176 m²</span></a></li>
+<li class="ad" data-city="Autres" data-kind="maison" data-price="310000"><a href="https://www.safti.fr/annonces/achat/maison/bobigny-93000/1690920" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/90/1690920/fda8a092f4463b89335613bb1a19ee9b344cda84/g.jpg" alt="Maison à Bobigny : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag c">Sous compromis</span></span><span class="ad-price num">310 000 €</span><span class="ad-title">Maison 2 chambres et studio indépendant</span><span class="ad-meta num">Maison · Bobigny · 5 pièces · 92 m² · terrain 229 m²</span></a></li>
+<li class="ad" data-city="Romainville" data-kind="appart" data-price="599000"><a href="https://www.safti.fr/annonces/achat/appartement/romainville-93230/1690827" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/90/1690827/e9723c4690adf9171074b66213ce8f4cdcef8a0e/g.jpg" alt="Appartement à Romainville : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">599 000 €</span><span class="ad-title">Loft d&#x27;activité</span><span class="ad-meta num">Appartement · Romainville · 5 pièces · 155 m²</span></a></li>
+<li class="ad" data-city="Autres" data-kind="appart" data-price="375000"><a href="https://www.safti.fr/annonces/achat/appartement/bagnolet-93170/1691004" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/91/1691004/d6b726d6113dbaa4e17cb131afa6d53abe0a4ddb/g.jpg" alt="Appartement à Bagnolet : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">375 000 €</span><span class="ad-title">Appartement à rénover en lisière de Montreuil</span><span class="ad-meta num">Appartement · Bagnolet · 4 pièces · 90 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="appart" data-price="590000"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/861317" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/8/61/861317/a2eb91900ded795dc059c44d4dba64a33c45b0ae/rg_nobn.jpg" alt="Appartement à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag c">Exclusivité · Sous compromis</span></span><span class="ad-price num">590 000 €</span><span class="ad-title">Appartement familial, terrasse et parking</span><span class="ad-meta num">Appartement · Les Lilas · 4 pièces · 87 m²</span></a></li>
+<li class="ad" data-city="Paris" data-kind="appart" data-price="390000"><a href="https://www.safti.fr/annonces/achat/appartement/paris-11e-arrondissement-75011/1677456" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/77/1677456/13f028e95e4e51b984ee6aaa4d070425ff9b909e/g.jpg" alt="Appartement à Paris 11e : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag">Exclusivité</span></span><span class="ad-price num">390 000 €</span><span class="ad-title">Petit loft, 3,50 m sous plafond, près de Bastille</span><span class="ad-meta num">Appartement · Paris 11e · 2 pièces · 30 m²</span></a></li>
+<li class="ad" data-city="Romainville" data-kind="appart" data-price="539000"><a href="https://www.safti.fr/annonces/achat/appartement/romainville-93230/1622442" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/22/1622442/0efc352c6e4e729b89eb8e7ff12e4df4a628503e/rg_nobn.jpg" alt="Appartement à Romainville : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag">Exclusivité</span></span><span class="ad-price num">539 000 €</span><span class="ad-title">Triplex avec 2 box, cave et terrasse</span><span class="ad-meta num">Appartement · Romainville · 5 pièces · 115 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="maison" data-price="695000"><a href="https://www.safti.fr/annonces/achat/maison/les-lilas-93260/1668438" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/68/1668438/f064a46492ca083a232e82e5ccefc02ea3c7a12a/g.jpg" alt="Maison à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag c">Sous compromis</span></span><span class="ad-price num">695 000 €</span><span class="ad-title">Maison récente, 4 chambres, terrasse, garage</span><span class="ad-meta num">Maison · Les Lilas · 5 pièces · 136 m² · terrain 136 m²</span></a></li>
+<li class="ad" data-city="Autres" data-kind="appart" data-price="495000"><a href="https://www.safti.fr/annonces/achat/appartement/vincennes-94300/1655363" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/55/1655363/719563f49565de883dd94905aa65f77d43f80b65/rg_nobn.jpg" alt="Appartement à Vincennes : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag c">Exclusivité · Sous compromis</span></span><span class="ad-price num">495 000 €</span><span class="ad-title">Triangle d&#x27;or, à deux pas du château</span><span class="ad-meta num">Appartement · Vincennes · 3 pièces · 61 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="appart" data-price="749000"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/1655825" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/55/1655825/d88864f0ff663cc71bfdfb06559e4d979a96cda4/g.jpg" alt="Appartement à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">749 000 €</span><span class="ad-title">4 pièces avec terrasse plein ciel de 100 m²</span><span class="ad-meta num">Appartement · Les Lilas · 4 pièces · 90 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="appart" data-price="245000"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/1655636" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/55/1655636/605bd8381111d0196c1edc263fe6ae213594bd41/g.jpg" alt="Appartement à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">245 000 €</span><span class="ad-title">Appartement 1 pièce</span><span class="ad-meta num">Appartement · Les Lilas · 1 pièce · 28 m²</span></a></li>
+<li class="ad" data-city="Autres" data-kind="appart" data-price="690000"><a href="https://www.safti.fr/annonces/achat/appartement/aubervilliers-93300/1655628" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/55/1655628/a30e8896f2fd053b86b9d185339250ee27f0688a/rg_nobn.jpg" alt="Appartement à Aubervilliers : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag">Exclusivité</span></span><span class="ad-price num">690 000 €</span><span class="ad-title">Loft de 186 m² avec terrasse arborée</span><span class="ad-meta num">Appartement · Aubervilliers · 4 pièces · 186 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="appart" data-price="539000"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/1640890" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/40/1640890/906a1fe63583d3247ef7c08847d356230799cb55/rg_nobn.jpg" alt="Appartement à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag c">Exclusivité · Sous compromis</span></span><span class="ad-price num">539 000 €</span><span class="ad-title">3 chambres et un bureau ou dressing</span><span class="ad-meta num">Appartement · Les Lilas · 5 pièces · 71 m²</span></a></li>
+<li class="ad" data-city="Romainville" data-kind="maison" data-price="869000"><a href="https://www.safti.fr/annonces/achat/maison/romainville-93230/1641010" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/41/1641010/62759f84a11f37b1e0cdd4e5c49b09a840df5ddb/g.jpg" alt="Maison à Romainville : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">869 000 €</span><span class="ad-title">Maison ancienne, 4 chambres, jardin</span><span class="ad-meta num">Maison · Romainville · 6 pièces · 168 m² · terrain 257 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="appart" data-price="369000"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/1640998" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/40/1640998/ffbc1349ae47b5de809e639e9625dc8de7eed546/rg_nobn.jpg" alt="Appartement à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag">Exclusivité</span></span><span class="ad-price num">369 000 €</span><span class="ad-title">3 pièces en plein centre-ville</span><span class="ad-meta num">Appartement · Les Lilas · 3 pièces · 48 m²</span></a></li>
+<li class="ad" data-city="Le Pré-Saint-Gervais" data-kind="appart" data-price="175000"><a href="https://www.safti.fr/annonces/achat/appartement/le-pre-saint-gervais-93310/1610808" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/10/1610808/437e85716abb0d8d8ae724dd11443303342a14bc/rg_nobn.jpg" alt="Appartement à Le Pré-Saint-Gervais : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag">Exclusivité</span></span><span class="ad-price num">175 000 €</span><span class="ad-title">Studio, cuisine séparée, centre du Pré</span><span class="ad-meta num">Appartement · Le Pré-Saint-Gervais · 1 pièce · 23 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="appart" data-price="368000"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/1613248" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/13/1613248/1a3fed5a8430e9e9129d7c362a38242bda9f5944/rg_nobn.jpg" alt="Appartement à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"><span class="tag">Exclusivité</span></span><span class="ad-price num">368 000 €</span><span class="ad-title">Duplex 3 pièces et combles aménagés</span><span class="ad-meta num">Appartement · Les Lilas · 4 pièces · 90 m²</span></a></li>
+<li class="ad" data-city="Autres" data-kind="autre" data-price="82000"><a href="https://www.safti.fr/annonces/achat/parking/montreuil-93100/1608038" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/08/1608038/11859e15fc8c9d81442c9cd849c825196cd67605/g.jpg" alt="Cave à Montreuil : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">82 000 €</span><span class="ad-title">Cave : stockage, bureau ou studio de musique</span><span class="ad-meta num">Cave · Montreuil · 37 m²</span></a></li>
+<li class="ad" data-city="Autres" data-kind="maison" data-price="432000"><a href="https://www.safti.fr/annonces/achat/maison/noisy-le-sec-93130/1614469" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/61/14/1614469/526e3567f116793dc8f84261d83dbd8a37e74524/g.jpg" alt="Maison à Noisy-le-Sec : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">432 000 €</span><span class="ad-title">Maison récente, 3 chambres, terrasse</span><span class="ad-meta num">Maison · Noisy-le-Sec · 5 pièces · 91 m² · terrain 245 m²</span></a></li>
+<li class="ad" data-city="Les Lilas" data-kind="appart" data-price="619000"><a href="https://www.safti.fr/annonces/achat/appartement/les-lilas-93260/1598207" target="_blank" rel="noopener"><span class="ad-img"><img src="https://cdn.safti.fr/bien-photo/51/98/1598207/f95ef300f4fd250c73d96b6755370ac3a956d4ed/g.jpg" alt="Appartement à Les Lilas : première photo de l’annonce" width="1920" height="1440" loading="lazy" decoding="async"></span><span class="ad-price num">619 000 €</span><span class="ad-title">Appartement avec terrasse, centre des Lilas</span><span class="ad-meta num">Appartement · Les Lilas · 3 pièces · 84 m²</span></a></li>
+  </ul>
+  <p class="empty" id="empty" hidden>Aucun bien ne correspond. Montez le budget, ou décrivez votre recherche à Émilie.</p>
+  <div class="after">
+    <a class="btn fill" href="mailto:emilie.colin@safti.fr?subject=Ma%20recherche%20immobili%C3%A8re">Décrire ma recherche à Émilie</a>
+    <a href="https://www.safti.fr/votre-conseiller-safti/emilie-colin" target="_blank" rel="noopener">Sa page conseillère sur safti.fr</a>
+  </div>
+</section>
+
+<section class="sec wrap" id="secteur" aria-labelledby="h-sect">
+  <div class="sect">
+    <div class="sect-text">
+      <h2 id="h-sect" class="rv">Son secteur, l’Est parisien</h2>
+      <p class="big rv" style="margin-top:24px">Émilie vit dans l’Est parisien depuis plus de trente&nbsp;ans.</p>
+      <p class="rv">Elle travaille d’abord aux Lilas, à Romainville et au Pré-Saint-Gervais, puis dans les villes voisines, Bagnolet, Pantin, Vincennes, et à Paris dans les 11<sup>e</sup>, 18<sup>e</sup>, 19<sup>e</sup> et 20<sup>e</sup>&nbsp;arrondissements. Studio, appartement, maison ou loft.</p>
+      <p class="rv"><a href="https://www.google.com/maps/search/?api=1&amp;query=Les+Lilas+93260" target="_blank" rel="noopener">Les Lilas sur Google Maps</a></p>
+    </div>
+    <div class="towns rv" role="list" aria-label="Biens en vente par ville">
+      <div class="town" role="listitem"><b>Les Lilas</b><span class="n num">13 biens</span><span class="r num">de 245 000 € à 1 595 000 €</span></div>
+      <div class="town" role="listitem"><b>Le Pré-Saint-Gervais</b><span class="n num">3 biens</span><span class="r num">de 175 000 € à 475 000 €</span></div>
+      <div class="town" role="listitem"><b>Romainville</b><span class="n num">3 biens</span><span class="r num">de 539 000 € à 869 000 €</span></div>
+      <div class="town" role="listitem"><b>Paris</b><span class="n num">3 biens</span><span class="r num">11<sup>e</sup>, 19<sup>e</sup> et 20<sup>e</sup>, de 249 000 € à 390 000 €</span></div>
+      <div class="town" role="listitem"><b>Villes voisines</b><span class="n num">6 biens</span><span class="r num">Bagnolet, Montreuil, Bobigny, Noisy-le-Sec, Vincennes, Aubervilliers, de 82 000 € à 690 000 €</span></div>
+    </div>
+    <div class="sect-side rv">
+      <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/H%C3%B4tel_Ville_-_Les_Lilas_%28FR93%29_-_2021-05-01_-_2.jpg/960px-H%C3%B4tel_Ville_-_Les_Lilas_%28FR93%29_-_2021-05-01_-_2.jpg" alt="Façade de l’hôtel de ville des Lilas" width="960" height="1510" loading="lazy" decoding="async"><figcaption>L’hôtel de ville des Lilas</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="fees dark" id="honoraires" aria-labelledby="h-fees">
+  <div class="wrap">
+    <div>
+      <h2 id="h-fees" class="rv">Les honoraires, à l’euro près</h2>
+      <p class="rv">Le barème publié par SAFTI, applicable depuis le 30&nbsp;janvier 2025, en TTC. Pour une vente, les honoraires sont à la charge du vendeur et inclus dans le prix affiché.</p>
+      <table class="rv" id="bareme">
+        <thead><tr><th scope="col">Prix du bien</th><th scope="col">Honoraires</th></tr></thead>
+        <tbody>
+          <tr data-max="60000"><th scope="row">Jusqu’à 60&nbsp;000&nbsp;€</th><td>6&nbsp;000&nbsp;€</td></tr>
+          <tr data-max="120000"><th scope="row">60&nbsp;001 à 120&nbsp;000&nbsp;€</th><td>10&nbsp;%</td></tr>
+          <tr data-max="160000"><th scope="row">120&nbsp;001 à 160&nbsp;000&nbsp;€</th><td>8,5&nbsp;%</td></tr>
+          <tr data-max="230000"><th scope="row">160&nbsp;001 à 230&nbsp;000&nbsp;€</th><td>7,5&nbsp;%</td></tr>
+          <tr data-max="320000"><th scope="row">230&nbsp;001 à 320&nbsp;000&nbsp;€</th><td>6,5&nbsp;%</td></tr>
+          <tr data-max="650000" class="on"><th scope="row">320&nbsp;001 à 650&nbsp;000&nbsp;€</th><td>6&nbsp;%</td></tr>
+          <tr data-max="Infinity"><th scope="row">Plus de 650&nbsp;000&nbsp;€</th><td>5&nbsp;%</td></tr>
+        </tbody>
+      </table>
+      <p class="rv" style="margin-top:18px">Source&nbsp;: <a href="https://www.safti.fr/bareme" target="_blank" rel="noopener">barème des honoraires SAFTI</a>. Le montant exact est fixé dans le mandat.</p>
+    </div>
+    <div>
+      <div class="calc rv">
+        <label for="prix">Le prix de votre bien</label>
+        <div class="field"><input id="prix" inputmode="numeric" autocomplete="off" value="450 000" aria-describedby="calc-out"><span aria-hidden="true">€</span></div>
+        <div class="presets" role="group" aria-label="Exemples de prix">
+          <button class="chip" type="button" data-v="250000">Studio, 250&nbsp;000&nbsp;€</button>
+          <button class="chip" type="button" data-v="475000">3 pièces, 475&nbsp;000&nbsp;€</button>
+          <button class="chip" type="button" data-v="870000">Maison, 870&nbsp;000&nbsp;€</button>
         </div>
-      </fieldset>
-      <div class="row2">
-        <div>
-          <label class="lbl" for="surf">Surface habitable</label>
-          <div class="unit"><input class="inp num" id="surf" name="surf" inputmode="numeric" placeholder="65" aria-describedby="surf-err"><i>m²</i></div>
-          <p class="err" id="surf-err"></p>
+        <div class="res" id="calc-out" aria-live="polite">
+          <div class="pl"><b class="num" id="o-fee">27&nbsp;000&nbsp;€</b><span id="o-rate">d’honoraires, soit 6&nbsp;%</span></div>
+          <div><b class="num" id="o-net">423&nbsp;000&nbsp;€</b><span>pour vous, hors honoraires</span></div>
         </div>
-        <div>
-          <label class="lbl" for="tel">Votre téléphone <span style="font-weight:400;color:var(--field-muted)">(facultatif)</span></label>
-          <input class="inp num" id="tel" name="tel" type="tel" autocomplete="tel" placeholder="06 …">
+        <p class="calc-note">Calcul indicatif sur le barème SAFTI, appliqué au prix affiché.</p>
+      </div>
+      <p class="connect rv">Un proche a un projet&nbsp;? Transmettez-le à Émilie avec l’application SAFTI Connect et son code <b class="num">369469</b>&nbsp;: vous touchez 10&nbsp;% des honoraires si la vente se fait.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="vendre" aria-labelledby="h-deco">
+  <div class="deco">
+    <div>
+      <h2 id="h-deco" class="rv">Une conseillère qui est aussi décoratrice</h2>
+      <p class="big rv" style="margin-top:22px">Avant les visites, Émilie met le bien en valeur&nbsp;: photos de qualité, simulation&nbsp;3D, home staging.</p>
+      <div class="lists">
+        <div class="rv">
+          <h3>Vous vendez</h3>
+          <ul>
+            <li>Une estimation juste de votre bien</li>
+            <li>Photos, simulation 3D et home staging</li>
+            <li>Une sélection ciblée des acquéreurs</li>
+            <li>Un suivi jusqu’à l’acte authentique</li>
+          </ul>
+        </div>
+        <div class="rv">
+          <h3>Vous achetez</h3>
+          <ul>
+            <li>Votre recherche définie avec précision</li>
+            <li>Des biens, certains en avant-première</li>
+            <li>Votre capacité de financement validée</li>
+            <li>La négociation de votre coup de cœur</li>
+          </ul>
         </div>
       </div>
-      <fieldset>
-        <legend>Vous pensez vendre</legend>
-        <div class="chips">
-          <label><input type="radio" name="delai" value="dès que possible"><span>Dès que possible</span></label>
-          <label><input type="radio" name="delai" value="d'ici 3 mois" checked><span>D'ici 3 mois</span></label>
-          <label><input type="radio" name="delai" value="d'ici 6 mois"><span>D'ici 6 mois</span></label>
-          <label><input type="radio" name="delai" value="je me renseigne"><span>Je me renseigne</span></label>
-        </div>
-      </fieldset>
-      <div class="preview" aria-live="polite"><b>Votre message à Émilie</b><span id="pv"></span></div>
-      <div class="form-foot">
-        <button class="btn on-dark" type="submit">Envoyer la demande <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        <small>Le bouton ouvre votre messagerie, adressée à emilie.colin@safti.fr. Rien n'est enregistré sur ce site.</small>
+    </div>
+    <div class="deco-ph">
+      <figure class="ph rv"><img src="https://cdn.safti.fr/bien-photo/51/98/1598207/10147a2990b18582cd24c340ff12355572c2e730/g.jpg" alt="Séjour meublé et décoré d’un appartement avec terrasse au centre des Lilas" width="1920" height="1070" loading="lazy" decoding="async"><figcaption>3 pièces avec terrasse, Les Lilas · <span class="num">619&nbsp;000&nbsp;€</span></figcaption></figure>
+      <figure class="ph rv"><img src="https://cdn.safti.fr/bien-photo/51/98/1598207/3cd213b7c4115749b4cc41a8e55d209983caf279/g.jpg" alt="Plan en 3D meublé du même appartement" width="1920" height="1080" loading="lazy" decoding="async"><figcaption>Le même bien en plan 3D</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="contact" aria-labelledby="h-contact">
+  <div class="contact">
+    <div>
+      <h2 id="h-contact" class="rv">Joindre Émilie, 7&nbsp;jours sur&nbsp;7</h2>
+      <ul class="c-list rv">
+        <li><a class="num" href="tel:+33187661824">01&nbsp;87&nbsp;66&nbsp;18&nbsp;24</a></li>
+        <li><a href="mailto:emilie.colin@safti.fr">emilie.colin@safti.fr</a></li>
+      </ul>
+      <div class="who rv">
+        <figure class="ph"><img src="https://cdn.safti.fr/agent-photo/minisite/01KYJEMZBPRZ0M2151AYJX4BDQ/grand.jpeg" alt="Émilie Colin, conseillère immobilière SAFTI aux Lilas" width="380" height="380" loading="lazy" decoding="async"></figure>
+        <p>Émilie Colin, conseillère indépendante SAFTI aux Lilas (93260). «&nbsp;Écoute, transparence et éthique&nbsp;!&nbsp;», résume-t-elle sur sa page.</p>
       </div>
+      <div class="socials rv">
+        <a href="https://wa.me/33187661824" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/les.maisons.d.emilie/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/saftiemiliecolin" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.linkedin.com/in/emilie-colin-93260/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.safti.fr/votre-conseiller-safti/emilie-colin" target="_blank" rel="noopener">Page SAFTI</a>
+      </div>
+      <p class="rating rv">Note affichée sur sa page SAFTI&nbsp;: 4,9&nbsp;/&nbsp;5 sur 90&nbsp;avis Google.</p>
+    </div>
+    <form class="est rv" id="estimer" aria-labelledby="h-est">
+      <h3 id="h-est">Faire estimer mon bien</h3>
+      <div class="f2">
+        <div class="fl"><label for="type">Type de bien</label><select id="type"><option>Appartement</option><option>Maison</option><option>Loft</option><option>Studio</option><option>Parking ou cave</option></select></div>
+        <div class="fl"><label for="surf">Surface (m²)</label><input id="surf" inputmode="numeric" placeholder="Ex. 64…"></div>
+      </div>
+      <div class="fl"><label for="adr">Ville ou quartier</label><input id="adr" placeholder="Les Lilas, près de la mairie…" autocomplete="address-level2"></div>
+      <div class="fl"><label for="msg">Votre projet</label><textarea id="msg" placeholder="Vente dans six mois, travaux récents, terrasse…"></textarea></div>
+      <div class="fl"><label for="nom">Votre nom et téléphone</label><input id="nom" placeholder="Nom, 06…" autocomplete="name"></div>
+      <button class="btn fill" type="submit">Envoyer la demande à Émilie</button>
+      <small>Le bouton ouvre votre messagerie, adressée à emilie.colin@safti.fr. Rien n’est enregistré sur ce site.</small>
     </form>
   </div>
 </section>
-
-<section class="voices" aria-labelledby="t-voices">
-  <div>
-    <h2 id="t-voices">Ce qu'en disent ses clients</h2>
-    <blockquote class="main rv">« Vous avez su trouver les mots et les photos qui ont fait succomber notre acheteuse. »<cite>Arnaud P.<span>vente à Bagnolet, août 2026</span></cite></blockquote>
-  </div>
-  <div>
-    <div class="corners">
-      <blockquote class="small rv">« Elle s'est montrée parfaite à chaque étape : réactive, disponible et toujours de très bon conseil. »<cite>Geofrey P.<span>achat aux Lilas, juillet 2026</span></cite></blockquote>
-      <blockquote class="small rv">« Madame Colin a été très proactive pour la réalisation des diagnostics, prenant à sa charge le choix du prestataire et le rendez-vous. »<cite>Olivier L.<span>vente à Romainville, 2026</span></cite></blockquote>
-    </div>
-    <p class="note">Extraits de témoignages publiés sur <a href="https://www.safti.fr/votre-conseiller-safti/emilie-colin" target="_blank" rel="noopener">sa page SAFTI</a>, qui en compte 78.</p>
-  </div>
-</section>
-
-<section class="contact" id="contact" aria-labelledby="t-contact">
-  <h2 id="t-contact">Joindre Émilie</h2>
-  <ul class="rows">
-    <li><span>Émilie Colin</span></li>
-    <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Les+Lilas+93260" target="_blank" rel="noopener">Les Lilas, 93260</a></li>
-    <li><a class="num" href="tel:+33187661824">01 87 66 18 24</a></li>
-    <li><a href="mailto:emilie.colin@safti.fr">emilie.colin@safti.fr</a></li>
-    <li><span>7 jours sur 7</span></li>
-    <li><a class="hello" href="#estimer"><span>Estimer mon bien</span><span class="round"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-  </ul>
-</section>
 </main>
 
-<footer>
-  <div class="f-top">
-    <div>
-      <h2>Votre maison, la prochaine&nbsp;?</h2>
-      <a class="btn on-dark" href="mailto:emilie.colin@safti.fr?subject=Projet%20immobilier">Écrire à Émilie</a>
-    </div>
-    <ul class="f-links">
-      <li><a href="https://www.instagram.com/les.maisons.d.emilie/" target="_blank" rel="noopener">Instagram</a></li>
-      <li><a href="https://www.facebook.com/saftiemiliecolin" target="_blank" rel="noopener">Facebook</a></li>
-      <li><a href="https://www.linkedin.com/in/emilie-colin-93260/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://www.safti.fr/votre-conseiller-safti/emilie-colin" target="_blank" rel="noopener">Page SAFTI</a></li>
-    </ul>
+<footer class="foot dark">
+  <div class="wrap">
+    <p class="foot-name" translate="no">Les maisons d’Emilie</p>
+    <p class="foot-places">Les Lilas · Romainville · Le Pré-Saint-Gervais · Paris Est</p>
+    <small>Émilie Colin, EI, agent commercial mandataire indépendant du réseau SAFTI, immatriculée au RSAC de Bobigny sous le n°&nbsp;888&nbsp;267&nbsp;564.<br>
+    Photos des biens et portrait&nbsp;: annonces et page conseillère publiques sur safti.fr. Hôtel de ville des Lilas&nbsp;: photo Chabe01, <a href="https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Ville_-_Les_Lilas_(FR93)_-_2021-05-01_-_2.jpg" target="_blank" rel="noopener">CC BY-SA 4.0, Wikimedia Commons</a>.<br>
+    Démo non officielle réalisée par Raul Hatos.</small>
   </div>
-  <div class="legal">
-    <span>Émilie Colin, EI, agent commercial mandataire indépendant du réseau SAFTI · RSAC Bobigny 888 267 564</span>
-    <span>Photos d'ambiance : Unsplash · Démo non officielle par Raul Hatos</span>
-  </div>
-  <p class="wordmark" aria-hidden="true">d'Emilie</p>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
-// entrances
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*75+'ms';io.observe(el)});
+(function(){
+  var fmt=function(n){return Math.round(n).toLocaleString('fr-FR').replace(/\s/g,' ')+' €'};
+  /* reveal */
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.querySelectorAll(':scope>.rv'));e.target.style.transitionDelay=Math.max(0,sib.indexOf(e.target))*80+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
 
-// city filter
-const ads=[...document.querySelectorAll('.ad')], note=document.querySelector('.filter-note'), btns=[...document.querySelectorAll('[data-city]')].filter(b=>b.tagName==='BUTTON');
-document.querySelectorAll('[data-count]').forEach(el=>{const n=ads.filter(a=>a.dataset.city===el.dataset.count).length;el.textContent=n+(n>1?' biens en vente':' bien en vente');el.style.fontStyle='normal'});
-function filter(city){
-  btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.city===city));
-  ads.forEach(a=>a.hidden=!!city&&a.dataset.city!==city);
-  if(city){note.hidden=false;note.innerHTML='Filtré : '+city+' · <button type="button">tout afficher</button>';note.querySelector('button').onclick=()=>filter(null)}else{note.hidden=true}
-}
-btns.forEach(b=>b.addEventListener('click',()=>{filter(b.getAttribute('aria-pressed')==='true'?null:b.dataset.city);document.getElementById('biens').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}));
+  /* filters */
+  var st={city:'',kind:'',max:Infinity}, ads=[].slice.call(document.querySelectorAll('.ad'));
+  function apply(){
+    var n=0;ads.forEach(function(a){var ok=(!st.city||a.dataset.city===st.city)&&(!st.kind||a.dataset.kind===st.kind)&&(+a.dataset.price<=st.max);a.hidden=!ok;if(ok)n++});
+    document.getElementById('count').textContent=n+(n>1?' biens affichés':' bien affiché');
+    document.getElementById('empty').hidden=n>0;
+  }
+  function group(id,key){var g=document.getElementById(id);g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});st[key]=b.dataset[key];apply()})}
+  group('cities','city');group('kinds','kind');
+  var r=document.getElementById('max'),o=document.getElementById('maxv');
+  r.addEventListener('input',function(){var v=+r.value;st.max=v>=1600000?Infinity:v;o.textContent=v>=1600000?'sans limite':fmt(v);apply()});
 
-// estimation -> mailto
-const f=document.getElementById('f'), pv=document.getElementById('pv');
-const val=n=>(f.elements[n].value||'').trim();
-function msg(){
-  const adr=val('adr')||'[adresse]', s=val('surf').replace(/\D/g,'')||'[surface]';
-  return 'Bonjour Émilie,\n\nJe souhaite faire estimer mon bien : '+val('type').toLowerCase()+' de '+s+' m², '+adr+'.\nJe pense vendre '+val('delai')+'.'+(val('tel')?'\nVous pouvez me joindre au '+val('tel')+'.':'')+'\n\nMerci,';
-}
-const upd=()=>pv.textContent=msg();
-f.addEventListener('input',upd);f.addEventListener('change',upd);upd();
-f.addEventListener('submit',e=>{
-  e.preventDefault();
-  const a=f.elements.adr, s=f.elements.surf, sv=+val('surf').replace(/\D/g,'');
-  const ae=!val('adr'), se=!(sv>=8&&sv<=2000);
-  a.setAttribute('aria-invalid',ae);s.setAttribute('aria-invalid',se);
-  document.getElementById('adr-err').textContent=ae?'Indiquez au moins la rue et la ville.':'';
-  document.getElementById('surf-err').textContent=se?'Indiquez une surface en m², par exemple 65.':'';
-  if(ae){a.focus();return} if(se){s.focus();return}
-  location.href='mailto:emilie.colin@safti.fr?subject='+encodeURIComponent('Estimation : '+val('type').toLowerCase()+' '+sv+' m², '+val('adr'))+'&body='+encodeURIComponent(msg());
-});
+  /* honoraires, barème SAFTI 30/01/2025 */
+  var B=[[60000,0],[120000,.10],[160000,.085],[230000,.075],[320000,.065],[650000,.06],[Infinity,.05]];
+  function fee(p){for(var i=0;i<B.length;i++)if(p<=B[i][0])return {i:i,f:B[i][1]?p*B[i][1]:6000,r:B[i][1]};}
+  console.assert(fee(50000).f===6000&&fee(450000).f===27000&&fee(870000).f===43500&&fee(650001).r===.05,'barème');
+  var inp=document.getElementById('prix'),rows=document.querySelectorAll('#bareme tbody tr');
+  function calc(){
+    var p=parseInt(inp.value.replace(/\D/g,''),10)||0, of=document.getElementById('o-fee'), orate=document.getElementById('o-rate'), on=document.getElementById('o-net');
+    if(!p){of.textContent='–';orate.textContent='saisissez un prix';on.textContent='–';return}
+    var x=fee(p);of.textContent=fmt(x.f);
+    orate.textContent=x.r?'d’honoraires, soit '+String(x.r*100).replace('.',',')+' %':'d’honoraires, forfait';
+    on.textContent=fmt(Math.max(0,p-x.f));
+    rows.forEach(function(tr,k){tr.classList.toggle('on',k===x.i)});
+  }
+  inp.addEventListener('input',function(){var d=inp.value.replace(/\D/g,'').slice(0,9);inp.value=d?(+d).toLocaleString('fr-FR'):'';calc()});
+  document.querySelector('.presets').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;inp.value=(+b.dataset.v).toLocaleString('fr-FR');calc()});
+  calc();
+
+  /* estimation */
+  document.getElementById('estimer').addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){return document.getElementById(id).value.trim()};
+    var sub='Estimation : '+v('type').toLowerCase()+(v('surf')?' '+v('surf')+' m²':'')+(v('adr')?', '+v('adr'):'');
+    var body='Bonjour Émilie,\n\nJe souhaite faire estimer mon bien.\nType : '+v('type')+'\nSurface : '+(v('surf')||'?')+' m²\nVille ou quartier : '+(v('adr')||'?')+'\n\n'+v('msg')+'\n\n'+v('nom');
+    location.href='mailto:emilie.colin@safti.fr?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);
+  });
+})();
 </script>
 </body>
 </html>
