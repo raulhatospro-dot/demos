@@ -3,448 +3,605 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Bricheton · Pain au levain vendu au poids, 50 rue de la Réunion, Paris 20e</title>
+<meta name="description" content="Le Bricheton, boulangerie au levain naturel de Maxime Bussy : blés de semences paysannes, pains vendus au kilo. 50 rue de la Réunion, Paris 20e, métro Buzenval.">
 <meta name="robots" content="noindex">
-<title>Le Bricheton · Boulangerie au levain, 50 rue de la Réunion, Paris 20e</title>
-<meta name="description" content="Le Bricheton, boulangerie de Maxime Bussy au 50 rue de la Réunion (Paris 20e) : pains au levain naturel de blés anciens, pétris à la main, vendus au poids.">
-<!-- DESIGN.md « Dell 1996 » (awesome-design) : cadre noir, aplats teintés par ligne de produit, gros titres noirs, texte en romain, pastille jaune -->
+<meta name="theme-color" content="#eeefeb">
+<meta property="og:title" content="Le Bricheton · pain au levain vendu au poids, Paris 20e">
+<meta property="og:description" content="Blés de semences paysannes, levain naturel, pains coupés et pesés au comptoir. 50 rue de la Réunion.">
+<meta property="og:image" content="https://cdn.lefooding.com/medias/2023/03/le-bricheton_OK.jpg?width=1200&amp;format=auto">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%233c4744'/%3E%3Cpath d='M4 26h24v-3l-3 2-3-2-3 2-3-2-3 2-3-2-3 2-3-2z M9 8h9a5 5 0 0 1 0 10H9z' fill='%23eeefeb'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
 :root{
-  --frame:#000;
-  --paper:#fff;
-  --ink:#000;
-  --red:#d81e28;
-  --red-deep:#b0141d;
-  --sticker:#fcc20f;
-  --olive:#a9a440;
-  --sage:#b3bd95;
-  --salmon:#d77a7a;
-  --peach:#e6915d;
-  --lime:#c0d4a7;
-  --sky:#9ab6c8;
-  --steel:#a5b8c0;
-  --peri:#8c9ae0;
-  --pad:16px;
-  --b:3px solid var(--frame);
-  --sans:"Work Sans",system-ui,"Helvetica Neue",Arial,sans-serif;
-  --serif:"Source Serif 4","Times New Roman",Times,serif;
+  --bg:#eeefeb;          /* papier du ticket de vente */
+  --surface:#e1e3de;
+  --paper:#fafbfb;
+  --ink:#151716;
+  --muted:#4e5551;
+  --accent:#3c4744;      /* gris ardoise de la devanture */
+  --accent-deep:#2b3331;
+  --accent-ink:#ffffff;
+  --straw:#e4d18e;       /* paille des blés de population */
+  --m:clamp(16px,3vw,40px);
+  --step-small:clamp(.8125rem,.79rem + .1vw,.875rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2.1rem,1.3rem + 3.2vw,4rem);
   --ease:cubic-bezier(.16,1,.3,1);
+  --zig-paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10'%3E%3Cpath d='M0 10 10 0 20 10z' fill='%23fafbfb'/%3E%3C/svg%3E");
+  --zig-bg:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10'%3E%3Cpath d='M0 10 10 0 20 10z' fill='%23eeefeb'/%3E%3C/svg%3E");
+  --zig-straw:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10'%3E%3Cpath d='M0 10 10 0 20 10z' fill='%23e4d18e'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:16px;background:var(--frame)}
-body{background:var(--frame);color:var(--ink);font:400 18px/1.5 var(--serif);padding:8px}
-img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:3px}
-::selection{background:var(--sticker);color:#000}
-:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-h1,h2,h3{font-family:var(--sans);font-weight:900;line-height:.95;letter-spacing:-.03em;text-wrap:balance}
-.num{font-variant-numeric:tabular-nums}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.55 "Jost",system-ui,sans-serif;touch-action:manipulation;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.2em}
+button{font:inherit;color:inherit;touch-action:manipulation}
+::selection{background:var(--straw);color:var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.on-dark :focus-visible,.btn-main:focus-visible{outline-color:#fff}
+h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:.95;text-wrap:balance}
+h2{font-size:var(--step-head);text-transform:uppercase}
+.num,.price,td{font-variant-numeric:tabular-nums}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.page{background:var(--paper);max-width:1440px;margin:0 auto}
+.skip{position:absolute;left:var(--m);top:-80px;z-index:50;background:var(--ink);color:#fff;padding:12px 18px;text-decoration:none}
+.skip:focus{top:8px}
+.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
 
-/* bandeau démo */
-.demo{background:var(--frame);color:#fff;font:500 13px/1.4 var(--sans);text-align:center;padding:2px 16px 10px}
+/* bandeau démo + barre */
+.demo{background:var(--accent-deep);color:#fff;font-size:var(--step-small);text-align:center;padding:6px 16px}
+.bar{position:sticky;top:0;z-index:20;background:var(--bg)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px}
+.mark{font-weight:700;font-size:1.375rem;letter-spacing:-.03em;text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;min-height:44px}
+.bar nav{display:none;gap:28px;font-weight:500}
+.bar nav a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.bar nav a:hover{text-decoration:underline;text-decoration-thickness:2px}
 
-/* barre */
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--pad);border-bottom:var(--b)}
-.mark{font:900 22px/1 var(--sans);letter-spacing:-.03em;text-decoration:none}
-.bar nav{display:none;gap:28px;font:700 16px/1 var(--sans)}
-.bar nav a{text-decoration:none}
-.bar nav a:hover{text-decoration:underline;text-decoration-thickness:3px}
-
-/* boutons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;font:700 17px/1 var(--sans);text-decoration:none;border:var(--b);cursor:pointer;transition:transform .2s var(--ease),background .2s,color .2s;white-space:nowrap;background:var(--paper);color:var(--ink)}
-.btn svg{width:20px;height:20px;flex:none}
-.btn:active{transform:translateY(2px)}
+/* boutons : rectangle plein, coins carrés */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;font-weight:500;font-size:1.0625rem;text-decoration:none;cursor:pointer;border:0;white-space:nowrap;background:var(--surface);color:var(--ink);transition:transform .15s var(--ease),background-color .2s,color .2s}
 .btn:hover{background:var(--ink);color:#fff}
-.btn-red{background:var(--red);border-color:var(--red);color:#fff}
-.btn-red:hover{background:var(--red-deep);border-color:var(--red-deep)}
-.btn-sm{min-height:44px;padding:0 16px;font-size:15px}
+.btn:active{transform:scale(.96)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:hover{background:var(--ink)}
+.btn-sm{min-height:44px;padding:0 16px;font-size:1rem}
 
-/* hero */
-.hero{display:grid;border-bottom:var(--b)}
-.hero-txt{padding:36px var(--pad) 40px;position:relative}
-.hero h1{font-size:clamp(64px,18.5vw,176px);line-height:.84;letter-spacing:-.05em}
-.hero h1 span{display:block}
-.def{font:600 22px/1.3 var(--serif);margin-top:28px}
-.def i{font-style:italic;font-weight:400}
-.lede{margin-top:14px;max-width:44ch;font-size:19px}
-.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.when span{white-space:nowrap;margin-right:14px}
-.when{flex-basis:100%;font:700 16px/1.3 var(--sans);margin-bottom:8px;padding-top:14px;border-top:var(--b)}
-.hero-pic{position:relative;min-height:340px;border-top:var(--b);overflow:hidden}
-.hero-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:drift 18s var(--ease) both}
-@keyframes drift{from{transform:scale(1.12)}to{transform:scale(1.02)}}
-.sticker{position:absolute;right:14px;top:14px;width:132px;height:132px;display:grid;place-items:center;text-align:center;color:#000;font:900 17px/1 var(--sans);letter-spacing:-.02em;z-index:2;transform:rotate(-9deg)}
-.sticker svg{position:absolute;inset:0;width:100%;height:100%}
-.sticker b{position:relative;display:block;padding:0 18px}
-.sticker small{display:block;font:700 13px/1.15 var(--sans);margin-top:4px;letter-spacing:0}
+/* bord dentelé : le ticket déchiré */
+.zig{position:relative}
+.zig::before,.zig::after{content:"";position:absolute;left:0;right:0;height:10px;background-repeat:repeat-x;background-size:20px 10px}
+.zig::before{top:-10px;background-image:var(--zig-paper)}
+.zig::after{bottom:-10px;background-image:var(--zig-paper);transform:scaleY(-1)}
 
-/* ruban titre */
-.ribbon{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px var(--pad);border-bottom:var(--b);background:var(--paper)}
-.ribbon h2{font-size:clamp(36px,7vw,72px)}
-.ribbon p{font:700 15px/1.3 var(--sans);text-align:right;max-width:24ch;display:none}
+/* ---------- hero ---------- */
+.hero{padding-block:18px 64px}
+.hero-grid{display:grid;gap:22px}
+.pics{order:-1;display:grid;grid-template-columns:3fr 1fr;grid-template-rows:auto auto;gap:8px}
+.pics figure{position:relative;overflow:hidden;background:var(--surface)}
+.pics img{width:100%;height:100%;object-fit:cover}
+.p-main{grid-row:span 2;aspect-ratio:4/4.4}
+.p-main img{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.p-main img.on{opacity:1}
+.p-win,.p-cut{aspect-ratio:auto}
+.cap{position:absolute;left:8px;bottom:8px;background:var(--paper);color:var(--ink);font-size:var(--step-small);font-weight:500;padding:4px 10px;line-height:1.3}
+.pause{position:absolute;right:8px;top:8px;width:44px;height:44px;display:grid;place-items:center;background:var(--paper);border:0;cursor:pointer;z-index:2;transition:transform .15s var(--ease)}
+.pause:active{transform:scale(.96)}
+.pause svg{width:18px;height:18px}
+.ticket{background:var(--paper);padding:30px clamp(20px,3vw,44px) 30px;margin-top:-34px;z-index:2}
+.t-head{display:flex;justify-content:space-between;gap:12px;font-size:var(--step-small);color:var(--muted);font-weight:500}
+.hero h1{font-size:clamp(2.1rem,1rem + 4.6vw,3.7rem);letter-spacing:-.035em;line-height:.92}
+.lede{margin-top:20px;max-width:46ch}
+.lede strong{font-weight:500}
+.lines{list-style:none;margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lines li{background:var(--bg);padding:12px 14px 13px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.lines b{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);font-weight:700;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.lines span{font-size:var(--step-small);line-height:1.35;color:var(--muted)}
+.lines li.hi{background:var(--accent);color:#fff}
+.lines li.hi span{color:#dfe5e2}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.now{display:flex;align-items:center;gap:10px;margin-top:18px;font-weight:500}
+.dot{width:10px;height:10px;border-radius:50%;background:#8a918d;flex:none}
+.now.open .dot{background:#2f7d4f}
 
-/* ingrédients */
-.inside{background:var(--olive);border-bottom:var(--b)}
-.inside-grid{display:grid}
-.inside-pic{border-bottom:var(--b);min-height:260px;position:relative}
-.inside-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.four{display:grid}
-.four div{padding:22px var(--pad) 24px;border-bottom:var(--b)}
-.four div:last-child{border-bottom:0}
-.four h3{font-size:clamp(30px,5vw,44px);color:#000}
-.four p{margin-top:8px;max-width:40ch}
+/* ---------- pains ---------- */
+section{padding-block:clamp(72px,10vw,150px)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px}
+.sec-head p{max-width:44ch;color:var(--muted)}
+.menu{display:grid;gap:56px;margin-top:48px}
+.menu h3{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.3rem);text-transform:uppercase;display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:18px}
+.menu h3 small{font-size:var(--step-small);font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted)}
+.items{list-style:none;display:grid;gap:2px}
+.items li{display:grid;grid-template-columns:1fr auto;gap:2px 20px;padding:14px 16px;background:var(--paper)}
+.items li:nth-child(even){background:#f6f7f4}
+.items b{font-weight:700;font-size:1.125rem;line-height:1.3}
+.items .price{font-weight:700;font-size:1.125rem;white-space:nowrap;text-align:right}
+.items p{grid-column:1/-1;font-size:1rem;color:var(--muted);max-width:52ch;line-height:1.45}
+.items em{font-style:normal;color:var(--accent)}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.strip figure{position:relative;overflow:hidden}
+.strip img{width:100%;aspect-ratio:1/1;object-fit:cover}
 
-/* catalogue */
-.cat{display:grid;border-bottom:var(--b)}
-.item{border-bottom:var(--b);display:grid;grid-template-columns:72px 1fr;gap:4px 16px;padding:20px var(--pad) 22px;align-content:start}
-.item .ear{grid-row:span 3;width:72px;height:150px}
-.item h3{font-size:clamp(26px,3.4vw,36px);align-self:end}
-.item p{max-width:38ch;font-size:17px}
-.item .px{font:700 15px/1.2 var(--sans);margin-top:6px}
-.t-sun{background:var(--sticker)}.t-sage{background:var(--sage)}.t-salmon{background:var(--salmon)}.t-peach{background:var(--peach)}.t-lime{background:var(--lime)}.t-sky{background:var(--sky)}.t-steel{background:var(--steel)}.t-peri{background:var(--peri)}.t-paper{background:var(--paper)}
-.t-red{background:var(--red);color:#fff}
-.item.order{grid-template-columns:1fr;gap:10px}
-.item.order h3{color:#fff}
-.item.order .btn{margin-top:6px}
-.item.big{grid-template-columns:1fr;padding:0}
-.item.big .big-pic{position:relative;min-height:260px;border-bottom:var(--b)}
-.item.big .big-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.item.big .big-txt{padding:22px var(--pad) 24px;display:grid;grid-template-columns:72px 1fr;gap:4px 16px}
-.item.big h3{font-size:clamp(34px,5vw,56px)}
-
-/* pesée */
-.weigh{background:var(--salmon);border-bottom:var(--b);display:grid}
-.weigh-form{padding:28px var(--pad) 32px}
-.weigh-form fieldset{border:0}
-.ph{font-size:clamp(40px,7vw,80px);margin-bottom:24px}
-.weigh-form legend{font:600 19px/1.3 var(--serif);margin-bottom:12px}
+/* ---------- pesée ---------- */
+.weigh{background:var(--straw)}
+.weigh .sec-head p,.weigh .r-note{color:var(--ink)}
+.weigh-grid{display:grid;gap:40px;margin-top:40px}
+.weigh fieldset{border:0}
+.weigh legend{font-weight:500;margin-bottom:12px}
 .choices{display:flex;flex-wrap:wrap;gap:8px}
 .choices label{position:relative}
-.choices input{position:absolute;opacity:0;inset:0;cursor:pointer}
-.choices span{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border:var(--b);background:var(--paper);font:700 16px/1 var(--sans);transition:background .15s,color .15s}
+.choices input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.choices span{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;background:var(--paper);font-weight:500;transition:background-color .15s,color .15s}
+.choices span i{font-style:normal;color:var(--muted);font-variant-numeric:tabular-nums}
 .choices input:checked+span{background:var(--ink);color:#fff}
-.choices input:focus-visible+span{outline:3px solid var(--paper);outline-offset:3px}
-.choices label:hover span{background:#000;color:#fff}
-.slide{margin-top:28px}
-.slide label{display:flex;justify-content:space-between;font:700 19px/1.1 var(--sans)}
+.choices input:checked+span i{color:#d5d9d6}
+.choices input:focus-visible+span{outline:3px solid var(--ink);outline-offset:3px}
+.slide{margin-top:30px}
+.slide label{display:flex;justify-content:space-between;font-weight:700;font-size:1.25rem}
 .slide output{font-variant-numeric:tabular-nums}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:48px;background:transparent;margin-top:8px;cursor:pointer}
-input[type=range]::-webkit-slider-runnable-track{height:12px;background:var(--paper);border:var(--b)}
-input[type=range]::-moz-range-track{height:12px;background:var(--paper);border:var(--b)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;background:var(--ink);border:3px solid var(--paper);margin-top:-14px;border-radius:50%}
-input[type=range]::-moz-range-thumb{width:28px;height:28px;background:var(--ink);border:3px solid var(--paper);border-radius:50%}
-.marks{display:flex;justify-content:space-between;font:700 14px/1 var(--sans)}
-.ticket{background:var(--paper);border-top:var(--b);padding:28px var(--pad) 32px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
-.ticket .what{font:700 18px/1.3 var(--sans)}
-.ticket .price{font:900 clamp(64px,13vw,128px)/.9 var(--sans);letter-spacing:-.05em;font-variant-numeric:tabular-nums}
-.ticket .note{font-size:15px;max-width:44ch}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:48px;background:transparent;cursor:pointer;margin-top:6px}
+input[type=range]::-webkit-slider-runnable-track{height:8px;background:var(--ink)}
+input[type=range]::-moz-range-track{height:8px;background:var(--ink)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-12px;background:var(--paper);border:4px solid var(--ink);border-radius:50%}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;background:var(--paper);border:4px solid var(--ink);border-radius:50%}
+.weigh .acts{margin-top:22px}
+.receipt-col{display:grid;gap:24px;align-items:start}
+.receipt{background:var(--paper);padding:28px 26px 26px;font-variant-numeric:tabular-nums}
+.receipt .zig::before{display:none}
+.r-top{text-align:center;line-height:1.3}
+.r-top b{display:block;font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase}
+.r-top span{font-size:var(--step-small);color:var(--muted)}
+.r-cols,.r-line{display:grid;grid-template-columns:1fr auto;gap:2px 12px}
+.r-cols{margin-top:18px;padding-bottom:8px;font-size:var(--step-small);color:var(--muted);font-weight:500;background:var(--bg);padding:8px 10px}
+.r-list{list-style:none;min-height:96px}
+.r-line{padding:10px 0;align-items:start}
+.r-line .what{font-weight:500;text-transform:lowercase}
+.r-line .calc{display:block;color:var(--muted);font-weight:400;text-transform:none}
+.r-line .amt{grid-row:1;grid-column:2;text-align:right;font-weight:500}
+.r-line button{grid-column:2;grid-row:2;justify-self:end;background:none;border:0;cursor:pointer;color:var(--muted);text-decoration:underline;min-height:44px;font-size:var(--step-small)}
+.r-empty{padding:16px 0;color:var(--muted)}
+.r-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;font-weight:700;text-transform:uppercase}
+.r-total b{font-size:clamp(2.2rem,1.6rem + 2vw,3.2rem);letter-spacing:-.03em}
+.r-note{margin-top:14px;font-size:var(--step-small);color:var(--muted);line-height:1.45}
+.proof{display:grid;grid-template-columns:clamp(120px,14vw,190px) 1fr;gap:16px;align-items:center}
+.proof img{width:100%;aspect-ratio:1000/1692;object-fit:cover}
+.proof p{font-size:1rem;max-width:36ch}
 
-/* boulanger */
-.baker{display:grid;border-bottom:var(--b);background:var(--lime)}
-.baker-pic{position:relative;min-height:300px;border-bottom:var(--b)}
-.baker-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.baker-txt{padding:28px var(--pad) 36px}
-.baker-txt h2{font-size:clamp(40px,7vw,80px)}
-.baker-txt .stmt{font:600 clamp(22px,2.6vw,30px)/1.3 var(--serif);margin-top:20px;max-width:30ch}
-.baker-txt ul{list-style:none;margin-top:24px;display:grid;gap:12px;max-width:46ch}
-.baker-txt li{padding-left:28px;position:relative}
-.baker-txt li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;background:var(--ink)}
+/* ---------- ingrédients ---------- */
+.ing-grid{display:grid;gap:32px;margin-top:40px}
+.tabs{display:flex;flex-direction:column;gap:2px}
+.tabs button{display:flex;align-items:baseline;justify-content:space-between;gap:16px;text-align:left;background:var(--paper);border:0;cursor:pointer;padding:16px 18px;min-height:64px;font-size:clamp(1.6rem,1.2rem + 1.4vw,2.3rem);font-weight:700;letter-spacing:-.02em;text-transform:uppercase;color:var(--muted);transition:background-color .2s,color .2s}
+.tabs button small{font-size:var(--step-small);font-weight:500;letter-spacing:0;text-transform:none}
+.tabs button[aria-selected=true]{background:var(--accent);color:#fff}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected=true]:hover{color:#fff}
+.tabs button:active{transform:scale(.98)}
+.panel{display:grid;gap:18px}
+.panel[hidden]{display:none}
+.panel figure{position:relative;overflow:hidden;background:var(--surface)}
+.panel img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.panel h3{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.3rem);text-transform:uppercase}
+.panel p{max-width:52ch}
 
-/* horaires */
-.visit{display:grid;border-bottom:var(--b)}
-.hours{background:var(--sky);padding:28px var(--pad) 32px;border-bottom:var(--b)}
-.hours h2,.where h2{font-size:clamp(40px,7vw,80px)}
-.hours table{width:100%;border-collapse:collapse;margin-top:20px;font:500 19px/1.2 var(--sans)}
-.hours td{padding:12px 0;border-bottom:2px solid #000}
-.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.hours tr.today td{font-weight:900}
-.hours tr.today td:first-child::after{content:" · aujourd’hui";font-weight:500}
-.hours tr.off td{opacity:.7}
-.hours .tip{margin-top:18px;font-size:17px;max-width:44ch}
-.where{background:var(--paper);padding:28px var(--pad) 32px;display:flex;flex-direction:column;gap:20px}
-.addr{font:900 clamp(30px,4.4vw,48px)/1 var(--sans);letter-spacing:-.03em;font-style:normal}
-.addr small{display:block;font:500 18px/1.4 var(--serif);letter-spacing:0;margin-top:10px}
-.contact{display:grid;gap:10px;font:700 18px/1.3 var(--sans)}
-.contact a{text-decoration:none;display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:2px solid #000}
-.contact a:hover{text-decoration:underline;text-decoration-thickness:3px}
-.contact a span:last-child{font-weight:500}
+/* ---------- maison ---------- */
+.house{padding-block:0}
+.house-in{background:var(--accent);color:#fff;margin-inline:var(--m);max-width:1520px;display:grid;gap:36px;padding:clamp(28px,5vw,64px);overflow:hidden}
+@media (min-width:1600px){.house-in{margin-inline:auto}}
+.house h2{color:#fff}
+.statement{font-size:var(--step-lead);line-height:1.35;max-width:30ch;margin-top:22px}
+.house-blocks{display:grid;gap:28px}
+.house-blocks h3{font-size:1.375rem;letter-spacing:-.01em}
+.house-blocks p{margin-top:8px;color:#e4e9e6;max-width:44ch}
+.house figure{position:relative;margin-bottom:calc(-1 * clamp(28px,5vw,64px))}
+.house figure img{width:100%;aspect-ratio:1372/772;object-fit:cover}
+.press{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.press li{background:var(--accent-deep);padding:10px 14px;font-size:1rem}
+.press b{font-weight:700}
 
-/* pied */
-.foot{padding:28px var(--pad) 22px}
-.foot .huge{font:900 clamp(56px,15.4vw,222px)/.82 var(--sans);letter-spacing:-.055em;white-space:nowrap}
-.foot p{font-size:14px;margin-top:18px;max-width:80ch}
+/* ---------- horaires ---------- */
+.visit-grid{display:grid;gap:40px;margin-top:44px}
+.coupon{background:var(--paper);padding:30px clamp(20px,3vw,40px)}
+.coupon h3{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.3rem);text-transform:uppercase}
+.hours{width:100%;border-collapse:collapse;margin-top:16px;font-size:1.125rem}
+.hours td{padding:12px 0;border-bottom:2px solid var(--surface)}
+.hours td:last-child{text-align:right;white-space:nowrap}
+.hours tr.today td{font-weight:700}
+.hours tr.today td:first-child::after{content:" · aujourd’hui";font-weight:500;color:var(--accent)}
+.hours .unsure td:last-child{color:var(--muted)}
+.coupon .src{margin-top:14px;font-size:var(--step-small);color:var(--muted);line-height:1.45}
+.where{display:grid;gap:18px;align-content:start}
+.addr{font-size:var(--step-lead);font-weight:500;line-height:1.3}
+.where dl{display:grid;grid-template-columns:auto 1fr;gap:10px 20px}
+.where dt{font-weight:700}
+.where dd a{display:inline-flex;min-height:44px;align-items:center}
+.where dd{display:flex;align-items:center;min-height:28px}
+.map{width:100%;aspect-ratio:16/10;border:0;display:block;background:var(--surface);filter:grayscale(.6)}
 
-/* entrée */
-.rise{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.js .rise.pre{opacity:0;transform:translateY(24px)}
+/* ---------- pied ---------- */
+footer{background:var(--accent-deep);color:#fff;padding-block:72px 28px;margin-top:clamp(72px,10vw,150px)}
+.big{font-size:clamp(3rem,13.4vw,13.5rem);font-weight:700;letter-spacing:-.05em;line-height:.8;text-transform:uppercase;white-space:nowrap}
+.foot{display:grid;gap:24px;margin-top:40px;font-size:1rem}
+.foot a{color:#fff}
+.foot p{color:#dfe5e2;max-width:70ch}
+.credits{font-size:var(--step-small);line-height:1.5}
 
-@media (min-width:720px){
-  :root{--pad:28px}
-  .ribbon p{display:block}
-  .four{grid-template-columns:1fr 1fr}
-  .four div{border-bottom:var(--b)}
-  .four div:nth-child(odd){border-right:var(--b)}
-  .four div:nth-last-child(-n+2){border-bottom:0}
-  .cat{grid-template-columns:1fr 1fr}
-  .item:nth-child(even){border-left:var(--b)}
-  .item.big{grid-column:1/-1;grid-template-columns:1.2fr 1fr;border-left:0}
-  .item.big .big-pic{border-bottom:0;border-right:var(--b);min-height:380px}
-  .item.big .big-txt{align-content:center;padding:32px var(--pad)}
+/* entrées */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- largeurs ---------- */
+@media (min-width:700px){
+  .lines{grid-template-columns:repeat(4,1fr)}
+  .strip img{aspect-ratio:4/3}
+  .menu{grid-template-columns:1fr 1fr;gap:64px}
+  .house-blocks{grid-template-columns:1fr 1fr}
 }
-@media (min-width:1024px){
-  :root{--pad:40px}
+@media (min-width:900px){
   .bar nav{display:flex}
-  .hero{grid-template-columns:1.05fr 1fr;min-height:calc(100vh - 110px);max-height:900px}
-  .hero-txt{padding:56px var(--pad) 56px;display:flex;flex-direction:column;justify-content:space-between}
-  .hero-pic{border-top:0;border-left:var(--b);min-height:auto}
-  .sticker{width:168px;height:168px;font-size:21px;right:28px;top:28px}
-  .sticker small{font-size:15px}
-  .inside-grid{grid-template-columns:1fr 1.5fr}
-  .inside-pic{border-bottom:0;border-right:var(--b)}
-  .cat{grid-template-columns:1fr 1fr 1fr}
-  .item{border-left:0!important}
-  .item:not(.big){border-right:var(--b)}
-  .item:not(.big):nth-child(3n+1){border-right:0}
-  .item.big{grid-template-columns:1.4fr 1fr}
-  .item.order{grid-column:span 2;border-right:0!important;align-content:center;padding:28px var(--pad)}
-  .item.order h3{font-size:clamp(34px,4vw,56px)}
-  .weigh{grid-template-columns:1.1fr 1fr}
-  .weigh-form{padding:48px var(--pad)}
-  .ticket{border-top:0;border-left:var(--b);padding:48px var(--pad)}
-  .baker{grid-template-columns:1fr 1fr}
-  .baker-pic{border-bottom:0;border-right:var(--b);min-height:560px}
-  .baker-txt{padding:56px var(--pad);align-self:center}
-  .visit{grid-template-columns:1fr 1fr}
-  .hours{border-bottom:0;border-right:var(--b);padding:48px var(--pad)}
-  .where{padding:48px var(--pad)}
+  .hero-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch;gap:12px}
+  .pics{order:0;grid-template-rows:1fr 1fr;min-height:calc(100svh - 124px)}
+  .p-main{aspect-ratio:auto;min-height:100%}
+  .ticket{margin-top:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+  .lines{grid-template-columns:1fr 1fr}
+  .weigh-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px}
+  .ing-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+  .panel{grid-template-columns:1fr;}
+  .house-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px}
+  .house figure{grid-column:1;align-self:end}
+  .house-side{grid-column:2;grid-row:1/span 2;align-self:center}
+  .visit-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+  .foot{grid-template-columns:1fr 1fr}
+}
+
+@media (min-width:900px){.hero h1{font-size:clamp(2.1rem,3.75vw,3.7rem)}}
+@media (min-width:900px) and (max-width:1199px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .pics{grid-template-columns:3fr 2fr}
+  .lede{font-size:1.0625rem}
+}
+@media (max-width:899px){
+  .hero{padding-top:8px}
+  .p-main{aspect-ratio:auto;height:44svh;min-height:260px}
+  .pics{grid-template-columns:1fr}
+  .p-win,.p-cut{display:none}
+  .p-main .cap{bottom:auto;top:8px}
 }
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .js .rise.pre{opacity:1;transform:none}
   html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .p-main img{transition:none}
+  .btn,.pause,.tabs button{transition:none}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
-<div class="page">
 
 <header class="bar">
-  <a class="mark" href="#top">Le Bricheton</a>
-  <nav aria-label="Navigation principale">
-    <a href="#pains">Les pains</a>
-    <a href="#pesee">La pesée</a>
-    <a href="#boulanger">Le boulanger</a>
-    <a href="#venir">Horaires</a>
-  </nav>
-  <a class="btn btn-red btn-sm" href="tel:+33612577580">Appeler</a>
+  <div class="wrap">
+    <a class="mark" href="#top" translate="no">Le Bricheton</a>
+    <nav aria-label="Sections">
+      <a href="#pains">Les pains</a>
+      <a href="#pesee">La pesée</a>
+      <a href="#ingredients">Ingrédients</a>
+      <a href="#horaires">Horaires</a>
+    </nav>
+    <a class="btn btn-main btn-sm" href="tel:+33612577580">Appeler</a>
+  </div>
 </header>
 
-<main id="top">
-<section class="hero" aria-labelledby="h-hero">
-  <div class="hero-txt">
-    <div>
-      <h1 id="h-hero"><span>Le</span><span>Bricheton</span></h1>
-      <p class="def rise"><i>bricheton, n. m.</i> : du pain, en argot.</p>
-      <p class="lede rise">Boulangerie au levain naturel de Maxime Bussy. Blés anciens, pétrissage à la main, pains vendus au poids. 50 rue de la Réunion, Paris 20e.</p>
-    </div>
-    <div class="acts rise">
-      <p class="when"><span>Mar., mer., ven., sam. 16 h – 20 h</span> <span>Dim. 10 h 30 – 13 h</span></p>
-      <a class="btn btn-red" href="tel:+33612577580"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>06 12 57 75 80</a>
-      <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Le+Bricheton+50+rue+de+la+R%C3%A9union+75020+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
-    </div>
-  </div>
-  <div class="hero-pic">
-    <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=1400&q=75&auto=format&fit=crop" alt="Grosse miche ronde au levain, croûte farinée et grignes ouvertes" fetchpriority="high">
-    <a class="sticker" href="#venir" id="sticker" aria-live="polite">
-      <svg viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#fcc20f" points="50,2 58,15 72,7 74,23 90,20 85,35 98,42 86,52 96,64 81,68 84,84 68,82 63,97 52,87 40,98 34,83 18,86 20,70 4,64 14,52 3,41 17,35 12,19 28,22 30,6 43,15"/></svg>
-      <b id="st-main">Au poids<small id="st-sub">pain au levain</small></b>
-    </a>
-  </div>
-</section>
-
-<section class="inside" aria-labelledby="h-inside">
-  <div class="ribbon"><h2 id="h-inside">Quatre ingrédients</h2><p>Farine, eau, sel, levain. Rien d’autre dans la pâte.</p></div>
-  <div class="inside-grid">
-    <div class="inside-pic"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1100&q=70&auto=format&fit=crop" alt="Grains de blé en gros plan" loading="lazy"></div>
-    <div class="four">
-      <div class="rise"><h3>La farine</h3><p>Des blés de variétés anciennes, issus de semences paysannes et cultivés en bio, moulus par de petits moulins artisanaux.</p></div>
-      <div class="rise"><h3>L’eau</h3><p>L’eau des puits artésiens de Paris, filtrée avant d’entrer dans le pétrin.</p></div>
-      <div class="rise"><h3>Le sel</h3><p>Un sel non traité, venu de la Salorge de Vertonne, sur l’Île d’Olonne.</p></div>
-      <div class="rise"><h3>Le levain</h3><p>Un levain naturel, et des pâtes qui prennent leur temps : longues pointes, pétrissage à la main.</p></div>
-    </div>
-  </div>
-</section>
-
-<section aria-labelledby="h-pains" id="pains">
-  <div class="ribbon"><h2 id="h-pains">Les pains</h2><p>Vendus au kilo. Les fournées varient selon les jours.</p></div>
-  <div class="cat">
-    <article class="item big t-sun">
-      <div class="big-pic"><img src="https://images.unsplash.com/photo-1437252611977-07f74518abd7?w=1400&q=72&auto=format&fit=crop" alt="Épis de blé barbus sous un ciel bleu" loading="lazy"></div>
-      <div class="big-txt rise">
-        <svg class="ear" data-ear="barbu" viewBox="0 0 60 150" aria-hidden="true"></svg>
-        <h3>Barbu du Roussillon</h3>
-        <p>Un blé ancien aux longues barbes, à faible rendement. C’est lui qui rend la production si petite.</p>
-        <p class="px num">9 à 14 € le kilo</p>
+<main id="contenu">
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="ticket zig">
+      <h1 id="h1">Pain au levain, vendu au poids</h1>
+      <p class="lede">Boulangerie de <strong>Maxime Bussy</strong>, 50 rue de la Réunion, Paris 20e. Blés de semences paysannes, levain naturel. On vous coupe le morceau, on le pèse, vous payez au kilo.</p>
+      <ul class="lines">
+        <li class="hi"><b>9&nbsp;€</b><span>le kilo de Bricheton froment</span></li>
+        <li><b>11&nbsp;€</b><span>le kilo de momo, blé et sarrasin</span></li>
+        <li><b>16&nbsp;h</b><span>ouverture, du mardi au samedi</span></li>
+        <li><b>4</b><span>ingrédients&nbsp;: farine, eau, sel, levain</span></li>
+      </ul>
+      <div class="acts">
+        <a class="btn btn-main" href="tel:+33612577580"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>06&nbsp;12&nbsp;57&nbsp;75&nbsp;80</a>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Bricheton+50+rue+de+la+R%C3%A9union+75020+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Itinéraire</a>
       </div>
-    </article>
-    <article class="item t-paper rise"><svg class="ear" data-ear="ble" viewBox="0 0 60 150" aria-hidden="true"></svg><h3>Le Bricheton</h3><p>Le pain de la maison, à la farine blanche de blés de pays.</p></article>
-    <article class="item t-sage rise"><svg class="ear" data-ear="graines" viewBox="0 0 60 150" aria-hidden="true"></svg><h3>Aux graines</h3><p>Le Bricheton garni de courge, lin, sésame et tournesol.</p></article>
-    <article class="item t-sky rise"><svg class="ear" data-ear="khorasan" viewBox="0 0 60 150" aria-hidden="true"></svg><h3>Khorasan</h3><p>Un blé ancien au grain long, en pain au levain.</p></article>
-    <article class="item t-steel rise"><svg class="ear" data-ear="seigle" viewBox="0 0 60 150" aria-hidden="true"></svg><h3>Seigle</h3><p>Une tourte de seigle au levain, dense et grise.</p></article>
-    <article class="item t-lime rise"><svg class="ear" data-ear="epeautre" viewBox="0 0 60 150" aria-hidden="true"></svg><h3>Petit épeautre</h3><p>L’ancêtre des blés, à l’épi fin et serré.</p></article>
-    <article class="item t-salmon rise"><svg class="ear" data-ear="brioche" viewBox="0 0 60 150" aria-hidden="true"></svg><h3>Brioche au levain</h3><p>La pépite cachée du comptoir.</p><p class="px num">20 € le kilo</p></article>
-    <article class="item t-peri rise"><svg class="ear" data-ear="kouglof" viewBox="0 0 60 150" aria-hidden="true"></svg><h3>Kouglof</h3><p>La couronne cannelée, au levain elle aussi.</p><p class="px num">25 € le kilo</p></article>
-    <article class="item order t-red rise"><h3>Une grosse pièce ?</h3><p>La boutique prend des commandes. Appelez la veille pour qu’on vous la mette de côté.</p><p><a class="btn btn-sm" href="tel:+33612577580">Appeler le 06 12 57 75 80</a></p></article>
+      <p class="now" aria-live="polite"><span class="dot" aria-hidden="true"></span><span class="now-txt">Mar., mer., ven., sam. 16&nbsp;h – 20&nbsp;h · dim. 10&nbsp;h&nbsp;30 – 13&nbsp;h</span></p>
+    </div>
+
+    <div class="pics">
+      <figure class="p-main">
+        <img class="on" src="https://cdn.lefooding.com/medias/2023/03/le-bricheton_OK.jpg?width=1200&amp;format=auto" width="1200" height="1200" alt="Étagères de bois chargées de tourtes et de pains moulés au Bricheton">
+        <img src="https://media.timeout.com/images/105413688/1372/772/image.jpg" width="1372" height="772" alt="La devanture grise du Bricheton, au 50 rue de la Réunion" loading="lazy">
+        <img src="https://media.timeout.com/images/105413693/1372/772/image.jpg" width="1372" height="772" alt="Pains au levain coupés, mie alvéolée" loading="lazy">
+        <figcaption class="cap">Au comptoir, rue de la Réunion</figcaption>
+        <button class="pause" type="button" aria-label="Mettre en pause le diaporama" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg></button>
+      </figure>
+      <figure class="p-win"><img src="https://foto1.sluurpy.com/locali/fr/2119360/53494562.jpg" width="768" height="1024" alt="La vitrine peinte : pains au levain naturel, semences paysannes, blés de population"><figcaption class="cap">La vitrine</figcaption></figure>
+      <figure class="p-cut"><img src="https://foto1.sluurpy.com/locali/fr/2119360/53494539.jpg" width="1024" height="1024" alt="Pain aux graines coupé en deux sur une planche"><figcaption class="cap">Pain aux graines</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="pains" aria-labelledby="h-pains">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 id="h-pains">Les pains, au kilo</h2>
+      <p>Les fournées changent selon les jours. Prix relevés sur des tickets de caisse et dans la presse&nbsp;: la date figure à côté.</p>
+    </div>
+    <div class="menu">
+      <div class="rv">
+        <h3>Au levain <small>9 pains</small></h3>
+        <ul class="items">
+          <li><b>Le Bricheton, froment</b><span class="price">9&nbsp;€/kg</span><p>Le pain de la maison, à la farine de froment. <em>Ticket de septembre 2022.</em></p></li>
+          <li><b>Le Bricheton aux graines</b><span class="price">12&nbsp;€/kg</span><p>Courge, lin, sésame et tournesol. <em>Prix Time Out, 2019.</em></p></li>
+          <li><b>Le momo</b><span class="price">11&nbsp;€/kg</span><p>Blé et sarrasin. <em>Ticket de décembre 2025.</em></p></li>
+          <li><b>Le Barbu du Roussillon</b><span class="price">9 à 14&nbsp;€/kg</span><p>Un blé ancien aux longues barbes. <em>Fourchette des pains selon Le Fooding, 2026.</em></p></li>
+          <li><b>Tourte de seigle</b><span class="price">au poids</span><p>Seigle gris au levain, mie fraîche, croûte assez fine.</p></li>
+          <li><b>Petit épeautre, khorasan, sarrasin</b><span class="price">au poids</span><p>Selon les fournées. Ils partent vite&nbsp;: venez à l’ouverture.</p></li>
+          <li><b>Focaccia à l’huile d’olive</b><span class="price">20&nbsp;€/kg</span><p>Huile d’olive extra. <em>Ticket de décembre 2025.</em></p></li>
+          <li><b>Brioche au levain</b><span class="price">20&nbsp;€/kg</span><p>La brioche, au levain elle aussi. <em>Ticket de 2022, Le Fooding 2026.</em></p></li>
+          <li><b>Kouglof</b><span class="price">25&nbsp;€/kg</span><p>La couronne cannelée. <em>Le Fooding, 2026.</em></p></li>
+        </ul>
+      </div>
+      <div class="rv">
+        <h3>Au comptoir aussi <small>6 produits</small></h3>
+        <ul class="items">
+          <li><b>Tome de brebis</b><span class="price">37&nbsp;€/kg</span><p>Coupée et pesée comme le pain. <em>Tickets de 2022 et 2025.</em></p></li>
+          <li><b>Morbier au lait cru</b><span class="price">30&nbsp;€/kg</span><p><em>Ticket de décembre 2025.</em></p></li>
+          <li><b>Comté au lait cru</b><span class="price">au poids</span><p>À la coupe.</p></li>
+          <li><b>Crottins de chèvre</b><span class="price">à la pièce</span><p>Selon les arrivages.</p></li>
+          <li><b>Œufs de ferme</b><span class="price">à la pièce</span><p>Selon les arrivages.</p></li>
+          <li><b>Miel du Morvan</b><span class="price">en pot</span><p>Le miel de Philippe Normier.</p></li>
+        </ul>
+        <div class="strip">
+          <figure><img src="https://media.timeout.com/images/105413690/750/422/image.jpg" width="750" height="422" alt="Une demi-miche aux graines tenue à la main" loading="lazy"></figure>
+          <figure><img src="https://foto1.sluurpy.com/locali/fr/2119360/53494527.jpg" width="1024" height="1024" alt="Croûte farinée et craquelée d’une tourte" loading="lazy"></figure>
+          <figure><img src="https://media.timeout.com/images/105413696/750/422/image.jpg" width="750" height="422" alt="Pots de pâte à tartiner et ardoise au comptoir" loading="lazy"></figure>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="weigh" id="pesee" aria-labelledby="h-pesee">
-  <div class="weigh-form">
-    <h2 id="h-pesee" class="ph">La pesée</h2>
-    <form id="scale" onsubmit="return false">
-      <fieldset>
-        <legend>Choisissez un pain, puis le poids du morceau.</legend>
-        <div class="choices">
-          <label><input type="radio" name="p" value="barbu" checked><span>Barbu du Roussillon</span></label>
-          <label><input type="radio" name="p" value="brioche"><span>Brioche au levain</span></label>
-          <label><input type="radio" name="p" value="kouglof"><span>Kouglof</span></label>
-        </div>
-      </fieldset>
-      <div class="slide">
-        <label for="w"><span>Le morceau</span><output id="wout" for="w" class="num">500 g</output></label>
-        <input id="w" type="range" min="100" max="2000" step="50" value="500" aria-describedby="wmarks">
-        <div class="marks" id="wmarks" aria-hidden="true"><span>100 g</span><span>1 kg</span><span>2 kg</span></div>
-      </div>
-    </form>
-  </div>
-  <div class="ticket" aria-live="polite">
-    <p class="price" id="price">4,50 à 7 €</p>
-    <p class="what" id="what">500 g de Barbu du Roussillon</p>
-    <p class="note">Le prix suit le poids : on vous coupe le morceau voulu. Tarifs au kilo relevés par Le Fooding, à confirmer au comptoir.</p>
-  </div>
-</section>
-
-<section class="baker" id="boulanger" aria-labelledby="h-baker">
-  <div class="baker-pic"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=72&auto=format&fit=crop" alt="Champ de blé au soleil couchant" loading="lazy"></div>
-  <div class="baker-txt">
-    <h2 id="h-baker">Maxime Bussy</h2>
-    <p class="stmt rise">Formé à l’école Ferrandi, il pétrit à la main des blés qui rendent peu.</p>
-    <ul class="rise">
-      <li>Faibles rendements, petite production : les pains partent vite.</li>
-      <li>La boutique est minuscule : une ou deux personnes à la fois.</li>
-      <li>Mieux vaut passer dès l’ouverture, surtout pour le Barbu.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="visit" id="venir" aria-labelledby="h-hours">
-  <div class="hours">
-    <h2 id="h-hours">Horaires</h2>
-    <table class="num" id="htab">
-      <caption class="sr">Horaires d’ouverture de la semaine</caption>
-      <tbody>
-        <tr data-d="2"><td>Mardi</td><td>16 h – 20 h</td></tr>
-        <tr data-d="3"><td>Mercredi</td><td>16 h – 20 h</td></tr>
-        <tr data-d="4" class="off"><td>Jeudi</td><td>Fermé</td></tr>
-        <tr data-d="5"><td>Vendredi</td><td>16 h – 20 h</td></tr>
-        <tr data-d="6"><td>Samedi</td><td>16 h – 20 h</td></tr>
-        <tr data-d="0"><td>Dimanche</td><td>10 h 30 – 13 h</td></tr>
-        <tr data-d="1" class="off"><td>Lundi</td><td>Fermé</td></tr>
-      </tbody>
-    </table>
-    <p class="tip">La boutique ouvre l’après-midi, et le dimanche en fin de matinée. Horaires à confirmer par téléphone avant un long trajet.</p>
-  </div>
-  <div class="where">
-    <h2>Venir</h2>
-    <address class="addr">50 rue de la Réunion<small>75020 Paris · métro Buzenval (ligne 9)</small></address>
-    <div class="acts" style="margin-top:0">
-      <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&destination=Le+Bricheton+50+rue+de+la+R%C3%A9union+75020+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 id="h-pesee">La pesée</h2>
+      <p>Choisissez un pain et le poids du morceau&nbsp;: le ticket s’imprime comme au comptoir.</p>
     </div>
-    <div class="contact">
-      <a href="tel:+33612577580"><span>Téléphone</span><span class="num">06 12 57 75 80</span></a>
-      <a href="mailto:lebricheton@gmail.com?subject=Commande%20de%20pain"><span>E-mail</span><span>lebricheton@gmail.com</span></a>
-      <a href="https://www.instagram.com/lebricheton/" target="_blank" rel="noopener"><span>Instagram</span><span>@lebricheton</span></a>
-      <a href="https://www.facebook.com/LeBrichetonOfficiel/" target="_blank" rel="noopener"><span>Facebook</span><span>LeBrichetonOfficiel</span></a>
+    <div class="weigh-grid">
+      <form id="scale" class="rv" onsubmit="return false">
+        <fieldset>
+          <legend>Le produit</legend>
+          <div class="choices">
+            <label><input type="radio" name="p" value="froment" checked><span>Froment <i>9&nbsp;€</i></span></label>
+            <label><input type="radio" name="p" value="momo"><span>Momo <i>11&nbsp;€</i></span></label>
+            <label><input type="radio" name="p" value="focaccia"><span>Focaccia <i>20&nbsp;€</i></span></label>
+            <label><input type="radio" name="p" value="brioche"><span>Brioche <i>20&nbsp;€</i></span></label>
+            <label><input type="radio" name="p" value="kouglof"><span>Kouglof <i>25&nbsp;€</i></span></label>
+            <label><input type="radio" name="p" value="morbier"><span>Morbier <i>30&nbsp;€</i></span></label>
+            <label><input type="radio" name="p" value="brebis"><span>Tome de brebis <i>37&nbsp;€</i></span></label>
+          </div>
+        </fieldset>
+        <div class="slide">
+          <label for="w">Le morceau <output id="wout" for="w">500 g</output></label>
+          <input type="range" id="w" min="100" max="2000" step="25" value="500">
+        </div>
+        <div class="acts">
+          <button class="btn btn-main" type="button" id="add">Ajouter au ticket</button>
+          <button class="btn" type="button" id="clear">Nouveau ticket</button>
+        </div>
+      </form>
+
+      <div class="receipt-col rv">
+        <div class="receipt zig" data-ui aria-live="polite">
+          <p class="r-top"><b translate="no">Le Bricheton</b><span>50 rue de la Réunion · 75020 Paris<br>Ticket de vente</span></p>
+          <div class="r-cols"><span>Article</span><span>Montant</span></div>
+          <ul class="r-list" id="rlist"><li class="r-empty">Le ticket est vide. Ajoutez un morceau.</li></ul>
+          <p class="r-total">Total TTC <b class="num" id="rtotal">0,00&nbsp;€</b></p>
+          <p class="r-note">Prix au kilo relevés sur des tickets publiés par Le Fooding (2022 et 2025) et sur sa fiche. À confirmer au comptoir.</p>
+        </div>
+        <figure class="proof">
+          <img src="https://cdn.lefooding.com/medias/2022/09/CDB_Paris_Le-Bricheton.jpg?width=1000&amp;height=1692&amp;format=auto" width="1000" height="1692" alt="Ticket de vente du Bricheton du 5 décembre 2025 : momo, focaccia, tome de brebis, morbier" loading="lazy">
+          <figcaption><p>Un vrai ticket du 5 décembre 2025 à 16&nbsp;h&nbsp;15&nbsp;: momo à 11&nbsp;€, focaccia à 20&nbsp;€, tome de brebis à 37&nbsp;€ et morbier à 30&nbsp;€ le kilo.</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ingredients" aria-labelledby="h-ing">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 id="h-ing">Quatre ingrédients</h2>
+      <p>Farine, eau, sel, levain. Rien d’autre dans la pâte.</p>
+    </div>
+    <div class="ing-grid">
+      <div class="tabs rv" role="tablist" aria-label="Les ingrédients">
+        <button role="tab" id="t-farine" aria-controls="p-farine" aria-selected="true">La farine <small>semences paysannes</small></button>
+        <button role="tab" id="t-eau" aria-controls="p-eau" aria-selected="false" tabindex="-1">L’eau <small>puits artésiens</small></button>
+        <button role="tab" id="t-sel" aria-controls="p-sel" aria-selected="false" tabindex="-1">Le sel <small>non traité</small></button>
+        <button role="tab" id="t-levain" aria-controls="p-levain" aria-selected="false" tabindex="-1">Le levain <small>naturel</small></button>
+      </div>
+      <div class="rv">
+        <div class="panel" role="tabpanel" id="p-farine" aria-labelledby="t-farine">
+          <h3>Des blés de population</h3>
+          <p>Des variétés anciennes issues de semences paysannes, cultivées en bio par des paysans franciliens et moulues par de petits moulins artisanaux. Des blés à faible teneur en gluten.</p>
+          <figure><img src="https://images.unsplash.com/photo-1437252611977-07f74518abd7?auto=format&amp;fit=crop&amp;w=1200&amp;h=900&amp;q=72" width="1200" height="900" alt="Épis de blé barbus dorés sous un ciel bleu" loading="lazy"><figcaption class="cap">Blé barbu</figcaption></figure>
+        </div>
+        <div class="panel" role="tabpanel" id="p-eau" aria-labelledby="t-eau" hidden>
+          <h3>L’eau des puits artésiens</h3>
+          <p>L’eau des puits artésiens de Paris, filtrée avant d’entrer dans la pâte.</p>
+          <figure><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Puits_art%C3%A9sien_de_la_Butte-aux-Cailles._D.4049.jpg/1920px-Puits_art%C3%A9sien_de_la_Butte-aux-Cailles._D.4049.jpg" width="1920" height="2633" alt="Dessin ancien du puits artésien de la Butte-aux-Cailles, à Paris" loading="lazy"><figcaption class="cap">Puits artésien de la Butte-aux-Cailles, dessin de Gaston Prunier</figcaption></figure>
+        </div>
+        <div class="panel" role="tabpanel" id="p-sel" aria-labelledby="t-sel" hidden>
+          <h3>Le sel de Vertonne</h3>
+          <p>Un sel non traité, venu de la Salorge de Vertonne, sur l’Île-d’Olonne, en Vendée.</p>
+          <figure><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Tavaux_marais_salants_%286%29.jpg" width="1778" height="1190" alt="Sauniers au travail dans un marais salant, photo ancienne en noir et blanc" loading="lazy"><figcaption class="cap">Marais salant, photo ancienne</figcaption></figure>
+        </div>
+        <div class="panel" role="tabpanel" id="p-levain" aria-labelledby="t-levain" hidden>
+          <h3>Un pur levain naturel</h3>
+          <p>Pas de levure&nbsp;: le levain et le temps font le travail. Une longue fermentation donne des miches très digestes.</p>
+          <figure><img src="https://media.timeout.com/images/105413694/1372/772/image.jpg" width="1372" height="772" alt="Demi-pain au levain tenu à la main, mie grise et alvéolée" loading="lazy"><figcaption class="cap">Au Bricheton</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="house" id="maison" aria-labelledby="h-maison">
+  <div class="house-in on-dark">
+    <div class="rv">
+      <h2 id="h-maison">Maxime Bussy, boulanger</h2>
+      <p class="statement">Le Fooding le compte parmi les instigateurs du pain aux semences paysannes rares à Paris.</p>
+    </div>
+    <div class="house-side rv">
+      <div class="house-blocks">
+        <div><h3>Une petite boutique</h3><p>Un comptoir de bois, des étagères de tourtes, et une vitrine peinte à la main&nbsp;: «&nbsp;pains au levain naturel, semences paysannes, blés de population&nbsp;».</p></div>
+        <div><h3>Venir tôt</h3><p>Le seigle et le petit épeautre partent vite. Pour avoir le choix, mieux vaut passer à l’ouverture.</p></div>
+      </div>
+      <ul class="press">
+        <li><b>Time Out</b> · 5/5, mars 2019</li>
+        <li><b>Le Fooding</b> · fiche 2026</li>
+        <li><b>Le Bonbon</b> · «&nbsp;le temple du pain aux blés anciens&nbsp;»</li>
+      </ul>
+      <div class="acts"><a class="btn btn-main" style="background:#fff;color:var(--ink)" href="https://www.instagram.com/lebricheton/" target="_blank" rel="noopener">Les fournées sur Instagram</a></div>
+    </div>
+    <figure class="rv"><img src="https://media.timeout.com/images/105413688/1372/772/image.jpg" width="1372" height="772" alt="Façade du Bricheton, porte vitrée et ardoise sur le trottoir" loading="lazy"></figure>
+  </div>
+</section>
+
+<section id="horaires" aria-labelledby="h-hor">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 id="h-hor">Horaires et accès</h2>
+      <p>La boutique ouvre l’après-midi, et le dimanche en fin de matinée.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="coupon zig rv">
+        <h3>La semaine</h3>
+        <table class="hours">
+          <caption class="sr">Horaires d’ouverture</caption>
+          <tbody>
+            <tr data-d="2"><td>Mardi</td><td>16&nbsp;h – 20&nbsp;h</td></tr>
+            <tr data-d="3"><td>Mercredi</td><td>16&nbsp;h – 20&nbsp;h</td></tr>
+            <tr data-d="4" class="unsure"><td>Jeudi</td><td>à confirmer</td></tr>
+            <tr data-d="5"><td>Vendredi</td><td>16&nbsp;h – 20&nbsp;h</td></tr>
+            <tr data-d="6"><td>Samedi</td><td>16&nbsp;h – 20&nbsp;h</td></tr>
+            <tr data-d="0"><td>Dimanche</td><td>10&nbsp;h&nbsp;30 – 13&nbsp;h</td></tr>
+            <tr data-d="1"><td>Lundi</td><td>Fermé</td></tr>
+          </tbody>
+        </table>
+        <p class="src">Horaires de la fiche Le Fooding (février 2026). Les sources ne s’accordent pas sur le jeudi&nbsp;: appelez avant de venir.</p>
+      </div>
+      <div class="where rv">
+        <p class="addr">50 rue de la Réunion<br>75020 Paris</p>
+        <dl>
+          <dt>Métro</dt><dd>Buzenval (ligne 9) · Avron (ligne 2)</dd>
+          <dt>Téléphone</dt><dd><a href="tel:+33612577580" class="num">06&nbsp;12&nbsp;57&nbsp;75&nbsp;80</a></dd>
+          <dt>Instagram</dt><dd><a href="https://www.instagram.com/lebricheton/" target="_blank" rel="noopener">@lebricheton</a></dd>
+        </dl>
+        <div class="acts" style="margin-top:0">
+          <a class="btn btn-main" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Bricheton+50+rue+de+la+R%C3%A9union+75020+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+          <a class="btn" href="tel:+33612577580">Appeler</a>
+        </div>
+        <iframe class="map" title="Plan : 50 rue de la Réunion, Paris 20e" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=2.3965%2C48.8525%2C2.4076%2C48.8573&amp;layer=mapnik&amp;marker=48.8549%2C2.40206"></iframe>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer class="foot">
-  <p class="huge" aria-hidden="true">Le Bricheton</p>
-  <p>Le Bricheton, boulangerie au levain · 50 rue de la Réunion, 75020 Paris · 06 12 57 75 80. Démo réalisée par Raul Hatos, site non officiel. Photos : Unsplash (illustrations, pas les pains de la boutique).</p>
+<footer class="on-dark">
+  <div class="wrap">
+    <p class="big" aria-hidden="true" translate="no">Bricheton</p>
+    <div class="foot">
+      <p><span translate="no">Le Bricheton</span>, boulangerie au levain · 50 rue de la Réunion, 75020 Paris · <a href="tel:+33612577580">06&nbsp;12&nbsp;57&nbsp;75&nbsp;80</a> · <a href="https://www.instagram.com/lebricheton/" target="_blank" rel="noopener">Instagram</a></p>
+      <p class="credits">Démo réalisée par Raul Hatos, site non officiel. Photos&nbsp;: Le Fooding (étagères, ticket), Time Out / Arnaud Durand (façade, pains), Sluurpy (vitrine, pains), Unsplash (blé), Wikimedia Commons&nbsp;: Gaston Prunier, «&nbsp;Puits artésien de la Butte-aux-Cailles&nbsp;» (CC0)&nbsp;; Daniel Cloutour, «&nbsp;Tavaux marais salants&nbsp;» (CC BY-SA 3.0). Plan © OpenStreetMap.</p>
+    </div>
+  </div>
 </footer>
-</div>
 
 <script>
 document.documentElement.classList.add('js');
-/* épis dessinés : barbes, nombre et forme des grains selon la céréale */
-const EARS={barbu:{n:9,rx:7,ry:10,awn:46},ble:{n:9,rx:7,ry:10,awn:0},graines:{n:8,rx:7,ry:9,awn:0,seeds:1},khorasan:{n:8,rx:6,ry:13,awn:34},seigle:{n:12,rx:4.5,ry:8,awn:30},epeautre:{n:10,rx:5,ry:7,awn:12},brioche:{crown:0},kouglof:{crown:1}};
-document.querySelectorAll('[data-ear]').forEach(s=>{
-  const e=EARS[s.dataset.ear];let g='';
-  if('crown' in e){
-    if(e.crown){ /* kouglof : couronne cannelée, trou au sommet */
-      g+='<path d="M4 120 Q4 66 30 62 Q56 66 56 120 Z" fill="#000"/>';
-      for(const x of [12,21,30,39,48])g+=`<path d="M${x} 74 Q${x+(x-30)*.15} 100 ${x+(x-30)*.12} 118" stroke="#fff" stroke-width="2" fill="none"/>`;
-      g+='<ellipse cx="30" cy="68" rx="7" ry="3.5" fill="#fff"/>';
-    }else{ /* brioche à tête */
-      g+='<path d="M8 120 L14 84 Q30 76 46 84 L52 120 Z" fill="#000"/>';
-      for(const x of [18,26,34,42])g+=`<path d="M${x} 88 L${x+(x-30)*.12} 118" stroke="#fff" stroke-width="2"/>`;
-      g+='<circle cx="30" cy="68" r="13" fill="#000"/>';
-    }
-    s.innerHTML=g;return;
-  }
-  g+='<path d="M30 70 Q31 110 28 150" stroke="#000" stroke-width="3" fill="none"/>';
-  for(let i=0;i<e.n;i++){
-    const y=78-i*(60/e.n),side=i%2?1:-1,x=30+side*(e.rx*.9);
-    g+=`<ellipse cx="${x}" cy="${y}" rx="${e.rx}" ry="${e.ry}" transform="rotate(${side*22} ${x} ${y})" fill="#000"/>`;
-    if(e.awn)g+=`<path d="M${x+side*2} ${y-e.ry+2} L${x+side*(6+e.awn*.18)} ${y-e.ry-e.awn}" stroke="#000" stroke-width="1.8"/>`;
-    if(e.seeds&&i%2)g+=`<circle cx="${30-side*14}" cy="${y+4}" r="2.6" fill="#000"/>`;
-  }
-  g+=`<ellipse cx="30" cy="${78-e.n*(60/e.n)}" rx="${e.rx*.8}" ry="${e.ry*.9}" fill="#000"/>`;
-  s.innerHTML=g;
-});
-
-/* pesée */
-const P={barbu:{n:'Barbu du Roussillon',lo:9,hi:14},brioche:{n:'brioche au levain',lo:20},kouglof:{n:'kouglof',lo:25}};
-const f=document.getElementById('scale'),w=document.getElementById('w');
-const eur=v=>{const r=Math.round(v*10)/10;return (r%1?r.toFixed(2):String(r)).replace('.',',')};
-const fmtW=g=>g<1000?g+' g':(g/1000).toString().replace('.',',')+' kg';
-function weigh(){
-  const k=f.p.value,g=+w.value,p=P[k],kg=g/1000;
-  document.getElementById('wout').textContent=fmtW(g);
-  document.getElementById('what').textContent=fmtW(g)+' de '+p.n;
-  document.getElementById('price').textContent=p.hi?eur(p.lo*kg)+' à '+eur(p.hi*kg)+' €':eur(p.lo*kg)+' €';
-}
-f.addEventListener('input',weigh);weigh();
 
 /* ouvert maintenant (heure de Paris) */
-const H={2:[960,1200],3:[960,1200],5:[960,1200],6:[960,1200],0:[630,780]};
-const NAMES=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-const hm=m=>Math.floor(m/60)+' h'+(m%60?' '+m%60:'');
 (function(){
-  const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
-  const wd=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(parts.find(p=>p.type==='weekday').value);
-  const now=+parts.find(p=>p.type==='hour').value%24*60+ +parts.find(p=>p.type==='minute').value;
-  const row=document.querySelector(`#htab tr[data-d="${wd}"]`);if(row)row.classList.add('today');
-  const t=H[wd],main=document.getElementById('st-main'),sub=document.getElementById('st-sub');
-  let a,b;
-  if(t&&now>=t[0]&&now<t[1]){a='Ouvert';b='jusqu’à '+hm(t[1])}
-  else if(t&&now<t[0]){a='Ouvre';b='à '+hm(t[0])}
-  else{for(let i=1;i<8;i++){const d=(wd+i)%7;if(H[d]){a='Réouvre';b=(i===1?'demain':NAMES[d])+' à '+hm(H[d][0]);break}}}
-  main.firstChild.textContent=a;sub.textContent=b;
+  const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}));
+  const d=now.getDay(),m=now.getHours()*60+now.getMinutes();
+  const H={0:[630,780],2:[960,1200],3:[960,1200],5:[960,1200],6:[960,1200]};
+  const row=document.querySelector('.hours tr[data-d="'+d+'"]');if(row)row.classList.add('today');
+  const el=document.querySelector('.now'),txt=el.querySelector('.now-txt');
+  const fmt=x=>{const h=Math.floor(x/60),mm=x%60;return h+' h'+(mm?' '+mm:'')};
+  const names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  const h=H[d];
+  if(h&&m>=h[0]&&m<h[1]){el.classList.add('open');txt.textContent='Ouvert maintenant, jusqu’à '+fmt(h[1]);return}
+  if(d===4){txt.textContent='Jeudi : horaires à confirmer par téléphone';return}
+  if(h&&m<h[0]){txt.textContent='Fermé · ouvre aujourd’hui à '+fmt(h[0]);return}
+  for(let i=1;i<8;i++){const k=(d+i)%7;if(H[k]){txt.textContent='Fermé · ouvre '+(i===1?'demain':names[k])+' à '+fmt(H[k][0]);return}}
 })();
 
-/* entrées */
-if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rise').forEach((el,i)=>{const r=el.getBoundingClientRect();if(r.top>innerHeight){el.classList.add('pre');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)}});
-}
+/* diaporama du hero, avec pause */
+(function(){
+  const imgs=[...document.querySelectorAll('.p-main img')],btn=document.querySelector('.pause');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){btn.hidden=true;return}
+  let i=0,t=null;
+  const step=()=>{imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on')};
+  const play=()=>{t=setInterval(step,5600)},stop=()=>{clearInterval(t);t=null};
+  play();
+  btn.addEventListener('click',()=>{const p=!!t;p?stop():play();btn.setAttribute('aria-pressed',p);btn.setAttribute('aria-label',p?'Relancer le diaporama':'Mettre en pause le diaporama')});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else if(btn.getAttribute('aria-pressed')==='false'&&!t)play()});
+})();
+
+/* la pesée */
+(function(){
+  const P={froment:['froment',9],momo:['momo',11],focaccia:['focaccia',20],brioche:['brioche',20],kouglof:['kouglof',25],morbier:['morbier',30],brebis:['tome de brebis',37]};
+  const f=document.getElementById('scale'),w=document.getElementById('w'),out=document.getElementById('wout'),list=document.getElementById('rlist'),tot=document.getElementById('rtotal');
+  const eur=v=>v.toFixed(2).replace('.',',');
+  const kg=g=>(g/1000).toFixed(3).replace('.',',');
+  const fmtW=g=>g<1000?g+' g':String(g/1000).replace('.',',')+' kg';
+  let lines=[];
+  function render(){
+    list.innerHTML='';
+    if(!lines.length){list.innerHTML='<li class="r-empty">Le ticket est vide. Ajoutez un morceau.</li>'}
+    lines.forEach((l,k)=>{
+      const li=document.createElement('li');li.className='r-line';
+      li.innerHTML='<span class="what"><span class="n"></span> <span class="calc"></span></span><span class="amt"></span><button type="button">retirer</button>';
+      li.querySelector('.n').textContent=l.n;
+      li.querySelector('.calc').textContent=kg(l.g)+' kg × '+eur(l.p);
+      li.querySelector('.amt').textContent=eur(Math.round(l.g*l.p/10)/100);
+      li.querySelector('button').setAttribute('aria-label','Retirer '+l.n+' du ticket');
+      li.querySelector('button').onclick=()=>{lines.splice(k,1);render()};
+      list.appendChild(li);
+    });
+    const t=lines.reduce((s,l)=>s+Math.round(l.g*l.p/10)/100,0);
+    tot.textContent=eur(t)+' €';
+  }
+  w.addEventListener('input',()=>{out.textContent=fmtW(+w.value)});
+  document.getElementById('add').onclick=()=>{const p=P[f.p.value];lines.push({n:p[0],p:p[1],g:+w.value});render()};
+  document.getElementById('clear').onclick=()=>{lines=[];render()};
+  lines=[{n:'froment',p:9,g:500}];render();
+})();
+
+/* onglets ingrédients */
+(function(){
+  const tabs=[...document.querySelectorAll('[role=tab]')];
+  const sel=t=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})};
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{const k={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];if(k){e.preventDefault();const n=tabs[(i+k+tabs.length)%tabs.length];sel(n);n.focus()}})});
+})();
+
+/* entrées décalées */
+(function(){
+  const els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const s=e.target.parentElement;const sib=[...s.querySelectorAll(':scope > .rv')];e.target.style.transitionDelay=(Math.max(0,sib.indexOf(e.target))*80)+'ms';e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>io.observe(e));
+})();
 </script>
 </body>
 </html>
