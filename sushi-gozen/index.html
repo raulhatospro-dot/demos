@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sushi Gozen · Restaurant japonais, 22 rue Delambre, Paris 14e</title>
+<meta name="description" content="Sushi Gozen, cuisine japonaise à Montparnasse, à deux pas du carrefour Vavin. Formules sushi, sashimi, donburi et bento, du lundi au samedi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&text=%E5%AF%BF%E5%8F%B8%E5%88%BA%E8%BA%AB%E4%B8%BC%E5%BC%81%E5%BD%93%E3%81%99%E3%81%8D%E7%84%BC%E3%81%86%E3%81%A9%E3%82%93%E9%A4%83%E5%AD%90%E5%91%B3%E5%99%8C%E6%B1%81%E3%81%94%E3%81%9C%E5%92%8C%E7%89%9B%E3%81%82%E3%82%8A%E3%81%BE%E3%80%82%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%94%A3%E9%BB%92%E6%AF%9B%E5%BE%A1%E8%86%B3&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#f2f1ee;
+  --ink:#121212;
+  --muted:#5e5e5e;
+  --shu:#c4321f;        /* vermillon de laque */
+  --shu-deep:#a3281a;
+  --on-shu:#ffffff;
+  --urushi:#141210;     /* laque noire */
+  --on-urushi:#f4f2ee;
+  --on-urushi-soft:#b9b4ab;
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2.25rem,1.3rem + 3.4vw,4.25rem);
+  --step-hero:clamp(4rem,1rem + 12vw,11rem);
+  --m:clamp(20px,4vw,56px);
+  --c:14px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.5 "Albert Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+::selection{background:var(--shu);color:var(--on-shu)}
+:focus-visible{outline:3px solid var(--shu);outline-offset:3px}
+h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1;margin:0;text-wrap:balance}
+p{margin:0}
+.jp{font-family:var(--jp);letter-spacing:0;font-weight:500}
+.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* le motif : le plateau à coins coupés (sumikiri) */
+.cut{clip-path:polygon(var(--c) 0,calc(100% - var(--c)) 0,100% var(--c),100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,var(--c) 100%,0 calc(100% - var(--c)),0 var(--c))}
+
+/* bandeau démo */
+.demo{margin:0;background:var(--surface);color:var(--muted);font-size:var(--step-small);text-align:center;padding:8px var(--m)}
+
+/* boutons */
+.btn{--c:10px;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;font:600 1rem/1 "Albert Sans",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .25s var(--ease),color .25s}
+.btn:active{transform:translateY(1px) scale(.98)}
+.btn-shu{background:var(--shu);color:var(--on-shu)}
+.btn-shu:hover{background:var(--shu-deep)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#333}
+.btn-ghost{background:var(--surface);color:var(--ink)}
+.btn-ghost:hover{background:#e4e2dd}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* navigation */
+.nav{position:sticky;top:0;z-index:20;background:var(--bg);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 6px 18px -12px rgba(0,0,0,.25)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.mark{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-weight:700;font-size:1.25rem;letter-spacing:-.02em}
+.mark .jp{font-size:.8rem;color:var(--muted)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;font-size:1rem}
+.nav ul a:hover{color:var(--shu)}
+.nav .btn{min-height:44px;padding:0 20px}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* hero */
+.hero{padding-top:clamp(28px,5vw,72px)}
+.hero h1{font-size:var(--step-hero);letter-spacing:-.045em;line-height:.88;font-weight:600}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:24px 48px;align-items:end;margin-top:clamp(20px,2.4vw,36px)}
+.hero .lead{font-size:var(--step-lead);line-height:1.35;max-width:37ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:860px){.hero-row{grid-template-columns:1fr}}
+
+/* les étages du plateau : jubako */
+.tiers{position:relative;margin-top:clamp(56px,6vw,88px)}
+.tier{position:relative;display:block;text-decoration:none}
+.tier .tab{--c:10px;position:absolute;bottom:100%;height:36px;display:flex;align-items:center;padding:0 22px;font-weight:600;font-size:1.0625rem;clip-path:polygon(var(--c) 0,calc(100% - var(--c)) 0,100% var(--c),100% 100%,0 100%,0 var(--c));transition:transform .3s var(--ease)}
+.tier:hover .tab{transform:translateY(-4px)}
+.tier .band{display:block;height:36px}
+.t1 .tab{left:var(--m)}
+.t2 .tab{left:calc(var(--m) + clamp(130px,19vw,300px))}
+.t3 .tab{left:calc(var(--m) + clamp(260px,38vw,600px))}
+.t4 .tab{right:var(--m)}
+.t1 .tab,.t1 .band{background:var(--surface);color:var(--ink)}
+.t2 .tab,.t2 .band{background:#2b2724;color:#fff}
+.t3 .tab,.t3 .band{background:var(--shu);color:#fff}
+.t4 .tab,.t4 .band{background:var(--urushi);color:#fff}
+.tier{z-index:1}.t2{z-index:2}.t3{z-index:3}.t4{z-index:4}
+.front{background:var(--urushi);color:var(--on-urushi);padding:clamp(20px,3vw,40px) var(--m) clamp(28px,4vw,56px)}
+.front-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(20px,3vw,48px);max-width:1520px;margin-inline:auto;padding-inline:0}
+.hero-photo{--c:clamp(18px,2.4vw,34px);overflow:hidden;aspect-ratio:16/10;background:#222}
+.hero-photo img{width:100%;height:100%;object-fit:cover;animation:drift 22s var(--ease) infinite alternate}
+@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.1) translateX(-2%)}}
+.facts{display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.facts dl{margin:0;display:grid;gap:22px}
+.facts dt{color:var(--on-urushi-soft);font-size:var(--step-small);margin-bottom:4px}
+.facts dd{margin:0;font-size:var(--step-lead);font-weight:500;line-height:1.25}
+.facts dd small{display:block;font-size:var(--step-small);color:var(--on-urushi-soft);font-weight:400;margin-top:4px}
+.facts .open-now{display:inline-flex;align-items:center;gap:10px}
+.dot{--c:3px;width:12px;height:12px;background:var(--on-urushi-soft);flex:none}
+.dot.on{background:#4fbf6c}
+.facts a{color:var(--on-urushi)}
+@media (max-width:860px){
+  .front-grid{grid-template-columns:1fr}
+  .tier .tab{padding:0 14px;font-size:.9375rem}
+  .tier .band{height:32px}
+  .tier .tab{height:32px}
+  .t1 .tab{left:var(--m)}
+  .t2 .tab{left:auto;right:var(--m)}
+  .t3 .tab{left:var(--m)}
+  .t4 .tab{right:var(--m)}
+}
+
+/* intro */
+.intro{padding-block:clamp(96px,14vw,200px)}
+.intro p.statement{font-size:clamp(1.5rem,1rem + 1.6vw,2.25rem);font-weight:500;line-height:1.28;letter-spacing:-.02em;max-width:30ch}
+.thumb{--c:.16em;display:inline-block;width:1.25em;height:.85em;vertical-align:-.08em;margin-inline:.12em;overflow:hidden;background:var(--surface)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.intro-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end}
+.intro-notes{display:grid;gap:20px;color:var(--ink)}
+.intro-notes p{max-width:40ch}
+.intro-notes .jp{display:block;font-size:var(--step-lead);margin-bottom:4px}
+@media (max-width:860px){.intro-grid{grid-template-columns:1fr}}
+
+/* le plateau interactif */
+.compose{background:var(--surface);padding-block:clamp(88px,11vw,160px)}
+.compose h2,.carte h2,.words h2,.visit h2,.book h2{font-size:var(--step-head)}
+.compose .sub{margin-top:18px;max-width:52ch;font-size:var(--step-lead);line-height:1.35}
+.compose-grid{display:grid;grid-template-columns:minmax(260px,.9fr) 1.4fr;gap:clamp(28px,5vw,80px);margin-top:clamp(40px,5vw,72px);align-items:start}
+.compose-grid>*{min-width:0}
+.when{display:inline-flex;background:#fff;padding:4px;gap:4px;margin-bottom:20px;--c:10px}
+.when button{--c:8px;border:0;background:transparent;font:600 1rem "Albert Sans",sans-serif;padding:10px 20px;cursor:pointer;color:var(--muted);transition:background-color .2s,color .2s}
+.when button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.formulas{list-style:none;margin:0;padding:0;display:grid}
+.formulas button{width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:16px;border:0;background:transparent;text-align:left;padding:9px 0;font:500 clamp(1.0625rem,1rem + .35vw,1.3125rem)/1.25 "Albert Sans",sans-serif;color:var(--muted);cursor:pointer;transition:color .2s}
+.formulas button .p{font-variant-numeric:tabular-nums;font-size:1rem;font-weight:500}
+.formulas button:hover{color:var(--ink)}
+.formulas button[aria-selected="true"]{color:var(--ink);font-weight:700}
+.formulas button[aria-selected="true"] .p{color:var(--shu);font-weight:700}
+.formulas button span:first-child::before{content:"";display:inline-block;width:0;height:10px;margin-right:0;background:var(--shu);vertical-align:.08em;clip-path:polygon(3px 0,7px 0,10px 3px,10px 7px,7px 10px,3px 10px,0 7px,0 3px);transition:width .25s var(--ease),margin .25s var(--ease)}
+.formulas button[aria-selected="true"] span:first-child::before{width:10px;margin-right:12px}
+.formulas button:disabled{cursor:default}
+.tray{--c:clamp(22px,3vw,40px);background:var(--urushi);color:var(--on-urushi);padding:clamp(18px,2.4vw,32px);position:sticky;top:96px}
+.tray-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.tray-head h3{font-size:clamp(1.75rem,1.2rem + 2vw,3rem)}
+.tray-price{font-size:clamp(1.75rem,1.2rem + 2vw,3rem);font-weight:600;letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums}
+.tray-price small{font-size:1rem;font-weight:500;color:var(--on-urushi-soft);letter-spacing:0;margin-left:6px}
+.tray-grid{display:grid;grid-template-columns:1fr 1fr 1.6fr;grid-template-rows:auto auto;gap:10px}
+.cell{--c:12px;background:#2a2622;padding:16px 16px 18px;min-height:96px;display:flex;flex-direction:column;gap:6px;transition:opacity .3s var(--ease)}
+.cell b{font-weight:600;font-size:1.0625rem}
+.cell span{color:var(--on-urushi-soft);font-size:var(--step-small);line-height:1.4}
+.cell.main{grid-column:1/3;background:var(--shu);color:#fff;min-height:160px}
+.cell.main span{color:#fff;font-size:var(--step-lead);line-height:1.3;font-weight:500}
+.cell.photo{grid-column:3;grid-row:1/3;padding:0;overflow:hidden;background:#222;min-height:260px}
+.cell.photo img{width:100%;height:100%;object-fit:cover;transition:opacity .3s var(--ease)}
+.tray-note{margin-top:16px;color:var(--on-urushi-soft);font-size:var(--step-small)}
+.tray-actions{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.tray-actions .btn-ghost{background:#2a2622;color:#fff}
+.tray-actions .btn-ghost:hover{background:#3a352f}
+@media (max-width:860px){
+  .compose-grid{grid-template-columns:1fr}
+  .tray{position:relative;top:0}
+  .formulas button span:first-child::before{display:none}
+  .tray-grid{grid-template-columns:1fr 1fr}
+  .cell.photo{grid-column:1/3;grid-row:auto;min-height:0;aspect-ratio:16/9;order:-1}
+  .cell.main{grid-column:1/3}
+  .formulas{grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;gap:8px;padding-bottom:8px;scroll-snap-type:x mandatory}
+  .formulas li{scroll-snap-align:start}
+  .formulas button{--c:8px;background:#fff;padding:12px 16px;font-size:1rem;clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px)}
+  .formulas button[aria-selected="true"]{background:var(--ink);color:#fff}
+  .formulas button[aria-selected="true"] .p{color:#fff}
+}
+
+/* carte */
+.carte{padding-block:clamp(96px,12vw,180px)}
+.carte-intro{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end}
+.carte-intro p{max-width:46ch}
+.jump{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.jump a{--c:8px;background:var(--surface);padding:10px 16px;text-decoration:none;font-weight:600;font-size:1rem;transition:background-color .2s,color .2s}
+.jump a:hover{background:var(--ink);color:#fff}
+.cat{margin-top:clamp(64px,7vw,104px)}
+.cat-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:32px}
+.cat-head h3{font-size:clamp(1.75rem,1.2rem + 1.8vw,3rem)}
+.cat-head span{color:var(--muted);font-size:1rem}
+.items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:28px 64px}
+.items li{display:grid;grid-template-columns:14px 1fr;gap:16px;align-items:start}
+.items li::before{content:"";width:12px;height:12px;margin-top:.45em;background:var(--shu);clip-path:polygon(3px 0,9px 0,12px 3px,12px 9px,9px 12px,3px 12px,0 9px,0 3px)}
+.it-line{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.it-line b{font-weight:600;font-size:1.125rem}
+.it-line .p{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.items p{color:var(--muted);font-size:1rem;max-width:44ch;margin-top:4px}
+.cat-note{margin-top:28px;color:var(--muted);font-size:1rem;max-width:60ch}
+@media (max-width:860px){.carte-intro{grid-template-columns:1fr}.items{grid-template-columns:1fr;gap:22px}}
+
+/* bande wagyu */
+.wagyu{background:var(--shu);color:#fff;overflow:hidden}
+.wagyu .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,5vw,80px);align-items:center;padding-block:clamp(72px,9vw,128px)}
+.wagyu h2{font-size:var(--step-head);color:#fff}
+.wagyu .jp{display:block;font-size:clamp(1.25rem,1rem + 1vw,1.75rem);margin-top:24px;line-height:1.5}
+.wagyu p{margin-top:16px;max-width:46ch}
+.wagyu-mark{--c:clamp(18px,2.4vw,34px);aspect-ratio:4/3;background:#fff;color:var(--shu);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.wagyu-mark .jp{font-size:clamp(6rem,3rem + 10vw,15rem);font-weight:700;line-height:1;margin:0;color:var(--shu)}
+.wagyu-mark span:last-child{font-weight:600;font-size:var(--step-body);color:var(--ink)}
+.wagyu-photo{--c:clamp(18px,2.4vw,34px);aspect-ratio:4/3;overflow:hidden;background:#7a1e12}
+.wagyu-photo img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.wagyu .wrap{grid-template-columns:1fr}}
+
+/* mur de mots */
+.words{padding-block:clamp(96px,12vw,180px) 0}
+.words .wrap>p{margin-top:16px;max-width:52ch;font-size:var(--step-lead);line-height:1.35}
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:clamp(40px,5vw,72px) 8px 8px}
+.tile{--c:clamp(14px,1.6vw,24px);aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tile .k{font-family:var(--jp);font-weight:700;font-size:clamp(3rem,1rem + 6.4vw,8.5rem);line-height:1}
+.tile .k.long{font-size:clamp(2.25rem,.6rem + 4.6vw,6rem)}
+.tile .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:var(--step-small);font-weight:600}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.tile:hover img{transform:scale(1.05)}
+.p1{background:var(--surface);color:var(--ink)}
+.p2{background:var(--urushi);color:#fff}
+.p3{background:var(--shu);color:#fff}
+.p4{background:#2b2724;color:#fff}
+@media (max-width:860px){.wall{grid-template-columns:repeat(2,1fr);gap:6px;padding-inline:6px}.tile .k{font-size:22vw}.tile .k.long{font-size:15vw}.tile .cap{font-size:.8125rem}}
+
+/* horaires & venir */
+.visit{padding-block:clamp(96px,12vw,180px)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);margin-top:clamp(36px,4vw,56px)}
+.hours{width:100%;border-collapse:collapse;font-size:var(--step-lead);font-variant-numeric:tabular-nums}
+.hours th{text-align:left;font-weight:500;padding:12px 0;width:42%}
+.hours td{padding:12px 0;text-align:right}
+.hours tr+tr th,.hours tr+tr td{border-top:1px solid #dcdad5}
+.hours tr.today th,.hours tr.today td{color:var(--shu);font-weight:700}
+.hours tr.closed td{color:var(--muted)}
+.status{margin-top:20px;font-size:1rem;display:flex;align-items:center;gap:10px;font-weight:600}
+.status .dot{background:var(--muted)}
+.status .dot.on{background:#2f9e4f}
+.where address{font-style:normal;font-size:var(--step-lead);line-height:1.35}
+.where p{margin-top:16px;max-width:44ch}
+.map{--c:clamp(18px,2.4vw,30px);display:block;margin-top:28px;background:var(--surface);aspect-ratio:16/10;position:relative;overflow:hidden;text-decoration:none}
+.map svg{width:100%;height:100%;display:block}
+.map:hover .pin{transform:translateY(-4px)}
+.pin{transition:transform .3s var(--ease)}
+.where .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+@media (max-width:860px){.visit-grid{grid-template-columns:1fr}}
+
+/* coupon de réservation */
+.book{padding-bottom:clamp(96px,12vw,180px)}
+.coupon{--n:28px;background:var(--ink);color:#fff;display:grid;grid-template-columns:46fr 54fr;position:relative;
+  -webkit-mask:radial-gradient(circle var(--n) at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--n) at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle var(--n) at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--n) at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+.coupon-l{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;border-right:5px dotted var(--bg)}
+.coupon h2{color:#fff}
+.coupon-l p{max-width:38ch;color:#d8d5cf}
+.coupon-l a{color:#fff}
+.coupon form{padding:clamp(28px,4vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.coupon label{display:grid;gap:6px;font-size:var(--step-small);color:#d8d5cf;font-weight:500}
+.coupon input,.coupon select{appearance:none;-webkit-appearance:none;border:0;border-radius:0;background:#2a2a2a;color:#fff;height:54px;padding:0 16px;font:500 1rem "Albert Sans",sans-serif;width:100%;caret-color:var(--shu)}
+.coupon input::placeholder{color:#a9a6a0}
+.coupon input:focus,.coupon select:focus{outline:2px solid var(--shu);outline-offset:0}
+.coupon .full{grid-column:1/-1}
+.coupon .btn{height:56px;width:100%}
+.coupon .hint{grid-column:1/-1;font-size:var(--step-small);color:#bdbab3}
+@media (max-width:860px){
+  .coupon{grid-template-columns:1fr;-webkit-mask:none;mask:none;--c:16px}
+  .coupon-l{border-right:0;border-bottom:5px dotted var(--bg)}
+  .coupon form{grid-template-columns:1fr}
+}
+
+/* pied de page */
+.foot{background:var(--urushi);color:var(--on-urushi);padding-top:clamp(56px,7vw,96px)}
+.blocks{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;align-items:end;height:clamp(150px,34svh,320px)}
+.blocks span{--c:clamp(10px,1.4vw,20px);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:clamp(3.5rem,1rem + 10vw,13rem);letter-spacing:-.04em;line-height:1;height:100%}
+.blocks span:nth-child(1){background:var(--shu);height:100%}
+.blocks span:nth-child(2){background:#f4f2ee;color:var(--urushi);height:78%}
+.blocks span:nth-child(3){background:#3a3530;height:92%}
+.blocks span:nth-child(4){background:var(--shu);height:66%}
+.blocks span:nth-child(5){background:#f4f2ee;color:var(--urushi);height:86%}
+.foot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding-block:56px 40px;font-size:1rem}
+.foot-cols h3{font-size:1rem;letter-spacing:0;color:var(--on-urushi-soft);font-weight:500;margin-bottom:12px}
+.foot-cols ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.foot-cols a{color:var(--on-urushi);text-decoration:none}
+.foot-cols a:hover{color:#ff8a76}
+.foot-last{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:20px 32px;color:var(--on-urushi-soft);font-size:var(--step-small)}
+.foot-last a{color:var(--on-urushi-soft)}
+@media (max-width:860px){.foot-cols{grid-template-columns:1fr 1fr}.blocks{height:22svh}}
+
+/* entrées */
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0) * 75ms)}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise{opacity:1;transform:none;transition:none}
+  .hero-photo img{animation:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="mark" href="#top">Sushi Gozen <span class="jp">すしごぜん</span></a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#formules">Formules</a></li>
+        <li><a href="#carte">Carte</a></li>
+        <li><a href="#horaires">Horaires</a></li>
+        <li><a href="#venir">Venir</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-shu cut" href="https://www.thefork.fr/restaurant/sushi-gozen-r495955" target="_blank" rel="noopener">Réserver</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <h1 id="h1" class="rise">Sushi Gozen</h1>
+      <div class="hero-row">
+        <p class="lead rise" style="--i:1">Cuisine japonaise à Montparnasse, à deux pas du carrefour Vavin. Chaque formule arrive avec son entrée de quatre mets et sa soupe miso.</p>
+        <div class="ctas rise" style="--i:2">
+          <a class="btn btn-shu cut" href="https://www.thefork.fr/restaurant/sushi-gozen-r495955" target="_blank" rel="noopener">Réserver une table</a>
+          <a class="btn btn-ghost cut" href="tel:+33140475501"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>01 40 47 55 01</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tiers" aria-label="Rubriques">
+      <a class="tier t1" href="#formules"><span class="tab">Formules</span><span class="band"></span></a>
+      <a class="tier t2" href="#carte"><span class="tab">Menus spéciaux</span><span class="band"></span></a>
+      <a class="tier t3" href="#emporter"><span class="tab">À emporter</span><span class="band"></span></a>
+      <div class="tier t4"><a class="tab" href="#horaires" style="text-decoration:none">Horaires</a>
+        <div class="front">
+          <div class="front-grid">
+            <div class="hero-photo cut"><img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=1600&q=75&auto=format&fit=crop" width="1600" height="1000" alt="Sushi et nigiri alignés sur une assiette noire, baguettes posées à côté"></div>
+            <div class="facts">
+              <dl>
+                <div><dt>Aujourd’hui</dt><dd><span class="open-now"><span class="dot cut" id="heroDot"></span><span id="heroStatus">Lundi au samedi, midi et soir</span></span><small>12 h – 14 h 30 · 19 h – 22 h 30 · fermé le dimanche</small></dd></div>
+                <div><dt>Note TheFork</dt><dd>9,2 / 10<small>397 avis de clients ayant réservé</small></dd></div>
+                <div><dt>Adresse</dt><dd><a href="https://www.google.com/maps/dir/?api=1&destination=Sushi+Gozen+22+rue+Delambre+75014+Paris" target="_blank" rel="noopener">22 rue Delambre, Paris 14e</a><small>Métro Vavin ou Edgar-Quinet</small></dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro" aria-labelledby="introTitle">
+    <div class="wrap intro-grid">
+      <div>
+        <h2 id="introTitle" class="sr">Le restaurant</h2>
+        <p class="statement rise">Ici, un repas arrive complet&nbsp;: une entrée de quatre mets<span class="thumb cut"><img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=200&q=70&auto=format&fit=crop" width="200" height="133" alt="" loading="lazy"></span>, la soupe miso, puis les sushi<span class="thumb cut"><img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?w=200&q=70&auto=format&fit=crop" width="200" height="133" alt="" loading="lazy"></span>, le sashimi ou le donburi<span class="thumb cut"><img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=200&q=70&auto=format&fit=crop" width="200" height="133" alt="" loading="lazy"></span> que vous avez choisis.</p>
+      </div>
+      <div class="intro-notes">
+        <p class="rise" style="--i:1"><span class="jp">スタッフは日本人です</span>L’équipe est japonaise. Vous pouvez écrire au restaurant en français ou en japonais.</p>
+        <p class="rise" style="--i:2"><span class="jp">うどん</span>Des udon sont aussi servis, en plus des sushi, sashimi, donburi, bento et sukiyaki.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="compose" id="formules" aria-labelledby="formTitle">
+    <div class="wrap">
+      <h2 id="formTitle" class="rise">Composez votre plateau</h2>
+      <p class="sub rise" style="--i:1">Choisissez une formule et l’heure du repas&nbsp;: le plateau se remplit avec ce qui est servi, au prix de la carte.</p>
+      <div class="compose-grid">
+        <div>
+          <div class="when cut" role="group" aria-label="Service">
+            <button type="button" class="cut" data-when="midi" aria-pressed="true">Midi</button>
+            <button type="button" class="cut" data-when="soir" aria-pressed="false">Soir</button>
+          </div>
+          <ul class="formulas" id="formulas" role="tablist" aria-label="Formules"></ul>
+        </div>
+        <div class="tray cut" id="tray" aria-live="polite">
+          <div class="tray-head">
+            <h3 id="trayName">Sushi saumon</h3>
+            <div class="tray-price" id="trayPrice">19 €<small>midi</small></div>
+          </div>
+          <div class="tray-grid">
+            <div class="cell cut" id="cellA"><b>Entrée</b><span>4 mets</span></div>
+            <div class="cell cut" id="cellB"><b>Soupe miso</b><span>servie avec la formule</span></div>
+            <div class="cell photo cut"><img id="trayImg" src="https://images.unsplash.com/photo-1563612116625-3012372fccce?w=900&q=70&auto=format&fit=crop" width="900" height="900" alt="" loading="lazy"></div>
+            <div class="cell main cut"><b>Au plateau</b><span id="trayMain">6 sushi au saumon, 4 maki au saumon, 4 maki au concombre</span></div>
+          </div>
+          <p class="tray-note" id="trayNote">Photo d’illustration.</p>
+          <div class="tray-actions">
+            <a class="btn btn-shu cut" href="https://www.thefork.fr/restaurant/sushi-gozen-r495955" target="_blank" rel="noopener">Réserver sur TheFork</a>
+            <a class="btn btn-ghost cut" href="tel:+33140475501">Appeler</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="carte" id="carte" aria-labelledby="carteTitle">
+    <div class="wrap">
+      <div class="carte-intro">
+        <h2 id="carteTitle" class="rise">La carte</h2>
+        <p class="rise" style="--i:1">Menus spéciaux, plats à emporter et petites assiettes. Les menus spéciaux sont servis avec une entrée et une soupe miso.</p>
+      </div>
+      <nav class="jump" aria-label="Rubriques de la carte">
+        <a class="cut" href="#speciaux">Menus spéciaux</a>
+        <a class="cut" href="#emporter">À emporter</a>
+        <a class="cut" href="#sushi-emporter">Sushi à emporter</a>
+        <a class="cut" href="#alacarte">À la carte</a>
+      </nav>
+
+      <div class="cat" id="speciaux">
+        <div class="cat-head"><h3>Menus spéciaux</h3><span>5 menus</span></div>
+        <ul class="items">
+          <li><div><div class="it-line"><b>Chirashi varié</b><span class="p">27 €</span></div><p>Poissons crus variés sur un bol de riz à sushi.</p></div></li>
+          <li><div><div class="it-line"><b>Variété de maki</b><span class="p">25 €</span></div><p>Maki californien, au thon, au saumon, au concombre et Sushi Gozen roll.</p></div></li>
+          <li><div><div class="it-line"><b>Sushi Gozen</b><span class="p">26 €</span></div><p>Makis variés et 5 sushi variés.</p></div></li>
+          <li><div><div class="it-line"><b>Shokado bento A</b><span class="p">24 €</span></div><p>4 sushi chauds, 4 sushi, 4 maki, gyudon ou tori teriyaki don.</p></div></li>
+          <li><div><div class="it-line"><b>Shokado bento B</b><span class="p">27 €</span></div><p>2 crevettes panées, 2 gyoza, 2 portions de poulet frit, 4 sushi, 4 maki californiens, gyudon ou tori teriyaki don.</p></div></li>
+        </ul>
+      </div>
+
+      <div class="cat" id="emporter">
+        <div class="cat-head"><h3>Plats à emporter</h3><span>7 plats</span></div>
+        <ul class="items">
+          <li><div><div class="it-line"><b>Gyoza bento</b><span class="p">12 €</span></div><p>Sushi au saumon, maki, raviolis à la vapeur puis grillés.</p></div></li>
+          <li><div><div class="it-line"><b>Hiru sushi bento</b><span class="p">12 €</span></div><p>Sushi au saumon, maki, salade d’algues et concombre.</p></div></li>
+          <li><div><div class="it-line"><b>Petit sushi et gyudon</b><span class="p">12 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Gyudon</b><span class="p">12 €</span></div><p>Bœuf mijoté à la sauce soja sucrée sur un bol de riz, salade de chou.</p></div></li>
+          <li><div><div class="it-line"><b>Tori bento</b><span class="p">12 €</span></div><p>Poulet frit, salade d’algues, concombre, salade, riz blanc.</p></div></li>
+          <li><div><div class="it-line"><b>Gyudon gyoza bento</b><span class="p">12 €</span></div><p>Poulet frit, salade d’algues, concombre, gyoza, gyudon.</p></div></li>
+          <li><div><div class="it-line"><b>Tori teriyaki don</b><span class="p">11 €</span></div><p>Poulet caramélisé sur un bol de riz, salade de chou.</p></div></li>
+        </ul>
+      </div>
+
+      <div class="cat" id="sushi-emporter">
+        <div class="cat-head"><h3>Sushi à emporter</h3><span>11 boîtes</span></div>
+        <ul class="items">
+          <li><div><div class="it-line"><b>Maki californien</b><span class="p">9 €</span></div><p>Saumon, avocat, algue.</p></div></li>
+          <li><div><div class="it-line"><b>Sushi chaud</b><span class="p">11 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Sushi saumon</b><span class="p">13 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Chirashi saumon</b><span class="p">15 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Sushi gyudon</b><span class="p">16 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Saumon nigiri et maki mixte</b><span class="p">16 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Sashimi saumon</b><span class="p">17 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Maki mixte</b><span class="p">18 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Sushi mixte</b><span class="p">18 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Sashimi mixte</b><span class="p">20 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Chirashi mixte</b><span class="p">20 €</span></div></div></li>
+        </ul>
+        <p class="cat-note">Pour commander à emporter, appelez le restaurant au <a href="tel:+33140475501">01 40 47 55 01</a>. La livraison passe par Uber Eats.</p>
+      </div>
+
+      <div class="cat" id="alacarte">
+        <div class="cat-head"><h3>À la carte</h3><span>5 assiettes</span></div>
+        <ul class="items">
+          <li><div><div class="it-line"><b>Soupe miso et tofu</b><span class="p">4 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Salade japonaise</b><span class="p">4 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Salade de chou</b><span class="p">4 €</span></div></div></li>
+          <li><div><div class="it-line"><b>Gyoza</b><span class="p">6 €</span></div><p>Raviolis à la vapeur puis grillés.</p></div></li>
+          <li><div><div class="it-line"><b>Salade d’algues</b><span class="p">7 €</span></div></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wagyu" aria-labelledby="wagyuTitle">
+    <div class="wrap">
+      <div>
+        <h2 id="wagyuTitle" class="rise">Le sukiyaki au wagyu de Miyazaki</h2>
+        <span class="jp rise" style="--i:1" lang="ja">和牛すき焼あります。<br>宮崎県産黒毛和牛</span>
+        <p class="rise" style="--i:2">Du bœuf kuroge wagyu de la préfecture de Miyazaki, cuit en sukiyaki. Demandez-le en réservant.</p>
+      </div>
+      <div class="wagyu-mark cut rise" style="--i:2" aria-hidden="true"><span class="jp">和牛</span><span>Kuroge wagyu · Miyazaki</span></div>
+    </div>
+  </section>
+
+  <section class="words" aria-labelledby="wordsTitle">
+    <div class="wrap">
+      <h2 id="wordsTitle" class="rise">Ce qui sort de la cuisine</h2>
+      <p class="rise" style="--i:1">Sushi, sashimi, donburi, bento, sukiyaki et udon&nbsp;: la cuisine du quotidien japonais, midi et soir.</p>
+    </div>
+    <div class="wall">
+      <div class="tile cut p2"><span class="k" lang="ja">寿司</span><span class="cap">Sushi</span></div>
+      <div class="tile cut"><img src="https://images.unsplash.com/photo-1615361200141-f45040f367be?w=700&q=70&auto=format&fit=crop" width="700" height="700" alt="Nigiri au saumon tenu entre deux baguettes" loading="lazy"></div>
+      <div class="tile cut p1"><span class="k" lang="ja">刺身</span><span class="cap">Sashimi</span></div>
+      <div class="tile cut p3"><span class="k" lang="ja">丼</span><span class="cap">Donburi</span></div>
+      <div class="tile cut p1"><span class="k" lang="ja">弁当</span><span class="cap">Bento</span></div>
+      <div class="tile cut p4"><span class="k" lang="ja">餃子</span><span class="cap">Gyoza</span></div>
+      <div class="tile cut"><img src="https://images.unsplash.com/photo-1607301405390-d831c242f59b?w=700&q=70&auto=format&fit=crop" width="700" height="700" alt="Maki panés et maki au saumon sur une planche en bois" loading="lazy"></div>
+      <div class="tile cut p2"><span class="k long" lang="ja">すき焼</span><span class="cap">Sukiyaki</span></div>
+      <div class="tile cut p3"><span class="k long" lang="ja">うどん</span><span class="cap">Udon</span></div>
+      <div class="tile cut"><img src="https://images.unsplash.com/photo-1540648639573-8c848de23f0a?w=700&q=70&auto=format&fit=crop" width="700" height="700" alt="Table garnie de maki, de sushi et de gingembre" loading="lazy"></div>
+      <div class="tile cut p4"><span class="k long" lang="ja">味噌汁</span><span class="cap">Soupe miso</span></div>
+      <div class="tile cut p1"><span class="k" lang="ja">御膳</span><span class="cap">Gozen</span></div>
+    </div>
+  </section>
+
+  <section class="visit" id="horaires" aria-labelledby="visitTitle">
+    <div class="wrap">
+      <h2 id="visitTitle" class="rise">Horaires et accès</h2>
+      <div class="visit-grid">
+        <div>
+          <table class="hours" aria-label="Horaires d’ouverture">
+            <tbody id="hoursBody">
+              <tr data-d="1"><th scope="row">Lundi</th><td>12 h – 14 h 30 · 19 h – 22 h 30</td></tr>
+              <tr data-d="2"><th scope="row">Mardi</th><td>12 h – 14 h 30 · 19 h – 22 h 30</td></tr>
+              <tr data-d="3"><th scope="row">Mercredi</th><td>12 h – 14 h 30 · 19 h – 22 h 30</td></tr>
+              <tr data-d="4"><th scope="row">Jeudi</th><td>12 h – 14 h 30 · 19 h – 22 h 30</td></tr>
+              <tr data-d="5"><th scope="row">Vendredi</th><td>12 h – 14 h 30 · 19 h – 22 h 30</td></tr>
+              <tr data-d="6"><th scope="row">Samedi</th><td>12 h – 14 h 30 · 19 h – 22 h 30</td></tr>
+              <tr data-d="0" class="closed"><th scope="row">Dimanche</th><td>Fermé</td></tr>
+            </tbody>
+          </table>
+          <p class="status" id="status"><span class="dot cut" id="statusDot"></span><span id="statusText">Du lundi au samedi, midi et soir.</span></p>
+        </div>
+        <div class="where" id="venir">
+          <address>Sushi Gozen<br>22 rue Delambre<br>75014 Paris</address>
+          <p>Au cœur de Montparnasse, à deux pas du carrefour Vavin. Métro Vavin (ligne 4) ou Edgar-Quinet (ligne 6).</p>
+          <a class="map cut" href="https://www.google.com/maps/dir/?api=1&destination=Sushi+Gozen+22+rue+Delambre+75014+Paris" target="_blank" rel="noopener" aria-label="Itinéraire vers le 22 rue Delambre dans Google Maps">
+            <svg viewBox="0 0 640 400" aria-hidden="true">
+              <rect width="640" height="400" fill="#f2f1ee"/>
+              <path d="M-20 70 L660 250" stroke="#fff" stroke-width="34"/>
+              <path d="M150 -20 L300 420" stroke="#fff" stroke-width="30"/>
+              <path d="M-20 330 L660 150" stroke="#fff" stroke-width="26"/>
+              <path d="M330 120 L470 300" stroke="#fff" stroke-width="16"/>
+              <text x="40" y="58" font-family="Albert Sans" font-size="15" fill="#5e5e5e" transform="rotate(15 40 58)">Bd du Montparnasse</text>
+              <text x="456" y="168" font-family="Albert Sans" font-size="15" fill="#5e5e5e" transform="rotate(-15 456 168)">Bd Edgar-Quinet</text>
+              <text x="172" y="380" font-family="Albert Sans" font-size="15" fill="#5e5e5e" transform="rotate(-71 172 380)">Bd Raspail</text>
+              <text x="404" y="168" font-family="Albert Sans" font-size="14" font-weight="600" fill="#121212" transform="rotate(52 404 168)">Rue Delambre</text>
+              <g class="pin"><path d="M366 196 l18 0 l8 8 l0 18 l-8 8 l-18 0 l-8 -8 l0 -18 z" fill="#c4321f"/><circle cx="375" cy="213" r="5" fill="#fff"/></g>
+              <g><rect x="196" y="102" width="62" height="26" fill="#121212"/><text x="227" y="120" text-anchor="middle" font-family="Albert Sans" font-size="13" font-weight="600" fill="#fff">Vavin</text></g>
+              <text x="24" y="384" font-family="Albert Sans" font-size="13" fill="#5e5e5e">Plan schématique</text>
+            </svg>
+          </a>
+          <div class="ctas">
+            <a class="btn btn-ink cut" href="https://www.google.com/maps/dir/?api=1&destination=Sushi+Gozen+22+rue+Delambre+75014+Paris" target="_blank" rel="noopener">Itinéraire</a>
+            <a class="btn btn-ghost cut" href="tel:+33140475501">01 40 47 55 01</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="reserver" aria-labelledby="bookTitle">
+    <div class="wrap">
+      <div class="coupon cut">
+        <div class="coupon-l">
+          <h2 id="bookTitle">Gardez-nous une table</h2>
+          <p>Réservation en ligne sur <a href="https://www.thefork.fr/restaurant/sushi-gozen-r495955" target="_blank" rel="noopener">TheFork</a>, au <a href="tel:+33140475501">01 40 47 55 01</a>, ou par e-mail avec ce petit formulaire. Le restaurant confirme votre table.</p>
+        </div>
+        <form id="bookForm" novalidate>
+          <label class="full">Nom<input name="nom" autocomplete="name" placeholder="Votre nom" required></label>
+          <label>Date<input name="date" type="date" required></label>
+          <label>Service<select name="service"><option>Midi</option><option>Soir</option></select></label>
+          <label>Heure<input name="heure" type="time" value="20:00" min="12:00" max="22:30"></label>
+          <label>Couverts<select name="couverts"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label>
+          <label class="full">Téléphone<input name="tel" type="tel" autocomplete="tel" placeholder="06 00 00 00 00"></label>
+          <button class="btn btn-shu cut full" type="submit">Préparer l’e-mail de réservation</button>
+          <p class="hint" id="bookHint" aria-live="polite">Le restaurant est fermé le dimanche.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="blocks" aria-label="Gozen"><span class="cut">G</span><span class="cut">O</span><span class="cut">Z</span><span class="cut">E</span><span class="cut">N</span></div>
+    <div class="foot-cols">
+      <div><h3>Le restaurant</h3><ul><li><a href="#formules">Formules</a></li><li><a href="#carte">La carte</a></li><li><a href="#emporter">À emporter</a></li></ul></div>
+      <div><h3>Venir</h3><ul><li><a href="#horaires">Horaires</a></li><li><a href="https://www.google.com/maps/dir/?api=1&destination=Sushi+Gozen+22+rue+Delambre+75014+Paris" target="_blank" rel="noopener">Itinéraire</a></li><li><a href="https://www.thefork.fr/restaurant/sushi-gozen-r495955" target="_blank" rel="noopener">TheFork</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li><a href="tel:+33140475501">01 40 47 55 01</a></li><li><a href="mailto:sushi.gozen.paris@gmail.com">sushi.gozen.paris@gmail.com</a></li><li><a href="https://www.instagram.com/sushigozenparis/" target="_blank" rel="noopener">Instagram @sushigozenparis</a></li></ul></div>
+      <div><h3>Adresse</h3><ul><li>22 rue Delambre</li><li>75014 Paris</li><li>Lun.–sam. · fermé le dimanche</li></ul></div>
+    </div>
+    <div class="foot-last">
+      <span>Démo réalisée par Raul Hatos — site non officiel. Photos d’illustration : Unsplash.</span>
+      <a class="btn btn-shu cut" href="https://www.thefork.fr/restaurant/sushi-gozen-r495955" target="_blank" rel="noopener" style="color:#fff">Réserver</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+
+/* formules : données de la carte du restaurant */
+const IMG = {
+  sushi:'1563612116625-3012372fccce', chirashi:'1534482421-64566f976cfa', chaud:'1607301405390-d831c242f59b',
+  maki:'1540648639573-8c848de23f0a', sashimi:'1617196034796-73dfa7b1fd56', don:'1569050467447-ce54b3bbc37d',
+  gyoza:'1496116218417-1a781b1c416c', nigiri:'1615361200141-f45040f367be'
+};
+const F = [
+  {n:'Déjeuner sushi', m:15, s:null, main:'3 sushi au saumon, 4 maki au saumon, 4 maki au concombre', img:'sushi'},
+  {n:'Sushi chaud', m:17, s:20, main:'2 sushi au saumon, 8 maki californiens panés', soir:'Le soir, un sushi au thon en plus.', img:'chaud'},
+  {n:'Tori teriyaki don', m:18, s:21, hot:1, main:'Poulet caramélisé sur un bol de riz, 4 gyoza', img:'don'},
+  {n:'Déjeuner maki', m:18, s:21, main:'8 maki au saumon, 8 california, 4 maki au concombre', img:'maki'},
+  {n:'Chirashi saumon', m:19, s:22, main:'Sashimi au saumon sur riz vinaigré, dans un bol', img:'chirashi'},
+  {n:'Gyudon', m:19, s:22, hot:1, main:'Bœuf et oignons mijotés à la sauce soja sucrée sur un bol de riz, 4 gyoza', img:'don'},
+  {n:'Sushi saumon', m:19, s:22, main:'6 sushi au saumon, 4 maki au saumon, 4 maki au concombre', img:'sushi'},
+  {n:'Sushi, gyudon et gyoza', m:19, s:22, hot:1, main:'3 sushi, 4 maki, gyudon et 4 gyoza, ou 3 sushi, 4 maki et 10 gyoza', img:'gyoza'},
+  {n:'Sashimi saumon', m:20, s:23, main:'Sashimi au saumon, riz blanc', img:'sashimi'},
+  {n:'Katsu don', m:20, s:23, hot:1, main:'Porc pané en omelette, sauce dashi, sur un bol de riz, 4 gyoza', img:'don'},
+  {n:'Sashimi et sushi saumon', m:21, s:23, main:'Sashimi au saumon, 4 maki, 6 sushi au saumon', img:'nigiri'},
+  {n:'Shokado bento', m:22, s:24, main:'4 california panés, 4 sushi, 4 maki, gyudon', img:'chaud'},
+  {n:'Sashimi et sushi mixte', m:24, s:26, main:'Sashimi et sushi au thon, au saumon et à la dorade, 4 maki', img:'sashimi'},
+  {n:'Omatsuri Gozen', m:25, s:27, main:'Sashimi et sushi au thon, au saumon et à la dorade, 4 maki californiens', img:'sushi'}
+];
+let when = 'midi', cur = 6;
+const list = document.getElementById('formulas');
+const $ = id => document.getElementById(id);
+function price(f){ const v = when === 'midi' ? f.m : f.s; return v == null ? null : v; }
+function renderList(){
+  list.innerHTML = '';
+  F.forEach((f,i) => {
+    const li = document.createElement('li');
+    const b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('role','tab'); b.setAttribute('aria-selected', i === cur);
+    const p = price(f);
+    b.innerHTML = '<span>' + f.n + '</span><span class="p">' + (p == null ? 'midi' : p + ' €') + '</span>';
+    b.addEventListener('click', () => { cur = i; renderList(); renderTray(); });
+    b.addEventListener('mouseenter', () => { if (matchMedia('(hover:hover)').matches) { cur = i; mark(); renderTray(); } });
+    li.appendChild(b); list.appendChild(li);
+  });
+}
+function mark(){ [...list.querySelectorAll('button')].forEach((b,i) => b.setAttribute('aria-selected', i === cur)); }
+function renderTray(){
+  const f = F[cur], p = price(f);
+  $('trayName').textContent = f.n;
+  $('trayPrice').innerHTML = p == null ? '15 €<small>le midi uniquement</small>' : p + ' €<small>' + when + '</small>';
+  $('cellA').innerHTML = f.hot ? '<b>Salade japonaise</b><span>en entrée</span>' : '<b>Entrée</b><span>4 mets</span>';
+  $('cellB').innerHTML = '<b>Soupe miso</b><span>servie avec la formule</span>';
+  $('trayMain').textContent = f.main;
+  $('trayNote').textContent = (f.soir && when === 'soir' ? f.soir + ' ' : '') + (f.hot ? 'Formule « plat chaud ». ' : '') + 'Photo d’illustration.';
+  const img = $('trayImg'), src = 'https://images.unsplash.com/photo-' + IMG[f.img] + '?w=900&q=70&auto=format&fit=crop';
+  if (img.getAttribute('src') !== src) { img.style.opacity = 0; setTimeout(() => { img.src = src; img.onload = () => img.style.opacity = 1; }, 160); }
+}
+document.querySelectorAll('.when button').forEach(b => b.addEventListener('click', () => {
+  when = b.dataset.when;
+  document.querySelectorAll('.when button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  renderList(); renderTray();
+}));
+renderList(); renderTray();
+
+/* ouvert maintenant ? heure de Paris */
+(function(){
+  const parts = new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const wd = {'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6}[parts.find(p=>p.type==='weekday').value];
+  const t = +parts.find(p=>p.type==='hour').value * 60 + +parts.find(p=>p.type==='minute').value;
+  const row = document.querySelector('#hoursBody tr[data-d="' + wd + '"]'); if (row) row.classList.add('today');
+  let open = false, msg;
+  if (wd === 0) msg = 'Fermé aujourd’hui. Réouverture lundi à 12 h.';
+  else if (t >= 720 && t < 870) { open = true; msg = 'Ouvert en ce moment, jusqu’à 14 h 30.'; }
+  else if (t >= 1140 && t < 1350) { open = true; msg = 'Ouvert en ce moment, jusqu’à 22 h 30.'; }
+  else if (t < 720) msg = 'Ouvre aujourd’hui à 12 h.';
+  else if (t < 1140) msg = 'Réouverture ce soir à 19 h.';
+  else msg = wd === 6 ? 'Fermé. Réouverture lundi à 12 h.' : 'Fermé. Réouverture demain à 12 h.';
+  $('statusText').textContent = msg; $('heroStatus').textContent = msg;
+  if (open) { $('statusDot').classList.add('on'); $('heroDot').classList.add('on'); }
+})();
+
+/* formulaire : prépare un e-mail */
+(function(){
+  const f = $('bookForm'), d = f.elements.date;
+  const today = new Date(); d.min = today.toISOString().slice(0,10);
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const hint = $('bookHint');
+    if (!f.elements.nom.value.trim()) { hint.textContent = 'Indiquez votre nom pour que le restaurant retrouve la réservation.'; f.elements.nom.focus(); return; }
+    if (!d.value) { hint.textContent = 'Choisissez une date.'; d.focus(); return; }
+    if (new Date(d.value + 'T12:00').getDay() === 0) { hint.textContent = 'Le restaurant est fermé le dimanche : choisissez un autre jour.'; d.focus(); return; }
+    const v = n => f.elements[n].value;
+    const body = 'Bonjour,\n\nJe souhaite réserver une table pour ' + v('couverts') + ' personne(s) le ' + new Date(d.value + 'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}) + ', service du ' + v('service').toLowerCase() + ', vers ' + v('heure').replace(':',' h ') + '.\n\nNom : ' + v('nom') + (v('tel') ? '\nTéléphone : ' + v('tel') : '') + '\n\nMerci !';
+    location.href = 'mailto:sushi.gozen.paris@gmail.com?subject=' + encodeURIComponent('Réservation · ' + v('couverts') + ' couverts · ' + d.value) + '&body=' + encodeURIComponent(body);
+    hint.textContent = 'Votre messagerie s’ouvre avec la demande prête à envoyer.';
+  });
+})();
+
+/* entrées et barre */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rise').forEach(el => io.observe(el));
+addEventListener('scroll', () => $('nav').classList.toggle('scrolled', scrollY > 8), {passive:true});
+</script>
+</body>
+</html>
