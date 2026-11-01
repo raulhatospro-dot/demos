@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>VGT Bowl · Bowls et plats maison, Paris 7e</title>
+<meta name="description" content="VGT Bowl, 22 rue de Beaune, Paris 7e. Buddha bowl, plats chauds, toasts et desserts faits maison avec des produits de saison. Déjeuner du lundi au samedi, sur place ou à emporter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#f7fbf5;
+  --tone:#eef3e6;
+  --tone-2:#e2ecd8;
+  --aloe:#c1fbd4;
+  --pista:#d4f9e0;
+  --ink:#000;
+  --body:#1d1f1c;
+  --muted:#4d5450;
+  --night:#0f1a14;
+  --pad:24px;
+  --f:"Inter Tight",Helvetica,Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scrollbar-color:#000 var(--tone)}
+body{background:var(--ground);color:var(--body);font:400 17px/1.55 var(--f);overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+::selection{background:var(--aloe);color:#000}
+:focus-visible{outline:3px solid #000;outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.num{font-variant-numeric:tabular-nums}
+h2{font:600 clamp(30px,3vw,40px)/1.05 var(--f);letter-spacing:-.03em;color:var(--ink);text-wrap:balance}
+
+/* bandeau démo */
+.demo{background:#000;color:#f7fbf5;font:500 13px/1.3 var(--f);text-align:center;padding:7px 16px}
+
+/* boutons : une seule forme, la pilule */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;border:0;font:600 16px/1 var(--f);text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+.btn:active{transform:scale(.96)}
+.btn-ink{background:#000;color:#fff}
+.btn-ink:hover{background:#26302a}
+.btn-soft{background:var(--aloe);color:#000}
+.btn-soft:hover{background:#a8f2c0}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* HERO */
+.hero{position:relative;height:calc(100svh - 32px);min-height:640px;max-height:1100px;display:grid;grid-template-rows:58fr auto auto;background:var(--ground)}
+.hero-photo{position:relative;overflow:hidden;min-height:300px;background:var(--tone)}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.1) translate3d(-1.5%,-1%,0)}}
+.nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad)}
+.nav .tag{background:var(--ground);color:#000;font:600 15px/1 var(--f);padding:10px 14px;border-radius:999px;text-decoration:none}
+.nav ul{display:flex;gap:4px;list-style:none;background:var(--ground);border-radius:999px;padding:4px}
+.nav ul a{display:block;padding:8px 14px;border-radius:999px;font:500 15px/1 var(--f);text-decoration:none;color:#000;transition:background-color .2s}
+.nav ul a:hover{background:var(--aloe)}
+.strip{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px var(--pad) 0}
+.strip p{max-width:48ch;font-size:17px;color:var(--body)}
+.strip .acts{display:flex;gap:10px;flex:none}
+.word{padding:0 var(--pad) 18px;overflow:hidden}
+h1.mono{display:flex;align-items:flex-end;gap:.2em;font:600 clamp(96px,18.6vw,330px)/.8 var(--f);letter-spacing:-.06em;color:#000;white-space:nowrap;transform-origin:50% 100%}
+h1.mono .o{display:inline-block;width:.74em;height:.74em;border-radius:50%;overflow:hidden;margin:0 .02em .015em;flex:none;background:var(--tone);outline:.045em solid #000;outline-offset:-.045em}
+h1.mono .o img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+h1.mono:hover .o img{transform:rotate(25deg) scale(1.06)}
+@supports (animation-timeline:scroll()){
+  h1.mono{animation:shrink linear both;animation-timeline:scroll(root);animation-range:0 90vh}
+  @keyframes shrink{to{transform:scale(.93)}}
+}
+
+/* sections */
+section{scroll-margin-top:16px}
+.wrap{padding:0 var(--pad);max-width:1480px;margin:0 auto}
+
+/* COMPOSER */
+.compose{background:var(--tone);padding:120px 0}
+.compose .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;min-height:80svh}
+.plate{position:relative;background:var(--aloe);aspect-ratio:1;display:grid;place-items:center;align-self:center}
+.plate svg{width:86%;height:86%;overflow:visible}
+.plate .sec{transition:opacity .45s var(--ease),transform .55s var(--ease);transform-origin:250px 250px}
+.plate .sec.off{opacity:0;transform:scale(.6)}
+.plate figcaption{position:absolute;left:20px;bottom:16px;font:500 14px/1.3 var(--f);color:#0d2a18}
+.panel{display:flex;flex-direction:column;gap:28px;justify-content:space-between}
+.panel .lead{max-width:40ch;margin-top:16px;color:var(--body)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{font:500 17px/1 var(--f);background:none;border:0;padding:10px 14px;border-radius:999px;color:var(--muted);cursor:pointer;transition:background-color .2s,color .2s}
+.tabs button[aria-selected=true]{background:#000;color:#fff}
+.tabs button:hover:not([aria-selected=true]){background:var(--tone-2);color:#000}
+.opts[hidden]{display:none}
+.opts{display:flex;flex-wrap:wrap;gap:8px;min-height:120px;align-content:flex-start}
+.opts label{position:relative;cursor:pointer}
+.opts input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opts span{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:var(--ground);font:500 16px/1 var(--f);color:#000;transition:background-color .2s,transform .2s var(--ease)}
+.opts span i{width:14px;height:14px;border-radius:50%;flex:none}
+.opts label:hover span{background:#fff}
+.opts input:checked+span{background:#000;color:#fff}
+.opts input:focus-visible+span{outline:3px solid #000;outline-offset:3px}
+.opts label:active span{transform:scale(.95)}
+.hint{font-size:15px;color:var(--muted)}
+.recap{background:var(--ground);padding:20px 22px;font-size:17px}
+.recap b{color:#000;font-weight:600}
+.cells{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cells .btn{min-height:64px;width:100%}
+
+/* CARTE */
+.menu{padding:180px 0 140px}
+.menu .wrap{display:grid;grid-template-columns:min(620px,46%) 1fr;gap:64px;align-items:start}
+.col{container-type:inline-size}
+.menu h2.giant{font:700 31cqw/.78 var(--f);letter-spacing:-.065em;margin-left:-.04em;margin-bottom:24px}
+.menu details{background:var(--tone);margin-bottom:6px;border-radius:6px}
+.menu summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:58px;padding:0 20px;font:600 17px/1 var(--f);color:#000;transition:background-color .2s}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary:hover{background:var(--tone-2);border-radius:6px}
+.menu summary .pl{width:16px;height:16px;position:relative;flex:none;transition:transform .3s var(--ease)}
+.menu summary .pl::before,.menu summary .pl::after{content:"";position:absolute;background:#000;left:0;top:7px;width:16px;height:2px}
+.menu summary .pl::after{transform:rotate(90deg)}
+.menu details[open] .pl{transform:rotate(45deg)}
+.menu ul{list-style:none;padding:4px 20px 22px}
+.menu li{display:flex;justify-content:space-between;gap:16px;padding:7px 0;font-size:16px}
+.menu li span:first-child{color:#000}
+.menu li small{display:block;font-size:14px;color:var(--muted)}
+.menu li .p{font-variant-numeric:tabular-nums;white-space:nowrap;color:#000;font-weight:500}
+.menu .note{margin-top:18px;font-size:15px;color:var(--muted)}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:sticky;top:24px}
+.pics figure{margin:0}
+.pics figure:first-child{grid-column:1/-1}
+.pics img{width:100%;aspect-ratio:1;object-fit:cover}
+.pics figure:first-child img{aspect-ratio:16/10}
+.pics figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+
+/* MAISON */
+.about{padding:40px 0 160px}
+.about .row{display:grid;grid-template-columns:34% 1fr;gap:0;align-items:start}
+.facts{display:grid;gap:20px;font-size:15px}
+.facts dt{color:var(--muted)}
+.facts dd{color:#000;font-weight:500}
+.about .big{font:400 clamp(21px,1.75vw,27px)/1.35 var(--f);color:#000;max-width:36em;letter-spacing:-.01em}
+.about .big+.big{margin-top:18px}
+.duo{display:grid;grid-template-columns:5fr 7fr;gap:10px;margin-top:96px}
+.duo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* CONTACT */
+.contact{background:var(--aloe)}
+.contact h2{padding:110px var(--pad) 28px;max-width:1480px;margin:0 auto}
+.rows a,.rows div{display:block;text-decoration:none}
+.rows>*{font:500 clamp(40px,5.6vw,86px)/1 var(--f);letter-spacing:-.04em;color:#000;padding:44px var(--pad) 22px;transition:background-color .25s}
+.rows>*:nth-child(odd){background:var(--pista)}
+.rows>*:nth-child(even){background:var(--aloe)}
+.rows a:hover{background:#fff}
+.rows .live{display:block;font:500 17px/1.3 var(--f);letter-spacing:0;margin-top:14px;color:#0d2a18}
+.rows .live b{display:inline-block;width:10px;height:10px;border-radius:50%;background:#1a7f3c;margin-right:8px;vertical-align:1px}
+.rows .live.closed b{background:#a33}
+.hello{display:flex;align-items:center;gap:24px}
+.hello .go{display:inline-grid;place-items:center;width:.95em;height:.95em;border-radius:50%;background:#000;color:#fff;transition:transform .3s var(--ease)}
+.hello:hover .go{transform:translateX(8px)}
+.hello .go svg{width:.42em;height:.42em}
+.hello small{font:500 17px/1.3 var(--f);letter-spacing:0;display:block;margin-top:10px;color:#0d2a18}
+
+/* FOOTER */
+footer{overflow:hidden;background:var(--night);color:#d7e2d9;min-height:92svh;display:grid;grid-template-rows:auto 1fr auto;padding:44px var(--pad) 22px}
+footer .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;font-size:16px;max-width:1480px}
+footer .cols p:first-child{color:#fff;font-weight:600}
+footer a{text-decoration:none}
+footer a:hover{color:var(--aloe)}
+footer .wm{font:700 21.4vw/.8 var(--f);letter-spacing:-.065em;color:var(--aloe);white-space:nowrap;margin:0 0 18px -.03em}
+footer .legal{font-size:13px;color:#aebcb2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* entrées */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+
+/* téléphone */
+@media (max-width:820px){
+  :root{--pad:16px}
+  .hero{grid-template-rows:46svh auto auto;height:auto;min-height:0;max-height:none}
+  .nav ul{display:none}
+  .nav .menu-link{display:block}
+  .strip{flex-direction:column;align-items:flex-start;padding-top:20px;gap:16px}
+  .strip p{font-size:16px}
+  .word{padding-top:26px;padding-bottom:14px}
+  h1.mono{flex-direction:column;align-items:flex-start;font-size:33vw;line-height:.82;letter-spacing:-.065em}
+  footer .wm{font-size:35vw;white-space:normal;line-height:.82}
+  .compose{padding:72px 0}
+  .compose .wrap{grid-template-columns:1fr;gap:28px;min-height:0}
+  .cells{grid-template-columns:1fr}
+  .cells .btn{min-height:58px}
+  .menu{padding:96px 0 72px}
+  .menu .wrap{grid-template-columns:1fr;gap:40px}
+  .pics{position:static}
+  .about{padding:24px 0 96px}
+  .about .row{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr;gap:16px;order:2;margin-top:36px}
+  .about .big{font-size:19px}
+  .duo{grid-template-columns:1fr;margin-top:56px}
+  .contact h2{padding-top:72px}
+  .rows>*{font-size:9.6vw;padding:30px var(--pad) 16px}
+  footer .cols{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media (min-width:821px){.nav .menu-link{display:none}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body class="no-js">
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<header class="hero">
+  <div class="hero-photo">
+    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=2000&q=72&auto=format&fit=crop" width="2000" height="1333" alt="Bacs de légumes frais : brocoli, carottes, maïs, haricots rouges, olives, pois chiches.">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="tag" href="tel:+33147039207">01 47 03 92 07</a>
+      <ul>
+        <li><a href="#composer">Composer</a></li>
+        <li><a href="#carte">Carte</a></li>
+        <li><a href="#maison">La maison</a></li>
+        <li><a href="#contact">Horaires</a></li>
+      </ul>
+      <a class="tag menu-link" href="#carte">Carte</a>
+    </nav>
+  </div>
+  <div class="strip">
+    <p class="rv">Bowls de saison, plats chauds et desserts faits maison. Déjeuner du lundi au samedi, sur place ou à emporter, 22 rue de Beaune, Paris 7e.</p>
+    <div class="acts rv">
+      <a class="btn btn-ink" href="#carte">Voir la carte</a>
+      <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&destination=VGT+Bowl,+22+Rue+de+Beaune,+75007+Paris" target="_blank" rel="noopener">Itinéraire</a>
+    </div>
+  </div>
+  <div class="word">
+    <h1 class="mono" aria-label="VGT Bowl, bowls et plats maison à Paris 7e"><span aria-hidden="true">VGT</span><span aria-hidden="true">B<span class="o"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=72&auto=format&fit=crop" width="900" height="900" alt=""></span>WL</span></h1>
+  </div>
+</header>
+
+<main>
+<section class="compose" id="composer" aria-labelledby="t-compose">
+  <div class="wrap">
+    <figure class="plate rv">
+      <svg viewBox="0 0 500 500" role="img" aria-labelledby="bowl-desc">
+        <title id="bowl-desc">Votre bowl vu du dessus</title>
+        <defs>
+          <pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.4" fill="#000" opacity=".14"/><circle cx="11" cy="10" r="1.8" fill="#fff" opacity=".35"/></pattern>
+          <clipPath id="inside"><circle cx="250" cy="250" r="196"/></clipPath>
+        </defs>
+        <circle cx="250" cy="250" r="236" fill="#fbfbf5"/>
+        <circle cx="250" cy="250" r="236" fill="none" stroke="#000" stroke-width="6"/>
+        <g clip-path="url(#inside)">
+          <circle id="base" cx="250" cy="250" r="196" fill="#e9d8a6"/>
+          <circle cx="250" cy="250" r="196" fill="url(#grain)"/>
+          <g id="secs"></g>
+          <path id="sauce" class="sec" d="M120 300 C 170 220, 230 360, 280 260 S 360 190, 390 250" fill="none" stroke="#f3ead2" stroke-width="10" stroke-linecap="round"/>
+        </g>
+        <circle cx="250" cy="250" r="196" fill="none" stroke="#000" stroke-width="3" opacity=".25"/>
+      </svg>
+      <figcaption id="bowl-cap">Base quinoa</figcaption>
+    </figure>
+
+    <div class="panel">
+      <div>
+        <h2 id="t-compose">Composez votre bowl</h2>
+        <p class="lead">Choisissez une base, des légumes, une garniture et une sauce : le bowl se remplit sous vos yeux. Puis appelez l’équipe pour savoir ce que propose le bowl du jour.</p>
+      </div>
+      <div>
+        <div class="tabs" role="tablist" aria-label="Étapes du bowl">
+          <button role="tab" aria-selected="true" aria-controls="p-base" id="tab-base">Base</button>
+          <button role="tab" aria-selected="false" aria-controls="p-leg" id="tab-leg" tabindex="-1">Légumes</button>
+          <button role="tab" aria-selected="false" aria-controls="p-gar" id="tab-gar" tabindex="-1">Garniture</button>
+          <button role="tab" aria-selected="false" aria-controls="p-sauce" id="tab-sauce" tabindex="-1">Sauce</button>
+        </div>
+      </div>
+      <div>
+        <fieldset class="opts" id="p-base" role="tabpanel" aria-labelledby="tab-base" style="border:0">
+          <legend class="sr">Base, une au choix</legend>
+        </fieldset>
+        <fieldset class="opts" id="p-leg" role="tabpanel" aria-labelledby="tab-leg" hidden style="border:0">
+          <legend class="sr">Légumes, trois au choix</legend>
+        </fieldset>
+        <fieldset class="opts" id="p-gar" role="tabpanel" aria-labelledby="tab-gar" hidden style="border:0">
+          <legend class="sr">Garniture, deux au choix</legend>
+        </fieldset>
+        <fieldset class="opts" id="p-sauce" role="tabpanel" aria-labelledby="tab-sauce" hidden style="border:0">
+          <legend class="sr">Sauce, une au choix</legend>
+        </fieldset>
+        <p class="hint" id="hint" aria-live="polite">Une base au choix.</p>
+      </div>
+      <p class="recap" aria-live="polite"><b>Votre bowl :</b> <span id="recap">quinoa.</span></p>
+      <div class="cells">
+        <a class="btn btn-ink" href="tel:+33147039207">Appeler : bowl du jour ?</a>
+        <a class="btn btn-soft" id="mail" href="mailto:vgtbowl@gmail.com">Envoyer par e-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="carte" aria-labelledby="t-carte">
+  <div class="wrap">
+    <div class="col">
+      <h2 class="giant rv" id="t-carte">Carte</h2>
+      <details open class="rv">
+        <summary>Le Buddha Bowl <span class="pl" aria-hidden="true"></span></summary>
+        <ul><li><span>Le Buddha Bowl<small>Composé chaque jour avec les légumes de saison</small></span><span class="p">dès 12,90 €</span></li></ul>
+      </details>
+      <details class="rv">
+        <summary>Plats chauds <span class="pl" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span>Curry de légumes</span><span class="p">11,90 €</span></li>
+          <li><span>Chili veggie</span><span class="p">12,90 €</span></li>
+          <li><span>Minestrone</span><span class="p">12,90 €</span></li>
+          <li><span>Salade de lentilles</span><span class="p">13,90 €</span></li>
+        </ul>
+      </details>
+      <details class="rv">
+        <summary>Toasts <span class="pl" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span>Avocado toast</span><span class="p">13,90 €</span></li>
+          <li><span>Toast au jambon</span><span class="p">14,90 €</span></li>
+          <li><span>Toast au saumon fumé</span><span class="p">16,90 €</span></li>
+        </ul>
+      </details>
+      <details class="rv">
+        <summary>Desserts maison <span class="pl" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span>Fondant au chocolat</span><span class="p">5,50 €</span></li>
+          <li><span>Crumble aux fruits</span><span class="p">5,50 €</span></li>
+          <li><span>Compote du jour</span><span class="p">3,90 €</span></li>
+          <li><span>Fruits frais, 100 g</span><span class="p">3,90 €</span></li>
+        </ul>
+      </details>
+      <details class="rv">
+        <summary>Jus pressés <span class="pl" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span>Le Tonic, 35 cl</span><span class="p">5,80 €</span></li>
+          <li><span>Jus pressés, 35 cl</span><span class="p">dès 5,40 €</span></li>
+          <li><span>Orange pressée, 25 cl</span><span class="p">4,50 €</span></li>
+        </ul>
+      </details>
+      <details class="rv">
+        <summary>Boissons fraîches <span class="pl" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span>Evian, 50 cl</span><span class="p">2,50 €</span></li>
+          <li><span>San Pellegrino, 50 cl</span><span class="p">2,60 €</span></li>
+          <li><span>Perrier, 33 cl</span><span class="p">2,60 €</span></li>
+          <li><span>Coca-Cola ou Coca-Cola Zéro, 33 cl</span><span class="p">2,50 €</span></li>
+          <li><span>Heineken, 33 cl</span><span class="p">3,50 €</span></li>
+          <li><span>Bière en bouteille</span><span class="p">dès 7 €</span></li>
+          <li><span>Verre de vin, 15 cl</span><span class="p">dès 4,20 €</span></li>
+        </ul>
+      </details>
+      <details class="rv">
+        <summary>Boissons chaudes <span class="pl" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span>Café ou déca Nespresso</span><span class="p">2,50 €</span></li>
+          <li><span>Café macchiato</span><span class="p">2,60 €</span></li>
+          <li><span>Café americano, 25 cl</span><span class="p">3 €</span></li>
+          <li><span>Café latte, 30 cl</span><span class="p">4,50 €</span></li>
+          <li><span>Café chantilly</span><span class="p">4,50 €</span></li>
+          <li><span>Chocolat chaud, 30 cl</span><span class="p">4 €</span></li>
+          <li><span>Chocolat viennois, 30 cl</span><span class="p">4,50 €</span></li>
+          <li><span>Thé vert, noir ou rouge, 50 cl</span><span class="p">4 €</span></li>
+          <li><span>Infusion, 50 cl</span><span class="p">4 €</span></li>
+        </ul>
+      </details>
+      <p class="note">Les desserts sont faits maison, avec des fruits frais de saison.</p>
+    </div>
+    <div class="pics">
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=1400&q=72&auto=format&fit=crop" width="1400" height="875" loading="lazy" alt="Curry de légumes dans un bol blanc, basilic frais."><figcaption>Côté plats chauds</figcaption></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=800&q=72&auto=format&fit=crop" width="800" height="1000" loading="lazy" alt="Deux tartines d’avocat et des rondelles de citron."><figcaption>Côté toasts</figcaption></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=800&q=72&auto=format&fit=crop" width="800" height="1000" loading="lazy" alt="Verre de boisson au citron vert et à la menthe."><figcaption>Côté jus</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="maison" aria-labelledby="t-maison">
+  <div class="wrap">
+    <div class="row">
+      <dl class="facts rv">
+        <div><dt>Service</dt><dd>Déjeuner, du lundi au samedi</dd></div>
+        <div><dt>Formules</dt><dd>Sur place ou à emporter</dd></div>
+        <div><dt>Paiement</dt><dd>Carte et sans contact</dd></div>
+        <div><dt>Accès</dt><dd>Entrée accessible en fauteuil roulant</dd></div>
+        <div><dt>Métro</dt><dd>Rue du Bac (ligne 12)</dd></div>
+      </dl>
+      <div>
+        <h2 id="t-maison" class="rv" style="margin-bottom:28px">Une cantine de quartier, rue de Beaune</h2>
+        <p class="big rv">Entre le quai Voltaire et la rue de l’Université, VGT Bowl sert le déjeuner du 7e : un Buddha Bowl qui change avec le marché, des plats chauds mijotés, des toasts et des jus pressés minute.</p>
+        <p class="big rv">Tout est fait maison, avec des fruits et des légumes de saison. Les desserts aussi : fondant au chocolat, crumble, compote du jour.</p>
+      </div>
+    </div>
+    <div class="duo">
+      <img class="rv" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=72&auto=format&fit=crop" width="1200" height="900" loading="lazy" alt="Assiette de légumes de saison, œuf, radis et avocat, vue du dessus.">
+      <img class="rv" src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=1600&q=72&auto=format&fit=crop" width="1600" height="1200" loading="lazy" alt="Salade d’épinards, avocat et grenade.">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="t-contact">
+  <h2 id="t-contact">Horaires et adresse</h2>
+  <div class="rows">
+    <div>VGT Bowl</div>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=VGT+Bowl,+22+Rue+de+Beaune,+75007+Paris" target="_blank" rel="noopener">22 rue de Beaune, 75007 Paris</a>
+    <div><span class="num">Lun–ven 11h30–16h</span><br><span class="num">Samedi 12h–16h</span><span class="live" id="live" aria-live="polite">Fermé le dimanche</span></div>
+    <a href="tel:+33147039207" class="num">01 47 03 92 07</a>
+    <a class="hello" href="mailto:vgtbowl@gmail.com"><span>Bonjour<small>vgtbowl@gmail.com</small></span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="cols">
+    <div><p>Adresse</p><p>22 rue de Beaune</p><p>75007 Paris</p></div>
+    <div><p>Pages</p><p><a href="#composer">Composer</a></p><p><a href="#carte">Carte</a></p><p><a href="#contact">Horaires</a></p></div>
+    <div><p>Contact</p><p><a href="tel:+33147039207">01 47 03 92 07</a></p><p><a href="mailto:vgtbowl@gmail.com">vgtbowl@gmail.com</a></p></div>
+    <div><p>Horaires</p><p>Lun–ven 11h30–16h</p><p>Sam 12h–16h, dim fermé</p></div>
+  </div>
+  <div></div>
+  <div>
+    <p class="wm" aria-hidden="true">VGT BOWL</p>
+    <div class="legal"><span>Démo réalisée par Raul Hatos — site non officiel</span><span>Photos : Unsplash</span></div>
+  </div>
+</footer>
+
+<script>
+document.body.classList.remove('no-js');
+// shortcut: options du composeur = exemples de saison, à remplacer par la vraie liste du restaurant
+const D={
+  base:{max:1,el:'p-base',hint:'Une base au choix.',items:[['Quinoa','#e9d8a6'],['Riz complet','#d6c29b'],['Lentilles','#8f6b3c'],['Jeunes pousses','#5d9b45']]},
+  leg:{max:3,el:'p-leg',hint:'Jusqu’à trois légumes.',items:[['Carotte râpée','#f08a24'],['Betterave','#9e1f45'],['Chou rouge','#7a2c66'],['Concombre','#93c86f'],['Avocat','#a7c957'],['Patate douce rôtie','#e3772f'],['Pois chiches','#e2c27b'],['Tomates cerises','#de3b26'],['Radis','#ee7a98']]},
+  gar:{max:2,el:'p-gar',hint:'Jusqu’à deux garnitures.',items:[['Feta','#f6f3ea'],['Œuf mollet','#f7c948'],['Tofu grillé','#d9a35a'],['Graines de courge','#3f6b3a'],['Noix','#9a6a3a']]},
+  sauce:{max:1,el:'p-sauce',hint:'Une sauce au choix.',items:[['Tahini citron','#f3ead2'],['Vinaigrette moutarde','#e8c45a'],['Huile d’olive et citron','#d7d27a']]}
+};
+const sel={base:['Quinoa'],leg:['Carotte râpée','Avocat','Chou rouge'],gar:['Œuf mollet'],sauce:['Tahini citron']};
+for(const k in D){
+  const f=document.getElementById(D[k].el);
+  D[k].items.forEach(([n,c])=>{
+    const l=document.createElement('label');
+    l.innerHTML=`<input type="${D[k].max===1?'radio':'checkbox'}" name="${k}" value="${n}"><span><i style="background:${c};outline:1px solid rgba(0,0,0,.18);outline-offset:-1px"></i>${n}</span>`;
+    const i=l.querySelector('input');i.checked=sel[k].includes(n);
+    i.addEventListener('change',()=>{
+      if(D[k].max===1){sel[k]=[n]}
+      else if(i.checked){if(sel[k].length>=D[k].max){i.checked=false;document.getElementById('hint').textContent=`${D[k].hint.replace('Jusqu’à','Pas plus de')} Retirez-en un d’abord.`;return}sel[k].push(n)}
+      else sel[k]=sel[k].filter(x=>x!==n);
+      draw();
+    });
+    f.appendChild(l);
+  });
+}
+const col=(k,n)=>D[k].items.find(x=>x[0]===n)[1];
+const secs=document.getElementById('secs');
+function wedge(a0,a1){const r=200,c=250,p=a=>[c+r*Math.cos(a),c+r*Math.sin(a)];const[x0,y0]=p(a0),[x1,y1]=p(a1);return`M${c} ${c} L${x0} ${y0} A${r} ${r} 0 ${a1-a0>Math.PI?1:0} 1 ${x1} ${y1}Z`}
+function draw(){
+  document.getElementById('base').setAttribute('fill',col('base',sel.base[0]));
+  const tops=[...sel.leg.map(n=>col('leg',n)),...sel.gar.map(n=>col('gar',n))];
+  // les garnitures occupent les 5 secteurs du bas, la base reste visible en haut
+  const start=-Math.PI*0.05,span=Math.PI*1.1,step=tops.length?span/tops.length:0;
+  secs.innerHTML=tops.map((c,i)=>`<g class="sec"><path d="${wedge(start+i*step,start+(i+1)*step)}" fill="${c}"/><path d="${wedge(start+i*step,start+(i+1)*step)}" fill="url(#grain)"/><path d="${wedge(start+i*step,start+(i+1)*step)}" fill="none" stroke="#fbfbf5" stroke-width="5"/></g>`).join('');
+  const s=document.getElementById('sauce');s.setAttribute('stroke',col('sauce',sel.sauce[0]));
+  s.classList.toggle('off',!sel.sauce.length);
+  const parts=[sel.base[0].toLowerCase(),...sel.leg.map(x=>x.toLowerCase()),...sel.gar.map(x=>x.toLowerCase())];
+  const txt=parts.join(', ')+(sel.sauce[0]?', sauce '+sel.sauce[0].toLowerCase():'')+'.';
+  document.getElementById('recap').textContent=txt;
+  document.getElementById('bowl-cap').textContent='Base '+sel.base[0].toLowerCase()+' · '+tops.length+' garniture'+(tops.length>1?'s':'');
+  document.getElementById('mail').href='mailto:vgtbowl@gmail.com?subject='+encodeURIComponent('Mon bowl idéal')+'&body='+encodeURIComponent('Bonjour,\n\nVoici le bowl que j’aimerais : '+txt+'\n\nEst-ce possible ce midi ?\n\nMerci !');
+}
+draw();
+// onglets accessibles
+const tabs=[...document.querySelectorAll('[role=tab]')];
+const hints={'p-base':D.base.hint,'p-leg':D.leg.hint,'p-gar':D.gar.hint,'p-sauce':D.sauce.hint};
+function act(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});document.getElementById('hint').textContent=hints[t.getAttribute('aria-controls')]}
+tabs.forEach((t,i)=>{t.addEventListener('click',()=>act(t));t.addEventListener('keydown',e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){const n=tabs[(i+d+tabs.length)%tabs.length];act(n);n.focus()}})});
+
+// ouvert maintenant ? (heure de Paris)
+(function(){
+  const now=new Date(),fmt=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+  const parts=Object.fromEntries(fmt.formatToParts(now).map(p=>[p.type,p.value]));
+  const day=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'].indexOf(parts.weekday);
+  const m=+parts.hour*60+ +parts.minute;
+  const H=d=>d===0?null:d===6?[720,960]:[690,960];
+  const el=document.getElementById('live'),h=H(day);
+  const hm=x=>Math.floor(x/60)+'h'+(x%60?String(x%60).padStart(2,'0'):'');
+  if(h&&m>=h[0]&&m<h[1]){const r=h[1]-m;el.innerHTML='<b></b>Ouvert en ce moment · fermeture dans '+(r>=60?Math.floor(r/60)+' h '+(r%60?r%60+' min':''):r+' min');}
+  else{
+    let d=day,first=true,o;for(let k=0;k<8;k++){const hh=H(d);if(hh&&(!first||m<hh[0])){o=[d,hh[0]];break}d=(d+1)%7;first=false}
+    const names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+    el.classList.add('closed');el.innerHTML='<b></b>Fermé en ce moment · ouvre '+(o[0]===day?'aujourd’hui':o[0]===(day+1)%7?'demain':names[o[0]])+' à '+hm(o[1]);
+  }
+})();
+
+// le nom occupe toute la largeur, sans jamais passer à la ligne
+const mono=document.querySelector('h1.mono');
+function fit(){mono.style.fontSize='';if(innerWidth<=820)return;const box=mono.parentElement.clientWidth-parseFloat(getComputedStyle(mono.parentElement).paddingLeft)*2;const fs=parseFloat(getComputedStyle(mono).fontSize),k=mono.children,w=k[k.length-1].getBoundingClientRect().right-k[0].getBoundingClientRect().left;mono.style.fontSize=Math.min(fs*box/w,400)+'px'}
+document.fonts.ready.then(fit);addEventListener('resize',fit);
+// entrées
+let rvs=[...document.querySelectorAll('.rv')];
+function reveal(){const lim=innerHeight*.92;rvs=rvs.filter(el=>{if(el.getBoundingClientRect().top<lim){const sibs=[...el.parentElement.querySelectorAll(':scope>.rv')];el.style.transitionDelay=Math.min(sibs.indexOf(el),6)*70+'ms';el.classList.add('in');return false}return true});if(!rvs.length)removeEventListener('scroll',reveal)}
+addEventListener('scroll',reveal,{passive:true});reveal();
+</script>
+</body>
+</html>
