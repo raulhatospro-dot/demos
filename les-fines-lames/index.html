@@ -4,398 +4,496 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Les Fines Lames · Viandes grillées, rue Lepic, Paris 18e</title>
-<meta name="description" content="Les Fines Lames, restaurant de viande au 35 rue Lepic, Montmartre, Paris 18e. Picanha, bavette, filet, entrecôte Angus, côte de bœuf à partager. Ouvert tous les jours.">
-<meta name="theme-color" content="#da291c">
+<title>Les Fines Lames · Viande grillée sur pierre de lave, Paris 18e</title>
+<meta name="description" content="Les Fines Lames, maison de viande au 35 rue Lepic, Montmartre. Picanha, bavette, filet, entrecôte Angus et côte de bœuf pour deux, saisis sur pierre de lave. Midi et soir, tous les jours.">
+<meta property="og:title" content="Les Fines Lames · 35 rue Lepic, Paris 18e">
+<meta property="og:description" content="Le bœuf saisi sur pierre de lave, midi et soir, tous les jours.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1200&h=630&q=75&auto=format&fit=crop">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f1efec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f3eee6'/%3E%3Cpath d='M4 20 L24 8 L29 10 L9 24 Z' fill='%23b3261e'/%3E%3Crect x='3' y='22' width='9' height='5' transform='rotate(-31 7 24)' fill='%231c1917'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
 <style>
-/* DESIGN.md « Ferrari » (awesome-design) : une seule linéale à graisse 500 en titrage, toile blanche, encre #181818,
-   un seul rouge (Rosso Corsa) employé rarement, angles vifs partout, bandeau rouge plein une fois.
-   Motif unique tiré du nom : la lame. Son biseau découpe les photos, les boutons et les puces. */
+/* Les Fines Lames : papier de boucher, encre de fonte, rouge saignant.
+   Motif unique tiré du nom : le biseau de la lame, qui coupe le coin des photos, des boutons et du ticket. */
 :root{
-  --paper:#ffffff;
-  --paper-2:#f3f1ed;
-  --ink:#181818;
-  --ink-2:#4a4744;
-  --night:#181818;
-  --night-2:#262423;
-  --on-night:#ffffff;
-  --on-night-2:#b9b4ae;
-  --red:#da291c;
-  --red-press:#b01e0a;
-  --m:clamp(16px,3vw,48px);
-  --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
-  --s-body:clamp(1.0625rem,1rem + .2vw,1.1875rem);
-  --s-lead:clamp(1.25rem,1.05rem + .7vw,1.75rem);
-  --s-head:clamp(2.25rem,1.3rem + 3.6vw,4.5rem);
-  --s-mega:clamp(3.5rem,.9rem + 10.4vw,10.5rem);
+  --paper:#f1efec;      /* papier de boucher */
+  --paper-2:#e4dfda;    /* la planche */
+  --card:#fafafa;
+  --ink:#1c1917;        /* la fonte */
+  --ink-2:#4a423d;
+  --lava:#2a2523;       /* la pierre de lave */
+  --on-lava:#f1efec;
+  --on-lava-2:#c9bfb5;
+  --red:#b3261e;        /* saignant */
+  --red-press:#8f1d16;
+  --rose:#f0cdc4;       /* à point */
+  --m:clamp(16px,4vw,56px);
+  --max:1328px;
+  --s-small:.9375rem;
+  --s-h3:1.5rem;
+  --s-body:clamp(1rem,.97rem + .15vw,1.0625rem);
+  --s-lead:clamp(1.125rem,1.05rem + .35vw,1.3125rem);
+  --s-h2:clamp(2.125rem,1.4rem + 3vw,4rem);
+  --s-h1:clamp(2.75rem,1.6rem + 4.6vw,5.5rem);
   --ease:cubic-bezier(.16,1,.3,1);
-  --bevel:polygon(0 0,100% 0,100% 58%,84% 100%,0 100%);
+  --cut:18px;
+  --bevel:polygon(0 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:var(--s-body);line-height:1.5;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:var(--s-body);line-height:1.55;font-stretch:100%}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1.5px}
 ::selection{background:var(--red);color:#fff}
 :focus-visible{outline:3px solid var(--red);outline-offset:3px}
-h1,h2,h3{font-weight:500;letter-spacing:-.03em;line-height:1;margin:0;text-wrap:balance}
-p{margin:0}
-.wrap{padding-inline:var(--m)}
+h1,h2,h3{margin:0;font-stretch:72%;font-weight:850;line-height:.95;letter-spacing:-.01em;word-spacing:.06em;text-wrap:balance}
+h1{font-size:var(--s-h1)}
+h2{font-size:var(--s-h2)}
+h3{font-size:var(--s-h3);line-height:1.1;letter-spacing:-.01em}
+p{margin:0;text-wrap:pretty}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--m)}
+.num{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-.demo{background:var(--paper-2);color:var(--ink-2);font-size:.8125rem;text-align:center;padding:7px var(--m);margin:0}
+/* bandeau démo */
+.demo{background:var(--ink);color:var(--paper);font-size:var(--s-small);text-align:center;padding:7px 16px}
 
-/* barre */
-.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px var(--m)}
-.mark{font-weight:600;font-size:1.0625rem;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.mark svg{width:34px;height:14px}
-.bar nav{display:flex;gap:28px;align-items:center}
-.bar nav a{text-decoration:none;font-weight:500;font-size:.9375rem}
-.bar nav a:not(.btn):hover{color:var(--red)}
-@media (max-width:820px){.bar nav a:not(.btn){display:none}}
+/* navigation */
+.nav{position:sticky;top:0;z-index:20;background:var(--paper)}
+.nav .wrap{display:flex;align-items:center;gap:24px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:850;font-stretch:72%;font-size:var(--s-h3);letter-spacing:-.01em}
+.brand svg{width:30px;height:30px}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:.9375rem;font-weight:550}
+.nav nav{margin-left:auto}
+.nav ul a{text-decoration:none;padding:10px 0}
+.nav ul a:hover{color:var(--red)}
+@media (max-width:860px){.nav nav{display:none}.nav .btn{margin-left:auto}}
 
-/* bouton : rectangle, coin biseauté comme une pointe de lame */
-.btn{--c:var(--red);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 34px 14px 26px;background:var(--c);color:#fff;font:600 1rem/1 "Archivo",sans-serif;text-decoration:none;clip-path:polygon(0 0,100% 0,100% 52%,calc(100% - 16px) 100%,0 100%);transition:background .2s,transform .2s var(--ease)}
-.btn:hover{background:var(--red-press)}
-.btn:active{transform:translateY(1px)}
-.btn.ink{--c:var(--ink)}
-.btn.ink:hover{background:#000}
-.btn.ghost{background:var(--paper-2);color:var(--ink)}
-.btn.ghost:hover{background:#e6e3de}
-.btn.small{min-height:44px;padding:10px 26px 10px 20px;font-size:.9375rem}
+/* boutons : un biseau de lame */
+.btn{--cut:12px;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px 0 22px;font:inherit;font-weight:650;font-size:var(--s-body);text-decoration:none;border:0;cursor:pointer;clip-path:var(--bevel);transition-property:background-color,color,transform;transition-duration:.18s;transition-timing-function:var(--ease)}
 .btn svg{width:18px;height:18px;flex:none}
-@media (max-width:820px){.bar .btn{min-height:44px;padding:10px 24px 10px 18px;font-size:.9375rem}}
+.btn:active{transform:scale(.97)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-press)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:#3a332f}
+.btn-paper{background:var(--paper);color:var(--ink)}
+.btn-paper:hover{background:#fff}
+.btn-line{background:var(--paper-2);color:var(--ink)}
+.btn-line:hover{background:#ddd2c2}
+.btn.sm{min-height:44px;padding:0 20px 0 18px}
 
-/* héros */
-.hero{position:relative;padding:clamp(24px,5vw,72px) var(--m) clamp(56px,7vw,112px);overflow:hidden}
-.hero h1{font-size:var(--s-mega);letter-spacing:-.045em;line-height:.9;position:relative;z-index:2}
-@media (max-width:820px){.hero h1{max-width:8ch}}
-.hero-knife{position:relative;margin:clamp(-60px,-3vw,-20px) calc(var(--m) * -1) 0 auto;width:min(1180px,96vw);margin-right:calc(-1 * clamp(80px,14vw,260px));z-index:1}
-.hero-knife svg{width:100%;height:auto;display:block}
-.hero-knife image{transform-origin:50% 50%;animation:drift 18s var(--ease) both}
+/* statut ouvert */
+.status{display:inline-flex;align-items:center;gap:10px;font-size:.9375rem;font-weight:600}
+.status i{width:10px;height:10px;border-radius:50%;background:#8b8079;flex:none}
+.status.open i{background:#2f7d3b}
+
+/* HERO */
+.hero{padding:clamp(28px,4vw,56px) 0 clamp(36px,4vw,56px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(28px,4vw,64px);align-items:center}
+.hero-copy .lead{font-size:var(--s-lead);line-height:1.5;margin-top:24px;max-width:34ch}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:30px}
+.fact{background:var(--card);padding:14px 14px 16px;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
+.fact b{display:block;font-stretch:72%;font-weight:850;font-size:var(--s-h3);line-height:1}
+.fact span{display:block;font-size:var(--s-small);line-height:1.35;color:var(--ink-2);margin-top:6px}
+.fact.hot{background:var(--red);color:#fff}
+.fact.hot span{color:#ffe3dd}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hero .status{margin-top:20px}
+
+.collage{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:clamp(420px,44vw,600px)}
+.ph{position:relative;margin:0;overflow:hidden;background:var(--paper-2);clip-path:var(--bevel)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph figcaption{position:absolute;left:12px;bottom:12px;background:var(--paper);color:var(--ink);font-size:var(--s-small);font-weight:600;padding:6px 10px;line-height:1.2}
+.collage .ph:first-child{grid-row:1/3}
+.collage .ph:first-child img{animation:drift 14s var(--ease) both}
 @keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero-foot{display:grid;grid-template-columns:minmax(0,34rem) auto;gap:32px 64px;align-items:end;margin-top:clamp(-140px,-8vw,-40px);position:relative;z-index:2}
-.hero-foot .lead{font-size:var(--s-lead);line-height:1.3;letter-spacing:-.01em;max-width:30ch}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.status{display:flex;align-items:center;gap:12px;font-weight:500;font-size:1rem;justify-self:end;text-align:right}
-.status i{width:12px;height:12px;background:var(--ink-2);clip-path:polygon(0 0,100% 0,100% 55%,70% 100%,0 100%);flex:none}
-.status.open i{background:#1f8a4c}
-.status span{display:block;color:var(--ink-2);font-weight:400}
-@media (max-width:820px){
-  .hero-knife{width:150vw;margin:20px 0 0 -6vw}
-  .hero-foot{grid-template-columns:1fr;margin-top:8px}
-  .status{justify-self:start;text-align:left}
-}
 
-/* intro */
-.intro{padding:clamp(96px,14vw,200px) var(--m);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 24px}
-.intro p{grid-column:2 / span 9;font-size:clamp(1.5rem,1rem + 1.6vw,2.25rem);line-height:1.3;letter-spacing:-.02em;font-weight:500}
-.thumb{display:inline-block;width:1.25em;height:.85em;vertical-align:-.08em;margin:0 .12em;overflow:hidden;clip-path:var(--bevel)}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.intro .who{grid-column:2 / span 6;margin-top:32px;color:var(--ink-2);font-size:var(--s-body)}
-@media (max-width:820px){.intro p,.intro .who{grid-column:1 / -1}}
+/* rangée d'infos */
+.infos{background:var(--lava);color:var(--on-lava)}
+.infos ul{list-style:none;margin:0 auto;padding:22px var(--m);max-width:var(--max);display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.infos li{display:flex;gap:12px;align-items:flex-start;font-size:.9375rem;line-height:1.4}
+.infos svg{width:20px;height:20px;flex:none;margin-top:1px;color:#ff8a7a}
+.infos b{display:block;font-weight:650}
+.infos span{color:var(--on-lava-2)}
+.infos a{color:var(--on-lava)}
 
-/* la pièce : élément interactif */
-.cut{background:var(--night);color:var(--on-night);padding:clamp(80px,10vw,150px) var(--m)}
-.cut-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px clamp(32px,5vw,96px);align-items:center}
-.cut h2{font-size:var(--s-head);margin-bottom:12px}
-.cut .sub{color:var(--on-night-2);max-width:36ch;margin-bottom:36px}
-.cut-list{list-style:none;margin:0;padding:0;display:grid;gap:2px}
-.cut-list button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:baseline;justify-content:space-between;gap:16px;width:100%;padding:12px 0;font-size:clamp(1.5rem,1rem + 1.7vw,2.5rem);font-weight:500;letter-spacing:-.025em;line-height:1.1;color:var(--on-night-2);transition:color .2s}
-.cut-list button small{font-size:var(--s-small);letter-spacing:0;font-weight:400}
-.cut-list button:hover{color:#fff}
-.cut-list button[aria-pressed="true"]{color:#fff}
-.cut-list button[aria-pressed="true"]::before{content:"";width:.5em;height:.32em;background:var(--red);clip-path:polygon(0 0,100% 0,100% 50%,72% 100%,0 100%);align-self:center;margin-right:-4px;order:-1;flex:none}
-.cut-list button span{flex:1}
-.cut-list button:focus-visible{outline-offset:2px}
-.cow{width:100%;height:auto;display:block}
-.cow .zone{fill:#3a3735;stroke:#181818;stroke-width:4;transition:fill .35s var(--ease)}
-.cow .zone.on{fill:var(--red)}
-.cow .body{fill:#2c2a29}
-.cow .seam{fill:none;stroke:#181818;stroke-width:3}
-.fact{margin-top:24px;min-height:7.5em;max-width:44ch}
-.fact h3{font-size:var(--s-lead);letter-spacing:-.015em;margin-bottom:8px}
-.fact p{color:var(--on-night-2)}
-.cut-note{margin-top:20px;font-size:var(--s-small);color:var(--on-night-2)}
-@media (max-width:900px){.cut-grid{grid-template-columns:1fr}}
+/* sections */
+.sec{padding:clamp(88px,10vw,160px) 0}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px 64px;align-items:end;margin-bottom:clamp(36px,4vw,56px)}
+.head p{font-size:var(--s-lead);line-height:1.5}
 
-/* carte */
-.menu{padding:clamp(96px,12vw,200px) var(--m) 0}
-.menu-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:24px}
-.menu-head h2{font-size:var(--s-mega);letter-spacing:-.045em;line-height:.9}
-.menu-head p{max-width:42ch;color:var(--ink-2)}
-.menu-head p strong{color:var(--ink);font-weight:600}
-.cat{padding-top:clamp(64px,7vw,96px)}
-.cat-title{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:36px}
-.cat-title h3{font-size:clamp(2rem,1.4rem + 2vw,3.125rem);letter-spacing:-.03em}
-.cat-title span{color:var(--ink-2);font-size:1rem}
-.items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:36px 64px}
-.items li{display:grid;grid-template-columns:72px 1fr;gap:20px;align-items:start}
-.items li .ph{width:72px;height:56px;clip-path:var(--bevel);overflow:hidden;background:var(--paper-2)}
-.items li .ph img{width:100%;height:100%;object-fit:cover}
-.items li .blade{width:72px;height:56px;display:grid;place-items:center}
-.items li .blade svg{width:44px;height:18px}
-.items h4{margin:0 0 4px;font-size:1.125rem;font-weight:600;letter-spacing:-.01em}
-.items p{color:var(--ink-2);font-size:1rem;max-width:40ch}
-.sides{margin-top:clamp(64px,7vw,96px);background:var(--paper-2);padding:clamp(28px,4vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;clip-path:polygon(0 0,100% 0,100% 70%,calc(100% - 64px) 100%,0 100%)}
-.sides h4{margin:0 0 8px;font-size:1.125rem;font-weight:600}
-.sides p{color:var(--ink-2);font-size:1rem}
-@media (max-width:820px){
-  .menu-head{grid-template-columns:1fr}
-  .items{grid-template-columns:1fr;gap:28px}
-  .items li{grid-template-columns:56px 1fr;gap:16px}
-  .items li .ph,.items li .blade{width:56px;height:44px}
-  .sides{grid-template-columns:1fr;clip-path:polygon(0 0,100% 0,100% 85%,calc(100% - 40px) 100%,0 100%)}
-}
+/* COMPOSER */
+.composer{background:var(--rose)}
+.comp{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start}
+.panel{background:var(--card);padding:clamp(22px,3vw,36px)}
+fieldset{border:0;margin:0 0 24px;padding:0;min-width:0}
+fieldset:last-of-type{margin-bottom:0}
+legend{font-weight:750;font-size:var(--s-body);padding:0;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:var(--paper);font-size:.9375rem;font-weight:550;cursor:pointer;transition-property:background-color,color,transform;transition-duration:.18s;transition-timing-function:var(--ease);clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%)}
+.chip span:hover{background:var(--paper-2)}
+.chip input:checked+span{background:var(--ink);color:var(--paper)}
+.chip input:focus-visible+span{outline:3px solid var(--red);outline-offset:2px}
+.chip span:active{transform:scale(.97)}
+.chip small{font-size:inherit;font-weight:400;margin-left:6px}
+.cut-note{margin-top:22px;background:var(--paper);padding:16px 18px;font-size:.9375rem;line-height:1.5}
+.cut-note b{display:block;margin-bottom:2px}
 
-/* galerie : un cadre, le contenu change */
-.gallery{padding:clamp(120px,14vw,220px) var(--m);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px clamp(32px,6vw,120px);align-items:center}
-.gallery h2{font-size:var(--s-head);margin-bottom:20px}
-.gallery .txt p{color:var(--ink-2);max-width:38ch}
-.frame{position:relative;aspect-ratio:4/3;clip-path:polygon(0 0,100% 0,100% 64%,82% 100%,0 100%);background:var(--paper-2);cursor:pointer}
-.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s var(--ease)}
-.frame img.on{opacity:1}
-.cap{margin-top:16px;font-size:var(--s-small);color:var(--ink-2);min-height:1.5em}
-@media (max-width:900px){.gallery{grid-template-columns:1fr}}
+.ticket{background:var(--lava);color:var(--on-lava);padding:clamp(22px,3vw,34px);--cut:26px;clip-path:var(--bevel)}
+.ticket-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 
-/* bandeau rouge */
-.book{background:var(--red);color:#fff;padding:clamp(80px,10vw,140px) var(--m);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px 64px;align-items:end}
-.book h2{font-size:clamp(3rem,1rem + 6.4vw,7rem);letter-spacing:-.045em;line-height:.92}
-.book p{font-size:var(--s-lead);line-height:1.3;max-width:28ch;margin-bottom:28px}
-.book .btn{--c:#fff;color:var(--ink)}
-.book .btn:hover{background:#f1efec}
-.book .btn.ink{--c:var(--ink);color:#fff}
-.book .btn.ink:hover{background:#000}
-.book .acts{display:flex;flex-wrap:wrap;gap:12px}
-@media (max-width:820px){.book{grid-template-columns:1fr}}
+.ticket-top span{font-size:var(--s-small);color:var(--on-lava-2)}
+.slice{display:block;width:100%;height:auto;margin:20px 0 6px}
+.slice .core,.slice .band{transform-box:fill-box;transform-origin:center;transition:transform .5s var(--ease),fill .5s var(--ease)}
+.done{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.done strong{font-stretch:72%;font-weight:850;font-size:var(--s-h2);line-height:1;letter-spacing:-.01em}
+.done span{font-size:.9375rem;color:var(--on-lava-2);text-align:right}
+.lines{list-style:none;margin:22px 0 0;padding:12px 16px;background:#38322f}
+.lines li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:.9375rem}
+.lines li span{color:var(--on-lava-2)}
+.lines li b{font-weight:600;text-align:right}
+.ticket .actions{margin-top:24px}
+.ticket .fine{font-size:var(--s-small);color:var(--on-lava-2);margin-top:16px}
 
-/* horaires et accès */
-.visit{padding:clamp(120px,14vw,220px) var(--m) clamp(96px,10vw,160px)}
-.visit h2{font-size:var(--s-head);margin-bottom:48px}
-.ticket{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--paper-2);clip-path:polygon(0 0,100% 0,100% calc(100% - 72px),calc(100% - 96px) 100%,0 100%)}
-.ticket > div{padding:clamp(28px,4vw,64px)}
-.ticket > div + div{background:#ebe8e3}
-.ticket h3{font-size:var(--s-lead);letter-spacing:-.015em;margin-bottom:24px}
-.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.hours td{padding:12px 0;border-bottom:1px solid #d9d5cf;font-size:1.0625rem}
-.hours td:last-child{text-align:right;white-space:nowrap}
-@media (max-width:420px){.hours td{font-size:.9375rem}}
-.hours tr.today td{font-weight:600}
-.hours tr.today td{color:var(--red)}
-.addr{font-size:var(--s-lead);line-height:1.3;letter-spacing:-.01em;margin-bottom:12px}
-.metro{color:var(--ink-2);margin-bottom:32px}
-.contact-acts{display:flex;flex-wrap:wrap;gap:12px}
-.contact-lines{margin-top:32px;display:grid;gap:8px}
-.contact-lines a{font-weight:500}
-.hours-note{margin-top:16px;font-size:var(--s-small);color:var(--ink-2)}
-@media (max-width:820px){.ticket{grid-template-columns:1fr;clip-path:polygon(0 0,100% 0,100% calc(100% - 48px),calc(100% - 64px) 100%,0 100%)}}
+/* CARTE */
+.carte-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:clamp(24px,4vw,56px);align-items:start}
+.carte-pics{position:sticky;top:96px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.carte-pics .ph{aspect-ratio:4/5}
+.carte-pics .ph.wide{grid-column:1/3;aspect-ratio:16/10}
+.menu{background:var(--card);padding:clamp(24px,3.4vw,48px)}
+.menu-block+.menu-block{margin-top:40px}
+.menu-block h3{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+.menu-block h3 span{font-stretch:100%;font-weight:500;font-size:var(--s-small);letter-spacing:0;color:var(--ink-2)}
+.menu-block ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 28px}
+.menu-block li{padding:10px 0}
+.menu-block li b{display:block;font-weight:650}
+.menu-block li span{display:block;font-size:.9375rem;color:var(--ink-2);line-height:1.4}
+.menu-block.big ul{grid-template-columns:1fr}
+.menu-block.big li{background:var(--paper);padding:14px 16px;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.menu-block.big li em{font-style:normal;font-weight:650;font-size:.9375rem;white-space:nowrap;color:var(--red)}
+.with{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;background:var(--paper-2);padding:20px 22px 22px}
+.with b{display:block;font-weight:700;margin-bottom:4px}
+.with span{font-size:.9375rem;color:var(--ink-2);line-height:1.45;display:block}
+.menu .fine{margin-top:22px;font-size:.9375rem;color:var(--ink-2)}
 
-/* pied */
-.foot{background:var(--night);color:var(--on-night);padding:clamp(64px,8vw,120px) var(--m) 32px}
-.foot-mark{font-size:clamp(3.2rem,.5rem + 11.6vw,11.5rem);font-weight:500;letter-spacing:-.05em;line-height:.85;display:flex;align-items:flex-end;gap:.18em;flex-wrap:wrap}
-.foot-mark svg{height:.42em;width:auto;margin-bottom:.08em}
-.foot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-top:64px;font-size:.9375rem;color:var(--on-night-2)}
-.foot-grid h4{color:#fff;font-size:.9375rem;font-weight:600;margin:0 0 10px}
-.foot-grid a{color:#fff;text-decoration:none}
-.foot-grid a:hover{text-decoration:underline}
-.foot-grid p+p{margin-top:4px}
-.foot-last{margin-top:56px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.875rem;color:var(--on-night-2)}
-@media (max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+/* LA MAISON */
+.maison{background:var(--paper-2)}
+.maison-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.maison .ph{aspect-ratio:5/4;--cut:28px}
+.maison h2{margin-bottom:24px}
+.maison p{font-size:var(--s-lead);line-height:1.5;max-width:40ch}
+.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:14px}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:center;padding:6px 0}
+.steps svg{width:56px;height:40px;color:var(--red)}
+.steps b{display:block;font-weight:700}
+.steps span{font-size:.9375rem;color:var(--ink-2);line-height:1.4;display:block}
 
-/* entrées : contenu visible par défaut, animé seulement si le script tourne */
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+/* RÉSERVER */
+.book{background:var(--red);color:#fff;padding:clamp(64px,8vw,112px) 0}
+.book .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px 64px;align-items:center}
+.book p{font-size:var(--s-lead);line-height:1.5;max-width:40ch;margin-top:18px;color:#ffe9e4}
+.book .actions{margin-top:0;justify-content:flex-start}
+.book-side{display:grid;gap:12px}
+.book-side .row{display:flex;flex-wrap:wrap;gap:10px}
+.book-side small{font-size:.9375rem;color:#ffe9e4}
+
+/* HORAIRES */
+.hours-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.hours{background:var(--card);padding:clamp(22px,3vw,40px)}
+.hours h3{margin-bottom:12px}
+.hours table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:11px 0}
+.hours tr+tr td{border-top:1px solid #e3dacd}
+.hours td:last-child{text-align:right}
+.hours tr.today td{color:var(--red);font-weight:700}
+.hours .fine{margin-top:16px;font-size:.9375rem;color:var(--ink-2)}
+.access{background:var(--lava);color:var(--on-lava);padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:18px}
+
+.access address{font-style:normal;font-size:var(--s-lead);line-height:1.35;font-weight:600}
+.access p{color:var(--on-lava-2);font-size:.9375rem}
+.map{display:block;width:100%;height:auto;background:#332e2b}
+.access .row{display:flex;flex-wrap:wrap;gap:10px}
+.access .links{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.9375rem}
+.access .links a{color:var(--on-lava)}
+
+/* PIED */
+.foot{background:var(--ink);color:var(--paper);padding:clamp(56px,7vw,96px) 0 28px}
+.foot-name{font-stretch:62%;font-weight:900;font-size:clamp(3.5rem,1rem + 10.5vw,10.5rem);line-height:.85;letter-spacing:-.03em;margin:0}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;font-size:.9375rem}
+.foot-grid b{display:block;margin-bottom:6px}
+.foot-grid span,.foot-grid a{color:#cfc6bc;display:block;line-height:1.6}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:48px;font-size:var(--s-small);color:#a99f96}
+
+/* entrées */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  .js .rv{opacity:1;transform:none;transition:none}
-  .hero-knife image{animation:none}
-  .frame img{transition:none}
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:opacity .15s}
+  .collage .ph:first-child img{animation:none}
+  .slice .core,.slice .band,.btn,.chip span{transition-duration:.01s}
+}
+
+/* tablette / mobile */
+@media (max-width:1000px){
+  .hero .wrap,.comp,.carte-grid,.maison-grid,.book .wrap,.hours-grid,.head{grid-template-columns:1fr}
+  .carte-pics{position:static}
+  .infos ul{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .collage{height:auto;grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+  .collage .ph:first-child{grid-row:auto;grid-column:1/3;aspect-ratio:4/3}
+  .collage .ph{aspect-ratio:1/1}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts .fact:first-child{grid-column:1/3}
+  .infos ul{grid-template-columns:1fr;gap:14px}
+  .menu-block ul{grid-template-columns:1fr}
+  .with{grid-template-columns:1fr}
+  .actions .btn{flex:1 1 auto}
+  .foot-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="blade" viewBox="0 0 100 40"><path d="M0 9 L64 4 L64 34 C40 34 16 28 0 9Z" fill="currentColor"/><rect x="66" y="6" width="34" height="26" fill="currentColor"/></symbol>
-  </defs>
-</svg>
-
-<header class="bar">
-  <a class="mark" href="#top" aria-label="Les Fines Lames, haut de page"><svg style="color:var(--red)"><use href="#blade"/></svg>Les Fines Lames</a>
-  <nav aria-label="Navigation principale">
-    <a href="#piece">La pièce</a>
-    <a href="#carte">La carte</a>
-    <a href="#venir">Horaires et accès</a>
-    <a class="btn small" href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">Réserver</a>
-  </nav>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Les Fines Lames, retour en haut">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 21 L24 8 L29 10 L8 25 Z" fill="#b3261e"/><rect x="2" y="23" width="9" height="5" transform="rotate(-31 6.5 25.5)" fill="#1c1917"/></svg>
+      Les Fines Lames
+    </a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#composer">Votre pièce</a></li>
+        <li><a href="#carte">La carte</a></li>
+        <li><a href="#maison">La maison</a></li>
+        <li><a href="#venir">Horaires et accès</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-red sm" href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">Réserver</a>
+  </div>
 </header>
 
 <main id="top">
-  <section class="hero" aria-labelledby="h1">
-    <h1 id="h1" class="rv">Les Fines Lames</h1>
-    <div class="hero-knife" aria-hidden="true">
-      <svg viewBox="0 0 1200 420" role="presentation">
-        <defs>
-          <clipPath id="bladeClip"><path d="M0 120 L760 40 L760 352 C470 352 190 300 0 120Z"/></clipPath>
-        </defs>
-        <g clip-path="url(#bladeClip)">
-          <rect width="760" height="420" fill="#f3f1ed"/>
-          <image href="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1600&q=75&auto=format&fit=crop" x="-40" y="-120" width="840" height="600" preserveAspectRatio="xMidYMid slice"/>
-        </g>
-        <rect x="760" y="26" width="34" height="340" fill="#181818"/>
-        <path d="M794 60 L1160 76 C1186 78 1200 100 1200 130 L1200 262 C1200 292 1186 312 1160 314 L794 332Z" fill="#da291c"/>
-        <circle cx="880" cy="196" r="13" fill="#fff"/><circle cx="1000" cy="196" r="13" fill="#fff"/><circle cx="1110" cy="196" r="13" fill="#fff"/>
-      </svg>
-    </div>
-    <div class="hero-foot">
-      <div class="rv">
-        <p class="lead">Restaurant de viande au 35 rue Lepic, à Montmartre. Le bœuf est grillé sur pierre de lave, midi et soir, tous les jours.</p>
-        <div class="hero-actions">
-          <a class="btn" href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">Réserver une table</a>
-          <a class="btn ink" href="tel:+33142559595"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>01 42 55 95 95</a>
-        </div>
+<section class="hero" aria-labelledby="t-hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1 id="t-hero" class="rv">Le bœuf sur pierre de lave</h1>
+      <p class="lead rv">Les Fines Lames, maison de viande au 35 rue Lepic, à Montmartre. Picanha, bavette, filet, entrecôte Angus et côte de bœuf pour deux, midi et soir, tous les jours.</p>
+      <div class="facts rv">
+        <div class="fact hot"><b>7 j / 7</b><span>midi et soir, réservation sur TheFork</span></div>
+        <div class="fact"><b class="num">1 kg</b><span>la côte de bœuf, pour deux</span></div>
+        <div class="fact"><b>+ 2</b><span>un accompagnement et une sauce maison</span></div>
       </div>
-      <p class="status rv" id="status" aria-live="polite"><i></i><b>Tous les jours<span>12h–14h15 · 19h–22h30</span></b></p>
-    </div>
-  </section>
-
-  <section class="intro" aria-label="Le restaurant">
-    <p class="rv">Depuis 2018, trois amis d’enfance grillent ici le bœuf<span class="thumb"><img src="https://images.unsplash.com/photo-1558030006-450675393462?w=200&q=70&auto=format&fit=crop" alt="Tranches de bœuf grillé" width="60" height="40" loading="lazy"></span> sur pierre de lave, avec des frites maison<span class="thumb"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=200&q=70&auto=format&fit=crop" alt="Steak et frites" width="60" height="40" loading="lazy"></span> et des sauces faites sur place.</p>
-    <p class="who rv">Guillaume, Thibault et Vivien ont ouvert Les Fines Lames en mai 2018, à deux pas du métro Abbesses.</p>
-  </section>
-
-  <section class="cut" id="piece" aria-labelledby="h-piece">
-    <div class="cut-grid">
-      <div>
-        <h2 id="h-piece" class="rv">Quelle pièce ce soir ?</h2>
-        <p class="sub rv">Touchez un morceau de la carte pour voir d’où il vient sur la bête et ce qu’il a dans le ventre.</p>
-        <ul class="cut-list" role="list">
-          <li><button type="button" data-cut="picanha" aria-pressed="true"><span>Picanha</span><small>à la brésilienne</small></button></li>
-          <li><button type="button" data-cut="entrecote" aria-pressed="false"><span>Entrecôte Angus</span><small>la persillée</small></button></li>
-          <li><button type="button" data-cut="filet" aria-pressed="false"><span>Filet</span><small>le plus tendre</small></button></li>
-          <li><button type="button" data-cut="bavette" aria-pressed="false"><span>Bavette</span><small>la plus goûteuse</small></button></li>
-          <li><button type="button" data-cut="cote" aria-pressed="false"><span>Côte de bœuf</span><small>à partager</small></button></li>
-        </ul>
+      <div class="actions rv">
+        <a class="btn btn-red" href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Réserver une table</a>
+        <a class="btn btn-line" href="tel:+33142559595">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          <span class="num">01 42 55 95 95</span></a>
       </div>
-      <div class="cut-fig">
-        <svg class="cow" viewBox="0 0 640 360" role="img" aria-labelledby="cow-t">
-          <title id="cow-t">Silhouette d’un bœuf, la pièce choisie en rouge</title>
-          <defs>
-            <clipPath id="cowClip"><path d="M96 92C120 70 170 66 210 70L470 72C520 72 560 90 572 120L580 128C590 150 588 190 576 214C566 236 548 248 530 252L528 330L504 330L498 262L440 266C420 270 400 272 380 272L230 272L214 330L190 330L184 262C160 250 140 230 132 205C124 190 116 182 104 176L70 178C52 178 40 168 36 154L30 128C28 116 36 104 48 100L66 96L60 80L78 84Z"/></clipPath>
-          </defs>
-          <g fill="#232120">
-            <path d="M236 262L262 262L258 326L240 326Z"/>
-            <path d="M470 262L494 262L488 326L470 326Z"/>
-            <path d="M72 86C60 70 56 58 62 44C66 58 74 68 86 78Z"/>
-            <path d="M104 80C112 64 124 56 140 54C128 64 120 74 116 86Z"/>
-          </g>
-          <g clip-path="url(#cowClip)">
-            <rect class="body" width="640" height="360"/>
-            <polygon class="zone" data-z="entrecote cote" points="226,40 320,40 320,168 226,168"/>
-            <polygon class="zone" data-z="filet" points="320,120 430,120 430,170 320,170"/>
-            <polygon class="zone" data-z="picanha" points="430,40 600,40 600,132 430,124"/>
-            <polygon class="zone" data-z="bavette" points="330,206 450,206 450,290 330,290"/>
-            
-          </g>
+      <p class="status rv" id="status" role="status"><i aria-hidden="true"></i><b>Ouvert tous les jours, 12h–14h15 et 19h–22h30</b></p>
+    </div>
+    <div class="collage">
+      <figure class="ph rv"><img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1100&q=75&auto=format&fit=crop" width="1100" height="1375" alt="Pièce de bœuf grillée tranchée au couteau sur une planche" fetchpriority="high"><figcaption>Saisi, puis tranché</figcaption></figure>
+      <figure class="ph rv"><img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=800&q=75&auto=format&fit=crop" width="800" height="600" alt="Côte de bœuf avec son os dans une poêle en fonte, frites à côté"><figcaption>Côte de bœuf pour deux</figcaption></figure>
+      <figure class="ph rv"><img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=800&q=75&auto=format&fit=crop" width="800" height="600" alt="Tranche de bœuf saignante, croûte grillée et cœur rouge"><figcaption>Saignant, de préférence</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="infos" aria-label="Infos pratiques">
+  <ul>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>35 rue Lepic</b><span>75018 Paris, Montmartre</span></div></li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="3" width="14" height="14"/><path d="M5 11h14M8 21l2-4M16 21l-2-4"/></svg><div><b>Métro Abbesses</b><span>ligne 12, ou Blanche ligne 2</span></div></li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Tous les jours</b><span class="num">12h–14h15 · 19h–22h30</span></div></li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b>Réserver</b><span><a href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">sur TheFork</a> ou au <a href="tel:+33142559595" class="num">01 42 55 95 95</a></span></div></li>
+  </ul>
+</section>
+
+<section class="sec composer" id="composer" aria-labelledby="t-comp">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="t-comp" class="rv">Votre pièce, votre cuisson</h2>
+      <p class="rv">Choisissez le morceau, la cuisson, l’accompagnement et la sauce : la tranche se colore comme elle sortira de la pierre. Votre commande tient sur le ticket, prête à donner en salle.</p>
+    </div>
+    <div class="comp">
+      <form class="panel rv" id="pick" aria-label="Composer sa pièce">
+        <fieldset>
+          <legend>La pièce</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="cut" value="picanha" checked><span>Picanha</span></label>
+            <label class="chip"><input type="radio" name="cut" value="entrecote"><span>Entrecôte Angus</span></label>
+            <label class="chip"><input type="radio" name="cut" value="filet"><span>Filet</span></label>
+            <label class="chip"><input type="radio" name="cut" value="bavette"><span>Bavette</span></label>
+            <label class="chip"><input type="radio" name="cut" value="cote"><span>Côte de bœuf<small>pour 2</small></span></label>
+            <label class="chip"><input type="radio" name="cut" value="trilogie"><span>Trilogie<small>pour 2</small></span></label>
+          </div>
+          <p class="cut-note" id="cut-note" aria-live="polite"><b>Picanha</b><span>Le haut de la culotte, coiffé de sa couche de gras. Saisie sur la pierre, le gras fond et nourrit la chair.</span></p>
+        </fieldset>
+        <fieldset>
+          <legend>La cuisson</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="done" value="0"><span>Bleu</span></label>
+            <label class="chip"><input type="radio" name="done" value="1" checked><span>Saignant</span></label>
+            <label class="chip"><input type="radio" name="done" value="2"><span>À point</span></label>
+            <label class="chip"><input type="radio" name="done" value="3"><span>Bien cuit</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>L’accompagnement</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="side" value="Frites maison" checked><span>Frites maison</span></label>
+            <label class="chip"><input type="radio" name="side" value="Légumes poêlés"><span>Légumes poêlés</span></label>
+            <label class="chip"><input type="radio" name="side" value="Salade"><span>Salade</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>La sauce maison</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="sauce" value="Chimichurri" checked><span>Chimichurri</span></label>
+            <label class="chip"><input type="radio" name="sauce" value="Poivre"><span>Poivre</span></label>
+            <label class="chip"><input type="radio" name="sauce" value="Béarnaise"><span>Béarnaise</span></label>
+            <label class="chip"><input type="radio" name="sauce" value="Bleu"><span>Bleu</span></label>
+          </div>
+        </fieldset>
+      </form>
+
+      <aside class="ticket rv" aria-labelledby="t-ticket">
+        <div class="ticket-top"><h3 id="t-ticket">Mon ticket</h3><span>35 rue Lepic</span></div>
+        <svg class="slice" viewBox="0 0 400 190" role="img" aria-labelledby="slice-t">
+          <title id="slice-t">Coupe de la pièce à la cuisson choisie</title>
+          <path d="M22 96 C22 40 90 18 200 18 C318 18 378 44 378 96 C378 150 318 172 200 172 C84 172 22 152 22 96 Z" fill="#4a2a1d"/>
+          <path class="band" d="M40 96 C40 52 100 34 200 34 C306 34 360 56 360 96 C360 138 306 156 200 156 C96 156 40 140 40 96 Z" fill="#9a7366"/>
+          <path class="core" id="core" d="M40 96 C40 52 100 34 200 34 C306 34 360 56 360 96 C360 138 306 156 200 156 C96 156 40 140 40 96 Z" fill="#c8323a"/>
+          <path d="M60 60 L120 52 M70 132 L150 140 M250 50 L330 64 M260 142 L330 128" stroke="#4a2a1d" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
         </svg>
-        <div class="fact" aria-live="polite">
-          <h3 id="fact-t">Picanha</h3>
-          <p id="fact-p">Le haut de la culotte, coiffé de sa couche de gras. Saisie sur la pierre, le gras fond et nourrit la chair. La pièce reine des grills brésiliens.</p>
+        <div class="done"><strong id="done-t">Saignant</strong><span id="done-p" class="num">rouge vif au cœur, autour de 50 °C</span></div>
+        <ul class="lines">
+          <li><span>Pièce</span><b id="l-cut">Picanha</b></li>
+          <li><span>Accompagnement</span><b id="l-side">Frites maison</b></li>
+          <li><span>Sauce</span><b id="l-sauce">Chimichurri</b></li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-paper" href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">Réserver une table</a>
+          <a class="btn btn-red" id="mail" href="mailto:restaurantlesfineslames@outlook.com">Envoyer par e-mail</a>
         </div>
-        <p class="cut-note">Repères indicatifs. Chaque pièce arrive avec un accompagnement et une sauce maison.</p>
+        <p class="fine">Repères de cuisson indicatifs. Les sauces changent selon la pièce : demandez en salle.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="carte" aria-labelledby="t-carte">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="t-carte" class="rv">La carte</h2>
+      <p class="rv">Entrées, pièces au grill, côtes à partager et desserts faits maison. Les prix du jour sont sur la carte en salle et sur TheFork.</p>
+    </div>
+    <div class="carte-grid">
+      <div class="carte-pics">
+        <figure class="ph wide rv"><img loading="lazy" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1000&q=75&auto=format&fit=crop" width="1000" height="625" alt="Pièce de bœuf grillée servie avec des frites maison"></figure>
+        <figure class="ph rv"><img loading="lazy" src="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?w=600&q=75&auto=format&fit=crop" width="600" height="750" alt="Bœuf tranché sur une plaque en fonte avec des pommes de terre"></figure>
+        <figure class="ph rv"><img loading="lazy" src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=75&auto=format&fit=crop" width="600" height="750" alt="Tranches de bœuf rosées alignées sur une planche"></figure>
+      </div>
+      <div class="menu rv">
+        <div class="menu-block">
+          <h3>Pour commencer <span>5 entrées</span></h3>
+          <ul>
+            <li><b>Os à moelle grillé</b><span>Passé sur le grill.</span></li>
+            <li><b>Œuf cocotte</b><span>Cantal, chorizo et poivrons.</span></li>
+            <li><b>Planche de charcuterie</b><span>À partager à l’apéritif.</span></li>
+            <li><b>Burratina fraîche</b><span>Pesto maison et pain à l’ail.</span></li>
+            <li><b>Tartare</b><span>Servi avec une salade.</span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Au grill <span>avec un accompagnement et une sauce</span></h3>
+          <ul>
+            <li><b>Picanha</b><span>À la brésilienne, le gras fondu sur la pierre.</span></li>
+            <li><b>Entrecôte Angus</b><span>Persillée, saisie sur la pierre de lave.</span></li>
+            <li><b>Filet de bœuf</b><span>La pièce la plus tendre de la carte.</span></li>
+            <li><b>Bavette</b><span>Fibres longues, goût franc.</span></li>
+            <li><b>Burger</b><span>Le bœuf entre deux pains.</span></li>
+          </ul>
+        </div>
+        <div class="menu-block big">
+          <h3>À partager <span>pour deux</span></h3>
+          <ul>
+            <li><div><b>Côte de bœuf Stockman ou Angus</b><span>Avec l’os, les mêmes accompagnements.</span></div><em class="num">≈ 1 kg</em></li>
+            <li><div><b>Trilogie de bœuf</b><span>Trois pièces sur la même planche, pour comparer.</span></div><em>3 pièces</em></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>Desserts <span>faits maison</span></h3>
+          <ul>
+            <li><b>Coulant au chocolat noir</b><span>Le cœur fondant.</span></li>
+            <li><b>Entremets poire et chocolat blanc</b><span>Frais, en fin de repas.</span></li>
+            <li><b>Brioche perdue</b><span>Moelleuse, façon pain perdu.</span></li>
+          </ul>
+        </div>
+        <div class="with">
+          <div><b>Un accompagnement</b><span>Frites maison, légumes poêlés ou salade.</span></div>
+          <div><b>Une sauce maison</b><span>Faite sur place, au choix selon la pièce.</span></div>
+          <div><b>Le vin</b><span>Rouges, blancs et rosés, dont un Sancerre du domaine Auchère.</span></div>
+        </div>
+        <p class="fine">La carte change avec les arrivages : la pièce du jour s’annonce en salle.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="menu" id="carte" aria-labelledby="h-carte">
-    <div class="menu-head">
-      <h2 id="h-carte" class="rv">La carte</h2>
-      <p class="rv">Entrées, pièces au grill, côtes à partager et desserts faits maison. <strong>Les prix et les pièces du jour sont à demander en salle ou à consulter sur TheFork.</strong></p>
-    </div>
-
-    <div class="cat">
-      <div class="cat-title"><h3>Pour commencer</h3><span>5 entrées</span></div>
-      <ul class="items" role="list">
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Os à moelle grillé</h4><p>Passé sur le grill.</p></div></li>
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Œuf cocotte</h4><p>Cantal, chorizo et poivrons.</p></div></li>
-        <li class="rv"><div class="ph"><img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=200&q=70&auto=format&fit=crop" alt="Planche de charcuterie et fromages" width="72" height="56" loading="lazy"></div><div><h4>Planche de charcuterie</h4><p>À partager à l’apéritif.</p></div></li>
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Burratina fraîche</h4><p>Pesto maison et pain à l’ail.</p></div></li>
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Tartare</h4><p>Servi avec une salade.</p></div></li>
-      </ul>
-    </div>
-
-    <div class="cat">
-      <div class="cat-title"><h3>Au grill</h3><span>5 pièces</span></div>
-      <ul class="items" role="list">
-        <li class="rv"><div class="ph"><img src="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?w=200&q=70&auto=format&fit=crop" alt="Bœuf grillé tranché" width="72" height="56" loading="lazy"></div><div><h4>Picanha</h4><p>À la brésilienne, sauce chimichurri.</p></div></li>
-        <li class="rv"><div class="ph"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=200&q=70&auto=format&fit=crop" alt="Entrecôte et frites" width="72" height="56" loading="lazy"></div><div><h4>Entrecôte Angus</h4><p>Persillée, saisie sur la pierre de lave.</p></div></li>
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Filet de bœuf</h4><p>La pièce la plus tendre de la carte.</p></div></li>
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Bavette</h4><p>Fibres longues, goût franc. Saignante, de préférence.</p></div></li>
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Burger</h4><p>Pour ceux qui préfèrent le bœuf entre deux pains.</p></div></li>
-      </ul>
-    </div>
-
-    <div class="cat">
-      <div class="cat-title"><h3>À partager</h3><span>2 plats</span></div>
-      <ul class="items" role="list">
-        <li class="rv"><div class="ph"><img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=200&q=70&auto=format&fit=crop" alt="Côte de bœuf dans une poêle en fonte" width="72" height="56" loading="lazy"></div><div><h4>Côte de bœuf Stockman ou Angus</h4><p>Environ 1 kg, avec l’os, pour deux.</p></div></li>
-        <li class="rv"><div class="ph"><img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=200&q=70&auto=format&fit=crop" alt="Bœuf tranché sur une planche" width="72" height="56" loading="lazy"></div><div><h4>Trilogie de bœuf</h4><p>Trois pièces sur la même planche, pour comparer.</p></div></li>
-      </ul>
-    </div>
-
-    <div class="cat">
-      <div class="cat-title"><h3>Desserts</h3><span>3 douceurs</span></div>
-      <ul class="items" role="list">
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Coulant au chocolat noir</h4><p>Fait maison.</p></div></li>
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Entremets poire et chocolat blanc</h4><p>Fait maison.</p></div></li>
-        <li class="rv"><div class="blade" aria-hidden="true"><svg style="color:var(--red)"><use href="#blade"/></svg></div><div><h4>Brioche perdue</h4><p>Moelleuse, façon pain perdu.</p></div></li>
-      </ul>
-    </div>
-
-    <div class="sides rv">
-      <div><h4>Un accompagnement</h4><p>Frites maison, légumes poêlés ou salade, servi avec chaque pièce.</p></div>
-      <div><h4>Une sauce maison</h4><p>Poivre, béarnaise, bleu ou chimichurri selon la pièce.</p></div>
-      <div><h4>Au verre ou en bouteille</h4><p>Une carte de vins rouges, blancs et rosés, dont un Sancerre du domaine Auchère.</p></div>
-    </div>
-  </section>
-
-  <section class="gallery" aria-labelledby="h-gal">
-    <div class="txt">
-      <h2 id="h-gal" class="rv">La pierre, le couteau, la planche</h2>
-      <p class="rv">Une pierre de lave chauffée saisit la viande sans la dessécher. Le reste se joue à table, couteau en main.</p>
-    </div>
+<section class="sec maison" id="maison" aria-labelledby="t-maison">
+  <div class="wrap maison-grid">
+    <figure class="ph rv"><img loading="lazy" src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=1200&q=75&auto=format&fit=crop" width="1200" height="960" alt="Bœuf grillé tranché, asperges et carottes sur une plaque en fonte"></figure>
     <div>
-      <div class="frame" id="frame" role="button" tabindex="0" aria-label="Photo suivante">
-        <img class="on" src="https://images.unsplash.com/photo-1558030006-450675393462?w=1400&q=75&auto=format&fit=crop" alt="Bœuf grillé tranché sur une planche" data-cap="Saisi, reposé, tranché." width="1400" height="1050" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=1400&q=75&auto=format&fit=crop" alt="Côte de bœuf dans une poêle en fonte" data-cap="La côte, avec son os." width="1400" height="1050" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=1400&q=75&auto=format&fit=crop" alt="Steak grillé et asperges" data-cap="Une pièce, un accompagnement." width="1400" height="1050" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1400&q=75&auto=format&fit=crop" alt="Fourchette plantée dans une tranche de bœuf" data-cap="Couteau en main." width="1400" height="1050" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1400&q=75&auto=format&fit=crop" alt="Verres de vin rouge levés" data-cap="Un rouge pour finir." width="1400" height="1050" loading="lazy">
-      </div>
-      <p class="cap" id="cap" aria-live="polite">Saisi, reposé, tranché.</p>
+      <h2 id="t-maison" class="rv">Trois amis, une pierre de lave</h2>
+      <p class="rv">Guillaume, Thibault et Vivien, amis d’enfance, ont ouvert Les Fines Lames en mai 2018 rue Lepic, après avoir repris ensemble La Rughetta. Ici, la viande passe sur un grill en pierre de lave.</p>
+      <ol class="steps">
+        <li class="rv"><svg viewBox="0 0 56 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 30h44M10 30c2-6 6-6 8 0M22 30c2-6 6-6 8 0M34 30c2-6 6-6 8 0"/><path d="M14 18c0-4 4-4 4-8M28 18c0-4 4-4 4-8M42 18c0-4 4-4 4-8"/></svg><div><b>La pierre chauffe</b><span>La lave garde une chaleur régulière et saisit la viande d’un coup.</span></div></li>
+        <li class="rv"><svg viewBox="0 0 56 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 26c0-8 10-14 22-14s18 6 18 14c0 4-8 6-20 6S8 30 8 26z"/><path d="M20 20h16"/></svg><div><b>La pièce se saisit</b><span>Croûte dehors, jus dedans, à la cuisson demandée.</span></div></li>
+        <li class="rv"><svg viewBox="0 0 56 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 28 L40 10 L50 12 L16 32 Z"/><path d="M6 28 L2 34"/></svg><div><b>Le couteau finit le travail</b><span>Elle arrive à table avec son accompagnement et sa sauce maison.</span></div></li>
+      </ol>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="book" aria-labelledby="h-book">
-    <h2 id="h-book" class="rv">Réservez votre table</h2>
-    <div class="rv">
-      <p>Réservation en ligne sur TheFork, ou par téléphone pendant le service.</p>
-      <div class="acts">
-        <a class="btn" href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">Réserver sur TheFork</a>
-        <a class="btn ink" href="tel:+33142559595">Appeler</a>
-      </div>
+<section class="book" aria-labelledby="t-book">
+  <div class="wrap">
+    <div>
+      <h2 id="t-book" class="rv">Une table rue Lepic ce&nbsp;soir&#8239;?</h2>
+      <p class="rv">Réservation en ligne sur TheFork, ou par téléphone pendant le service. Quelques tables en terrasse, côté rue.</p>
     </div>
-  </section>
+    <div class="book-side rv">
+      <div class="row">
+        <a class="btn btn-paper" href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">Réserver sur TheFork</a>
+        <a class="btn btn-ink" href="tel:+33142559595">Appeler le <span class="num">01 42 55 95 95</span></a>
+      </div>
+      <small>Groupe ou côte de bœuf à prévoir : un coup de fil suffit.</small>
+    </div>
+  </div>
+</section>
 
-  <section class="visit" id="venir" aria-labelledby="h-venir">
-    <h2 id="h-venir" class="rv">Horaires et accès</h2>
-    <div class="ticket rv">
-      <div>
-        <h3>Ouvert tous les jours</h3>
-        <table class="hours" id="hours">
+<section class="sec" id="venir" aria-labelledby="t-venir">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="t-venir" class="rv">Horaires et accès</h2>
+      <p class="rv">À mi-pente de la rue Lepic, entre la place Blanche et les Abbesses. Ouvert tous les jours, midi et soir.</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours rv">
+        <h3>Le service</h3>
+        <table id="hours">
+          <caption class="sr">Horaires d’ouverture</caption>
           <tbody>
             <tr data-d="1"><td>Lundi</td><td>12h–14h15 · 19h–22h30</td></tr>
             <tr data-d="2"><td>Mardi</td><td>12h–14h15 · 19h–22h30</td></tr>
@@ -406,43 +504,67 @@ p{margin:0}
             <tr data-d="0"><td>Dimanche</td><td>12h–14h15 · 19h–22h30</td></tr>
           </tbody>
         </table>
-        <p class="hours-note">Les jours fériés, un coup de fil avant de venir.</p>
+        <p class="fine">Les jours fériés, un coup de fil avant de venir.</p>
       </div>
-      <div>
+      <div class="access rv">
         <h3>Venir</h3>
-        <p class="addr">35 rue Lepic<br>75018 Paris</p>
-        <p class="metro">Métro Abbesses (ligne 12) ou Blanche (ligne 2), puis la montée de la rue Lepic.</p>
-        <div class="contact-acts">
-          <a class="btn ink" href="https://www.google.com/maps/dir/?api=1&destination=Les+Fines+Lames,+35+rue+Lepic,+75018+Paris" target="_blank" rel="noopener">Itinéraire</a>
-          <a class="btn ghost" href="tel:+33142559595">Appeler</a>
+        <address>35 rue Lepic<br>75018 Paris</address>
+        <svg class="map" viewBox="0 0 520 230" role="img" aria-labelledby="map-t">
+          <title id="map-t">Plan schématique : la rue Lepic monte de la place Blanche vers les Abbesses, le restaurant au numéro 35</title>
+          <path d="M30 200 H500" stroke="#4a423d" stroke-width="14"/>
+          <path d="M300 60 H500" stroke="#4a423d" stroke-width="10"/>
+          <path d="M120 200 C130 150 170 120 230 104 C270 94 300 82 330 60 C350 46 360 36 372 22" stroke="#f3eee6" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <text x="36" y="226" fill="#c9bfb5" font-size="13" font-family="Archivo,sans-serif">Bd de Clichy</text>
+          <text x="404" y="50" fill="#c9bfb5" font-size="13" font-family="Archivo,sans-serif">Rue des Abbesses</text>
+          <text x="150" y="146" fill="#f3eee6" font-size="14" font-weight="700" font-family="Archivo,sans-serif" transform="rotate(-22 150 146)">Rue Lepic</text>
+          <circle cx="110" cy="200" r="11" fill="#f3eee6"/><text x="110" y="205" text-anchor="middle" font-size="12" font-weight="800" fill="#1c1917" font-family="Archivo,sans-serif">M</text>
+          <text x="66" y="182" fill="#f3eee6" font-size="13" font-weight="600" font-family="Archivo,sans-serif">Blanche</text>
+          <circle cx="470" cy="60" r="11" fill="#f3eee6"/><text x="470" y="65" text-anchor="middle" font-size="12" font-weight="800" fill="#1c1917" font-family="Archivo,sans-serif">M</text>
+          <text x="440" y="92" fill="#f3eee6" font-size="13" font-weight="600" font-family="Archivo,sans-serif">Abbesses</text>
+          <circle cx="300" cy="82" r="13" fill="#b3261e" stroke="#f3eee6" stroke-width="3"/>
+          <text x="222" y="70" fill="#ffffff" font-size="14" font-weight="800" font-family="Archivo,sans-serif">N° 35</text>
+        </svg>
+        <p>Métro Abbesses (ligne 12) ou Blanche (ligne 2), puis la montée de la rue Lepic. Plan schématique.</p>
+        <div class="row">
+          <a class="btn btn-paper sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=Les+Fines+Lames,+35+rue+Lepic,+75018+Paris" target="_blank" rel="noopener">Itinéraire</a>
+          <a class="btn btn-red sm" href="tel:+33142559595">Appeler</a>
         </div>
-        <div class="contact-lines">
-          <a href="mailto:restaurantlesfineslames@outlook.com?subject=Demande%20de%20r%C3%A9servation">restaurantlesfineslames@outlook.com</a>
+        <div class="links">
+          <a href="mailto:restaurantlesfineslames@outlook.com">restaurantlesfineslames@outlook.com</a>
           <a href="https://www.instagram.com/lesfineslames/" target="_blank" rel="noopener">Instagram @lesfineslames</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <footer class="foot">
-  <p class="foot-mark" aria-label="Les Fines Lames"><span aria-hidden="true">Les Fines Lames</span><svg style="color:var(--red)" viewBox="0 0 100 40" aria-hidden="true"><use href="#blade"/></svg></p>
-  <div class="foot-grid">
-    <div><h4>Adresse</h4><p>35 rue Lepic</p><p>75018 Paris</p></div>
-    <div><h4>Service</h4><p>Tous les jours</p><p>12h–14h15 · 19h–22h30</p></div>
-    <div><h4>Contact</h4><p><a href="tel:+33142559595">01 42 55 95 95</a></p><p><a href="mailto:restaurantlesfineslames@outlook.com">Écrire un e-mail</a></p></div>
-    <div><h4>Suivre</h4><p><a href="https://www.instagram.com/lesfineslames/" target="_blank" rel="noopener">Instagram</a></p><p><a href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">TheFork</a></p></div>
+  <div class="wrap">
+    <p class="foot-name">Les Fines Lames</p>
+    <div class="foot-grid">
+      <div><b>Adresse</b><span>35 rue Lepic</span><span>75018 Paris</span></div>
+      <div><b>Service</b><span>Tous les jours</span><span class="num">12h–14h15 · 19h–22h30</span></div>
+      <div><b>Contact</b><a href="tel:+33142559595" class="num">01 42 55 95 95</a><a href="mailto:restaurantlesfineslames@outlook.com">Écrire un e-mail</a></div>
+      <div><b>Suivre</b><a href="https://www.instagram.com/lesfineslames/" target="_blank" rel="noopener">Instagram</a><a href="https://www.thefork.fr/restaurant/les-fines-lames-r395069" target="_blank" rel="noopener">TheFork</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>Photos d’illustration : Unsplash.</span>
+      <span>Démo réalisée par Raul Hatos — site non officiel</span>
+    </div>
   </div>
-  <div class="foot-last"><span>Photos d’illustration : Unsplash.</span><span>Démo réalisée par Raul Hatos — site non officiel</span></div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
-
-// entrées au défilement
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
-
+// entrées au défilement, échelonnées par section
+(function(){
+  const els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('section,header').forEach(s=>s.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=Math.min(i,6)*75+'ms'}));
+  els.forEach(el=>io.observe(el));
+})();
 // ouvert maintenant ? (heure de Paris)
 (function(){
   const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).map(x=>[x.type,x.value]));
@@ -451,48 +573,44 @@ document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)
   const slots=[[720,855],[1140,1350]];
   const open=slots.find(([a,b])=>m>=a&&m<b);
   const next=slots.find(([a])=>m<a);
-  const fmt=v=>Math.floor(v/60)+'h'+(v%60?String(v%60).padStart(2,'0'):'');
+  const fmt=v=>Math.floor(v/60)+'h'+(v%60?String(v%60).padStart(2,'0'):''); // taste-skill-ignore : heures d’horloge
   const s=document.getElementById('status');
   s.classList.toggle('open',!!open);
-  s.querySelector('b').innerHTML=open
-    ? 'Ouvert maintenant<span>jusqu’à '+fmt(open[1])+'</span>'
-    : 'Fermé pour le moment<span>'+(next?'réouverture à '+fmt(next[0]):'demain à 12h')+'</span>';
+  s.querySelector('b').textContent=open?'Ouvert maintenant, jusqu’à '+fmt(open[1]):'Fermé pour le moment, réouverture '+(next?'à '+fmt(next[0]):'demain à 12h');
   const tr=document.querySelector('#hours tr[data-d="'+day+'"]');
-  if(tr)tr.classList.add('today');
+  if(tr){tr.classList.add('today');tr.setAttribute('aria-current','date')}
 })();
-
-// quelle pièce ?
+// votre pièce, votre cuisson
 (function(){
-  const facts={
-    picanha:['Picanha','Le haut de la culotte, coiffé de sa couche de gras. Saisie sur la pierre, le gras fond et nourrit la chair. La pièce reine des grills brésiliens.'],
-    entrecote:['Entrecôte Angus','Prise entre les côtes, marbrée de gras. L’Angus, race d’origine écossaise, donne une viande très persillée qui reste juteuse au grill.'],
-    filet:['Filet','Un muscle qui ne travaille presque pas : c’est la pièce la plus tendre du bœuf, au goût plus discret.'],
-    bavette:['Bavette','Sous le ventre, des fibres longues et un goût franc. Elle se mange saignante, tranchée dans le sens contraire des fibres.'],
-    cote:['Côte de bœuf','L’entrecôte avec son os, autour d’un kilo. Stockman ou Angus, elle se partage à deux.']
+  const cuts={
+    picanha:['Picanha','Le haut de la culotte, coiffé de sa couche de gras. Saisie sur la pierre, le gras fond et nourrit la chair.'],
+    entrecote:['Entrecôte Angus','Prise entre les côtes et marbrée de gras : l’Angus reste juteuse au grill.'],
+    filet:['Filet de bœuf','Un muscle qui ne travaille presque pas : la pièce la plus tendre, au goût plus discret.'],
+    bavette:['Bavette','Des fibres longues et un goût franc. Elle se mange saignante, tranchée contre les fibres.'],
+    cote:['Côte de bœuf pour deux','L’entrecôte avec son os, autour d’un kilo, en Stockman ou en Angus.'],
+    trilogie:['Trilogie de bœuf pour deux','Trois pièces sur la même planche, pour comparer les goûts et les textures.']
   };
-  const btns=document.querySelectorAll('.cut-list button');
-  const zones=document.querySelectorAll('.cow .zone');
-  function pick(k){
-    btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.cut===k));
-    zones.forEach(z=>z.classList.toggle('on',z.dataset.z.split(' ').includes(k)));
-    document.getElementById('fact-t').textContent=facts[k][0];
-    document.getElementById('fact-p').textContent=facts[k][1];
+  // [nom, repère, couleur du cœur, échelle du cœur, couleur de la bande cuite]
+  const dones=[
+    ['Bleu','à peine saisi, autour de 45 °C à cœur','#9e1730',.97,'#8e5a50'],
+    ['Saignant','rouge vif au cœur, autour de 50 °C','#c8323a',.9,'#9a7366'],
+    ['À point','rosé au cœur, autour de 57 °C','#d9837d',.74,'#a8857a'],
+    ['Bien cuit','cuit à cœur, au-delà de 65 °C','#a07a6c',.5,'#a07a6c']
+  ];
+  const f=document.getElementById('pick'),core=document.getElementById('core'),band=document.querySelector('.slice .band');
+  const $=id=>document.getElementById(id);
+  function render(){
+    const d=new FormData(f),c=cuts[d.get('cut')],k=dones[+d.get('done')];
+    $('cut-note').innerHTML='';const b=document.createElement('b');b.textContent=c[0];const s=document.createElement('span');s.textContent=c[1];$('cut-note').append(b,s);
+    $('done-t').textContent=k[0];$('done-p').textContent=k[1];
+    core.style.fill=k[2];core.style.transform='scale('+k[3]+')';band.style.fill=k[4];
+    $('l-cut').textContent=c[0];$('l-side').textContent=d.get('side');$('l-sauce').textContent=d.get('sauce');
+    const body='Bonjour,\n\nJe souhaite réserver une table. Mon envie : '+c[0]+', '+k[0].toLowerCase()+', '+d.get('side').toLowerCase()+', sauce '+d.get('sauce').toLowerCase()+'.\n\nDate :\nHeure :\nNombre de personnes :\nTéléphone :\n';
+    $('mail').href='mailto:restaurantlesfineslames@outlook.com?subject='+encodeURIComponent('Réservation · '+c[0])+'&body='+encodeURIComponent(body);
   }
-  btns.forEach(b=>b.addEventListener('click',()=>pick(b.dataset.cut)));
-  pick('picanha');
-})();
-
-// galerie : un cadre, le contenu change
-(function(){
-  const imgs=[...document.querySelectorAll('#frame img')],cap=document.getElementById('cap'),f=document.getElementById('frame');
-  let i=0,t;
-  const show=n=>{imgs[i].classList.remove('on');i=(n+imgs.length)%imgs.length;imgs[i].classList.add('on');cap.textContent=imgs[i].dataset.cap};
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const run=()=>{clearInterval(t);if(!reduce&&!document.hidden)t=setInterval(()=>show(i+1),3200)};
-  f.addEventListener('click',()=>{show(i+1);run()});
-  f.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(i+1);run()}});
-  document.addEventListener('visibilitychange',run);
-  run();
+  f.addEventListener('change',render);
+  f.addEventListener('submit',e=>e.preventDefault());
+  render();
 })();
 </script>
 </body>
