@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bibim Bao, cuisine coréenne rue Claude Bernard</title>
+<meta name="description" content="Bibim Bao, restaurant coréen au 59 rue Claude Bernard, Paris 5e : bibimbap, bao, tteokbokki, bingsu. Menu étudiant à 12 € le midi, sur place ou à emporter.">
+<!-- Direction : DESIGN.md « DJI » (awesome-design) : vitrine produit, photos carrées en tuiles séparées par une gouttière, une seule couleur d'action (bleu), codes de rang en orange, panneaux gris pâle, barre d'achat collante, pied de page anthracite. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#ffffff; --soft:#f6f8f9; --fog:#eef1f3; --ink:#1d1f20; --ink2:#55595c;
+  --blue:#0060ef; --blue-press:#004fc4; --blue-tint:#deeafd; --blue-ink:#004bbd;
+  --code:#be4e04; --footer:#232425; --footer-ink:#b9bcbe;
+  --m:clamp(16px,3.2vw,40px); --gap:8px;
+  --f:"Noto Sans KR",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--canvas);color:var(--ink);font:400 17px/1.55 var(--f);letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+::selection{background:var(--blue);color:#fff}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.num{font-variant-numeric:tabular-nums}
+.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
+h1,h2,h3{font-weight:700;letter-spacing:-.035em;line-height:1.02;text-wrap:balance}
+h2{font-size:clamp(34px,5.4vw,76px)}
+.lead{font-size:clamp(18px,1.6vw,22px);line-height:1.5;max-width:40ch}
+
+/* bandeau démo */
+.demo{background:var(--fog);color:var(--ink2);font-size:14px;text-align:center;padding:7px 16px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:#fff;display:flex;align-items:center;gap:28px;padding:14px var(--m)}
+.brand{font-weight:900;font-size:22px;letter-spacing:-.04em;text-decoration:none;margin-right:auto}
+.nav a.l{text-decoration:none;font-size:15px;color:var(--ink2);transition:color .2s}
+.nav a.l:hover{color:var(--ink)}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;font:500 16px/1 var(--f);text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .2s var(--ease)}
+.pill:active{transform:scale(.97)}
+.pill.b{background:var(--blue);color:#fff}
+.pill.b:hover{background:var(--blue-press)}
+.pill.t{background:var(--blue-tint);color:var(--blue-ink)}
+.pill.t:hover{background:#cadcfb}
+.pill.g{background:var(--fog);color:var(--ink)}
+.pill.g:hover{background:#e2e6e9}
+.nav .pill{min-height:40px;padding:0 18px;font-size:15px}
+@media (max-width:760px){.nav a.l{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr;gap:var(--gap);padding:0 var(--m) var(--gap)}
+.hero-txt{background:var(--soft);padding:clamp(28px,4vw,64px);display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.hero h1{font-size:clamp(64px,10.5vw,168px);font-weight:900;letter-spacing:-.055em;line-height:.88}
+.hero .lead{margin-top:28px}
+.status{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:500}
+.dot{width:10px;height:10px;border-radius:50%;background:#9aa0a4;flex:none}
+.dot.on{background:#11a35a;animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.hero-img{aspect-ratio:1/1;overflow:hidden;background:var(--fog)}
+.hero-img img{transform:scale(1.08);transition:transform 2.4s var(--ease)}
+.loaded .hero-img img{transform:scale(1)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 24px;margin:0 var(--m);background:var(--soft);padding:28px clamp(20px,3vw,48px)}
+.fact{padding:0}
+.fact b{display:block;font-size:clamp(24px,3vw,40px);font-weight:700;letter-spacing:-.04em;line-height:1.05}
+.fact span{color:var(--ink2);font-size:15px}
+@media (min-width:900px){
+  .hero{grid-template-columns:1fr 1fr;min-height:min(calc(100svh - 200px),760px)}
+  .hero-img{aspect-ratio:auto}
+  .facts{grid-template-columns:repeat(4,1fr)}
+}
+
+/* vitrine */
+section{padding-top:clamp(96px,12vw,200px)}
+.head{display:grid;gap:20px;margin-bottom:40px}
+@media (min-width:900px){.head{grid-template-columns:1fr 1fr;align-items:end}}
+.tiles{display:grid;grid-template-columns:1fr;gap:var(--gap)}
+@media (min-width:640px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{background:var(--soft);display:flex;flex-direction:column;text-decoration:none}
+.tile .ph{aspect-ratio:1/1;overflow:hidden}
+.tile .ph img{transition:transform .9s var(--ease)}
+.tile:hover .ph img{transform:scale(1.05)}
+.tile .tx{padding:22px 22px 26px;display:grid;gap:6px}
+.tile h3{font-size:clamp(24px,2.2vw,30px);font-weight:700;letter-spacing:-.03em}
+.codes{color:var(--code);font-weight:700}
+.tile p{color:var(--ink2);font-size:16px}
+.tile .pr{color:var(--ink);font-weight:500;font-size:17px;margin-top:6px}
+
+/* midi */
+.midi{background:var(--soft);margin-top:clamp(96px,12vw,200px);padding-block:clamp(72px,9vw,140px)}
+.midi section{padding-top:0}
+.mgrid{display:grid;gap:var(--gap)}
+@media (min-width:1000px){.mgrid{grid-template-columns:1.25fr 1fr}}
+.forms{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(160px,45%),1fr));gap:var(--gap)}
+@media (max-width:640px){.opt label{padding:14px}.opt b{font-size:16px}.opt .p{font-size:20px}}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0}
+.opt label{display:flex;flex-direction:column;gap:2px;height:100%;background:#fff;border-radius:8px;padding:18px 18px 16px;cursor:pointer;transition:background .2s,color .2s}
+.opt label:hover{background:#e9eef3}
+.opt input:checked+label{background:var(--blue);color:#fff}
+.opt input:checked+label span{color:#e3ecff}
+.opt input:focus-visible+label{outline:3px solid var(--blue);outline-offset:3px}
+.opt b{font-size:18px;font-weight:700;letter-spacing:-.02em}
+.opt span{font-size:15px;color:var(--ink2)}
+.opt .p{color:var(--ink);font-weight:700;font-size:22px;margin-top:8px}
+.picks{display:grid;gap:14px;margin-top:28px}
+.picks label{display:grid;gap:6px;font-weight:500;font-size:15px}
+select{appearance:none;font:400 17px/1.3 var(--f);color:var(--ink);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231d1f20' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 18px center;border:0;border-radius:8px;min-height:52px;padding:0 44px 0 16px;width:100%;cursor:pointer}
+select:hover{background-color:#e9eef3}
+.ticket{background:#fff;border-radius:8px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:22px;align-self:start;position:sticky;top:84px}
+.ticket h3{font-size:clamp(26px,2.4vw,34px)}
+.tl{list-style:none;display:grid;gap:10px}
+.tl li{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:baseline;font-size:17px}
+.tl .c{color:var(--code);font-weight:700}
+.tl .x{color:var(--ink2);font-size:15px}
+.total{display:flex;justify-content:space-between;align-items:baseline;background:var(--soft);border-radius:8px;padding:16px 18px}
+.total b{font-size:clamp(36px,3.6vw,52px);letter-spacing:-.04em;line-height:1}
+.note{font-size:15px;color:var(--ink2)}
+
+/* carte */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--gap)}
+.tab{flex:none;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:var(--fog);font:500 15px/1 var(--f);color:var(--ink);cursor:pointer;transition:background .2s}
+.tab:hover{background:#e2e6e9}
+.tab[aria-selected=true]{background:var(--ink);color:#fff}
+.panel{display:grid;gap:var(--gap)}
+.panel .ph{overflow:hidden;background:var(--fog)}
+@media (min-width:1000px){.panel{grid-template-columns:1fr 2fr}.panel .ph{min-height:420px}}
+@media (max-width:999px){.panel .ph{display:none}}
+.list{background:var(--soft);padding:clamp(20px,3vw,44px);columns:1;column-gap:48px}
+@media (min-width:760px){.list{columns:2}}
+.row{break-inside:avoid;display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:baseline;padding:11px 0}
+.row .c{color:var(--code);font-weight:700;font-size:15px}
+.row .n{font-size:17px}
+.row .n small{display:block;color:var(--ink2);font-size:14px}
+.row .p{font-weight:700;font-size:17px;white-space:nowrap}
+.list h4{font-size:15px;font-weight:700;color:var(--ink2);padding:18px 0 4px;break-after:avoid}
+.list h4:first-child{padding-top:0}
+[hidden]{display:none!important}
+
+/* bandeau dakgalbi */
+.share{display:grid;gap:var(--gap)}
+.share .ph{aspect-ratio:4/3;overflow:hidden}
+.share .tx{background:var(--ink);color:#fff;padding:clamp(28px,4vw,64px);display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.share h2{color:#fff;margin-bottom:24px}
+.share p{color:#d6d9db;font-size:clamp(17px,1.4vw,20px);max-width:38ch}
+.share .big{font-size:clamp(56px,7vw,110px);font-weight:900;letter-spacing:-.05em;line-height:.9}
+@media (min-width:900px){.share{grid-template-columns:3fr 2fr}.share .ph{aspect-ratio:auto;min-height:560px}}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);margin-top:var(--gap)}
+.duo figure{aspect-ratio:1/1;overflow:hidden;position:relative}
+.duo figcaption{position:absolute;left:12px;bottom:12px;background:#fff;color:var(--ink);font-size:14px;font-weight:500;padding:6px 12px;border-radius:999px}
+@media (min-width:900px){.duo{grid-template-columns:repeat(4,1fr)}}
+
+/* horaires */
+.infos{display:grid;gap:var(--gap)}
+@media (min-width:1000px){.infos{grid-template-columns:1fr 1fr}}
+.hours{background:var(--soft);padding:clamp(24px,3vw,44px)}
+.hours table{width:100%;border-collapse:collapse;font-size:18px}
+.hours td{padding:12px 0}
+.hours td+td{text-align:right}
+.hours tr.today td{font-weight:700}
+.hours tr.today td:first-child::after{content:" · aujourd’hui";font-weight:400;color:var(--ink2);font-size:15px}
+.hours .off{color:var(--ink2)}
+.map{min-height:420px;background:var(--fog)}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:grayscale(.35)}
+.contact{display:grid;gap:var(--gap);margin-top:var(--gap)}
+@media (min-width:760px){.contact{grid-template-columns:repeat(3,1fr)}}
+.contact a{background:var(--soft);padding:24px;text-decoration:none;display:grid;gap:4px;transition:background .2s}
+.contact a:hover{background:var(--fog)}
+.contact span{color:var(--ink2);font-size:15px}
+.contact b{font-size:clamp(20px,1.8vw,26px);font-weight:700;letter-spacing:-.03em;overflow-wrap:anywhere}
+
+/* footer */
+footer{background:var(--footer);color:var(--footer-ink);margin-top:clamp(96px,12vw,200px);padding:56px var(--m) 28px}
+.fname{color:#fff;font-weight:900;font-size:clamp(64px,15.5vw,250px);letter-spacing:-.06em;line-height:.85;margin-bottom:40px}
+.fcols{display:grid;gap:24px;font-size:15px}
+@media (min-width:760px){.fcols{grid-template-columns:repeat(3,1fr)}}
+.fcols a{color:#fff}
+.credits{margin-top:40px;font-size:14px;color:#9a9ea1}
+
+/* barre mobile */
+
+/* apparitions */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.hero-img img{transform:none}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="brand" href="#top">Bibim Bao</a>
+  <a class="l" href="#midi">Le midi</a>
+  <a class="l" href="#carte">La carte</a>
+  <a class="l" href="#infos">Horaires et accès</a>
+  <a class="pill b" href="https://app.eatself.com/3289/carte" target="_blank" rel="noopener">Commander</a>
+</nav>
+
+<main id="top">
+<header class="hero">
+  <div class="hero-txt">
+    <div>
+      <h1 class="rv">Bibim Bao</h1>
+      <p class="lead rv" style="--i:1">Bibimbap, bao et cuisine coréenne, au 59 rue Claude Bernard, Paris 5e. Sur place ou à emporter.</p>
+    </div>
+    <div class="rv" style="--i:2">
+      <p class="status" id="status"><span class="dot" id="dot"></span><span id="statusTxt">Du lundi au vendredi, midi et soir</span></p>
+      <div class="acts">
+        <a class="pill b" href="https://app.eatself.com/3289/carte" target="_blank" rel="noopener">Commander à emporter</a>
+        <a class="pill t" href="tel:+33955356817">Appeler le 09 55 35 68 17</a>
+        <a class="pill g" href="https://www.google.com/maps/dir/?api=1&destination=Bibim+Bao+59+rue+Claude+Bernard+75005+Paris" target="_blank" rel="noopener">Itinéraire</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img"><img src="https://images.unsplash.com/photo-1741295017668-c8132acd6fc0?w=1400&h=1400&fit=crop&q=75&auto=format" width="1400" height="1400" alt="Bibimbap servi en bol de pierre : riz, bœuf, carottes, pousses de soja, épinards et jaune d’œuf" fetchpriority="high"></div>
+</header>
+
+<div class="facts" aria-label="En bref">
+  <div class="fact"><b class="num">12 €</b><span>le menu étudiant, de 11 h à 14 h 30</span></div>
+  <div class="fact" style="--i:1"><b class="num">4,8 / 5</b><span>sur Google, 409 avis</span></div>
+  <div class="fact" style="--i:2"><b>6 bibimbaps</b><span>légumes, tofu, bœuf, poulet, porc, saumon</span></div>
+  <div class="fact" style="--i:3"><b>Click &amp; collect</b><span>commande en ligne, retrait au comptoir</span></div>
+</div>
+
+<section class="wrap" id="plats" aria-labelledby="h-plats">
+  <div class="head">
+    <h2 id="h-plats" class="rv">Ce qu’on vient manger</h2>
+    <p class="lead rv" style="--i:1">Chaque plat porte son code sur la carte : B pour les bibimbaps, A pour les bao, P pour les plats, E pour les entrées.</p>
+  </div>
+  <div class="tiles">
+    <a class="tile rv" href="#carte" data-go="bibimbap">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=900&h=900&fit=crop&q=75&auto=format" width="900" height="900" loading="lazy" alt="Bols de bibimbap vus du dessus, avec œuf au plat et légumes en julienne"></div>
+      <div class="tx"><h3>Bibimbap</h3><p>Riz, légumes, œuf. Six garnitures, du légume au saumon.</p><span class="pr num"><span class="codes">B1 à B6</span> · de 12 € à 16 €</span></div>
+    </a>
+    <a class="tile rv" style="--i:1" href="#carte" data-go="bao">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1781785164696-0154e4dd70c1?w=900&h=900&fit=crop&q=75&auto=format" width="900" height="900" loading="lazy" alt="Pain bao vapeur garni de viande et d’herbes"></div>
+      <div class="tx"><h3>Bao</h3><p>Bœuf, poulet, porc, kimchi, tofu ou tempura.</p><span class="pr num"><span class="codes">A1 à A6</span> · 6 € pièce</span></div>
+    </a>
+    <a class="tile rv" style="--i:2" href="#carte" data-go="entrees">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1747228469541-f0e7f56e7ec7?w=900&h=900&fit=crop&q=75&auto=format" width="900" height="900" loading="lazy" alt="Tteokbokki, gâteaux de riz dans une sauce rouge épicée"></div>
+      <div class="tx"><h3>Tteokbokki</h3><p>Gâteaux de riz, en entrée ou en plat piquant.</p><span class="pr num"><span class="codes">E7 et P6</span> · 12 € ou 16 €</span></div>
+    </a>
+    <a class="tile rv" style="--i:3" href="#carte" data-go="desserts">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1595275320712-24b6f2b0a984?w=900&h=900&fit=crop&q=75&auto=format" width="900" height="900" loading="lazy" alt="Bingsu à la mangue : glace pilée nappée de coulis de mangue"></div>
+      <div class="tx"><h3>Bingsu</h3><p>Glace pilée : mangue fraîche, haricots rouges, litchi ou matcha.</p><span class="pr num">10,50 €</span></div>
+    </a>
+  </div>
+</section>
+
+<div class="midi" id="midi">
+<section class="wrap" aria-labelledby="h-midi">
+  <div class="head">
+    <h2 id="h-midi" class="rv">Composez votre midi</h2>
+    <p class="lead rv" style="--i:1">Sept formules, de 11 h à 14 h 30. Choisissez, le total s’affiche, puis commandez en ligne ou annoncez-la au comptoir.</p>
+  </div>
+  <div class="mgrid">
+    <div>
+      <div class="forms" role="radiogroup" aria-label="Formule" id="forms"></div>
+      <div class="picks" id="picks"></div>
+    </div>
+    <aside class="ticket" aria-live="polite">
+      <h3 id="tName">Menu étudiant</h3>
+      <ul class="tl" id="tList"></ul>
+      <div class="total"><span>Total</span><b class="num" id="tTotal">12 €</b></div>
+      <a class="pill b" href="https://app.eatself.com/3289/carte" target="_blank" rel="noopener">Commander ce menu à emporter</a>
+      <p class="note">Formules valables uniquement de 11 h à 14 h 30. Paiement final sur la plateforme de commande du restaurant.</p>
+    </aside>
+  </div>
+</section>
+</div>
+
+<section class="wrap" id="carte" aria-labelledby="h-carte">
+  <div class="head">
+    <h2 id="h-carte" class="rv">La carte</h2>
+    <p class="lead rv" style="--i:1">Toute la carte, avec les codes et les prix de la commande en ligne.</p>
+  </div>
+  <div class="tabs" role="tablist" aria-label="Rubriques de la carte" id="tabs"></div>
+  <div id="panels"></div>
+</section>
+
+<section class="wrap" aria-labelledby="h-share">
+  <div class="share">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1752826892253-d89531507b1d?w=1400&h=1050&fit=crop&q=75&auto=format" width="1400" height="1050" loading="lazy" alt="Dakgalbi : poulet sauté épicé, chou et gâteaux de riz dans une grande poêle"></div>
+    <div class="tx">
+      <div>
+        <h2 id="h-share" class="rv">À partager</h2>
+        <p class="rv" style="--i:1">Le dakgalbi, poulet mariné et sauté au piment, à poser au milieu de la table. Et le barbecue coréen, au bœuf ou au poulet.</p>
+      </div>
+      <div class="rv" style="--i:2"><p class="big num">32 €</p><p>Dakgalbi BBQ poulet · F3</p></div>
+    </div>
+  </div>
+  <div class="duo">
+    <figure class="rv"><img src="https://images.unsplash.com/photo-1624153064067-566cae78993d?w=700&h=700&fit=crop&q=75&auto=format" width="700" height="700" loading="lazy" alt="Ailes de poulet frit laquées"><figcaption>Ailes de poulet · E12</figcaption></figure>
+    <figure class="rv" style="--i:1"><img src="https://images.unsplash.com/photo-1540162621994-4b096ef8523b?w=700&h=700&fit=crop&q=75&auto=format" width="700" height="700" loading="lazy" alt="Petit bol de kimchi au sésame et baguettes"><figcaption>Kimchi · 4 €</figcaption></figure>
+    <figure class="rv" style="--i:2"><img src="https://images.unsplash.com/photo-1635363638580-c2809d049eee?w=700&h=700&fit=crop&q=75&auto=format" width="700" height="700" loading="lazy" alt="Gâteaux de riz sautés dans un bol noir, oignon vert"><figcaption>Tteokbokki · P6</figcaption></figure>
+    <figure class="rv" style="--i:3"><img src="https://images.unsplash.com/photo-1745883949374-baeba0ed57c3?w=700&h=700&fit=crop&q=75&auto=format" width="700" height="700" loading="lazy" alt="Bubble tea au lait avec perles de tapioca, tenu à la main"><figcaption>Bubble tea · dès 5,50 €</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="infos" aria-labelledby="h-infos">
+  <div class="head">
+    <h2 id="h-infos" class="rv">Horaires et accès</h2>
+    <p class="lead rv" style="--i:1">59 rue Claude Bernard, 75005 Paris. Sur place, à emporter, ou en click &amp; collect.</p>
+  </div>
+  <div class="infos">
+    <div class="hours rv">
+      <table aria-label="Horaires d’ouverture">
+        <tbody id="hrs"></tbody>
+      </table>
+    </div>
+    <div class="map rv" style="--i:1"><iframe title="Plan : Bibim Bao, 59 rue Claude Bernard" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Bibim+Bao,+59+rue+Claude+Bernard,+75005+Paris&output=embed"></iframe></div>
+  </div>
+  <div class="contact">
+    <a class="rv" href="tel:+33955356817"><span>Téléphone</span><b class="num">09 55 35 68 17</b></a>
+    <a class="rv" style="--i:1" href="mailto:bibimbao59@gmail.com?subject=Demande%20pour%20Bibim%20Bao"><span>E-mail</span><b>bibimbao59@gmail.com</b></a>
+    <a class="rv" style="--i:2" href="https://www.instagram.com/bibim_bao/" target="_blank" rel="noopener"><span>Instagram</span><b>@bibim_bao</b></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p class="fname">Bibim Bao</p>
+  <div class="fcols">
+    <p>59 rue Claude Bernard<br>75005 Paris</p>
+    <p>Du lundi au vendredi<br>11 h – 14 h 30 · 18 h – 22 h</p>
+    <p><a href="tel:+33955356817">09 55 35 68 17</a><br><a href="https://www.instagram.com/bibim_bao/" target="_blank" rel="noopener">Instagram @bibim_bao</a></p>
+  </div>
+  <p class="credits">Démo réalisée par Raul Hatos — site non officiel. Photos d’illustration : Unsplash, non contractuelles.</p>
+</footer>
+
+
+<script>
+const eur=n=>(Number.isInteger(n)?n:n.toFixed(2).replace('.',','))+' €';
+// Carte relevée sur la commande en ligne du restaurant (app.eatself.com/3289)
+const CARTE={
+ entrees:{t:'Entrées',img:['photo-1624153064067-566cae78993d','Ailes de poulet frit laquées'],g:[[null,[
+  ['E1','Raviolis grillés au poulet','4 pièces',6],['E2','Raviolis grillés aux légumes','4 pièces',6],['E3','Nems au poulet','4 pièces',6.5],['E4','Nems aux légumes','4 pièces',6.5],['E5','Nems au porc','4 pièces',6.5],['E6','Tempuras de crevettes','4 pièces',8],['E7','Tteokbokki','gâteaux de riz',12],['E9','Crêpe coréenne aux légumes','',10],['E8','Crêpe coréenne au kimchi','',11],['E10','Crêpe coréenne aux fruits de mer','',13],['E11','Poulet frit','6 pièces · 12 pièces : 18 €',10],['E12','Ailes de poulet','6 pièces · 12 pièces : 18 €',10],['E13','Vermicelles sautées aux légumes','',12],['','Kimchi','',4]]]]},
+ bibimbap:{t:'Bibimbap',img:['photo-1741295017668-c8132acd6fc0','Bibimbap en bol de pierre'],g:[[null,[
+  ['B1','Bibimbap légumes','',12],['B2','Bibimbap tofu','',14],['B3','Bibimbap bœuf','',15],['B4','Bibimbap poulet','',15],['B5','Bibimbap porc','',15],['B6','Bibimbap saumon','',16],['','Supplément œuf','',1]]]]},
+ bao:{t:'Bao',img:['photo-1781785164696-0154e4dd70c1','Pain bao vapeur garni'],g:[[null,[
+  ['A1','Bao bœuf','',6],['A2','Bao poulet','',6],['A3','Bao porc','',6],['A4','Bao kimchi','',6],['A5','Bao tofu','',6],['A6','Bao tempura','',6]]]]},
+ plats:{t:'Plats',img:['photo-1752826892253-d89531507b1d','Dakgalbi en poêle'],g:[
+  ['Riz et nouilles',[['P1','Riz sauté aux légumes','',10],['P2','Riz sauté aux crevettes','',12],['P3','Riz sauté au bœuf','',12],['P13','Riz sauté kimchi fromage','',15],['P14','Riz au bœuf','',16],['P15','Riz au poulet','',15],['P16','Riz au poulet pimenté','',15],['P9','Nouilles sautées aux légumes','',12],['P10','Nouilles sautées au poulet','',14],['P11','Nouilles sautées au bœuf','',14],['P12','Nouilles sautées aux crevettes','',14],['','Riz nature','',3]]],
+  ['Sautés et ragoûts',[['P4','Seiches sautées, sauce piquante','',16],['P5','Kimchi sauté au porc','',16],['P6','Tteokbokki piquant','gâteaux de riz',16],['P7','Ragoût de bœuf','',18],['P8','Ragoût de kimchi au porc','',16],['P20','Bulgogi de bœuf','',18]]],
+  ['Barbecue et à partager',[['P18','Barbecue coréen au bœuf','',24],['P19','Barbecue coréen au poulet','',22],['F3','Dakgalbi BBQ poulet','à partager',32]]]]},
+ desserts:{t:'Desserts',img:['photo-1595275320712-24b6f2b0a984','Bingsu à la mangue'],g:[
+  ['Bingsu, glace pilée',[['','Bingsu mangue fraîche','',10.5],['','Bingsu haricots rouges','',10.5],['','Bingsu litchi','',10.5],['','Bingsu matcha','',10.5]]],
+  ['Et aussi',[['','Perles de coco','2 pièces',5.5],['','Mochi','',6],['','Glace','2 boules',5],['','Mangue fraîche','',12],['','Litchi','',4.5],['','Café gourmand','',8.5],['','Thé gourmand','',8.5]]]]},
+ boissons:{t:'Bubble tea et boissons',img:['photo-1745883949374-baeba0ed57c3','Bubble tea au lait'],g:[
+  ['Bubble tea',[['','Thé au lait','',5.5],['','Thé frappé','',6],['','Thé fruité','',6.5]]],
+  ['Thés et cafés',[['','Thé vert, noir ou jasmin','',3.5],['','Thé glacé','',4],['','Thé au gingembre','',4],['','Café glacé','',7],['','Boisson au ginseng','',8]]],
+  ['Jus et softs',[['','Jus de pomme, mangue, orange, litchi ou raisin','',4],['','Aloe vera','',5],['','Lait de coco','',4],['','Coca-Cola, Coca zéro, Coca cherry','',3],['','Fuze tea, Fanta, Sprite','',3],['','Evian ou San Pellegrino','50 cl · 1 L : 5 €',3]]]]},
+ alcools:{t:'Soju, makgeolli, vins',img:['photo-1540162621994-4b096ef8523b','Kimchi au sésame'],g:[
+  ['Coréens',[['','Soju','fraise, prune, pêche, pomme, myrtille, citron ou fresh',13],['','Makgeolli','original, raisin ou banane',13],['','Bière Cass','',6],['','Bière Asahi','',5]]],
+  ['Vins',[['','Terres nobles','75 cl',18],['','Saveur du Rhône','75 cl',17],['','Domaine du Moulin Camus','75 cl',17],['','Château Saint-Esprit','37,5 cl',18],['','Brouilly médaillé','37,5 cl · 75 cl : 34 €',20],['','Saint-Émilion grand cru','75 cl',33],['','Sancerre, domaine Girault','75 cl',39],['','Pomerol','75 cl',65]]],
+  ['Champagne',[['','Ruinart brut','75 cl',135],['','Ruinart blanc de blancs','75 cl',240]]]]}
+};
+
+const tabs=document.getElementById('tabs'),panels=document.getElementById('panels');
+const keys=Object.keys(CARTE);
+keys.forEach((k,i)=>{
+  const c=CARTE[k];
+  const b=document.createElement('button');b.className='tab';b.role='tab';b.id='t-'+k;b.textContent=c.t;
+  b.setAttribute('aria-controls','p-'+k);b.setAttribute('aria-selected',i===1);b.tabIndex=i===1?0:-1;tabs.append(b);
+  const p=document.createElement('div');p.className='panel';p.id='p-'+k;p.role='tabpanel';p.setAttribute('aria-labelledby','t-'+k);p.hidden=i!==1;
+  p.innerHTML=`<div class="ph"><img src="https://images.unsplash.com/${c.img[0]}?w=900&h=900&fit=crop&q=75&auto=format" width="900" height="900" loading="lazy" alt="${c.img[1]}"></div><div class="list">`+
+   c.g.map(([h,rows])=>(h?`<h4>${h}</h4>`:'')+rows.map(r=>`<div class="row"><span class="c">${r[0]}</span><span class="n">${r[1]}${r[2]?`<small>${r[2]}</small>`:''}</span><span class="p num">${eur(r[3])}</span></div>`).join('')).join('')+'</div>';
+  panels.append(p);
+});
+function sel(k,focus){keys.forEach(x=>{const on=x===k;const t=document.getElementById('t-'+x);t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById('p-'+x).hidden=!on;if(on&&focus)t.focus()})}
+tabs.addEventListener('click',e=>{const t=e.target.closest('.tab');if(t)sel(t.id.slice(2))});
+tabs.addEventListener('keydown',e=>{const i=keys.indexOf(document.activeElement.id.slice(2));if(e.key==='ArrowRight')sel(keys[(i+1)%keys.length],1);if(e.key==='ArrowLeft')sel(keys[(i-1+keys.length)%keys.length],1)});
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>sel(a.dataset.go)));
+
+// Formules du midi (composition relevée sur la commande en ligne)
+const E=[['E1','Raviolis grillés au poulet (4)'],['E2','Raviolis grillés aux légumes (4)'],['E3','Nems au poulet (4)'],['E4','Nems aux légumes (4)'],['E5','Nems au porc (4)']];
+const P=[['B1','Bibimbap légumes'],['B2','Bibimbap tofu'],['B3','Bibimbap bœuf'],['B4','Bibimbap poulet'],['B5','Bibimbap porc'],['B6','Bibimbap saumon'],['P1','Riz sauté aux légumes'],['P2','Riz sauté aux crevettes'],['P3','Riz sauté au bœuf'],['P9','Nouilles sautées aux légumes']];
+const D=[['','Perles de coco (2)'],['','Litchi'],['','Mochi']];
+const A=[['A1','Bao bœuf'],['A2','Bao poulet'],['A3','Bao porc'],['A4','Bao kimchi'],['A5','Bao tofu'],['A6','Bao tempura']];
+const ES=[['','Nems aux légumes (2)'],['','Raviolis au poulet (2)']];
+const F=[
+ {n:'Menu étudiant',d:'Entrée et plat',p:12,c:[['Entrée',ES],['Plat',P,{B6:2}]]},
+ {n:'Entrée + plat',d:'Le classique',p:16,c:[['Entrée',E],['Plat',P]]},
+ {n:'Plat + dessert',d:'Sans entrée',p:16,c:[['Plat',P],['Dessert',D]]},
+ {n:'Entrée + 2 bao',d:'Deux bao au choix',p:16,c:[['Entrée',E],['Premier bao',A],['Second bao',A]]},
+ {n:'2 bao + dessert',d:'Deux bao au choix',p:16,c:[['Premier bao',A],['Second bao',A],['Dessert',D]]},
+ {n:'Complet',d:'Entrée, plat, dessert',p:20,c:[['Entrée',E],['Plat',P],['Dessert',D]]},
+ {n:'Complet bao',d:'Entrée, 2 bao, dessert',p:20,c:[['Entrée',E],['Premier bao',A],['Second bao',A],['Dessert',D]]}
+];
+const forms=document.getElementById('forms'),picks=document.getElementById('picks');
+F.forEach((f,i)=>{const o=document.createElement('div');o.className='opt';o.innerHTML=`<input type="radio" name="f" id="f${i}" value="${i}"${i?'':' checked'}><label for="f${i}"><b>${f.n}</b><span>${f.d}</span><span class="p num">${eur(f.p)}</span></label>`;forms.append(o)});
+function drawPicks(){
+  const f=F[+forms.querySelector('input:checked').value];
+  picks.innerHTML=f.c.map(([lab,opts,sup],j)=>`<label>${lab}<select data-j="${j}">${opts.map(([c,n],k)=>`<option value="${k}"${lab==='Second bao'&&k===1?' selected':''}>${c?c+' · ':''}${n}${sup&&sup[c]?` (+${sup[c]} €)`:''}</option>`).join('')}</select></label>`).join('');
+  calc();
+}
+function calc(){
+  const f=F[+forms.querySelector('input:checked').value];let tot=f.p;
+  const li=[...picks.querySelectorAll('select')].map(s=>{const [lab,opts,sup]=f.c[s.dataset.j];const [c,n]=opts[s.value];const x=sup&&sup[c]||0;tot+=x;return `<li><span class="c">${c}</span><span>${n}</span><span class="x">${x?'+'+eur(x):''}</span></li>`});
+  document.getElementById('tName').textContent=f.n;
+  document.getElementById('tList').innerHTML=li.join('');
+  document.getElementById('tTotal').textContent=eur(tot);
+}
+forms.addEventListener('change',drawPicks);picks.addEventListener('change',calc);drawPicks();
+
+// Horaires (commande en ligne du restaurant) + statut en direct
+const H=[['Lundi',1],['Mardi',2],['Mercredi',3],['Jeudi',4],['Vendredi',5],['Samedi',6],['Dimanche',0]];
+const now=new Date(),wd=now.getDay(),m=now.getHours()*60+now.getMinutes();
+document.getElementById('hrs').innerHTML=H.map(([n,d])=>`<tr${d===wd?' class="today"':''}><td>${n}</td><td class="num${d%6===0?' off':''}">${d%6===0?'Fermé':'11 h – 14 h 30 · 18 h – 22 h'}</td></tr>`).join('');
+const S=[[660,870],[1080,1320]],open=wd%6!==0&&S.some(([a,b])=>m>=a&&m<b);
+const fmt=x=>Math.floor(x/60)+' h'+(x%60?' '+String(x%60).padStart(2,'0'):'');
+let txt;
+if(open){const s=S.find(([a,b])=>m>=a&&m<b);txt='Ouvert, jusqu’à '+fmt(s[1]);document.getElementById('dot').classList.add('on')}
+else if(wd%6!==0&&m<660)txt='Fermé, ouvre à 11 h';
+else if(wd%6!==0&&m>=870&&m<1080)txt='Fermé, réouvre à 18 h';
+else txt='Fermé, ouvre '+((wd===5||wd===6)?'lundi':'demain')+' à 11 h';
+document.getElementById('statusTxt').textContent=txt;
+
+// apparitions
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+addEventListener('load',()=>document.body.classList.add('loaded'));
+setTimeout(()=>document.body.classList.add('loaded'),300);
+</script>
+</body>
+</html>
