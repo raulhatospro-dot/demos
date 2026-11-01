@@ -5,460 +5,621 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Le Comptoir du Poulet · Bar à bières et poulet grillé, Paris 20e</title>
-<meta name="description" content="Le Comptoir du Poulet, 3 rue de Lagny, Paris 20e : plus de 100 bières en bouteille, 10 à la pression, poulet grillé à partager, happy hour du lundi au samedi de 17 h à 21 h.">
+<meta name="description" content="Le Comptoir du Poulet, 3 rue de Lagny, Paris 20e : plus de 100 bières en bouteille, 10 à la pression, poulet grillé à partager. Happy hour du lundi au samedi, 17 h – 21 h.">
+<meta property="og:title" content="Le Comptoir du Poulet · rue de Lagny, Paris 20e">
+<meta property="og:description" content="Plus de 100 bières en bouteille, 10 à la pression et du poulet grillé à partager, à deux pas de Nation.">
+<meta property="og:image" content="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397113.jpg">
+<meta name="theme-color" content="#f6c514">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6c514'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='19' fill='%231d3c9b' text-anchor='middle'%3ECP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400..800&family=Sofia+Sans+Extra+Condensed:wght@800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://privateaser-media.s3.eu-west-1.amazonaws.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#efe9dc; --surface:#e4dccb; --ink:#0a2c86; --soft:#33508f; --amber:#f2a30f; --amber-ink:#2a1b00; --paper:#fbf8f1;
-  --f:"Sofia Sans",system-ui,sans-serif; --fd:"Sofia Sans Extra Condensed","Sofia Sans",sans-serif;
-  --m:clamp(16px,3vw,48px);
-  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem); --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --s-head:clamp(2.6rem,1.6rem + 4.4vw,5.6rem); --s-small:.9375rem;
-  --ease:cubic-bezier(.16,1,.3,1);
+  --ground:#efeeea; --step:#e3e2dc; --ink:#14214f; --blue:#1d3c9b; --blue-deep:#162f7c;
+  --yellow:#f6c514; --yellow-soft:#fbe48a; --slate:#1f2725; --chalk:#f4f1e8; --chalk-soft:#c9cdc6;
+  --soft:#3b4670;
+  --m:clamp(16px,3.2vw,48px); --gap:clamp(12px,1.4vw,20px);
+  --s-xl:clamp(2.6rem,1.4rem + 4.2vw,4.9rem);
+  --s-l:clamp(2rem,1.2rem + 2.6vw,3.4rem);
+  --s-m:1.5rem;
+  --s-b:clamp(1.0625rem,1rem + .2vw,1.1875rem);
+  --s-s:.9375rem;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
-body{font-family:var(--f);font-size:var(--s-body);font-weight:450;line-height:1.5;color:var(--ink);background:var(--bg);overflow-x:hidden}
-::selection{background:var(--amber);color:var(--amber-ink)}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:"Archivo",system-ui,sans-serif;font-variation-settings:"wdth" 100;font-size:var(--s-b);line-height:1.5;color:var(--ink);background:var(--ground);overflow-x:hidden}
+::selection{background:var(--yellow);color:var(--ink)}
 a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
-:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
 img{display:block;max-width:100%;height:auto}
 button,input,select{font:inherit;color:inherit}
-h1,h2,h3{font-family:var(--fd);font-weight:900;line-height:.9;letter-spacing:-.01em;text-wrap:balance}
-h2{font-size:var(--s-head)}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
-.cap{clip-path:url(#cap)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.on-dark :focus-visible,.on-blue :focus-visible{outline-color:var(--yellow)}
+h1,h2,h3{font-stretch:78%;font-variation-settings:"wdth" 78;font-weight:850;line-height:.98;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:var(--s-l)}
+p,li{text-wrap:pretty}
 .num{font-variant-numeric:tabular-nums}
+.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
+.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--blue);color:#fff;padding:12px 16px;font-weight:700}
+.skip:focus{top:12px}
+button,a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* démo */
-.demo{background:var(--ink);color:var(--paper);font-size:.875rem;text-align:center;padding:7px var(--m)}
+/* bandeau démo */
+.demo{background:var(--ink);color:#fff;text-align:center;font-size:var(--s-s);padding:7px var(--m)}
 
-/* boutons : une forme, la pilule */
-.btn{display:inline-flex;align-items:center;gap:.6em;min-height:52px;padding:0 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background .2s}
-.btn:hover{background:#06216a;transform:translateY(-2px)}
-.btn:active{transform:translateY(0) scale(.97)}
-.btn.alt{background:var(--paper);color:var(--ink)}
-.btn.alt:hover{background:#fff}
+/* l'enseigne : le motif de la page, repris de la devanture */
+.sign{display:block;background:var(--yellow);color:var(--blue);font-weight:850;font-variation-settings:"wdth" 112;text-transform:uppercase;letter-spacing:0;line-height:1;padding:.55em .7em .5em;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shop{margin:0;display:flex;flex-direction:column;background:var(--step);min-width:0}
+.shop img{width:100%;height:100%;object-fit:cover;flex:1;min-height:0;outline:1px solid rgba(0,0,0,.08);outline-offset:-1px}
+
+/* en-tête = l'enseigne */
+header.top{position:sticky;top:0;z-index:20;background:var(--yellow);color:var(--blue)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:68px}
+.brand{font-weight:900;font-variation-settings:"wdth" 118;text-transform:uppercase;font-size:clamp(1.05rem,.9rem + .6vw,1.45rem);text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.top nav{margin-left:auto;display:flex;gap:clamp(14px,2vw,30px);font-weight:650}
+.top nav a{text-decoration:none;padding:10px 0;position:relative}
+.top nav a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.top nav a:hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;font-weight:750;font-size:1rem;text-decoration:none;border:0;cursor:pointer;background:var(--blue);color:#fff;transition-property:transform,background-color,color;transition-duration:.18s;transition-timing-function:ease-out;white-space:nowrap}
+.btn:hover{background:var(--blue-deep)}
+.btn:active{transform:scale(.97)}
 .btn svg{width:20px;height:20px;flex:none}
-
-/* nav */
-.nav{position:sticky;top:0;z-index:20;background:var(--bg)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
-.mark{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-weight:900;font-size:1.6rem;line-height:1;text-decoration:none;letter-spacing:-.005em}
-.mark svg{width:30px;height:30px;color:var(--ink)}
-.nav ul{display:flex;gap:28px;list-style:none;font-weight:600}
-.nav ul a{text-decoration:none}
-.nav ul a:hover{text-decoration:underline}
-.nav .btn{min-height:44px;padding:0 20px}
-@media (max-width:860px){.nav ul{display:none}.mark{font-size:1.3rem}}
+.btn.alt{background:var(--step);color:var(--ink)}
+.btn.alt:hover{background:#dbd6ca}
+.btn.yel{background:var(--yellow);color:var(--blue)}
+.btn.yel:hover{background:#ffd73a}
+.top .btn{min-height:44px;padding:0 18px}
 
 /* hero */
-.hero{position:relative;overflow:hidden;min-height:calc(100svh - 104px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center}
-.hero-txt{padding:48px 0 64px var(--m);position:relative;z-index:2}
-.hero h1{font-size:clamp(4.2rem,1rem + 8.4vw,10.5rem);line-height:.82;letter-spacing:-.015em}
-.hero h1 span{display:block}
-.hero .lead{font-size:var(--s-lead);line-height:1.35;max-width:30ch;margin-top:36px;font-weight:500}
-.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.hero-cap{position:relative;align-self:stretch}
-.hero-cap .big{position:absolute;top:50%;left:4%;width:min(118vh,64vw);aspect-ratio:1;transform:translateY(-50%);background:var(--ink)}
-.hero-cap .big img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.02)}
-.live{position:absolute;z-index:3;left:-2%;bottom:9%;width:clamp(190px,17vw,250px);aspect-ratio:1;background:var(--amber);color:var(--amber-ink);display:grid;place-content:center;text-align:center;padding:34px;animation:spin 60s linear infinite}
-.live>div{animation:spin 60s linear infinite reverse}
-.live b{display:block;font-family:var(--fd);font-weight:900;font-size:clamp(1.9rem,1.2rem + 1.4vw,2.6rem);line-height:.92}
-.live small{display:block;font-size:1rem;font-weight:600;margin-top:8px;line-height:1.25}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (max-width:860px){
-  .hero{grid-template-columns:1fr;min-height:0}
-  .hero-txt{padding:40px var(--m) 0}
-  .hero h1{font-size:clamp(3.6rem,19vw,6rem)}
-  .hero .lead{margin-top:24px}
-  .hero .acts .btn{flex:1 1 100%;justify-content:center}
-  .hero-cap{height:112vw}
-  .hero-cap .big{width:118vw;left:6vw;top:6vw;transform:none}
-  .live{left:var(--m);bottom:auto;top:-2vw;width:44vw}
-}
+.hero{padding-block:clamp(28px,4vw,56px) clamp(56px,7vw,104px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,64px);align-items:center}
+.hero h1{font-size:var(--s-xl);color:var(--blue)}
+.lead{margin-top:22px;font-size:var(--s-m);line-height:1.38;max-width:34ch}
+.tiles{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:28px}
+.tiles li{background:var(--step);padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px}
+.tiles b{font-size:2.125rem;font-weight:850;font-variation-settings:"wdth" 82;line-height:1;color:var(--blue);font-variant-numeric:tabular-nums}
+.tiles span{font-size:var(--s-s);line-height:1.35;color:var(--soft)}
+.tiles li:first-child{background:var(--blue)}
+.tiles li:first-child b{color:var(--yellow)}
+.tiles li:first-child span{color:#fff}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.status{display:flex;align-items:center;gap:10px;margin-top:18px;font-weight:650;font-size:1rem}
+.dot{width:10px;height:10px;border-radius:50%;background:#8a8a8a;flex:none}
+.status.open .dot{background:#1f8a4c;animation:pulse 2.4s ease-in-out infinite}
+.status.hh .dot{background:#d1471f}
+@keyframes pulse{50%{opacity:.35}}
+.shots{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto;gap:var(--gap)}
+.shots .main{grid-column:1/-1}
+.shots .main .frame{position:relative;aspect-ratio:2/1;overflow:hidden}
+.shots .main img{position:absolute;inset:0;height:100%;opacity:0;transition:opacity 1.6s ease}
+.shots .main img.on{opacity:1}
+.pause{position:absolute;right:12px;bottom:12px;width:44px;height:44px;border:0;background:var(--yellow);color:var(--blue);cursor:pointer;display:none;align-items:center;justify-content:center;transition:transform .15s ease-out}
+.js .pause{display:flex}
+.pause:active{transform:scale(.94)}
+.pause svg{width:16px;height:16px}
+.shots .main img:first-child{opacity:1}
+.js .shots .main img:first-child:not(.on){opacity:0}
+.shots .small img{aspect-ratio:3/2}
+.signrow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.signrow .sign{flex:1}
+.signrow small{font-size:var(--s-s);font-weight:650;text-transform:none;font-variation-settings:"wdth" 100;color:var(--blue);white-space:nowrap}
 
-/* bande happy hour */
-.band{background:var(--amber);color:var(--amber-ink);overflow:hidden;padding:22px 0}
-.band .row{display:flex;gap:40px;width:max-content;animation:slide 38s linear infinite;align-items:center}
-.band span{font-family:var(--fd);font-weight:900;font-size:clamp(1.8rem,1.2rem + 2vw,3.2rem);line-height:1;white-space:nowrap}
-.band svg{width:34px;height:34px;color:var(--ink);flex:none}
-@keyframes slide{to{transform:translateX(-50%)}}
+/* bandeau infos */
+.facts{background:var(--step);color:var(--ink)}
+.facts ul{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-block:22px}
+.facts b{display:block;color:var(--blue);font-weight:750}
+.facts span{font-size:var(--s-s);color:var(--soft)}
 
-section{padding-block:clamp(96px,12vw,200px)}
+section{padding-block:clamp(88px,10vw,168px)}
+.intro{max-width:46ch;margin-top:18px}
 
-/* pressions : index avec aperçu */
-.press{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
-.press-intro p{max-width:40ch;margin-top:28px}
-.taps{list-style:none;margin-top:48px}
-.taps li a{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:18px 0;text-decoration:none;transition:opacity .24s,transform .24s var(--ease)}
-.taps strong{font-family:var(--fd);font-weight:900;font-size:clamp(2rem,1.4rem + 1.8vw,3.2rem);line-height:.95}
-.taps em{font-style:normal;color:var(--soft);font-size:var(--s-small);align-self:center;text-align:right;max-width:24ch}
-.taps:hover li a{opacity:.45}
-.taps li a:hover,.taps li a:focus-visible{opacity:1;transform:translateX(10px)}
-.taps .inl{display:none}
-.preview{position:sticky;top:110px}
-.preview .frame{position:relative;aspect-ratio:1;background:var(--ink)}
-.preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .24s}
-.preview img.on{opacity:1}
-.drinks{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
-.drinks div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;font-weight:600}
-.drinks div:nth-child(odd){}
-.drinks dd{font-variant-numeric:tabular-nums}
-.note{font-size:var(--s-small);color:var(--soft);margin-top:16px;max-width:52ch}
-@media (max-width:860px){
-  .press{grid-template-columns:1fr}
-  .preview{display:none}
-  .taps li a{grid-template-columns:64px 1fr;align-items:center}
-  .taps .inl{display:block;width:64px;height:64px;object-fit:cover;grid-row:span 2}
-  .taps em{text-align:left;grid-column:2}
-  .drinks{grid-template-columns:1fr}
-}
+/* bières */
+.beers{background:var(--blue);color:#fff}
+.beers h2{color:var(--yellow)}
+.beers .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center}
+.beers .intro{color:#e8ecf8}
+.taps{list-style:none;margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:20px 28px}
+.taps li b{display:block;font-size:var(--s-b);font-weight:800;font-variation-settings:"wdth" 88;line-height:1.15}
+.taps li span{font-size:var(--s-s);color:#cdd6f2}
+.drinks{background:var(--blue-deep);padding:24px 26px;grid-column:1/-1}
+.drinks h3{font-size:1.5rem;color:var(--yellow)}
+.drinks dl{margin-top:14px;display:grid;grid-template-columns:1fr auto;gap:10px 20px}
+.drinks dt{font-weight:600}
+.drinks dd{font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.drinks p{margin-top:14px;font-size:var(--s-s);color:#cdd6f2}
+.wall{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap)}
+.wall .big{grid-column:1/-1}
+.wall .big img{aspect-ratio:2/1}
+.wall .small img{aspect-ratio:3/2}
 
-/* cuisine */
-.kitchen{background:var(--paper)}
-.k-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
-.k-head p{max-width:38ch;font-weight:500}
-.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 64px;margin-top:72px;list-style:none}
-.menu li{display:grid;grid-template-columns:88px 1fr;gap:22px;align-items:start}
-.menu .ph{width:88px;height:88px;object-fit:cover}
-.menu .dot{width:88px;height:88px}
-.menu h3{font-family:var(--f);font-weight:800;font-size:1.2rem;line-height:1.25;display:flex;justify-content:space-between;gap:16px;letter-spacing:0}
-.menu h3 span{white-space:nowrap;font-variant-numeric:tabular-nums}
-.menu p{font-size:1rem;color:var(--soft);margin-top:6px;max-width:40ch}
-.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center;margin-top:clamp(80px,10vw,150px)}
-.feature .cap{aspect-ratio:1;width:100%;object-fit:cover}
-.feature h3{font-size:clamp(2.6rem,1.6rem + 3vw,4.6rem)}
-.feature p{margin-top:24px;max-width:38ch}
-.feature .price{display:block;font-family:var(--fd);font-weight:900;font-size:clamp(3rem,2rem + 3vw,5rem);line-height:1;margin-top:28px;color:var(--ink)}
-@media (max-width:860px){
-  .menu{grid-template-columns:1fr;gap:28px}
-  .menu li{grid-template-columns:64px 1fr;gap:16px}
-  .menu .ph,.menu .dot{width:64px;height:64px}
-  .feature{grid-template-columns:1fr}
-}
+/* carte + ardoise */
+.menu .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr) minmax(0,3.4fr);gap:clamp(24px,3.4vw,56px);align-items:start}
+.menu h2{color:var(--blue)}
+.menu .pics{display:grid;gap:var(--gap);margin-top:32px}
+.menu .pics img{aspect-ratio:3/2}
+.items{list-style:none;display:grid;gap:4px}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;padding:12px 0;transition:background-color .2s ease-out}
+.item h3{font-size:var(--s-b);font-weight:750;font-stretch:100%;font-variation-settings:"wdth" 96;letter-spacing:0;line-height:1.2}
+.item p{grid-column:1;font-size:var(--s-s);color:var(--soft)}
+.item .price{grid-column:2;grid-row:1;font-weight:850;font-variant-numeric:tabular-nums;color:var(--blue);text-align:right}
+.stepper{grid-column:2;grid-row:2;display:none;align-items:center;gap:2px;justify-self:end}
+.js .stepper{display:flex}
+.stepper button{width:44px;height:44px;border:0;background:var(--ground);color:var(--blue);font-size:1.4rem;font-weight:800;cursor:pointer;transition:background-color .15s ease-out,transform .15s ease-out}
+.stepper button:hover{background:var(--yellow)}
+.stepper button:active{transform:scale(.94)}
+.stepper output{min-width:28px;text-align:center;font-weight:800;font-variant-numeric:tabular-nums}
+.item.has{background:var(--yellow-soft);padding-inline:14px}
+.group-title{font-size:1.5rem;color:var(--blue);margin:34px 0 12px}
+.group-title:first-child{margin-top:0}
+.note{margin-top:16px;font-size:var(--s-s);color:var(--soft)}
+.slate{position:sticky;top:96px;background:var(--slate);color:var(--chalk);padding:26px 24px 24px}
+.slate h3{font-size:1.5rem;color:var(--yellow)}
+.slate p{color:var(--chalk-soft);font-size:var(--s-s);margin-top:8px}
+.slate ul{list-style:none;margin-top:18px;display:grid;gap:6px;min-height:28px;font-variant-numeric:tabular-nums}
+.slate li{display:flex;justify-content:space-between;gap:12px;font-size:1rem}
+.slate .empty{color:var(--chalk-soft)}
+.total{margin-top:18px;padding:12px 14px;background:#2a3330;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.total b{font-size:2.125rem;font-weight:850;font-variation-settings:"wdth" 82;color:var(--yellow);line-height:1;font-variant-numeric:tabular-nums}
+.per{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;font-size:1rem}
+.per .stepper{display:flex}
+.per .stepper button{background:#2e3835;color:var(--chalk)}
+.per .stepper button:hover{background:var(--yellow);color:var(--blue)}
+.share{margin-top:10px;font-size:1rem;color:var(--chalk)}
+.slate .btn{width:100%;margin-top:18px}
+.slate .reset{background:none;border:0;color:var(--chalk-soft);text-decoration:underline;cursor:pointer;margin-top:12px;font-size:var(--s-s);min-height:44px}
+.nojs-only{display:block}
+.js .nojs-only{display:none}
+.js-only{display:none}
+.js .js-only{display:block}
 
 /* groupes */
-.groups{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:stretch}
-.groups .pic{aspect-ratio:1;width:100%;object-fit:cover}
-.g-side{display:flex;flex-direction:column;justify-content:space-between;gap:40px}
-.tabs{display:flex;gap:26px;flex-wrap:wrap}
-.tabs button{background:none;border:0;font-weight:700;font-size:1.125rem;color:var(--soft);cursor:pointer;padding:6px 0;border-bottom:3px solid transparent}
-.tabs button[aria-selected=true]{color:var(--ink);border-color:var(--amber)}
-.tabs button:hover{color:var(--ink)}
-.panel h3{font-size:clamp(2.4rem,1.6rem + 2.6vw,4rem)}
-.panel p{margin-top:24px;max-width:40ch}
-.facts{list-style:none;margin-top:24px;display:grid;gap:10px}
-.facts li{display:flex;gap:12px;align-items:center;font-weight:600}
-.facts svg{width:18px;height:18px;flex:none;color:var(--amber)}
-.cells{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.cells a{display:flex;align-items:center;justify-content:center;min-height:72px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .2s var(--ease)}
-.cells a:hover{transform:translateY(-2px)}
-.cells a:first-child{background:var(--ink);color:var(--paper)}
-.cells a:last-child{background:var(--surface)}
-@media (max-width:860px){.groups{grid-template-columns:1fr}.cells{grid-template-columns:1fr}.cells a{min-height:60px}}
+.groups{background:var(--yellow);color:var(--ink)}
+.groups h2{color:var(--blue)}
+.groups .head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:end}
+.groups .head p{max-width:52ch}
+.specimens{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin-top:48px}
+.specimens img{aspect-ratio:4/5;object-fit:cover;width:100%;outline:1px solid rgba(0,0,0,.1);outline-offset:-1px}
+.specimens b{display:block;margin-top:14px;font-size:1.5rem;font-weight:800;font-variation-settings:"wdth" 90;color:var(--blue)}
+.specimens span{font-size:1rem}
+.coupon{margin-top:clamp(56px,7vw,104px);background:var(--blue);color:#fff;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);position:relative}
+.coupon::before,.coupon::after{content:"";position:absolute;left:calc(41.66% - 16px);width:32px;height:32px;border-radius:50%;background:var(--yellow)}
+.coupon::before{top:-16px}.coupon::after{bottom:-16px}
+.coupon .left{padding:clamp(28px,3.4vw,52px);border-right:5px dotted var(--yellow);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.coupon h3{font-size:var(--s-l);color:var(--yellow);text-transform:uppercase;font-variation-settings:"wdth" 80}
+.coupon .left p{color:#e3e8f7}
+.coupon .left a{font-weight:750;color:#fff}
+.coupon form{padding:clamp(28px,3.4vw,52px);display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:var(--s-s);font-weight:650;color:#e3e8f7}
+.field input,.field select{height:52px;border:2px solid transparent;background:#2c4aa8;color:#fff;padding:0 14px;font-size:1rem;border-radius:0;appearance:none;-webkit-appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23f6c514' stroke-width='2.4' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.field input:focus,.field select:focus{border-color:var(--yellow);outline:none}
+.field input[aria-invalid=true]{border-color:#ff8f6b}
+.coupon form .btn{grid-column:1/-1;min-height:56px}
+.form-msg{grid-column:1/-1;min-height:1.4em;font-size:var(--s-s);color:#ffd2c2}
 
-/* horaires */
-.inset{margin-inline:clamp(10px,1.4vw,20px);background:var(--ink);color:var(--paper);border-radius:40px;overflow:hidden;position:relative;padding:clamp(40px,5vw,72px) clamp(24px,4vw,64px) 0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px)}
-.inset h2{color:var(--paper)}
-.status{display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:var(--amber);color:var(--amber-ink);padding:10px 20px;border-radius:999px;font-weight:800}
-.status i{width:10px;height:10px;border-radius:50%;background:currentColor}
-.hours{margin-top:40px;font-size:var(--s-lead);max-width:520px}
-.hours div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;font-weight:600}
-.hours div.today{color:var(--amber)}
-.hours dd{font-variant-numeric:tabular-nums}
-.inset .bar{width:min(100%,560px);aspect-ratio:1;object-fit:cover;margin-top:48px;margin-bottom:-18%}
-.access h3{font-family:var(--f);font-size:1.375rem;font-weight:800;line-height:1.2;letter-spacing:0;color:var(--paper)}
-.access p{margin-top:10px;max-width:36ch}
-.access>div+div{margin-top:40px}
-.access .btn{margin-top:24px}
-@media (max-width:860px){.inset{grid-template-columns:1fr;border-radius:28px}.inset .bar{margin:8px auto -22%}}
+/* horaires & accès */
+.visit .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:start}
+.visit h2{color:var(--blue)}
+.hours{margin-top:32px;border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.hours th,.hours td{text-align:left;padding:13px 16px;font-size:1rem}
+.hours th{font-weight:650}
+.hours td{text-align:right;font-weight:700}
+.hours tr:nth-child(odd){background:var(--step)}
+.hours tr.today{background:var(--yellow);color:var(--blue)}
+.hours tr.today th::after{content:" · aujourd’hui";font-weight:500}
+.hh{margin-top:18px;background:var(--blue);color:#fff;padding:16px 18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hh b{color:var(--yellow)}
+.access{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap)}
+.access .shop{grid-column:1/-1}
+.access .shop img{aspect-ratio:2/1}
+.block{background:var(--step);padding:22px 22px 24px}
+.block h3{font-size:1.5rem;color:var(--blue);margin-bottom:8px}
+.block p{font-size:1rem}
+.block p+p{margin-top:6px}
+.block .btn{margin-top:16px}
 
-/* coupon */
-.coupon{display:grid;grid-template-columns:46fr 54fr;background:var(--amber);color:var(--amber-ink);border-radius:40px;position:relative;
-  -webkit-mask:radial-gradient(circle 22px at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 22px at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
-  mask:radial-gradient(circle 22px at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 22px at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
-.coupon::after{content:"";position:absolute;left:46%;top:36px;bottom:36px;border-left:5px dotted var(--bg);transform:translateX(-50%)}
-.c-left{padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
-.c-left h2{font-size:clamp(2.6rem,1.6rem + 3vw,4.6rem);color:var(--ink)}
-.c-left p{max-width:34ch;font-weight:500}
-form{padding:clamp(32px,4vw,56px);display:grid;gap:10px}
-.field{display:grid;gap:6px}
-.field label{font-weight:700;font-size:1rem}
-form input,form select{width:100%;height:54px;border:0;border-radius:14px;background:#f8c35a;padding:0 18px;font-size:1rem;color:var(--amber-ink)}
-form input::placeholder{color:#5a4300}
-form .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-form .btn{width:100%;justify-content:center;min-height:58px;margin-top:8px}
-@media (max-width:860px){
-  .coupon{grid-template-columns:1fr;border-radius:28px;
-   -webkit-mask:radial-gradient(circle 20px at 0 var(--cut,300px),#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 20px at 100% var(--cut,300px),#0000 98%,#000) right/51% 100% no-repeat;
-   mask:radial-gradient(circle 20px at 0 var(--cut,300px),#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 20px at 100% var(--cut,300px),#0000 98%,#000) right/51% 100% no-repeat}
-  .coupon::after{left:28px;right:28px;top:var(--cut,300px);bottom:auto;border-left:0;border-top:5px dotted var(--bg);transform:translateY(-50%)}
-  form .two{grid-template-columns:1fr}
-}
+/* pied : l'enseigne en grand */
+footer{background:var(--yellow);color:var(--blue);padding-top:clamp(56px,7vw,96px)}
+.fascia{display:inline-block;font-weight:900;text-transform:uppercase;font-variation-settings:"wdth" 112;font-size:min(5.4vw,7rem);line-height:.85;letter-spacing:-.01em;white-space:nowrap}
+footer{overflow:clip}
+.fcols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:56px;padding-bottom:40px}
+.fcols h3{font-size:var(--s-b);font-variation-settings:"wdth" 100;font-stretch:100%;letter-spacing:0;margin-bottom:8px}
+.fcols ul{list-style:none;display:grid;gap:4px}
+.fcols a{text-decoration:none;font-weight:600;display:inline-block;padding:3px 0}
+.fcols a:hover{text-decoration:underline}
+.fcols p{font-size:1rem}
+.legal{background:var(--blue);color:#e3e8f7;font-size:var(--s-s)}
+.legal .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:16px}
+.legal a{color:#fff}
 
-/* footer */
-footer{background:var(--ink);color:var(--paper);padding:clamp(64px,8vw,120px) 0 28px}
-.caps{display:flex;gap:4px;align-items:flex-end}
-.caps span{flex:1;display:grid;place-items:center;aspect-ratio:1;font-family:var(--fd);font-weight:900;font-size:clamp(1.6rem,4.6vw,5.4rem);line-height:1;color:var(--ink);background:var(--amber)}
-.caps span:nth-child(3n+2){background:var(--paper)}
-.f-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-top:56px;font-size:1rem}
-.f-grid h3{font-family:var(--f);font-size:1rem;font-weight:800;letter-spacing:0;line-height:1.3;margin-bottom:10px;color:var(--amber)}
-.f-grid a{display:block;text-decoration:none;padding:3px 0}
-.f-grid a:hover{text-decoration:underline}
-.f-end{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:56px;font-size:.875rem;color:#c9d3ef}
-@media (max-width:860px){.f-grid{grid-template-columns:1fr 1fr}.caps span{font-size:7vw}}
-
-/* entrées */
-.rv{opacity:1;transform:none}
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0)*75ms)}
+/* entrées en scène */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
 .js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .js .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+  .js .rv{transform:none;transition:opacity .2s linear}
+  .shots .main img{transition:none}
+  .status.open .dot{animation:none}
+  .btn:active,.stepper button:active{transform:none}
+}
+
+/* largeurs */
+@media (min-width:1600px){
+  .tiles{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:1180px){
+  .menu .wrap{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .menu .left{grid-column:1/-1}
+  .menu .pics{grid-template-columns:1fr 1fr}
+  .menu .left .intro{max-width:60ch}
+}
+@media (max-width:1100px){
+  .top nav{display:none}
+  .top .btn{margin-left:auto}
+}
+@media (max-width:980px){
+  .hero .wrap,.beers .wrap,.visit .wrap,.groups .head{grid-template-columns:minmax(0,1fr)}
+  .lead{max-width:40ch}
+  .htext{display:contents}
+  .hero .wrap{row-gap:0}
+  .hero h1{order:1}.lead{order:2}.ctas{order:3}.status{order:4}.shots{order:5;margin-top:28px}.tiles{order:6}
+  .facts ul{grid-template-columns:1fr 1fr}
+  .specimens{grid-template-columns:1fr 1fr}
+  .coupon{grid-template-columns:minmax(0,1fr)}
+  .coupon::before,.coupon::after{display:none}
+  .coupon .left{border-right:0;border-bottom:5px dotted var(--yellow)}
+  .fcols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .menu .wrap{grid-template-columns:minmax(0,1fr)}
+  .slate{position:static}
+}
+@media (max-width:560px){
+  .top .wrap{min-height:58px}
+  .brand{font-size:1rem;font-variation-settings:"wdth" 82;min-width:0}
+  .top .wrap{gap:12px}
+  .top .btn{padding:0 14px}
+  .hero h1{font-size:2.5rem}
+  .lead{font-size:1.25rem}
+  .tiles b{font-size:1.6rem}
+  .ctas .btn{flex:1 1 100%}
+  .taps{grid-template-columns:1fr}
+  .wall .small img{aspect-ratio:1/1}
+  .coupon form{grid-template-columns:1fr}
+  .access{grid-template-columns:minmax(0,1fr)}
+  .shots .small .sign,.menu .pics .sign,.wall .small .sign{font-size:.875rem}
+  .facts ul{gap:16px}
+  .fascia{display:block;white-space:normal;font-size:11vw;font-variation-settings:"wdth" 100}
+  .fascia span{display:block}
+  .item{grid-template-columns:1fr auto}
+  .hours th,.hours td{padding:12px}
 }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs><clipPath id="cap" clipPathUnits="objectBoundingBox"><path d="M1.0000 0.5000 L0.9892 0.5122 L0.9836 0.5241 L0.9792 0.5359 L0.9756 0.5476 L0.9728 0.5592 L0.9707 0.5709 L0.9693 0.5827 L0.9685 0.5947 L0.9685 0.6069 L0.9692 0.6195 L0.9710 0.6325 L0.9778 0.6474 L0.9639 0.6558 L0.9550 0.6656 L0.9473 0.6755 L0.9405 0.6857 L0.9343 0.6960 L0.9289 0.7065 L0.9240 0.7174 L0.9198 0.7286 L0.9161 0.7403 L0.9131 0.7525 L0.9111 0.7655 L0.9131 0.7817 L0.8973 0.7856 L0.8859 0.7923 L0.8757 0.7996 L0.8662 0.8072 L0.8573 0.8153 L0.8489 0.8238 L0.8411 0.8327 L0.8337 0.8422 L0.8268 0.8522 L0.8204 0.8630 L0.8145 0.8749 L0.8117 0.8909 L0.7955 0.8901 L0.7826 0.8931 L0.7707 0.8970 L0.7593 0.9015 L0.7485 0.9066 L0.7380 0.9122 L0.7279 0.9185 L0.7181 0.9253 L0.7085 0.9329 L0.6991 0.9413 L0.6901 0.9509 L0.6827 0.9654 L0.6674 0.9598 L0.6542 0.9590 L0.6416 0.9592 L0.6295 0.9601 L0.6176 0.9618 L0.6059 0.9641 L0.5944 0.9670 L0.5830 0.9707 L0.5716 0.9751 L0.5602 0.9804 L0.5487 0.9869 L0.5374 0.9986 L0.5244 0.9887 L0.5121 0.9840 L0.5000 0.9805 L0.4881 0.9778 L0.4762 0.9759 L0.4644 0.9747 L0.4526 0.9741 L0.4406 0.9743 L0.4284 0.9751 L0.4159 0.9768 L0.4030 0.9796 L0.3887 0.9875 L0.3793 0.9742 L0.3689 0.9661 L0.3584 0.9592 L0.3478 0.9531 L0.3370 0.9478 L0.3261 0.9431 L0.3149 0.9391 L0.3034 0.9357 L0.2915 0.9329 L0.2791 0.9308 L0.2660 0.9297 L0.2500 0.9330 L0.2448 0.9175 L0.2373 0.9067 L0.2293 0.8970 L0.2210 0.8881 L0.2123 0.8798 L0.2032 0.8722 L0.1937 0.8650 L0.1837 0.8584 L0.1732 0.8522 L0.1619 0.8466 L0.1497 0.8417 L0.1335 0.8401 L0.1331 0.8238 L0.1291 0.8112 L0.1243 0.7996 L0.1190 0.7886 L0.1131 0.7782 L0.1067 0.7681 L0.0997 0.7585 L0.0921 0.7492 L0.0839 0.7403 L0.0748 0.7316 L0.0646 0.7232 L0.0495 0.7169 L0.0540 0.7013 L0.0539 0.6881 L0.0527 0.6755 L0.0508 0.6635 L0.0483 0.6518 L0.0451 0.6403 L0.0413 0.6291 L0.0368 0.6179 L0.0315 0.6069 L0.0254 0.5959 L0.0181 0.5850 L0.0056 0.5745 L0.0145 0.5608 L0.0182 0.5482 L0.0208 0.5359 L0.0226 0.5238 L0.0237 0.5119 L0.0240 0.5000 L0.0237 0.4881 L0.0226 0.4762 L0.0208 0.4641 L0.0182 0.4518 L0.0145 0.4392 L0.0056 0.4255 L0.0181 0.4150 L0.0254 0.4041 L0.0315 0.3931 L0.0368 0.3821 L0.0413 0.3709 L0.0451 0.3597 L0.0483 0.3482 L0.0508 0.3365 L0.0527 0.3245 L0.0539 0.3119 L0.0540 0.2987 L0.0495 0.2831 L0.0646 0.2768 L0.0748 0.2684 L0.0839 0.2597 L0.0921 0.2508 L0.0997 0.2415 L0.1067 0.2319 L0.1131 0.2218 L0.1190 0.2114 L0.1243 0.2004 L0.1291 0.1888 L0.1331 0.1762 L0.1335 0.1599 L0.1497 0.1583 L0.1619 0.1534 L0.1732 0.1478 L0.1837 0.1416 L0.1937 0.1350 L0.2032 0.1278 L0.2123 0.1202 L0.2210 0.1119 L0.2293 0.1030 L0.2373 0.0933 L0.2448 0.0825 L0.2500 0.0670 L0.2660 0.0703 L0.2791 0.0692 L0.2915 0.0671 L0.3034 0.0643 L0.3149 0.0609 L0.3261 0.0569 L0.3370 0.0522 L0.3478 0.0469 L0.3584 0.0408 L0.3689 0.0339 L0.3793 0.0258 L0.3887 0.0125 L0.4030 0.0204 L0.4159 0.0232 L0.4284 0.0249 L0.4406 0.0257 L0.4526 0.0259 L0.4644 0.0253 L0.4762 0.0241 L0.4881 0.0222 L0.5000 0.0195 L0.5121 0.0160 L0.5244 0.0113 L0.5374 0.0014 L0.5487 0.0131 L0.5602 0.0196 L0.5716 0.0249 L0.5830 0.0293 L0.5944 0.0330 L0.6059 0.0359 L0.6176 0.0382 L0.6295 0.0399 L0.6416 0.0408 L0.6542 0.0410 L0.6674 0.0402 L0.6827 0.0346 L0.6901 0.0491 L0.6991 0.0587 L0.7085 0.0671 L0.7181 0.0747 L0.7279 0.0815 L0.7380 0.0878 L0.7485 0.0934 L0.7593 0.0985 L0.7707 0.1030 L0.7826 0.1069 L0.7955 0.1099 L0.8117 0.1091 L0.8145 0.1251 L0.8204 0.1370 L0.8268 0.1478 L0.8337 0.1578 L0.8411 0.1673 L0.8489 0.1762 L0.8573 0.1847 L0.8662 0.1928 L0.8757 0.2004 L0.8859 0.2077 L0.8973 0.2144 L0.9131 0.2183 L0.9111 0.2345 L0.9131 0.2475 L0.9161 0.2597 L0.9198 0.2714 L0.9240 0.2826 L0.9289 0.2935 L0.9343 0.3040 L0.9405 0.3143 L0.9473 0.3245 L0.9550 0.3344 L0.9639 0.3442 L0.9778 0.3526 L0.9710 0.3675 L0.9692 0.3805 L0.9685 0.3931 L0.9685 0.4053 L0.9693 0.4173 L0.9707 0.4291 L0.9728 0.4408 L0.9756 0.4524 L0.9792 0.4641 L0.9836 0.4759 L0.9892 0.4878Z"/></clipPath></defs>
-  <symbol id="capsule" viewBox="0 0 1 1"><path fill="currentColor" d="M1.0000 0.5000 L0.9892 0.5122 L0.9836 0.5241 L0.9792 0.5359 L0.9756 0.5476 L0.9728 0.5592 L0.9707 0.5709 L0.9693 0.5827 L0.9685 0.5947 L0.9685 0.6069 L0.9692 0.6195 L0.9710 0.6325 L0.9778 0.6474 L0.9639 0.6558 L0.9550 0.6656 L0.9473 0.6755 L0.9405 0.6857 L0.9343 0.6960 L0.9289 0.7065 L0.9240 0.7174 L0.9198 0.7286 L0.9161 0.7403 L0.9131 0.7525 L0.9111 0.7655 L0.9131 0.7817 L0.8973 0.7856 L0.8859 0.7923 L0.8757 0.7996 L0.8662 0.8072 L0.8573 0.8153 L0.8489 0.8238 L0.8411 0.8327 L0.8337 0.8422 L0.8268 0.8522 L0.8204 0.8630 L0.8145 0.8749 L0.8117 0.8909 L0.7955 0.8901 L0.7826 0.8931 L0.7707 0.8970 L0.7593 0.9015 L0.7485 0.9066 L0.7380 0.9122 L0.7279 0.9185 L0.7181 0.9253 L0.7085 0.9329 L0.6991 0.9413 L0.6901 0.9509 L0.6827 0.9654 L0.6674 0.9598 L0.6542 0.9590 L0.6416 0.9592 L0.6295 0.9601 L0.6176 0.9618 L0.6059 0.9641 L0.5944 0.9670 L0.5830 0.9707 L0.5716 0.9751 L0.5602 0.9804 L0.5487 0.9869 L0.5374 0.9986 L0.5244 0.9887 L0.5121 0.9840 L0.5000 0.9805 L0.4881 0.9778 L0.4762 0.9759 L0.4644 0.9747 L0.4526 0.9741 L0.4406 0.9743 L0.4284 0.9751 L0.4159 0.9768 L0.4030 0.9796 L0.3887 0.9875 L0.3793 0.9742 L0.3689 0.9661 L0.3584 0.9592 L0.3478 0.9531 L0.3370 0.9478 L0.3261 0.9431 L0.3149 0.9391 L0.3034 0.9357 L0.2915 0.9329 L0.2791 0.9308 L0.2660 0.9297 L0.2500 0.9330 L0.2448 0.9175 L0.2373 0.9067 L0.2293 0.8970 L0.2210 0.8881 L0.2123 0.8798 L0.2032 0.8722 L0.1937 0.8650 L0.1837 0.8584 L0.1732 0.8522 L0.1619 0.8466 L0.1497 0.8417 L0.1335 0.8401 L0.1331 0.8238 L0.1291 0.8112 L0.1243 0.7996 L0.1190 0.7886 L0.1131 0.7782 L0.1067 0.7681 L0.0997 0.7585 L0.0921 0.7492 L0.0839 0.7403 L0.0748 0.7316 L0.0646 0.7232 L0.0495 0.7169 L0.0540 0.7013 L0.0539 0.6881 L0.0527 0.6755 L0.0508 0.6635 L0.0483 0.6518 L0.0451 0.6403 L0.0413 0.6291 L0.0368 0.6179 L0.0315 0.6069 L0.0254 0.5959 L0.0181 0.5850 L0.0056 0.5745 L0.0145 0.5608 L0.0182 0.5482 L0.0208 0.5359 L0.0226 0.5238 L0.0237 0.5119 L0.0240 0.5000 L0.0237 0.4881 L0.0226 0.4762 L0.0208 0.4641 L0.0182 0.4518 L0.0145 0.4392 L0.0056 0.4255 L0.0181 0.4150 L0.0254 0.4041 L0.0315 0.3931 L0.0368 0.3821 L0.0413 0.3709 L0.0451 0.3597 L0.0483 0.3482 L0.0508 0.3365 L0.0527 0.3245 L0.0539 0.3119 L0.0540 0.2987 L0.0495 0.2831 L0.0646 0.2768 L0.0748 0.2684 L0.0839 0.2597 L0.0921 0.2508 L0.0997 0.2415 L0.1067 0.2319 L0.1131 0.2218 L0.1190 0.2114 L0.1243 0.2004 L0.1291 0.1888 L0.1331 0.1762 L0.1335 0.1599 L0.1497 0.1583 L0.1619 0.1534 L0.1732 0.1478 L0.1837 0.1416 L0.1937 0.1350 L0.2032 0.1278 L0.2123 0.1202 L0.2210 0.1119 L0.2293 0.1030 L0.2373 0.0933 L0.2448 0.0825 L0.2500 0.0670 L0.2660 0.0703 L0.2791 0.0692 L0.2915 0.0671 L0.3034 0.0643 L0.3149 0.0609 L0.3261 0.0569 L0.3370 0.0522 L0.3478 0.0469 L0.3584 0.0408 L0.3689 0.0339 L0.3793 0.0258 L0.3887 0.0125 L0.4030 0.0204 L0.4159 0.0232 L0.4284 0.0249 L0.4406 0.0257 L0.4526 0.0259 L0.4644 0.0253 L0.4762 0.0241 L0.4881 0.0222 L0.5000 0.0195 L0.5121 0.0160 L0.5244 0.0113 L0.5374 0.0014 L0.5487 0.0131 L0.5602 0.0196 L0.5716 0.0249 L0.5830 0.0293 L0.5944 0.0330 L0.6059 0.0359 L0.6176 0.0382 L0.6295 0.0399 L0.6416 0.0408 L0.6542 0.0410 L0.6674 0.0402 L0.6827 0.0346 L0.6901 0.0491 L0.6991 0.0587 L0.7085 0.0671 L0.7181 0.0747 L0.7279 0.0815 L0.7380 0.0878 L0.7485 0.0934 L0.7593 0.0985 L0.7707 0.1030 L0.7826 0.1069 L0.7955 0.1099 L0.8117 0.1091 L0.8145 0.1251 L0.8204 0.1370 L0.8268 0.1478 L0.8337 0.1578 L0.8411 0.1673 L0.8489 0.1762 L0.8573 0.1847 L0.8662 0.1928 L0.8757 0.2004 L0.8859 0.2077 L0.8973 0.2144 L0.9131 0.2183 L0.9111 0.2345 L0.9131 0.2475 L0.9161 0.2597 L0.9198 0.2714 L0.9240 0.2826 L0.9289 0.2935 L0.9343 0.3040 L0.9405 0.3143 L0.9473 0.3245 L0.9550 0.3344 L0.9639 0.3442 L0.9778 0.3526 L0.9710 0.3675 L0.9692 0.3805 L0.9685 0.3931 L0.9685 0.4053 L0.9693 0.4173 L0.9707 0.4291 L0.9728 0.4408 L0.9756 0.4524 L0.9792 0.4641 L0.9836 0.4759 L0.9892 0.4878Z"/><circle cx=".5" cy=".5" r=".3" fill="none" stroke="var(--bg)" stroke-width=".05"/></symbol>
-</svg>
+<a class="skip" href="#top">Aller au contenu</a>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
-
-<header class="nav">
+<header class="top">
   <div class="wrap">
-    <a class="mark" href="#top"><svg aria-hidden="true"><use href="#capsule"/></svg>Le Comptoir du Poulet</a>
-    <nav aria-label="Sections"><ul>
-      <li><a href="#pressions">Bières</a></li>
-      <li><a href="#cuisine">Cuisine</a></li>
-      <li><a href="#groupes">Groupes</a></li>
-      <li><a href="#horaires">Horaires</a></li>
-    </ul></nav>
-    <a class="btn" href="tel:+33983908000">Appeler</a>
+    <a class="brand" href="#top" aria-label="Le Comptoir du Poulet, haut de page">Le Comptoir du Poulet</a>
+    <nav aria-label="Sections">
+      <a href="#bieres">Bières</a>
+      <a href="#carte">La carte</a>
+      <a href="#groupes">Groupes</a>
+      <a href="#horaires">Horaires</a>
+    </nav>
+    <a class="btn" href="tel:+33983908000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Appeler</a>
   </div>
 </header>
 
 <main id="top">
-<section class="hero" style="padding:0" aria-labelledby="h1">
-  <div class="hero-txt">
-    <h1 id="h1" class="rv"><span>Le Comptoir</span><span>du Poulet</span></h1>
-    <p class="lead rv" style="--i:1">Bar à bières et poulet grillé, 3&nbsp;rue de Lagny, à deux pas de Nation. Plus de 100&nbsp;bières en bouteille, 10&nbsp;à la pression.</p>
-    <div class="acts rv" style="--i:2">
-      <a class="btn" href="tel:+33983908000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>09&nbsp;83&nbsp;90&nbsp;80&nbsp;00</a>
-      <a class="btn alt" href="https://www.google.com/maps/dir/?api=1&destination=Le+Comptoir+du+Poulet+3+rue+de+Lagny+75020+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Itinéraire</a>
-    </div>
-  </div>
-  <div class="hero-cap">
-    <div class="big cap"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=1600&q=75&auto=format&fit=crop" width="1600" height="1600" alt="Bières tirées à la pression devant une rangée de tireuses"></div>
-    <div class="live cap" role="status" aria-live="polite"><div><b id="liveTitle">Happy hour</b><small id="liveSub">du lundi au samedi, 17&nbsp;h – 21&nbsp;h</small></div></div>
-  </div>
-</section>
-
-<div class="band" aria-hidden="true"><div class="row" id="bandRow">
-  <span>Happy hour 17&nbsp;h – 21&nbsp;h</span><svg><use href="#capsule"/></svg><span>Du lundi au samedi</span><svg><use href="#capsule"/></svg><span>100 bières en bouteille</span><svg><use href="#capsule"/></svg><span>10 pressions</span><svg><use href="#capsule"/></svg><span>Ouvert jusqu’à 2&nbsp;h</span><svg><use href="#capsule"/></svg>
-</div></div>
-
-<section id="pressions" class="wrap" aria-labelledby="h-press">
-  <div class="press">
-    <div class="press-intro">
-      <h2 id="h-press" class="rv">Dix tireuses, cent bouteilles</h2>
-      <p class="rv" style="--i:1">Le comptoir aligne plus de cent références en bouteille et dix en pression. Quelques noms vus récemment à la carte&nbsp;:</p>
-      <ul class="taps" id="taps">
-        <li class="rv" style="--i:2"><a href="#pressions" data-img="0"><img class="inl cap" src="https://images.unsplash.com/photo-1505075106905-fb052892c116?w=200&q=70&auto=format&fit=crop" width="64" height="64" alt="" loading="lazy"><strong>La bière du Comptoir</strong><em>La bière maison</em></a></li>
-        <li class="rv" style="--i:3"><a href="#pressions" data-img="1"><img class="inl cap" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=200&q=70&auto=format&fit=crop" width="64" height="64" alt="" loading="lazy"><strong>Licorne Black</strong><em>Brune de Saverne, en Alsace</em></a></li>
-        <li class="rv" style="--i:4"><a href="#pressions" data-img="2"><img class="inl cap" src="https://images.unsplash.com/photo-1436076863939-06870fe779c2?w=200&q=70&auto=format&fit=crop" width="64" height="64" alt="" loading="lazy"><strong>La Chouffe</strong><em>Blonde des Ardennes belges</em></a></li>
-        <li class="rv" style="--i:5"><a href="#pressions" data-img="3"><img class="inl cap" src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=200&q=70&auto=format&fit=crop" width="64" height="64" alt="" loading="lazy"><strong>Kasteel Rouge</strong><em>Belge, à la cerise</em></a></li>
-        <li class="rv" style="--i:6"><a href="#pressions" data-img="0"><img class="inl cap" src="https://images.unsplash.com/photo-1505075106905-fb052892c116?w=200&q=70&auto=format&fit=crop" width="64" height="64" alt="" loading="lazy"><strong>Charles Wells IPA</strong><em>India pale ale anglaise</em></a></li>
-        <li class="rv" style="--i:7"><a href="#pressions" data-img="2"><img class="inl cap" src="https://images.unsplash.com/photo-1436076863939-06870fe779c2?w=200&q=70&auto=format&fit=crop" width="64" height="64" alt="" loading="lazy"><strong>Cornet</strong><em>Blonde belge élevée au chêne</em></a></li>
-        <li class="rv" style="--i:8"><a href="#pressions" data-img="1"><img class="inl cap" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=200&q=70&auto=format&fit=crop" width="64" height="64" alt="" loading="lazy"><strong>Blanche de Bruxelles</strong><em>Bière blanche belge</em></a></li>
-      </ul>
-      <dl class="drinks rv">
-        <div><dt>Pinte de bière</dt><dd>5&nbsp;€</dd></div>
-        <div><dt>Verre de vin</dt><dd>5,90 / 6,70&nbsp;€</dd></div>
-        <div><dt>Bouteille de vin</dt><dd>24 / 32&nbsp;€</dd></div>
-        <div><dt>Cocktails et mocktails</dt><dd>à la carte</dd></div>
-      </dl>
-      <p class="note">Et pour une soirée sans alcool, un cocktail détox aux fruits. La carte des bières tourne&nbsp;: demandez l’ardoise du jour au comptoir.</p>
-    </div>
-    <div class="preview" aria-hidden="true">
-      <div class="frame cap" id="frame">
-        <img class="on" src="https://images.unsplash.com/photo-1505075106905-fb052892c116?w=1100&q=75&auto=format&fit=crop" width="1100" height="1100" alt="" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=1100&q=75&auto=format&fit=crop" width="1100" height="1100" alt="" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1436076863939-06870fe779c2?w=1100&q=75&auto=format&fit=crop" width="1100" height="1100" alt="" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=1100&q=75&auto=format&fit=crop" width="1100" height="1100" alt="" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="cuisine" class="kitchen" aria-labelledby="h-cuisine">
+<div class="hero">
   <div class="wrap">
-    <div class="k-head">
-      <h2 id="h-cuisine" class="rv">Et le poulet, alors&nbsp;?</h2>
-      <p class="rv" style="--i:1">C’est la spécialité de la maison&nbsp;: grillé, à partager au milieu de la table, avec frites, patate douce ou banane plantain.</p>
-    </div>
-    <div class="feature">
-      <img class="cap rv" src="https://images.unsplash.com/photo-1606728035253-49e8a23146de?w=1200&q=75&auto=format&fit=crop" width="1200" height="1200" alt="Poulet entier grillé, peau dorée" loading="lazy">
-      <div>
-        <h3 class="rv">Un poulet grillé à partager</h3>
-        <p class="rv" style="--i:1">Il arrive entier sur la table. On le découpe ensemble entre deux pintes, comme il se doit dans un bar qui porte son nom.</p>
-        <span class="price rv num" style="--i:2">14,50&nbsp;€</span>
+    <div class="htext">
+      <h1 class="rv">Cent bières et du poulet grillé</h1>
+      <p class="lead rv" style="--i:1">Bar à bières au 3 rue de Lagny, Paris 20e, à deux pas de Nation. Plus de cent bouteilles, dix pressions et du poulet grillé à partager.</p>
+      <ul class="tiles rv" style="--i:4">
+        <li><b>100+</b><span>bières en bouteille</span></li>
+        <li><b>10</b><span>bières à la pression</span></li>
+        <li><b class="num">14,50 €</b><span>le poulet grillé à partager</span></li>
+        <li><b class="num">5 €</b><span>la pinte en happy hour, 17 h – 21 h</span></li>
+      </ul>
+      <div class="ctas rv" style="--i:2">
+        <a class="btn" href="tel:+33983908000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>09 83 90 80 00</a>
+        <a class="btn alt" href="#carte">Voir la carte</a>
       </div>
+      <p class="status rv" style="--i:3" id="status"><span class="dot" aria-hidden="true"></span><span id="statusTxt">Ouvert jusqu’à 2 h, fermé le dimanche</span></p>
     </div>
-    <ul class="menu">
-      <li class="rv"><img class="ph cap" src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=240&q=70&auto=format&fit=crop" width="88" height="88" alt="" loading="lazy"><div><h3>Poulet frites, patate douce et banane plantain <span>19&nbsp;€</span></h3><p>L’assiette complète&nbsp;: poulet grillé et ses trois accompagnements.</p></div></li>
-      <li class="rv" style="--i:1"><img class="ph cap" src="https://images.unsplash.com/photo-1608039755401-742074f0548d?w=240&q=70&auto=format&fit=crop" width="88" height="88" alt="" loading="lazy"><div><h3>Wings, 5 pièces <span>6&nbsp;€</span></h3><p>À picorer avec la première pinte.</p></div></li>
-      <li class="rv"><img class="ph cap" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=240&q=70&auto=format&fit=crop" width="88" height="88" alt="" loading="lazy"><div><h3>Tartine Poilâne poulet mozzarella <span>7&nbsp;€</span></h3><p>Pain Poilâne, poulet et mozzarella.</p></div></li>
-      <li class="rv" style="--i:1"><svg class="dot" aria-hidden="true" style="color:var(--amber)"><use href="#capsule"/></svg><div><h3>Banane plantain <span>6&nbsp;€</span></h3><p>En accompagnement ou toute seule.</p></div></li>
-      <li class="rv"><img class="ph cap" src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=240&q=70&auto=format&fit=crop" width="88" height="88" alt="" loading="lazy"><div><h3>Assiette de frites <span>5&nbsp;€</span></h3><p>Pour la table, au milieu des verres.</p></div></li>
-      <li class="rv" style="--i:1"><img class="ph cap" src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=240&q=70&auto=format&fit=crop" width="88" height="88" alt="" loading="lazy"><div><h3>Planche de charcuterie <span>14&nbsp;€</span></h3><p>À partager à plusieurs.</p></div></li>
-      <li class="rv"><img class="ph cap" src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=240&q=70&auto=format&fit=crop" width="88" height="88" alt="" loading="lazy"><div><h3>Planche de fromage <span>14&nbsp;€</span></h3><p>La version fromagère, pour finir la soirée.</p></div></li>
-      <li class="rv" style="--i:1"><img class="ph cap" src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=240&q=70&auto=format&fit=crop" width="88" height="88" alt="" loading="lazy"><div><h3>Cocktails, mocktails, détox <span>à la carte</span></h3><p>Une carte de cocktails, avec ou sans alcool.</p></div></li>
-    </ul>
-    <p class="note">Carte et tarifs donnés à titre indicatif, à confirmer au comptoir.</p>
-  </div>
-</section>
 
-<section id="groupes" class="wrap" aria-labelledby="h-groupes">
-  <div class="groups">
-    <img class="pic cap rv" src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?w=1200&q=75&auto=format&fit=crop" width="1200" height="1200" alt="Une bande d’amis trinque autour d’une table de bar" loading="lazy">
-    <div class="g-side">
-      <div class="tabs rv" role="tablist" aria-label="Type de soirée">
-        <button role="tab" id="t-anniv" aria-selected="true" aria-controls="p-anniv">Anniversaire</button>
-        <button role="tab" id="t-after" aria-selected="false" aria-controls="p-after" tabindex="-1">Afterwork</button>
-        <button role="tab" id="t-match" aria-selected="false" aria-controls="p-match" tabindex="-1">Soir de match</button>
-      </div>
-      <div>
-        <h2 id="h-groupes" class="sr">Groupes et soirées</h2>
-        <div class="panel" role="tabpanel" id="p-anniv" aria-labelledby="t-anniv">
-          <h3>Jusqu’à 50 à table</h3>
-          <p>Réservez pour une bande jusqu’à 50 personnes, dans une salle de 80 places. Le gâteau d’anniversaire, c’est sur demande.</p>
-          <ul class="facts"><li><svg><use href="#capsule"/></svg>Gâteau d’anniversaire sur demande</li><li><svg><use href="#capsule"/></svg>Vous pouvez diffuser votre musique</li><li><svg><use href="#capsule"/></svg>Planches et cocktail dînatoire</li></ul>
+    <div class="shots">
+      <figure class="shop main rv">
+        <figcaption class="signrow"><span class="sign" id="mainSign">3 rue de Lagny</span></figcaption>
+        <div class="frame">
+          <img class="on" src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397113.jpg" width="1500" height="750" alt="La devanture du Comptoir du Poulet le soir : enseigne jaune à lettres bleues, ardoises et tables de terrasse devant la vitrine" data-sign="3 rue de Lagny" fetchpriority="high">
+          <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397120.jpg" width="1500" height="750" alt="Le comptoir en tôle ondulée éclairé en violet, ses tabourets et les étagères de bouteilles" data-sign="Le comptoir" loading="lazy">
+          <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397121.jpg" width="1500" height="750" alt="La salle, murs de briques, guirlandes d’ampoules et bouteilles alignées jusqu’à l’entrée" data-sign="La salle, 80 places" loading="lazy">
+          <button type="button" class="pause" id="pause" aria-label="Mettre en pause le diaporama"></button>
         </div>
-        <div class="panel" role="tabpanel" id="p-after" aria-labelledby="t-after" hidden>
-          <h3>La tournée de 17&nbsp;h</h3>
-          <p>Le happy hour court du lundi au samedi, de 17&nbsp;h à 21&nbsp;h. Pot de départ, verre d’équipe, soirée d’entreprise&nbsp;: on vous garde la place.</p>
-          <ul class="facts"><li><svg><use href="#capsule"/></svg>Happy hour 17&nbsp;h – 21&nbsp;h</li><li><svg><use href="#capsule"/></svg>Matériel de projection</li><li><svg><use href="#capsule"/></svg>Cocktail dînatoire sur demande</li></ul>
-        </div>
-        <div class="panel" role="tabpanel" id="p-match" aria-labelledby="t-match" hidden>
-          <h3>Le match sur écran</h3>
-          <p>Installez-vous devant l’écran avec une pinte et des wings. Pour venir à plusieurs, réservez votre table.</p>
-          <ul class="facts"><li><svg><use href="#capsule"/></svg>Écran pour suivre les matchs</li><li><svg><use href="#capsule"/></svg>10 bières à la pression</li><li><svg><use href="#capsule"/></svg>Poulet grillé à partager</li></ul>
-        </div>
-      </div>
-      <div class="cells rv"><a href="#reserver">Demander une date</a><a href="tel:+33983908000">Appeler le bar</a></div>
+      </figure>
+      <figure class="shop small rv" style="--i:1">
+        <figcaption class="sign">Le poulet</figcaption>
+        <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397182.jpg" width="1500" height="750" alt="Une assiette de poulet grillé, frites, salade et sauce verte, avec une bière" fetchpriority="high" style="object-position:55% 60%">
+      </figure>
+      <figure class="shop small rv" style="--i:2">
+        <figcaption class="sign">Les canettes</figcaption>
+        <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397183.jpg" width="1500" height="750" alt="Une rangée de canettes et bouteilles de bières artisanales sur le comptoir" style="object-position:55% 60%">
+      </figure>
     </div>
   </div>
-</section>
+</div>
 
-<section id="horaires" style="padding-top:0" aria-labelledby="h-hor">
-  <div class="inset">
+<div class="facts">
+  <ul class="wrap">
+    <li><b>3 rue de Lagny</b><span>75020 Paris, quartier Charonne</span></li>
+    <li><b>Métro Avron</b><span>ligne 2, à 350 m · Buzenval (9)</span></li>
+    <li><b>Lundi au samedi</b><span>jusqu’à 2 h · fermé le dimanche</span></li>
+    <li><b>Happy hour</b><span>du lundi au samedi, 17 h – 21 h</span></li>
+  </ul>
+</div>
+
+<section class="beers on-blue" id="bieres" aria-labelledby="t-bieres">
+  <div class="wrap">
     <div>
-      <h2 id="h-hor" class="rv">Ouvert jusqu’à 2&nbsp;h, six soirs sur sept</h2>
-      <p class="status" id="status"><i></i><span id="statusTxt">Horaires ci-dessous</span></p>
-      <dl class="hours" id="hours">
-        <div data-d="1"><dt>Lundi</dt><dd>16&nbsp;h – 2&nbsp;h</dd></div>
-        <div data-d="2"><dt>Mardi</dt><dd>10&nbsp;h – 2&nbsp;h</dd></div>
-        <div data-d="3"><dt>Mercredi</dt><dd>10&nbsp;h – 2&nbsp;h</dd></div>
-        <div data-d="4"><dt>Jeudi</dt><dd>10&nbsp;h – 2&nbsp;h</dd></div>
-        <div data-d="5"><dt>Vendredi</dt><dd>10&nbsp;h – 2&nbsp;h</dd></div>
-        <div data-d="6"><dt>Samedi</dt><dd>10&nbsp;h – 2&nbsp;h</dd></div>
-        <div data-d="0"><dt>Dimanche</dt><dd>Fermé</dd></div>
-      </dl>
+      <h2 id="t-bieres" class="rv">Cent bouteilles, dix tireuses</h2>
+      <p class="intro rv" style="--i:1">Plus de cent références en bouteille et dix à la pression. Quelques noms relevés à la carte, qui tourne : demandez l’ardoise du jour au comptoir.</p>
+      <ul class="taps rv" style="--i:2">
+        <li><b>La bière du Comptoir</b><span>à l’enseigne de la maison</span></li>
+        <li><b>Licorne Black</b><span>brune, brasserie Licorne, Saverne</span></li>
+        <li><b>La Chouffe</b><span>blonde des Ardennes belges</span></li>
+        <li><b>Kasteel Rouge</b><span>belge, à la cerise</span></li>
+        <li><b>Charles Wells IPA</b><span>India pale ale anglaise</span></li>
+        <li><b>Cornet</b><span>blonde belge élevée au chêne</span></li>
+        <li><b>Blanche de Bruxelles</b><span>bière blanche belge</span></li>
+        <li><b>Cocktails et mocktails</b><span>et un cocktail détox aux fruits</span></li>
+      </ul>
+    </div>
+    <div class="wall">
+      <figure class="shop big rv">
+        <figcaption class="sign">Les étagères du fond</figcaption>
+        <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397118.jpg" width="1500" height="750" alt="Les étagères de bouteilles sur le mur de briques, au-dessus des banquettes" loading="lazy">
+      </figure>
+      <figure class="shop small rv" style="--i:1">
+        <figcaption class="sign">Pressions</figcaption>
+        <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397119.jpg" width="1500" height="750" alt="La rangée de tireuses sur le comptoir, devant les bouteilles" loading="lazy" style="object-position:60% 50%">
+      </figure>
+      <figure class="shop small rv" style="--i:2">
+        <figcaption class="sign">Cocktails</figcaption>
+        <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397108.jpg" width="1500" height="750" alt="Trois cocktails servis sur le comptoir, dont un bleu" loading="lazy" style="object-position:55% 50%">
+      </figure>
+      <div class="drinks big rv" style="--i:3">
+        <h3>Tarifs happy hour</h3>
+        <dl>
+          <dt>Pinte de bière</dt><dd>5 €</dd>
+          <dt>Verre de vin</dt><dd>5,90 / 6,70 €</dd>
+          <dt>Bouteille de vin</dt><dd>24 / 32 €</dd>
+        </dl>
+        <p>Du lundi au samedi, de 17 h à 21 h. Tarifs indicatifs, à confirmer au bar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="carte" aria-labelledby="t-carte">
+  <div class="wrap">
+    <div class="left">
+      <h2 id="t-carte" class="rv">Le poulet, et ce qui va avec</h2>
+      <p class="intro rv" style="--i:1">La spécialité de la maison : le poulet grillé, entier, à partager au milieu de la table. Composez l’ardoise de votre table, le total se fait tout seul.</p>
+      <div class="pics">
+        <figure class="shop rv" style="--i:2">
+          <figcaption class="sign">Bouteilles</figcaption>
+          <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397109.jpg" width="1500" height="750" alt="Trois bières en bouteille et une planche garnie, devant le panneau Cornet" loading="lazy" style="object-position:62% 50%">
+        </figure>
+        <figure class="shop rv" style="--i:3">
+          <figcaption class="sign">Planches</figcaption>
+          <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397110.jpg" width="1500" height="750" alt="Une planche de charcuterie, cornichons et pain, avec bières et cocktails" loading="lazy">
+        </figure>
+      </div>
+    </div>
+
+    <div class="rv" style="--i:1">
+      <h3 class="group-title">Le poulet</h3>
+      <ul class="items" data-group>
+        <li class="item" data-name="Poulet grillé à partager" data-price="14.5"><h3>Poulet grillé à partager</h3><span class="price">14,50 €</span><p>Il arrive entier sur la table</p></li>
+        <li class="item" data-name="Poulet, frites, patate douce et plantain" data-price="19"><h3>Poulet, frites, patate douce et banane plantain</h3><span class="price">19 €</span><p>L’assiette complète</p></li>
+        <li class="item" data-name="Wings, 5 pièces" data-price="6"><h3>Wings, 5 pièces</h3><span class="price">6 €</span><p>Avec la première pinte</p></li>
+        <li class="item" data-name="Tartine Poilâne poulet mozzarella" data-price="7"><h3>Tartine Poilâne poulet mozzarella</h3><span class="price">7 €</span><p>Pain Poilâne, poulet, mozzarella</p></li>
+      </ul>
+      <h3 class="group-title">À côté, à picorer</h3>
+      <ul class="items">
+        <li class="item" data-name="Banane plantain" data-price="6"><h3>Banane plantain</h3><span class="price">6 €</span><p>En accompagnement ou seule</p></li>
+        <li class="item" data-name="Assiette de frites" data-price="5"><h3>Assiette de frites</h3><span class="price">5 €</span><p>Pour le milieu de la table</p></li>
+        <li class="item" data-name="Planche de charcuterie" data-price="14"><h3>Planche de charcuterie</h3><span class="price">14 €</span><p>À partager</p></li>
+        <li class="item" data-name="Planche de fromage" data-price="14"><h3>Planche de fromage</h3><span class="price">14 €</span><p>À partager</p></li>
+      </ul>
+      <h3 class="group-title">À boire, en happy hour</h3>
+      <ul class="items">
+        <li class="item" data-name="Pinte de bière" data-price="5"><h3>Pinte de bière</h3><span class="price">5 €</span><p>17 h – 21 h, du lundi au samedi</p></li>
+        <li class="item" data-name="Verre de vin" data-price="5.9"><h3>Verre de vin</h3><span class="price">dès 5,90 €</span><p>5,90 ou 6,70 € selon le vin</p></li>
+      </ul>
+      <p class="note">Carte et tarifs donnés à titre indicatif, à confirmer au comptoir.</p>
+    </div>
+
+    <aside class="slate on-dark rv" style="--i:2" aria-labelledby="t-ardoise">
+      <h3 id="t-ardoise">L’ardoise de la table</h3>
+      <p class="nojs-only">Additionnez les prix de la carte : le poulet à 14,50 €, les pintes à 5 € en happy hour.</p>
+      <p class="js-only">Ajoutez des plats avec les boutons +, l’addition se fait ici.</p>
+      <ul id="lines" aria-live="polite"></ul>
+      <div class="total"><span>Total</span><b id="total" class="num">0 €</b></div>
+      <div class="per js-only">
+        <span>Nous sommes</span>
+        <div class="stepper"><button type="button" id="pMinus" aria-label="Une personne de moins">−</button><output id="people" aria-live="polite">2</output><button type="button" id="pPlus" aria-label="Une personne de plus">+</button></div>
+      </div>
+      <p class="share js-only" id="share" aria-live="polite">soit 0 € par personne</p>
+      <a class="btn yel" href="tel:+33983908000">Réserver la table</a>
+      <button type="button" class="reset js-only" id="reset">Effacer l’ardoise</button>
+    </aside>
+  </div>
+</section>
+
+<section class="groups" id="groupes" aria-labelledby="t-groupes">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="t-groupes" class="rv">Jusqu’à 50 à table</h2>
+      <p class="rv" style="--i:1">Anniversaire, afterwork, pot de départ, soir de match : le bar reçoit les groupes jusqu’à 50 personnes, dans une salle de 80 places. Planches, tapas ou repas assis, cocktail dînatoire sur demande.</p>
+    </div>
+    <ul class="specimens">
+      <li class="rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397111.jpg" width="1500" height="750" alt="La salle du fond, tables alignées face à l’écran de projection" loading="lazy" style="object-position:72% 50%"><b>Matériel de projection</b><span>Pour le match ou les photos de la soirée</span></li>
+      <li class="rv" style="--i:1"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397116.jpg" width="1500" height="750" alt="Le comptoir et ses tabourets en bois, sous les étagères de bouteilles" loading="lazy" style="object-position:35% 50%"><b>Votre musique</b><span>Vous pouvez diffuser la vôtre</span></li>
+      <li class="rv" style="--i:2"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397115.jpg" width="1500" height="750" alt="Une longue table haute contre le mur de briques, sous un vélo accroché et des plaques de bière" loading="lazy" style="object-position:60% 50%"><b>Gâteau d’anniversaire</b><span>Sur demande</span></li>
+      <li class="rv" style="--i:3"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397117.jpg" width="1500" height="750" alt="Le mur de briques avec l’enseigne La Chouffe, un vélo accroché et de longues tables" loading="lazy" style="object-position:40% 50%"><b>Cocktail dînatoire</b><span>Sur demande, planches et tapas</span></li>
+    </ul>
+
+    <div class="coupon on-blue rv">
+      <div class="left">
+        <h3>Demander une date</h3>
+        <p>Le message part depuis votre messagerie vers le bar, qui vous confirme la table. Plus rapide : <a href="tel:+33983908000">09 83 90 80 00</a>.</p>
+      </div>
+      <form id="resa" novalidate>
+        <div class="field"><label for="f-nom">Votre nom</label><input id="f-nom" name="nom" autocomplete="name" required></div>
+        <div class="field"><label for="f-date">Date</label><input id="f-date" name="date" type="date" autocomplete="off" required></div>
+        <div class="field"><label for="f-nb">Nombre de personnes</label><input id="f-nb" name="nb" type="number" min="2" max="50" inputmode="numeric" required aria-describedby="f-nb-help"><span id="f-nb-help" class="sr">De 2 à 50 personnes</span></div>
+        <div class="field"><label for="f-occ">Occasion</label><select id="f-occ" name="occasion"><option>Anniversaire</option><option>Afterwork</option><option>Pot de départ</option><option>Soir de match</option><option>Entre amis</option></select></div>
+        <p class="form-msg" id="err" role="alert"></p>
+        <button class="btn yel" type="submit">Envoyer la demande</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="horaires" aria-labelledby="t-horaires">
+  <div class="wrap">
+    <div>
+      <h2 id="t-horaires" class="rv">Jusqu’à 2 h, six soirs sur sept</h2>
+      <table class="hours rv" style="--i:1" id="hours">
+        <caption class="sr">Horaires d’ouverture</caption>
+        <tbody>
+          <tr data-d="1"><th scope="row">Lundi</th><td>16 h – 2 h</td></tr>
+          <tr data-d="2"><th scope="row">Mardi</th><td>10 h – 2 h</td></tr>
+          <tr data-d="3"><th scope="row">Mercredi</th><td>10 h – 2 h</td></tr>
+          <tr data-d="4"><th scope="row">Jeudi</th><td>10 h – 2 h</td></tr>
+          <tr data-d="5"><th scope="row">Vendredi</th><td>10 h – 2 h</td></tr>
+          <tr data-d="6"><th scope="row">Samedi</th><td>10 h – 2 h</td></tr>
+          <tr data-d="0"><th scope="row">Dimanche</th><td>Fermé</td></tr>
+        </tbody>
+      </table>
+      <p class="hh rv" style="--i:2"><span><b>Happy hour</b> du lundi au samedi</span><span class="num">17 h – 21 h</span></p>
     </div>
     <div class="access">
-      <div class="rv"><h3>3 rue de Lagny, Paris 20e</h3><p>Quartier Charonne, à deux pas de la place de la Nation.</p><a class="btn alt" href="https://www.google.com/maps/dir/?api=1&destination=Le+Comptoir+du+Poulet+3+rue+de+Lagny+75020+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a></div>
-      <div class="rv" style="--i:1"><h3>En métro</h3><p>Avron (ligne 2) à 350&nbsp;m. Buzenval (ligne 9) et Nation tout près.</p></div>
-      <div class="rv" style="--i:2"><h3>Écrire ou appeler</h3><p><a href="tel:+33983908000">09&nbsp;83&nbsp;90&nbsp;80&nbsp;00</a><br><a href="mailto:contact@comptoirdupoulet.fr">contact@comptoirdupoulet.fr</a></p></div>
-      <img class="bar cap" src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1100&q=75&auto=format&fit=crop" width="1100" height="1100" alt="Un comptoir de bar éclairé le soir" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<section id="reserver" class="wrap" aria-labelledby="h-res">
-  <div class="coupon" id="coupon">
-    <div class="c-left">
-      <h2 id="h-res">Réserver pour la bande</h2>
-      <p>Indiquez la date et le nombre. Le message part depuis votre messagerie vers le bar, qui vous confirme la table.</p>
-    </div>
-    <form id="resa" novalidate>
-      <div class="field"><label for="f-nom">Votre nom</label><input id="f-nom" name="nom" autocomplete="name" required></div>
-      <div class="two">
-        <div class="field"><label for="f-date">Date</label><input id="f-date" name="date" type="date" required></div>
-        <div class="field"><label for="f-nb">Nombre de personnes</label><input id="f-nb" name="nb" type="number" min="2" max="50" inputmode="numeric" required></div>
+      <figure class="shop rv">
+        <figcaption class="sign">Entrée rue de Lagny</figcaption>
+        <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49453/1500x750/397112.jpg" width="1500" height="750" alt="La salle vue du fond : tables hautes, murs de briques, ampoules suspendues et enseignes de bière" loading="lazy">
+      </figure>
+      <div class="block rv" style="--i:1">
+        <h3>3 rue de Lagny</h3>
+        <p>75020 Paris, quartier Charonne, à deux pas de la place de la Nation.</p>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Comptoir+du+Poulet+3+rue+de+Lagny+75020+Paris" target="_blank" rel="noopener">Itinéraire</a>
       </div>
-      <div class="field"><label for="f-occ">Occasion</label><select id="f-occ" name="occ"><option>Anniversaire</option><option>Afterwork</option><option>Pot de départ</option><option>Soir de match</option><option>Entre amis</option></select></div>
-      <button class="btn" type="submit">Envoyer la demande</button>
-      <p class="sr" id="err" role="alert"></p>
-    </form>
+      <div class="block rv" style="--i:2">
+        <h3>En métro</h3>
+        <p>Avron, ligne 2, à 350 m.</p>
+        <p>Buzenval, ligne 9. Nation, lignes 1, 2, 6, 9 et RER A.</p>
+        <a class="btn" href="mailto:contact@comptoirdupoulet.fr">Écrire au bar</a>
+      </div>
+    </div>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="caps" aria-label="Comptoir" role="img">
-      <span class="cap">C</span><span class="cap">O</span><span class="cap">M</span><span class="cap">P</span><span class="cap">T</span><span class="cap">O</span><span class="cap">I</span><span class="cap">R</span>
-    </div>
-    <div class="f-grid">
-      <div><h3>Le bar</h3><a href="#pressions">Bières</a><a href="#cuisine">Cuisine</a><a href="#groupes">Groupes</a></div>
-      <div><h3>Venir</h3><a href="#horaires">Horaires</a><a href="https://www.google.com/maps/dir/?api=1&destination=Le+Comptoir+du+Poulet+3+rue+de+Lagny+75020+Paris" target="_blank" rel="noopener">Itinéraire</a><a href="#reserver">Réserver</a></div>
+    <p class="fascia" id="fascia"><span>Le Comptoir</span> <span>du Poulet</span></p>
+    <div class="fcols">
+      <div><h3>Le bar</h3><ul><li><a href="#bieres">Bières</a></li><li><a href="#carte">La carte</a></li><li><a href="#groupes">Groupes</a></li></ul></div>
+      <div><h3>Venir</h3><ul><li><a href="#horaires">Horaires</a></li><li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Comptoir+du+Poulet+3+rue+de+Lagny+75020+Paris" target="_blank" rel="noopener">Itinéraire</a></li><li><a href="#resa">Réserver</a></li></ul></div>
       <div><h3>Adresse</h3><p>3 rue de Lagny<br>75020 Paris</p></div>
-      <div><h3>Contact</h3><a href="tel:+33983908000">09 83 90 80 00</a><a href="mailto:contact@comptoirdupoulet.fr">contact@comptoirdupoulet.fr</a></div>
+      <div><h3>Contact</h3><p><a href="tel:+33983908000">09 83 90 80 00</a><br><a href="mailto:contact@comptoirdupoulet.fr">contact@comptoirdupoulet.fr</a></p></div>
     </div>
-    <div class="f-end"><span>Démo réalisée par Raul Hatos — site non officiel. Photos d’illustration Unsplash.</span><a class="btn alt" href="#top" style="min-height:40px">Haut de page</a></div>
   </div>
+  <div class="legal"><div class="wrap"><span>Démo réalisée par Raul Hatos — site non officiel. Photos publiées sur la fiche Privateaser du bar.</span><a href="#top">Haut de page</a></div></div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
 (()=>{
-  // heure de Paris, quel que soit le fuseau du visiteur
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const eur=n=>(Math.round(n*100)/100).toLocaleString('fr-FR',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2})+' €';
+
+  // ouvert maintenant, à l'heure de Paris
   const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).map(x=>[x.type,x.value]));
   const d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), m=(+p.hour%24)*60+ +p.minute;
-  const openAt=x=>x===0?null:x===1?960:600; // minutes ; fermeture 2 h le lendemain
-  const fmt=n=>{const h=Math.floor(n/60),r=n%60;return h?`${h} h${r?' '+String(r).padStart(2,'0'):''}`:`${r} min`};
-  const hh=d>=1&&d<=6&&m>=1020&&m<1260;
-  const prev=(d+6)%7, lateNight=m<120&&openAt(prev)!==null;
-  const open=lateNight||(openAt(d)!==null&&m>=openAt(d));
-  let t,s;
-  if(hh){t='Happy hour en cours';s=`encore ${fmt(1260-m)}`}
-  else if(d>=1&&d<=6&&open&&m<1020){t='Ouvert';s=`happy hour dans ${fmt(1020-m)}`}
-  else if(open){t='Ouvert';s=lateNight?`jusqu’à 2 h`:'jusqu’à 2 h du matin'}
-  else{const nd=openAt(d)!==null&&m<openAt(d)?d:(d+1)%7;const o=openAt(nd)??openAt((nd+1)%7);
-    t='Fermé'; s=nd===d?`ouvre à ${o/60} h`:(nd===0||d===6||d===0)?'réouverture lundi 16 h':`ouvre demain à ${o/60} h`}
-  document.getElementById('liveTitle').textContent=t;
-  document.getElementById('liveSub').textContent=s;
-  document.getElementById('statusTxt').textContent=`${t} · ${s}`;
-  const row=document.querySelector(`#hours [data-d="${lateNight?prev:d}"]`); row&&row.classList.add('today');
-  // bande : on double le contenu pour une boucle sans couture
-  const b=document.getElementById('bandRow'); b.innerHTML+=b.innerHTML;
-  // index avec aperçu
-  const imgs=[...document.querySelectorAll('#frame img')];
-  document.querySelectorAll('#taps a').forEach(a=>{const show=()=>imgs.forEach((im,i)=>im.classList.toggle('on',i==a.dataset.img));a.addEventListener('mouseenter',show);a.addEventListener('focus',show);a.addEventListener('click',e=>e.preventDefault())});
-  // onglets groupes
-  const tabs=[...document.querySelectorAll('[role=tab]')];
-  const sel=t=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});t.focus()};
-  tabs.forEach((t,i)=>{t.onclick=()=>sel(t);t.onkeydown=e=>{if(e.key==='ArrowRight')sel(tabs[(i+1)%tabs.length]);if(e.key==='ArrowLeft')sel(tabs[(i+tabs.length-1)%tabs.length])}});
-  // coupon : position de la perforation sur mobile
-  const c=document.getElementById('coupon'),L=c.querySelector('.c-left');
-  const cut=()=>c.style.setProperty('--cut',L.offsetHeight+'px');cut();addEventListener('resize',cut);
-  // réservation par e-mail
-  const f=document.getElementById('resa'),err=document.getElementById('err');
+  const openAt=x=>x===0?null:x===1?960:600; // fermeture 2 h le lendemain
+  const prev=(d+6)%7, late=m<120&&openAt(prev)!==null;
+  const open=late||(openAt(d)!==null&&m>=openAt(d));
+  const hh=!late&&d>=1&&d<=6&&m>=1020&&m<1260;
+  const st=$('#status'); let txt;
+  if(hh){txt='Happy hour en cours, jusqu’à 21 h';st.classList.add('open','hh')}
+  else if(open){txt='Ouvert, jusqu’à 2 h';st.classList.add('open')}
+  else{let nd=d,o=openAt(d);if(o===null||m>=o){nd=(d+1)%7;o=openAt(nd);if(o===null){nd=(nd+1)%7;o=openAt(nd)}}
+    txt='Fermé · ouvre '+(nd===d?'aujourd’hui':nd===(d+1)%7?'demain':'lundi')+' à '+o/60+' h'}
+  $('#statusTxt').textContent=txt;
+  const row=$(`#hours [data-d="${late?prev:d}"]`); row&&row.classList.add('today');
+
+  // fondu lent de la photo principale, avec l'enseigne qui suit
+  const imgs=$$('.shots .main img'), sign=$('#mainSign');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pb=$('#pause');let k=0,timer=null;
+  const step=()=>{if(document.hidden)return;imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on');sign.textContent=imgs[k].dataset.sign};
+  const play=on=>{clearInterval(timer);timer=on?setInterval(step,5600):null;pb.setAttribute('aria-pressed',!on);pb.setAttribute('aria-label',on?'Mettre en pause le diaporama':'Relancer le diaporama');pb.innerHTML=on?'<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" fill="currentColor"/><rect x="9.5" y="2" width="3.5" height="12" fill="currentColor"/></svg>':'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2l10 6-10 6z" fill="currentColor"/></svg>'};
+  play(!reduce);pb.onclick=()=>play(!timer);
+
+  // l'ardoise de la table
+  const qty=new Map(), items=$$('.item');
+  let people=2;
+  items.forEach(it=>{
+    const name=it.dataset.name;
+    const s=document.createElement('div');s.className='stepper';
+    s.innerHTML=`<button type="button" aria-label="Retirer : ${name}">−</button><output aria-label="Quantité : ${name}">0</output><button type="button" aria-label="Ajouter : ${name}">+</button>`;
+    it.appendChild(s);
+    const [minus,out,plus]=s.children;
+    const set=n=>{n=Math.max(0,Math.min(40,n));qty.set(it,n);out.textContent=n;it.classList.toggle('has',n>0);render()};
+    minus.onclick=()=>set((qty.get(it)||0)-1);plus.onclick=()=>set((qty.get(it)||0)+1);
+  });
+  const render=()=>{
+    let t=0;const lines=[];
+    qty.forEach((n,it)=>{if(!n)return;const v=n*+it.dataset.price;t+=v;lines.push(`<li><span>${n} × ${it.dataset.name}</span><span>${eur(v)}</span></li>`)});
+    $('#lines').innerHTML=lines.join('');
+    $('#total').textContent=eur(t);
+    $('#people').textContent=people;
+    $('#share').textContent=`soit ${eur(t/people)} par personne`;
+  };
+  $('#pMinus').onclick=()=>{people=Math.max(1,people-1);render()};
+  $('#pPlus').onclick=()=>{people=Math.min(50,people+1);render()};
+  $('#reset').onclick=()=>{items.forEach(it=>{qty.set(it,0);it.querySelector('output').textContent=0;it.classList.remove('has')});render()};
+
+  // demande de groupe par e-mail
+  const f=$('#resa'),err=$('#err'),dt=$('#f-date');
+  dt.min=new Date().toISOString().slice(0,10);
   f.onsubmit=e=>{e.preventDefault();
-    if(!f.checkValidity()){const bad=f.querySelector(':invalid');err.textContent='Complétez le champ « '+bad.labels[0].textContent+' ».';bad.focus();return}
+    f.querySelectorAll('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'));
+    if(!f.checkValidity()){const bad=f.querySelector(':invalid');bad.setAttribute('aria-invalid','true');err.textContent='Vérifiez le champ « '+bad.labels[0].textContent+' ».';bad.focus();return}
+    err.textContent='';
     const v=Object.fromEntries(new FormData(f));
-    const date=new Date(v.date+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
-    const body=`Bonjour,\n\nJe souhaite réserver pour ${v.nb} personnes le ${date} (${v.occ.toLowerCase()}).\n\nMerci de me confirmer la disponibilité.\n\n${v.nom}`;
-    location.href=`mailto:contact@comptoirdupoulet.fr?subject=${encodeURIComponent('Réservation '+v.nb+' personnes · '+date)}&body=${encodeURIComponent(body)}`};
-  // entrées
-  const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+    const day=new Date(v.date+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+    const body=`Bonjour,\n\nJe souhaite réserver pour ${v.nb} personnes le ${day} (${v.occasion.toLowerCase()}).\n\nMerci de me confirmer la disponibilité.\n\n${v.nom}`;
+    location.href='mailto:contact@comptoirdupoulet.fr?subject='+encodeURIComponent(`Réservation groupe · ${v.nb} pers. · ${day}`)+'&body='+encodeURIComponent(body);
+  };
+
+  // l'enseigne du pied de page remplit toute la largeur
+  const fa=$('#fascia');const fit=()=>{if(innerWidth<=560){fa.style.fontSize='';return}fa.style.fontSize='100px';const w=fa.parentElement,cs=getComputedStyle(w),avail=w.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);fa.style.fontSize=Math.min(150,100*avail/fa.offsetWidth)+'px'};fit();addEventListener('resize',fit);document.fonts&&document.fonts.ready.then(fit);
+
+  // entrées en scène
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px 0px 0px'});
+  $$('.rv').forEach(el=>io.observe(el));
 })();
 </script>
 </body>
