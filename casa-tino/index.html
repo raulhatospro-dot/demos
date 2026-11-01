@@ -4,485 +4,575 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Casa Tino · Pizzeria et restaurant italien à Vitry-sur-Seine</title>
-<meta name="description" content="Casa Tino, pizzeria et restaurant italien au 118 boulevard de Stalingrad, Vitry-sur-Seine. Pizzas, pâtes, pierrade, terrasse, salle privatisable. Midi et soir du lundi au samedi.">
-<meta name="theme-color" content="#197e25">
+<title>Casa Tino · Pizzeria, pierrade et fondue à volonté à Vitry-sur-Seine</title>
+<meta name="description" content="Casa Tino, cuisine italienne et brasserie au 118 boulevard de Stalingrad à Vitry-sur-Seine. Pizzas, pâtes, pierrade et fondue bourguignonne à volonté à 23,90 € par personne. Terrasse, location de salle, à emporter.">
+<meta name="theme-color" content="#161616">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Casa Tino · Pizzeria, pierrade à volonté à Vitry">
+<meta property="og:description" content="Cuisine italienne et brasserie au 118 boulevard de Stalingrad. Pierrade ou fondue bourguignonne à volonté, 23,90 € par personne.">
+<meta property="og:image" content="https://lh5.googleusercontent.com/p/AF1QipMjpJUravv1t2DsggdcqMob3oTD7iSd5J5dIQmd=w1200-h630-n-rw">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23c4161c'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='18' fill='white' text-anchor='middle'%3ECT%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://lh5.googleusercontent.com">
 <style>
-/* Système adapté du DESIGN.md « mydealz » (awesome-design) : vert de marque franc, rouge « hot » réservé à l'action,
-   toile gris froid + blanc, boutons pilule pleins, sans géométrique à deux graisses (Averta → Figtree).
-   Adapté : le vert devient un champ entier (la carte), le contrôle chaud/froid devient le sélecteur midi/soir. */
+/* Direction « la vitrine » : la page reprend les objets de la devanture du 118 bd de Stalingrad.
+   Rouge = chaises de la terrasse et ancien auvent ; noir = bandeau et vitres lettrées en blanc ; pierre claire = trottoir.
+   Une seule famille (Archivo) : étroite et grasse pour le lettrage de vitrine, normale pour le texte. */
 :root{
-  --canvas:#f3f5f7;
-  --paper:#ffffff;
-  --ink:#111312;
-  --ink-soft:#4c4f52;
-  --green:#197e25;
-  --green-2:#146a1f;
-  --mint:#defde4;
-  --hot:#ce1736;
-  --hot-2:#a8102a;
-  --on-green:#ffffff;
-  --on-green-soft:#eef8f0;
-  --m:clamp(20px,3vw,48px);
+  --bg:#efeeea;
+  --surface:#e2e0da;
+  --ink:#161616;
+  --muted:#4a4844;
+  --red:#c4161c;
+  --red-deep:#9e1015;
+  --on-red:#ffffff;
+  --glass:#151515;
+  --on-glass:#ffffff;
+  --m:clamp(16px,4vw,56px);
+  --max:1320px;
+  --r:4px;
   --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
-  --s-body:clamp(1.0625rem,1rem + .2vw,1.1875rem);
-  --s-lead:clamp(1.25rem,1.1rem + .6vw,1.625rem);
-  --s-head:clamp(2.25rem,1.4rem + 2.6vw,3.75rem);
-  --s-mega:clamp(5.2rem,1rem + 11vw,12.5rem);
-  --r:8px;
+  --s-body:clamp(1rem,.97rem + .2vw,1.125rem);
+  --s-lead:clamp(1.125rem,1.05rem + .45vw,1.375rem);
+  --s-head:clamp(2.125rem,1.5rem + 2.6vw,3.75rem);
+  --s-mid:clamp(1.75rem,1.3rem + 1.2vw,2.4rem);
+  --s-hero:clamp(2.3rem,1rem + 4.2vw,4.5rem);
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
-body{margin:0;background:var(--canvas);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;font-size:var(--s-body);line-height:1.55;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
-::selection{background:var(--hot);color:#fff}
-:focus-visible{outline:3px solid var(--hot);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.98;margin:0;text-wrap:balance}
-p{margin:0}
-.tab{font-variant-numeric:tabular-nums}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,system-ui,sans-serif;font-size:var(--s-body);line-height:1.5;font-variation-settings:"wdth" 100}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800;font-variation-settings:"wdth" 72;text-transform:uppercase;letter-spacing:-.01em;line-height:.95;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.on-red :focus-visible,.glass :focus-visible,.louer :focus-visible,.total :focus-visible{outline-color:#fff}
+.skip{position:absolute;left:12px;top:-60px;z-index:10;background:#fff;color:var(--ink);padding:12px 16px;border-radius:var(--r);font-weight:700}
+.skip:focus{top:12px}
+a,button,label,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--m)}
+.num{font-variant-numeric:tabular-nums}
 
-.demo{background:var(--ink);color:#d9dbd8;font-size:var(--s-small);text-align:center;padding:8px var(--m);margin:0;position:relative;z-index:5}
+.demo{margin:0;background:var(--ink);color:#fff;text-align:center;font-size:var(--s-small);padding:8px 16px}
 
-/* ---------- la scène fendue ---------- */
-.stage{display:grid;grid-template-columns:47% 53%}
-.photo{position:sticky;top:0;height:100svh;margin:0;padding:20px 0 20px 20px}
-.photo-in{position:relative;height:100%;border-radius:var(--r);overflow:hidden;background:#2a2a2a}
-.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s var(--ease),transform 8s linear;transform:scale(1.04)}
-.photo img.on{opacity:1;transform:scale(1)}
-.photo figcaption{position:absolute;left:16px;bottom:16px;background:var(--paper);color:var(--ink);font-size:var(--s-small);font-weight:500;padding:6px 14px;border-radius:540px;z-index:2}
-.col{min-width:0}
-
-/* nav */
-.nav{display:flex;justify-content:flex-end;align-items:center;gap:clamp(14px,1.6vw,26px);padding:24px var(--m) 0;font-size:.9375rem;font-weight:500}
-.nav a{text-decoration:none}
-.nav a:not(.btn):hover{text-decoration:underline}
-.nav .menu-word{display:none}
-
-/* boutons : pilule pleine, décidé une fois */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:540px;font:700 1rem/1 "Figtree",sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .25s var(--ease),background-color .2s}
+/* boutons : un seul dessin, rectangle plein */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 22px;border-radius:var(--r);font-weight:700;text-decoration:none;font-size:var(--s-body);border:0;cursor:pointer;transition-property:transform,background-color,color;transition-duration:180ms;transition-timing-function:ease-out}
 .btn:active{transform:scale(.97)}
 .btn svg{width:18px;height:18px;flex:none}
-.btn-hot{background:var(--hot);color:#fff}
-.btn-hot:hover{background:var(--hot-2)}
-.btn-line{background:var(--paper);color:var(--green);border-color:var(--green)}
-.btn-line:hover{background:var(--mint)}
-.btn-white{background:#fff;color:var(--green)}
-.btn-white:hover{background:var(--mint)}
-.nav .btn{min-height:40px;padding:0 18px;font-size:.9375rem}
+.btn-white{background:#fff;color:var(--red-deep)}
+.btn-white:hover{background:var(--glass);color:#fff}
+.btn-ink{background:var(--glass);color:#fff}
+.btn-ink:hover{background:#000}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep)}
 
-/* hero */
-.hero{min-height:calc(100svh - 104px);display:flex;flex-direction:column;padding:0 var(--m) 36px}
-.hero-body{padding-top:16vh}
-.status{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:var(--s-small);background:var(--paper);padding:8px 16px 8px 12px;border-radius:540px;margin-bottom:28px}
-.status i{width:10px;height:10px;border-radius:50%;background:var(--ink-soft)}
-.status.open i{background:#30a83c;box-shadow:0 0 0 0 rgba(48,168,60,.5);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(48,168,60,0)}100%{box-shadow:0 0 0 0 rgba(48,168,60,0)}}
-.lead{font-size:var(--s-lead);line-height:1.3;max-width:27ch;font-weight:500}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.wordmark{font-size:var(--s-mega);line-height:.8;letter-spacing:-.05em;color:var(--green);margin-top:auto;padding-top:6vh;order:2;margin-left:-.04em;white-space:nowrap;transform-origin:left bottom}
-.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:var(--s-small);color:var(--ink-soft);font-weight:500}
+/* ---------- HERO : la carte rouge posée devant la devanture ---------- */
+.hero{position:relative;overflow:hidden;background:var(--glass);min-height:min(100svh,940px);display:flex;align-items:center;padding:clamp(24px,4vw,56px) 0}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 52%;filter:brightness(.78);transform-origin:70% 50%;animation:drift 12s var(--ease) both}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero .wrap{position:relative;width:100%}
+.card{background:var(--red);color:var(--on-red);width:min(100%,940px);padding:clamp(20px,2.4vw,34px);border-radius:var(--r);display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:20px 34px}
+.topbar{grid-column:1/-1;display:flex;align-items:center;gap:22px}
+.mark{font-weight:800;font-variation-settings:"wdth" 70;font-size:var(--s-mid);letter-spacing:.01em;text-decoration:none;line-height:1;margin-right:auto}
+.links{display:flex;gap:20px}
+.links a{font-weight:600;font-size:var(--s-small);padding:10px 0;text-decoration:underline 2px transparent;text-underline-offset:6px;transition:text-decoration-color 200ms ease-out}
+.links a:hover{text-decoration-color:currentColor}
+.topbar .btn{min-height:44px;padding:0 16px;font-size:var(--s-small)}
+.hero-text h1{font-size:var(--s-hero);font-variation-settings:"wdth" 64;margin-top:6px}
+.hero-text .lead{font-size:var(--s-lead);line-height:1.4;margin-top:20px;max-width:36ch}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.plates{display:grid;gap:14px;align-content:center;align-self:center}
+.hero-text{align-self:center}
+.plate{margin:0;background:#fff;padding:6px 6px 0;color:var(--ink);transform:rotate(1.4deg)}
+.plate+.plate{transform:rotate(-1.6deg)}
+.plate img{width:100%;aspect-ratio:1;object-fit:cover}
+.plate+.plate img{aspect-ratio:4/3}
+.plate figcaption{font-size:var(--s-small);padding:7px 2px 8px;line-height:1.3}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:24px 0 0;padding:0;list-style:none;max-width:560px}
+.facts li{background:var(--red-deep);padding:12px 14px;border-radius:2px;display:flex;align-items:baseline;gap:12px}
+.facts b{display:block;flex:none;font-weight:800;font-variation-settings:"wdth" 70;font-size:var(--s-mid);line-height:1;letter-spacing:-.01em}
+.facts span{display:block;font-size:var(--s-small);line-height:1.25}
+.status{margin-top:18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:var(--s-small)}
+.status i{width:10px;height:10px;border-radius:50%;background:#fff;flex:none;opacity:.55}
+.status.open i{opacity:1;outline:4px solid rgba(255,255,255,.3)}
 
-section{scroll-margin-top:20px}
-.sec{padding:clamp(96px,12vw,170px) var(--m) 0}
-.sec h2{font-size:var(--s-head)}
-.sec .intro{margin-top:18px;max-width:46ch}
+/* ---------- SECTION À VOLONTÉ : la vitre lettrée + le calcul ---------- */
+section{scroll-margin-top:12px}
+.volonte{padding:clamp(88px,11vw,180px) 0}
+.volonte .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:stretch}
+.glass{background:var(--glass);color:var(--on-glass);border-radius:var(--r);padding:clamp(40px,5vw,72px) clamp(20px,3vw,40px) clamp(32px,4vw,56px);text-align:center;position:relative;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.bulbs{position:absolute;left:24px;right:24px;top:18px;display:flex;justify-content:space-between}
+.bulbs i{width:9px;height:9px;border-radius:50%;background:#fff}
+.glass h2{font-size:var(--s-head);letter-spacing:.02em;line-height:.92}
+.glass .price{font-weight:800;font-variation-settings:"wdth" 72;font-size:var(--s-hero);line-height:.9;color:#fff}
+.glass .pp{font-size:var(--s-lead)}
+.glass .choice{margin-top:14px;font-weight:700;text-transform:uppercase;font-variation-settings:"wdth" 80;font-size:var(--s-lead);letter-spacing:.02em}
+.glass .with{font-size:var(--s-body);max-width:30ch;margin:6px auto 0;color:#dcdad4}
+.calc{display:flex;flex-direction:column;gap:22px}
+.calc h3{font-size:var(--s-mid)}
+.calc .intro{max-width:44ch;color:var(--ink)}
+.calc fieldset{border:0;margin:0;padding:0;min-width:0}
+.calc legend{font-weight:700;margin-bottom:10px;padding:0}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.seg span{display:flex;flex-direction:column;justify-content:center;min-height:60px;padding:10px 16px;background:var(--surface);border-radius:var(--r);font-weight:700;line-height:1.2;transition-property:background-color,color;transition-duration:180ms}
+.seg span small{font-weight:400;font-size:var(--s-small);margin-top:3px}
+.seg input:checked+span{background:var(--glass);color:#fff}
+.seg input:focus-visible+span{outline:3px solid var(--red);outline-offset:3px}
+.seg label:hover span{background:#d6d4cd}
+.seg input:checked+span:hover,.seg label:hover input:checked+span{background:var(--glass)}
+.stepper{display:flex;align-items:center;gap:6px}
+.stepper button{width:56px;height:56px;border:0;border-radius:var(--r);background:var(--surface);font:inherit;font-size:var(--s-lead);font-weight:700;cursor:pointer;color:var(--ink);transition:transform 150ms ease-out,background-color 150ms}
+.stepper button:hover{background:#d6d4cd}
+.stepper button:active{transform:scale(.94)}
+.stepper .count{min-width:170px;text-align:center;font-weight:700;font-size:var(--s-lead)}
+.stepper output{font-weight:800}
+.total{background:var(--red);color:#fff;border-radius:var(--r);padding:22px 22px 20px;display:grid;grid-template-columns:1fr auto;gap:14px 20px;align-items:end}
+.total p{font-size:var(--s-small)}
+.total .sum{font-weight:800;font-variation-settings:"wdth" 72;font-size:var(--s-head);line-height:.9}
+.total .btn{grid-column:1/-1}
+.small-note{font-size:var(--s-small);color:var(--muted)}
 
-/* ---------- l'outil : une table chez Tino ---------- */
-.plan{margin-top:40px;background:var(--paper);border-radius:var(--r);padding:clamp(22px,3vw,36px)}
-.plan fieldset{border:0;margin:0 0 26px;padding:0}
-.plan legend{font-weight:700;font-size:1rem;margin-bottom:12px;padding:0}
-.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
-.chip{appearance:none;border:2px solid #dfe1e4;background:var(--paper);border-radius:var(--r);padding:10px 0 9px;font:500 .875rem/1.15 "Figtree",sans-serif;color:var(--ink);cursor:pointer;text-align:center;transition:border-color .2s,background-color .2s,transform .2s var(--ease)}
-.chip b{display:block;font-size:1.125rem;font-weight:700;font-variant-numeric:tabular-nums}
-.chip:hover:not(:disabled){border-color:var(--green)}
-.chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
-.chip:disabled{color:#6a6d70;background:var(--canvas);border-color:var(--canvas);cursor:not-allowed}
-.chip:active:not(:disabled){transform:scale(.95)}
-.row2{display:flex;flex-wrap:wrap;gap:26px 40px;align-items:flex-start}
-.toggle{display:inline-flex;border:2px solid #dfe1e4;border-radius:540px;padding:3px}
-.toggle button{appearance:none;border:0;background:none;border-radius:540px;font:700 1rem/1 "Figtree",sans-serif;padding:11px 20px;cursor:pointer;color:var(--ink-soft);transition:background-color .2s,color .2s}
-.toggle button[aria-pressed="true"]{background:var(--hot);color:#fff}
-.toggle button:disabled{opacity:.35;cursor:not-allowed}
-.stepper{display:inline-flex;align-items:center;border:2px solid #dfe1e4;border-radius:540px;padding:3px}
-.stepper button{appearance:none;width:42px;height:42px;border:0;border-radius:50%;background:var(--canvas);font:700 1.375rem/1 "Figtree",sans-serif;cursor:pointer;color:var(--ink)}
-.stepper button:hover{background:var(--mint)}
-.stepper output{min-width:3.4ch;text-align:center;font-weight:700;font-size:1.25rem;font-variant-numeric:tabular-nums}
-.answer{margin-top:4px;padding-top:24px;border-top:0;background:none}
-.answer p{font-size:var(--s-lead);line-height:1.3;font-weight:500;max-width:30ch}
-.answer .note{font-size:var(--s-small);color:var(--ink-soft);margin-top:10px;max-width:46ch;font-weight:400;line-height:1.5}
-.answer .actions{margin-top:22px}
+/* ---------- LA CARTE : mot géant + barres pleines, photo tenue ---------- */
+.carte{background:var(--surface);padding:clamp(88px,11vw,180px) 0}
+.carte .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:start}
+.carte-stick{position:sticky;top:24px}
+.carte-stick figure{margin:0;position:relative;aspect-ratio:1;background:var(--glass);border-radius:var(--r);overflow:hidden}
+.carte-stick img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 500ms ease}
+.carte-stick img.on{opacity:1}
+.carte-stick figcaption{margin-top:12px;font-size:var(--s-small);color:var(--muted)}
+.menu-col{container-type:inline-size}
+.giant{font-size:31cqw;line-height:.8;letter-spacing:-.015em;font-variation-settings:"wdth" 62;color:var(--red);margin-left:-.04em}
+.menu-col .intro{margin:22px 0 26px;max-width:46ch}
+.bars{display:grid;gap:6px}
+.bars details{background:var(--bg);border-radius:var(--r)}
+.bars summary{list-style:none;cursor:pointer;min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 18px;font-weight:700;font-size:var(--s-lead)}
+.bars summary::-webkit-details-marker{display:none}
+.bars summary::after{content:"+";font-size:var(--s-mid);font-weight:500;line-height:1;transition:transform 220ms var(--ease)}
+.bars details[open] summary::after{transform:rotate(45deg)}
+.bars summary:hover{color:var(--red-deep)}
+.bars .panel{padding:2px 18px 20px}
+.bars ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.bars li{display:grid;grid-template-columns:1fr auto;gap:2px 16px}
+.bars li b{font-weight:700}
+.bars li .p{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bars li small{grid-column:1/-1;color:var(--muted);font-size:var(--s-small)}
+.bars .panel>p{color:var(--ink)}
+.bars .panel>p+p{margin-top:8px}
 
-/* ---------- la carte : feuille imprimée sur champ vert ---------- */
-.carte{background:var(--green);color:var(--on-green);margin-top:clamp(96px,12vw,170px);padding:clamp(80px,9vw,130px) var(--m)}
-.carte h2{font-size:var(--s-head)}
-.carte .intro{color:var(--on-green-soft);margin-top:18px;max-width:42ch}
-.sheet{position:relative;background:var(--paper);color:var(--ink);max-width:620px;margin:48px auto 0;padding:56px clamp(24px,5vw,60px) 52px;text-align:center}
-.sheet::before,.sheet::after{content:"";position:absolute;left:0;right:0;height:12px;background:radial-gradient(circle at 50% 0,var(--green) 8px,transparent 8.6px) 0 0/22px 12px repeat-x}
-.sheet::before{top:0}
-.sheet::after{bottom:0;transform:scaleY(-1)}
-.sheet h3{font-size:clamp(2rem,1.6rem + 1.4vw,2.75rem);color:var(--green)}
-.sheet .sub{font-size:var(--s-small);color:var(--ink-soft);margin-top:8px}
-.group{margin-top:48px}
-.group h4{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.375rem;letter-spacing:-.01em;margin:0 0 16px}
-.group ul{list-style:none;margin:0 auto;padding:0;max-width:420px;text-align:left}
-.group li{padding:0 0 14px}
-.group li strong{display:block;font-weight:700;font-size:1.0625rem}
-.group li span{display:block;font-size:.9375rem;color:var(--ink-soft);line-height:1.45}
-.group p.desc{font-size:1rem;color:var(--ink-soft);max-width:40ch;margin:0 auto}
-.sheet .foot{margin-top:46px;font-size:1rem;line-height:1.5}
-.sheet .foot b{font-weight:700}
-.pay{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
-.pay span{background:var(--canvas);border-radius:540px;padding:6px 14px;font-size:var(--s-small);font-weight:500}
+/* ---------- GALERIE : tirages avec étiquette ---------- */
+.salle{padding:clamp(88px,11vw,180px) 0}
+.salle h2{font-size:var(--s-head)}
+.salle .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:40px}
+.salle .head p{max-width:48ch}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 12px;margin:0;padding:0;list-style:none}
+.tiles li{display:flex;flex-direction:column}
+.tiles .ph{overflow:hidden;aspect-ratio:4/5;background:var(--surface)}
+.tiles img{width:100%;height:100%;object-fit:cover;transition:transform 600ms var(--ease)}
+.tiles li:hover img{transform:scale(1.04)}
+.tag{padding:12px;min-height:88px;display:flex;flex-direction:column;justify-content:space-between;gap:6px;font-size:var(--s-small);line-height:1.3}
+.tag b{font-weight:700;font-size:var(--s-body)}
+.tag span{display:flex;justify-content:space-between;gap:8px}
+.t1 .tag{background:var(--red);color:#fff}
+.t2 .tag{background:var(--glass);color:#fff}
+.t3 .tag{background:var(--surface);color:var(--ink)}
+.t4 .tag{background:#fff;color:var(--ink)}
 
-/* ---------- la maison ---------- */
-.maison p{max-width:44ch}
-.maison p+p{margin-top:1.1em}
-.mark{background:var(--mint);padding:.05em .25em;border-radius:3px}
-.perks{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;max-width:560px}
-.perks li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
-.perks svg{flex:none;width:24px;height:24px;color:var(--green);margin-top:1px}
+/* ---------- LOUER LA SALLE : le chevalet du trottoir ---------- */
+.louer{background:var(--red);color:#fff;min-height:88svh;display:grid;align-items:center;padding:clamp(72px,8vw,120px) 0}
+.louer .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:stretch}
+.louer figure{margin:0}
+.louer .sq{aspect-ratio:1;object-fit:cover;object-position:8% 50%;width:100%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 58%,22px 54%,0 50%)}
+.louer figcaption{font-size:var(--s-small);margin-top:10px}
+.louer .side{display:flex;flex-direction:column;justify-content:space-between;gap:36px}
+.tabs{display:flex;gap:24px}
+.tabs button{background:none;border:0;padding:8px 0;font:inherit;font-size:var(--s-lead);font-weight:600;color:#fff;cursor:pointer;border-bottom:3px solid transparent;transition:border-color 180ms}
+.tabs button[aria-selected="true"]{border-bottom-color:#fff;font-weight:800}
+.tabs button:hover{border-bottom-color:rgba(255,255,255,.6)}
+.louer h2{font-size:var(--s-head)}
+.louer .desc{max-width:40ch;margin-top:20px;font-size:var(--s-lead);line-height:1.4}
+.events{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.events li{background:var(--red-deep);padding:10px 16px;border-radius:var(--r);font-weight:700}
+.cells{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.cells .btn{min-height:72px;font-size:var(--s-lead)}
+.cells .btn-ghost{background:var(--red-deep);color:#fff}
+.cells .btn-ghost:hover{background:#7f0c10}
 
-/* ---------- privatisation ---------- */
-.fete{display:grid;grid-template-columns:1fr auto;gap:28px 40px;align-items:end}
-.fete .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(6rem,3rem + 8vw,10rem);line-height:.8;letter-spacing:-.05em;color:var(--hot)}
-.fete .big small{display:block;font-family:"Figtree",sans-serif;font-size:1rem;letter-spacing:0;font-weight:700;color:var(--ink);margin-top:14px;line-height:1.3}
+/* ---------- VENIR : carte de visite sur la terrasse ---------- */
+.venir{position:relative;min-height:100svh;display:flex;align-items:flex-start;justify-content:flex-end;padding:60px var(--m)}
+.venir>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.visit{position:relative;background:var(--bg);width:min(100%,440px);border-radius:8px;padding:32px 32px 0;overflow:hidden;display:flex;flex-direction:column;gap:18px}
+.visit h2{font-size:var(--s-mid)}
+.visit address{font-style:normal;font-size:var(--s-lead);line-height:1.35}
+.visit .tram{font-size:var(--s-small);color:var(--muted);margin-top:4px}
+.hours{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px}
+.hours dt{font-weight:700}
+.hours dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.hours .today{color:var(--red-deep)}
+.vstatus{display:flex;align-items:center;gap:10px;font-weight:700}
+.vstatus i{width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none}
+.vstatus.open i{background:#1d7a3a}
+.visit .links2{display:grid;gap:4px}
+.visit .links2 a{font-weight:700;text-decoration-thickness:2px;text-underline-offset:4px;padding:10px 0;display:inline-block}
+.visit .btn{margin:6px -32px 0;border-radius:0;min-height:56px}
 
-/* ---------- venir ---------- */
-.venir-row{display:grid;grid-template-columns:150px 1fr;gap:28px;margin-top:40px;align-items:start}
-.venir-row img{width:150px;height:150px;object-fit:cover;border-radius:var(--r)}
-.venir-row address{font-style:normal;font-size:var(--s-lead);line-height:1.3;font-weight:500}
-.links{display:flex;flex-direction:column;gap:10px;margin-top:20px;font-size:1.0625rem;font-weight:500}
-.hours{margin-top:56px;max-width:520px}
-.hours h3{font-size:1.5rem;letter-spacing:-.02em}
-.hours dl{margin:16px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0}
-.hours dt,.hours dd{margin:0;padding:12px 0;background:linear-gradient(var(--canvas),var(--canvas))}
-.hours dt{font-weight:700;padding-right:28px}
-.hours dd{font-variant-numeric:tabular-nums}
-.hours .row-today{background:var(--paper)}
-.hours dt.row-today{padding-left:12px;border-radius:var(--r) 0 0 var(--r)}
-.hours dd.row-today{border-radius:0 var(--r) var(--r) 0}
-.hours .warn{font-size:var(--s-small);color:var(--ink-soft);margin-top:14px}
+/* ---------- PIED : le dos de la carte ---------- */
+.foot{background:var(--glass);padding:clamp(64px,8vw,120px) 0 0}
+.back{background:var(--bg);position:relative;padding:clamp(48px,5vw,72px) clamp(20px,4vw,56px) 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:48px}
+.back::before{content:"";position:absolute;left:0;right:0;top:-24px;height:25px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='25'%3E%3Ccircle cx='25' cy='25' r='24.5' fill='%23efeeea'/%3E%3C/svg%3E") 0 0/50px 25px repeat-x}
+.back h2{font-size:var(--s-mid)}
+.back .msg{margin-top:18px;max-width:42ch}
+.back .addr{display:grid;gap:12px;align-content:start;position:relative;padding-right:110px;font-size:var(--s-lead)}
+.back .addr a{text-decoration-thickness:2px;text-underline-offset:4px;padding:6px 0;justify-self:start}
+.stamp{position:absolute;right:0;top:0;width:92px;background:#fff;padding:6px;transform:rotate(3deg)}
+.stamp img{aspect-ratio:3/4;object-fit:cover}
+.imprint{grid-column:1/-1;text-align:center;font-size:var(--s-small);color:var(--muted);padding-top:24px}
 
-/* ---------- pied ---------- */
-.m-only{display:none}
-.footer{display:grid;grid-template-columns:47% 53%;background:var(--ink);color:#fff;margin-top:clamp(110px,13vw,190px);min-height:92svh}
-.footer>img{width:100%;height:100%;object-fit:cover;min-height:420px}
-.foot-r{padding:72px var(--m) 32px;display:flex;flex-direction:column}
-.foot-r .wm{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
-.foot-menu{list-style:none;margin:40px 0 0;padding:0;display:flex;flex-direction:column;gap:18px}
-.foot-menu a{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(2rem,1.2rem + 2vw,3rem);letter-spacing:-.03em;text-decoration:none;display:inline-block;transition:transform .35s var(--ease),color .2s}
-.foot-menu:hover a{color:#8d918d}
-.foot-menu a:hover,.foot-menu a:focus-visible{color:#fff;transform:translateX(12px)}
-.foot-info{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;font-size:.9375rem;color:#d9dbd8}
-.foot-info a{color:#fff}
-.legal{margin-top:auto;padding-top:48px;font-size:.8125rem;color:#a9aca9;line-height:1.5}
-.legal a{color:#d9dbd8}
-
-/* ---------- mouvement ---------- */
-.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+/* ---------- entrées ---------- */
+.js .rise{opacity:0;transform:translateY(22px);transition:opacity 700ms var(--ease),transform 900ms var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
 .js .rise.in{opacity:1;transform:none}
-@supports (animation-timeline:scroll()){
-  .wordmark{animation:shrink linear both;animation-timeline:scroll(root);animation-range:0 90vh}
-  @keyframes shrink{to{scale:.93;opacity:.9}}
-}
+
 @media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .js .rise{opacity:1;transform:none}
-  .photo img{transform:none}
+  html{scroll-behavior:auto}
+  .hero-photo{animation:none}
+  .js .rise{transform:none;transition:opacity 150ms linear}
+  .btn:active,.stepper button:active{transform:none}
+  .tiles li:hover img{transform:none}
+  .plate,.plate+.plate,.stamp{transform:none}
 }
 
+/* ---------- tablette ---------- */
+@media (max-width:1020px){
+  .card{grid-template-columns:1fr 190px}
+  .links{display:none}
+  .volonte .wrap,.carte .wrap,.louer .wrap,.salle .head{grid-template-columns:1fr}
+  .carte-stick{position:static;order:2}
+  .carte-stick figure{aspect-ratio:16/10}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 /* ---------- téléphone ---------- */
-@media (max-width:860px){
-  .stage{display:block;position:relative}
-  .photo{position:relative;height:58svh;padding:12px 12px 0}
-  .photo img{transition:none}
-  .nav{position:absolute;top:0;left:0;right:0;padding:24px 26px 0;justify-content:space-between;z-index:3}
-  .nav a:not(.btn):not(.menu-word){display:none}
-  .nav .menu-word{display:inline-flex;background:var(--paper);border-radius:540px;padding:9px 16px;text-decoration:none}
-  .hero{min-height:0;padding-bottom:0}
-  .hero-body{padding-top:28px}
-  .wordmark{font-size:21vw;margin:-6.2vw 0 0;padding-top:0;order:-1;position:relative;z-index:2}
-  .hero{display:flex;flex-direction:column}
-  .facts{gap:6px 16px}
-  .photo figcaption{display:none}
-  .days{grid-template-columns:repeat(4,1fr)}
-  .perks{grid-template-columns:1fr}
-  .fete{grid-template-columns:1fr}
-  .venir-row{grid-template-columns:96px 1fr;gap:18px}
-  .venir-row img{width:96px;height:96px}
-  .venir-row address{font-size:1.125rem}
-  .sheet{margin-left:calc(var(--m) * -1 + 10px);margin-right:calc(var(--m) * -1 + 10px);padding:52px 26px 46px}
-  .m-only{display:block;width:100%;height:auto;border-radius:var(--r);margin-top:36px}
-  .footer{grid-template-columns:1fr;min-height:0}
-  .footer>img{height:50svh;min-height:0}
-  .foot-info{grid-template-columns:1fr}
-  .actions .btn{flex:1 1 auto}
+@media (max-width:640px){
+  .hero{display:block;padding:0;min-height:0;background:var(--bg)}
+  .hero-photo{position:relative;height:34svh;min-height:250px;object-position:58% 50%}
+  .hero .wrap{padding:0 8px;margin-top:-72px}
+  .card{grid-template-columns:1fr;padding:20px 18px 22px;gap:18px}
+  .topbar .btn span{display:none}
+  .plates{grid-template-columns:1fr 1fr;padding-top:0}
+  .plate img,.plate+.plate img{aspect-ratio:1}
+  .facts li{flex-direction:column;gap:4px;padding:10px 12px}
+  .facts{margin-top:18px}
+  .hero-text .lead{margin-top:14px}
+  .actions .btn{flex:1 1 100%}
+  .giant{font-size:31cqw}
+  .tiles{gap:20px 8px}
+  .tag{min-height:0;padding:10px}
+  .tag span{flex-direction:column;gap:2px}
+  .louer{min-height:0}
+  .cells{grid-template-columns:1fr}
+  .cells .btn{min-height:60px}
+  .venir{display:block;min-height:0;padding:0}
+  .venir>img{position:relative;height:70svh}
+  .visit{width:auto;margin:-80px 16px 0;padding:24px 22px 0}
+  .visit .btn{margin:6px -22px 0}
+  .back{grid-template-columns:1fr;gap:28px}
+  .back .addr{padding-right:80px}
+  .stamp{width:68px}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#volonte">Aller au contenu</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<div class="stage">
-  <figure class="photo" aria-hidden="true">
-    <div class="photo-in">
-      <img class="on" data-k="hero" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1200&h=1700&fit=crop&q=75" alt="" width="1200" height="1700">
-      <img data-k="carte" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1200&h=1700&fit=crop&q=75" alt="" width="1200" height="1700" loading="lazy">
-      <img data-k="pierrade" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1200&h=1700&fit=crop&q=75" alt="" width="1200" height="1700" loading="lazy">
-      <img data-k="fete" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1200&h=1700&fit=crop&q=75" alt="" width="1200" height="1700" loading="lazy">
-      <figcaption id="cap">Pizzas</figcaption>
-    </div>
-  </figure>
-
-  <main class="col">
-    <nav class="nav" aria-label="Navigation">
-      <a class="menu-word" href="#carte">La carte</a>
-      <a href="#carte">La carte</a>
-      <a href="#table">Réserver</a>
-      <a href="#fete">Événements</a>
-      <a href="#venir">Venir</a>
-      <a class="btn btn-hot" href="tel:+33146583505">Appeler</a>
-    </nav>
-
-    <section class="hero" data-photo="hero" aria-labelledby="t-hero">
-      <h1 class="wordmark" id="t-hero">casa tino</h1>
-      <div class="hero-body">
-        <p class="status" id="status" role="status"><i></i><span>Midi et soir, du lundi au samedi</span></p>
-        <p class="lead">Pizzeria et restaurant italien au 118 boulevard de Stalingrad, à Vitry.</p>
+<header class="hero" aria-labelledby="t-hero">
+  <img class="hero-photo" src="https://lh5.googleusercontent.com/p/AF1QipMjpJUravv1t2DsggdcqMob3oTD7iSd5J5dIQmd=w1400-rw" alt="La devanture de Casa Tino la nuit : enseigne « Cuisine italienne », guirlande d’ampoules et chaises rouges en terrasse" width="1800" height="2400" fetchpriority="high">
+  <div class="wrap">
+    <div class="card on-red">
+      <nav class="topbar" aria-label="Navigation principale">
+        <a class="mark" href="#t-hero">Casa Tino</a>
+        <div class="links">
+          <a href="#volonte">À volonté</a>
+          <a href="#carte">La carte</a>
+          <a href="#louer">Louer la salle</a>
+          <a href="#venir">Horaires</a>
+        </div>
+        <a class="btn btn-white" href="tel:+33146583505" aria-label="Appeler Casa Tino au 01 46 58 35 05"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Appeler</span></a>
+      </nav>
+      <div class="hero-text">
+        <h1 id="t-hero">Pizzeria, pierrade à volonté</h1>
+        <p class="lead">Casa Tino, cuisine italienne et brasserie au 118 boulevard de Stalingrad, à Vitry-sur-Seine. En salle, en terrasse ou à emporter.</p>
+        <ul class="facts num" aria-label="L’essentiel">
+          <li><b>23,90&nbsp;€</b><span>pierrade à volonté, par personne</span></li>
+          <li><b>23,90&nbsp;€</b><span>fondue bourguignonne à volonté</span></li>
+          <li><b>6 j/7</b><span>midi et soir, fermé le dimanche</span></li>
+          <li><b>T9</b><span>arrêt Beethoven – Concorde</span></li>
+        </ul>
         <div class="actions">
-          <a class="btn btn-hot" href="tel:+33146583505"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>01 46 58 35 05</a>
-          <a class="btn btn-line" href="#table">Préparer ma réservation</a>
+          <a class="btn btn-white" href="tel:+33146583505"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>01&nbsp;46&nbsp;58&nbsp;35&nbsp;05</a>
+          <a class="btn btn-ink" href="#volonte">Calculer ma pierrade</a>
         </div>
-        <p class="facts"><span>Plus de 30 ans à Vitry</span><span>Terrasse ombragée</span><span>Sur place ou à emporter</span></p>
+        <p class="status" id="status" role="status"><i></i><span>Du lundi au samedi, midi et soir</span></p>
       </div>
-    </section>
-
-    <section class="sec" id="table" data-photo="hero" aria-labelledby="t-table">
-      <h2 id="t-table" class="rise">Une table chez Tino</h2>
-      <p class="intro rise">Choisissez le jour, le service et le nombre de couverts. On vous dit si la salle est ouverte, puis vous appelez ou écrivez en un geste.</p>
-      <form class="plan rise" id="plan" onsubmit="return false">
-        <fieldset>
-          <legend>Quel jour ?</legend>
-          <div class="days" id="days"><noscript>Ouvert du lundi au samedi, fermé le dimanche.</noscript></div>
-        </fieldset>
-        <div class="row2">
-          <fieldset>
-            <legend>Quel service ?</legend>
-            <div class="toggle" id="svc">
-              <button type="button" data-s="midi" aria-pressed="false">Midi</button>
-              <button type="button" data-s="soir" aria-pressed="true">Soir</button>
-            </div>
-          </fieldset>
-          <fieldset>
-            <legend id="l-cov">Combien de couverts ?</legend>
-            <div class="stepper" role="group" aria-labelledby="l-cov">
-              <button type="button" id="minus" aria-label="Un couvert de moins">−</button>
-              <output id="cov" aria-live="polite">2</output>
-              <button type="button" id="plus" aria-label="Un couvert de plus">+</button>
-            </div>
-          </fieldset>
-        </div>
-        <div class="answer" aria-live="polite">
-          <p id="ans">Appelez le 01 46 58 35 05 pour réserver.</p>
-          <p class="note" id="note">Horaires communiqués par les annuaires, à confirmer au téléphone.</p>
-          <div class="actions">
-            <a class="btn btn-hot" id="call" href="tel:+33146583505">Appeler pour réserver</a>
-            <a class="btn btn-line" id="mail" href="mailto:casatino_vitry@hotmail.com?subject=R%C3%A9servation">Demander par e-mail</a>
-          </div>
-        </div>
-      </form>
-    </section>
-
-    <section class="carte" id="carte" data-photo="carte" aria-labelledby="t-carte">
-      <h2 id="t-carte" class="rise">La carte</h2>
-      <p class="intro rise">Cuisine italienne et plats de brasserie, à table ou à emporter. Le détail et les prix du jour se donnent sur place.</p>
-      <img class="m-only" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop&q=70" alt="Assiette de penne à la sauce tomate" width="800" height="600" loading="lazy">
-      <div class="sheet rise">
-        <h3>Casa Tino</h3>
-        <p class="sub">118 bd de Stalingrad · Vitry-sur-Seine</p>
-
-        <div class="group">
-          <h4>Pizzas</h4>
-          <p class="desc">Pizzas à la carte, à partager en salle, en terrasse ou à emporter.</p>
-        </div>
-        <div class="group">
-          <h4>Pâtes</h4>
-          <p class="desc">Les pâtes de la maison, servies chaudes, midi et soir.</p>
-        </div>
-        <div class="group">
-          <h4>La pierrade, spécialité</h4>
-          <ul>
-            <li><strong>Au rumsteck</strong><span>La viande saisie à table, sur la pierre chaude.</span></li>
-            <li><strong>Au poulet</strong><span>Même principe, version volaille.</span></li>
-            <li><strong>Mix trois viandes</strong><span>Pour ceux qui ne veulent pas choisir.</span></li>
-          </ul>
-        </div>
-        <div class="group">
-          <h4>Plats traditionnels</h4>
-          <p class="desc">Des plats de brasserie à côté des classiques italiens.</p>
-        </div>
-        <div class="group">
-          <h4>Grandes salades</h4>
-          <p class="desc">Pour un déjeuner plus léger, ou en terrasse quand il fait beau.</p>
-        </div>
-
-        <p class="foot"><b>Du lundi au samedi</b>, midi et soir<br>Fermé le dimanche</p>
-        <div class="pay"><span>CB, Visa, Mastercard</span><span>Titres-restaurant</span><span>À emporter</span></div>
+      <div class="plates">
+        <figure class="plate"><img src="https://lh5.googleusercontent.com/p/AF1QipOTZFA2xiWVvcQ47o0BHxFNppA2Tmyu2R7EJBra=w600-rw" alt="Pizza au fromage coupée en parts, sur une table du restaurant" width="600" height="800"><figcaption>Pizza, en salle</figcaption></figure>
+        <figure class="plate"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/42527/original/307531.jpg" alt="Tagliatelles au saumon et pizza au jambon cru, roquette et copeaux, sur nappe rouge" width="735" height="554"><figcaption>Pâtes et pizza, nappe rouge</figcaption></figure>
       </div>
-    </section>
-
-    <section class="sec maison" id="maison" data-photo="pierrade" aria-labelledby="t-maison">
-      <h2 id="t-maison" class="rise">La maison du boulevard</h2>
-      <p class="intro rise">Casa Tino accueille le quartier depuis <span class="mark">plus de trente ans</span>, dans une rue commerçante de Vitry, à cinq minutes de la porte de Choisy.</p>
-      <p class="rise">Une salle au décor soigné pour les déjeuners de semaine, une terrasse ombragée pour les beaux jours, et la même adresse pour un repas entre amis, un afterwork ou un dîner d’équipe.</p>
-      <ul class="perks rise">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-5h4v5"/></svg>Terrasse ombragée</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M12 7v6h5l2 6M12 10H8M9 21a5 5 0 0 1-1-9.8"/></svg>Accès personnes à mobilité réduite</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v18M4 7.5l16 9M4 16.5l16-9"/></svg>Salle climatisée</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9a13 13 0 0 1 18 0M6.5 12.5a8 8 0 0 1 11 0M10 16a3 3 0 0 1 4 0"/><circle cx="12" cy="19" r="1"/></svg>Wi-Fi</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 8h14l-1.5 12h-11zM9 8V6a3 3 0 0 1 6 0v2"/></svg>Vente à emporter</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="6" cy="10" r="2"/><circle cx="18" cy="10" r="2"/><circle cx="9.5" cy="5.5" r="2"/><circle cx="14.5" cy="5.5" r="2"/><path d="M12 12c-3 0-5 3.5-5 6 0 1.5 1.5 2 3 1.5s2.5-.5 4 0 3 0 3-1.5c0-2.5-2-6-5-6"/></svg>Animaux acceptés</li>
-      </ul>
-    </section>
-
-    <section class="sec" id="fete" data-photo="fete" aria-labelledby="t-fete">
-      <h2 id="t-fete" class="rise">Votre fête chez Tino</h2>
-      <div class="fete">
-        <p class="intro rise">Anniversaire, repas de famille, soirée d’entreprise : le restaurant se privatise, avec ou sans traiteur. Dites-nous la date et le nombre d’invités, on vous rappelle.</p>
-        <p class="big rise">90<small>invités au maximum</small></p>
-      </div>
-      <div class="actions rise">
-        <a class="btn btn-hot" href="mailto:casatino_vitry@hotmail.com?subject=Privatisation%20Casa%20Tino&body=Bonjour%2C%0A%0ANous%20souhaiterions%20privatiser%20le%20restaurant.%0ADate%20%3A%20%0ANombre%20d%E2%80%99invit%C3%A9s%20%3A%20%0AAvec%20ou%20sans%20traiteur%20%3A%20%0A%0AMerci%20!">Demander une date</a>
-        <a class="btn btn-line" href="tel:+33146583505">En parler au téléphone</a>
-      </div>
-    </section>
-
-    <section class="sec" id="venir" data-photo="hero" aria-labelledby="t-venir">
-      <h2 id="t-venir" class="rise">Venir</h2>
-      <div class="venir-row rise">
-        <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=320&h=320&fit=crop&q=70" alt="Pizza à la roquette et mozzarella, vue de dessus" width="150" height="150" loading="lazy">
-        <div>
-          <address>118 boulevard de Stalingrad<br>94400 Vitry-sur-Seine</address>
-          <div class="links">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Casa+Tino+118+boulevard+de+Stalingrad+94400+Vitry-sur-Seine" target="_blank" rel="noopener">Itinéraire Google Maps</a>
-            <a href="tel:+33146583505">01 46 58 35 05</a>
-            <a href="mailto:casatino_vitry@hotmail.com">casatino_vitry@hotmail.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="hours rise">
-        <h3>Horaires</h3>
-        <dl id="hours">
-          <dt data-d="1">Lundi</dt><dd data-d="1">10h30 – 15h · 18h – 23h</dd>
-          <dt data-d="2">Mardi</dt><dd data-d="2">10h30 – 15h · 18h – 23h</dd>
-          <dt data-d="3">Mercredi</dt><dd data-d="3">10h30 – 15h · 18h – 23h</dd>
-          <dt data-d="4">Jeudi</dt><dd data-d="4">10h30 – 15h · 18h – 23h</dd>
-          <dt data-d="5">Vendredi</dt><dd data-d="5">10h30 – 15h · 18h – 23h</dd>
-          <dt data-d="6">Samedi</dt><dd data-d="6">10h30 – 15h · 18h – 23h</dd>
-          <dt data-d="0">Dimanche</dt><dd data-d="0">Fermé</dd>
-        </dl>
-        <p class="warn">Horaires relevés dans les annuaires. Un doute ? Un appel suffit.</p>
-      </div>
-    </section>
-  </main>
-</div>
-
-<footer class="footer">
-  <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1400&h=1600&fit=crop&q=75" alt="Pizza tranchée sur une planche, tomates cerises et romarin" width="1400" height="1600" loading="lazy">
-  <div class="foot-r">
-    <p class="wm">casa tino</p>
-    <ul class="foot-menu">
-      <li><a href="#carte">La carte</a></li>
-      <li><a href="#table">Réserver</a></li>
-      <li><a href="#fete">Privatiser</a></li>
-      <li><a href="#maison">La maison</a></li>
-      <li><a href="#venir">Venir</a></li>
-    </ul>
-    <div class="foot-info">
-      <p>118 bd de Stalingrad<br>94400 Vitry-sur-Seine<br><a href="tel:+33146583505">01 46 58 35 05</a></p>
-      <p>Du lundi au samedi<br>Fermé le dimanche<br><a href="mailto:casatino_vitry@hotmail.com">Écrire au restaurant</a></p>
     </div>
-    <p class="legal">Démo réalisée par Raul Hatos — site non officiel. Photographies d’illustration : Unsplash, elles ne montrent pas le restaurant.</p>
+  </div>
+</header>
+
+<main>
+  <section class="volonte" id="volonte" aria-labelledby="t-vol">
+    <div class="wrap">
+      <div class="glass rise" aria-label="Le lettrage de la vitrine">
+        <div class="bulbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h2 id="t-vol">À volonté<br>pierrade</h2>
+        <p class="price num">23,90&nbsp;€</p>
+        <p class="pp">par personne</p>
+        <p class="choice">Une viande au choix<br>rumsteak ou poulet</p>
+        <p class="with">Avec ses sauces, frites, salade, riz, pâtes et pommes au four.</p>
+      </div>
+
+      <form class="calc" id="calc" aria-labelledby="t-calc" onsubmit="return false">
+        <h3 id="t-calc" class="rise" style="--i:1">Votre table, votre addition</h3>
+        <p class="intro rise" style="--i:2">C’est écrit sur la vitrine : pierrade ou fondue bourguignonne à volonté, 23,90&nbsp;€ par personne. Choisissez, comptez vos convives, appelez.</p>
+        <fieldset class="rise" style="--i:3">
+          <legend>La formule</legend>
+          <div class="seg">
+            <label><input type="radio" name="f" value="la pierrade" checked><span>Pierrade<small>la viande saisie sur la pierre</small></span></label>
+            <label><input type="radio" name="f" value="la fondue bourguignonne"><span>Fondue bourguignonne<small>la viande cuite dans l’huile</small></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="rise" style="--i:4">
+          <legend>La viande</legend>
+          <div class="seg">
+            <label><input type="radio" name="v" value="rumsteak" checked><span>Rumsteak</span></label>
+            <label><input type="radio" name="v" value="poulet"><span>Poulet</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="rise" style="--i:5">
+          <div class="stepper" role="group" aria-label="Nombre de convives">
+            <button type="button" id="minus" aria-label="Un convive de moins">−</button>
+            <p class="count"><output id="n" class="num" aria-live="polite">2</output> <span id="n-lbl">convives</span></p>
+            <button type="button" id="plus" aria-label="Un convive de plus">+</button>
+          </div>
+        </fieldset>
+        <div class="total rise" style="--i:6" aria-live="polite">
+          <p id="recap">Pierrade au rumsteak, 2 personnes</p>
+          <p class="sum num" id="sum">47,80&nbsp;€</p>
+          <a class="btn btn-white" id="book" href="tel:+33146583505">Réserver pour 2 au 01&nbsp;46&nbsp;58&nbsp;35&nbsp;05</a>
+        </div>
+        <p class="small-note">Prix lus sur la vitrine du restaurant, boissons et desserts en plus. Tarif confirmé au téléphone.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="carte" id="carte" aria-labelledby="t-carte">
+    <div class="wrap">
+      <div class="carte-stick rise">
+        <figure>
+          <img class="on" data-k="volonte" src="https://lh5.googleusercontent.com/p/AF1QipPcb5UkqNmEGBKxdY0p3smn-x5bQrGWGRDnZtSZ=w1000-rw" alt="Viande nappée de sauce aux champignons, frites et salade" width="1000" height="486" loading="lazy">
+          <img data-k="pizza" aria-hidden="true" src="https://lh5.googleusercontent.com/p/AF1QipOTZFA2xiWVvcQ47o0BHxFNppA2Tmyu2R7EJBra=w900-rw" alt="Pizza au fromage coupée en parts" width="900" height="1200" loading="lazy">
+          <img data-k="pates" aria-hidden="true" src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/42527/original/307531.jpg" alt="Tagliatelles au saumon et pizza au jambon cru, roquette et copeaux, sur nappe rouge" width="735" height="554" loading="lazy">
+        </figure>
+        <figcaption id="cap">Viande sauce champignons, frites et salade</figcaption>
+      </div>
+      <div class="menu-col">
+        <h2 class="giant rise" id="t-carte">Carte</h2>
+        <p class="intro rise" style="--i:1">Pizzas, pâtes et plats de brasserie à côté de la pierrade. La carte complète est affichée dans le présentoir, devant la porte.</p>
+        <div class="bars rise" style="--i:2">
+          <details open data-k="volonte">
+            <summary>À volonté</summary>
+            <div class="panel">
+              <ul class="num">
+                <li><b>Pierrade, une viande au choix</b><span class="p">23,90&nbsp;€</span><small>Rumsteak ou poulet, par personne</small></li>
+                <li><b>Fondue bourguignonne</b><span class="p">23,90&nbsp;€</span><small>Rumsteak ou poulet, par personne</small></li>
+              </ul>
+              <p style="margin-top:14px">Servies avec leurs sauces, frites, salade, riz, pâtes et pommes au four.</p>
+            </div>
+          </details>
+          <details data-k="pizza">
+            <summary>Pizzas</summary>
+            <div class="panel"><p>Le cœur de la maison : l’enseigne « Pizza » brille au-dessus du trottoir. À table, en terrasse ou à emporter.</p><p>Prix sur la carte du présentoir et au téléphone.</p></div>
+          </details>
+          <details data-k="pates">
+            <summary>Pâtes</summary>
+            <div class="panel"><p>Tagliatelles au saumon et autres pâtes de la carte, servies midi et soir.</p></div>
+          </details>
+          <details data-k="volonte">
+            <summary>Viandes et brasserie</summary>
+            <div class="panel"><p>L’enseigne le dit aussi : « Brasserie ». Viandes en sauce, frites et salade à côté des plats italiens.</p></div>
+          </details>
+          <details data-k="pates">
+            <summary>Salades</summary>
+            <div class="panel"><p>Pour un déjeuner plus léger, ou en terrasse aux beaux jours.</p></div>
+          </details>
+          <details data-k="pizza">
+            <summary>Desserts et boissons</summary>
+            <div class="panel"><p>Tiramisu, vins, bières et champagne pour les grandes tablées.</p></div>
+          </details>
+          <details data-k="pizza">
+            <summary>À emporter</summary>
+            <div class="panel"><p>Commandez par téléphone au <a href="tel:+33146583505">01&nbsp;46&nbsp;58&nbsp;35&nbsp;05</a>, passez prendre au 118 boulevard de Stalingrad.</p><p>Titres-restaurant Pluxee acceptés.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="salle" id="salle" aria-labelledby="t-salle">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="t-salle" class="rise">La salle et la terrasse</h2>
+        <p class="rise" style="--i:1">Une grande salle au fond, une terrasse sous l’auvent face au boulevard, des chaises rouges ajourées et une guirlande d’ampoules le soir. Accès en fauteuil roulant.</p>
+      </div>
+      <ul class="tiles">
+        <li class="t2 rise"><div class="ph"><img src="https://lh5.googleusercontent.com/p/AF1QipMjpJUravv1t2DsggdcqMob3oTD7iSd5J5dIQmd=w700-rw" alt="La devanture éclairée la nuit, enseigne Casa Tino et terrasse" width="700" height="933" loading="lazy"></div><p class="tag"><b>La devanture le soir</b><span><span>Cuisine italienne</span><span>Brasserie</span></span></p></li>
+        <li class="t1 rise" style="--i:1"><div class="ph"><img src="https://lh5.googleusercontent.com/p/AF1QipNp-KngagWBU7m9OSBdU-UBTx4K5R8O3KmCx0NP=w800-rw" alt="Clients attablés en terrasse sous l’auvent" width="800" height="600" loading="lazy"></div><p class="tag"><b>La terrasse</b><span><span>Sous l’auvent</span><span>Bd de Stalingrad</span></span></p></li>
+        <li class="t3 rise" style="--i:2"><div class="ph"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/42527/original/307535.jpg" alt="La salle du restaurant, banquettes et tables dressées" width="979" height="619" loading="lazy"></div><p class="tag"><b>La salle</b><span><span>Tables dressées</span><span>Au fond</span></span></p></li>
+        <li class="t4 rise" style="--i:3"><div class="ph"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/42527/original/307533.jpg" alt="Chaises rouges ajourées à l’entrée du restaurant" width="550" height="400" loading="lazy"></div><p class="tag"><b>Les chaises rouges</b><span><span>Entrée</span><span>Terrasse fermée</span></span></p></li>
+        <li class="t1 rise"><div class="ph"><img src="https://lh5.googleusercontent.com/p/AF1QipOTZFA2xiWVvcQ47o0BHxFNppA2Tmyu2R7EJBra=w700-rw" alt="Pizza au fromage en parts" width="700" height="933" loading="lazy"></div><p class="tag"><b>Pizza</b><span><span>Sur place</span><span>Ou à emporter</span></span></p></li>
+        <li class="t2 rise" style="--i:1"><div class="ph"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/42527/original/307531.jpg" alt="Tagliatelles au saumon et pizza au jambon cru sur nappe rouge" width="735" height="554" loading="lazy"></div><p class="tag"><b>Pâtes et pizza</b><span><span>Nappe rouge</span><span>Au déjeuner</span></span></p></li>
+        <li class="t4 rise" style="--i:2"><div class="ph"><img src="https://lh5.googleusercontent.com/p/AF1QipPcb5UkqNmEGBKxdY0p3smn-x5bQrGWGRDnZtSZ=w700-rw" alt="Viande en sauce aux champignons, frites et salade" width="700" height="340" loading="lazy"></div><p class="tag"><b>Côté brasserie</b><span><span>Sauce champignons</span><span>Frites, salade</span></span></p></li>
+        <li class="t3 rise" style="--i:3"><div class="ph"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/42527/original/307532.jpg" alt="Buffet de fruits dressé pour une fête dans la salle" width="732" height="462" loading="lazy"></div><p class="tag"><b>Un soir de fête</b><span><span>Buffet de fruits</span><span>Salle louée</span></span></p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="louer" id="louer" aria-labelledby="t-louer">
+    <div class="wrap">
+      <figure class="rise">
+        <img class="sq" src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/42527/original/307534.jpg" alt="Le chevalet posé sur le trottoir : location de salle pour les entreprises et les particuliers" width="883" height="622" loading="lazy">
+        <figcaption>Le chevalet du trottoir, devant la terrasse.</figcaption>
+      </figure>
+      <div class="side">
+        <div class="tabs rise" role="tablist" aria-label="Pour qui">
+          <button type="button" role="tab" id="tab-e" aria-selected="true" aria-controls="ev">Entreprises</button>
+          <button type="button" role="tab" id="tab-p" aria-selected="false" aria-controls="ev" tabindex="-1">Particuliers</button>
+        </div>
+        <div id="ev" role="tabpanel" aria-labelledby="tab-e" class="rise" style="--i:1">
+          <h2 id="t-louer">Louer la salle</h2>
+          <p class="desc" id="ev-desc">Le chevalet devant la porte l’annonce : la salle se loue pour les entreprises.</p>
+          <ul class="events" id="ev-list"><li>Séminaire</li><li>Cocktail dînatoire</li><li>Conférence</li></ul>
+        </div>
+        <div class="cells rise" style="--i:2">
+          <a class="btn btn-white" href="tel:+33146583505">Appeler pour une date</a>
+          <a class="btn btn-ghost" href="#salle">Voir la salle</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="venir" id="venir" aria-labelledby="t-venir">
+    <img src="https://lh5.googleusercontent.com/p/AF1QipNp-KngagWBU7m9OSBdU-UBTx4K5R8O3KmCx0NP=w1600-rw" alt="La terrasse de Casa Tino en journée, sous l’auvent rouge et noir" width="1800" height="1350" loading="lazy">
+    <div class="visit rise">
+      <h2 id="t-venir">Venir à Casa Tino</h2>
+      <div>
+        <address>118 boulevard de Stalingrad<br>94400 Vitry-sur-Seine</address>
+        <p class="tram">Tram T9, arrêt Beethoven – Concorde, à 300&nbsp;m.</p>
+      </div>
+      <p class="vstatus" id="vstatus"><i></i><span>Du lundi au samedi, midi et soir</span></p>
+      <dl class="hours num" id="hours">
+        <dt data-d="1-6">Lun. – sam., midi</dt><dd data-d="1-6">dès 12&nbsp;h</dd>
+        <dt data-d="1-6">Lun. – sam., soir</dt><dd data-d="1-6">jusqu’à 22&nbsp;h 30</dd>
+        <dt data-d="0">Dimanche</dt><dd data-d="0">fermé</dd>
+      </dl>
+      <p class="small-note">Les annuaires ne donnent pas tous les mêmes heures d’ouverture : un appel avant de venir.</p>
+      <div class="links2">
+        <a href="tel:+33146583505">01&nbsp;46&nbsp;58&nbsp;35&nbsp;05</a>
+      </div>
+      <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&amp;destination=Casa+Tino+118+boulevard+de+Stalingrad+94400+Vitry-sur-Seine" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="back">
+      <div>
+        <h2>À bientôt à Vitry</h2>
+        <p class="msg">Une pizza en terrasse, une pierrade à volonté entre amis ou la salle pour une fête : Casa Tino vous reçoit du lundi au samedi, midi et soir.</p>
+      </div>
+      <div class="addr">
+        <figure class="stamp" style="margin:0"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/42527/750x375/307533.jpg" alt="" width="200" height="267" loading="lazy"></figure>
+        <a href="tel:+33146583505">01&nbsp;46&nbsp;58&nbsp;35&nbsp;05</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Casa+Tino+118+boulevard+de+Stalingrad+94400+Vitry-sur-Seine" target="_blank" rel="noopener">118 bd de Stalingrad, Vitry</a>
+        <a href="#carte">La carte</a>
+        <a href="#louer">Louer la salle</a>
+      </div>
+      <p class="imprint">Démo réalisée par Raul Hatos — site non officiel. Photos publiées par des clients sur Google Maps et par Privateaser.</p>
+    </div>
   </div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
-// Horaires (annuaire 118712) : lundi à samedi, 10h30–15h et 18h–23h ; dimanche fermé.
-const SVC={midi:[10.5,15],soir:[18,23]};
-const isOpenDay=d=>d!==0;
+// Créneaux communs aux trois annuaires consultés (12 h–14 h 30, 19 h–22 h 30, lun.–sam.) : on n'affiche « ouvert » que dans ces créneaux.
+const SVC={midi:[12,14.5],soir:[19,22.5]};
 const DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-const fmt=h=>{const m=Math.round((h%1)*60);return Math.floor(h)+'h'+(m?String(m).padStart(2,'0'):'')};
-function parisNow(){return new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}))}
-function status(now){
-  const d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
-  if(isOpenDay(d)){
+const fmt=h=>{const m=Math.round((h%1)*60);return Math.floor(h)+'\u00a0h'+(m?'\u00a0'+String(m).padStart(2,'0'):'')};
+function status(d,h){
+  if(d!==0){
     for(const[k,[a,b]]of Object.entries(SVC)) if(h>=a&&h<b) return {open:true,text:`Ouvert · service du ${k} jusqu’à ${fmt(b)}`};
-    if(h<SVC.midi[0]) return {open:false,text:`Fermé · ouverture à ${fmt(SVC.midi[0])}`};
-    if(h<SVC.soir[0]) return {open:false,text:`Entre deux services · retour à ${fmt(SVC.soir[0])}`};
+    if(h<SVC.midi[0]) return {open:false,text:`Service du midi à partir de ${fmt(SVC.midi[0])}`};
+    if(h<SVC.soir[0]) return {open:false,text:`Entre deux services · le soir dès ${fmt(SVC.soir[0])}`};
   }
-  let n=(d+1)%7,lbl='demain';
-  while(!isOpenDay(n)){n=(n+1)%7;lbl=DAYS[n]}
-  return {open:false,text:`Fermé · réouverture ${lbl} à ${fmt(SVC.midi[0])}`};
+  let n=(d+1)%7;if(n===0)n=1;
+  return {open:false,text:`Fermé · réouverture ${n===(d+1)%7?'demain':DAYS[n]} midi`};
 }
-// self-check
-console.assert(status(new Date(2026,10,2,12,0)).open,'lundi midi ouvert');
-console.assert(!status(new Date(2026,10,1,20,0)).open && /lundi/.test(status(new Date(2026,10,1,20,0)).text),'dimanche fermé, réouverture lundi');
-console.assert(/18h/.test(status(new Date(2026,10,3,16,0)).text),'entre deux services');
-console.assert(/lundi/.test(status(new Date(2026,10,7,23,30)).text),'samedi soir tard : lundi');
+console.assert(status(1,12.5).open,'lundi midi ouvert');
+console.assert(/lundi/.test(status(0,20).text)===false&&/demain/.test(status(0,20).text),'dimanche soir : demain');
+console.assert(/lundi/.test(status(6,23).text),'samedi tard : lundi');
+console.assert(/19\u00a0h/.test(status(3,16).text),'entre deux services');
+const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}));
+const st=status(now.getDay(),now.getHours()+now.getMinutes()/60);
+for(const id of ['status','vstatus']){const el=document.getElementById(id);el.querySelector('span').textContent=st.text;el.classList.toggle('open',st.open)}
+document.querySelectorAll(`#hours [data-d="${now.getDay()===0?'0':'1-6'}"]`).forEach(e=>e.classList.add('today'));
 
-const now=parisNow(),st=status(now),sEl=document.getElementById('status');
-sEl.querySelector('span').textContent=st.text;sEl.classList.toggle('open',st.open);
-document.querySelectorAll(`#hours [data-d="${now.getDay()}"]`).forEach(e=>e.classList.add('row-today'));
-
-// l'outil de réservation
-const daysEl=document.getElementById('days');
-let pick=null,svc='soir',cov=2;
-const short=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'];
-for(let i=0;i<7;i++){
-  const d=new Date(now.getFullYear(),now.getMonth(),now.getDate()+i);
-  const b=document.createElement('button');b.type='button';b.className='chip';
-  b.innerHTML=`${i===0?'auj.':short[d.getDay()]}<b>${d.getDate()}</b>`;
-  b.setAttribute('aria-label',(i===0?'Aujourd’hui, ':'')+DAYS[d.getDay()]+' '+d.getDate()+(isOpenDay(d.getDay())?'':', fermé'));
-  b.disabled=!isOpenDay(d.getDay());b.setAttribute('aria-pressed','false');b._d=d;
-  b.onclick=()=>{pick=d;daysEl.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));render()};
-  daysEl.appendChild(b);
-}
-const nowH=now.getHours()+now.getMinutes()/60;const first=[...daysEl.querySelectorAll(".chip")].find((c,i)=>!c.disabled&&!(i===0&&nowH>=SVC.soir[1]));first.setAttribute('aria-pressed','true');pick=first._d;
-document.querySelectorAll('#svc button').forEach(b=>b.onclick=()=>{svc=b.dataset.s;document.querySelectorAll('#svc button').forEach(x=>x.setAttribute('aria-pressed',x===b));render()});
-const covEl=document.getElementById('cov');
-document.getElementById('minus').onclick=()=>{cov=Math.max(1,cov-1);render()};
-document.getElementById('plus').onclick=()=>{cov=Math.min(90,cov+1);render()};
+// calcul à volonté
+const PRICE=23.90,euro=v=>v.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+console.assert(euro(PRICE*4).startsWith('95,60'),'4 couverts = 95,60 €');
+const form=document.getElementById('calc');let n=2;
 function render(){
-  covEl.textContent=cov;
-  const isToday=pick.toDateString()===now.toDateString();
-  const h=now.getHours()+now.getMinutes()/60, past=isToday&&h>=SVC[svc][1];
-  const jour=isToday?'Aujourd’hui':DAYS[pick.getDay()].replace(/^./,c=>c.toUpperCase())+' '+pick.getDate();
-  const p=cov>1?`${cov} personnes`:'1 personne';
-  const ans=document.getElementById('ans'),note=document.getElementById('note');
-  if(past){ans.textContent=`${jour}, le service du ${svc} est terminé. Choisissez un autre créneau.`}
-  else ans.textContent=`${jour} ${svc==='midi'?'midi':'soir'}, ${p} : la salle est ouverte de ${fmt(SVC[svc][0])} à ${fmt(SVC[svc][1])}.`;
-  note.textContent=cov>20?`À partir de ${cov} invités, pensez privatisation : la salle reçoit jusqu’à 90 personnes, avec ou sans traiteur.`:'Horaires communiqués par les annuaires, à confirmer au téléphone.';
-  const body=`Bonjour,\n\nJe souhaiterais réserver une table pour ${p}, ${jour.toLowerCase()} ${svc}.\nNom : \nTéléphone : \n\nMerci !`;
-  document.getElementById('mail').href='mailto:casatino_vitry@hotmail.com?subject='+encodeURIComponent(`Réservation · ${p} · ${jour} ${svc}`)+'&body='+encodeURIComponent(body);
+  const f=form.f.value,v=form.v.value;
+  document.getElementById('n').textContent=n;document.getElementById('n-lbl').textContent=n>1?'convives':'convive';
+  const label=f==='la pierrade'?'Pierrade':'Fondue bourguignonne';
+  document.getElementById('recap').textContent=`${label} ${v==='poulet'?'au poulet':'au rumsteak'}, ${n} personne${n>1?'s':''}`;
+  document.getElementById('sum').textContent=euro(Math.round(PRICE*n*100)/100);
+  document.getElementById('book').textContent=`Réserver pour ${n} au 01\u00a046\u00a058\u00a035\u00a005`;
+  document.getElementById('minus').disabled=n<=1;
 }
+form.addEventListener('change',render);
+document.getElementById('minus').onclick=()=>{if(n>1){n--;render()}};
+document.getElementById('plus').onclick=()=>{if(n<40){n++;render()}};
 render();
 
-// photo fixe : change avec la section
-const imgs=[...document.querySelectorAll('.photo img')],cap=document.getElementById('cap');
-const CAP={hero:'Pizzas',carte:'Pâtes',pierrade:'Viandes',fete:'Entre amis'};
-const show=k=>{imgs.forEach(i=>i.classList.toggle('on',i.dataset.k===k));cap.textContent=CAP[k]};
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)show(e.target.dataset.photo)}),{rootMargin:'-45% 0px -45% 0px'});
-document.querySelectorAll('[data-photo]').forEach(s=>io.observe(s));
+// carte : la photo tenue suit la catégorie ouverte
+const caps={volonte:'Viande sauce champignons, frites et salade',pizza:'Pizza au fromage, en salle',pates:'Tagliatelles au saumon et pizza au jambon cru'};
+document.querySelectorAll('.bars details').forEach(d=>d.addEventListener('toggle',()=>{
+  if(!d.open)return;
+  document.querySelectorAll('.bars details').forEach(o=>{if(o!==d)o.open=false});
+  const k=d.dataset.k;document.querySelectorAll('.carte-stick img').forEach(i=>{const on=i.dataset.k===k;i.classList.toggle('on',on);i.toggleAttribute('aria-hidden',!on)});
+  document.getElementById('cap').textContent=caps[k];
+}));
+
+// louer la salle : entreprises / particuliers (mots du chevalet)
+const EV={e:{d:'Le chevalet devant la porte l’annonce : la salle se loue pour les entreprises.',l:['Séminaire','Cocktail dînatoire','Conférence']},p:{d:'Et pour les particuliers, du repas de famille à la grande fête.',l:['Anniversaire','Repas de fête','Baptême']}};
+const tabs=[...document.querySelectorAll('[role=tab]')];
+function pick(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1});
+  const k=t.id==='tab-e'?'e':'p';document.getElementById('ev').setAttribute('aria-labelledby',t.id);
+  document.getElementById('ev-desc').textContent=EV[k].d;document.getElementById('ev-list').innerHTML=EV[k].l.map(x=>`<li>${x}</li>`).join('');}
+tabs.forEach((t,i)=>{t.onclick=()=>pick(t);t.onkeydown=e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const o=tabs[(i+1)%2];o.focus();pick(o)}}});
 
 // entrées
-const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%3)*70+'ms';ro.observe(el)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rise').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
