@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>La Tanière Bleue · Librairie jeunesse, jeux et jouets, Paris 5e</title>
+<meta name="description" content="La Tanière Bleue, librairie jeunesse, jeux et jouets au 34 rue Saint-Jacques, Paris 5e. Ouvert du mardi au samedi de 10 h à 19 h.">
+<meta name="theme-color" content="#146ef5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#080808;
+  --paper:#ffffff;
+  --blue:#146ef5;
+  --blue-deep:#0a3f9c;
+  --sky:#3b89ff;
+  --yellow:#ffae13;
+  --orange:#ff6b00;
+  --pink:#ed52cb;
+  --green:#00d722;
+  --stone:#f1f0ed;
+  --m:16px;
+  --r:4px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --f:"Inter",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--f);font-optical-sizing:auto;letter-spacing:-.01em}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+::selection{background:var(--ink);color:var(--yellow)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--paper)}
+h1,h2,h3{font-weight:600;letter-spacing:-.04em;line-height:.95;text-wrap:balance}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tab{font-variant-numeric:tabular-nums}
+.wrap{padding:0 var(--m)}
+
+/* boutons : un seul rayon, 4 px */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:var(--r);font:500 16px/1 var(--f);text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background-color .2s,color .2s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:#2a2a2a}
+.btn-paper{background:var(--paper);color:var(--ink)}
+.btn-paper:hover{background:var(--yellow)}
+.link{font-weight:500;text-decoration:underline}
+.link:hover{text-decoration-thickness:3px}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#d9d9d9;font-size:13px;text-align:center;padding:7px var(--m)}
+
+/* ---------- héros : le nom sur deux lignes, deux encres ---------- */
+.hero{background:var(--blue);color:var(--paper);min-height:100svh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px var(--m);font-size:15px;position:relative;z-index:2}
+.mono{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600}
+.mono svg{width:34px;height:34px}
+.top nav{display:flex;gap:18px;align-items:center}
+.top nav a{text-decoration:none;font-weight:500}
+.top nav a:hover{text-decoration:underline}
+.top nav .hide-s{display:none}
+.hero h1{font-size:22vw;line-height:.84;letter-spacing:-.04em;padding:0 var(--m);margin-top:10svh;position:relative;z-index:1}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .l span{display:block}
+.hero h1 .l2{color:var(--ink)}
+.hero-foot{padding:0 var(--m) 28px;display:grid;gap:18px;position:relative;z-index:1;background:var(--blue-deep)}
+.hero-foot{padding-top:24px}
+.hero-foot p{font-size:18px;line-height:1.45;max-width:30ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.hero-den{display:block;width:38vw;margin:auto var(--m) -1px auto;color:var(--blue-deep);pointer-events:none}
+.hero-den path{transform-origin:50% 100%}
+
+/* ---------- les rayons : une ligne par affiche ---------- */
+.rayons{background:var(--yellow);padding:72px 0 80px}
+.rayons h2{font-size:clamp(28px,3vw,40px);letter-spacing:-.03em;padding:0 var(--m);margin-bottom:40px;line-height:1.05}
+.poster{list-style:none}
+.poster li a{display:block;padding:0 var(--m);text-decoration:none;transition:color .25s var(--ease),background-color .25s}
+.poster .w{display:block;font-size:clamp(52px,14vw,150px);font-weight:600;letter-spacing:-.04em;line-height:.92;text-transform:lowercase}
+.poster .d{display:block;font-size:16px;font-weight:500;margin:6px 0 20px}
+.poster li a:hover,.poster li a:focus-visible{color:var(--paper)}
+
+/* ---------- le chercheur d'âge ---------- */
+.age{--field:var(--green);--on:var(--ink);background:var(--field);color:var(--on);padding:80px 0 88px;transition:background-color .6s var(--ease),color .6s var(--ease)}
+.age h2{font-size:clamp(44px,8vw,120px);padding:0 var(--m);max-width:12ch}
+.age .intro{padding:0 var(--m);margin-top:24px;max-width:42ch;font-size:18px}
+.picker{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:0 var(--m);margin-top:36px}
+.picker button{min-height:64px;border:0;border-radius:var(--r);background:rgba(8,8,8,.12);color:inherit;font:600 18px/1.1 var(--f);letter-spacing:-.02em;cursor:pointer;transition:background-color .2s,transform .2s var(--ease)}
+.picker button small{display:block;font-size:13px;font-weight:500;margin-top:4px}
+.picker button:hover{background:rgba(8,8,8,.22)}
+.picker button:active{transform:scale(.96)}
+.picker button[aria-checked="true"]{background:var(--on);color:var(--field)}
+.age-body{display:grid;gap:28px;padding:0 var(--m);margin-top:40px}
+.age-photo{aspect-ratio:4/3;overflow:hidden;border-radius:var(--r);background:rgba(8,8,8,.15)}
+.age-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.age-text h3{font-size:clamp(30px,4vw,52px);letter-spacing:-.04em;line-height:1}
+.age-text .lead{font-size:20px;line-height:1.4;margin-top:14px;max-width:34ch}
+.age-cols{display:grid;gap:22px;margin-top:28px}
+.age-cols h4{font-size:16px;font-weight:600;margin-bottom:8px}
+.age-cols ul{list-style:none;font-size:17px}
+.age-cols li{padding:3px 0}
+.likes{margin-top:30px}
+.likes p{font-weight:600;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:rgba(8,8,8,.12);font-size:16px;font-weight:500;transition:background-color .2s}
+.chips input:checked+span{background:var(--on);color:var(--field)}
+.chips input:focus-visible+span{outline:3px solid var(--on);outline-offset:2px}
+.ask{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.age .btn-ink{background:var(--on);color:var(--field)}
+.age .note{font-size:14px;margin-top:12px;max-width:44ch}
+
+/* ---------- la boutique : mosaïque ---------- */
+.shop{padding:96px var(--m) 104px;background:var(--stone)}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.t{border-radius:var(--r);padding:20px;overflow:hidden;min-height:150px}
+.t-head{grid-column:1/-1;padding:0 0 24px;min-height:0}
+.t-head h2{font-size:clamp(44px,6vw,88px)}
+.t-photo{grid-column:1/-1;padding:0;aspect-ratio:3/2}
+.t-photo img{width:100%;height:100%;object-fit:cover}
+.t-fig{background:var(--ink);color:var(--paper);aspect-ratio:1}
+.t-fig b{display:block;font-size:clamp(56px,6vw,96px);font-weight:600;letter-spacing:-.04em;line-height:1}
+.t-fig span{display:block;font-size:15px;margin-top:8px}
+.t-list{background:var(--pink);aspect-ratio:1}
+.t-list ul{list-style:none;font-size:18px;font-weight:500;line-height:1.35}
+.t-say{grid-column:1/-1;font-size:clamp(22px,2.2vw,30px);line-height:1.2;letter-spacing:-.025em;font-weight:500}
+.t-say.s1{background:var(--paper)}
+.t-say.s2{background:var(--sky)}
+.t-say small{display:block;font-size:15px;font-weight:400;letter-spacing:-.01em;margin-top:14px;line-height:1.45}
+.t-photo2{grid-column:1/-1;padding:0;aspect-ratio:3/2}
+.t-photo2 img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- venir ---------- */
+.visit{background:var(--blue-deep);color:var(--paper);padding:48px 0 96px;overflow:hidden}
+.strip{display:flex;gap:8px;width:max-content;animation:drift 70s linear infinite}
+.strip img{height:110px;width:auto;border-radius:var(--r);object-fit:cover}
+.strip .a{aspect-ratio:3/4}.strip .b{aspect-ratio:1}.strip .c{aspect-ratio:3/2}
+@keyframes drift{to{transform:translateX(-50%)}}
+.visit h2{font-size:clamp(44px,9vw,120px);padding:0 var(--m);margin-top:64px}
+.visit .addr{padding:0 var(--m);margin-top:20px;font-size:20px;line-height:1.4;max-width:36ch}
+.cells{display:grid;gap:8px;padding:0 var(--m);margin-top:36px}
+.cell{display:flex;flex-direction:column;justify-content:center;min-height:76px;padding:14px 20px;border-radius:var(--r);background:#1d55b8;color:var(--paper);text-decoration:none;transition:background-color .2s,color .2s,transform .2s var(--ease)}
+.cell b{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.cell span{font-size:15px;margin-top:2px}
+.cell:hover{background:var(--paper);color:var(--ink)}
+.cell:active{transform:scale(.98)}
+.cell.go{background:var(--yellow);color:var(--ink)}
+.cell.go:hover{background:var(--paper)}
+.hours{padding:0 var(--m);margin-top:48px;display:grid;gap:28px}
+.hours h3{font-size:24px;letter-spacing:-.03em;margin-bottom:12px}
+.hours table{border-collapse:collapse;font-size:17px;width:100%;max-width:420px}
+.hours td{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.25)}
+.hours td+td{text-align:right}
+.hours tr.today td{font-weight:600}
+.status{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:18px;margin-bottom:14px}
+.status i{width:12px;height:12px;border-radius:50%;background:var(--green)}
+.status.closed i{background:var(--orange)}
+.hours .metro{font-size:17px;line-height:1.5;max-width:40ch}
+
+/* ---------- pied : tuiles ---------- */
+.foot{padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--paper)}
+.ft{border-radius:var(--r);padding:20px;min-height:150px;display:flex;flex-direction:column;background:var(--stone)}
+.ft-word{grid-column:1/-1;background:var(--blue);color:var(--paper);min-height:160px;justify-content:center;align-items:center}
+.ft-word span{font-size:clamp(40px,9vw,140px);font-weight:600;letter-spacing:-.04em;line-height:.9;text-align:center}
+.ft-cta{grid-column:1/-1;background:var(--yellow);text-decoration:none;font-size:26px;font-weight:600;letter-spacing:-.03em;line-height:1.1;min-height:170px;transition:background-color .2s}
+.ft-cta:hover{background:var(--orange)}
+.ft-cta svg{margin-top:auto;align-self:flex-end;width:48px;height:48px;transition:transform .3s var(--ease)}
+.ft-cta:hover svg{transform:translate(6px,-6px)}
+.ft ul{list-style:none;font-size:16px;line-height:1.7}
+.ft ul a{text-decoration:none}.ft ul a:hover{text-decoration:underline}
+.ft-mail a{margin-top:auto;font-size:17px;font-weight:500;word-break:break-all}
+.ft-time b{font-size:28px;font-weight:600;letter-spacing:-.03em}
+.ft-say{grid-column:1/-1}
+.ft-say p{font-size:20px;line-height:1.3;letter-spacing:-.02em;max-width:26ch}
+.ft-say small{margin-top:auto;padding-top:18px;font-size:13px;line-height:1.5}
+
+/* ---------- apparitions ---------- */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero h1 .l span{transform:translateY(105%);transition:transform .95s var(--ease)}
+.js .hero h1 .l2 span{transition-delay:.11s}
+.js .hero-foot{opacity:0;transform:translateY(16px);transition:opacity .7s .55s var(--ease),transform .7s .55s var(--ease)}
+.js.ready .hero h1 .l span{transform:none}
+.js.ready .hero-foot{opacity:1;transform:none}
+
+/* ---------- tablette / bureau ---------- */
+@media (min-width:768px){
+  :root{--m:32px}
+  .top nav .hide-s{display:inline}
+  .hero h1{margin-top:12svh}
+  .hero-foot{grid-template-columns:1fr auto;align-items:end;padding-bottom:40px}
+  .hero-foot p{grid-column:2;grid-row:1;text-align:right;justify-self:end}
+  .hero-actions{grid-column:1;grid-row:1}
+  .poster li a{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+  .poster .d{font-size:19px;margin:0}
+  .picker button{min-height:80px;font-size:22px}
+  .age-body{grid-template-columns:5fr 7fr;gap:48px;align-items:start}
+  .age-cols{grid-template-columns:1fr 1fr}
+  .mosaic{grid-template-columns:repeat(12,1fr);grid-auto-rows:96px;gap:8px}
+  .t{min-height:0;padding:24px}
+  .t-head{grid-column:1/7;grid-row:1/3;padding:0}
+  .t-photo{grid-column:7/13;grid-row:1/6;aspect-ratio:auto}
+  .t-fig{grid-column:1/4;grid-row:3/6;aspect-ratio:auto}
+  .t-list{grid-column:4/7;grid-row:3/6;aspect-ratio:auto}
+  .t-say.s1{grid-column:1/7;grid-row:6/9}
+  .t-photo2{grid-column:7/10;grid-row:6/9;aspect-ratio:auto}
+  .t-say.s2{grid-column:10/13;grid-row:6/9;font-size:22px}
+  .strip img{height:150px}
+  .cells{grid-template-columns:repeat(3,1fr)}
+  .cell{min-height:96px}
+  .hours{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:repeat(12,1fr);gap:8px;padding:12px}
+  .ft{min-height:220px;padding:24px}
+  .ft-say{grid-column:1/5;grid-row:1}
+  .ft-nav{grid-column:5/8;grid-row:1}
+  .ft-time{grid-column:8/10;grid-row:1}
+  .ft-mail{grid-column:10/13;grid-row:1}
+  .ft-word{grid-column:1/9;grid-row:2;min-height:320px}
+  .ft-cta{grid-column:9/13;grid-row:2;min-height:320px;font-size:30px}
+  .ft-mail a{font-size:20px}
+}
+@media (min-width:1100px){
+  :root{--m:40px}
+  .hero h1{font-size:min(16.5vw,260px);margin-top:5svh}
+  .hero-den{width:21vw;margin-right:14vw}
+  .rayons{padding:96px 0 104px}
+  .poster .w{font-size:clamp(90px,10vw,150px)}
+  .age{padding:120px 0 128px}
+  .shop{padding:140px var(--m) 150px}
+  .visit{padding:56px 0 140px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv,.js .hero-foot,.js .hero h1 .l span{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<header class="hero">
+  <div class="top">
+    <a class="mono" href="#top" aria-label="La Tanière Bleue, accueil">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="4" fill="#080808"/><path d="M8 32V21a12 12 0 0 1 24 0v11h-6v-8a6 6 0 0 0-12 0v8z" fill="#146ef5"/></svg>
+      <span class="hide-s">La Tanière Bleue</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="#age">Âges</a>
+      <a class="hide-s" href="#boutique">La boutique</a>
+      <a href="#venir">Venir</a>
+      <a class="link" href="tel:+33143546520">Appeler</a>
+    </nav>
+  </div>
+  <h1 id="top"><span class="l"><span>La Tanière</span></span><span class="l l2"><span>Bleue</span></span><span class="sr">, librairie jeunesse, jeux et jouets à Paris 5e</span></h1>
+  <svg class="hero-den" viewBox="0 0 600 420" aria-hidden="true">
+    <path d="M0 420V260C0 116 134 0 300 0s300 116 300 260v160H430V280c0-72-58-130-130-130s-130 58-130 130v140z" fill="currentColor"/>
+  </svg>
+  <div class="hero-foot">
+    <p>Librairie jeunesse, jeux et jouets au 34 rue Saint-Jacques, Paris 5e. Du mardi au samedi, de 10 h à 19 h.</p>
+    <div class="hero-actions">
+      <a class="btn btn-ink" href="#age">Un livre pour quel âge ?</a>
+      <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=La%20Tani%C3%A8re%20Bleue%2C%2034%20rue%20Saint-Jacques%2C%2075005%20Paris" target="_blank" rel="noopener">Itinéraire</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="rayons" aria-labelledby="rayons-t">
+  <h2 id="rayons-t" class="rv">Du premier imagier au premier roman ado</h2>
+  <ul class="poster">
+    <li class="rv"><a href="#age" data-go="0"><span class="w">imagiers</span><span class="d tab">0 à 2 ans</span></a></li>
+    <li class="rv"><a href="#age" data-go="1"><span class="w">albums</span><span class="d tab">3 à 5 ans</span></a></li>
+    <li class="rv"><a href="#age" data-go="2"><span class="w">lectures</span><span class="d tab">6 à 8 ans</span></a></li>
+    <li class="rv"><a href="#age" data-go="3"><span class="w">romans</span><span class="d tab">9 à 12 ans</span></a></li>
+    <li class="rv"><a href="#age" data-go="4"><span class="w">ados</span><span class="d tab">13 ans et plus</span></a></li>
+    <li class="rv"><a href="#boutique"><span class="w">jeux</span><span class="d">à tout âge</span></a></li>
+  </ul>
+</section>
+
+<section class="age" id="age" aria-labelledby="age-t">
+  <h2 id="age-t" class="rv">Un livre pour quel âge ?</h2>
+  <p class="intro rv">Choisissez l'âge de l'enfant. On vous dit quoi chercher en rayon, puis vous nous écrivez ce qu'il aime : on prépare des idées avant votre passage.</p>
+  <div class="picker rv" role="radiogroup" aria-label="Âge de l'enfant">
+    <button type="button" role="radio" aria-checked="false" data-i="0">0–2<small>ans</small></button>
+    <button type="button" role="radio" aria-checked="false" data-i="1">3–5<small>ans</small></button>
+    <button type="button" role="radio" aria-checked="true" data-i="2">6–8<small>ans</small></button>
+    <button type="button" role="radio" aria-checked="false" data-i="3">9–12<small>ans</small></button>
+    <button type="button" role="radio" aria-checked="false" data-i="4">13+<small>ans</small></button>
+  </div>
+  <div class="age-body">
+    <div class="age-photo rv"><img id="a-img" src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=1000&amp;h=750&amp;fit=crop&amp;q=70" width="1000" height="750" alt="Une enfant et une adulte lisent ensemble à une table jaune" loading="lazy"></div>
+    <div class="age-text rv" aria-live="polite">
+      <h3 id="a-title">On apprend à lire seul</h3>
+      <p class="lead" id="a-lead">Les premiers chapitres, lus seul ou à deux voix. L'enfant veut prouver qu'il y arrive : des textes courts, une grande police, des illustrations qui aident.</p>
+      <div class="age-cols">
+        <div><h4>Les livres à chercher</h4><ul id="a-books"><li>Premières lectures en chapitres courts</li><li>BD avec peu de texte</li><li>Albums plus longs, lus ensemble</li><li>Documentaires sur une passion</li></ul></div>
+        <div><h4>Côté jeux</h4><ul id="a-games"><li>Jeux de lettres et de mots</li><li>Jeux de mémoire</li><li>Parties courtes en famille</li></ul></div>
+      </div>
+      <div class="likes">
+        <p id="likes-t">Ce qu'il ou elle aime</p>
+        <div class="chips" role="group" aria-labelledby="likes-t">
+          <label><input type="checkbox" value="les animaux"><span>Les animaux</span></label>
+          <label><input type="checkbox" value="rire"><span>Rire</span></label>
+          <label><input type="checkbox" value="l'aventure"><span>L'aventure</span></label>
+          <label><input type="checkbox" value="les enquêtes"><span>Les enquêtes</span></label>
+          <label><input type="checkbox" value="la nature et les sciences"><span>Nature et sciences</span></label>
+          <label><input type="checkbox" value="dessiner et bricoler"><span>Dessiner, bricoler</span></label>
+          <label><input type="checkbox" value="la magie"><span>La magie</span></label>
+        </div>
+      </div>
+      <div class="ask">
+        <a class="btn btn-ink" id="a-mail" href="mailto:latanierebleue@gmail.com?subject=Un%20livre%20pour%20un%20enfant%20de%206%20%C3%A0%208%20ans">Demander des idées par e-mail</a>
+        <a class="link" href="tel:+33143546520">ou appeler</a>
+      </div>
+      <p class="note">Le message part de votre messagerie, déjà rempli avec l'âge et les goûts choisis.</p>
+    </div>
+  </div>
+</section>
+
+<section class="shop" id="boutique" aria-labelledby="shop-t">
+  <div class="mosaic">
+    <div class="t t-head rv"><h2 id="shop-t">Livres, jeux et jouets</h2></div>
+    <div class="t t-photo rv"><img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1100&amp;h=900&amp;fit=crop&amp;q=70" width="1100" height="900" alt="Jouets en bois et en couleurs posés à plat sur fond blanc" loading="lazy"></div>
+    <div class="t t-fig rv"><b class="tab">4,9</b><span>sur 5 sur Google, pour 48 avis</span></div>
+    <div class="t t-list rv"><ul><li>Albums</li><li>Romans</li><li>Jeux de société</li><li>Jouets</li></ul></div>
+    <p class="t t-say s1 rv">Dites-nous l'âge et ce que l'enfant aime : on cherche avec vous, livre en main.<small>Un cadeau à trouver, une lecture pour les vacances, un premier jeu de société : on prend le temps.</small></p>
+    <div class="t t-photo2 rv"><img src="https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=700&amp;h=760&amp;fit=crop&amp;q=70" width="700" height="760" alt="Plateau de jeu de société avec dés et pions" loading="lazy"></div>
+    <p class="t t-say s2 rv">En mai 2026, la Tanière était de la Librairie éphémère du festival Quartier du Livre.</p>
+  </div>
+</section>
+
+<section class="visit on-dark" id="venir" aria-labelledby="venir-t">
+  <div class="strip" aria-hidden="true">
+    <img class="a" src="https://images.unsplash.com/photo-1611890798517-07b0fcb4a811?w=240&amp;h=320&amp;fit=crop&amp;q=60" width="240" height="320" alt="" loading="lazy">
+    <img class="b" src="https://images.unsplash.com/photo-1484820540004-14229fe36ca4?w=300&amp;h=300&amp;fit=crop&amp;q=60" width="300" height="300" alt="" loading="lazy">
+    <img class="c" src="https://images.unsplash.com/photo-1476234251651-f353703a034d?w=420&amp;h=280&amp;fit=crop&amp;q=60" width="420" height="280" alt="" loading="lazy">
+    <img class="a" src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=240&amp;h=320&amp;fit=crop&amp;q=60" width="240" height="320" alt="" loading="lazy">
+    <img class="b" src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=300&amp;h=300&amp;fit=crop&amp;q=60" width="300" height="300" alt="" loading="lazy">
+    <img class="c" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=420&amp;h=280&amp;fit=crop&amp;q=60" width="420" height="280" alt="" loading="lazy">
+    <img class="a" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=240&amp;h=320&amp;fit=crop&amp;q=60" width="240" height="320" alt="" loading="lazy">
+    <img class="c" src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=420&amp;h=280&amp;fit=crop&amp;q=60" width="420" height="280" alt="" loading="lazy">
+  </div>
+  <h2 id="venir-t" class="rv">Venir à la Tanière</h2>
+  <p class="addr rv">34 rue Saint-Jacques, 75005 Paris. Dans le Quartier latin, à deux pas de l'église Saint-Séverin.</p>
+  <div class="cells rv">
+    <a class="cell" href="tel:+33143546520"><b>Appeler</b><span class="tab">01 43 54 65 20</span></a>
+    <a class="cell" href="mailto:latanierebleue@gmail.com"><b>Écrire</b><span>latanierebleue@gmail.com</span></a>
+    <a class="cell go" href="https://www.google.com/maps/dir/?api=1&amp;destination=La%20Tani%C3%A8re%20Bleue%2C%2034%20rue%20Saint-Jacques%2C%2075005%20Paris" target="_blank" rel="noopener"><b>Itinéraire</b><span>Ouvrir Google Maps</span></a>
+  </div>
+  <div class="hours">
+    <div class="rv">
+      <h3>Horaires</h3>
+      <p class="status" id="status" hidden><i></i><span></span></p>
+      <table>
+        <tbody id="hours">
+          <tr data-d="1"><td>Lundi</td><td>Fermé</td></tr>
+          <tr data-d="2"><td>Mardi</td><td class="tab">10 h – 19 h</td></tr>
+          <tr data-d="3"><td>Mercredi</td><td class="tab">10 h – 19 h</td></tr>
+          <tr data-d="4"><td>Jeudi</td><td class="tab">10 h – 19 h</td></tr>
+          <tr data-d="5"><td>Vendredi</td><td class="tab">10 h – 19 h</td></tr>
+          <tr data-d="6"><td>Samedi</td><td class="tab">10 h – 19 h</td></tr>
+          <tr data-d="0"><td>Dimanche</td><td>Fermé</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rv">
+      <h3>En métro et RER</h3>
+      <p class="metro">Saint-Michel (ligne 4, RER B et C), Cluny–La Sorbonne (ligne 10) ou Maubert–Mutualité (ligne 10), puis quelques minutes à pied.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="ft ft-word"><span>La Tanière Bleue</span></div>
+  <a class="ft ft-cta" href="tel:+33143546520">Appeler la boutique
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" aria-hidden="true"><path d="M12 36 36 12M16 12h20v20"/></svg>
+  </a>
+  <div class="ft ft-nav"><ul><li><a href="#age">Un livre par âge</a></li><li><a href="#boutique">La boutique</a></li><li><a href="#venir">Horaires</a></li><li><a href="#venir">Itinéraire</a></li></ul></div>
+  <div class="ft ft-mail"><span>Écrire</span><a href="mailto:latanierebleue@gmail.com">latanierebleue@gmail.com</a></div>
+  <div class="ft ft-time"><span>Paris 5e</span><b class="tab" id="clock">10:00</b></div>
+  <div class="ft ft-say"><p>Librairie jeunesse, jeux et jouets, 34 rue Saint-Jacques.</p><small>Démo réalisée par Raul Hatos, site non officiel. Photos d'illustration : Unsplash.</small></div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('ready')));
+
+// apparitions, une fois
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+
+// bande photo en boucle : on double le contenu
+const strip=document.querySelector('.strip');strip.innerHTML+=strip.innerHTML;
+
+// chercheur d'âge
+const U=id=>`https://images.unsplash.com/photo-${id}?w=1000&h=750&fit=crop&q=70`;
+const AGES=[
+ {k:'0 à 2 ans',field:'#ed52cb',on:'#080808',img:'1600880292203-757bb62b4baf',alt:'Un bébé assis au milieu de peluches et de livres d\'images',
+  t:'On découvre le livre avec les mains',lead:'Le livre se touche, se mordille et se regarde à deux. Des pages épaisses, des images franches, des mots qu\'on répète.',
+  b:['Livres cartonnés aux coins arrondis','Imagiers','Livres à toucher et à soulever','Comptines et premières chansons'],g:['Hochets et jouets d\'éveil','Cubes à empiler','Premiers encastrements']},
+ {k:'3 à 5 ans',field:'#ff6b00',on:'#080808',img:'1516627145497-ae6968895b74',alt:'Une petite fille joue avec un appareil photo jouet devant des étagères de livres',
+  t:'On écoute l\'histoire et on la redit',lead:'L\'âge des albums lus et relus le soir. Les histoires qui se répètent, les cherche-et-trouve, les premières questions sur le monde.',
+  b:['Albums à lire à voix haute','Histoires en randonnée','Cherche-et-trouve','Premiers documentaires en images'],g:['Premiers jeux de société coopératifs','Puzzles','Jeux de dînette et d\'imitation']},
+ {k:'6 à 8 ans',field:'#00d722',on:'#080808',img:'1544776193-352d25ca82cd',alt:'Une enfant et une adulte lisent ensemble à une table jaune',
+  t:'On apprend à lire seul',lead:'Les premiers chapitres, lus seul ou à deux voix. L\'enfant veut prouver qu\'il y arrive : des textes courts, une grande police, des illustrations qui aident.',
+  b:['Premières lectures en chapitres courts','BD avec peu de texte','Albums plus longs, lus ensemble','Documentaires sur une passion'],g:['Jeux de lettres et de mots','Jeux de mémoire','Parties courtes en famille']},
+ {k:'9 à 12 ans',field:'#3b89ff',on:'#080808',img:'1476234251651-f353703a034d',alt:'Deux enfants lisent un livre dans un pré au soleil',
+  t:'On dévore les séries',lead:'Un tome fini, on veut le suivant. Aventure, enquêtes, mondes imaginaires : c\'est l\'âge où l\'on devient lecteur pour de bon.',
+  b:['Romans d\'aventure et d\'enquête','Séries à suivre','BD et mangas jeunesse','Documentaires pour aller plus loin'],g:['Jeux de stratégie','Casse-têtes','Loisirs créatifs']},
+ {k:'13 ans et plus',field:'#080808',on:'#ffffff',img:'1491841550275-ad7854e35ca6',alt:'Silhouette d\'un garçon qui lit adossé à un arbre au coucher du soleil',
+  t:'On choisit seul, avec un bon conseil',lead:'Les ados savent ce qu\'ils veulent lire, et aiment qu\'on leur glisse le titre qu\'ils n\'auraient pas trouvé seuls.',
+  b:['Romans ados','Fantasy et science-fiction','Mangas','Romans graphiques'],g:['Jeux d\'ambiance','Jeux de société à plusieurs','Jeux de stratégie']}
+];
+const sec=document.getElementById('age'),btns=[...sec.querySelectorAll('[role=radio]')],chips=[...sec.querySelectorAll('.chips input')];
+const $=id=>document.getElementById(id);
+let cur=2;
+AGES.forEach(a=>{const i=new Image();i.src=U(a.img)}); // préchargement, changement d'âge sans attente
+function mail(){
+  const a=AGES[cur],likes=chips.filter(c=>c.checked).map(c=>c.value);
+  const body=`Bonjour,\n\nJe cherche ${likes.length?'un livre ou un jeu':'un livre'} pour un enfant de ${a.k}.`+(likes.length?`\nIl ou elle aime ${likes.join(', ')}.`:'')+`\n\nJe passerai à la boutique le : \n\nMerci !`;
+  $('a-mail').href=`mailto:latanierebleue@gmail.com?subject=${encodeURIComponent('Un livre pour un enfant de '+a.k)}&body=${encodeURIComponent(body)}`;
+}
+function set(i,focus){
+  cur=i;const a=AGES[i];
+  btns.forEach((b,j)=>{b.setAttribute('aria-checked',j===i);b.tabIndex=j===i?0:-1});
+  if(focus)btns[i].focus();
+  sec.style.setProperty('--field',a.field);sec.style.setProperty('--on',a.on);
+  sec.classList.toggle('on-dark',a.on==='#ffffff');
+  $('a-title').textContent=a.t;$('a-lead').textContent=a.lead;
+  $('a-books').innerHTML=a.b.map(x=>`<li>${x}</li>`).join('');
+  $('a-games').innerHTML=a.g.map(x=>`<li>${x}</li>`).join('');
+  const img=$('a-img');img.src=U(a.img);img.alt=a.alt;
+  mail();
+}
+btns.forEach((b,i)=>{b.addEventListener('click',()=>set(i));b.addEventListener('keydown',e=>{
+  const d={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];if(d){e.preventDefault();set((cur+d+5)%5,true)}})});
+chips.forEach(c=>c.addEventListener('change',mail));
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>set(+a.dataset.go)));
+set(2);
+
+// ouvert maintenant ? heure de Paris
+function tick(){
+  const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+  const g=t=>p.find(x=>x.type===t).value,h=+g('hour'),m=+g('minute');
+  const day=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'].indexOf(g('weekday'));
+  $('clock').textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`;
+  const open=day>=2&&day<=6&&h>=10&&h<19;
+  const st=$('status');st.hidden=false;st.classList.toggle('closed',!open);
+  st.querySelector('span').textContent=open?`Ouvert, jusqu'à 19 h`:(day>=2&&day<=6&&h<10?'Fermé, ouvre à 10 h':'Fermé en ce moment');
+  document.querySelectorAll('#hours tr').forEach(tr=>tr.classList.toggle('today',+tr.dataset.d===day));
+}
+tick();setInterval(tick,30000);
+</script>
+</body>
+</html>
