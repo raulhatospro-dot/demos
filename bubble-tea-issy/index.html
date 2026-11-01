@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bubble tea bar · Issy-les-Moulineaux</title>
+<meta name="description" content="Bubble tea bar, 52 avenue Victor Cresson à Issy-les-Moulineaux. Thés au lait bio ou boisson végétale bio, sucre réglable, dix toppings. Composez votre bubble tea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#f1f1ec;
+  --surface-2:#e5e4dc;
+  --ink:#1c1410;
+  --body:#2b221d;
+  --mute:#62574f;
+  --accent:#a14d12;
+  --accent-press:#843d0c;
+  --on-accent:#fff;
+  --pearl:#1c1410;
+  --r:24px;
+  --pad:20px;
+  --font:"Gabarito",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--body);font:400 17px/1.55 var(--font);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:999px}
+h1,h2,h3{color:var(--ink);font-weight:800;letter-spacing:-.035em;line-height:.95;text-wrap:balance}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.tnum{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* boutons : pilule, décidé une fois */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;font:700 16px/1 var(--font);text-decoration:none;border:0;cursor:pointer;transition:background-color .25s var(--ease),transform .2s var(--ease),color .25s}
+.btn:active{transform:scale(.96)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-go{background:var(--accent);color:var(--on-accent)}
+.btn-go:hover{background:var(--accent-press)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#3a2c24}
+.btn-soft{background:var(--surface);color:var(--ink)}
+.btn-soft:hover{background:var(--surface-2)}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#e9e3dc;font-size:13px;text-align:center;padding:7px 16px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:var(--bg)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.mark{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:22px;letter-spacing:-.04em;color:var(--ink);text-decoration:none}
+.mark i{width:15px;height:15px;border-radius:50%;background:var(--pearl);display:block}
+.nav ul{display:none;list-style:none;gap:30px}
+.nav ul a{text-decoration:none;font-weight:600;color:var(--ink);transition:color .2s}
+.nav ul a:hover{color:var(--accent)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:20px 0 56px}
+.hero-grid{display:grid;gap:28px}
+.hero-photo{position:relative;width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--surface);max-width:560px;justify-self:center}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease;animation:drift 22s ease-in-out infinite alternate}
+.hero-photo img.on{opacity:1}
+@keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.12) translateY(-2%)}}
+.hero h1{font-size:clamp(46px,11.5vw,124px)}
+.hero .lead{font-size:clamp(18px,1.2vw + 12px,22px);line-height:1.45;color:var(--body);max-width:40ch;margin-top:26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:28px;font-weight:600;color:var(--ink)}
+.status .dot{display:inline-flex;align-items:center;gap:9px}
+.status .dot::before{content:"";width:12px;height:12px;border-radius:50%;background:#2e8b57}
+.status .dot.closed::before{background:#b8322a}
+.status span.rate{color:var(--mute);font-weight:500}
+
+/* bande de perles (le motif) */
+.pearls{display:flex;gap:10px;overflow:hidden;padding:4px 0}
+.pearls b{flex:none;border-radius:50%;background:var(--pearl)}
+
+/* composer */
+.compose{background:var(--surface);padding:88px 0 96px}
+.compose-head{display:grid;gap:14px;margin-bottom:40px}
+.compose h2,.menu h2,.hours h2,.made h2{font-size:clamp(40px,6.4vw,88px)}
+.compose-head p{max-width:46ch;font-size:18px}
+.studio{display:grid;gap:28px}
+.stage{background:var(--bg);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:400px;position:relative}
+.stage svg{width:min(80%,400px);height:auto;overflow:visible;margin-top:30px}
+#cup{transform-origin:150px 430px;transition:transform .5s var(--ease)}
+#liquid,#milk{transition:fill .6s var(--ease)}
+.stage .tag{position:absolute;left:20px;top:18px;font-weight:700;color:var(--ink);font-size:15px}
+.stage .price{position:absolute;right:20px;top:14px;font-weight:800;font-size:30px;color:var(--ink);letter-spacing:-.03em}
+.panel{display:grid;gap:22px}
+fieldset{border:0;min-width:0}
+legend{font-weight:800;color:var(--ink);font-size:20px;letter-spacing:-.02em;margin-bottom:12px;display:flex;gap:10px;align-items:baseline}
+legend small{font-weight:500;font-size:15px;color:var(--mute);letter-spacing:0}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opt span{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:0 18px;border-radius:999px;background:var(--bg);color:var(--ink);font-weight:600;font-size:16px;transition:background-color .2s,color .2s,transform .2s var(--ease);cursor:pointer;user-select:none}
+.opt span i{width:16px;height:16px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 2px rgba(28,20,16,.14)} /* taste-skill-ignore: anneau de pastille, pas une ombre */
+.opt input:checked+span i{box-shadow:0 0 0 2px #fff} /* taste-skill-ignore */
+.opt:hover span{background:var(--surface-2)}
+.opt input:checked+span{background:var(--ink);color:#fff}
+.opt input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.opt input:active+span{transform:scale(.95)}
+.grp-label{font-size:15px;color:var(--mute);font-weight:600;margin:4px 0 8px}
+.ticket{background:var(--ink);color:#f4efe9;border-radius:var(--r);padding:22px 22px 20px;display:grid;gap:16px}
+.ticket p{font-size:18px;line-height:1.45}
+.ticket strong{color:#fff}
+.ticket .row{display:flex;flex-wrap:wrap;gap:10px}
+.ticket .btn-soft{background:#3a2c24;color:#fff}
+.ticket .btn-soft:hover{background:#4a3a30}
+.note{font-size:15px;color:var(--mute);margin-top:4px}
+[hidden]{display:none!important}
+
+/* carte */
+.menu{padding:110px 0 40px}
+.menu-head{display:grid;gap:14px;margin-bottom:12px}
+.menu-head p{max-width:50ch;font-size:18px}
+.tabs{position:sticky;top:68px;z-index:20;background:var(--bg);display:flex;flex-wrap:wrap;gap:8px;padding:12px 0}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;text-decoration:none;font-weight:600;padding:10px 16px;border-radius:999px;background:var(--surface);color:var(--ink);transition:background-color .2s}
+.tabs a:hover{background:var(--surface-2)}
+.cat{padding-top:56px}
+.cat-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:28px}
+.cat h3{font-size:clamp(32px,4vw,52px)}
+.cat-top .p{font-weight:800;font-size:clamp(22px,2.4vw,30px);color:var(--accent);white-space:nowrap}
+.cat-body{display:grid;gap:22px}
+.cat-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;background:var(--surface)}
+.cat-photo img{width:100%;height:100%;object-fit:cover}
+.items{list-style:none;display:grid;gap:22px 56px}
+.item{display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start}
+.item i{width:38px;height:38px;border-radius:50%;display:block;margin-top:2px}
+.item .n{display:flex;justify-content:space-between;gap:12px;font-weight:700;color:var(--ink);font-size:18px}
+.item .n em{font-style:normal;color:var(--accent);white-space:nowrap}
+.item p{font-size:16px;color:var(--mute);margin-top:3px;max-width:44ch}
+.item p b{font-weight:600;color:var(--accent)}
+.opts-line{margin-top:44px;background:var(--surface);border-radius:var(--r);padding:24px;display:grid;gap:16px}
+.opts-line h3{font-size:26px;letter-spacing:-.025em}
+.opts-line dl{display:grid;gap:12px}
+.opts-line dt{font-weight:700;color:var(--ink)}
+.opts-line dd{color:var(--body)}
+
+.classics{display:grid;gap:40px}
+.items.one{grid-template-columns:1fr!important}
+.classics h4{font-size:22px;color:var(--ink);letter-spacing:-.02em;margin-bottom:20px}
+.month{margin-top:72px;background:var(--ink);color:#f4efe9;border-radius:var(--r);padding:22px 30px 22px 22px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.month-dot{width:64px;height:64px;border-radius:50%;background:#f7c45c}
+.month h3{color:#fff;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.025em;line-height:1.05}
+.month p{color:#e4dbd2;margin-top:6px;font-size:16px}
+.month .p{grid-column:2;font-weight:800;font-size:28px;color:#f7c45c}
+/* fait devant vous */
+.made{padding:110px 0}
+.made-box{background:var(--accent);color:#fff;border-radius:calc(var(--r) + 8px);padding:40px 24px 0;overflow:hidden;display:grid;gap:32px}
+.made h2{color:#fff;max-width:12ch}
+.facts{display:grid;gap:26px}
+.facts h3{color:#fff;font-size:24px;letter-spacing:-.02em;line-height:1.1;margin-bottom:8px}
+.facts p{color:#fff;font-size:17px;max-width:36ch}
+.made-photos{display:flex;align-items:flex-end;gap:14px;margin:0 -10px -14%}
+.made-photos figure{flex:1;border-radius:50%;overflow:hidden;aspect-ratio:1;background:#7a3a0d}
+.made-photos figure:nth-child(2){flex:1.35}
+.made-photos img{width:100%;height:100%;object-fit:cover}
+
+/* horaires & accès */
+.hours{padding:20px 0 110px}
+.hours-grid{display:grid;gap:40px}
+.week{list-style:none;margin-top:28px;font-size:19px}
+.week li{display:flex;justify-content:space-between;gap:16px;padding:13px 18px;border-radius:999px;color:var(--ink)}
+.week li:nth-child(odd){background:var(--surface)}
+.week li.today{background:var(--ink);color:#fff;font-weight:700}
+.week li span:last-child{font-variant-numeric:tabular-nums}
+.hours .note{margin-top:14px}
+.addr{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.08;margin-top:28px}
+.lines{list-style:none;margin:20px 0 26px;display:grid;gap:10px;font-size:18px}
+.lines li{display:flex;gap:12px;align-items:center}
+.lines li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--pearl);flex:none}
+.map{margin-top:26px;border-radius:var(--r);overflow:hidden;background:var(--surface);aspect-ratio:4/3}
+.map iframe{width:100%;height:100%;border:0;display:block}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* footer */
+footer{background:var(--surface);padding:72px 0 28px}
+.big{display:flex;align-items:center;gap:.1em;font-size:clamp(40px,11.4vw,200px);font-weight:900;letter-spacing:-.055em;line-height:.85;color:var(--ink);white-space:nowrap}
+.big i{width:.5em;height:.5em;border-radius:50%;background:var(--pearl);flex:none;display:block}
+.foot-grid{display:grid;gap:26px;margin-top:48px;font-size:16px}
+.foot-grid h3{font-size:18px;letter-spacing:-.01em;margin-bottom:8px}
+.foot-grid a{text-decoration-thickness:1px;text-underline-offset:3px}
+.foot-grid p{color:var(--body);overflow-wrap:anywhere}
+.credits{margin-top:40px;font-size:13px;color:var(--mute)}
+
+/* entrées */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:999px){
+  .stage{position:sticky;top:68px;z-index:5;min-height:0;flex-direction:row;justify-content:flex-start;gap:16px;padding:12px 18px;border-radius:0 0 var(--r) var(--r);margin:0 calc(-1 * var(--pad))}
+  .stage svg{width:92px;margin-top:12px;flex:none}
+  .stage .tag{position:static;font-size:18px;order:2}
+  .stage .price{position:static;order:3;margin-left:auto;font-size:26px}
+  .stage .note{display:none}
+}
+@media (min-width:760px){
+  :root{--pad:32px}
+  .nav ul{display:flex}
+  .compose-head,.menu-head{grid-template-columns:1fr 1fr;align-items:end;gap:40px}
+  .items{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:repeat(3,1fr)}
+  .made-box{padding:64px 56px 0}
+  .made-photos{margin:0 -20px -12%}
+  .hours-grid{grid-template-columns:1fr 1fr;gap:64px}
+  .foot-grid{grid-template-columns:repeat(4,1fr)}
+  .opts-line dl{grid-template-columns:repeat(3,1fr)}
+  .classics{grid-template-columns:1fr 1fr;gap:56px}
+  .month{grid-template-columns:auto 1fr auto;padding:22px 40px 22px 22px;border-radius:999px}
+  .month .p{grid-column:auto}
+  .month-dot{width:96px;height:96px}
+}
+@media (min-width:1000px){
+  .hero{padding:12px 0 72px}
+  .hero-grid{grid-template-columns:1.25fr 1fr;align-items:center;gap:40px}
+  .hero h1{font-size:min(7.2vw,104px)}
+  .hero-photo{max-width:none;width:118%;margin-right:-26%;justify-self:start}
+  .studio{grid-template-columns:5fr 6fr;align-items:start;gap:40px}
+  .stage{position:sticky;top:92px;min-height:620px}
+  .cat-body{grid-template-columns:1fr 2.1fr;gap:56px;align-items:start}
+  .cat-photo{aspect-ratio:4/5;position:sticky;top:140px}
+  .items{grid-template-columns:1fr}
+  .cat-body.flip{grid-template-columns:2.1fr 1fr}
+  .cat-body.flip .cat-photo{order:2}
+}
+@media (min-width:1200px){
+  .items{grid-template-columns:1fr 1fr}
+  .items.one{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .hero-photo img{animation:none;transition:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+  #cup{transition:none}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Bubble tea bar, accueil"><i aria-hidden="true"></i>Bubble tea bar</a>
+    <ul>
+      <li><a href="#composer">Composer</a></li>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li><a href="#acces">Accès</a></li>
+    </ul>
+    <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&destination=Bubble+tea+bar+52+avenue+Victor+Cresson+92130+Issy-les-Moulineaux" target="_blank" rel="noopener">Itinéraire</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="h1" class="rv">Le bubble tea à votre goût</h1>
+      <p class="lead rv">Lait entier bio ou boisson végétale bio, sucre de 0 à 100 %, dix toppings au choix. On le prépare devant vous, au 52 avenue Victor Cresson à Issy-les-Moulineaux.</p>
+      <div class="cta-row rv">
+        <a class="btn btn-go" href="#composer">Composer le mien</a>
+        <a class="btn btn-soft" href="#carte">Voir la carte</a>
+      </div>
+      <p class="status rv"><span class="dot" id="live">Ouvert du mardi au dimanche, 11 h – 20 h 30</span><span class="rate">4,7 / 5 sur Google</span></p>
+    </div>
+    <div class="hero-photo" id="slides">
+      <img class="on" src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=1400&h=1400&q=72&auto=format&fit=crop&crop=entropy" width="1400" height="1400" alt="Bubble tea au sucre brun, perles de tapioca au fond du gobelet">
+      <img src="https://images.unsplash.com/photo-1525803377221-4f6ccdaa5133?w=1400&h=1400&q=72&auto=format&fit=crop" width="1400" height="1400" alt="Deux thés au lait avec perles de tapioca">
+      <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=1400&h=1400&q=72&auto=format&fit=crop" width="1400" height="1400" alt="Boisson glacée à la mangue">
+    </div>
+  </div>
+</section>
+
+<section class="compose" id="composer" aria-labelledby="h-compose">
+  <div class="wrap">
+    <div class="compose-head">
+      <h2 id="h-compose" class="rv">Composez le vôtre</h2>
+      <p class="rv">Parfum, lait, topping, sucre, taille : réglez tout ici, puis montrez le récapitulatif au comptoir ou commandez sur Deliveroo.</p>
+    </div>
+    <div class="studio">
+      <div class="stage" aria-live="polite">
+        <span class="tag" id="tag">Taro au lait</span>
+        <span class="price tnum" id="price">5,90 €</span>
+        <svg viewBox="0 0 300 440" role="img" aria-labelledby="cupTitle">
+          <title id="cupTitle">Aperçu de votre bubble tea</title>
+          <defs>
+            <clipPath id="inside"><path d="M52 92 L248 92 L226 408 Q225 420 212 420 L88 420 Q75 420 74 408 Z"/></clipPath>
+          </defs>
+          <g id="cup">
+            <rect x="171" y="-4" width="20" height="300" rx="10" fill="#1c1410" transform="rotate(12 181 150)"/>
+            <g clip-path="url(#inside)">
+              <rect x="0" y="0" width="300" height="440" fill="#f3f1ec"/>
+              <rect id="liquid" x="0" y="126" width="300" height="320" fill="#b9a2c8"/>
+              <rect id="milk" x="0" y="126" width="300" height="34" fill="#ffffff" opacity=".35"/>
+              <g id="ice"></g>
+              <g id="tops"></g>
+            </g>
+            <path d="M52 92 L248 92 L226 408 Q225 420 212 420 L88 420 Q75 420 74 408 Z" fill="none" stroke="#1c1410" stroke-width="7" stroke-linejoin="round"/>
+            <rect x="38" y="70" width="224" height="26" rx="13" fill="#1c1410"/>
+            <g id="steam" fill="none" stroke="#62574f" stroke-width="6" stroke-linecap="round">
+              <path d="M110 52 q-12 -14 0 -28 q12 -14 0 -28"/>
+              <path d="M210 52 q-12 -14 0 -28 q12 -14 0 -28"/>
+            </g>
+          </g>
+        </svg>
+        <p class="note" id="sugarNote">Sucre 50 %</p>
+      </div>
+
+      <form class="panel" id="builder" onsubmit="return false">
+        <fieldset>
+          <legend>Parfum</legend>
+          <p class="grp-label">Au lait</p>
+          <div class="opts" data-name="base" data-kind="lait"></div>
+          <p class="grp-label" style="margin-top:14px">Au sirop de fruits, sur thé vert</p>
+          <div class="opts" data-name="base" data-kind="fruit"></div>
+        </fieldset>
+        <fieldset id="fs-milk">
+          <legend>Lait <small>bio</small></legend>
+          <div class="opts" data-name="milk"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Topping <small>un au choix, inclus</small></legend>
+          <div class="opts" data-name="top"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Sucre</legend>
+          <div class="opts" data-name="sugar"></div>
+        </fieldset>
+        <fieldset id="fs-temp">
+          <legend>Température</legend>
+          <div class="opts" data-name="temp"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Taille</legend>
+          <div class="opts" data-name="size"></div>
+        </fieldset>
+        <div class="ticket">
+          <p id="recap"><strong>Taro au lait</strong>, lait entier bio, boba noir, sucre 50 %, froid, taille S. <strong>5,90 €</strong></p>
+          <div class="row">
+            <button type="button" class="btn btn-go" id="copy">Copier ma commande</button>
+            <a class="btn btn-soft" href="https://deliveroo.fr/fr/menu/paris/issy-les-moulineaux-centre/phu-quoc" target="_blank" rel="noopener">Commander sur Deliveroo</a>
+          </div>
+        </div>
+        <p class="note">Prix relevés sur la carte Deliveroo de la boutique ; ils peuvent varier sur place.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="carte" aria-labelledby="h-carte">
+  <div class="wrap">
+    <div class="menu-head">
+      <h2 id="h-carte" class="rv">La carte</h2>
+      <p class="rv">Les recettes maison, les grands classiques et le bubble tea du mois. La carte change régulièrement : demandez la nouveauté au comptoir.</p>
+    </div>
+    <nav class="tabs" aria-label="Catégories de la carte">
+      <a href="#c-sign">Signatures</a><a href="#c-spe">Spéciaux</a><a href="#c-lait">Au lait</a><a href="#c-fruit">Aux fruits</a><a href="#c-mois">Du mois</a>
+    </nav>
+
+    <div class="cat" id="c-sign">
+      <div class="cat-top"><h3>Signatures</h3><span class="p tnum">7,90 €</span></div>
+      <div class="cat-body">
+        <div class="cat-photo rv"><img loading="lazy" src="https://images.unsplash.com/photo-1541696490-8744a5dc0228?w=900&h=1125&q=70&auto=format&fit=crop" width="900" height="1125" alt="Thé au lait et perles de tapioca noires"></div>
+        <ul class="items">
+          <li class="item rv"><i style="background:#8fae5d"></i><div><div class="n">Kyoto</div><p>Thé noir, matcha, boba noir, boisson végétale bio au riz.</p></div></li>
+          <li class="item rv"><i style="background:#c99a6b"></i><div><div class="n">ChaiThai latté</div><p>Thé noir, lait entier bio, chai thaï, cannelle, nata de coco, boba noir.</p></div></li>
+          <li class="item rv"><i style="background:#e9cf9a"></i><div><div class="n">Sweet crème</div><p>Thé noir, lait entier bio, vanille, crème brûlée, boba noir.</p></div></li>
+          <li class="item rv"><i style="background:#ef9fa8"></i><div><div class="n">Strawberry cotta</div><p>Thé noir, lait entier bio, fraises, panna cotta, caramel, crème fouettée, boba noir.</p></div></li>
+          <li class="item rv"><i style="background:#b9a2c8"></i><div><div class="n">Akarot</div><p>Thé noir, lait entier bio, taro, crème anglaise, boba noir.</p></div></li>
+          <li class="item rv"><i style="background:#7fc7b8"></i><div><div class="n">Popping rainbow</div><p>Thé vert, topping mix, boba popping, boba noir. <b>Servi froid.</b></p></div></li>
+          <li class="item rv"><i style="background:#f6b07c"></i><div><div class="n">Summer pêche</div><p>Thé vert, pêche, citron, popping pêche. <b>Servi froid.</b></p></div></li>
+          <li class="item rv"><i style="background:#cfe39a"></i><div><div class="n">Pajito</div><p>Eau pétillante, citron vert, menthe, popping pomme verte. <b>Servi froid.</b></p></div></li>
+          <li class="item rv"><i style="background:#f4b740"></i><div><div class="n">Mango passion</div><p>Mangue, passion, thé vert, popping mangue et passion.</p></div></li>
+          <li class="item rv"><i style="background:#d9b48a"></i><div><div class="n">Spécuourt</div><p>Yaourt bio, spéculoos, boba noir.</p></div></li>
+          <li class="item rv"><i style="background:#8a5428"></i><div><div class="n">Brown sugar</div><p>Lait entier bio, crème, sucre brun, boba noir.</p></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cat" id="c-spe">
+      <div class="cat-top"><h3>Spéciaux</h3><span class="p tnum">8,90 €</span></div>
+      <div class="cat-body flip">
+        <div class="cat-photo rv"><img loading="lazy" src="https://images.unsplash.com/photo-1619158401201-8fa932695178?w=900&h=1125&q=70&auto=format&fit=crop" width="900" height="1125" alt="Boisson lactée garnie de biscuits au cacao"></div>
+        <ul class="items">
+          <li class="item rv"><i style="background:#6b4a33"></i><div><div class="n">Coffee latté</div><p>Café vietnamien, lait entier bio, boba noir.</p></div></li>
+          <li class="item rv"><i style="background:#3b2b26"></i><div><div class="n">ChaiThai spooky</div><p>Thé noir, lait entier bio, chai thaï, cream cheese, Oreo, boba noir.</p></div></li>
+          <li class="item rv"><i style="background:#9cbf6a"></i><div><div class="n">Crème matcha latté</div><p>Matcha, lait entier bio, boba noir, crème matcha.</p></div></li>
+          <li class="item rv"><i style="background:#b8315a"></i><div><div class="n">Summer hibiscus</div><p>Raisin, hibiscus, myrtille, eau pétillante. <b>Servi froid.</b></p></div></li>
+          <li class="item rv"><i style="background:#5a3a2a"></i><div><div class="n">Cacao milkshake</div><p>Cacao, lait entier bio, boba noir, Oreo, crème fouettée.</p></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cat" id="c-lait">
+      <div class="cat-top"><h3>Les classiques</h3><span class="p tnum">5,90 €</span></div>
+      <div class="classics">
+        <div><h4>Au lait</h4><ul class="items one">
+          <li class="item rv"><i style="background:#9cbf6a"></i><div><div class="n">Matcha</div><p>Matcha, lait entier bio ou boisson végétale bio, topping.</p></div></li>
+          <li class="item rv"><i style="background:#eedcae"></i><div><div class="n">Vanille</div><p>Vanille, thé noir, lait entier bio ou boisson végétale bio, topping.</p></div></li>
+          <li class="item rv"><i style="background:#f2b3bb"></i><div><div class="n">Fraise au lait</div><p>Fraises, thé noir, lait entier bio ou boisson végétale bio, topping.</p></div></li>
+          <li class="item rv"><i style="background:#b9a2c8"></i><div><div class="n">Taro</div><p>Taro, thé noir, lait entier bio ou boisson végétale bio, topping.</p></div></li>
+          <li class="item rv"><i style="background:#ece6d8"></i><div><div class="n">Coco</div><p>Coco, thé noir, lait entier bio ou boisson végétale bio, topping.</p></div></li>
+          <li class="item rv"><i style="background:#c99a6b"></i><div><div class="n">Chai thaï</div><p>Chai thaï, thé noir, lait entier bio ou boisson végétale bio, topping.</p></div></li>
+        </ul></div>
+        <div id="c-fruit"><h4>Aux fruits, sur thé vert</h4><ul class="items one">
+          <li class="item rv"><i style="background:#f4b740"></i><div><div class="n">Mangue</div><p>Sirop de mangue, thé vert, topping.</p></div></li>
+          <li class="item rv"><i style="background:#ef6f7c"></i><div><div class="n">Fraise</div><p>Sirop de fraise, thé vert, topping.</p></div></li>
+          <li class="item rv"><i style="background:#f6b07c"></i><div><div class="n">Pêche</div><p>Sirop de pêche, thé vert, topping.</p></div></li>
+          <li class="item rv"><i style="background:#f3d2d6"></i><div><div class="n">Litchi</div><p>Sirop de litchi, thé vert, topping.</p></div></li>
+          <li class="item rv"><i style="background:#c3dc6e"></i><div><div class="n">Citron vert</div><p>Citron, thé vert, topping.</p></div></li>
+          <li class="item rv"><i style="background:#e8a33a"></i><div><div class="n">Passion</div><p>Sirop de passion, thé vert, topping.</p></div></li>
+          <li class="item rv"><i style="background:#b8315a"></i><div><div class="n">Hibiscus</div><p>Hibiscus, thé vert, topping.</p></div></li>
+          <li class="item rv"><i style="background:#f2d34f"></i><div><div class="n">Ananas</div><p>Sirop d’ananas, thé vert, topping.</p></div></li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="month rv" id="c-mois">
+      <div class="month-dot" aria-hidden="true"></div>
+      <div>
+        <h3>Le bubble tea du mois : Coco mango</h3>
+        <p>Lait de coco, mangue et perles du Japon. Il change chaque mois, passez goûter le suivant.</p>
+      </div>
+      <span class="p tnum">9,90 €</span>
+    </div>
+
+    <div class="opts-line rv">
+      <h3>Sur les thés au lait et aux fruits</h3>
+      <dl>
+        <div><dt>Taille</dt><dd>S, M (+1 €) ou L (+2 €). Signatures en M ou L (+1 €).</dd></div>
+        <div><dt>Lait</dt><dd>Lait entier bio, ou boisson végétale bio : riz, soja, amande, avoine.</dd></div>
+        <div><dt>Toppings</dt><dd>Boba noir, mangue, passion, fraise, pomme verte, cerise, litchi, pêche, nata coco, nata coco litchi.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="made" aria-labelledby="h-made">
+  <div class="wrap">
+    <div class="made-box">
+      <h2 id="h-made" class="rv">Tout se fait sous vos yeux</h2>
+      <div class="facts">
+        <div class="rv"><h3>Du bio dans le gobelet</h3><p>Lait entier bio, ou l’une des quatre boissons végétales bio : riz, soja, amande, avoine.</p></div>
+        <div class="rv"><h3>Le sucre, c’est vous</h3><p>0, 30, 50, 70 ou 100 % : dites combien, on dose au comptoir.</p></div>
+        <div class="rv"><h3>Chaud ou glacé</h3><p>Les thés au lait se boivent chauds ou froids. Les recettes pétillantes, elles, restent froides.</p></div>
+      </div>
+      <div class="made-photos" aria-hidden="false">
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=700&h=700&q=70&auto=format&fit=crop" width="700" height="700" alt="Poudre de matcha et fouet en bambou"></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=900&h=900&q=70&auto=format&fit=crop&crop=bottom" width="900" height="900" alt="Perles de tapioca au sucre brun dans un gobelet"></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=700&h=700&q=70&auto=format&fit=crop" width="700" height="700" alt="Thé glacé à l’hibiscus"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hours" aria-labelledby="h-hours">
+  <div class="wrap hours-grid">
+    <div id="horaires">
+      <h2 id="h-hours" class="rv">Horaires</h2>
+      <ul class="week" id="week">
+        <li data-d="1"><span>Lundi</span><span>Fermé</span></li>
+        <li data-d="2"><span>Mardi</span><span>11 h – 20 h 30</span></li>
+        <li data-d="3"><span>Mercredi</span><span>11 h – 20 h 30</span></li>
+        <li data-d="4"><span>Jeudi</span><span>11 h – 20 h 30</span></li>
+        <li data-d="5"><span>Vendredi</span><span>11 h – 20 h 30</span></li>
+        <li data-d="6"><span>Samedi</span><span>11 h – 20 h 30</span></li>
+        <li data-d="0"><span>Dimanche</span><span>11 h – 20 h 30</span></li>
+      </ul>
+      <p class="note">Les jours fériés, les horaires peuvent changer.</p>
+    </div>
+    <div id="acces">
+      <h2 class="rv">Accès</h2>
+      <p class="addr">52 avenue Victor Cresson<br>92130 Issy-les-Moulineaux</p>
+      <ul class="lines">
+        <li>Métro 12, Mairie d’Issy</li>
+        <li>RER C, Issy</li>
+      </ul>
+      <div class="contact-row">
+        <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&destination=Bubble+tea+bar+52+avenue+Victor+Cresson+92130+Issy-les-Moulineaux" target="_blank" rel="noopener">Itinéraire</a>
+        <a class="btn btn-soft" href="mailto:bubbleteabarissylesmoulineaux@gmail.com">Écrire un e-mail</a>
+        <a class="btn btn-soft" href="https://www.instagram.com/_bubble_tea_bar_/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="map"><iframe title="Plan : Bubble tea bar, 52 avenue Victor Cresson" loading="lazy" src="https://www.google.com/maps?q=Bubble+tea+bar,+52+avenue+Victor+Cresson,+92130+Issy-les-Moulineaux&z=16&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big" aria-label="Bubble tea bar">Bubble<i></i>tea<i></i>bar</p>
+    <div class="foot-grid">
+      <div><h3>Adresse</h3><p>52 avenue Victor Cresson<br>92130 Issy-les-Moulineaux</p></div>
+      <div><h3>Horaires</h3><p>Du mardi au dimanche<br>11 h – 20 h 30, fermé le lundi</p></div>
+      <div><h3>Contact</h3><p><a href="mailto:bubbleteabarissylesmoulineaux@gmail.com">bubbleteabarissylesmoulineaux<wbr>@gmail.com</a></p></div>
+      <div><h3>Suivre</h3><p><a href="https://www.instagram.com/_bubble_tea_bar_/" target="_blank" rel="noopener">@_bubble_tea_bar_</a><br><a href="https://deliveroo.fr/fr/menu/paris/issy-les-moulineaux-centre/phu-quoc" target="_blank" rel="noopener">Livraison Deliveroo</a></p></div>
+    </div>
+    <p class="credits">Photos d’illustration : Unsplash. Démo réalisée par Raul Hatos — site non officiel.</p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  // --- données (carte Deliveroo relevée le 01/11/2026) ---
+  var BASES=[
+    {id:'matcha',n:'Matcha',k:'lait',c:'#a9c97a'},{id:'vanille',n:'Vanille',k:'lait',c:'#efdfb4'},
+    {id:'fraise-lait',n:'Fraise',k:'lait',c:'#f2b3bb',full:'Fraise au lait'},{id:'taro',n:'Taro',k:'lait',c:'#c3add2'},
+    {id:'coco',n:'Coco',k:'lait',c:'#efe9dc'},{id:'chai',n:'Chai thaï',k:'lait',c:'#d2a77a'},
+    {id:'mangue',n:'Mangue',k:'fruit',c:'#f6bb3c'},{id:'fraise',n:'Fraise',k:'fruit',c:'#ef6f7c'},
+    {id:'peche',n:'Pêche',k:'fruit',c:'#f7b27e'},{id:'litchi',n:'Litchi',k:'fruit',c:'#f4d3d7'},
+    {id:'citron',n:'Citron vert',k:'fruit',c:'#cde27c'},{id:'passion',n:'Passion',k:'fruit',c:'#eaa53c'},
+    {id:'hibiscus',n:'Hibiscus',k:'fruit',c:'#b8315a'},{id:'ananas',n:'Ananas',k:'fruit',c:'#f3d44f'}];
+  var MILKS=[['entier','Lait entier'],['riz','Riz'],['soja','Soja'],['amande','Amande'],['avoine','Avoine']];
+  var TOPS=[['boba','Boba noir','#1c1410'],['mangue','Mangue','#f5a90a'],['passion','Passion','#e0861a'],['fraise','Fraise','#e2384b'],['pomme','Pomme verte','#8cc63f'],['cerise','Cerise','#a3122a'],['litchi','Litchi','#f5e6ea'],['peche','Pêche','#f39a5b'],['nata','Nata coco','#fbfaf4'],['natalitchi','Nata coco litchi','#f6dfe6']];
+  var SUGAR=['0','30','50','70','100'];
+  var TEMP=[['froid','Froid'],['chaud','Chaud']];
+  var SIZE=[['S','S',0],['M','M',1],['L','L',2]];
+  var st={base:'taro',milk:'entier',top:'boba',sugar:'50',temp:'froid',size:'S'};
+
+  function opt(name,val,label,dot){
+    var l=document.createElement('label');l.className='opt';
+    l.innerHTML='<input type="radio" name="'+name+'" value="'+val+'"'+(st[name]===val?' checked':'')+'><span>'+(dot?'<i style="background:'+dot+'"></i>':'')+label+'</span>';
+    return l;
+  }
+  document.querySelectorAll('[data-name]').forEach(function(box){
+    var n=box.dataset.name;
+    if(n==='base')BASES.filter(function(b){return b.k===box.dataset.kind}).forEach(function(b){box.appendChild(opt('base',b.id,b.n,b.c))});
+    if(n==='milk')MILKS.forEach(function(m){box.appendChild(opt('milk',m[0],m[1]))});
+    if(n==='top')TOPS.forEach(function(t){box.appendChild(opt('top',t[0],t[1],t[2]))});
+    if(n==='sugar')SUGAR.forEach(function(s){box.appendChild(opt('sugar',s,s+' %'))});
+    if(n==='temp')TEMP.forEach(function(t){box.appendChild(opt('temp',t[0],t[1]))});
+    if(n==='size')SIZE.forEach(function(s){box.appendChild(opt('size',s[0],s[1]+(s[2]?' · +'+s[2]+' €':'')))});
+  });
+
+  var $=function(id){return document.getElementById(id)};
+  var NS='http://www.w3.org/2000/svg';
+  function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
+  // positions fixes des perles pour un rendu stable
+  var P=[[96,396],[124,404],[154,400],[184,404],[210,394],[110,372],[140,378],[170,374],[198,370],[88,350],[126,352],[156,350],[186,348],[214,346],[104,326],[140,328],[172,326],[204,322]];
+  function render(){
+    var b=BASES.find(function(x){return x.id===st.base}),lait=b.k==='lait';
+    var t=TOPS.find(function(x){return x[0]===st.top});
+    var sz=SIZE.find(function(x){return x[0]===st.size});
+    var price=5.9+sz[2];
+    $('fs-milk').hidden=!lait;$('fs-temp').hidden=!lait;
+    $('liquid').setAttribute('fill',b.c);
+    $('milk').setAttribute('opacity',lait?'.45':'0');
+    var hot=lait&&st.temp==='chaud';
+    $('steam').style.display=hot?'':'none';
+    var ice=$('ice');ice.innerHTML='';
+    if(!hot)[[70,150,-8],[150,168,6],[196,142,14]].forEach(function(p){ice.appendChild(el('rect',{x:p[0],y:p[1],width:46,height:46,rx:9,fill:'#fff',opacity:'.55',transform:'rotate('+p[2]+' '+(p[0]+23)+' '+(p[1]+23)+')'}))});
+    var g=$('tops');g.innerHTML='';
+    var cube=st.top==='nata'||st.top==='natalitchi';
+    P.forEach(function(p,i){
+      if(cube)g.appendChild(el('rect',{x:p[0]-11,y:p[1]-11,width:22,height:22,rx:4,fill:t[2],opacity:'.92',transform:'rotate('+(i*23%40-20)+' '+p[0]+' '+p[1]+')'}));
+      else{g.appendChild(el('circle',{cx:p[0],cy:p[1],r:13,fill:t[2]}));g.appendChild(el('circle',{cx:p[0]-4,cy:p[1]-4,r:3.5,fill:'#fff',opacity:st.top==='boba'?'.28':'.55'}))}
+    });
+    $('cup').style.transform='scale('+(st.size==='S'?.86:st.size==='M'?.94:1)+')';
+    var name=lait?(b.full||b.n)+(b.full?'':' au lait'):b.n+' au thé vert';
+    var milk=MILKS.find(function(m){return m[0]===st.milk});
+    var parts=[];
+    if(lait)parts.push(st.milk==='entier'?'lait entier bio':'boisson végétale bio ('+milk[1].toLowerCase()+')');
+    parts.push(t[1].toLowerCase(),'sucre '+st.sugar+' %');
+    if(lait)parts.push(st.temp);
+    parts.push('taille '+st.size);
+    var p=price.toFixed(2).replace('.',',')+' €';
+    $('tag').textContent=name;$('price').textContent=p;$('sugarNote').textContent='Sucre '+st.sugar+' %';
+    $('recap').innerHTML='<strong>'+name+'</strong>, '+parts.join(', ')+'. <strong>'+p+'</strong>';
+  }
+  $('builder').addEventListener('change',function(e){if(e.target.name){st[e.target.name]=e.target.value;render()}});
+  $('copy').addEventListener('click',function(){
+    var txt=$('recap').textContent,btn=this;
+    var done=function(){btn.textContent='Copié, à montrer au comptoir';setTimeout(function(){btn.textContent='Copier ma commande'},2400)};
+    if(navigator.clipboard)navigator.clipboard.writeText(txt).then(done,done);else done();
+  });
+  render();
+
+  // --- ouvert / fermé, heure de Paris ---
+  try{
+    var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}));
+    var d=now.getDay(),m=now.getHours()*60+now.getMinutes(),live=$('live');
+    var li=document.querySelector('#week li[data-d="'+d+'"]');if(li)li.classList.add('today');
+    var open=d!==1&&m>=660&&m<1230;
+    if(open)live.textContent='Ouvert maintenant, jusqu’à 20 h 30';
+    else{
+      live.classList.add('closed');
+      var next=(d===1)?'demain à 11 h':(m<660?'aujourd’hui à 11 h':(d===0?'mardi à 11 h':'demain à 11 h'));
+      live.textContent='Fermé, ouvre '+next;
+    }
+  }catch(e){}
+
+  // --- fondu lent des photos du héros ---
+  var imgs=document.querySelectorAll('#slides img'),k=0,timer;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tick(){imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on')}
+  function start(){if(!reduce&&!timer)timer=setInterval(tick,5600)}
+  function stop(){clearInterval(timer);timer=null}
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});start();
+
+  // --- entrées ---
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(n,i){var sib=n.parentElement.querySelectorAll(':scope > .rv');n.style.transitionDelay=(Array.prototype.indexOf.call(sib,n)%6*70)+'ms';io.observe(n)});
+})();
+</script>
+</body>
+</html>
