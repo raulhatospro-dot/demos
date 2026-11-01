@@ -4,462 +4,544 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>James Hetfeeld's Pub · Pub rock et sport, Grands Boulevards</title>
-<meta name="description" content="James Hetfeeld's Pub, 17 boulevard Poissonnière, Paris 2e. Pintes à la pression, happy hour du lundi au samedi de 15 h à 20 h, matchs sur écrans géants, rock, DJ et terrasse sur le boulevard.">
+<title>James Hetfeeld’s Pub · Pub rock et sport, Grands Boulevards</title>
+<meta name="description" content="James Hetfeeld’s Pub, 17 boulevard Poissonnière, Paris 2e. Pinte de blonde à 4 € en happy hour, du lundi au samedi de 15 h à 20 h. Matchs sur écrans géants, rock, DJ et terrasse sur le boulevard.">
+<meta name="theme-color" content="#f1f0ec">
+<meta property="og:title" content="James Hetfeeld’s Pub · Pub rock et sport, Paris 2e">
+<meta property="og:description" content="Pintes à 4 € en happy hour, matchs sur écrans géants et terrasse sur le boulevard Poissonnière.">
+<meta property="og:image" content="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/james-hetfeelds-pub-620cf659628952.47853544.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M0 0h32v32H8L0 24z' fill='%23111'/%3E%3Cpath d='M9 7h4v7h6V7h4v18h-4v-7h-6v7H9z' fill='%23ff5100'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Système : flat news-poster (Al Jazeera DESIGN.md : blanc papier, orange signature, rouge « direct », noir) + direction « Loud and flat » */
+/* Monde : la devanture du 17 bd Poissonnière. Store noir, rabats orange vif coupés en biais, lettrage crème ; dedans, murs rouges et tour à bière en cuivre.
+   Motif : le coin coupé du rabat de store, repris sur les photos, les tuiles et le bouton principal. */
 :root{
-  --paper:#ffffff;
-  --soft:#efefef;
-  --ink:#0a0a0a;
-  --muted:#4a4a4a;
-  --orange:#fa9000;
-  --orange-press:#e07f00;
-  --red:#c31833;
-  --black:#0d0d0d;
-  --on-dark:#ffffff;
-  --on-dark-muted:#cfcfcf;
-  --m:clamp(16px,2vw,28px);
-  --gap:clamp(96px,12vw,200px);
-  --ease:cubic-bezier(.16,1,.3,1);
-  --step-small:clamp(.875rem,.84rem + .1vw,.9375rem);
-  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --step-head:clamp(3.4rem,1.6rem + 7vw,8.5rem);
+  --paper:#f1f0ec;
+  --stone:#e3e1db;
+  --ink:#141414;
+  --soft:#3d3b38;
+  --awning:#121212;
+  --flame:#ff5100;
+  --flame-press:#e84a00;
+  --cream:#f4ead2;
+  --m:clamp(16px,3.4vw,48px);
+  --cut:18px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --display:"Big Shoulders Display",Impact,sans-serif;
+  --text:"Barlow",system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:12px}
-body{background:var(--paper);color:var(--ink);font:400 var(--step-body)/1.5 "Archivo",system-ui,sans-serif;font-stretch:100%;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:16px}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.55 var(--text);overflow-x:hidden;touch-action:manipulation}
 img{display:block;max-width:100%;height:auto}
-a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:2px}
-::selection{background:var(--orange);color:var(--ink)}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
+button{font:inherit;color:inherit}
+::selection{background:var(--flame);color:var(--ink)}
 :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.dark :focus-visible{outline-color:var(--orange)}
-.d{font-stretch:62%;font-weight:850;text-transform:uppercase;line-height:.86;letter-spacing:-.01em}
+.dark :focus-visible,.demo :focus-visible,.flame :focus-visible{outline-color:#fff}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-section{position:relative}
-main>section{overflow-x:clip}
-h2{font-size:var(--step-head)}
+.skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--ink);color:#fff;padding:12px 16px;font-weight:600}
+.skip:focus{top:12px}
+.num,.price,td{font-variant-numeric:tabular-nums}
+.nw{white-space:nowrap}
+h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.95;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(2.75rem,1.6rem + 4vw,5.25rem)}
+h3{font-size:1.5rem;font-weight:800;line-height:1}
+.lead{font-size:clamp(1.0625rem,1rem + .35vw,1.25rem);line-height:1.5;max-width:58ch}
+.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
+.cut{clip-path:polygon(var(--cut) 0,100% 0,100% 100%,0 100%,0 var(--cut))}
 
-/* boutons : rectangles pleins, coins droits */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:56px;padding:0 1.4em;font:600 var(--step-body)/1 "Archivo",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s}
-.btn svg{width:1.1em;height:1.1em;flex:none}
-.btn:active{transform:translateY(2px) scale(.98)}
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:0 1.4em;font:600 1.0625rem/1 var(--text);text-decoration:none;border:0;cursor:pointer;transition:transform .18s var(--ease),background-color .2s,color .2s}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn:active{transform:scale(.96)}
+.btn-flame{background:var(--flame);color:var(--ink);clip-path:polygon(14px 0,100% 0,100% 100%,0 100%,0 14px)}
+.btn-flame:hover{background:var(--flame-press)}
 .btn-ink{background:var(--ink);color:#fff}
-.btn-ink:hover{background:#2a2a2a}
-.btn-or{background:var(--orange);color:var(--ink)}
-.btn-or:hover{background:var(--orange-press)}
-.btn-line{background:transparent;color:inherit;box-shadow:inset 0 0 0 3px currentColor}
-.btn-line:hover{background:var(--ink);color:#fff;box-shadow:none}
+.btn-ink:hover{background:#333}
+.btn-stone{background:var(--stone);color:var(--ink)}
+.btn-stone:hover{background:#d4d1c9}
+.btn-cream{background:var(--cream);color:var(--ink)}
+.btn-cream:hover{background:#fff}
 
-/* ---------- HERO ---------- */
-.hero{background:var(--orange);min-height:calc(100svh - 80px);padding:0 var(--m) 28px;display:flex;flex-direction:column;overflow:clip}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:var(--step-small);font-weight:600;position:relative;z-index:3}
-.nav .mark{font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:1.25rem;text-decoration:none;letter-spacing:.01em}
-.nav ul{display:flex;gap:clamp(14px,2.4vw,36px);list-style:none}
-.nav ul a{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;padding:6px 0;transition:text-decoration-color .25s}
-.nav ul a:hover{text-decoration-color:currentColor}
-.hero-stage{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;padding:2vh 0}
-.hero h1{font-size:clamp(5.4rem,min(19vw,33svh),24rem);position:relative;z-index:1}
-.lines .line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
-.lines [data-line]{display:block}
-.hero h1 .line:last-child{text-align:right}
-.hero-pint{position:absolute;z-index:2;left:30%;bottom:2vh;width:clamp(150px,15vw,250px);aspect-ratio:3/4;object-fit:cover;transform:rotate(-5deg)}
-.hero-foot{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;position:relative;z-index:3}
-.hero-foot p{font-size:var(--step-lead);line-height:1.3;max-width:34ch;font-weight:500}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+/* bandeau démo + nav */
+.demo{background:var(--awning);color:#fff;text-align:center;font-size:.9375rem;padding:9px 16px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:44px;height:44px;flex:none}
+.brand b{display:block;font:900 1.5rem/1 var(--display);letter-spacing:.01em}
+.brand small{display:block;font-size:.9375rem;color:var(--soft);margin-top:3px}
+.nav ul{display:flex;gap:clamp(14px,2vw,30px);list-style:none;font-weight:600}
+.nav ul a{text-decoration:underline;text-decoration-color:transparent;padding:12px 0;transition:text-decoration-color .2s}
+.nav ul a:hover{text-decoration-color:var(--flame)}
 
-/* statut en direct */
-.live{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;background:var(--ink);color:#fff;padding:12px var(--m);font-weight:500;font-size:var(--step-small)}
-.live .dot{width:12px;height:12px;border-radius:50%;background:#7a7a7a;flex:none}
-.live[data-hh="1"] .dot{background:var(--red);box-shadow:0 0 0 0 rgba(195,24,51,.7);animation:pulse 1.6s infinite}
-.live[data-open="1"]:not([data-hh="1"]) .dot{background:#2fbf5b}
-.live strong{font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:1.5rem;letter-spacing:.01em;line-height:1}
-.live span.sub{color:var(--on-dark-muted)}
-@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(195,24,51,0)}100%{box-shadow:0 0 0 0 rgba(195,24,51,0)}}
+/* HERO */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);grid-template-areas:"head pics" "body pics";column-gap:clamp(28px,4vw,64px);align-items:start;padding-block:clamp(12px,3vw,36px) clamp(56px,6vw,96px)}
+.hero-head{grid-area:head;align-self:end}
+.hero-body{grid-area:body}
+.hero h1{font-size:clamp(3.1rem,1.9rem + 4vw,5.25rem)}
+.hero h1 span{display:block}
+.hero .lead{margin-top:20px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px;max-width:600px}
+.tile{background:var(--stone);padding:16px 18px 14px}
+.tile.hot{background:var(--flame)}
+.tile.blk{background:var(--awning);color:#fff}
+.tile b{display:block;font:900 2.75rem/1 var(--display)}
+.tile span{display:block;font-size:.9375rem;line-height:1.35;margin-top:6px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.status{display:flex;align-items:center;gap:10px;margin-top:18px;font-weight:600;font-size:.9375rem}
+.dot{width:11px;height:11px;border-radius:50%;background:#8a8780;flex:none}
+.status[data-s="open"] .dot{background:#1f9d4c}
+.status[data-s="hh"] .dot{background:var(--flame)}
 
-/* ---------- PRESSIONS ---------- */
-.taps{background:var(--black);color:var(--on-dark);padding:var(--gap) var(--m)}
-.taps-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--m);align-items:end;margin-bottom:clamp(40px,6vw,88px)}
-.taps-head p{max-width:42ch;color:var(--on-dark)}
-.tap-table{width:100%;border-collapse:collapse;font-size:clamp(1.25rem,2.2vw,2rem);font-variant-numeric:tabular-nums}
-.tap-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.tap-table th{font:600 var(--step-small)/1.3 "Archivo",sans-serif;text-align:left;color:var(--on-dark-muted);padding:0 0 14px}
-.tap-table th:nth-child(n+2),.tap-table td:nth-child(n+2){text-align:right;white-space:nowrap}
-.tap-table td{padding:.42em 0;vertical-align:baseline}
-.tap-table tr+tr td{border-top:0}
-.tap-table tbody tr:nth-child(odd) td{background:#1a1a1a}
-.tap-table td:first-child{padding-left:16px}
-.tap-table td:last-child{padding-right:16px}
-.tap-table th:first-child{padding-left:16px}.tap-table th:last-child{padding-right:16px}
-.tap-table .name{font-weight:600}
-.tap-table .kind{font-size:var(--step-small);color:var(--on-dark-muted);font-weight:400}
-.tap-table .hh{color:var(--orange);font-weight:700}
-.tap-table .na{color:var(--on-dark-muted)}
-.taps[data-hh="1"] .tap-table .reg{text-decoration:line-through;text-decoration-thickness:2px;color:var(--on-dark-muted)}
-.taps[data-hh="0"] .tap-table .hh{color:var(--on-dark-muted);font-weight:500}
-.taps-also{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--m);margin-top:clamp(56px,7vw,110px);align-items:center}
-.taps-also img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.taps-also h3{font-size:clamp(2.2rem,4vw,3.6rem);margin-bottom:20px}
-.taps-also p{max-width:40ch}
-.taps-also .note{font-size:var(--step-small);color:var(--on-dark-muted);margin-top:18px}
+.pics{grid-area:pics;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:10px}
+.pic{position:relative;overflow:hidden;background:var(--awning)}
+.pic img{width:100%;height:100%;object-fit:cover}
+.pic figcaption{position:absolute;left:12px;bottom:12px;background:var(--paper);color:var(--ink);font-weight:600;font-size:.9375rem;line-height:1.2;padding:7px 11px}
+.pics .p1{grid-column:1/-1;aspect-ratio:16/9.4}
+.pics .p2,.pics .p3{aspect-ratio:4/3.3}
+.pics .p1 img{object-position:50% 40%}
 
-/* ---------- MATCHS ---------- */
-.match{background:var(--paper);padding:var(--gap) 0 var(--gap);overflow:clip}
-.stack{padding:0 var(--m);font-size:clamp(4.2rem,11vw,12rem);position:relative;z-index:1;white-space:nowrap}
-.stack span{display:block}
-.stack .t2{color:var(--muted)}
-.stack .t3{color:var(--red)}
-.match-fans{position:absolute;z-index:2;right:var(--m);top:calc(var(--gap) - 3vw);width:clamp(260px,34vw,560px);aspect-ratio:3/2;object-fit:cover;transform:rotate(3deg)}
-.match-facts{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--m);padding:0 var(--m);margin-top:clamp(40px,6vw,80px)}
-.match-ball{grid-column:1/7;width:100%;aspect-ratio:16/9;object-fit:cover}
-.match-text{grid-column:8/13;font-size:clamp(1.0625rem,1rem + .4vw,1.3rem)}
-.match-text p+p{margin-top:1em}
-.match-text .lead{font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(2.2rem,3.6vw,3.4rem);line-height:.95}
-.match-text .btn{margin-top:28px}
+/* bande infos */
+.strip{background:var(--awning);color:#fff}
+.strip ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:28px}
+.strip b{display:block;font:800 1.5rem/1.05 var(--display);color:var(--cream)}
+.strip span{display:block;color:#d9d6cf;font-size:.9375rem;margin-top:4px}
 
-/* ---------- LE SOIR ---------- */
-.night{background:var(--red);color:#fff;padding:var(--gap) var(--m)}
-.night-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0 var(--m);align-items:start}
-.night h2{grid-row:1}
-.night h2{grid-column:1/9;font-size:clamp(4rem,14vw,14rem)}
-.night .statement{grid-column:1/8;font-size:clamp(1.5rem,1.1rem + 1.4vw,2.25rem);line-height:1.18;font-weight:600;max-width:30ch;margin-top:clamp(32px,4vw,56px)}
-.night .facts{grid-column:1/8;display:grid;grid-template-columns:1fr 1fr;gap:20px var(--m);margin-top:clamp(40px,5vw,72px);list-style:none}
-.night .facts li{max-width:30ch}
-.night .facts b{display:block;font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(1.6rem,2.4vw,2.2rem);line-height:1;margin-bottom:8px}
-.night-pics{grid-column:9/13;grid-row:1/4;position:relative}
-.night-pics img{width:100%;object-fit:cover}
-.night-pics .p1{aspect-ratio:4/5;transform:rotate(-3deg)}
-.night-pics .p2{aspect-ratio:1/1;width:68%;margin:-18% 0 0 auto;position:relative;transform:rotate(4deg)}
+section{padding-block:clamp(88px,10vw,168px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.sec-head .lead{justify-self:start}
 
-/* ---------- À MANGER ---------- */
-.eat{background:var(--soft);padding:var(--gap) var(--m)}
-.eat-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--m);align-items:center}
-.eat-pic{grid-column:1/6}
-.eat-pic img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.eat-body{grid-column:7/13}
-.eat-body h2{margin-bottom:28px}
-.eat-list{list-style:none;font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(2.2rem,4.4vw,4.4rem);line-height:.98}
-.eat-list li{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
-.eat-list small{font:500 var(--step-small)/1.3 "Archivo",sans-serif;text-transform:none;color:var(--muted);font-stretch:100%}
-.eat-body p{margin-top:28px;max-width:44ch}
-.eat-pic{position:relative}
-.eat-side{position:absolute;right:-9%;bottom:-8%;width:46%;transform:rotate(4deg)}
-.eat-side img{width:100%;aspect-ratio:1/1;object-fit:cover}
-.eat{overflow:clip}
+/* PRESSIONS */
+.press-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,3vw,48px);align-items:start}
+.beers{width:100%;border-collapse:collapse;font-size:1.0625rem}
+.beers th{font-weight:600;text-align:left;font-size:.9375rem;color:var(--soft);padding:0 0 10px}
+.beers th:nth-child(n+2),.beers td:nth-child(n+2){text-align:right;padding-left:16px}
+.beers td{padding:16px 0;border-top:2px solid var(--ink);vertical-align:baseline}
+.beers td:first-child b{display:block;font:800 1.5rem/1.05 var(--display)}
+.beers td:first-child span{font-size:.9375rem;color:var(--soft)}
+.beers .price{font:800 1.75rem/1 var(--display)}
+.beers .price.hh{color:var(--ink);background:var(--flame);padding:4px 8px;display:inline-block}
+.also{margin-top:24px;background:var(--stone);padding:20px 22px}
+.also h3{font-size:1.5rem}
+.also p{margin-top:8px}
+.taps{margin-top:10px;aspect-ratio:21/9}
+.press-side{display:grid;gap:0}
+.taps img{width:100%;height:100%;object-fit:cover}
 
-/* ---------- VENIR ---------- */
-.visit{background:var(--orange);padding:var(--gap) 0 0}
-.visit h2{padding:0 var(--m);margin-bottom:clamp(32px,4vw,56px)}
-.rows{list-style:none}
-.rows li{font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(2.4rem,6.4vw,6rem);line-height:1}
-.rows li>*{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;min-height:clamp(84px,9vw,150px);padding:0 var(--m) .18em;text-decoration:none}
-.rows li:nth-child(even)>*{background:#f39a1c}
-.rows a:hover{background:var(--ink)!important;color:var(--orange)}
-.rows .hint{font:600 var(--step-small)/1.3 "Archivo",sans-serif;text-transform:none;font-stretch:100%;padding-bottom:.6em;white-space:nowrap}
-.rows a .hint svg{width:1em;height:1em;vertical-align:-.15em;margin-left:.3em}
-.hours{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--m);padding:clamp(56px,7vw,110px) var(--m) var(--gap)}
-.hours h3{grid-column:1/5;font-size:clamp(2.4rem,4vw,3.6rem)}
-.hours h3+p{grid-column:1/5;grid-row:2;max-width:32ch}
-.hours table{grid-column:6/13;grid-row:1/4;width:100%;border-collapse:collapse;font-size:var(--step-lead);font-variant-numeric:tabular-nums}
-.hours td{padding:.5em 16px}
-.hours td:last-child{text-align:right}
-.hours tr:nth-child(odd) td{background:#f39a1c}
-.hours tr.today td{background:var(--ink);color:#fff;font-weight:700}
-.hours .actions{grid-column:1/5;grid-row:3;display:flex;flex-wrap:wrap;gap:10px;align-self:end}
+/* la tournée */
+.round{background:var(--flame);color:var(--ink);padding:clamp(22px,3vw,36px)}
+.round h3{font-size:2.75rem}
+.round>p{margin-top:8px;max-width:44ch}
+.round fieldset{border:0;margin-top:20px}
+.round legend{font-weight:600;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{min-height:46px;padding:0 16px;border:0;background:rgba(20,20,20,.12);font-weight:600;cursor:pointer;transition:background-color .2s,color .2s,transform .18s var(--ease)}
+.chips button:active,.step button:active{transform:scale(.96)}
+.chips button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.step{display:flex;align-items:center;gap:12px;margin-top:16px}
+.step .qty{margin-right:auto;font-weight:600;font-size:1.0625rem;order:-1}
+.step button{width:52px;height:52px;border:0;background:var(--ink);color:#fff;font:800 1.75rem/1 var(--display);cursor:pointer;transition:transform .18s var(--ease),background-color .2s}
+.step button:hover{background:#333}
+.step output{font:900 2.75rem/1 var(--display);min-width:2.2ch;text-align:center}
+.total{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}
+.total div{background:var(--paper);padding:14px 16px}
+.total div.on{background:var(--awning);color:#fff}
+.total b{display:block;font:900 2.75rem/1 var(--display)}
+.total span{display:block;font-size:.9375rem;margin-top:4px}
+.round .note{margin-top:14px;font-weight:600}
 
-/* ---------- FOOTER ---------- */
-footer{background:var(--black);color:var(--on-dark);padding:clamp(56px,7vw,110px) var(--m) 90px}
-.blocks{display:flex;gap:4px;align-items:flex-end;height:clamp(150px,34svh,340px)}
-.blocks span{flex:1;display:flex;align-items:flex-end;justify-content:center;font-stretch:62%;font-weight:900;text-transform:uppercase;line-height:.8;font-size:clamp(3rem,10.5vw,11rem);color:var(--black);padding-bottom:.04em;overflow:hidden}
-.blocks span:nth-child(4n+1){background:var(--orange);height:100%}
-.blocks span:nth-child(4n+2){background:#fff;height:78%}
-.blocks span:nth-child(4n+3){background:var(--red);height:92%;color:#fff}
-.blocks span:nth-child(4n){background:var(--soft);height:66%}
-.foot-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--m);margin-top:56px;font-size:var(--step-small)}
-.foot-grid nav{grid-column:1/7;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:10px 40px}
-.foot-grid nav a{text-decoration:none}
-.foot-grid nav a:hover{text-decoration:underline}
-.foot-grid address{grid-column:8/13;font-style:normal}
-.foot-grid address a{display:block}
-.credits{grid-column:1/13;color:var(--on-dark-muted);margin-top:24px}
-.demo{background:#fff;color:var(--ink);font:500 13px/1.3 "Archivo",sans-serif;padding:7px var(--m);text-align:center}
+/* MATCHS */
+.dark{background:var(--awning);color:#fff}
+.dark .lead{color:#ecebe7}
+.match-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,3vw,48px);align-items:start}
+.match-photo{aspect-ratio:16/10}
+.match-photo img{width:100%;height:100%;object-fit:cover}
+.sports{list-style:none;display:grid;gap:8px;margin-top:4px}
+.sports li{background:#232220;padding:14px 18px}
+.sports b{display:block;font:800 1.5rem/1.05 var(--display);color:var(--cream)}
+.sports span{display:block;color:#d9d6cf;font-size:.9375rem;margin-top:4px}
+.match-side .btn{margin-top:20px}
+.match-side p.small{margin-top:14px;color:#d9d6cf;font-size:.9375rem}
 
-/* ---------- motion ---------- */
-@media (prefers-reduced-motion:no-preference){
-  .js .lines [data-line]{transform:translateY(105%);animation:rise .95s var(--ease) forwards;animation-delay:calc(var(--i,0)*110ms + 120ms)}
-  .js .hero-pint{opacity:0;animation:drop .9s var(--ease) .5s forwards}
-  .js .hero-foot{opacity:0;animation:fade .7s var(--ease) .65s forwards}
-  @keyframes rise{to{transform:none}}
-  @keyframes drop{from{opacity:0;transform:translateY(-30px) rotate(-12deg) scale(1.08)}to{opacity:1;transform:rotate(-5deg)}}
-  @keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-  .js [data-in]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--d,0)*80ms)}
-  .js [data-in].on{opacity:1;transform:none}
-  .js .match-fans[data-in]{transform:translateY(40px) rotate(7deg)}
-  .js .match-fans[data-in].on{transform:rotate(3deg)}
-  .js .night-pics .p1[data-in]{transform:translateY(30px) rotate(-8deg)}
-  .js .night-pics .p1[data-in].on{transform:rotate(-3deg)}
-  .js .night-pics .p2[data-in]{transform:translateY(30px) rotate(10deg)}
-  .js .night-pics .p2[data-in].on{transform:rotate(4deg)}
-  .drift{animation:drift 18s ease-in-out infinite alternate}
-  @keyframes drift{from{transform:scale(1)}to{transform:scale(1.08) translateX(-2%)}}
-  .frame{overflow:clip}
-  img{transition:transform .6s var(--ease)}
-  .eat-side img:hover,.taps-also img:hover{transform:scale(1.03)}
+/* LE SOIR */
+.night{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px}
+.night .n-text{grid-column:1/6;padding-right:clamp(0px,2vw,32px)}
+.night .n-text h2{margin-bottom:20px}
+.night .n1{grid-column:6/10;aspect-ratio:4/3}
+.night .n2{grid-column:10/13;aspect-ratio:3/4;grid-row:1/3}
+.night .n3{grid-column:6/10;background:var(--stone);padding:22px}
+.night img{width:100%;height:100%;object-fit:cover}
+.set{list-style:none;margin-top:24px;display:grid;gap:8px}
+.set li{display:grid;grid-template-columns:7.5rem 1fr;gap:12px;align-items:baseline;padding:12px 0;border-top:2px solid var(--ink)}
+.set b{font:800 1.5rem/1 var(--display)}
+.n3 h3{font-size:1.5rem}
+.n3 p{margin-top:6px}
+
+/* À MANGER */
+.food{background:var(--stone)}
+.food-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dish{background:var(--paper)}
+.dish .im{aspect-ratio:1/1;overflow:hidden}
+.dish img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.dish:hover img{transform:scale(1.04)}
+.dish div.t{padding:16px 18px 18px}
+.dish h3{font-size:1.5rem}
+.dish p{margin-top:4px;font-size:.9375rem}
+.food-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:10px}
+.food-foot>div{background:var(--paper);padding:20px 22px}
+.food-foot h3{font-size:1.5rem}
+.food-foot p{margin-top:6px}
+
+/* VENIR */
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.hours{width:100%;border-collapse:collapse;margin-top:20px;font-size:1.0625rem}
+.hours td{padding:10px 0;border-top:2px solid var(--ink)}
+.hours td:last-child{text-align:right;font-weight:600}
+.hours tr.today td{background:var(--flame);padding-inline:10px}
+.hours-note{margin-top:14px;font-size:.9375rem;color:var(--soft)}
+.contact dl{margin-top:20px;display:grid;gap:16px}
+.contact dt{font-weight:600;font-size:.9375rem;color:var(--soft)}
+.contact dd{font:800 1.5rem/1.15 var(--display)}
+.contact dd a{text-decoration:none}
+.contact dd a:hover{color:var(--flame-press)}
+.contact .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.visit-photo{aspect-ratio:4/3.4}
+.visit-photo img{width:100%;height:100%;object-fit:cover}
+.visit-photo figcaption{background:var(--paper)}
+
+/* footer */
+footer{background:var(--awning);color:#fff;padding:clamp(56px,7vw,96px) 0 32px}
+.foot-name{font:900 clamp(3rem,1rem + 9vw,10rem)/.9 var(--display);color:var(--cream);letter-spacing:-.01em}
+.foot-name span{color:var(--flame)}
+.foot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:36px;font-size:.9375rem;color:#d9d6cf}
+.foot-grid a{color:#fff}
+.foot-grid nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+.foot-grid nav a{padding:6px 0}
+
+/* entrées */
+.js [data-in]{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0)*80ms)}
+.js [data-in].on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js [data-in]{opacity:1;transform:none;transition:none}
+  .btn,.chips button,.step button,.dish img{transition:none}
+  .dish:hover img{transform:none}
 }
 
-/* ---------- téléphone ---------- */
-@media (max-width:760px){
-  .nav ul li:not(:last-child){display:none}
-  .hero{min-height:auto;padding-bottom:20px}
-  .hero-stage{padding:6vh 0 0}
-  .hero h1{font-size:21vw;line-height:.88}
-  .hero h1 .line:last-child{text-align:left}
-  .hero-pint{position:relative;left:auto;bottom:auto;transform:rotate(-4deg);width:44vw;margin:-10vw 4vw 0 auto}
-  .js .hero-pint{animation-name:drop-m}
-  @keyframes drop-m{from{opacity:0;transform:translateY(20px) rotate(-10deg)}to{opacity:1;transform:rotate(-4deg)}}
-  .hero-foot{grid-template-columns:1fr;margin-top:24px}
-  .hero-actions{justify-content:stretch}
-  .hero-actions .btn{flex:1 1 100%}
-  .live strong{font-size:1.3rem}
-  .taps-head,.taps-also{grid-template-columns:1fr}
-  .tap-table thead{display:none}
-  .tap-table,.tap-table tbody,.tap-table tr,.tap-table td{display:block}
-  .tap-table tr{display:grid;grid-template-columns:1fr auto auto;gap:4px 14px;padding:12px 14px;align-items:baseline}
-  .tap-table tbody tr:nth-child(odd){background:#1a1a1a}
-  .tap-table tbody tr:nth-child(odd) td{background:none}
-  .tap-table td{padding:0!important;font-size:1.2rem}
-  .tap-table .kind{display:block;margin-top:2px}
-  .tap-table td:nth-child(2){display:none}
-  .stack{font-size:19vw;max-width:none}
-  .match-fans{position:relative;right:auto;top:auto;width:80vw;margin:20px 0 0 auto;display:block}
-  .match-facts{grid-template-columns:1fr}
-  .match-ball,.match-text{grid-column:1}
-  .night h2{font-size:22vw;grid-column:1/13}
-  .night .statement,.night .facts,.night-pics{grid-column:1/13}
-  .night .facts{grid-template-columns:1fr}
-  .night-pics{grid-row:auto;display:flex;gap:12px;align-items:flex-start;margin-top:40px}
-  .night-pics .p1{width:56%}
-  .night-pics .p2{width:44%;margin:20% 0 0}
-  .eat-pic,.eat-body{grid-column:1/13}
-  .eat-pic{order:2}
-  .eat-side{width:44%;right:-2%}
-  .rows li{font-size:10.4vw}
-  .rows li>*{flex-wrap:wrap;align-items:flex-end;padding-top:14px}
-  .rows .hint{padding-bottom:.2em}
-  .hours h3,.hours h3+p,.hours table,.hours .actions{grid-column:1/13;grid-row:auto}
-  .hours .actions .btn{flex:1 1 100%}
-  .blocks{height:22svh}
-  .blocks span{font-size:12vw}
-  .foot-grid nav,.foot-grid address{grid-column:1/13}
-  .foot-grid nav{grid-template-columns:repeat(2,auto)}
+/* largeurs intermédiaires */
+@media (max-width:1300px){
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .hero h1{font-size:clamp(3rem,1.6rem + 4.4vw,5rem)}
+}
+@media (max-width:1100px){
+  .hero .lead{font-size:1.0625rem}
+  .hero h1{font-size:3.6rem}
+  .tile b{font-size:2rem}
+  .visit{grid-template-columns:1fr 1fr}
+  .visit-photo{grid-column:1/-1;aspect-ratio:16/8}
+  .night .n-text{grid-column:1/-1;padding:0 0 12px}
+  .night .n1{grid-column:1/8}
+  .night .n2{grid-column:8/13;grid-row:auto / span 2}
+  .night .n3{grid-column:1/8}
+}
+@media (max-width:960px){
+  .nav ul{display:none}
+  .hero{grid-template-columns:1fr;grid-template-areas:"head" "pics" "body";row-gap:20px}
+  .tiles{max-width:none}
+  .press-grid,.match-grid,.sec-head{grid-template-columns:minmax(0,1fr)}
+  .press-side{order:-1}
+  .strip ul{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  :root{--cut:12px}
+  .brand small{display:none}
+  .brand b{font-size:1.25rem;white-space:nowrap}
+  .nav .btn{min-height:46px;padding:0 14px}
+  .hero{padding-top:4px}
+  .hero h1{font-size:clamp(2.6rem,11vw,3.4rem)}
+  .pics{gap:6px}
+  .nav .btn span{display:none}
+  .nav .btn{width:48px;padding:0}
+  .pics .p1{aspect-ratio:16/10}
+  .pics .p2,.pics .p3{aspect-ratio:4/3}
+  .tile{padding:12px 14px}
+  .tile b{font-size:1.875rem}
+  .tile span{font-size:.9375rem}
+  .hero-actions .btn{flex:1 1 auto}
+  .strip ul{gap:18px}
+  .strip b{font-size:1.25rem}
+  .night .n1,.night .n2,.night .n3{grid-column:1/-1;grid-row:auto}
+  .night .n2{aspect-ratio:4/3}
+  .food-grid,.food-foot,.visit,.foot-grid{grid-template-columns:1fr}
+  .visit-photo{aspect-ratio:4/3}
+  .set li{grid-template-columns:6rem 1fr}
+  .beers{table-layout:fixed}
+  .beers th:first-child{width:46%}
+  .beers th:nth-child(n+2),.beers td:nth-child(n+2){padding-left:8px}
+  .beers .price.hh{padding:4px 6px}
+  .beers td:first-child b{font-size:1.5rem}
+  .beers .price{font-size:1.5rem}
 }
 </style>
 </head>
 <body>
-
+<a class="skip" href="#contenu">Aller au contenu</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
-<p class="live" id="live" aria-live="polite" data-hh="0" data-open="0">
-    <span class="dot" aria-hidden="true"></span>
-    <strong id="live-title">Happy hour du lundi au samedi, <span style="white-space:nowrap">15 h – 20 h</span></strong>
-    <span class="sub" id="live-sub">Pinte de blonde à 4 € au lieu de 6 €.</span>
-  </p>
-<header class="hero" id="top">
-  <nav class="nav" aria-label="Principale">
-    <a class="mark" href="#top">James Hetfeeld's Pub</a>
-    <ul>
-      <li><a href="#pressions">Pressions</a></li>
-      <li><a href="#matchs">Matchs</a></li>
-      <li><a href="#soir">Le soir</a></li>
-      <li><a href="#venir">Venir</a></li>
-    </ul>
-  </nav>
-  <div class="hero-stage">
-    <h1 class="d lines" aria-label="Hetfeeld's Pub">
-      <span class="line" aria-hidden="true"><span data-line style="--i:0">Hetfeeld's</span></span>
-      <span class="line" aria-hidden="true"><span data-line style="--i:1">Pub</span></span>
-    </h1>
-    <img class="hero-pint" src="https://images.unsplash.com/photo-1566633806327-68e152aaf26d?w=700&q=75&auto=format&fit=crop&crop=entropy" width="560" height="747" alt="Une pinte blonde se remplit sous la tireuse">
-  </div>
-  <div class="hero-foot">
-    <p>Pub rock et sport au 17 boulevard Poissonnière. Pintes à la pression, matchs sur écrans géants, terrasse sur le boulevard.</p>
-    <div class="hero-actions">
-      <a class="btn btn-ink" href="tel:+33171734114"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler le pub</a>
-      <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&destination=James+Hetfeeld%27s+Pub,+17+boulevard+Poissonni%C3%A8re,+75002+Paris" target="_blank" rel="noopener">Itinéraire</a>
-    </div>
-  </div>
 
+<header class="wrap nav">
+  <a class="brand" href="#top" aria-label="James Hetfeeld’s Pub, haut de page">
+    <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M0 0h44v44H10L0 34z" fill="#121212"/><path d="M12 10h5v10h10V10h5v24h-5V24H17v10h-5z" fill="#ff5100"/></svg>
+    <span><b translate="no">James Hetfeeld’s Pub</b><small>Pub rock et sport, Paris 2e</small></span>
+  </a>
+  <ul>
+    <li><a href="#pressions">Pressions</a></li>
+    <li><a href="#matchs">Matchs</a></li>
+    <li><a href="#soir">Le soir</a></li>
+    <li><a href="#manger">À manger</a></li>
+    <li><a href="#venir">Horaires</a></li>
+  </ul>
+  <a class="btn btn-ink" href="tel:+33171734114" aria-label="Appeler le 01 71 73 41 14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="nw">01 71 73 41 14</span></a>
 </header>
 
-<main>
-
-<section class="taps dark" id="pressions" aria-labelledby="t-pressions" data-hh="0">
-  <div class="taps-head">
-    <h2 class="d" id="t-pressions" data-in>Les pressions</h2>
-    <p data-in style="--d:1">Toutes en 50 cl. En orange, le prix du happy hour, du lundi au samedi de 15 h à 20 h ; à droite, le prix normal, valable aussi tout le dimanche.</p>
+<main id="contenu">
+<div id="top" class="wrap hero">
+  <div class="hero-head">
+    <h1><span>Pub rock,</span> <span>pintes et matchs</span></h1>
   </div>
-  <table class="tap-table" data-in style="--d:2">
-    <caption class="sr">Bières à la pression, prix en happy hour et prix normal</caption>
-    <thead><tr><th scope="col">Bière</th><th scope="col">Verre</th><th scope="col">Happy hour</th><th scope="col">Prix normal</th></tr></thead>
-    <tbody>
-      <tr><td class="name">Blonde pression<span class="kind"> · la pinte de la maison</span></td><td>50 cl</td><td class="hh">4,00 €</td><td class="reg">6,00 €</td></tr>
-      <tr><td class="name">Warsteiner<span class="kind"> · pils allemande</span></td><td>50 cl</td><td class="hh">4,00 €</td><td class="reg">6,00 €</td></tr>
-      <tr><td class="name">König Ludwig Weissbier<span class="kind"> · blanche de Bavière</span></td><td>50 cl</td><td class="hh">5,50 €</td><td class="reg">7,00 €</td></tr>
-    </tbody>
-  </table>
-  <div class="taps-also">
-    <div class="frame" data-in><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=1200&q=75&auto=format&fit=crop" width="1200" height="900" loading="lazy" alt="Rangée de tireuses chromées au-dessus d'un comptoir"></div>
-    <div data-in style="--d:1">
-      <h3 class="d">Et aussi</h3>
-      <p>Cidre brut à la pression, Bête blonde, Deux Chouettes, Almaza. Et des alcools forts pour ceux qui ne sont pas venus pour la bière.</p>
-      <p class="note">Tarifs relevés en ligne : la carte du jour fait foi au comptoir.</p>
+  <div class="hero-body">
+    <p class="lead"><span translate="no">James Hetfeeld’s Pub</span>, au 17 boulevard Poissonnière, Paris 2e. Le nom du chanteur de Metallica à une lettre près, des écrans géants partout dans la salle et une terrasse sur le boulevard.</p>
+    <div class="tiles">
+      <div class="tile hot cut"><b class="num">4&nbsp;€</b><span>la pinte de blonde en happy hour</span></div>
+      <div class="tile"><b class="num">6&nbsp;€</b><span>la même pinte au prix normal</span></div>
+      <div class="tile"><b class="num">15&nbsp;h&nbsp;–&nbsp;20&nbsp;h</b><span>happy hour, du lundi au samedi</span></div>
+      <div class="tile blk"><b class="num">5,50&nbsp;€</b><span>la König Ludwig Weissbier en happy hour</span></div>
     </div>
-  </div>
-</section>
-
-<section class="match" id="matchs" aria-labelledby="t-matchs">
-  <h2 class="d stack" id="t-matchs">
-    <span class="t1">Les matchs</span>
-    <span class="t3">en direct</span>
-  </h2>
-  <img class="match-fans" data-in src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1300&q=75&auto=format&fit=crop" width="1200" height="800" loading="lazy" alt="Supporters debout qui crient leur joie">
-  <div class="match-facts">
-    <div class="frame match-ball" data-in><img class="drift" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1300&q=75&auto=format&fit=crop" width="1300" height="731" loading="lazy" alt="Un ballon de football sur la pelouse, au pied d'un joueur" style="width:100%;height:100%;object-fit:cover"></div>
-    <div class="match-text" data-in style="--d:1">
-      <p class="lead">Foot, rugby, sur grand écran.</p>
-      <p>Football et rugby passent sur les écrans géants de la salle. Les soirs chargés, plusieurs matchs tournent en même temps : chacun trouve le sien.</p>
-      <p>Un gros match ce soir ? Appelez avant de venir pour savoir lequel passe sur quel écran.</p>
-      <a class="btn btn-ink" href="tel:+33171734114">Appeler le 01 71 73 41 14</a>
+    <div class="hero-actions">
+      <a class="btn btn-flame" href="tel:+33171734114"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Réserver une table</a>
+      <a class="btn btn-stone" href="https://www.google.com/maps/dir/?api=1&amp;destination=James+Hetfeeld%27s+Pub,+17+boulevard+Poissonni%C3%A8re,+75002+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Itinéraire</a>
     </div>
+    <p class="status" id="status" data-s="closed" aria-live="polite"><span class="dot" aria-hidden="true"></span><span id="status-txt">Happy hour du lundi au samedi, 15&nbsp;h – 20&nbsp;h</span></p>
   </div>
-</section>
-
-<section class="night" id="soir" aria-labelledby="t-soir">
-  <div class="night-grid">
-    <h2 class="d" id="t-soir" data-in>Le soir</h2>
-    <p class="statement" data-in style="--d:1">Un nom à une lettre du chanteur de Metallica. Du rock, des DJ, et la piste vers 23 h.</p>
-    <ul class="facts">
-      <li data-in style="--d:2"><b>Rock</b>AC/DC, Guns N' Roses, « Enter Sandman », et les tubes du dancefloor.</li>
-      <li data-in style="--d:3"><b>DJ &amp; concerts</b>Soirées DJ et concerts au programme du pub.</li>
-      <li data-in style="--d:4"><b>Piste</b>Piste de danse pour finir la soirée.</li>
-      <li data-in style="--d:5"><b>Terrasse</b>Terrasse sur le boulevard Poissonnière.</li>
-    </ul>
-    <div class="night-pics">
-      <img class="p1" data-in src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=75&auto=format&fit=crop" width="800" height="1000" loading="lazy" alt="Un chanteur lève le bras dans la fumée d'un concert">
-      <img class="p2" data-in style="--d:2" src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?w=700&q=75&auto=format&fit=crop" width="700" height="700" loading="lazy" alt="Des amis trinquent en terrasse avec des pintes">
-    </div>
+  <div class="pics">
+    <figure class="pic p1 cut"><img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/james-hetfeelds-pub-620cf659628952.47853544.jpg" width="800" height="533" alt="La devanture du James Hetfeeld’s Pub : store noir à rabats orange, terrasse de chaises en rotin sur le boulevard Poissonnière"><figcaption>17, boulevard Poissonnière</figcaption></figure>
+    <figure class="pic p2 cut"><img src="https://www.pagesjaunes.fr/media/newdam/preset-export-large/25/90/70/00/00/82/01/d2/79/c5/5d3f25907000008201d279c5/5d3f25907000008201d279c6.jpg" width="550" height="309" alt="Le comptoir en bois et la tour à bière en cuivre, écrans allumés au fond" style="object-position:40% 50%"><figcaption>Le comptoir</figcaption></figure>
+    <figure class="pic p3 cut"><img src="https://foto1.sluurpy.com/locali/fr/2125442/32068269.jpg" width="1000" height="750" alt="La terrasse éclairée le soir, sous le store du pub"><figcaption>La terrasse, le soir</figcaption></figure>
   </div>
-</section>
+</div>
 
-<section class="eat" id="manger" aria-labelledby="t-manger">
-  <div class="eat-grid">
-    <div class="eat-pic frame" data-in><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000&q=75&auto=format&fit=crop" width="1000" height="1250" loading="lazy" alt="Un cheeseburger">
-<div class="eat-side" data-in style="--d:3">
-        <img src="https://images.unsplash.com/photo-1606755456206-b25206cde27e?w=600&q=75&auto=format&fit=crop" width="600" height="600" loading="lazy" alt="Des frites dorées servies dans un gobelet en métal (illustration)">
-      </div></div>
-    <div class="eat-body">
-      <h2 class="d" id="t-manger" data-in>À manger</h2>
-      <ul class="eat-list" data-in style="--d:1">
-        <li>Cheeseburger</li>
-        <li>Cheesy cheese burger</li>
-        <li>Assiette falafel</li>
-      </ul>
-      <p data-in style="--d:2">De quoi tenir jusqu'à la fin des prolongations. Une cuisine simple, à petit prix : la carte complète se lit au comptoir.</p>
-
-    </div>
-  </div>
-</section>
-
-<section class="visit" id="venir" aria-labelledby="t-venir">
-  <h2 class="d" id="t-venir" data-in>Venir</h2>
-  <ul class="rows">
-    <li data-in><a href="https://www.google.com/maps/dir/?api=1&destination=James+Hetfeeld%27s+Pub,+17+boulevard+Poissonni%C3%A8re,+75002+Paris" target="_blank" rel="noopener"><span>17 bd Poissonnière</span><span class="hint">Itinéraire Google Maps<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-    <li data-in style="--d:1"><div><span>75002 Paris</span><span class="hint">Métro Grands Boulevards (8, 9) · Bourse (3)</span></div></li>
-    <li data-in style="--d:2"><a href="tel:+33171734114"><span>01 71 73 41 14</span><span class="hint">Appeler le pub</span></a></li>
-    <li data-in style="--d:3"><a href="mailto:contact.hetfeeld@gmail.com?subject=Demande%20pour%20le%20pub"><span>Écrire</span><span class="hint">contact.hetfeeld@gmail.com</span></a></li>
+<div class="strip">
+  <ul class="wrap">
+    <li><b>17 bd Poissonnière</b><span>Paris 2e, côté Grands Boulevards</span></li>
+    <li><b>Métro</b><span>Grands Boulevards (8, 9) · Bourse (3)</span></li>
+    <li><b>Terrasse</b><span>sur le boulevard, sous le store noir</span></li>
+    <li><b>Réservation</b><span>par téléphone, au 01&nbsp;71&nbsp;73&nbsp;41&nbsp;14</span></li>
   </ul>
-  <div class="hours">
-    <h3 class="d" data-in>Horaires</h3>
-    <p data-in style="--d:1">Jusqu'à 5 h le vendredi et le samedi. Happy hour du lundi au samedi, <span style="white-space:nowrap">15 h – 20 h</span>. Horaires relevés en ligne, à confirmer par téléphone.</p>
-    <table data-in style="--d:2" id="hours">
-      <caption class="sr">Horaires d'ouverture</caption>
-      <tbody>
-        <tr data-day="1"><td>Lundi</td><td>11 h – 2 h</td></tr>
-        <tr data-day="2"><td>Mardi</td><td>11 h – 2 h</td></tr>
-        <tr data-day="3"><td>Mercredi</td><td>11 h – 2 h</td></tr>
-        <tr data-day="4"><td>Jeudi</td><td>11 h – 2 h</td></tr>
-        <tr data-day="5"><td>Vendredi</td><td>11 h – 5 h</td></tr>
-        <tr data-day="6"><td>Samedi</td><td>12 h – 5 h</td></tr>
-        <tr data-day="0"><td>Dimanche</td><td>13 h – 1 h</td></tr>
-      </tbody>
-    </table>
-    <div class="actions" data-in style="--d:3">
-      <a class="btn btn-ink" href="tel:+33171734114">Appeler le pub</a>
-      <a class="btn btn-line" href="https://www.facebook.com/JamesHetfeeldsPub" target="_blank" rel="noopener">Facebook</a>
+</div>
+
+<section id="pressions" class="wrap">
+  <div class="sec-head">
+    <h2 data-in>Les pressions</h2>
+    <p class="lead" data-in style="--d:1">Toutes en pinte de 50&nbsp;cl. En orange, le prix du happy hour, du lundi au samedi de 15&nbsp;h à 20&nbsp;h. À droite, le prix normal, valable aussi tout le dimanche.</p>
+  </div>
+  <div class="press-grid">
+    <div data-in style="--d:1">
+      <table class="beers">
+        <caption class="sr">Bières à la pression : prix en happy hour et prix normal</caption>
+        <thead><tr><th scope="col">Pinte, 50&nbsp;cl</th><th scope="col">Happy hour</th><th scope="col">Normal</th></tr></thead>
+        <tbody>
+          <tr><td><b>Blonde pression</b><span>la pinte de la maison</span></td><td><span class="price hh">4,00&nbsp;€</span></td><td class="price">6,00&nbsp;€</td></tr>
+          <tr><td><b>Warsteiner</b><span>pils allemande</span></td><td><span class="price hh">4,00&nbsp;€</span></td><td class="price">6,00&nbsp;€</td></tr>
+          <tr><td><b>König Ludwig Weissbier</b><span>blanche de Bavière</span></td><td><span class="price hh">5,50&nbsp;€</span></td><td class="price">7,00&nbsp;€</td></tr>
+        </tbody>
+      </table>
+      <div class="also">
+        <h3>Et aussi au comptoir</h3>
+        <p>La pinte de cidre brut, la Bête blonde, les Deux Chouettes (dont une aux fruits rouges), la libanaise Almaza et l’arak. La carte du jour fait foi.</p>
+      </div>
+      <figure class="pic taps cut"><img src="https://foto1.sluurpy.com/locali/fr/2125442/32068261.jpg" width="1000" height="600" alt="Les tireuses du comptoir : Chimay, Cinq Cents, Rince Cochon et la Bête" loading="lazy"><figcaption>Les tireuses du comptoir</figcaption></figure>
+    </div>
+
+    <div class="press-side">
+    <div class="round cut" id="tournee" data-in style="--d:2">
+      <h3>Combien coûte ta tournée ?</h3>
+      <p>Choisis la bière et le nombre de pintes : le prix en happy hour et au prix normal.</p>
+      <fieldset>
+        <legend>La bière</legend>
+        <div class="chips" id="beer">
+          <button type="button" aria-pressed="true" data-hh="4" data-n="6">Blonde</button>
+          <button type="button" aria-pressed="false" data-hh="4" data-n="6">Warsteiner</button>
+          <button type="button" aria-pressed="false" data-hh="5.5" data-n="7">König Ludwig</button>
+        </div>
+      </fieldset>
+      <div class="total" aria-live="polite">
+        <div id="t-hh"><b class="num" id="sum-hh">16,00&nbsp;€</b><span>en happy hour, 15&nbsp;h – 20&nbsp;h</span></div>
+        <div id="t-n"><b class="num" id="sum-n">24,00&nbsp;€</b><span>au prix normal</span></div>
+      </div>
+      <div class="step">
+        <button type="button" id="minus" aria-label="Une pinte de moins">−</button>
+        <p class="qty"><output id="qty" class="num" aria-label="Nombre de pintes">4</output> <span id="qty-w">pintes</span></p>
+        <button type="button" id="plus" aria-label="Une pinte de plus">+</button>
+      </div>
+      <p class="note" id="round-note" aria-live="polite">Avant 20&nbsp;h, la tournée de 4 pintes coûte 8,00&nbsp;€ de moins.</p>
+    </div>
     </div>
   </div>
 </section>
 
+<section id="matchs" class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-in>Les matchs sur grand écran</h2>
+      <p class="lead" data-in style="--d:1">Des écrans géants dans toute la salle : où que tu sois assis, un coin de télé reste en vue. Les grands soirs, plusieurs matchs passent en même temps.</p>
+    </div>
+    <div class="match-grid">
+      <figure class="pic match-photo cut" data-in style="--d:1"><img src="https://media.timeout.com/images/100452729/1372/772/image.jpg" width="1372" height="772" alt="La salle du pub : comptoir, suspensions, écrans allumés et mur couvert d’affiches rock" loading="lazy"><figcaption>La salle et ses écrans</figcaption></figure>
+      <div class="match-side" data-in style="--d:2">
+        <ul class="sports">
+          <li><b>Football</b><span>la Ligue des champions, l’Euro</span></li>
+          <li><b>Rugby</b><span>le Tournoi des Six Nations</span></li>
+          <li><b>Et le reste</b><span>Roland-Garros, les Jeux olympiques</span></li>
+        </ul>
+        <a class="btn btn-flame" href="tel:+33171734114">Réserver pour un match</a>
+        <p class="small">Les soirs de grand match, la salle se remplit vite : la réservation se fait par téléphone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="soir" class="wrap">
+  <div class="night">
+    <div class="n-text">
+      <h2 data-in>Le soir, du rock</h2>
+      <p class="lead" data-in style="--d:1">« Enter Sandman », AC/DC et Guns N’ Roses passent dans la playlist, entre les tubes du dancefloor. Concerts et soirées DJ au programme.</p>
+      <ul class="set" data-in style="--d:2">
+        <li><b>Rock</b><span>Metallica, AC/DC, Guns N’ Roses</span></li>
+        <li><b>DJ</b><span>des soirées DJ et des concerts</span></li>
+        <li><b>23&nbsp;h</b><span>la piste de danse s’anime</span></li>
+        <li><b>Terrasse</b><span>pour finir la pinte dehors</span></li>
+      </ul>
+    </div>
+    <figure class="pic n1 cut" data-in style="--d:1"><img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/james-hetfeelds-pub-620cfaf4a82e72.07712542.png" width="986" height="740" alt="Un joueur de cornemuse en kilt devant la terrasse décorée de ballons verts, blancs et orange" loading="lazy"><figcaption>Cornemuse devant la terrasse</figcaption></figure>
+    <figure class="pic n2 cut" data-in style="--d:2"><img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/james-hetfeelds-pub-620cfaf34d7d11.01714286.png" width="1050" height="740" alt="Un long drink glacé décoré de tranches de pomme verte, sur le bar" loading="lazy" style="object-position:68% 50%"><figcaption>Au bar</figcaption></figure>
+    <div class="n3" data-in style="--d:3">
+      <h3>Un nom à une lettre près</h3>
+      <p>James Hetfield chante dans Metallica ; ici, c’est Hetfeeld, avec deux e. Le logo du store reprend une guitare électrique.</p>
+    </div>
+  </div>
+</section>
+
+<section id="manger" class="food">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-in>À manger</h2>
+      <p class="lead" data-in style="--d:1">Une cuisine de pub, burgers et assiettes, de quoi tenir jusqu’aux prolongations. Titres-restaurant acceptés.</p>
+    </div>
+    <div class="food-grid">
+      <article class="dish" data-in style="--d:1"><div class="im"><img src="https://foto1.sluurpy.com/locali/fr/2125442/32068251.jpg" width="1024" height="1024" alt="Un cheeseburger, ses frites et sa salade, une pinte derrière" loading="lazy"></div><div class="t"><h3>Cheeseburger</h3><p>Pain au sésame, fromage fondu, frites et salade.</p></div></article>
+      <article class="dish" data-in style="--d:2"><div class="im"><img src="https://foto1.sluurpy.com/locali/fr/2125442/32068274.jpg" width="750" height="1000" alt="Le Special Cheesy Cheese Burger servi dans son panier de frites" loading="lazy" style="object-position:50% 55%"></div><div class="t"><h3>Special Cheesy Cheese Burger</h3><p>La version la plus fromagère, en panier avec frites.</p></div></article>
+      <article class="dish" data-in style="--d:3"><div class="im"><img src="https://media-cdn.tripadvisor.com/media/photo-o/08/38/ad/e5/james-hetfeeld-s-pub.jpg" width="1024" height="768" alt="Une pièce de viande grillée, frites et salade servies sur ardoise" loading="lazy"></div><div class="t"><h3>Sur ardoise</h3><p>Viande grillée, frites et salade.</p></div></article>
+    </div>
+    <div class="food-foot">
+      <div data-in><h3>Aussi à la carte</h3><p>L’assiette falafel, pour ceux qui passent le burger. Servi en salle et en terrasse.</p></div>
+      <div data-in style="--d:1"><h3>Paiement</h3><p>Carte bancaire, Visa, Mastercard, American Express, espèces et titres-restaurant.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="venir" class="wrap">
+  <div class="visit">
+    <div data-in>
+      <h2>Horaires</h2>
+      <table class="hours" id="hours">
+        <caption class="sr">Horaires d’ouverture</caption>
+        <tbody>
+          <tr data-day="1"><td>Lundi</td><td>11&nbsp;h – 2&nbsp;h</td></tr>
+          <tr data-day="2"><td>Mardi</td><td>11&nbsp;h – 2&nbsp;h</td></tr>
+          <tr data-day="3"><td>Mercredi</td><td>11&nbsp;h – 2&nbsp;h</td></tr>
+          <tr data-day="4"><td>Jeudi</td><td>11&nbsp;h – 2&nbsp;h</td></tr>
+          <tr data-day="5"><td>Vendredi</td><td>dès 11&nbsp;h, tard</td></tr>
+          <tr data-day="6"><td>Samedi</td><td>dès 13&nbsp;h, tard</td></tr>
+          <tr data-day="0"><td>Dimanche</td><td>13&nbsp;h – 1&nbsp;h</td></tr>
+        </tbody>
+      </table>
+      <p class="hours-note">Happy hour du lundi au samedi, 15&nbsp;h – 20&nbsp;h. L’heure de fermeture du week-end varie : appelez avant de venir tard.</p>
+    </div>
+    <div class="contact" data-in style="--d:1">
+      <h2>Venir</h2>
+      <dl>
+        <div><dt>Adresse</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=James+Hetfeeld%27s+Pub,+17+boulevard+Poissonni%C3%A8re,+75002+Paris" target="_blank" rel="noopener">17 bd Poissonnière, 75002 Paris</a></dd></div>
+        <div><dt>Téléphone</dt><dd><a href="tel:+33171734114" class="nw">01 71 73 41 14</a></dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:contact.hetfeeld@gmail.com" style="font-size:1.0625rem;font-family:var(--text);font-weight:600;word-break:break-all">contact.hetfeeld@gmail.com</a></dd></div>
+      </dl>
+      <div class="btns">
+        <a class="btn btn-flame" href="tel:+33171734114">Appeler le pub</a>
+        <a class="btn btn-stone" href="https://www.facebook.com/JamesHetfeeldsPub" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <figure class="pic visit-photo cut" data-in style="--d:2"><img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/james-hetfeelds-pub-620cf659628952.47853544.jpg" width="800" height="533" alt="Le store noir du pub et sa terrasse, vus depuis le trottoir du boulevard" loading="lazy" style="object-position:50% 70%"><figcaption>Métro Grands Boulevards, à deux pas</figcaption></figure>
+  </div>
+</section>
 </main>
 
 <footer>
-  <p class="blocks" aria-label="Hetfeeld's"><span aria-hidden="true">H</span><span aria-hidden="true">E</span><span aria-hidden="true">T</span><span aria-hidden="true">F</span><span aria-hidden="true">E</span><span aria-hidden="true">E</span><span aria-hidden="true">L</span><span aria-hidden="true">D</span><span aria-hidden="true">'S</span></p>
-  <div class="foot-grid">
-    <nav aria-label="Pied de page">
-      <a href="#pressions">Pressions</a><a href="#matchs">Matchs</a><a href="#soir">Le soir</a>
-      <a href="#manger">À manger</a><a href="#venir">Venir</a><a href="#top">Haut de page</a>
-    </nav>
-    <address>
-      James Hetfeeld's Pub · 17 boulevard Poissonnière, 75002 Paris
-      <a href="tel:+33171734114">01 71 73 41 14</a>
-      <a href="mailto:contact.hetfeeld@gmail.com">contact.hetfeeld@gmail.com</a>
-    </address>
-    <p class="credits">Photos d'illustration : Unsplash.</p>
+  <div class="wrap">
+    <p class="foot-name" translate="no">Hetfeeld’s<span>.</span></p>
+    <div class="foot-grid">
+      <address style="font-style:normal">James Hetfeeld’s Pub · 17 boulevard Poissonnière, 75002 Paris<br><a href="tel:+33171734114" class="nw">01 71 73 41 14</a> · <a href="mailto:contact.hetfeeld@gmail.com">contact.hetfeeld@gmail.com</a></address>
+      <nav aria-label="Pied de page"><a href="#pressions">Pressions</a><a href="#matchs">Matchs</a><a href="#soir">Le soir</a><a href="#manger">À manger</a><a href="#venir">Horaires</a></nav>
+      <p>Photos : Schlouk Map, Time Out (Emmanuel Chirache), Pages Jaunes, Sluurpy, Tripadvisor. Démo non officielle.</p>
+    </div>
   </div>
 </footer>
-
 
 <script>
 document.documentElement.classList.add('js');
 (function(){
-  // Horaires : [ouverture, fermeture] en heures, fermeture > 24 = lendemain
-  var H={1:[11,26],2:[11,26],3:[11,26],4:[11,26],5:[11,29],6:[12,29],0:[13,25]};
+  // Horaires retenus là où les sources concordent ; fermeture > 24 = lendemain
+  var H={1:[11,26],2:[11,26],3:[11,26],4:[11,26],5:[11,26],6:[13,26],0:[13,25]};
   var J=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  var nb=' ';
   function paris(){
-    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
-    var o={};p.forEach(function(x){o[x.type]=x.value});
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),o={};
+    p.forEach(function(x){o[x.type]=x.value});
     return {d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday),m:(+o.hour%24)*60+(+o.minute)};
   }
-  function dur(min){var h=Math.floor(min/60),m=min%60;return h?(h+' h'+(m?' '+String(m).padStart(2,'0'):'')):(m+' min')}
-  function isOpen(t){
-    var today=H[t.d], y=H[(t.d+6)%7];
-    if(t.m>=today[0]*60&&t.m<Math.min(today[1],24)*60) return {open:true,close:today[1]*60-t.m};
-    if(t.m>=today[0]*60&&today[1]>=24) return {open:true,close:today[1]*60-t.m};
-    if(y[1]>24&&t.m<(y[1]-24)*60) return {open:true,close:(y[1]-24)*60-t.m};
+  function state(t){
+    var td=H[t.d],y=H[(t.d+6)%7];
+    if(t.m>=td[0]*60) return {open:true,day:t.d,close:td[1]};
+    if(t.m<(y[1]-24)*60) return {open:true,day:(t.d+6)%7,close:y[1]};
     return {open:false};
   }
-  function tick(){
-    var t=paris(), o=isOpen(t), hh=t.d!==0&&t.m>=900&&t.m<1200&&o.open;
-    var live=document.getElementById('live'), title=document.getElementById('live-title'), sub=document.getElementById('live-sub');
-    live.dataset.hh=hh?1:0; live.dataset.open=o.open?1:0;
-    document.getElementById('pressions').dataset.hh=hh?1:0;
-    if(hh){title.textContent='Happy hour en cours';sub.textContent='Encore '+dur(1200-t.m)+' : la blonde à 4 € au lieu de 6 €.';}
-    else if(o.open){title.textContent='Ouvert en ce moment';
-      var next=t.d===0?'demain, 15 h':(t.m<900?'aujourd’hui, 15 h':(t.d===6?'lundi, 15 h':'demain, 15 h'));
-      sub.textContent='Fermeture dans '+dur(o.close)+'. Prochain happy hour\u00a0: '+next.replace(', ',',\u00a0').replace(' h','\u00a0h')+'.';}
-    else{title.textContent='Fermé pour le moment';
-      var op=H[t.d][0]*60; sub.textContent=t.m<op?('Ouverture aujourd’hui à '+H[t.d][0]+' h.'):('Ouverture '+J[(t.d+1)%7]+' à '+H[(t.d+1)%7][0]+' h.');}
-    var r=document.querySelector('#hours tr[data-day="'+(o.open&&t.m<360?(t.d+6)%7:t.d)+'"]');
-    document.querySelectorAll('#hours tr').forEach(function(x){x.classList.toggle('today',x===r)});
+  function hh(t){return t.d!==0&&t.m>=900&&t.m<1200}
+  function fmt(n){return n.toFixed(2).replace('.',',')+nb+'€'}
+  var t=paris(), s=state(t), st=document.getElementById('status'), tx=document.getElementById('status-txt');
+  if(s.open&&hh(t)){st.dataset.s='hh';tx.textContent='Happy hour en cours, jusqu’à 20'+nb+'h';}
+  else if(s.open){st.dataset.s='open';tx.textContent='Ouvert maintenant'+(t.d===0||t.m>=1200?'':' · happy hour à 15'+nb+'h');}
+  else{st.dataset.s='closed';tx.textContent='Fermé · ouvre aujourd’hui à '+H[t.d][0]+nb+'h';}
+  var r=document.querySelector('#hours tr[data-day="'+(s.open?s.day:t.d)+'"]'); if(r) r.classList.add('today');
+
+  // la tournée
+  var q=4,beer=document.querySelectorAll('#beer button'),cur=beer[0];
+  function draw(){
+    var a=+cur.dataset.hh*q,b=+cur.dataset.n*q,live=hh(t)&&s.open;
+    document.getElementById('qty').textContent=q;document.getElementById('qty-w').textContent=q>1?'pintes':'pinte';
+    document.getElementById('sum-hh').textContent=fmt(a);
+    document.getElementById('sum-n').textContent=fmt(b);
+    document.getElementById('t-hh').classList.toggle('on',live);
+    document.getElementById('t-n').classList.toggle('on',!live);
+    document.getElementById('round-note').textContent=(live?'Happy hour en cours : ':'Avant 20'+nb+'h, du lundi au samedi : ')+(q>1?'la tournée de '+q+' pintes':'la pinte')+' coûte '+fmt(b-a)+' de moins.';
   }
-  tick(); setInterval(tick,30000);
-  // entrées de section
+  beer.forEach(function(x){x.addEventListener('click',function(){beer.forEach(function(y){y.setAttribute('aria-pressed','false')});x.setAttribute('aria-pressed','true');cur=x;draw();})});
+  document.getElementById('minus').addEventListener('click',function(){if(q>1){q--;draw();}});
+  document.getElementById('plus').addEventListener('click',function(){if(q<20){q++;draw();}});
+  draw();
+
   var els=document.querySelectorAll('[data-in]');
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
     els.forEach(function(e){io.observe(e)});
   } else els.forEach(function(e){e.classList.add('on')});
 })();
