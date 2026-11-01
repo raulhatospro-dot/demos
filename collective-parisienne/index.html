@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>La Collective parisienne · cantine solidaire, 70 rue François Miron</title>
+<meta name="description" content="La Collective parisienne, restaurant associatif et solidaire du Marais au 70 rue François Miron, Paris 4e. Plat du jour fait maison, repas suspendu, métro Saint-Paul.">
+<meta name="theme-color" content="#173f2e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Système adapté du DESIGN.md « NerdWallet » (awesome-design) : un seul vert profond qui porte toutes les actions,
+   une échelle de menthes pour les grands aplats, angles quasi droits (2 px), aucune ombre, hiérarchie par contraste de graisse (300 / 600).
+   Adaptation : le vert « spruce » devient le vert bouteille de la devanture, le papier rose-gris remplace le blanc,
+   le citron vert ne sert qu'au surlignage. Direction taste-skill « la page est l'objet » : chaque section est une pièce de papeterie posée sur la devanture. */
+:root{
+  --green:#173f2e;      /* vert bouteille de la devanture */
+  --green-2:#0f2d20;
+  --green-ink:#eef3ee;
+  --paper:#e9e6e3;
+  --paper-2:#dcd8d4;
+  --mint:#dcefe3;
+  --ink:#1a1d1b;
+  --muted:#4f4a46;
+  --lime:#d6f27c;
+  --m:clamp(16px,4vw,56px);
+  --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --s-lead:clamp(1.3rem,1.1rem + .8vw,1.75rem);
+  --s-head:clamp(3rem,1.6rem + 6vw,7rem);
+  --s-hero:clamp(4.2rem,2rem + 9vw,10.5rem);
+  --r:2px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --scallop:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='14'%3E%3Cpath d='M0 14V8a20 8 0 0 0 40 0v6z' fill='%23000'/%3E%3Cpath d='M0 14h40V8z' fill='%23000'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--green);color:var(--ink);font-family:Jost,"Helvetica Neue",Arial,sans-serif;font-weight:300;font-size:var(--s-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg{display:block;max-width:100%}
+img{height:auto;background:var(--paper-2)}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+::selection{background:var(--lime);color:var(--ink)}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.paper :focus-visible,.sheet :focus-visible{outline-color:var(--green)}
+h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;line-height:.88;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0}
+strong{font-weight:600}
+.tab{font-variant-numeric:tabular-nums}
+
+/* bandeau démo */
+.demo{background:var(--green-2);color:#b9cbbf;font-size:var(--s-small);text-align:center;padding:8px var(--m)}
+.demo strong{color:var(--green-ink);font-weight:500}
+
+/* navigation */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px var(--m);color:var(--green-ink)}
+.mark{font-family:"Bebas Neue",sans-serif;font-size:1.65rem;line-height:1;letter-spacing:.01em;text-decoration:none}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:30px;font-size:var(--s-small);font-weight:400}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 22px;border-radius:var(--r);font:500 1rem/1.1 Jost,sans-serif;text-decoration:none;cursor:pointer;border:0;transition:transform .25s var(--ease),background-color .25s var(--ease)}
+.btn:active{transform:translateY(1px) scale(.98)}
+.btn--green{background:var(--green);color:var(--green-ink)}
+.btn--green:hover{background:var(--green-2)}
+.btn--lime{background:var(--lime);color:var(--ink)}
+.btn--lime:hover{background:#c8e868}
+.btn svg{width:18px;height:18px;flex:none}
+.nav .btn{min-height:44px;padding:10px 16px;font-size:.9375rem}
+
+/* hero */
+.hero{display:grid;gap:12px;padding:0 var(--m) 12px}
+.facade{background:var(--green-2);aspect-ratio:4/2.7;overflow:hidden;border-radius:var(--r)}
+.facade svg{width:100%;height:100%}
+.card{background:var(--paper);border-radius:var(--r);margin-top:-36px;margin-inline:10px;position:relative;padding-bottom:28px;text-align:center}
+.stripe{display:block;width:100%;height:40px}
+.card-in{padding:30px 22px 0;display:grid;justify-items:center;gap:20px}
+.card .name{font-family:"Bebas Neue",sans-serif;font-size:1.15rem;letter-spacing:.06em;color:var(--muted)}
+.card h1{font-size:var(--s-hero);color:var(--ink);letter-spacing:-.02em}
+.card h1 span{display:block}
+.card .lead{max-width:34ch;font-size:clamp(1.1875rem,1.1rem + .3vw,1.3125rem)}
+.status{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:var(--s-small);background:var(--mint);padding:8px 14px;border-radius:var(--r)}
+.status i{width:9px;height:9px;border-radius:50%;background:#6b7a70;flex:none}
+.status.on i{background:#1f8a4c}
+.card .links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;font-size:var(--s-small);font-weight:400}
+
+/* faits */
+.facts{background:var(--paper);margin:0 var(--m);padding:72px 22px 64px;border-radius:var(--r)}
+.facts-top{display:grid;gap:22px}
+.facts h2{font-size:var(--s-head)}
+.facts-top p{max-width:46ch}
+.facts dl{display:grid;grid-template-columns:1fr 1fr;gap:34px 20px;margin:56px 0 0}
+.facts dt{font-family:"Bebas Neue",sans-serif;font-size:clamp(2.6rem,1.6rem + 3vw,4.6rem);line-height:.9}
+.facts dd{margin:8px 0 0;font-size:var(--s-small);color:var(--muted);max-width:24ch}
+.facts figure{margin:56px 0 0}
+.facts figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+figcaption{font-size:var(--s-small);color:var(--muted);margin-top:10px}
+
+/* carte : la feuille */
+.menu{background:var(--mint);margin-top:12px;padding:110px 10px 120px;display:grid;gap:48px}
+.sheet{background:var(--paper);max-width:680px;width:100%;margin:0 auto;padding:56px 26px 60px;position:relative}
+.sheet::before,.sheet::after{content:"";position:absolute;left:0;right:0;height:14px;background:var(--paper);-webkit-mask:var(--scallop) repeat-x;mask:var(--scallop) repeat-x}
+.sheet::before{top:-13px;transform:scaleY(-1)}
+.sheet::after{bottom:-13px}
+.sheet h2{font-size:var(--s-head);text-align:center}
+.sheet>.note{text-align:center;max-width:38ch;margin:16px auto 0;color:var(--muted)}
+.group{margin-top:52px}
+.group h3{font-size:2rem;text-align:center;margin-bottom:22px}
+.picker{display:grid;gap:10px;margin:0 auto;max-width:440px}
+.opt{display:flex;align-items:center;gap:14px;min-height:56px;padding:12px 16px;background:var(--paper-2);border-radius:var(--r);cursor:pointer;transition:background-color .25s var(--ease)}
+.opt:hover{background:#d8d0ca}
+.opt input{appearance:none;-webkit-appearance:none;width:24px;height:24px;margin:0;border-radius:var(--r);background:var(--paper);flex:none;display:grid;place-items:center;cursor:pointer}
+.opt input:checked{background:var(--green)}
+.opt input:checked::after{content:"";width:11px;height:6px;border:solid var(--green-ink);border-width:0 0 2.5px 2.5px;transform:translateY(-2px) rotate(-45deg)}
+.opt input:disabled{cursor:default}
+.opt input:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.opt span{flex:1;font-weight:400}
+.opt small{font-size:var(--s-small);color:var(--muted)}
+.total{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:0 auto 12px;max-width:440px;padding:18px 16px;background:var(--green);color:var(--green-ink);border-radius:var(--r)}
+.total output{font-family:"Bebas Neue",sans-serif;font-size:3.4rem;line-height:.9;font-variant-numeric:tabular-nums}
+.total span{font-weight:400}
+.items{list-style:none;margin:0 auto;padding:0;max-width:440px;display:grid;gap:18px}
+.items li{display:grid;gap:2px}
+.items b{font-weight:500}
+.items em{font-style:normal;font-size:var(--s-small);color:var(--muted)}
+.sheet .hours{text-align:center;margin-top:54px;font-weight:400}
+.sheet .hours span{display:block;color:var(--muted);font-weight:300;font-size:var(--s-small);margin-top:4px}
+.plates{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:680px;width:100%;margin:0 auto}
+.plates img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r)}
+.plates figure{margin:0}
+
+/* repas suspendu */
+.susp{padding:120px 0 110px;color:var(--green-ink)}
+.susp-head{padding:0 var(--m);display:grid;gap:18px}
+.susp h2{font-size:var(--s-head)}
+.susp-head p{max-width:52ch;color:#cfdcd3}
+.bar{margin:40px var(--m) 0;height:6px;background:#2c5a45;border-radius:var(--r);overflow:hidden}
+.bar i{display:block;height:100%;width:20%;background:var(--lime);transform-origin:left;transition:width .2s linear}
+.row{display:flex;align-items:flex-start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 var(--m);padding:36px 0 8px;scrollbar-width:none}
+.row::-webkit-scrollbar{display:none}
+.step{flex:0 0 74vw;max-width:300px;scroll-snap-align:start;display:flex;flex-direction:column;align-self:flex-start}
+.step h3{font-family:Jost,sans-serif;font-weight:600;font-size:1.15rem;line-height:1.25;letter-spacing:0}
+.step p{margin-top:8px;color:#cfdcd3;font-size:var(--s-small);line-height:1.5}
+.step .gap{flex:none}
+.step img,.step .tile{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r)}
+@media (min-width:760px){.row{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 20px;overflow:visible}.step{max-width:none}.bar{display:none}}
+@media (min-width:1080px){.row{grid-template-columns:repeat(6,1fr)}}
+.tile{background:var(--paper);color:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
+.tile b{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:3.4rem;line-height:.88}
+.tile.lime{background:var(--lime)}
+
+/* le lieu : la lettre */
+.lieu{background:var(--paper-2);padding:120px 10px 130px}
+.letter{background:var(--paper);max-width:700px;margin:0 auto;padding:52px 24px 0;position:relative}
+.letter h2{font-size:var(--s-head)}
+.letter .body{display:grid;gap:18px;margin-top:28px}
+.letter mark{background:var(--lime);color:var(--ink);padding:0 .15em}
+.letter figure{margin:30px 0 0}
+.letter figure img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r)}
+.perf{height:14px;margin:44px -24px 0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='14'%3E%3Ccircle cx='8' cy='7' r='3' fill='%23dcd8d4'/%3E%3C/svg%3E") repeat-x}
+.stub{display:grid;gap:14px;padding:26px 0 40px}
+.stub p{font-size:var(--s-small);color:var(--muted)}
+.stub a.mail{font-weight:500;font-size:clamp(1.05rem,.9rem + .8vw,1.5rem);overflow-wrap:anywhere;text-decoration:none}
+.stub a.mail:hover{text-decoration:underline}
+
+/* venir */
+.venir{position:relative}
+.venir>img{width:100%;height:70svh;min-height:420px;object-fit:cover;border-radius:0}
+.visit{background:var(--paper);margin:-90px 16px 0;position:relative;padding:30px 24px 0;border-radius:var(--r);display:grid;gap:14px}
+.visit h2{font-size:clamp(2.8rem,2rem + 2vw,3.6rem)}
+.visit address{font-style:normal;font-weight:400}
+.visit table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.visit td{padding:5px 0}
+.visit td+td{text-align:right}
+.visit .muted{color:var(--muted)}
+.visit .btns{display:grid;gap:8px;margin:8px -24px 0}
+.visit .btns .btn{border-radius:0}
+.venir .map{padding:12px var(--m) 0}
+.venir .map iframe{width:100%;height:340px;border:0;display:block;border-radius:var(--r);filter:grayscale(.35)}
+
+/* pied : le dos de la carte */
+.foot{padding:120px var(--m) 28px;color:var(--green-ink)}
+.post{background:var(--paper);color:var(--ink);position:relative;padding:56px 24px 28px;display:grid;gap:36px;max-width:1180px;margin:0 auto}
+.post::before{content:"";position:absolute;left:0;right:0;top:-13px;height:14px;background:var(--paper);-webkit-mask:var(--scallop) repeat-x;mask:var(--scallop) repeat-x;transform:scaleY(-1)}
+.post h2{font-size:clamp(2.6rem,1.8rem + 2.6vw,4.2rem)}
+.post .msg p{margin-top:14px;max-width:40ch}
+.addr{display:grid;gap:12px;font-size:1.0625rem;position:relative;padding-top:118px}
+.addr a{text-decoration:none;font-weight:400}
+.addr a:hover{text-decoration:underline}
+.stamp{width:72px;padding:5px;background:var(--paper-2);position:absolute;top:0;right:0}
+.stamp img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.imprint{grid-column:1/-1;text-align:center;font-size:.8125rem;color:var(--muted)}
+.big{font-family:"Bebas Neue",sans-serif;font-size:clamp(3.2rem,12.5vw,13.5rem);line-height:.82;letter-spacing:-.01em;margin:56px 0 0;color:var(--green-ink);white-space:nowrap;overflow:hidden}
+
+/* mouvement */
+@media (prefers-reduced-motion:no-preference){
+  .js .rise{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  .js .rise.in{opacity:1;transform:none}
+  .facade .lamp{transform-origin:50% 0;animation:sway 6s ease-in-out infinite alternate}
+  .facade .glow{animation:glow 5s ease-in-out infinite alternate}
+  @keyframes sway{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}
+  @keyframes glow{from{opacity:.75}to{opacity:1}}
+  .plates img,.step img{transition:transform 1.2s var(--ease)}
+  .plates figure:hover img{transform:scale(1.03)}
+}
+
+@media (min-width:760px){
+  .nav ul{display:flex}
+  .facts{padding:110px 56px 96px}
+  .facts dl{grid-template-columns:repeat(4,auto);justify-content:space-between}
+  .sheet{padding:72px 64px 76px}
+  .plates{grid-template-columns:repeat(3,1fr)}
+  .step{flex-basis:300px}
+  .letter{padding:64px 60px 0}
+  .perf{margin-inline:-60px}
+  .stub{padding:30px 0 44px;justify-items:start}
+  .post{grid-template-columns:1.2fr 1fr;padding:80px 64px 30px}
+  .addr{padding-top:96px}
+  .stamp{position:absolute;top:0;right:0;width:96px}
+}
+@media (min-width:1080px){
+  .hero{grid-template-columns:1fr 1fr;min-height:calc(100svh - 120px)}
+  .facade{order:2;aspect-ratio:auto;height:100%}
+  .card{margin:0;display:flex;flex-direction:column;padding-bottom:30px}
+  .stripe{height:56px}
+  .card-in{flex:1;align-content:center;padding:48px 48px 0;gap:24px}
+  .card .links{margin-top:auto;padding-top:36px}
+  .facts-top{grid-template-columns:7fr 5fr;align-items:end;gap:48px}
+  .facts-top p{justify-self:end;max-width:34ch}
+  .facts-bottom{display:grid;grid-template-columns:7fr 5fr;gap:48px;align-items:end}
+  .facts dl{grid-template-columns:1fr 1fr;gap:48px 32px}
+  .facts figure{margin:0}
+  .menu{grid-template-columns:minmax(0,680px) minmax(0,380px);justify-content:center;align-items:start;gap:56px;padding:150px var(--m) 160px}
+  .sheet{margin:0}
+  .plates{grid-template-columns:1fr;position:sticky;top:40px;margin:0;gap:12px}
+  .plates img{aspect-ratio:5/4}
+  .lieu{padding:160px var(--m)}
+  .venir{min-height:100svh}
+  .venir>img{height:100%;min-height:0;position:absolute;inset:0}
+  .visit{margin:0 60px 0 auto;width:400px}
+  .venir .wrap{position:relative;padding:60px 0 60px;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between}
+  .venir .map{width:min(560px,40vw);padding:0 0 0 60px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par <strong>Raul Hatos</strong> — site non officiel</div>
+
+<header class="nav">
+  <a class="mark" href="#top">La Collective parisienne</a>
+  <ul>
+    <li><a href="#carte">La carte</a></li>
+    <li><a href="#suspendu">Repas suspendu</a></li>
+    <li><a href="#lieu">Le lieu</a></li>
+    <li><a href="#venir">Venir</a></li>
+  </ul>
+  <a class="btn btn--lime" href="tel:+33777882464">Appeler</a>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Accueil">
+    <div class="facade" role="img" aria-label="Dessin de la devanture vert bouteille du 70 rue François Miron, vitrines éclairées, canapés et abat-jour à fleurs à l'intérieur">
+      <svg viewBox="0 0 600 660" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <pattern id="stone" width="60" height="24" patternUnits="userSpaceOnUse"><rect width="60" height="24" fill="#d9d0c4"/><rect x="0" y="22" width="60" height="2" fill="#cbc1b4"/><rect x="29" y="0" width="2" height="22" fill="#cbc1b4"/></pattern>
+          <pattern id="stripes" width="22" height="10" patternUnits="userSpaceOnUse"><rect width="11" height="10" fill="#e9e1d4"/><rect x="11" width="11" height="10" fill="#b8574a"/></pattern>
+          <pattern id="flowers" width="18" height="18" patternUnits="userSpaceOnUse"><rect width="18" height="18" fill="#f2d9a6"/><circle cx="5" cy="5" r="2.6" fill="#c45a6e"/><circle cx="13" cy="13" r="2.6" fill="#5f8f5a"/></pattern>
+        </defs>
+        <rect width="600" height="660" fill="url(#stone)"/>
+        <!-- fenêtres de l'étage -->
+        <g fill="#2b3a3a"><rect x="70" y="30" width="110" height="120"/><rect x="245" y="30" width="110" height="120"/><rect x="420" y="30" width="110" height="120"/></g>
+        <g fill="#d9d0c4"><rect x="123" y="30" width="4" height="120"/><rect x="298" y="30" width="4" height="120"/><rect x="473" y="30" width="4" height="120"/></g>
+        <!-- devanture -->
+        <rect x="20" y="190" width="560" height="470" fill="#173f2e"/>
+        <rect x="20" y="190" width="560" height="78" fill="#0f2d20"/>
+        <text x="300" y="242" text-anchor="middle" font-family="Bebas Neue, Impact, sans-serif" font-size="38" fill="#ece6e2" letter-spacing="3">LA COLLECTIVE PARISIENNE</text>
+        <rect x="20" y="268" width="560" height="10" fill="#0f2d20"/>
+        <!-- vitrine gauche -->
+        <g class="glow">
+          <rect x="48" y="296" width="196" height="300" fill="#f0d9a8"/>
+          <rect x="48" y="296" width="196" height="300" fill="url(#stripes)" opacity=".55"/>
+          <rect x="48" y="296" width="98" height="300" fill="#4f7d5d" opacity=".9"/>
+        </g>
+        <g class="lamp"><rect x="140" y="296" width="2" height="62" fill="#1a1d1b"/><path d="M116 358h52l-8 34h-36z" fill="url(#flowers)"/></g>
+        <path d="M62 520c0-26 18-40 42-40h86c24 0 40 14 40 40v40H62z" fill="#a8483f"/>
+        <rect x="62" y="548" width="168" height="48" fill="#8a3a33"/>
+        <!-- porte -->
+        <rect x="262" y="296" width="76" height="364" fill="#0f2d20"/>
+        <rect x="272" y="330" width="56" height="190" fill="#f0d9a8" class="glow"/>
+        <rect x="262" y="296" width="76" height="30" fill="#0f2d20"/>
+        <text x="300" y="320" text-anchor="middle" font-family="Bebas Neue, Impact, sans-serif" font-size="24" fill="#ece6e2">70</text>
+        <circle cx="320" cy="560" r="4" fill="#d6f27c"/>
+        <!-- vitrine droite -->
+        <g class="glow">
+          <rect x="356" y="296" width="196" height="300" fill="#f0d9a8"/>
+          <rect x="454" y="296" width="98" height="300" fill="url(#stripes)" opacity=".55"/>
+        </g>
+        <g class="lamp"><rect x="420" y="296" width="2" height="74" fill="#1a1d1b"/><path d="M396 370h52l-8 34h-36z" fill="url(#flowers)"/></g>
+        <path d="M376 510c0-18 12-28 30-28h40c18 0 30 10 30 28v86h-100z" fill="#c9a24a"/>
+        <path d="M486 530c0-16 10-24 24-24h18c14 0 24 8 24 24v66h-66z" fill="#3e6b8a"/>
+        <!-- croisillons -->
+        <g fill="#173f2e"><rect x="48" y="440" width="196" height="6"/><rect x="356" y="440" width="196" height="6"/></g>
+        <rect x="20" y="604" width="560" height="56" fill="#0f2d20"/>
+        <rect x="0" y="652" width="600" height="8" fill="#9a9187"/>
+      </svg>
+    </div>
+
+    <div class="card">
+      <svg class="stripe" viewBox="0 0 560 56" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="band" width="56" height="56" patternUnits="userSpaceOnUse"><rect width="28" height="56" fill="#173f2e"/></pattern></defs><rect width="560" height="56" fill="url(#band)"/></svg>
+      <div class="card-in">
+        <h1><span>Cantine</span> <span>solidaire</span></h1>
+        <p class="lead">La Collective parisienne, restaurant associatif du Marais : un plat du jour fait maison, à petit prix, au 70 rue François Miron.</p>
+        <p class="status" id="status" aria-live="polite"><i></i><span>Service du lundi au samedi, de 12 h à 15 h</span></p>
+        <a class="btn btn--green" href="tel:+33777882464">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          07 77 88 24 64
+        </a>
+      </div>
+      <p class="links">
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Collective+Parisienne%2C+70+Rue+Fran%C3%A7ois+Miron%2C+75004+Paris" target="_blank" rel="noopener">Itinéraire</a>
+        <a href="https://www.instagram.com/lacollectiveparisienne/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/lacollectiveparisienne" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:lacollectiveparisienne@gmail.com">Écrire</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="facts" aria-labelledby="t-midi">
+    <div class="facts-top">
+      <h2 id="t-midi" class="rise">Midi, prix doux</h2>
+      <p class="rise">Ouverte en 2021 par le cuisinier Claude-Rivel Sondé et une équipe de bénévoles, la Collective cuisine chaque jour un plat différent, servi dans une petite salle aux fauteuils dépareillés.</p>
+    </div>
+    <div class="facts-bottom">
+      <dl class="rise">
+        <div><dt class="tab">8 €</dt><dd>le plat du jour, seul</dd></div>
+        <div><dt class="tab">10 €</dt><dd>entrée et plat, ou plat et dessert</dd></div>
+        <div><dt class="tab">12 €</dt><dd>entrée, plat et dessert</dd></div>
+        <div><dt>Saint-Paul</dt><dd>métro ligne 1, à deux pas</dd></div>
+      </dl>
+      <figure class="rise">
+        <img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=1100&amp;h=825&amp;fit=crop&amp;q=72&amp;auto=format" width="1100" height="825" alt="Bol de velouté orange parsemé de graines" loading="lazy">
+        <figcaption>Une soupe maison ouvre souvent le menu.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="menu" id="carte" aria-labelledby="t-carte">
+    <div class="sheet">
+      <h2 id="t-carte">La carte du jour</h2>
+      <p class="note">L'ardoise change chaque jour. Composez votre formule : le prix suit.</p>
+
+      <div class="group">
+        <h3>Votre formule</h3>
+        <p class="total" id="t-total"><span id="formule">Plat seul</span> <output form="picker" id="prix" class="tab">8 €</output></p>
+        <form class="picker" id="picker" aria-describedby="t-total">
+          <label class="opt"><input type="checkbox" name="entree"><span>Entrée</span></label>
+          <label class="opt"><input type="checkbox" name="plat" checked disabled><span>Plat du jour</span></label>
+          <label class="opt"><input type="checkbox" name="dessert"><span>Dessert</span></label>
+        </form>
+      </div>
+
+      <div class="group">
+        <h3>Déjà passés à l'ardoise</h3>
+        <ul class="items">
+          <li><b>Crème de carottes</b><em>en entrée</em></li>
+          <li><b>Rendang de poulet, riz au gingembre, bananes pochées</b><em>plat</em></li>
+          <li><b>Légumes rôtis et riz</b><em>l'option végétarienne du même jour</em></li>
+          <li><b>Effiloché de porc façon asiatique</b><em>riz, cacahuètes, carotte caramélisée</em></li>
+          <li><b>Yassa d'agneau ou de poulet, banane plantain</b></li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <h3>À boire</h3>
+        <ul class="items">
+          <li><b>Vin nature</b><em>au verre</em></li>
+          <li><b>Cola normand</b><em>et jus de pomme</em></li>
+          <li><b>Café</b><em>à boire sur place, ou à suspendre</em></li>
+        </ul>
+      </div>
+
+      <p class="hours">Du lundi au samedi, de 12 h à 15 h<span>Fermé le dimanche · 07 77 88 24 64</span></p>
+    </div>
+
+    <div class="plates">
+      <figure class="rise"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=760&amp;h=950&amp;fit=crop&amp;q=72&amp;auto=format" width="760" height="950" alt="Plat mijoté en sauce dans un bol blanc" loading="lazy"></figure>
+      <figure class="rise"><img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=760&amp;h=950&amp;fit=crop&amp;q=72&amp;auto=format" width="760" height="950" alt="Bol de riz blanc fumant" loading="lazy"></figure>
+      <figure class="rise"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=760&amp;h=950&amp;fit=crop&amp;q=72&amp;auto=format" width="760" height="950" alt="Bacs de légumes frais, brocoli, carottes, haricots" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="susp" id="suspendu" aria-labelledby="t-susp">
+    <div class="susp-head">
+      <div>
+        <h2 id="t-susp" class="rise">Le repas suspendu</h2>
+        <p class="rise" style="margin-top:18px">Une table ouverte à tous, même les jours où le porte-monnaie est vide. Voici comment ça tourne.</p>
+      </div>
+    </div>
+    <div class="bar" aria-hidden="true"><i id="progress"></i></div>
+    <div class="row" id="row" tabindex="0" aria-label="Les étapes du repas suspendu, défilement horizontal">
+      <article class="step"><h3>Vous passez la porte</h3><p>Vert bouteille, au 70. On s'installe où il y a de la place.</p><div class="gap" style="height:40px"></div><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&amp;h=750&amp;fit=crop&amp;q=70&amp;auto=format" width="600" height="750" alt="Trois cafés levés au-dessus d'une table" loading="lazy"></article>
+      <article class="step"><h3>Vous déjeunez</h3><p>Le plat du jour, une entrée ou un dessert si le cœur vous en dit.</p><div class="gap" style="height:120px"></div><img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=600&amp;h=750&amp;fit=crop&amp;q=70&amp;auto=format" width="600" height="750" alt="Bol de velouté maison" loading="lazy"></article>
+      <article class="step"><h3>Vous laissez un pourboire</h3><p>Ce que vous voulez. Il ne part pas dans une caisse : il paie un repas.</p><div class="gap" style="height:70px"></div><div class="tile lime"><b>Un repas offert</b></div></article>
+      <article class="step"><h3>Quelqu'un ne peut pas payer</h3><p>Il le dit discrètement en commandant. Personne d'autre n'a besoin de le savoir.</p><div class="gap" style="height:140px"></div><div class="tile"><b>Rien à justifier</b></div></article>
+      <article class="step"><h3>Il mange comme tout le monde</h3><p>Même assiette, même table, même service.</p><div class="gap" style="height:56px"></div><img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=600&amp;h=750&amp;fit=crop&amp;q=70&amp;auto=format" width="600" height="750" alt="Bol de riz blanc sur une table" loading="lazy"></article>
+      <article class="step"><h3>Et le café aussi</h3><p>Le principe vaut pour un simple café, à suspendre au comptoir.</p><div class="gap" style="height:100px"></div><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&amp;h=750&amp;fit=crop&amp;q=70&amp;auto=format" width="600" height="750" alt="Café crème versé dans une tasse blanche" loading="lazy"></article>
+    </div>
+  </section>
+
+  <section class="lieu" id="lieu" aria-labelledby="t-lieu">
+    <article class="letter">
+      <h2 id="t-lieu" class="rise">Un café de quartier</h2>
+      <div class="body">
+        <p class="rise">Derrière la devanture vert bouteille, on trouve des canapés et des fauteuils dépareillés, un mur vert, un mur rayé et des abat-jour à fleurs. Le lieu ressemble plus à un salon qu'à une cantine, et c'est voulu.</p>
+        <p class="rise">En cuisine, Claude-Rivel Sondé, passé par les cuisines du Centquatre et du musée Jacquemart-André, a fondé la Collective comme un projet associatif, sans but lucratif. Il est aussi peintre et fait du cinéma expérimental.</p>
+        <p class="rise">La salle vit au-delà du déjeuner : <mark>le jeudi soir, une association y donne du soutien scolaire</mark>, des ateliers gratuits s'y tiennent chaque mois, et des associations louent l'espace pour leurs événements.</p>
+      </div>
+      <figure class="rise">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1300&amp;h=731&amp;fit=crop&amp;q=72&amp;auto=format" width="1300" height="731" alt="Fauteuil rouge près de hautes fenêtres sur un immeuble ancien" loading="lazy">
+      </figure>
+      <div class="perf" aria-hidden="true"></div>
+      <div class="stub">
+        <div>
+          <p>Un atelier, un événement, une envie d'aider ?</p>
+          <a class="mail" href="mailto:lacollectiveparisienne@gmail.com?subject=Proposition%20pour%20la%20Collective">lacollectiveparisienne@gmail.com</a>
+        </div>
+        <a class="btn btn--green" href="mailto:lacollectiveparisienne@gmail.com?subject=Proposition%20pour%20la%20Collective">Écrire à l'équipe</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="venir" id="venir" aria-labelledby="t-venir">
+    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=2000&amp;h=1250&amp;fit=crop&amp;q=72&amp;auto=format" width="2000" height="1250" alt="Café crème servi dans une tasse blanche" loading="lazy">
+    <div class="wrap">
+      <div class="visit">
+        <h2 id="t-venir">Venir déjeuner</h2>
+        <address>70 rue François Miron<br>75004 Paris · métro Saint-Paul</address>
+        <table>
+          <tbody>
+            <tr><td>Lundi – samedi</td><td>12 h – 15 h</td></tr>
+            <tr><td>Dimanche</td><td class="muted">fermé</td></tr>
+          </tbody>
+        </table>
+        <p><a href="tel:+33777882464">07 77 88 24 64</a> · <span class="muted">petite salle, venez tôt</span></p>
+        <div class="btns">
+          <a class="btn btn--green" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Collective+Parisienne%2C+70+Rue+Fran%C3%A7ois+Miron%2C+75004+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Plan : 70 rue François Miron, Paris 4e" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=La%20Collective%20Parisienne%2C%2070%20Rue%20Fran%C3%A7ois%20Miron%2C%2075004%20Paris&amp;z=16&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="post">
+    <div class="msg">
+      <h2>À tout à l'heure</h2>
+      <p>Une petite salle, un plat qui change chaque jour, et toujours une assiette pour celui qui n'a pas de quoi payer.</p>
+    </div>
+    <div class="addr">
+      <div class="stamp"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=200&amp;h=266&amp;fit=crop&amp;q=70&amp;auto=format" width="200" height="266" alt="Timbre : plat en sauce" loading="lazy"></div>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Collective+Parisienne%2C+70+Rue+Fran%C3%A7ois+Miron%2C+75004+Paris" target="_blank" rel="noopener">70 rue François Miron, 75004 Paris</a>
+      <a href="tel:+33777882464">07 77 88 24 64</a>
+      <a href="mailto:lacollectiveparisienne@gmail.com">lacollectiveparisienne@gmail.com</a>
+      <a href="https://www.instagram.com/lacollectiveparisienne/" target="_blank" rel="noopener">Instagram @lacollectiveparisienne</a>
+    </div>
+    <p class="imprint">Démo réalisée par Raul Hatos — site non officiel · photos Unsplash, d'ambiance · façade dessinée</p>
+  </div>
+  <p class="big" aria-hidden="true">La Collective</p>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// statut d'ouverture, heure de Paris (lun–sam 12 h–15 h)
+(function(){
+  var el=document.getElementById('status');if(!el)return;
+  var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  var g=function(t){var x=p.find(function(q){return q.type===t});return x?x.value:''};
+  var days=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'];var d=days.indexOf(g('weekday'));var m=(+g('hour'))*60+(+g('minute'));
+  if(d<0)return;
+  var open=d>=1&&d<=6, txt;
+  if(open&&m>=720&&m<900){el.classList.add('on');txt='Service en cours, jusqu’à 15 h';}
+  else if(open&&m<720){txt='Service aujourd’hui à partir de 12 h';}
+  else{txt=(d===6||d===0)?'Prochain service lundi à 12 h':'Prochain service demain à 12 h';}
+  el.querySelector('span').textContent=txt;
+})();
+// formule : 8 € le plat, +2 € par entrée ou dessert
+(function(){
+  var f=document.getElementById('picker'),out=document.getElementById('prix'),lab=document.getElementById('formule');
+  function up(){var e=f.entree.checked,d=f.dessert.checked,n=8+(e?2:0)+(d?2:0);
+    out.textContent=n+' €';lab.textContent=e&&d?'Entrée, plat, dessert':e?'Entrée et plat':d?'Plat et dessert':'Plat seul';}
+  f.addEventListener('change',up);up();
+})();
+// défilement des étapes
+(function(){
+  var r=document.getElementById('row'),bar=document.getElementById('progress');
+  function up(){var max=r.scrollWidth-r.clientWidth;var v=max>0?r.scrollLeft/max:1;bar.style.width=(18+v*82)+'%';}
+  r.addEventListener('scroll',up,{passive:true});up();
+})();
+// entrées échelonnées
+(function(){
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.rise').forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.querySelectorAll(':scope > .rise'));var i=Math.max(0,sib.indexOf(e.target));e.target.style.transitionDelay=(i*80)+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rise').forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
