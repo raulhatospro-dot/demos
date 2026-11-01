@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Casatoni, trattoria italienne rue Legendre, Paris 17e</title>
+<meta name="description" content="Casatoni, trattoria italienne au 41 rue Legendre, Paris 17e : pizzas, pâtes, antipasti, vins italiens. Réservation et horaires.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#ffffff;
+  --ink:#181d26;
+  --body:#333840;
+  --soft:#f4f1ec;
+  --coral:#aa2d00;
+  --coral-ink:#fff4ee;
+  --forest:#0a2e0e;
+  --forest-ink:#f5e9d4;
+  --cream:#f5e9d4;
+  --peach:#fcab79;
+  --m:clamp(16px,4vw,48px);
+  --gap:clamp(88px,12vw,192px);
+  --f:"Hanken Grotesk",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--f);background:var(--canvas);color:var(--ink);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+::selection{background:var(--peach);color:var(--ink)}
+:focus-visible{outline:3px solid var(--peach);outline-offset:3px;border-radius:4px}
+.wrap{padding-inline:var(--m);max-width:1600px;margin-inline:auto}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:7px var(--m)}
+
+/* navigation */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.nav .mark{font-weight:700;font-size:20px;letter-spacing:-.02em;text-decoration:none}
+.nav ul{display:none;list-style:none;gap:28px;font-weight:500;font-size:16px}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline}
+@media(min-width:900px){.nav ul{display:flex}}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 16px/1 var(--f);text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#000}
+.btn-line{background:var(--soft);color:var(--ink)}
+.btn-line:hover{background:#e9e4dc}
+.btn-sm{min-height:42px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{padding-bottom:var(--gap)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:899px){.actions .btn{flex:1 1 100%}}
+.hero h1{font-weight:600;font-size:clamp(64px,24.8vw,400px);line-height:.86;letter-spacing:-.04em;margin:clamp(8px,1.5vw,20px) 0 0 -.04em}
+.hero .sub{font-size:clamp(22px,2.1vw,32px);letter-spacing:-.015em;line-height:1.2;font-weight:600;margin-bottom:18px;max-width:20ch}
+.hero-grid{display:grid;gap:32px;margin-top:clamp(24px,2.4vw,36px)}
+.hero-text p.lead{font-size:clamp(19px,1.6vw,22px);line-height:1.45;max-width:30ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.status{display:flex;align-items:center;gap:10px;margin-top:28px;font-weight:500;font-size:16px}
+.dot{width:10px;height:10px;border-radius:50%;background:#9297a0;flex:none}
+.dot.on{background:#2b8a3e}
+.rating{margin-top:6px;font-size:15px;color:var(--body)}
+.hero-pic{aspect-ratio:4/3;overflow:hidden;border-radius:6px;background:var(--soft)}
+.hero-pic img{transform:scale(1.04);transition:transform 1.6s var(--ease)}
+.loaded .hero-pic img{transform:scale(1)}
+@media(min-width:900px){
+  .hero-grid{grid-template-columns:repeat(12,1fr);align-items:start}
+  .hero-text{grid-column:1/6;padding-top:4px}
+  .hero-pic{grid-column:6/13;aspect-ratio:16/10}
+}
+
+/* sections */
+section{scroll-margin-top:20px}
+h2{font-weight:600;font-size:clamp(40px,6.4vw,96px);line-height:.95;letter-spacing:-.04em;max-width:14ch;text-wrap:balance}
+h3{font-weight:600;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;line-height:1.15}
+.intro{font-size:clamp(18px,1.5vw,21px);max-width:44ch;margin-top:20px}
+
+/* pizze : champ corail */
+.field{padding-block:clamp(72px,9vw,140px)}
+.coral{background:var(--coral);color:var(--coral-ink)}
+.forest{background:var(--forest);color:var(--forest-ink)}
+.creamf{background:var(--cream);color:var(--ink)}
+.pz-head{display:grid;gap:28px}
+@media(min-width:900px){.pz-head{grid-template-columns:7fr 5fr;align-items:end}}
+.pz-pic{aspect-ratio:1;overflow:hidden;border-radius:6px;max-width:460px;justify-self:end;width:100%}
+.picker{margin-top:clamp(40px,5vw,64px)}
+.picker fieldset{border:0;display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.picker legend{font-weight:600;font-size:16px;margin-bottom:12px;float:left;width:100%}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;background:rgba(255,244,238,.14);font-weight:600;font-size:15.5px;transition:background-color .2s,color .2s,transform .2s var(--ease)}
+.chip input:checked+span{background:var(--coral-ink);color:var(--coral)}
+.chip input:focus-visible+span{outline:3px solid var(--peach);outline-offset:3px}
+.chip:hover span{background:rgba(255,244,238,.26)}
+.chip:hover input:checked+span{background:#fff}
+.count{font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.02em;margin:30px 0 8px}
+.count button{background:none;border:0;color:inherit;font:inherit;font-size:16px;font-weight:500;text-decoration:underline;text-underline-offset:.2em;cursor:pointer;margin-left:12px;vertical-align:middle}
+.pz-list{list-style:none;display:grid;gap:0 clamp(24px,4vw,64px);margin-top:12px}
+@media(min-width:700px){.pz-list{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.pz-list{grid-template-columns:1fr 1fr 1fr}}
+.pz{padding:18px 0;transition:opacity .35s var(--ease)}
+.pz .row{display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:20px;letter-spacing:-.01em}
+.pz .row b{font-weight:600;font-variant-numeric:tabular-nums}
+.pz p{font-size:16px;opacity:.88;margin-top:2px;max-width:40ch}
+.pz.off{display:none}
+.pz.sig .row span::after{content:" · au nom de la maison";font-weight:500;font-size:15px;opacity:.85}
+.empty{display:none;font-size:18px;padding:18px 0}
+
+/* primi : champ forêt */
+.primi{display:grid;gap:clamp(40px,5vw,80px)}
+@media(min-width:900px){.primi{grid-template-columns:5fr 7fr}}
+.primi-pics{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start}
+.primi-pics .p1{grid-column:1/3;aspect-ratio:4/3;border-radius:6px;overflow:hidden}
+.primi-pics .p2{aspect-ratio:1;border-radius:6px;overflow:hidden;grid-column:2}
+.menu{list-style:none}
+.menu li{display:grid;grid-template-columns:1fr auto;gap:2px 20px;padding:14px 0}
+.menu li strong{font-weight:600;font-size:19px;letter-spacing:-.01em}
+.menu li b{font-weight:600;font-size:19px;font-variant-numeric:tabular-nums}
+.menu li span{grid-column:1/2;font-size:16px;opacity:.86}
+.forest .menu li+li,.coral .pz+.pz{box-shadow:none}
+.tone li:nth-child(odd){background:transparent}
+
+/* carte : colonnes sur blanc */
+.carte{padding-block:var(--gap)}
+.carte-grid{display:grid;gap:clamp(40px,5vw,72px);margin-top:clamp(40px,5vw,72px)}
+@media(min-width:800px){.carte-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1200px){.carte-grid{grid-template-columns:1fr 1fr 1fr}}
+.carte h3{margin-bottom:6px}
+.carte .menu li span{opacity:1;color:var(--body)}
+.note{font-size:16px;color:var(--body);margin-top:6px;max-width:40ch}
+.midi{background:var(--soft);border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:6px}
+.midi .big{font-size:clamp(48px,5vw,72px);font-weight:600;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+
+/* dolci + verre : crème */
+.dolci{display:grid;gap:clamp(40px,5vw,72px)}
+@media(min-width:900px){.dolci{grid-template-columns:repeat(12,1fr)}.dolci .d-pic{grid-column:1/5}.dolci .d-txt{grid-column:5/9}.dolci .d-bar{grid-column:9/13}}
+.d-pic{aspect-ratio:3/4;border-radius:6px;overflow:hidden;align-self:start}
+.creamf .menu li span{opacity:1;color:#4a4235}
+
+/* cave */
+.cave{padding-block:var(--gap)}
+.cave-grid{display:grid;gap:clamp(32px,4vw,64px);margin-top:clamp(36px,4vw,56px)}
+@media(min-width:900px){.cave-grid{grid-template-columns:repeat(4,1fr)}}
+.cave .menu li span{opacity:1;color:var(--body)}
+
+/* infos */
+.infos{display:grid;gap:clamp(40px,5vw,80px)}
+@media(min-width:900px){.infos{grid-template-columns:repeat(12,1fr)}.infos .h{grid-column:1/6}.infos .c{grid-column:7/13}}
+.hours{list-style:none;margin-top:8px}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:12px 16px;border-radius:6px;font-size:18px;font-variant-numeric:tabular-nums}
+.hours li.today{background:var(--peach);color:var(--ink);font-weight:600}
+.hours li em{font-style:normal;opacity:.75}
+.hours li.today em{opacity:1}
+.addr{font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1.05}
+.contact-list{list-style:none;margin-top:24px;font-size:18px;display:grid;gap:8px}
+.contact-list a{text-decoration:underline}
+.map{margin-top:28px;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:#0f3a14}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.2)}
+
+/* footer */
+footer{padding-top:clamp(72px,9vw,140px);overflow:hidden}
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;font-size:15px;color:var(--body)}
+.giant{font-weight:600;font-size:clamp(64px,24.8vw,400px);letter-spacing:-.04em;line-height:.9;margin:clamp(32px,5vw,64px) 0 0 -.04em;white-space:nowrap}
+
+/* barre mobile */
+.bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:20;display:flex;gap:8px;padding:8px;border-radius:999px;background:var(--ink);box-shadow:0 10px 30px rgba(24,29,38,.28);transform:translateY(140%);transition:transform .5s var(--ease)}
+.bar.show{transform:none}
+.bar a{flex:1;min-height:46px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.bar a:first-child{background:var(--peach);color:var(--ink)}
+.bar svg{width:17px;height:17px}
+@media(min-width:900px){.bar{display:none}}
+
+/* entrées */
+.rise{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rise.in{opacity:1;transform:none}
+.no-js .rise{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise{opacity:1;transform:none;transition:none}
+  .hero-pic img{transform:none;transition:none}
+  .pz{transition:none}
+}
+</style>
+</head>
+<body class="no-js">
+<div class="demo" role="note">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="wrap nav">
+  <a class="mark" href="#top" aria-label="Casatoni, haut de page">Casatoni</a>
+  <ul>
+    <li><a href="#pizze">Pizze</a></li>
+    <li><a href="#primi">Pâtes</a></li>
+    <li><a href="#carte">La carte</a></li>
+    <li><a href="#cave">Vins</a></li>
+    <li><a href="#venir">Horaires</a></li>
+  </ul>
+  <a class="btn btn-ink btn-sm" href="https://wiicmenu-qrcode.com/app/reservation_client.php?resto=2066" target="_blank" rel="noopener">Réserver</a>
+</header>
+
+<main id="top">
+<section class="wrap hero" aria-labelledby="titre">
+  <h1 id="titre">Casatoni<span class="vh">, trattoria italienne</span></h1>
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="sub">Trattoria italienne, 41 rue Legendre, Paris 17e</p>
+      <p class="lead">Pizzas, pâtes, escalopes à la milanaise et vins d’Italie, midi et soir, à deux pas du parc Monceau.</p>
+      <div class="actions">
+        <a class="btn btn-ink" href="https://wiicmenu-qrcode.com/app/reservation_client.php?resto=2066" target="_blank" rel="noopener">Réserver une table</a>
+        <a class="btn btn-line" href="tel:+33144404730"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>01 44 40 47 30</a>
+      </div>
+      <p class="status" id="status"><span class="dot" aria-hidden="true"></span><span>Midi du lundi au samedi, soir du mardi au samedi</span></p>
+      <p class="rating">4,5/5 sur Google, 416 avis</p>
+    </div>
+    <div class="hero-pic">
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=75" alt="Pizza découpée en parts sur une planche, tomates cerises et romarin" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<section class="field coral" id="pizze" aria-labelledby="pz-t">
+  <div class="wrap">
+    <div class="pz-head">
+      <div>
+        <h2 id="pz-t" class="rise">Vingt-quatre pizzas. Laquelle pour vous ?</h2>
+        <p class="intro rise">Cochez ce qui vous fait envie : la liste ne garde que les pizzas de la carte qui y répondent.</p>
+      </div>
+      <div class="pz-pic rise"><img loading="lazy" src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=1000&q=75" alt="Pizza garnie de mozzarella et de feuilles vertes, vue de dessus"></div>
+    </div>
+
+    <form class="picker" id="picker" aria-label="Trouver sa pizza" onsubmit="return false">
+      <fieldset>
+        <legend>La base</legend>
+        <label class="chip"><input type="radio" name="base" value="" checked><span>Toutes</span></label>
+        <label class="chip"><input type="radio" name="base" value="tomate"><span>Sauce tomate</span></label>
+        <label class="chip"><input type="radio" name="base" value="creme"><span>Crème</span></label>
+        <label class="chip"><input type="radio" name="base" value="pesto"><span>Pesto</span></label>
+      </fieldset>
+      <fieldset>
+        <legend>Avec</legend>
+        <label class="chip"><input type="checkbox" name="avec" value="truffe"><span>Truffe</span></label>
+        <label class="chip"><input type="checkbox" name="avec" value="frais"><span>Burrata, bufala ou stracciatella</span></label>
+        <label class="chip"><input type="checkbox" name="avec" value="pistache"><span>Pistache</span></label>
+        <label class="chip"><input type="checkbox" name="avec" value="vege"><span>Sans viande ni poisson</span></label>
+      </fieldset>
+      <p class="count" aria-live="polite"><span id="count">24 pizzas</span><button type="reset" id="reset" hidden>Tout effacer</button></p>
+    </form>
+
+    <ul class="pz-list" id="pz-list">
+      <li class="pz" data-t="tomate vege"><div class="row"><span>Margherita</span><b>13 €</b></div><p>Sauce tomate, mozzarella, basilic</p></li>
+      <li class="pz" data-t="tomate vege"><div class="row"><span>Vegetariana</span><b>16 €</b></div><p>Sauce tomate, mozzarella, artichauts, aubergines, courgettes, poivrons</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Napoletana</span><b>16 €</b></div><p>Sauce tomate, mozzarella, anchois, câpres</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Regina</span><b>16 €</b></div><p>Sauce tomate, mozzarella, jambon blanc, champignons</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Calabrese</span><b>16 €</b></div><p>Sauce tomate, mozzarella, spianata, olives</p></li>
+      <li class="pz" data-t="creme vege"><div class="row"><span>Caprina</span><b>16 €</b></div><p>Crème, mozzarella, chèvre, miel</p></li>
+      <li class="pz" data-t="tomate creme vege"><div class="row"><span>Quattro Formaggi</span><b>18 €</b></div><p>Sauce tomate ou crème, mozzarella, gorgonzola, chèvre, Grana Padano</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Quattro Stagioni</span><b>18 €</b></div><p>Sauce tomate, mozzarella, artichauts, champignons, poivron, courgettes, jambon blanc, aubergines</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Romana</span><b>17 €</b></div><p>Sauce tomate, mozzarella, jambon cru, roquette, copeaux de Grana Padano</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Tonno</span><b>17 €</b></div><p>Sauce tomate, mozzarella, thon, oignons</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Bresaola</span><b>18 €</b></div><p>Sauce tomate, mozzarella, bresaola, roquette, copeaux de Grana Padano</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Calzone</span><b>17 €</b></div><p>Sauce tomate, mozzarella, jambon blanc, œuf, origan</p></li>
+      <li class="pz" data-t="tomate creme"><div class="row"><span>Salmone</span><b>18 €</b></div><p>Sauce tomate ou crème, mozzarella, saumon fumé</p></li>
+      <li class="pz" data-t="pesto frais vege"><div class="row"><span>Pesto Bufala</span><b>18 €</b></div><p>Pesto, mozzarella, tomates cerises et bufala</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Valtellina</span><b>17 €</b></div><p>Sauce tomate, mozzarella, speck, gorgonzola</p></li>
+      <li class="pz" data-t="tomate frais"><div class="row"><span>Stracciatella</span><b>17 €</b></div><p>Sauce tomate, mozzarella, poivrons, spianata, stracciatella</p></li>
+      <li class="pz" data-t="creme"><div class="row"><span>Carbonara</span><b>18 €</b></div><p>Crème, mozzarella, œuf, lardons, copeaux de Grana Padano</p></li>
+      <li class="pz sig" data-t="creme frais vege"><div class="row"><span>Casatoni</span><b>18 €</b></div><p>Crème, mozzarella, tomates confites, roquette, copeaux de Grana Padano et bufala</p></li>
+      <li class="pz" data-t="tomate"><div class="row"><span>Crotone</span><b>19 €</b></div><p>Sauce tomate, mozzarella, ’nduja, spianata, oignons</p></li>
+      <li class="pz" data-t="creme truffe vege"><div class="row"><span>Tartufo</span><b>19 €</b></div><p>Crème, sauce à la truffe d’été, mozzarella, roquette, copeaux de Grana Padano</p></li>
+      <li class="pz" data-t="pesto frais pistache"><div class="row"><span>Tricolore</span><b>19 €</b></div><p>Pesto, mozzarella, jambon de Parme, burrata, éclats de pistache</p></li>
+      <li class="pz" data-t="creme frais pistache truffe"><div class="row"><span>Bologna</span><b>19 €</b></div><p>Crème, mozzarella, éclats de pistache, mortadelle, burrata à la truffe</p></li>
+      <li class="pz" data-t="creme truffe"><div class="row"><span>Sbagliata</span><b>19 €</b></div><p>Crème, mozzarella, jambon blanc, champignons, cèpes, sauce à la truffe d’été</p></li>
+      <li class="pz" data-t=""><div class="row"><span>Campione</span><b>17 €</b></div><p>Mozzarella, bœuf et oignon</p></li>
+    </ul>
+    <p class="empty" id="empty">Aucune pizza ne coche toutes ces cases. Retirez un critère.</p>
+  </div>
+</section>
+
+<section class="field forest" id="primi" aria-labelledby="pr-t">
+  <div class="wrap primi">
+    <div>
+      <h2 id="pr-t" class="rise">Primi piatti</h2>
+      <p class="intro rise">Tagliatelle, linguine, paccheri et lasagne. La carbonara se commande avec ou sans crème.</p>
+      <div class="primi-pics" style="margin-top:40px">
+        <div class="p1 rise"><img loading="lazy" src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=1200&q=75" alt="Assiette de linguine aux palourdes"></div>
+        <div class="p2 rise"><img loading="lazy" src="https://images.unsplash.com/photo-1588013273468-315fd88ea34c?auto=format&fit=crop&w=700&q=75" alt="Pâtes à la carbonara couvertes de fromage râpé"></div>
+      </div>
+    </div>
+    <ul class="menu">
+      <li><strong>Linguine au pesto</strong><b>16 €</b><span>Pesto de basilic et crème</span></li>
+      <li><strong>Tagliatelle à la bolognese</strong><b>17 €</b><span>Ragoût de bœuf et sauce tomate</span></li>
+      <li><strong>Tagliatelle à la carbonara</strong><b>17 €</b><span>Avec ou sans crème, lardons, œuf et parmesan</span></li>
+      <li><strong>Paccheri alla norma</strong><b>17 €</b><span>Sauce tomate, aubergine, mozzarella et basilic</span></li>
+      <li><strong>Paccheri crème de crevette</strong><b>18 €</b><span>Crème de crevette, ail et tomate</span></li>
+      <li><strong>Lasagne bolognese</strong><b>18 €</b><span>Ragoût de bœuf, sauce tomate, béchamel, mozzarella et Grana Padano</span></li>
+      <li><strong>Gratin d’aubergines</strong><b>19 €</b><span>Aubergines, mozzarella, sauce tomate et Grana Padano</span></li>
+      <li><strong>Linguine stracciatella et pistaches</strong><b>19 €</b><span>Pesto de pistache, crème et stracciatella</span></li>
+      <li><strong>Tagliatelle au saumon</strong><b>19 €</b><span>Crème, oignon et saumon fumé</span></li>
+      <li><strong>Tagliatelle à la truffe noire</strong><b>19 €</b><span>Crème et sauce à la truffe d’été</span></li>
+      <li><strong>Linguine aux palourdes</strong><b>22 €</b><span>Palourdes, ail et persil</span></li>
+      <li><strong>Linguine aux fruits de mer</strong><b>26 €</b><span>Palourdes, crevettes, calamars, ail, persil et sauce tomate</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap carte" id="carte" aria-labelledby="ca-t">
+  <h2 id="ca-t" class="rise">Le reste de la carte</h2>
+  <div class="carte-grid">
+    <div class="rise">
+      <h3>Antipasti</h3>
+      <ul class="menu">
+        <li><strong>Focaccia à l’ail</strong><b>8 €</b><span>Pâte à pizza toastée à l’ail</span></li>
+        <li><strong>Bruschetta</strong><b>10 €</b><span>Tomates concassées, huile d’olive, origan, basilic, Grana Padano</span></li>
+        <li><strong>Beignets de fleur de courgette</strong><b>13 €</b></li>
+        <li><strong>Salade de poulpe</strong><b>14 €</b></li>
+        <li><strong>Caprese</strong><b>14 €</b><span>Tomates, salade, bufala ou burratina</span></li>
+        <li><strong>Antipasto della casa</strong><b>15 €</b><span>Légumes grillés et bufala</span></li>
+        <li><strong>Focaccia burrata</strong><b>16 €</b><span>Burrata et tomates fraîches</span></li>
+        <li><strong>Antipasto et charcuterie</strong><b>26 €</b><span>Charcuterie, légumes grillés et bufala</span></li>
+      </ul>
+    </div>
+    <div class="rise">
+      <h3>Carne</h3>
+      <p class="note">Servies avec des pâtes, des légumes ou de la salade.</p>
+      <ul class="menu">
+        <li><strong>Boulettes de bœuf à la sicilienne</strong><b>19 €</b><span>Sauce tomate et basilic</span></li>
+        <li><strong>Boulettes de veau à la truffe</strong><b>21 €</b><span>Ricotta, mozzarella, crème, sauce à la truffe d’été</span></li>
+        <li><strong>Escalope de veau à la milanaise</strong><b>22 €</b><span>Escalope de veau panée</span></li>
+        <li><strong>Escalope alla parmigiana</strong><b>22 €</b><span>Panée, gratinée à la mozzarella, aubergines et tomate</span></li>
+      </ul>
+      <h3 style="margin-top:40px">Poissons</h3>
+      <ul class="menu">
+        <li><strong>Poêlée de calamars</strong><b>22 €</b><span>Calamars grillés et petits pois</span></li>
+        <li><strong>Espadon, sauce vierge</strong><b>22 €</b></li>
+        <li><strong>Poêlée de fruits de mer</strong><b>28 €</b><span>Palourdes, crevettes, calamars, ail, persil, sauce tomate</span></li>
+      </ul>
+    </div>
+    <div class="rise">
+      <h3>Insalate</h3>
+      <ul class="menu">
+        <li><strong>Salade italienne</strong><b>17 €</b><span>Légumes grillés, œuf, artichauts, jambon de Parme, mozzarella</span></li>
+        <li><strong>Salade César</strong><b>17 €</b><span>Poulet pané, mozzarella, œuf, sauce César, Grana Padano</span></li>
+        <li><strong>Salade de thon</strong><b>18 €</b><span>Thon, olives noires, œuf et légumes grillés</span></li>
+        <li><strong>Salade de poulpe</strong><b>22 €</b></li>
+      </ul>
+      <div class="midi" style="margin-top:40px">
+        <h3>Formule du midi</h3>
+        <p class="big">21,90 €</p>
+        <p class="note">Le détail se demande en salle ou au téléphone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="field creamf" id="dolci" aria-labelledby="do-t">
+  <div class="wrap dolci">
+    <div class="d-pic rise"><img loading="lazy" src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=900&q=75" alt="Part de tiramisu saupoudrée de cacao"></div>
+    <div class="d-txt">
+      <h2 id="do-t" class="rise">Dolci</h2>
+      <ul class="menu rise" style="margin-top:28px">
+        <li><strong>Tiramisu au café</strong><b>8 €</b></li>
+        <li><strong>Panna cotta</strong><b>8 €</b></li>
+        <li><strong>Mousse au chocolat</strong><b>8 €</b></li>
+        <li><strong>Flan caramel</strong><b>8 €</b></li>
+        <li><strong>Tartufo au chocolat</strong><b>9 €</b></li>
+        <li><strong>Semifreddo au nougat</strong><b>9 €</b></li>
+        <li><strong>Baba au rhum ou au limoncello</strong><b>9 €</b></li>
+        <li><strong>Glaces, deux boules</strong><b>9 €</b><span>Chocolat, fraise, framboise, vanille, citron, pistache, café</span></li>
+        <li><strong>Café gourmand</strong><b>11 €</b></li>
+      </ul>
+    </div>
+    <div class="d-bar">
+      <h3 class="rise">Aperitivi</h3>
+      <ul class="menu rise">
+        <li><strong>Aperol Spritz</strong><b>9,50 €</b><span>Aperol, prosecco, orange</span></li>
+        <li><strong>Campari Spritz</strong><b>9,50 €</b></li>
+        <li><strong>Americano</strong><b>10 €</b></li>
+        <li><strong>Negroni</strong><b>12 €</b></li>
+        <li><strong>Coupe de prosecco</strong><b>8 €</b></li>
+      </ul>
+      <h3 class="rise" style="margin-top:36px">Digestivi</h3>
+      <ul class="menu rise">
+        <li><strong>Limoncello, grappa, amaretto, mirto</strong><b>7 €</b><span>Le verre de 4 cl</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap cave" id="cave" aria-labelledby="cv-t">
+  <h2 id="cv-t" class="rise">Une cave d’Italie, de 26 à 89 €</h2>
+  <div class="cave-grid">
+    <div class="rise">
+      <h3>Rossi</h3>
+      <ul class="menu">
+        <li><strong>Chianti, bio</strong><b>29 €</b></li>
+        <li><strong>Nero d’Avola, bio</strong><b>29 €</b></li>
+        <li><strong>Valpolicella classico, bio</strong><b>30 €</b></li>
+        <li><strong>Montepulciano d’Abruzzo, bio</strong><b>31 €</b></li>
+        <li><strong>Amarone della Valpolicella</strong><b>79 €</b></li>
+        <li><strong>Barolo</strong><b>81 €</b></li>
+        <li><strong>Brunello di Montalcino, bio</strong><b>89 €</b></li>
+      </ul>
+    </div>
+    <div class="rise">
+      <h3>Bianchi</h3>
+      <ul class="menu">
+        <li><strong>Terre di Chieti, bio</strong><b>27 €</b></li>
+        <li><strong>Fedora, Pouilles</strong><b>28 €</b></li>
+        <li><strong>Pecorino, Marches</strong><b>32 €</b></li>
+        <li><strong>Piano Maltese, Sicile</strong><b>33 €</b></li>
+      </ul>
+    </div>
+    <div class="rise">
+      <h3>Rosati</h3>
+      <ul class="menu">
+        <li><strong>Rosé dell’Estate</strong><b>27 €</b></li>
+        <li><strong>Flower Power 414, bio</strong><b>28 €</b></li>
+      </ul>
+      <h3 style="margin-top:32px">Frizzanti</h3>
+      <ul class="menu">
+        <li><strong>Lambrusco</strong><b>26 €</b></li>
+        <li><strong>Prosecco</strong><b>31 €</b></li>
+        <li><strong>Moscato</strong><b>34 €</b></li>
+      </ul>
+    </div>
+    <div class="rise">
+      <h3>Au verre</h3>
+      <p class="note">Rouges de Sicile et Chianti dès 6 € le verre, aussi en quart. Bières italiennes Moretti et Peroni, 5,50 €.</p>
+      <div class="d-pic" style="aspect-ratio:4/5;margin-top:24px"><img loading="lazy" src="https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=800&q=75" alt="Spritz versé dans un verre à pied, tranche d’orange"></div>
+    </div>
+  </div>
+</section>
+
+<section class="field forest" id="venir" aria-labelledby="ve-t">
+  <div class="wrap infos">
+    <div class="h">
+      <h2 id="ve-t" class="rise">Horaires</h2>
+      <ul class="hours rise" id="hours" style="margin-top:28px">
+        <li data-d="1"><span>Lundi</span><em>12 h – 14 h 30</em></li>
+        <li data-d="2"><span>Mardi</span><em>12 h – 14 h 30 · 19 h – 22 h 30</em></li>
+        <li data-d="3"><span>Mercredi</span><em>12 h – 14 h 30 · 19 h – 22 h 30</em></li>
+        <li data-d="4"><span>Jeudi</span><em>12 h – 14 h 30 · 19 h – 22 h 30</em></li>
+        <li data-d="5"><span>Vendredi</span><em>12 h – 14 h 30 · 19 h – 22 h 30</em></li>
+        <li data-d="6"><span>Samedi</span><em>12 h – 14 h 30 · 19 h – 22 h 30</em></li>
+        <li data-d="0"><span>Dimanche</span><em>Fermé</em></li>
+      </ul>
+      <p class="note rise" style="color:inherit;opacity:.85;margin-top:16px">Les jours fériés, un coup de fil avant de venir.</p>
+    </div>
+    <div class="c">
+      <p class="addr rise">41 rue Legendre<br>75017 Paris</p>
+      <ul class="contact-list rise">
+        <li><a href="tel:+33144404730">01 44 40 47 30</a></li>
+        <li><a href="mailto:casatoniparis@yahoo.com">casatoniparis@yahoo.com</a></li>
+        <li><a href="https://www.instagram.com/casatoni_paris/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/casatoni76" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+      <div class="actions rise">
+        <a class="btn" style="background:var(--peach);color:var(--ink)" href="https://www.google.com/maps/dir/?api=1&amp;destination=Casatoni%2C%2041%20rue%20Legendre%2C%2075017%20Paris" target="_blank" rel="noopener">Itinéraire</a>
+        <a class="btn" style="background:var(--forest-ink);color:var(--forest)" href="https://wiicmenu-qrcode.com/app/reservation_client.php?resto=2066" target="_blank" rel="noopener">Réserver une table</a>
+      </div>
+      <div class="map rise"><iframe title="Plan : Casatoni, 41 rue Legendre, Paris 17e" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Casatoni%2C%2041%20rue%20Legendre%2C%2075017%20Paris&amp;output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <span>Casatoni · 41 rue Legendre, 75017 Paris · 01 44 40 47 30</span>
+    <span>Sur place, à emporter et en livraison</span>
+    <span>Photos d’illustration : Unsplash</span>
+  </div>
+  <p class="giant" aria-hidden="true">Casatoni</p>
+</footer>
+
+<nav class="bar" id="bar" aria-label="Actions rapides">
+  <a href="https://wiicmenu-qrcode.com/app/reservation_client.php?resto=2066" target="_blank" rel="noopener">Réserver</a>
+  <a href="tel:+33144404730"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Casatoni%2C%2041%20rue%20Legendre%2C%2075017%20Paris" target="_blank" rel="noopener">Y aller</a>
+</nav>
+
+<script>
+document.body.classList.remove('no-js');
+requestAnimationFrame(()=>document.body.classList.add('loaded'));
+
+/* Trouver sa pizza */
+(function(){
+  const form=document.getElementById('picker'), items=[...document.querySelectorAll('.pz')];
+  const count=document.getElementById('count'), empty=document.getElementById('empty'), reset=document.getElementById('reset');
+  function run(){
+    const base=form.querySelector('input[name=base]:checked').value;
+    const avec=[...form.querySelectorAll('input[name=avec]:checked')].map(i=>i.value);
+    let n=0;
+    items.forEach(li=>{
+      const t=li.dataset.t.split(' ');
+      const ok=(!base||t.includes(base))&&avec.every(a=>t.includes(a));
+      li.classList.toggle('off',!ok); if(ok)n++;
+    });
+    count.textContent=n===0?'Aucune pizza':n===1?'1 pizza pour vous':n===items.length?n+' pizzas':n+' pizzas pour vous';
+    empty.style.display=n?'none':'block';
+    reset.hidden=!(base||avec.length);
+  }
+  form.addEventListener('change',run);
+  form.addEventListener('reset',()=>setTimeout(run));
+  run();
+})();
+
+/* Ouvert maintenant ? (horaires Google, heure de Paris) */
+(function(){
+  const H={0:[],1:[[720,870]],2:[[720,870],[1140,1350]],3:[[720,870],[1140,1350]],4:[[720,870],[1140,1350]],5:[[720,870],[1140,1350]],6:[[720,870],[1140,1350]]};
+  const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  const d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), m=+p.hour*60+ +p.minute;
+  const fmt=v=>Math.floor(v/60)+' h'+(v%60?' '+String(v%60).padStart(2,'0'):'');
+  const jours=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  const li=document.querySelector('#hours li[data-d="'+d+'"]'); if(li)li.classList.add('today');
+  const open=H[d].find(([a,b])=>m>=a&&m<b);
+  let txt;
+  if(open) txt='Ouvert maintenant, jusqu’à '+fmt(open[1]);
+  else{
+    const later=H[d].find(([a])=>m<a);
+    if(later) txt='Fermé pour l’instant, ouvre à '+fmt(later[0]);
+    else{ let k=1; while(!H[(d+k)%7].length)k++; txt='Fermé, ouvre '+(k===1?'demain':jours[(d+k)%7])+' à '+fmt(H[(d+k)%7][0][0]); }
+  }
+  const s=document.getElementById('status');
+  s.querySelector('.dot').classList.toggle('on',!!open);
+  s.lastElementChild.textContent=txt;
+})();
+
+/* Entrées au défilement */
+(function(){
+  const els=document.querySelectorAll('.rise');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const sib=[...e.target.parentElement.querySelectorAll(':scope > .rise')];
+    e.target.style.transitionDelay=Math.max(0,sib.indexOf(e.target))*80+'ms';
+    e.target.classList.add('in'); io.unobserve(e.target);
+  }),{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>io.observe(e));
+})();
+
+/* Barre d’actions mobile après le premier écran */
+(function(){
+  const bar=document.getElementById('bar');
+  const on=()=>bar.classList.toggle('show',scrollY>innerHeight*.6);
+  addEventListener('scroll',on,{passive:true}); on();
+})();
+</script>
+</body>
+</html>
