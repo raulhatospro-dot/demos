@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cazingue · Bistrot du midi, 67 rue Chaptal, Levallois-Perret</title>
+<meta name="description" content="Cazingue, bistrot de quartier au 67 rue Chaptal à Levallois-Perret. Ardoise courte, cuisine faite maison, service du midi du lundi au vendredi.">
+<meta name="theme-color" content="#f5f4f2">
+<!-- Direction : « le comptoir en zinc » — une seule forme (la dalle de zinc au bout arrondi) fait boutons, masques photo, puces et pied de page.
+     DESIGN.md « Oracle » (awesome-design) : échelle de neutres chauds, action anthracite, rouge réservé à la marque, bande vert forêt. Type : Jost. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#fbf9f8; --tint:#f1efed; --ink:#161513; --ink-2:#47423e;
+  --action:#312d2a; --action-press:#47423e; --red:#b83c2b; --red-press:#9c3022;
+  --zinc:#b9bec0; --zinc-deep:#a3a9ac; --zinc-ink:#1e2224;
+  --forest:#33553c; --forest-ink:#f1efe6; --forest-soft:#cfdccf;
+  --m:clamp(16px,4vw,56px);
+  --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --s-lead:clamp(1.375rem,1.1rem + 1vw,2.125rem);
+  --s-head:clamp(2.25rem,1.4rem + 3.4vw,4.25rem);
+  --s-hero:clamp(2.6rem,1.2rem + 5.2vw,6rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--canvas);color:var(--ink);font:400 var(--s-body)/1.55 "Jost",system-ui,sans-serif;font-feature-settings:"tnum" 0}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+::selection{background:var(--zinc);color:var(--zinc-ink)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3{margin:0;font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-height:.92;text-wrap:balance}
+p{margin:0}
+.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
+
+/* bandeau démo */
+.demo{margin:0;padding:6px var(--m);background:var(--tint);color:var(--ink-2);font-size:13px;text-align:center}
+
+/* barre */
+.bar{position:sticky;top:0;z-index:10;background:var(--canvas)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.mark{font-weight:700;text-transform:uppercase;letter-spacing:-.02em;font-size:1.5rem;color:var(--red);text-decoration:none}
+.bar nav{display:flex;align-items:center;gap:clamp(14px,2.4vw,32px);font-size:var(--s-small);font-weight:500}
+.bar nav a.l{text-decoration:none}
+.bar nav a.l:hover{text-decoration:underline}
+@media (max-width:640px){.bar nav a.l{display:none}}
+
+/* la forme : dalle de zinc au bout arrondi */
+.slab{border-radius:999px 0 0 999px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px 0 30px;border:0;border-radius:999px 4px 4px 999px;font:500 1rem/1 "Jost",sans-serif;text-decoration:none;cursor:pointer;transition:transform .5s var(--ease),background-color .2s}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-press)}
+.btn-dark{background:var(--action);color:#fff}
+.btn-dark:hover{background:var(--action-press)}
+.btn-light{background:var(--canvas);color:var(--ink)}
+.btn-light:hover{background:#fff}
+.btn-sm{min-height:44px;padding:0 18px 0 22px;font-size:.9375rem}
+.lnk{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:500;text-decoration:underline}
+.lnk svg{width:18px;height:18px}
+
+/* héros */
+.hero{padding-top:clamp(16px,3vw,40px)}
+.hero-grid{display:grid;gap:24px}
+.hero-photo{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--zinc)}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
+.hero-photo img.on{opacity:1}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;gap:28px;padding-block:8px}
+.hero h1{font-size:var(--s-hero)}
+.hero .lede{font-size:var(--s-lead);line-height:1.3;max-width:26ch}
+.hero .acts{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.counter{margin-top:clamp(28px,4vw,56px);background:var(--zinc);color:var(--zinc-ink);border-radius:999px 0 0 999px;padding:18px var(--m) 18px clamp(28px,5vw,64px);display:flex;flex-wrap:wrap;gap:8px 32px;align-items:center;justify-content:space-between}
+.counter-wrap{display:flex;justify-content:flex-end}
+.counter-wrap .counter{width:min(100%,1100px)}
+.status{display:flex;align-items:center;gap:12px;font-size:var(--s-body);font-weight:500}
+.status .dot{width:12px;height:12px;border-radius:50%;background:var(--ink-2);flex:none}
+.status.open .dot{background:#1f7a3f;box-shadow:0 0 0 0 rgba(31,122,63,.5);animation:pulse 2.4s var(--ease) infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(31,122,63,0)}100%{box-shadow:0 0 0 0 rgba(31,122,63,0)}}
+.counter .note{font-size:var(--s-small)}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1fr 1.08fr;gap:clamp(32px,4vw,72px);align-items:stretch}
+  .hero-photo{aspect-ratio:auto;min-height:min(70svh,680px);border-radius:999px 0 0 999px}
+  .hero-copy{padding-block:24px}
+}
+@media (max-width:899px){
+  .hero-photo{border-radius:999px 0 0 999px;margin-right:calc(var(--m) * -1)}
+}
+
+/* phrase */
+.statement{padding-block:clamp(96px,14vw,200px) clamp(56px,7vw,96px)}
+.statement p{font-size:clamp(1.5rem,1rem + 1.6vw,2.25rem);line-height:1.3;font-weight:500;max-width:34ch;letter-spacing:-.01em}
+@media (min-width:900px){.statement p{margin-inline:auto;text-align:center}}
+.nw{white-space:nowrap}
+.thumb{display:inline-block;width:1.9em;height:.9em;vertical-align:-.08em;margin-inline:.1em;border-radius:999px 2px 2px 999px;overflow:hidden;background:var(--zinc)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+
+/* ardoise */
+.ardoise{padding-bottom:clamp(120px,14vw,220px)}
+.ar-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.ar-head h2{font-size:var(--s-head)}
+.ar-head span{font-size:var(--s-body);font-weight:500}
+.ar-intro{max-width:56ch;margin-bottom:clamp(40px,5vw,64px)}
+.items{list-style:none;margin:0;padding:0;display:grid;gap:36px clamp(32px,5vw,72px)}
+@media (min-width:860px){.items{grid-template-columns:1fr 1fr}}
+.item{display:grid;grid-template-columns:88px 1fr;gap:20px;align-items:start}
+.item .ph{width:88px;height:64px;border-radius:999px 2px 2px 999px;overflow:hidden;background:var(--zinc)}
+.item .ph img{width:100%;height:100%;object-fit:cover}
+.item h3{font-size:1.125rem;line-height:1.2;letter-spacing:0;text-transform:none;font-weight:700;margin-bottom:6px}
+.item blockquote{margin:0;max-width:44ch}
+.item cite{display:block;margin-top:6px;font-style:normal;font-size:var(--s-small);color:var(--ink-2)}
+.ar-call{margin-top:clamp(48px,6vw,80px);background:var(--tint);padding:clamp(24px,3vw,40px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.ar-call p{font-size:var(--s-lead);line-height:1.25;font-weight:500;max-width:28ch}
+
+/* maison (panneau forêt) */
+.maison{padding-inline:clamp(10px,1.4vw,20px)}
+.panel{background:var(--forest);color:var(--forest-ink);overflow:hidden;display:grid;gap:40px;padding:clamp(28px,4vw,56px) clamp(20px,4vw,56px) 0}
+.panel h2{font-size:var(--s-head);color:var(--forest-ink)}
+.panel .txt{display:grid;gap:40px;align-content:start}
+.panel h3{font-size:1.375rem;letter-spacing:0;text-transform:none;line-height:1.2;margin-bottom:10px}
+.panel p{max-width:40ch}
+.panel .shape{width:min(86vw,560px);aspect-ratio:1.25;border-radius:999px 0 0 999px;overflow:hidden;margin-bottom:-14%;align-self:end;justify-self:end}
+.panel .shape img{width:100%;height:100%;object-fit:cover}
+.panel .rate{font-size:var(--s-lead);font-weight:500;line-height:1.2}
+@media (min-width:960px){
+  .panel{grid-template-columns:1.15fr 1fr;min-height:min(92svh,880px);column-gap:clamp(40px,6vw,96px)}
+  .panel .left{display:flex;flex-direction:column;justify-content:space-between;gap:48px}
+  .panel .shape{justify-self:start;width:min(40vw,640px)}
+  .panel .txt{padding-top:6px;padding-bottom:56px}
+}
+@media (max-width:959px){.panel .left{display:contents}.panel .shape{order:3;margin-top:8px}}
+
+/* réserver : le bon */
+.resa{padding-block:clamp(120px,14vw,220px) clamp(96px,10vw,160px)}
+.resa h2{font-size:var(--s-head);margin-bottom:clamp(28px,4vw,48px)}
+.coupon{position:relative;background:var(--zinc);color:var(--zinc-ink);display:grid}
+.coupon::before,.coupon::after{content:"";position:absolute;width:32px;height:32px;border-radius:50%;background:var(--canvas)}
+.c-left{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;gap:28px}
+.c-right{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:center}
+.hours{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-variant-numeric:tabular-nums;max-width:380px}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:6px 0}
+.hours li.today{font-weight:700}
+.hours li.off{color:#3d4346}
+.c-left .addr{font-size:var(--s-body)}
+form{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label.f{display:grid;gap:4px;font-size:var(--s-small);font-weight:500}
+select,input{appearance:none;-webkit-appearance:none;width:100%;min-height:54px;border:0;border-radius:2px;background:#d6dadb;color:var(--zinc-ink);font:400 1rem/1.2 "Jost",sans-serif;padding:0 16px;caret-color:var(--red)}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231e2224' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+select:hover,input:hover{background-color:#dfe2e3}
+input::placeholder{color:#4b5255}
+.recap{font-size:var(--s-small);min-height:1.5em}
+.submit{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:8px}
+.submit .btn{flex:1 1 auto;justify-content:center}
+@media (min-width:860px){
+  .coupon{grid-template-columns:46% 54%}
+  .coupon::before{left:calc(46% - 16px);top:-16px}
+  .coupon::after{left:calc(46% - 16px);bottom:-16px}
+  .c-right{border-left:5px dotted var(--canvas)}
+}
+@media (max-width:859px){
+  .coupon::before{top:calc(var(--cut,50%) - 16px);left:-16px}
+  .coupon::after{top:calc(var(--cut,50%) - 16px);right:-16px}
+  .c-right{border-top:5px dotted var(--canvas)}
+}
+
+/* pied : le nom en dalles */
+.foot{background:var(--tint);padding-block:clamp(56px,8vw,112px) 32px}
+.blocks{display:flex;align-items:flex-end;gap:4px;height:clamp(150px,30vw,340px);margin-bottom:56px}
+.blocks span{flex:1;display:flex;align-items:flex-end;justify-content:center;background:var(--zinc);color:var(--zinc-ink);font-weight:700;font-size:calc((min(100vw,1520px) - 2 * var(--m)) / 9 * .95);line-height:.74;padding-bottom:.04em;overflow:hidden}
+.blocks .nose{flex:.55;border-radius:999px 0 0 999px;background:var(--red)}
+.fcols{display:grid;gap:32px;grid-template-columns:repeat(2,1fr);font-size:var(--s-small)}
+.fcols h3{font-size:var(--s-small);text-transform:none;letter-spacing:0;line-height:1.3;margin-bottom:8px}
+.fcols p,.fcols a{font-size:var(--s-body)}
+.fcols ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+@media (min-width:900px){.fcols{grid-template-columns:repeat(4,1fr)}}
+.legal{margin-top:56px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:13px;color:var(--ink-2)}
+.legal a{color:var(--ink-2)}
+
+/* mouvement */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0ms)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .hero-photo img{transition:none}
+  .status.open .dot{animation:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Cazingue, retour en haut">Cazingue</a>
+    <nav aria-label="Principale">
+      <a class="l" href="#ardoise">L'ardoise</a>
+      <a class="l" href="#maison">La maison</a>
+      <a class="l" href="#reserver">Horaires</a>
+      <a class="btn btn-red btn-sm" href="#reserver">Réserver</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 class="rv">Le bistrot du midi</h1>
+          <p class="lede rv" style="--d:80ms">Une ardoise courte qui change souvent, tout fait maison. 67 rue Chaptal, du lundi au vendredi, de 12&nbsp;h à 15&nbsp;h.</p>
+          <div class="acts rv" style="--d:160ms">
+            <a class="btn btn-red" href="#reserver">Réserver une table</a>
+            <a class="btn btn-dark" href="tel:+33973880394"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>09 73 88 03 94</a>
+            <a class="lnk" href="https://www.google.com/maps/search/?api=1&query=Cazingue+67+rue+Chaptal+92300+Levallois-Perret" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+          </div>
+        </div>
+        <div class="hero-photo" id="fade" role="img" aria-label="Ambiance de bistrot : comptoir, frites maison, bière à la pression">
+          <img class="on" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1400&q=72&auto=format&fit=crop" width="1400" height="933" alt="">
+          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=1400&q=72&auto=format&fit=crop" width="1400" height="933" alt="" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=1400&q=72&auto=format&fit=crop" width="1400" height="933" alt="" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="counter-wrap">
+      <div class="counter rv" style="--d:240ms">
+        <p class="status" id="status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span id="status-txt">Service du midi, du lundi au vendredi, 12 h – 15 h</span></p>
+        <p class="note">4,9 sur 5 · 72 avis Google · 67 rue Chaptal</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement wrap" aria-label="En bref">
+    <p class="rv">Peu de plats, souvent changés&nbsp;: l'œuf&nbsp;<span class="nw">mayo&nbsp;<span class="thumb" aria-hidden="true"><img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=200&q=60&auto=format&fit=crop" alt="" loading="lazy" width="200" height="110"></span>,</span> les frites et la mayonnaise&nbsp;<span class="nw">maison&nbsp;<span class="thumb" aria-hidden="true"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=200&q=60&auto=format&fit=crop" alt="" loading="lazy" width="200" height="110"></span>,</span> les desserts faits sur <span class="nw">place&nbsp;<span class="thumb" aria-hidden="true"><img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=200&q=60&auto=format&fit=crop" alt="" loading="lazy" width="200" height="110"></span>.</span></p>
+  </section>
+
+  <section class="ardoise wrap" id="ardoise">
+    <div class="ar-head">
+      <h2 class="rv">L'ardoise</h2>
+      <span class="rv" style="--d:80ms">Elle change très souvent</span>
+    </div>
+    <p class="ar-intro rv" style="--d:120ms">Pas de carte figée ici. Voici les plats et les verres que les habitués citent dans leurs avis Google, avec leurs mots.</p>
+    <ul class="items">
+      <li class="item rv">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=240&q=65&auto=format&fit=crop" alt="Œufs durs coupés en deux" loading="lazy" width="240" height="175"></div>
+        <div><h3>L'œuf mayo</h3><blockquote>« Vous savez à quoi on reconnaît un bon bistrot&nbsp;? À son œuf mayo&nbsp;! Et celui-là est excellent. »<cite>Yoann F., juillet 2025</cite></blockquote></div>
+      </li>
+      <li class="item rv" style="--d:70ms">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=240&q=65&auto=format&fit=crop" alt="Travers de porc grillés sur une planche" loading="lazy" width="240" height="175"></div>
+        <div><h3>Travers de porc, gratin dauphinois</h3><blockquote>« Accueil chaleureux. Le plat, travers de porc et gratin dauphinois, était délicieux. »<cite>Élodie L., janvier 2026</cite></blockquote></div>
+      </li>
+      <li class="item rv">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=240&q=65&auto=format&fit=crop" alt="Frites dans un cornet de papier" loading="lazy" width="240" height="175"></div>
+        <div><h3>Frites et mayonnaise maison</h3><blockquote>« Tous les plats sont faits maison. Les frites maison top et la mayonnaise maison. »<cite>Stef P., décembre 2022</cite></blockquote></div>
+      </li>
+      <li class="item rv" style="--d:70ms">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=240&q=65&auto=format&fit=crop" alt="Bol de velouté" loading="lazy" width="240" height="175"></div>
+        <div><h3>Le potage</h3><blockquote>« Le potage était excellent. »<cite>Stef P., décembre 2022</cite></blockquote></div>
+      </li>
+      <li class="item rv">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=240&q=65&auto=format&fit=crop" alt="Part de tarte meringuée" loading="lazy" width="240" height="175"></div>
+        <div><h3>Les desserts, faits ici</h3><blockquote>« Tout est fait maison (même les desserts&nbsp;!), délicieux, les proportions sont généreuses. »<cite>Sophie M., décembre 2023</cite></blockquote></div>
+      </li>
+      <li class="item rv" style="--d:70ms">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=240&q=65&auto=format&fit=crop" alt="Bière tirée à la pression" loading="lazy" width="240" height="175"></div>
+        <div><h3>Une IPA, un conseil sur le vin</h3><blockquote>« Une bonne cuisine simple et de qualité, une bonne bière IPA et de bon conseil pour le vin. »<cite>Francis G., juin 2025</cite></blockquote></div>
+      </li>
+    </ul>
+    <div class="ar-call rv">
+      <p>L'ardoise du jour se lit sur place ou s'annonce au téléphone.</p>
+      <a class="btn btn-dark" href="tel:+33973880394"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Demander l'ardoise</a>
+    </div>
+  </section>
+
+  <section class="maison" id="maison">
+    <div class="panel">
+      <div class="left">
+        <h2 class="rv">Tout est fait maison</h2>
+        <div class="shape rv" style="--d:120ms"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1100&q=70&auto=format&fit=crop" alt="Mains qui taillent des légumes sur une planche" loading="lazy" width="1100" height="880"></div>
+      </div>
+      <div class="txt">
+        <div class="rv"><h3>En cuisine</h3><p>Une cuisine de bistrot simple et généreuse, des produits frais, peu de plats pour que tout sorte de la cuisine le jour même. L'ardoise tourne au fil des semaines.</p></div>
+        <div class="rv" style="--d:80ms"><h3>En salle</h3><p>Un petit restaurant qui ne paie pas de mine de la rue. À l'intérieur, une ambiance familiale et un patron passionné de cuisine qui reçoit chacun comme un habitué.</p></div>
+        <div class="rv" style="--d:160ms"><p class="rate">4,9 sur 5, sur 72 avis Google.</p></div>
+        <div class="rv" style="--d:200ms"><a class="btn btn-light" href="https://www.google.com/maps/search/?api=1&query=Cazingue+67+rue+Chaptal+92300+Levallois-Perret" target="_blank" rel="noopener">Lire les avis</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resa wrap" id="reserver">
+    <h2 class="rv">Réserver le midi</h2>
+    <div class="coupon rv" id="coupon">
+      <div class="c-left">
+        <p class="status" id="status2"><span class="dot" aria-hidden="true"></span><span id="status2-txt">Service du midi, 12 h – 15 h</span></p>
+        <ul class="hours" id="hours" aria-label="Horaires d'ouverture">
+          <li data-d="1"><span>Lundi</span><span>12 h – 15 h</span></li>
+          <li data-d="2"><span>Mardi</span><span>12 h – 15 h</span></li>
+          <li data-d="3"><span>Mercredi</span><span>12 h – 15 h</span></li>
+          <li data-d="4"><span>Jeudi</span><span>12 h – 15 h</span></li>
+          <li data-d="5"><span>Vendredi</span><span>12 h – 15 h</span></li>
+          <li data-d="6" class="off"><span>Samedi</span><span>Fermé</span></li>
+          <li data-d="0" class="off"><span>Dimanche</span><span>Fermé</span></li>
+        </ul>
+        <p class="addr">67 rue Chaptal, 92300 Levallois-Perret<br><a href="tel:+33973880394">09 73 88 03 94</a> · <a href="mailto:cazingue@gmail.com">cazingue@gmail.com</a></p>
+      </div>
+      <div class="c-right">
+        <form id="resa" action="mailto:cazingue@gmail.com" method="post" enctype="text/plain">
+          <label class="f">Jour<select id="jour" name="jour"></select></label>
+          <div class="row">
+            <label class="f">Heure<select id="heure" name="heure">
+              <option>12 h 00</option><option selected>12 h 30</option><option>13 h 00</option><option>13 h 30</option><option>14 h 00</option>
+            </select></label>
+            <label class="f">Couverts<select id="couverts" name="couverts">
+              <option value="1">1 personne</option><option value="2" selected>2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option><option value="5">5 personnes</option><option value="6">6 personnes</option><option value="7">7 personnes</option><option value="8">8 personnes</option>
+            </select></label>
+          </div>
+          <label class="f">Votre nom<input id="nom" name="nom" autocomplete="name" placeholder="Prénom Nom"></label>
+          <p class="recap" id="recap" aria-live="polite"></p>
+          <div class="submit">
+            <button class="btn btn-red" type="submit">Envoyer la demande</button>
+            <a class="lnk" href="tel:+33973880394">ou appeler</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="blocks" aria-label="Cazingue">
+      <span class="nose" aria-hidden="true" style="height:84%"></span><span aria-hidden="true" style="height:100%">C</span><span aria-hidden="true" style="height:78%">A</span><span aria-hidden="true" style="height:90%">Z</span><span aria-hidden="true" style="height:66%">I</span><span aria-hidden="true" style="height:94%">N</span><span aria-hidden="true" style="height:72%">G</span><span aria-hidden="true" style="height:86%">U</span><span aria-hidden="true" style="height:62%">E</span>
+    </div>
+    <div class="fcols">
+      <div><h3>Adresse</h3><p>67 rue Chaptal<br>92300 Levallois-Perret</p></div>
+      <div><h3>Service</h3><p>Lundi au vendredi<br>12 h – 15 h</p></div>
+      <div><h3>Contact</h3><ul><li><a href="tel:+33973880394">09 73 88 03 94</a></li><li><a href="mailto:cazingue@gmail.com">cazingue@gmail.com</a></li></ul></div>
+      <div><h3>Venir</h3><ul><li><a href="https://www.google.com/maps/search/?api=1&query=Cazingue+67+rue+Chaptal+92300+Levallois-Perret" target="_blank" rel="noopener">Itinéraire Google Maps</a></li><li><a href="#reserver">Réserver</a></li></ul></div>
+    </div>
+    <div class="legal">
+      <p>Démo réalisée par Raul Hatos — site non officiel. Avis cités : Google.</p>
+      <p>Photos d'illustration : Unsplash (ne montrent pas l'établissement).</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  // heure de Paris, quel que soit le fuseau du visiteur
+  function paris(){
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+    var o={};p.forEach(function(x){o[x.type]=x.value});
+    var wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday];
+    return {wd:wd,min:(+o.hour%24)*60+(+o.minute),y:+o.year,m:+o.month,d:+o.day};
+  }
+  var JOURS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  var MOIS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  function dur(m){var h=Math.floor(m/60),r=m%60;return h?h+' h'+(r?' '+(r<10?'0':'')+r:''):r+' min'}
+  function nextOpen(t){ // prochain jour de service à partir de demain si besoin
+    for(var i=0;i<8;i++){var w=(t.wd+i)%7;if(w>=1&&w<=5&&(i>0||t.min<720))return i}
+  }
+  function state(){
+    var t=paris(),open=t.wd>=1&&t.wd<=5&&t.min>=720&&t.min<900,txt;
+    if(open){txt='Ouvert · le service se termine dans '+dur(900-t.min)}
+    else{
+      var i=nextOpen(t),w=(t.wd+i)%7;
+      if(i===0)txt='Fermé · ouvre aujourd’hui à 12 h, dans '+dur(720-t.min);
+      else if(i===1)txt='Fermé · ouvre demain à 12 h';
+      else txt='Fermé · ouvre '+JOURS[w]+' à 12 h';
+    }
+    ['status','status2'].forEach(function(id){var e=document.getElementById(id);e.classList.toggle('open',open);document.getElementById(id+'-txt').textContent=txt});
+    var li=document.querySelectorAll('#hours li');li.forEach(function(l){l.classList.toggle('today',+l.dataset.d===t.wd)});
+    return t;
+  }
+  var t=state();setInterval(state,30000);
+  // encoches du bon : alignées sur la perforation en version téléphone
+  var cp=document.getElementById('coupon'),cl=cp.querySelector('.c-left');
+  function cut(){cp.style.setProperty('--cut',cl.offsetHeight+'px')}cut();addEventListener('resize',cut);
+
+  // jours proposés : les 8 prochains jours de service
+  var sel=document.getElementById('jour'),base=new Date(Date.UTC(t.y,t.m-1,t.d,12));
+  var start=(t.wd>=1&&t.wd<=5&&t.min<840)?0:1,n=0;
+  for(var i=start;n<8&&i<20;i++){
+    var d=new Date(base.getTime()+i*864e5),w=d.getUTCDay();if(w<1||w>5)continue;
+    var lab=(i===0?'Aujourd’hui':i===1?'Demain':JOURS[w].charAt(0).toUpperCase()+JOURS[w].slice(1))+' '+d.getUTCDate()+' '+MOIS[d.getUTCMonth()];
+    if(i<2)lab+=' ('+JOURS[w]+')';
+    var o=document.createElement('option');o.textContent=lab;o.value=JOURS[w]+' '+d.getUTCDate()+' '+MOIS[d.getUTCMonth()];sel.appendChild(o);n++;
+  }
+  var f=document.getElementById('resa'),rec=document.getElementById('recap');
+  function v(id){return document.getElementById(id).value}
+  function recap(){var c=+v('couverts');rec.textContent='Table pour '+c+(c>1?' personnes':' personne')+', '+v('jour')+' à '+v('heure')+'.'}
+  f.addEventListener('change',recap);recap();
+  f.addEventListener('submit',function(e){
+    e.preventDefault();var c=+v('couverts'),nom=v('nom').trim();
+    var sub='Réservation déjeuner : '+v('jour')+', '+v('heure')+', '+c+(c>1?' couverts':' couvert');
+    var body='Bonjour,\n\nJe souhaiterais réserver une table pour '+c+(c>1?' personnes':' personne')+' le '+v('jour')+' à '+v('heure')+'.\n\nMerci de me confirmer la réservation.\n\n'+(nom||'');
+    location.href='mailto:cazingue@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);
+  });
+
+  // fondu lent des photos du héros
+  var imgs=[].slice.call(document.querySelectorAll('#fade img')),k=0,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!rm&&imgs.length>1)setInterval(function(){if(document.hidden)return;imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on')},5600);
+
+  // entrées
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!rm){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }else els.forEach(function(e){e.classList.add('in')});
+})();
+</script>
+</body>
+</html>
