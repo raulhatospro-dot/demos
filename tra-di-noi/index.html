@@ -4,449 +4,508 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Tra Di Noi · Trattoria et pizzeria sicilienne, Paris 15e</title>
-<meta name="description" content="Tra Di Noi, trattoria et pizzeria sicilienne au 5 rue Vasco de Gama, Paris 15e. Ouvert tous les jours, midi et soir. Sur place, à emporter, terrasse.">
+<title>Tra di Noi · Trattoria et pizzeria sicilienne, Paris 15e</title>
+<meta name="description" content="Tra di Noi, trattoria et pizzeria aux influences siciliennes au 5 rue Vasco de Gama, Paris 15e (métro Lourmel). Antipasti, pâtes, pizzas, dolci. Terrasse, sur place ou à emporter.">
+<meta property="og:title" content="Tra di Noi · Trattoria sicilienne, Paris 15e">
+<meta property="og:description" content="Pâtes, pizzas et antipasti siciliens au 5 rue Vasco de Gama. Margherita 8 €, Rigatoni alla Norma 10 €.">
+<meta property="og:image" content="https://tripaligner.com/cdn/photos/08/fc/c8/08fcc859-7024-462a-a373-9837985eb0f8.webp/transform/w:1200/q:80">
+<meta name="theme-color" content="#f3f6ee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231d5a3c'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='34' font-weight='700' text-anchor='middle' fill='%23c4dc7c'%3ET%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#e4e2dd; --paper-2:#d6d4ce; --ink:#1f1e19; --muted:#55534b;
-  --blue:#2456d6; --blue-press:#1b44ad; --deep:#163584; --on-blue:#ffffff;
-  --t1:#c8d2ee; --t2:#9db0e4; --t3:#6d88d6;
-  --gut:clamp(16px,3vw,32px);
-  --s-small:clamp(.8125rem,.79rem + .1vw,.875rem);
-  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --s-head:clamp(2.4rem,1.3rem + 3.6vw,4.5rem);
-  --s-name:clamp(4.6rem,1rem + 11vw,10.5rem);
-  --ease:cubic-bezier(.2,.7,.2,1);
+  --ground:#f3f6ee; --ground-2:#e5ecd9; --ink:#13261b; --soft:#3c4d42;
+  --green:#1d5a3c; --green-press:#154530; --deep:#123a27; --on-green:#ffffff;
+  --pista:#c4dc7c; --pista-2:#d9e9a8;
+  --gut:clamp(16px,3.2vw,48px);
+  --s-small:1rem; --s-body:1.0625rem; --s-lead:clamp(1.125rem,1rem + .4vw,1.3125rem);
+  --s-h2:clamp(2rem,1.3rem + 2.6vw,3.5rem); --s-h1:clamp(2.75rem,1.6rem + 3.4vw,4.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font:400 var(--s-body)/1.55 "IBM Plex Sans",system-ui,sans-serif;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ground);color:var(--ink);font:400 var(--s-body)/1.55 Figtree,system-ui,sans-serif;overflow-x:hidden;touch-action:manipulation}
 img{display:block;max-width:100%;height:auto}
-a{color:inherit}
-h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:.95}
-:focus-visible{outline:3px solid #ffb800;outline-offset:3px}
-.wrap{padding-inline:var(--gut);max-width:1440px;margin-inline:auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 1.4em;background:var(--blue);color:var(--on-blue);font:500 1rem/1 "IBM Plex Sans",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .15s var(--ease)}
-.btn:hover{background:var(--blue-press)}
-.btn:active{transform:translateY(1px) scale(.98)}
-.btn.ghost{background:var(--ink)}
-.btn.ghost:hover{background:#000}
-.btn.light{background:var(--paper);color:var(--ink)}
-.btn.light:hover{background:#fff}
+a{color:inherit;text-underline-offset:3px}
+h1,h2,h3{font-family:"Zilla Slab",Georgia,serif;font-weight:700;letter-spacing:-.02em;line-height:1;text-wrap:balance}
+::selection{background:var(--pista);color:var(--ink)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.on-dark :focus-visible{outline-color:#fff}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:1440px;margin-inline:auto;padding-inline:var(--gut)}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:12px 16px;z-index:50}
+.skip:focus{top:12px}
+.demo{background:var(--ink);color:#e8eee3;font-size:.8125rem;text-align:center;padding:6px var(--gut)}
 
-/* demo strip */
-.demo{background:var(--ink);color:#d9d7d0;font-size:var(--s-small);text-align:center;padding:8px var(--gut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:50px;padding:0 1.35em;background:var(--green);color:var(--on-green);font:600 1rem/1 Figtree,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,transform .15s var(--ease)}
+.btn:hover{background:var(--green-press)}
+.btn:active{transform:scale(.96)}
+.btn.alt{background:var(--pista);color:var(--ink)}
+.btn.alt:hover{background:var(--pista-2)}
+.btn svg{width:18px;height:18px;flex:none}
 
-/* ---------- HERO : la chemise de la carte ---------- */
-.hero{background:var(--deep);color:#fff;position:relative;overflow:hidden;min-height:100svh;display:flex;flex-direction:column}
-.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:20px var(--gut) 0;font-size:15px}
-.bar nav{display:flex;gap:22px}
-.bar nav a,.bar .r a{text-decoration:none;opacity:.85}
-.bar nav a:hover,.bar .r a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
-.bar .mark{font-family:"Instrument Serif",serif;font-size:26px;letter-spacing:-.01em;text-decoration:none}
-.bar .r{text-align:right}
-.hero-head{text-align:center;padding:clamp(48px,9vh,96px) var(--gut) 0}
-.hero h1{font-size:var(--s-name);line-height:.86;letter-spacing:-.035em}
-.hero .sub{max-width:46ch;margin:28px auto 0;font-size:var(--s-lead);line-height:1.35;color:#e9ecf7}
-.folders{margin-top:auto;padding-top:clamp(56px,8vh,96px);width:min(86vw,1240px);margin-inline:auto;position:relative}
-.folder{position:relative;height:62px;margin-top:-6px}
-.folder>.band{position:absolute;inset:0 0 auto 0;height:100%}
-.folder .tab{position:absolute;top:-38px;height:40px;display:flex;align-items:center;padding:0 34px;font-size:18px;text-decoration:none;color:var(--ink);clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 100%,0 100%);transition:transform .25s var(--ease)}
-.folder .tab:hover{transform:translateY(-6px)}
-.f1 .band,.f1 .tab{background:var(--t1)} .f1 .tab{left:4%}
-.f2 .band,.f2 .tab{background:var(--t2)} .f2 .tab{left:27%}
-.f3 .band,.f3 .tab{background:var(--t3)} .f3 .tab{left:50%}
-.f4 .band,.f4 .tab{background:var(--paper-2)} .f4 .tab{left:73%}
-.front{height:auto;margin-top:-6px}
-.front>.band{position:relative;background:var(--paper);color:var(--ink);padding:32px clamp(20px,3vw,40px) 48px;display:grid;grid-template-columns:auto 1fr;gap:24px 48px;align-items:center}
-.front .tab{background:var(--paper);left:auto;right:4%}
-.front .acts{display:flex;flex-wrap:wrap;gap:10px}
-.front .now{font-size:var(--s-body)}
-.now b{font-weight:500}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#1f9d55;margin-right:8px;vertical-align:1px}
-.dot.off{background:#b0aea6}
+/* barre */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:16px}
+.mark{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.mark b{font:700 1.75rem/1 "Zilla Slab",serif;letter-spacing:-.02em;color:var(--green)}
+.mark span{font-size:1rem;color:var(--soft)}
+.bar nav{display:flex;gap:28px;font-weight:500}
+.bar nav a{text-decoration:none;padding:12px 0;transition:color .2s}
+.bar nav a:hover{color:var(--green);text-decoration:underline}
+.bar .btn{min-height:46px}
 
-/* ---------- INTRO : entre nous ---------- */
-section{scroll-margin-top:24px}
-.intro{padding-block:clamp(96px,12vw,160px) clamp(80px,10vw,128px)}
-.intro .row1{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
-.intro h2{grid-column:1/8;font-size:var(--s-head)}
-.intro .note{grid-column:9/13;font-size:var(--s-body)}
-.facts{margin-top:clamp(64px,8vw,112px);display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
-.fact strong{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(1.9rem,1.2rem + 2.2vw,3rem);line-height:1;letter-spacing:-.01em}
-.fact span{display:block;margin-top:8px;font-size:var(--s-small);color:var(--muted)}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);grid-template-areas:"txt pics" "facts pics";grid-template-rows:auto 1fr;column-gap:clamp(32px,4vw,72px);align-items:start;padding-block:clamp(16px,3vw,40px) clamp(56px,7vw,96px)}
+.h-txt{grid-area:txt;padding-top:clamp(0px,2vh,24px)}
+.h-facts{grid-area:facts;align-self:start}
+.h-pics{grid-area:pics}
+.hero h1{font-size:var(--s-h1);color:var(--ink)}
+.hero h1 span{display:block;color:var(--green)}
+.lead{margin-top:22px;font-size:var(--s-lead);line-height:1.5;max-width:40ch}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:28px}
+.tile{background:var(--ground-2);padding:16px 18px;transition:background-color .2s,transform .2s var(--ease)}
+.tile:hover{transform:translateY(-2px);background:var(--pista-2)}
+.tile b{display:block;font:700 clamp(1.5rem,1.2rem + .9vw,2rem)/1 "Zilla Slab",serif;font-variant-numeric:tabular-nums;color:var(--green)}
+.tile span{display:block;margin-top:6px;font-size:var(--s-small);color:var(--soft);line-height:1.35}
+.tile.hi{background:var(--green);color:#fff}
+.tile.hi b{color:var(--pista)}
+.tile.hi span{color:#dfe9d6}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.now{margin-top:16px;font-size:var(--s-small);color:var(--soft)}
+.now b{color:var(--ink);font-weight:600}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#2b8a4e;margin-right:8px}
+.dot.off{background:#9aa596}
 
-/* ---------- CARTE : la carte en chemises ---------- */
-.carte{background:var(--blue);color:#fff;padding:clamp(88px,11vw,150px) 0}
-.carte-top{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
-.carte h2{grid-column:1/7;font-size:var(--s-head)}
-.carte .note{grid-column:8/13;color:#e6ebfb}
-.tabs{margin-top:64px;display:flex;gap:4px;flex-wrap:wrap}
-.tabs button{appearance:none;border:0;cursor:pointer;font:400 clamp(1.3rem,1rem + 1vw,1.75rem)/1 "Instrument Serif",serif;padding:16px 28px 14px;background:var(--deep);color:#fff;clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 100%,0 100%);transition:background .2s,transform .2s var(--ease)}
-.tabs button:hover{transform:translateY(-3px)}
-.tabs button[aria-selected="true"]{background:var(--paper);color:var(--ink)}
-.sheet{background:var(--paper);color:var(--ink);display:grid;grid-template-columns:1.1fr .9fr;min-height:520px}
-.sheet .list{padding:clamp(28px,4vw,56px)}
-.sheet h3{font-size:clamp(2.2rem,1.5rem + 2vw,3.4rem)}
-.sheet .tr{color:var(--muted);margin-top:6px}
-.sheet ul{list-style:none;margin-top:32px}
-.sheet li{display:flex;justify-content:space-between;gap:20px;padding:14px 0;background:linear-gradient(var(--paper-2),var(--paper-2)) bottom/100% 2px no-repeat}
-.sheet li:last-child{background:none}
-.sheet li b{font-weight:500}
-.sheet li i{font-style:normal;color:var(--muted);font-size:var(--s-small);text-align:right;flex-shrink:0;max-width:44%}
-.sheet .foot{margin-top:24px;font-size:var(--s-small);color:var(--muted)}
-.sheet figure{position:relative;background:var(--paper-2)}
-.sheet figure img{width:100%;height:100%;object-fit:cover}
-.panel[hidden]{display:none}
+.h-pics{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:clamp(480px,calc(100svh - 170px),720px)}
+.h-pics figure{position:relative;overflow:hidden;background:var(--ground-2)}
+.h-pics figure:first-child{grid-row:1/3}
+.h-pics img{width:100%;height:100%;object-fit:cover}
+.h-pics figure:first-child img{animation:drift 14s var(--ease) both}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+figcaption.tag{position:absolute;left:10px;bottom:10px;background:var(--ground);color:var(--ink);font-size:.875rem;font-weight:500;padding:6px 10px;line-height:1.3}
+figcaption.tag b{font-weight:600;color:var(--green)}
 
-/* ---------- RÉSERVER : la table ---------- */
-.book{padding-block:clamp(96px,12vw,160px)}
-.book-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,80px);align-items:start}
-.book h2{font-size:var(--s-head)}
-.book .lead{margin-top:20px;max-width:34ch}
-.book .status{margin-top:32px;font-size:var(--s-lead);line-height:1.3}
-.ticket{background:#fff;padding:clamp(24px,3.4vw,44px);position:relative;
-  -webkit-mask:radial-gradient(circle 12px at 0 62%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 62%,#0000 98%,#000) right/51% 100% no-repeat;
-          mask:radial-gradient(circle 12px at 0 62%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 62%,#0000 98%,#000) right/51% 100% no-repeat}
-.ticket h3{font-size:clamp(1.8rem,1.4rem + 1.2vw,2.5rem)}
-.field{margin-top:24px}
-.field>.lab{display:block;font-weight:500;margin-bottom:10px}
-.step{display:flex;align-items:center;gap:0}
-.step button{width:52px;height:52px;border:0;background:var(--paper);font-size:24px;cursor:pointer;color:var(--ink)}
-.step button:hover{background:var(--paper-2)}
-.step output{min-width:120px;text-align:center;font-family:"Instrument Serif",serif;font-size:2rem;line-height:52px;background:var(--paper)}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{position:relative}
-.chips input{position:absolute;opacity:0;inset:0;cursor:pointer}
-.chips span{display:block;padding:12px 18px;background:var(--paper);cursor:pointer;transition:background .15s}
-.chips input:checked+span{background:var(--ink);color:#fff}
-.chips input:focus-visible+span{outline:3px solid #ffb800;outline-offset:2px}
-.chips label:hover span{background:var(--paper-2)}
-.chips input:checked:hover+span{background:#000}
-input[type=date]{font:inherit;min-height:48px;padding:0 14px;border:0;background:var(--paper);color:var(--ink)}
-.recap{margin-top:36px;padding-top:28px;border-top:2px dotted var(--paper-2);font-size:var(--s-lead);line-height:1.35}
-.recap small{display:block;font-size:var(--s-small);color:var(--muted);margin-top:8px}
-.ticket .acts{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
+/* carte */
+section{scroll-margin-top:16px}
+.carte{background:var(--ground-2);padding-block:clamp(80px,10vw,150px)}
+.carte-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(32px,4vw,72px);align-items:start}
+.carte h2,.sicile h2,.maison h2,.venir h2{font-size:var(--s-h2)}
+.intro{margin-top:16px;max-width:52ch}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:32px}
+.tabs button{min-height:46px;padding:0 18px;border:0;background:var(--ground);color:var(--ink);font:600 1rem/1 Figtree,sans-serif;cursor:pointer;transition:background-color .2s,color .2s,transform .15s var(--ease)}
+.tabs button:hover{background:var(--pista-2)}
+.tabs button:active{transform:scale(.96)}
+.tabs button[aria-selected=true]{background:var(--green);color:#fff}
+.panel{margin-top:24px}
+.panel h3{font-size:1.75rem;margin-bottom:6px}
+.panel>p{color:var(--soft);font-size:var(--s-small);margin-bottom:12px}
+.dish{display:grid;grid-template-columns:minmax(0,1fr) auto 44px;gap:4px 18px;align-items:center;padding:14px 16px;background:var(--ground);margin-top:4px;transition:background-color .2s}
+.dish:hover{background:#fbfcf8}
+.dish h4{font:700 1.1875rem/1.2 "Zilla Slab",serif;color:var(--green)}
+.dish p{font-size:1rem;color:var(--soft);line-height:1.4;margin-top:2px}
+.dish .p{font:700 1.1875rem/1 "Zilla Slab",serif;font-variant-numeric:tabular-nums;white-space:nowrap}
+.add{width:44px;height:44px;border:0;background:var(--pista);color:var(--ink);font:600 1.5rem/1 Figtree,sans-serif;cursor:pointer;transition:background-color .2s,transform .15s var(--ease)}
+.add:hover{background:var(--green);color:#fff}
+.add:active{transform:scale(.92)}
+.add.in{background:var(--green);color:#fff}
 
-/* ---------- GALERIE ---------- */
-.gal{padding-bottom:clamp(96px,12vw,160px)}
-.gal h2{font-size:var(--s-head);max-width:14ch}
-.tiles{margin-top:56px;display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-.tile{position:relative;overflow:hidden;background:var(--paper-2)}
-.tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.tile:hover img{transform:scale(1.04)}
-.tile figcaption{position:absolute;left:0;bottom:0;background:var(--paper);padding:8px 14px;font-size:var(--s-small)}
-.t1{grid-column:1/8;aspect-ratio:4/3}.t2{grid-column:8/13;aspect-ratio:4/5}
-.t3{grid-column:1/5;aspect-ratio:4/5}.t4{grid-column:5/13;aspect-ratio:16/9}
+.side{position:sticky;top:20px;display:grid;gap:10px}
+.side figure{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--ground)}
+.side figure img{width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.bill{background:var(--deep);color:#fff;padding:24px}
+.bill h3{font-size:1.75rem;color:#fff}
+.bill>p{color:#cfe0c9;font-size:var(--s-small);margin-top:6px}
+.lines{list-style:none;margin-top:16px;display:grid;gap:6px;font-size:1rem;max-height:220px;overflow:auto}
+.lines li{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.lines li button{background:none;border:0;color:#cfe0c9;cursor:pointer;font:inherit;min-width:44px;min-height:32px;text-decoration:underline}
+.lines .empty{color:#cfe0c9}
+.guests{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:12px 14px;background:#1b4a33}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:44px;height:44px;border:0;background:var(--pista);color:var(--ink);font:600 1.25rem/1 Figtree,sans-serif;cursor:pointer;transition:transform .15s var(--ease)}
+.step button:active{transform:scale(.92)}
+.step output{min-width:3ch;text-align:center;font-weight:600}
+.tot{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.tot div{background:#1b4a33;padding:12px 14px}
+.tot b{display:block;font:700 1.75rem/1 "Zilla Slab",serif;color:var(--pista);font-variant-numeric:tabular-nums}
+.tot span{font-size:.875rem;color:#cfe0c9}
+.bill .acts{margin-top:16px}
+.bill .btn.alt{width:100%}
+.mbar{display:none}
 
-/* ---------- VENIR ---------- */
-.visit{position:relative;min-height:88svh;display:flex;align-items:center;padding:clamp(80px,10vw,140px) 0;color:var(--ink)}
-.visit>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.card{position:relative;background:var(--paper);width:min(560px,100%);padding:clamp(28px,4vw,52px)}
-.card h2{font-size:var(--s-head)}
-.card dl{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:12px 24px}
-.card dt{color:var(--muted)}
-.card dd a{text-underline-offset:4px}
-.card .acts{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px}
+/* sicile */
+.sicile{padding-block:clamp(96px,11vw,170px)}
+.sic-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,4vw,72px);align-items:end}
+.sic-head p{max-width:56ch}
+.mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(180px,17vw,250px);gap:10px;margin-top:48px}
+.mosaic figure{position:relative;overflow:hidden;background:var(--ground-2)}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic .big{grid-column:span 2;grid-row:span 2}
+.mosaic .tall{grid-row:span 2}
+.isola{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+.isola div{background:var(--pista);padding:20px 22px}
+.isola h3{font-size:1.375rem}
+.isola p{margin-top:6px;font-size:1rem;line-height:1.45}
+.isola .p{font-weight:600;font-variant-numeric:tabular-nums}
 
-/* ---------- PIED : le dos de la carte ---------- */
-footer{background:var(--deep);color:#e6eaf6;padding:clamp(72px,9vw,120px) 0 28px;overflow:hidden}
-.tilebar{height:56px;background:
-  radial-gradient(circle at 50% 50%,var(--deep) 9px,transparent 10px) 0 0/56px 56px,
-  conic-gradient(from 45deg,var(--paper) 25%,var(--t2) 0 50%,var(--paper) 0 75%,var(--t2) 0) 0 0/56px 56px;margin-bottom:clamp(56px,7vw,96px)}
-.foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;font-size:var(--s-body)}
-.foot-grid a{text-underline-offset:4px}
-.foot-grid h3{font-family:"IBM Plex Sans",sans-serif;font-weight:500;font-size:var(--s-body);letter-spacing:0;line-height:1.4;margin-bottom:8px;color:#fff}
-.bigname{font-family:"Instrument Serif",serif;font-size:clamp(5rem,20vw,19rem);line-height:.8;letter-spacing:-.04em;color:#fff;margin-top:clamp(48px,6vw,88px);white-space:nowrap}
-.legal{margin-top:24px;font-size:var(--s-small);color:#b9c3e6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* maison */
+.maison{background:var(--green);color:#fff;padding-block:clamp(96px,11vw,170px)}
+.mai-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(32px,4vw,72px);align-items:center}
+.maison h2{color:#fff}
+.maison p{margin-top:18px;max-width:50ch;color:#eef4e8}
+.maison ul{list-style:none;margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.maison li{background:var(--deep);padding:14px 16px;font-size:1rem;color:#eef4e8}
+.maison li b{display:block;font:700 1.25rem/1.15 "Zilla Slab",serif;color:var(--pista);margin-bottom:2px}
+.mai-pics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mai-pics figure{position:relative;overflow:hidden}
+.mai-pics figure:first-child{grid-column:1/3}
+.mai-pics img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
+.mai-pics figure:not(:first-child) img{aspect-ratio:4/5}
 
-/* reveal */
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.js .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}*{scroll-behavior:auto!important}.tile img,.folder .tab{transition:none}}
+/* venir */
+.venir{padding-block:clamp(96px,11vw,170px)}
+.ven-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,4vw,72px);align-items:start}
+.hours{margin-top:28px;display:grid;gap:6px}
+.hours div{display:flex;justify-content:space-between;gap:16px;background:var(--ground-2);padding:16px 18px;font-size:1.0625rem}
+.hours div b{font-weight:600}
+.hours .cur{background:var(--pista)}
+.note{margin-top:12px;font-size:var(--s-small);color:var(--soft)}
+.status{margin-top:20px;font-size:1.125rem}
+.status b{font-weight:600}
+.coords{display:grid;gap:6px}
+.coords div{background:var(--ground-2);padding:18px 20px}
+.coords dt{font-size:var(--s-small);color:var(--soft)}
+.coords dd{font:700 1.375rem/1.25 "Zilla Slab",serif;margin-top:2px}
+.coords dd a{text-decoration:none}
+.coords dd a:hover{text-decoration:underline;color:var(--green)}
+.ven-pic{position:relative;margin-top:6px}
+.ven-pic img{width:100%;aspect-ratio:16/9;object-fit:cover}
 
-/* ---------- PHONE ---------- */
-@media (max-width:820px){
-  .bar{grid-template-columns:1fr auto}
+footer{background:var(--deep);color:#e4ece0;padding-block:72px 28px}
+.f-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+footer h3{font-size:1.375rem;color:#fff;margin-bottom:8px}
+footer a{color:#fff}
+.bigname{font:700 clamp(4rem,15vw,15rem)/.9 "Zilla Slab",serif;letter-spacing:-.03em;color:var(--pista);margin-top:56px;white-space:nowrap}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:24px;font-size:.875rem;color:#c3d3bd}
+
+/* apparitions : contenu visible sans JS */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;transition:none}
+  .h-pics figure:first-child img{animation:none}
+  *{transition-duration:0s!important}
+}
+
+/* largeurs intermédiaires */
+@media (max-width:1180px){
+  .bar nav{gap:20px}
+  .lead{font-size:1.0625rem;margin-top:16px}
+  .tiles{margin-top:20px}
+  .tile{padding:12px 14px}
+  .acts{margin-top:18px}
+  .acts .btn{padding:0 1em}
+}
+@media (max-width:1100px){
+  .bar nav a:nth-child(4){display:none}
+}
+@media (max-width:900px){
   .bar nav{display:none}
-  .bar .mark{justify-self:start}
-  .hero{min-height:auto}
-  .hero-head{padding-top:56px}
-  .folders{margin-top:0;padding-top:72px}
-  .hero h1{font-size:clamp(4.2rem,22vw,7rem)}
-  .hero .sub{font-size:1.0625rem;margin-top:20px}
-  .folders{width:100%}
-  .folder{height:50px}
-  .folder.front{height:auto}
-  .folder .tab{top:-32px;height:34px;font-size:15px;padding:0 22px}
-  .f1 .tab{left:3%}.f2 .tab{left:36%}.f3 .tab{left:auto;right:3%}.f4 .tab{left:18%}.front .tab{right:auto;left:56%}
-  .front>.band{grid-template-columns:1fr;padding:28px var(--gut) 36px}
-  .front .acts .btn{flex:1 1 100%}
-  .intro .row1,.carte-top{display:block}
-  .intro .note,.carte .note{margin-top:20px}
-  .facts{display:grid;grid-template-columns:1fr 1fr;gap:32px 20px}
-  .tabs{margin-top:40px}
-  .tabs button{padding:14px 16px 12px;flex:1}
-  .sheet{grid-template-columns:1fr}
-  .sheet figure{aspect-ratio:4/3;order:-1}
-  .sheet li{flex-direction:column;gap:2px}
-  .sheet li i{text-align:left;max-width:none}
-  .book-grid{grid-template-columns:1fr}
-  .tiles{grid-template-columns:1fr 1fr}
-  .t1,.t4{grid-column:1/3}.t2,.t3{grid-column:auto}
-  .visit{min-height:auto;padding:0;flex-direction:column;align-items:stretch}
-  .visit>img{position:static;aspect-ratio:4/3;height:auto}
-  .card{width:100%}
-  .foot-grid{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr;grid-template-areas:"txt" "pics" "facts";padding-top:8px}
+  .h-pics{height:auto;min-height:0;grid-template-rows:auto auto;margin-top:22px}
+  .h-pics figure:first-child{grid-row:auto;grid-column:1/3}
+  .h-pics figure:first-child img{aspect-ratio:16/10}
+  .h-pics figure:not(:first-child) img{aspect-ratio:1}
+  .carte-grid,.sic-head,.mai-grid,.ven-grid{grid-template-columns:1fr}
+  .side{position:static}
+  .side figure{display:none}
+  .mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(150px,40vw,260px)}
+  .isola{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:var(--deep);color:#fff;transform:translateY(110%);transition:transform .3s var(--ease)}
+  .mbar.show{transform:none}
+  .mbar a{color:var(--ink)}
+}
+@media (max-width:520px){
+  .mark span{display:none}
+  .bar .btn{padding:0 1em}
+  .lead{margin-top:14px}
+  .h-pics{margin-top:18px;gap:8px}
+  .h-pics figure:first-child img{aspect-ratio:3/2}
+  .tile{padding:14px}
+  .acts .btn{flex:1 1 auto}
+  .dish{grid-template-columns:minmax(0,1fr) 44px;padding:12px 12px 12px 14px}
+  .dish .p{grid-column:1;grid-row:2;justify-self:start}
+  .dish .add{grid-column:2;grid-row:1/3}
+  .maison ul{grid-template-columns:1fr}
+  .bigname{font-size:21vw}
 }
 </style>
 </head>
 <body>
-<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<header class="hero" id="haut">
-  <div class="bar">
-    <nav aria-label="Navigation principale"><a href="#carte">La carte</a><a href="#reserver">Réserver</a><a href="#venir">Venir</a></nav>
-    <a class="mark" href="#haut">Tra Di Noi</a>
-    <div class="r"><a href="tel:+33953672868">09 53 67 28 68</a></div>
-  </div>
-  <div class="hero-head">
-    <h1>Tra Di Noi</h1>
-    <p class="sub">Trattoria et pizzeria sicilienne, 5 rue Vasco de Gama, Paris 15e. Tous les jours, midi et soir.</p>
-  </div>
-  <div class="folders" aria-label="Sommaire de la carte">
-    <div class="folder f1"><div class="band"></div><a class="tab" href="#carte" data-go="antipasti">Antipasti</a></div>
-    <div class="folder f2"><div class="band"></div><a class="tab" href="#carte" data-go="primi">Primi</a></div>
-    <div class="folder f3"><div class="band"></div><a class="tab" href="#carte" data-go="pizze">Pizze</a></div>
-    <div class="folder f4"><div class="band"></div><a class="tab" href="#carte" data-go="dolci">Dolci</a></div>
-    <div class="folder front"><a class="tab" href="#reserver">Prenotare</a>
-      <div class="band">
-        <div class="acts">
-          <a class="btn" href="https://www.thefork.fr/restaurant/tra-di-noi-r832550" target="_blank" rel="noopener">Réserver une table</a>
-          <a class="btn ghost" href="tel:+33953672868">Appeler</a>
-        </div>
-        <p class="now" data-now><span class="dot off"></span>Service du midi 12h–14h30, du soir 19h–22h30.</p>
-      </div>
-    </div>
-  </div>
+<header class="wrap bar">
+  <a class="mark" href="#top" translate="no"><b>Tra di Noi</b><span>trattoria · pizzeria</span></a>
+  <nav aria-label="Navigation principale">
+    <a href="#carte">La carte</a>
+    <a href="#addition">L’addition</a>
+    <a href="#horaires">Horaires</a>
+    <a href="#venir">Venir</a>
+  </nav>
+  <a class="btn" href="tel:+33953672868"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler</a>
 </header>
 
-<main>
-<section class="intro wrap" aria-labelledby="t-intro">
-  <div class="row1">
-    <h2 id="t-intro" class="rv">Entre nous, en sicilien</h2>
-    <p class="note rv">« Tra di noi » veut dire « entre nous ». Une brasserie italienne de quartier, tenue par des Siciliens, où l’on parle français et italien en salle. Pâtes, pizzas cuites au four et spécialités de l’île.</p>
+<main id="contenu">
+<section class="wrap hero" id="top" aria-labelledby="h1">
+  <div class="h-txt">
+    <h1 id="h1"><span translate="no">Tra di Noi,</span> la Sicile à table</h1>
+    <p class="lead">Trattoria et pizzeria aux influences siciliennes au 5&nbsp;rue Vasco de Gama, Paris&nbsp;15e. Panelle, caponata, pâtes alla Norma, pizzas et cannoli. Sur place, en terrasse ou à emporter.</p>
   </div>
-  <div class="facts">
-    <div class="fact rv"><strong>7 jours sur 7</strong><span>midi et soir</span></div>
-    <div class="fact rv"><strong>12h – 14h30</strong><span>service du midi</span></div>
-    <div class="fact rv"><strong>19h – 22h30</strong><span>service du soir</span></div>
-    <div class="fact rv"><strong>Terrasse</strong><span>sur place ou à emporter</span></div>
+  <div class="h-pics">
+    <figure><img src="https://tripaligner.com/cdn/photos/08/fc/c8/08fcc859-7024-462a-a373-9837985eb0f8.webp/transform/w:1200/q:80" width="1200" height="1088" alt="La devanture blanche de Tra di Noi, ses stores vert pistache et sa terrasse aux tabourets verts" fetchpriority="high"><figcaption class="tag">La terrasse, 5&nbsp;rue Vasco de Gama</figcaption></figure>
+    <figure><img src="https://tripaligner.com/cdn/photos/1d/35/70/1d3570a1-a8e7-4a56-9227-c25e61841e21.webp/transform/w:800/q:80" width="800" height="800" alt="Rigatoni à la sauce tomate, aubergines, ricotta salée râpée et basilic"><figcaption class="tag">Rigatoni alla Norma <b class="num">10&nbsp;€</b></figcaption></figure>
+    <figure><img src="https://cdn.eat-list.fr/establishment/photo/gallery_photo/75015-paris-15/tra-di-noi_153760_3ac.jpg" width="960" height="960" alt="Pizza margherita au basilic sur une nappe verte"><figcaption class="tag">Margherita <b class="num">8&nbsp;€</b></figcaption></figure>
   </div>
-</section>
-
-<section class="carte" id="carte" aria-labelledby="t-carte">
-  <div class="wrap">
-    <div class="carte-top">
-      <h2 id="t-carte" class="rv">La carte, rayon par rayon</h2>
-      <p class="note rv">Quatre chapitres, comme sur la carte papier : antipasti, primi, pizze, dolci. Voici les plats que les habitués citent le plus. Carte complète et prix sur place.</p>
+  <div class="h-facts">
+    <div class="tiles">
+      <div class="tile hi"><b class="num">8&nbsp;€</b><span>la Margherita, première pizza de la carte</span></div>
+      <div class="tile"><b class="num">9–11&nbsp;€</b><span>les antipasti, de la panelle au poulpe braisé</span></div>
+      <div class="tile"><b class="num">10–18&nbsp;€</b><span>douze primi, de la Norma à la truffe noire</span></div>
+      <div class="tile"><b>Lourmel</b><span>métro ligne&nbsp;8, à deux pas</span></div>
     </div>
-    <div class="tabs" role="tablist" aria-label="Chapitres de la carte">
-      <button role="tab" id="tab-antipasti" aria-controls="p-antipasti" aria-selected="true">Antipasti</button>
-      <button role="tab" id="tab-primi" aria-controls="p-primi" aria-selected="false" tabindex="-1">Primi</button>
-      <button role="tab" id="tab-pizze" aria-controls="p-pizze" aria-selected="false" tabindex="-1">Pizze</button>
-      <button role="tab" id="tab-dolci" aria-controls="p-dolci" aria-selected="false" tabindex="-1">Dolci</button>
+    <div class="acts">
+      <a class="btn" href="tel:+33953672868">Appeler le 09&nbsp;53&nbsp;67&nbsp;28&nbsp;68</a>
+      <a class="btn alt" href="#carte">Voir la carte et les prix</a>
     </div>
-
-    <div class="panel" role="tabpanel" id="p-antipasti" aria-labelledby="tab-antipasti">
-      <div class="sheet">
-        <div class="list">
-          <h3>Antipasti</h3><p class="tr">Pour commencer, à partager</p>
-          <ul>
-            <li><b>Poulpe et polenta</b><i>l’entrée qu’on recommande</i></li>
-            <li><b>Petits poulpes</b><i>de la mer</i></li>
-            <li><b>Calamars, sauce à la menthe</b><i>frits</i></li>
-            <li><b>Boulettes d’espadon</b><i>spécialité sicilienne</i></li>
-            <li><b>Beignets de pois chiches</b><i>à grignoter</i></li>
-            <li><b>Caprese, burrata, carpaccio</b><i>les classiques</i></li>
-          </ul>
-          <p class="foot">Le conseil des habitués : prendre plusieurs petits antipasti pour la table.</p>
-        </div>
-        <figure><img src="https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=1100&q=75&auto=format&fit=crop" width="1100" height="1000" alt="Pâtes fraîches, tomates cerises et mozzarella sur une table" loading="lazy"></figure>
-      </div>
-    </div>
-    <div class="panel" role="tabpanel" id="p-primi" aria-labelledby="tab-primi" hidden>
-      <div class="sheet">
-        <div class="list">
-          <h3>Primi</h3><p class="tr">Les pâtes, servies al dente</p>
-          <ul>
-            <li><b>Pâtes à la pistache</b><i>la Sicile en une assiette</i></li>
-            <li><b>Pâtes à l’espadon et aux aubergines</b><i>mer et potager</i></li>
-            <li><b>Pasta alle vongole</b><i>aux palourdes</i></li>
-            <li><b>Pâtes aux fruits de mer</b><i>généreuses</i></li>
-            <li><b>Pâtes à la truffe</b><i>pour les gourmands</i></li>
-            <li><b>Risotto crémeux</b><i>selon la carte</i></li>
-          </ul>
-          <p class="foot">Sauces végétariennes, à la viande ou de la mer. Sans gluten sur demande.</p>
-        </div>
-        <figure><img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?w=1100&q=75&auto=format&fit=crop" width="1100" height="1000" alt="Spaghetti aux palourdes dans une assiette creuse" loading="lazy"></figure>
-      </div>
-    </div>
-    <div class="panel" role="tabpanel" id="p-pizze" aria-labelledby="tab-pizze" hidden>
-      <div class="sheet">
-        <div class="list">
-          <h3>Pizze</h3><p class="tr">Pâte fine, cuite au four à pizza</p>
-          <ul>
-            <li><b>Pizza à la truffe</b><i>la plus citée</i></li>
-            <li><b>Pizza à la burrata</b><i>crémeuse</i></li>
-            <li><b>Margherita e prosciutto</b><i>tomate, mozzarella, jambon</i></li>
-            <li><b>Quattro formaggi</b><i>quatre fromages</i></li>
-            <li><b>Calzone</b><i>bien garnie</i></li>
-          </ul>
-          <p class="foot">Toutes les pizzas se commandent aussi à emporter.</p>
-        </div>
-        <figure><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=1100&q=75&auto=format&fit=crop" width="1100" height="1000" alt="Pizza posée devant la flamme d’un four" loading="lazy"></figure>
-      </div>
-    </div>
-    <div class="panel" role="tabpanel" id="p-dolci" aria-labelledby="tab-dolci" hidden>
-      <div class="sheet">
-        <div class="list">
-          <h3>Dolci</h3><p class="tr">Gardez de la place</p>
-          <ul>
-            <li><b>Tiramisu</b><i>maison</i></li>
-            <li><b>Desserts du jour</b><i>copieux, à voir sur place</i></li>
-          </ul>
-          <p class="foot">Café, vins italiens au verre et à la bouteille pour finir.</p>
-        </div>
-        <figure><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=1100&q=75&auto=format&fit=crop" width="1100" height="1000" alt="Part de tiramisu poudrée de cacao" loading="lazy"></figure>
-      </div>
-    </div>
+    <p class="now" data-now aria-live="polite">Service du midi 12&nbsp;h – 14&nbsp;h&nbsp;30, du soir 19&nbsp;h – 22&nbsp;h&nbsp;30.</p>
   </div>
 </section>
 
-<section class="book wrap" id="reserver" aria-labelledby="t-book">
-  <div class="book-grid">
+<section class="carte" id="carte" aria-labelledby="h-carte">
+  <div class="wrap carte-grid">
     <div>
-      <h2 id="t-book" class="rv">Une table pour combien&nbsp;?</h2>
-      <p class="lead rv">La salle se remplit vite, surtout le soir. Préparez votre demande ici, puis réservez sur TheFork, par téléphone ou par e-mail.</p>
-      <p class="status rv" data-now><span class="dot off"></span>Service du midi 12h–14h30, du soir 19h–22h30.</p>
+      <h2 id="h-carte" class="rv">La carte, avec ses prix</h2>
+      <p class="intro rv">Quatre pages, comme la carte de la salle : antipasti, primi piatti, pizze, dolci. Touchez <b>+</b> pour composer la table et voir l’addition partagée.</p>
+      <div class="tabs" role="tablist" aria-label="Rubriques de la carte">
+        <button role="tab" id="t-anti" aria-controls="p-anti" aria-selected="true" data-pic="0">Antipasti</button>
+        <button role="tab" id="t-primi" aria-controls="p-primi" aria-selected="false" tabindex="-1" data-pic="1">Primi</button>
+        <button role="tab" id="t-pizze" aria-controls="p-pizze" aria-selected="false" tabindex="-1" data-pic="2">Pizze</button>
+        <button role="tab" id="t-dolci" aria-controls="p-dolci" aria-selected="false" tabindex="-1" data-pic="3">Dolci</button>
+      </div>
+
+      <div class="panel" id="p-anti" role="tabpanel" aria-labelledby="t-anti">
+        <h3>Antipasti</h3><p>Pour commencer, ou à partager au milieu de la table.</p>
+        <div class="dish" data-p="9"><div><h4>Panelle con fonduta di parmigiano</h4><p>Beignets de pois chiches et fondue de parmesan</p></div><span class="p">9&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="9.5"><div><h4>Burrata</h4><p>Burrata, roquette, tomates cerises, câpres</p></div><span class="p">9,50&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Prosciutto crudo e stracciatella</h4><p>Jambon cru, roquette et stracciatella</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Carpaccio di pesce</h4><p>Daurade, agrumes confits, poivre rose, amandes torréfiées</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Polpo « Tra di Noi »</h4><p>Poulpe braisé, purée de pommes de terre à la menthe</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Calamari e panzanella</h4><p>Calamars, mie de pain assaisonnée, oignons rouges, tomates cerises, basilic</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="10"><div><h4>Moscardino</h4><p>Petits poulpes, sauce tomate légèrement piquante, croûtons, polenta, persil</p></div><span class="p">10&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="10"><div><h4>Caponata</h4><p>Aubergines, poivrons, olives, câpres, céleri en aigre-doux, pignons, raisins secs</p></div><span class="p">10&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Polpette di pesce spada</h4><p>Boulettes d’espadon, pignons, mie de pain, raisins secs, menthe, coulis de tomate</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Seppie dello Chef Rocco</h4><p>Seiches grillées, crème de fèves et pommes de terre, oignons rouges, tomates cerises</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="10"><div><h4>Millefoglie di verdure</h4><p>Aubergines, poivrons, courgettes, anchois, basilic, scamorza fumée</p></div><span class="p">10&nbsp;€</span><button class="add" type="button">+</button></div>
+      </div>
+
+      <div class="panel" id="p-primi" role="tabpanel" aria-labelledby="t-primi">
+        <h3>Primi piatti</h3><p>Les pâtes. Options sans gluten sur demande.</p>
+        <div class="dish" data-p="10"><div><h4>Rigatoni alla Norma</h4><p>Sauce tomate, aubergines, ricotta salée, basilic</p></div><span class="p">10&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="14"><div><h4>Tagliatelle ai funghi porcini</h4><p>Cèpes, crème de cèpes et gorgonzola, parmesan, sauge</p></div><span class="p">14&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="12.5"><div><h4>Rigatoni al ragù bianco</h4><p>Bœuf, petits pois, carottes, oignons, céleri, parmesan, persil</p></div><span class="p">12,50&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="12"><div><h4>Casarecce al pesto di pistacchio</h4><p>Pesto de pistache, basilic, pignons, parmesan</p></div><span class="p">12&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="12"><div><h4>Tagliatelle Primavera</h4><p>Bresaola, roquette, parmesan, un soupçon de citron</p></div><span class="p">12&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="18"><div><h4>Tagliatelle al tartufo nero</h4><p>Copeaux et crème de truffe noire, huile de truffe blanche</p></div><span class="p">18&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="14"><div><h4>Linguine alle vongole</h4><p>Palourdes, ail, persil</p></div><span class="p">14&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="14"><div><h4>Tagliatelle salmone e spinaci</h4><p>Saumon frais, épinards, échalotes, crème fraîche</p></div><span class="p">14&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="16"><div><h4>Linguine alla bottarga di Favignana</h4><p>Poutargue de thon de l’île de Favignana, tomates cerises, persil, ail</p></div><span class="p">16&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="14.5"><div><h4>Casarecce al pesce spada</h4><p>Espadon, aubergines, tomates cerises, menthe, ail</p></div><span class="p">14,50&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Linguine con le sarde</h4><p>Sardines, fenouil sauvage, pignons, raisins secs, chapelure de pain torréfiée</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="13.5"><div><h4>Linguine « Tra di Noi »</h4><p>Gambas, tomates cerises, persil, ail, chapelure de pain torréfiée</p></div><span class="p">13,50&nbsp;€</span><button class="add" type="button">+</button></div>
+      </div>
+
+      <div class="panel" id="p-pizze" role="tabpanel" aria-labelledby="t-pizze">
+        <h3>Pizze</h3><p>Cuites. Toutes se commandent aussi à emporter.</p>
+        <div class="dish" data-p="8"><div><h4>Margherita</h4><p>Sauce tomate, mozzarella, basilic, origan</p></div><span class="p">8&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Prosciutto e funghi</h4><p>Sauce tomate, mozzarella, champignons de Paris, jambon blanc, origan</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>4 Formaggi</h4><p>Sauce tomate, mozzarella, gorgonzola, scamorza fumée, parmesan</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="10"><div><h4>Norma</h4><p>Sauce tomate, mozzarella, aubergines, ricotta salée</p></div><span class="p">10&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="12"><div><h4>Caprese</h4><p>Mozzarella de bufflonne, roquette, copeaux de parmesan, tomates cerises</p></div><span class="p">12&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Tonno</h4><p>Sauce tomate, mozzarella, thon, oignons rouges, olives noires, origan</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="13"><div><h4>Salmone</h4><p>Sauce tomate, mozzarella, saumon fumé, mascarpone citronné, ciboulette</p></div><span class="p">13&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Vegetariana</h4><p>Sauce tomate, mozzarella, aubergines, courgettes, poivrons</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="18"><div><h4>Tartufo nero</h4><p>Copeaux et crème de truffe noire, huile de truffe blanche, mozzarella</p></div><span class="p">18&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="12"><div><h4>Tra di Noi</h4><p>Sauce tomate, mozzarella, scamorza fumée, jambon cru</p></div><span class="p">12&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="11"><div><h4>Calzone</h4><p>Sauce tomate, mozzarella, jambon blanc, origan</p></div><span class="p">11&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="12"><div><h4>4 Stagioni</h4><p>Sauce tomate, mozzarella, jambon blanc, champignons, olives noires, artichauts</p></div><span class="p">12&nbsp;€</span><button class="add" type="button">+</button></div>
+      </div>
+
+      <div class="panel" id="p-dolci" role="tabpanel" aria-labelledby="t-dolci">
+        <h3>Dolci</h3><p>Gardez de la place.</p>
+        <div class="dish" data-p="8"><div><h4>Cannolo siciliano</h4><p>Pâte frite farcie de ricotta de brebis, pépites de chocolat, pistaches, sucre glace</p></div><span class="p">8&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="7"><div><h4>Torta della Mamma</h4><p>Tarte au citron meringuée</p></div><span class="p">7&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="7"><div><h4>Zeppoline alla Nutella</h4><p>Beignets de pâte à pizza soufflés, Nutella, sucre glace</p></div><span class="p">7&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="10"><div><h4>Semifreddo alle mandorle</h4><p>Dessert glacé aux amandes caramélisées et chocolat chaud</p></div><span class="p">10&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="7"><div><h4>Tiramisù classico al caffè</h4><p>Le classique, au café</p></div><span class="p">7&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="8"><div><h4>Tiramisù al pistacchio</h4><p>Version pistache</p></div><span class="p">8&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="8"><div><h4>Tiramisù all’arancia</h4><p>Version orange</p></div><span class="p">8&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="8"><div><h4>Pannacotta ai frutti rossi</h4><p>Aux fruits rouges</p></div><span class="p">8&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="9"><div><h4>Café gourmand</h4><p>Café et assortiment de petits desserts</p></div><span class="p">9&nbsp;€</span><button class="add" type="button">+</button></div>
+        <div class="dish" data-p="8"><div><h4>Coppa gelato « Tra di Noi »</h4><p>Trois boules : chocolat, pistache, noisette, café, vanille, fraise, citron</p></div><span class="p">8&nbsp;€</span><button class="add" type="button">+</button></div>
+      </div>
+      <p class="note">Prix en euros relevés sur la carte publiée par le restaurant ; ils peuvent évoluer, la carte de la salle fait foi.</p>
     </div>
-    <form class="ticket rv" id="resa" onsubmit="return false" aria-labelledby="t-ticket">
-      <h3 id="t-ticket">Votre table</h3>
-      <div class="field">
-        <span class="lab" id="l-n">Couverts</span>
-        <div class="step" role="group" aria-labelledby="l-n">
-          <button type="button" data-d="-1" aria-label="Une personne de moins">−</button>
-          <output id="n" aria-live="polite">2 pers.</output>
-          <button type="button" data-d="1" aria-label="Une personne de plus">+</button>
+
+    <aside class="side" id="addition" aria-labelledby="h-bill">
+      <figure><img id="sidepic" src="https://tripaligner.com/cdn/photos/12/5b/e0/125be0e7-06e9-4ea5-8c70-185d94e671a9.webp/transform/w:800/q:80" width="666" height="1280" alt="Burrata sur roquette et tomates cerises" loading="lazy"><figcaption class="tag" id="sidecap">Burrata <b class="num">9,50&nbsp;€</b></figcaption></figure>
+      <div class="bill on-dark">
+        <h3 id="h-bill">L’addition, tra di noi</h3>
+        <p>« Tra di noi » veut dire « entre nous ». Ajoutez les plats de la table, on partage.</p>
+        <ul class="lines" id="lines" aria-live="polite"><li class="empty">Aucun plat pour l’instant.</li></ul>
+        <div class="guests"><span id="g-lab">Nous sommes</span>
+          <div class="step"><button type="button" data-g="-1" aria-label="Une personne de moins">−</button><output id="g" aria-labelledby="g-lab" class="num">2</output><button type="button" data-g="1" aria-label="Une personne de plus">+</button></div>
         </div>
+        <div class="tot" aria-live="polite"><div><b id="tot" class="num">0&nbsp;€</b><span>pour la table</span></div><div><b id="pp" class="num">0&nbsp;€</b><span>par personne</span></div></div>
+        <div class="acts"><a class="btn alt" id="mail" href="mailto:tradinoiparis@gmail.com">Envoyer la commande à emporter</a></div>
       </div>
-      <fieldset class="field" style="border:0">
-        <legend class="lab">Jour</legend>
-        <div class="chips">
-          <label><input type="radio" name="jour" value="0" checked><span>Aujourd’hui</span></label>
-          <label><input type="radio" name="jour" value="1"><span>Demain</span></label>
-          <label><input type="radio" name="jour" value="x"><span>Autre date</span></label>
-          <input type="date" id="date" aria-label="Choisir une date" hidden>
-        </div>
-      </fieldset>
-      <fieldset class="field" style="border:0">
-        <legend class="lab">Service</legend>
-        <div class="chips">
-          <label><input type="radio" name="svc" value="midi"><span>Midi · 12h–14h30</span></label>
-          <label><input type="radio" name="svc" value="soir" checked><span>Soir · 19h–22h30</span></label>
-        </div>
-      </fieldset>
-      <p class="recap" id="recap">2 personnes, aujourd’hui soir.<small>Réservation conseillée. Vente à emporter possible sur demande.</small></p>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap sicile" id="sicile" aria-labelledby="h-sic">
+  <div class="sic-head">
+    <h2 id="h-sic" class="rv">La Sicile se lit sur la carte</h2>
+    <p class="rv">Pas de décor de carte postale : l’île est dans les assiettes. Sardines et fenouil sauvage, espadon aux raisins secs, poutargue de Favignana, ricotta salée de la Norma, pistache dans le pesto et dans le tiramisù. Les pâtes viennent d’Italie, les produits sont frais.</p>
+  </div>
+  <div class="mosaic">
+    <figure class="big rv"><img src="https://tripaligner.com/cdn/photos/17/ca/27/17ca2702-4bdf-4080-bf03-f33c29ad8577.webp/transform/w:1000/q:80" width="1000" height="1333" alt="Tagliatelle à la truffe noire en copeaux, verres verts sur nappe verte" loading="lazy"><figcaption class="tag">Tagliatelle al tartufo nero <b class="num">18&nbsp;€</b></figcaption></figure>
+    <figure class="rv"><img src="https://cdn.eat-list.fr/establishment/photo/gallery_photo/75015-paris-15/tra-di-noi_153760_68e.jpg" width="960" height="960" alt="Tagliatelle au pesto, tomates fraîches et basilic" loading="lazy"><figcaption class="tag">Pâtes au pesto</figcaption></figure>
+    <figure class="tall rv"><img src="https://tripaligner.com/cdn/photos/1d/8f/4f/1d8f4f4b-6bb5-4206-b8bb-5e351b02361c.webp/transform/w:800/q:80" width="800" height="1000" alt="Chocolat chaud versé sur un dessert glacé" loading="lazy"><figcaption class="tag">Dessert au chocolat chaud</figcaption></figure>
+    <figure class="rv"><img src="https://tripaligner.com/cdn/photos/03/c4/1b/03c41b6d-dd0e-4b56-9a9d-267211643c01.webp/transform/w:800/q:80" width="800" height="800" alt="Linguine aux fruits de mer, moules et gambas" loading="lazy"><figcaption class="tag">Pâtes de la mer</figcaption></figure>
+  </div>
+  <div class="isola">
+    <div class="rv"><h3>Linguine con le sarde</h3><p>Le plat de Palerme : sardines, fenouil sauvage, pignons, raisins secs. <span class="p">11&nbsp;€</span></p></div>
+    <div class="rv"><h3>Polpette di pesce spada</h3><p>Boulettes d’espadon, pignons, raisins secs et menthe. <span class="p">11&nbsp;€</span></p></div>
+    <div class="rv"><h3>Cannolo siciliano</h3><p>Ricotta de brebis, pépites de chocolat, pistaches. <span class="p">8&nbsp;€</span></p></div>
+  </div>
+</section>
+
+<section class="maison on-dark" id="maison" aria-labelledby="h-mai">
+  <div class="wrap mai-grid">
+    <div>
+      <h2 id="h-mai" class="rv">Une brasserie de quartier, entre nous</h2>
+      <p class="rv">Une façade blanche à l’angle, des stores vert pistache, des nappes vertes et des tabourets en terrasse. À l’ardoise, le plat du jour ; à la carte, la cuisine italienne aux influences siciliennes.</p>
+      <ul>
+        <li class="rv"><b>Sur place</b>en salle ou en terrasse</li>
+        <li class="rv"><b>À emporter</b>toutes les pizzas et les pâtes</li>
+        <li class="rv"><b>Sans gluten</b>sur demande</li>
+        <li class="rv"><b>Réserver</b>par téléphone ou sur TheFork</li>
+      </ul>
+    </div>
+    <div class="mai-pics">
+      <figure class="rv"><img src="https://tripaligner.com/cdn/photos/19/cc/ce/19ccce85-922f-4dbe-8c1f-b9899bbe9201.webp/transform/w:1200/q:80" width="1200" height="899" alt="L’équipe en cuisine, avec l’ardoise du plat du jour" loading="lazy"><figcaption class="tag">L’équipe et l’ardoise du jour</figcaption></figure>
+      <figure class="rv"><img src="https://cdn.eat-list.fr/establishment/photo/gallery_photo/75015-paris-15/tra-di-noi_153760_37b.jpg" width="959" height="540" alt="La façade de Tra di Noi éclairée le soir, enseigne au néon vert" loading="lazy"><figcaption class="tag">Le soir, rue Vasco de Gama</figcaption></figure>
+      <figure class="rv"><img src="https://tripaligner.com/cdn/photos/0e/af/0a/0eaf0a42-d7ca-43a1-acfe-6291d5fcb3f3.webp/transform/w:800/q:80" width="800" height="1069" alt="Pâtes aux cèpes, pizza et verre de vin rouge sur nappe verte" loading="lazy"><figcaption class="tag">Pâtes, pizza et vin rouge</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap venir" id="venir" aria-labelledby="h-ven">
+  <div class="ven-grid">
+    <div id="horaires">
+      <h2 id="h-ven" class="rv">Horaires et accès</h2>
+      <p class="status" data-now aria-live="polite">Service du midi 12&nbsp;h – 14&nbsp;h&nbsp;30, du soir 19&nbsp;h – 22&nbsp;h&nbsp;30.</p>
+      <div class="hours">
+        <div data-s="midi"><b>Service du midi</b><span class="num">12&nbsp;h – 14&nbsp;h&nbsp;30</span></div>
+        <div data-s="soir"><b>Service du soir</b><span class="num">19&nbsp;h – 22&nbsp;h&nbsp;30</span></div>
+      </div>
+      <p class="note">Les jours d’ouverture varient selon les sources, le dimanche surtout : un appel avant de venir, et la table est réservée.</p>
       <div class="acts">
-        <a class="btn" href="https://www.thefork.fr/restaurant/tra-di-noi-r832550" target="_blank" rel="noopener">Réserver sur TheFork</a>
-        <a class="btn ghost" href="tel:+33953672868">09 53 67 28 68</a>
-        <a class="btn light" id="mail" href="mailto:tradinoiparis@gmail.com?subject=R%C3%A9servation">Par e-mail</a>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Tra+di+Noi+5+rue+Vasco+de+Gama+75015+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+        <a class="btn alt" href="https://www.thefork.fr/restaurant/tra-di-noi-r832550" target="_blank" rel="noopener">Réserver sur TheFork</a>
       </div>
-    </form>
-  </div>
-</section>
-
-<section class="gal wrap" aria-labelledby="t-gal">
-  <h2 id="t-gal" class="rv">À table, à la sicilienne</h2>
-  <div class="tiles">
-    <figure class="tile t1 rv"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=1200&q=75&auto=format&fit=crop" width="1200" height="900" alt="Poêlée de spaghetti aux crevettes" loading="lazy"><figcaption>Pâtes de la mer</figcaption></figure>
-    <figure class="tile t2 rv"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=900&q=75&auto=format&fit=crop" width="900" height="1125" alt="Pizza à la tomate, mozzarella et basilic" loading="lazy"><figcaption>Pizze</figcaption></figure>
-    <figure class="tile t3 rv"><img src="https://images.unsplash.com/photo-1600028068383-ea11a7a101f3?w=900&q=75&auto=format&fit=crop" width="900" height="1125" alt="Une main soulève une part de pizza" loading="lazy"><figcaption>À emporter</figcaption></figure>
-    <figure class="tile t4 rv"><img src="https://images.unsplash.com/photo-1572441713132-c542fc4fe282?w=1400&q=75&auto=format&fit=crop" width="1400" height="788" alt="Assiette de pâtes à la tomate sur une nappe à carreaux" loading="lazy"><figcaption>Primi</figcaption></figure>
-  </div>
-</section>
-
-<section class="visit" id="venir" aria-labelledby="t-visit">
-  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=2000&q=70&auto=format&fit=crop" width="2000" height="1333" alt="Salle de restaurant lumineuse avec tables en bois" loading="lazy">
-  <div class="wrap" style="width:100%">
-    <div class="card rv">
-      <h2 id="t-visit">Venir chez nous</h2>
-      <dl>
-        <dt>Adresse</dt><dd>5 rue Vasco de Gama<br>75015 Paris</dd>
-        <dt>Horaires</dt><dd>Tous les jours<br>12h–14h30 · 19h–22h30</dd>
-        <dt>Téléphone</dt><dd><a href="tel:+33953672868">09 53 67 28 68</a></dd>
-        <dt>E-mail</dt><dd><a href="mailto:tradinoiparis@gmail.com">tradinoiparis@gmail.com</a></dd>
-        <dt>Instagram</dt><dd><a href="https://www.instagram.com/instatradinoi/" target="_blank" rel="noopener">@instatradinoi</a></dd>
+    </div>
+    <div>
+      <dl class="coords">
+        <div><dt>Adresse</dt><dd>5 rue Vasco de Gama, 75015&nbsp;Paris</dd></div>
+        <div><dt>Métro</dt><dd>Lourmel, ligne&nbsp;8</dd></div>
+        <div><dt>Téléphone</dt><dd><a href="tel:+33953672868" class="num">09&nbsp;53&nbsp;67&nbsp;28&nbsp;68</a></dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:tradinoiparis@gmail.com">tradinoiparis@gmail.com</a></dd></div>
       </dl>
-      <div class="acts">
-        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Tra+Di+Noi+5+rue+Vasco+de+Gama+75015+Paris" target="_blank" rel="noopener">Itinéraire</a>
-        <a class="btn ghost" href="tel:+33953672868">Appeler</a>
-      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="tilebar" role="presentation"></div>
+<footer class="on-dark">
   <div class="wrap">
-    <div class="foot-grid">
-      <div><h3>Tra Di Noi</h3>Trattoria et pizzeria sicilienne<br>5 rue Vasco de Gama, 75015 Paris</div>
-      <div><h3>Ouvert tous les jours</h3>Midi 12h–14h30<br>Soir 19h–22h30</div>
-      <div><h3>Nous joindre</h3><a href="tel:+33953672868">09 53 67 28 68</a><br><a href="mailto:tradinoiparis@gmail.com">tradinoiparis@gmail.com</a><br><a href="https://www.instagram.com/instatradinoi/" target="_blank" rel="noopener">@instatradinoi</a></div>
+    <div class="f-grid">
+      <div><h3 translate="no">Tra di Noi</h3>Trattoria et pizzeria sicilienne<br>5 rue Vasco de Gama, 75015&nbsp;Paris</div>
+      <div><h3>Services</h3>Midi 12&nbsp;h – 14&nbsp;h&nbsp;30<br>Soir 19&nbsp;h – 22&nbsp;h&nbsp;30</div>
+      <div><h3>Nous joindre</h3><a href="tel:+33953672868">09&nbsp;53&nbsp;67&nbsp;28&nbsp;68</a><br><a href="mailto:tradinoiparis@gmail.com">tradinoiparis@gmail.com</a></div>
     </div>
-    <p class="bigname" aria-hidden="true">Tra Di Noi</p>
-    <div class="legal"><span>Démo réalisée par Raul Hatos — site non officiel.</span><span>Photos d’illustration : Unsplash.</span></div>
+    <p class="bigname" aria-hidden="true" translate="no">Tra di Noi</p>
+    <div class="legal"><span>Démo réalisée par Raul Hatos — site non officiel.</span><span>Photos publiées sur les fiches Tripaligner et eat-list du restaurant.</span></div>
   </div>
 </footer>
 
+<div class="mbar" id="mbar" aria-hidden="true"><span id="mtxt">0 plat</span><a class="btn alt" href="#addition" tabindex="-1">Voir l’addition</a></div>
+
 <script>
 document.documentElement.classList.add('js');
-// Révélations au défilement (contenu visible si le script échoue : la classe .js n'est posée qu'ici)
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*75+'ms';io.observe(el)});
+const eur=v=>(Math.round(v*100)/100).toLocaleString('fr-FR',{minimumFractionDigits:v%1?2:0,maximumFractionDigits:2})+' €';
+console.assert(eur(9.5)==='9,50 €'&&eur(8)==='8 €','format prix');
 
-// Onglets de la carte
-const tabs=[...document.querySelectorAll('[role=tab]')];
-function show(t,focus){tabs.forEach(b=>{const on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on});if(focus)t.focus()}
+// apparitions
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+
+// onglets de la carte
+const pics=[
+ ['https://tripaligner.com/cdn/photos/12/5b/e0/125be0e7-06e9-4ea5-8c70-185d94e671a9.webp/transform/w:800/q:80','Burrata sur roquette et tomates cerises','Burrata <b class="num">9,50 €</b>'],
+ ['https://tripaligner.com/cdn/photos/1d/35/70/1d3570a1-a8e7-4a56-9227-c25e61841e21.webp/transform/w:800/q:80','Rigatoni à la sauce tomate, aubergines et ricotta salée','Rigatoni alla Norma <b class="num">10 €</b>'],
+ ['https://cdn.eat-list.fr/establishment/photo/gallery_photo/75015-paris-15/tra-di-noi_153760_3ac.jpg','Pizza margherita au basilic','Margherita <b class="num">8 €</b>'],
+ ['https://tripaligner.com/cdn/photos/1d/8f/4f/1d8f4f4b-6bb5-4206-b8bb-5e351b02361c.webp/transform/w:800/q:80','Chocolat chaud versé sur un dessert glacé','Dessert au chocolat chaud']];
+const tabs=[...document.querySelectorAll('[role=tab]')],sp=document.getElementById('sidepic'),sc=document.getElementById('sidecap');
+function show(t,focus){tabs.forEach(b=>{const on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on});
+  const p=pics[+t.dataset.pic];sp.src=p[0];sp.alt=p[1];sc.innerHTML=p[2];if(focus)t.focus()}
 tabs.forEach((t,i)=>{t.onclick=()=>show(t);t.onkeydown=e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){e.preventDefault();show(tabs[(i+d+tabs.length)%tabs.length],true)}}});
-document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>show(document.getElementById('tab-'+a.dataset.go))));
+show(tabs[0]);
 
-// Ouvert maintenant ? (heure de Paris)
-function paris(){const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());const g=k=>+p.find(x=>x.type===k).value;return g('hour')*60+g('minute')}
-function status(){const m=paris(),S=[[720,870,'midi','14h30'],[1140,1350,'soir','22h30']];
+// l'addition partagée
+const order=new Map();let guests=2;
+const lines=document.getElementById('lines'),tot=document.getElementById('tot'),pp=document.getElementById('pp'),gOut=document.getElementById('g'),mail=document.getElementById('mail'),mbar=document.getElementById('mbar'),mtxt=document.getElementById('mtxt');
+document.querySelectorAll('.dish').forEach(d=>{const name=d.querySelector('h4').textContent,b=d.querySelector('.add');
+  b.setAttribute('aria-label','Ajouter '+name+' à l’addition');
+  b.onclick=()=>{const o=order.get(name)||{p:+d.dataset.p,q:0,b};o.q++;order.set(name,o);b.classList.add('in');render()}});
+document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{guests=Math.min(20,Math.max(1,guests+ +b.dataset.g));render()});
+function render(){let sum=0,n=0;lines.innerHTML='';
+  order.forEach((o,name)=>{sum+=o.p*o.q;n+=o.q;const li=document.createElement('li');
+    li.innerHTML=`<span>${o.q} × ${name}</span><span class="num">${eur(o.p*o.q)}</span>`;
+    const rm=document.createElement('button');rm.type='button';rm.textContent='retirer';rm.setAttribute('aria-label','Retirer un '+name);
+    rm.onclick=()=>{o.q--;if(!o.q){order.delete(name);o.b.classList.remove('in')}render()};li.appendChild(rm);lines.appendChild(li)});
+  if(!n)lines.innerHTML='<li class="empty">Aucun plat pour l’instant.</li>';
+  gOut.textContent=guests;tot.textContent=eur(sum);pp.textContent=eur(sum/guests);
+  mtxt.textContent=`${n} plat${n>1?'s':''} · ${eur(sum)}`;mbar.classList.toggle('show',n>0);
+  const list=[...order].map(([k,o])=>`${o.q} × ${k}`).join('\n');
+  mail.href='mailto:tradinoiparis@gmail.com?subject='+encodeURIComponent('Commande à emporter')+'&body='+encodeURIComponent(`Bonjour,\n\nJe souhaiterais commander à emporter :\n${list||'(à compléter)'}\n\nTotal indicatif : ${eur(sum)}\nHeure de retrait :\nNom :\nTéléphone :\n\nMerci !`)}
+render();
+
+// ouvert maintenant ? (heure de Paris ; jours non confirmés, le dimanche reste à vérifier)
+function paris(){const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',hour:'2-digit',minute:'2-digit',weekday:'short',hourCycle:'h23'}).formatToParts(new Date());const g=k=>p.find(x=>x.type===k).value;return{m:+g('hour')*60+ +g('minute'),sun:g('weekday').startsWith('dim')}}
+function status(){const {m,sun}=paris(),S=[[720,870,'midi','14 h 30'],[1140,1350,'soir','22 h 30']];
+  document.querySelectorAll('.hours [data-s]').forEach(el=>el.classList.toggle('cur',S.some(s=>s[2]===el.dataset.s&&m>=s[0]&&m<s[1])));
+  if(sun)return '<span class="dot off"></span><b>Dimanche :</b> ouverture à confirmer au 09 53 67 28 68.';
   const cur=S.find(s=>m>=s[0]&&m<s[1]);
-  if(cur){const left=cur[1]-m;return `<span class="dot"></span><b>Ouvert en ce moment.</b> Service du ${cur[2]} jusqu’à ${cur[3]}${left<=45?`, plus que ${left} min`:''}.`}
-  const next=m<720?'12h':m<1140?'19h':'demain 12h';return `<span class="dot off"></span><b>Fermé pour l’instant.</b> Prochain service à ${next}.`}
+  if(cur)return `<span class="dot"></span><b>Service du ${cur[2]} en cours</b>, jusqu’à ${cur[3]}.`;
+  const next=m<720?'12 h':m<1140?'19 h':'demain 12 h';return `<span class="dot off"></span><b>Hors service.</b> Prochain service à ${next}.`}
+console.assert(paris().m>=0&&paris().m<1440,'heure de Paris');
 const paint=()=>document.querySelectorAll('[data-now]').forEach(el=>el.innerHTML=status());paint();setInterval(paint,60000);
-
-// Préparer sa table
-const f=document.getElementById('resa'),out=document.getElementById('n'),date=document.getElementById('date'),recap=document.getElementById('recap'),mail=document.getElementById('mail');
-let n=2;
-f.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{n=Math.min(20,Math.max(1,n+ +b.dataset.d));upd()});
-f.addEventListener('change',upd);
-function dayLabel(){const v=f.jour.value;date.hidden=v!=='x';if(v==='0')return'aujourd’hui';if(v==='1')return'demain';if(!date.value)return'à la date de votre choix';return'le '+new Date(date.value+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'})}
-function upd(){out.textContent=n+' pers.';const d=dayLabel(),s=f.svc.value;const txt=`${n} personne${n>1?'s':''}, ${d}, ${s==='midi'?'au déjeuner':'au dîner'}`;
-  recap.innerHTML=txt.charAt(0).toUpperCase()+txt.slice(1)+'.'+(n>=8?'<small>Pour un groupe, un appel est plus sûr.</small>':'<small>Réservation conseillée. Vente à emporter possible sur demande.</small>');
-  mail.href='mailto:tradinoiparis@gmail.com?subject='+encodeURIComponent('Réservation '+d)+'&body='+encodeURIComponent(`Bonjour,\n\nJe souhaiterais réserver une table pour ${txt}.\n\nNom :\nTéléphone :\n\nMerci !`)}
-upd();
-// Auto-vérification minimale
-console.assert(typeof paris()==='number'&&paris()>=0&&paris()<1440,'heure de Paris invalide');
 </script>
 </body>
 </html>
