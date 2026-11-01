@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nicolas Ollivier, ostéopathe à Saint-Maur-des-Fossés</title>
+<meta name="description" content="Nicolas Ollivier, ostéopathe au 4 bis avenue Curti, La Varenne-Saint-Hilaire (Saint-Maur-des-Fossés). Nourrissons, femmes enceintes, sportifs, seniors. Cabinet et domicile. Rendez-vous sur Doctolib.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<!--
+  Système adapté du DESIGN.md « Cohere » (awesome-design) : toile blanche, pierre douce #eeece7,
+  bandes vert profond #003c33, corail #ff7759 réservé à l'action, boutons pilule, médias à coins 8px.
+  Direction taste-skill : « The sentence is the layout » (seed 274211180).
+-->
+<style>
+:root{
+  --bg:#ffffff; --surface:#eeece7; --surface-2:#e3e0d8; --field:#003c33; --field-ink:#f3f1ec; --field-soft:#b9cfc9;
+  --ink:#17171c; --muted:#4f4f5a; --accent:#ff7759; --accent-press:#f2603f; --focus:#4c6ee6;
+  --m:clamp(16px,2.6vw,40px); --gap:clamp(120px,14vw,200px);
+  --f:'Hanken Grotesk',system-ui,sans-serif;
+  --t-xl:clamp(48px,9.6vw,156px); --t-l:clamp(34px,4.6vw,72px); --t-m:clamp(22px,2.3vw,34px); --t-s:clamp(17px,1.25vw,19px); --t-xs:14px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font:400 var(--t-s)/1.55 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+::selection{background:var(--accent);color:var(--ink)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-weight:500;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+p{text-wrap:pretty}
+.wrap{padding-inline:var(--m)}
+.btn{display:inline-flex;align-items:center;gap:.6em;min-height:48px;padding:12px 24px;border-radius:999px;font:500 16px/1 var(--f);text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-accent{background:var(--accent);color:var(--ink)}
+.btn-accent:hover{background:var(--accent-press)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-light{background:var(--field-ink);color:var(--field)}
+.btn svg{width:18px;height:18px;flex:none}
+.lnk{font-weight:500}
+.lnk:hover{color:var(--field)}
+
+/* démo */
+.demo{background:var(--surface);color:var(--muted);font-size:13px;text-align:center;padding:6px var(--m)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--m)}
+.mark{font-weight:600;font-size:17px;letter-spacing:-.01em;text-decoration:none;line-height:1.15}
+.mark span{display:block;font-weight:400;color:var(--muted);font-size:14px;letter-spacing:0}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline}
+.nav .btn{min-height:42px;padding:10px 18px;font-size:15px}
+
+/* hero */
+.hero{min-height:calc(100svh - 112px);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(32px,6vh,80px) var(--m) clamp(32px,5vh,56px)}
+.hero h1{font-size:var(--t-xl)}
+.hero h1 .l1{display:flex;align-items:flex-end;gap:.16em}.hero h1 .l2{display:block}
+.hero h1 .l2{text-align:right}
+.frame{display:block;flex:1;min-width:2em;height:.86em;margin-bottom:.06em;border-radius:8px;overflow:hidden}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 64%;animation:drift 18s var(--ease) both}
+@keyframes drift{from{transform:scale(1.14)}to{transform:scale(1)}}
+.hero-foot{margin-top:clamp(36px,6vh,72px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end}
+.hero-foot p:not(.cap){max-width:46ch;font-size:clamp(18px,1.45vw,22px);line-height:1.45}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.cap{font-size:var(--t-xs);color:var(--muted);margin-top:14px}
+
+/* about */
+.about{padding-block:var(--gap) 0;display:grid;grid-template-columns:repeat(12,1fr);gap:0 24px}
+.facts{grid-column:1/3;list-style:none;font-size:var(--t-xs);line-height:1.4;display:grid;gap:18px;align-content:start;padding-top:.4em}
+.facts b{display:block;font-weight:600;color:var(--ink)}
+.facts li{color:var(--muted)}
+.bio{grid-column:3/13;font-size:var(--t-m);line-height:1.22;letter-spacing:-.01em}
+.bio p+p{margin-top:1.1em;color:var(--muted)}
+.bio .pic{float:left;width:3.66em;height:3.66em;margin:.12em .5em 0 0;border-radius:8px;object-fit:cover}
+.bio-name{font-size:var(--t-l);margin-bottom:.5em}
+.bio strong{font-weight:500}
+
+/* orientation (élément interactif) */
+.guide{margin-top:var(--gap);background:var(--surface);padding-block:clamp(64px,8vw,120px)}
+.guide-in{display:grid;grid-template-columns:repeat(12,1fr);gap:40px 24px}
+.guide-l{grid-column:1/6}
+.guide h2{font-size:var(--t-l)}
+.guide .lede{margin-top:20px;max-width:40ch}
+.picker{grid-column:7/13;grid-row:1/3}
+.chips{display:flex;flex-wrap:wrap;gap:10px;border:0}
+.chips legend{font-weight:600;margin-bottom:14px;font-size:var(--t-s)}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{display:inline-flex;align-items:center;min-height:46px;padding:10px 18px;border-radius:999px;background:var(--bg);cursor:pointer;font-weight:500;font-size:16px;transition:background-color .2s,color .2s,transform .2s var(--ease)}
+.chips label:hover{transform:translateY(-2px)}
+.chips input:checked+label{background:var(--field);color:var(--field-ink)}
+.chips input:focus-visible+label{outline:3px solid var(--focus);outline-offset:3px}
+.answer{margin-top:28px;background:var(--bg);border-radius:8px;padding:clamp(24px,3vw,36px);min-height:300px}
+.answer h3{font-size:clamp(26px,2.4vw,36px);letter-spacing:-.025em;line-height:1.08}
+.answer dl{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:12px 24px}
+.answer dt{font-weight:600}
+.answer dd{color:var(--ink)}
+.answer .actions{margin-top:26px}
+.answer.swap{animation:swap .45s var(--ease)}
+@keyframes swap{from{opacity:.2;transform:translateY(10px)}}
+.safety{grid-column:1/6;grid-row:2;align-self:end;font-size:16px;color:var(--muted);max-width:44ch}
+.safety strong{color:var(--ink)}
+
+/* rows */
+.who{padding-top:var(--gap)}
+.who-head{padding-left:35%;margin-bottom:clamp(80px,9vw,128px)}
+.who-head h2{font-size:var(--t-l);max-width:11em}
+.who-head p{margin-top:20px;max-width:44ch;color:var(--muted)}
+.row{display:grid;grid-template-columns:35% minmax(0,1fr) auto;gap:24px;align-items:start;margin-top:clamp(72px,9vw,120px)}
+.row:first-of-type{margin-top:0}
+.row>div{grid-column:2}
+.row h3{font-size:clamp(28px,3vw,48px);letter-spacing:-.03em;line-height:1.02}
+.row p{margin-top:16px;max-width:38ch}
+.row figure{grid-column:3}
+.row img{border-radius:8px;object-fit:cover}
+.r1 img{width:260px;aspect-ratio:4/5}
+.r2 img{width:340px;aspect-ratio:3/2}
+.r3 img{width:220px;aspect-ratio:1}
+.r4 img{width:300px;aspect-ratio:4/3}
+.row .side{grid-column:1;grid-row:1;font-size:var(--t-xs);color:var(--muted);padding-top:.9em}
+
+/* tarifs */
+.price{margin-top:var(--gap);background:var(--field);color:var(--field-ink);min-height:84svh;padding-block:clamp(72px,9vw,140px);display:flex;flex-direction:column;justify-content:space-between;gap:56px}
+.price h2{font-size:clamp(46px,8.4vw,136px);line-height:.98}
+.tag{display:inline-block;background:var(--accent);color:var(--ink);padding:0 .15em;border-radius:6px;line-height:.98}
+.price-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:32px 24px;align-items:end}
+.price-list{grid-column:1/8;list-style:none;display:grid;gap:14px;font-size:clamp(18px,1.5vw,22px)}
+.price-list li{display:flex;justify-content:space-between;gap:24px;padding-bottom:14px}
+.price-list li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:500}
+.price-note{grid-column:1/8;color:var(--field-soft);font-size:16px;max-width:56ch}
+.price .actions{grid-column:9/13;grid-row:1/3;justify-content:flex-end;align-self:end}
+
+/* accès */
+.acces{padding-top:var(--gap);display:grid;grid-template-columns:repeat(12,1fr);gap:40px 24px}
+.acces-text{grid-column:1/6}
+.acces h2{font-size:var(--t-l)}
+.addr{margin-top:24px;font-size:var(--t-m);line-height:1.2;letter-spacing:-.01em}
+.hours{margin-top:36px;width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours th{text-align:left;font-weight:500;padding:9px 0}
+.hours td{text-align:right;padding:9px 0}
+.hours tr:nth-child(odd){background:none}
+.hours tr+tr th,.hours tr+tr td{border-top:1px solid var(--surface-2)}
+.hours tr.closed td{color:var(--muted)}
+.acces ul{margin-top:28px;list-style:none;display:grid;gap:10px}
+.acces .actions{margin-top:32px}
+.map{grid-column:7/13}
+.map img{width:100%;aspect-ratio:16/11;object-fit:cover;object-position:30% 40%;border-radius:8px}
+.map figcaption,.pont figcaption{font-size:var(--t-xs);color:var(--muted);margin-top:10px}
+
+/* faq */
+.faq{padding-top:var(--gap);overflow-x:clip}
+.faq h2{font-size:clamp(40px,5.5vw,88px)}
+.faq-list{margin-top:72px;margin-left:33.33%}
+.faq details{border-radius:8px;transition:background-color .25s}
+.faq details+details{margin-top:12px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;align-items:center;font-size:clamp(19px,1.7vw,24px);font-weight:500;padding:14px 24px;margin-inline:-24px;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:11px;height:11px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px);transition:transform .3s var(--ease)}
+.faq details[open]{background:var(--surface);margin-inline:-24px;padding-inline:24px}
+.faq details[open] summary{margin-inline:-24px}
+.faq details[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+.faq details p{max-width:56ch;padding:0 0 22px}
+.pont{margin-top:var(--gap)}
+.pont .ph{overflow:hidden;border-radius:8px;aspect-ratio:21/8}
+.pont img{width:100%;height:100%;object-fit:cover;object-position:50% 48%;transform:scale(1.22)}
+
+/* contact */
+.contact{margin-top:var(--gap);background:var(--surface);color:var(--ink);min-height:86svh;display:flex;flex-direction:column;justify-content:space-between;padding-block:clamp(48px,6vw,88px) clamp(32px,4vw,56px)}
+.contact h2{font-size:clamp(22px,2vw,30px);letter-spacing:-.015em;line-height:1.2;max-width:24ch;font-weight:500}
+.mail{display:block;font-size:clamp(28px,5.6vw,92px);font-weight:400;letter-spacing:-.04em;line-height:1;text-decoration:none;word-break:break-word;transition:color .3s}
+.mail:hover{color:var(--field)}
+.mail .br{display:inline}
+.contact-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px 40px;font-size:16px;color:var(--muted)}
+.contact-foot a{color:var(--ink)}
+
+/* footer */
+.foot{background:var(--field);color:var(--field-ink);overflow:hidden;padding-top:clamp(64px,8vw,120px);position:relative}
+.foot-top{display:grid;grid-template-columns:repeat(12,1fr);gap:32px 24px}
+.foot h2{grid-column:1/8;font-size:clamp(40px,5vw,84px)}
+.foot .actions{grid-column:1/8;margin-top:-4px}
+.foot ul{grid-column:10/13;grid-row:1/3;list-style:none;display:grid;gap:10px;align-content:start;font-size:16px}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;font-size:13px;color:var(--field-soft);margin-top:clamp(64px,8vw,120px);padding-bottom:8px}
+.legal p{max-width:70ch}
+.legal a{color:var(--field-ink)}
+.big{font-size:clamp(120px,27vw,460px);font-weight:600;letter-spacing:-.06em;line-height:.8;white-space:nowrap;transform:translateY(22%);margin-left:-.04em;color:#0b4b41;user-select:none}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;transition:none}
+  .frame img{animation:none}
+  .btn,.chips label{transition:none}
+  .answer.swap{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* tablette */
+@media (max-width:1024px){
+  .nav ul{display:none}
+  .hero-foot{grid-template-columns:1fr}
+  .facts{grid-column:1/13;grid-row:2;grid-template-columns:repeat(3,1fr);margin-top:40px}
+  .bio{grid-column:1/13}
+  .guide-l,.safety{grid-column:1/13;grid-row:auto}
+  .picker{grid-column:1/13;grid-row:auto}
+  .who-head{padding-left:0}
+  .row{grid-template-columns:minmax(0,1fr) auto}
+  .row>div{grid-column:1}
+  .row figure{grid-column:2}
+  .row .side{display:none}
+  .price-list,.price-note{grid-column:1/13}
+  .price .actions{grid-column:1/13;grid-row:auto;justify-content:flex-start}
+  .acces-text,.map{grid-column:1/13}
+  .faq-list{margin-left:0}
+  .foot h2,.foot .actions,.foot ul{grid-column:1/13;grid-row:auto}
+}
+/* téléphone */
+@media (max-width:640px){
+  .nav{padding-block:10px}
+  .nav .btn{min-height:40px;padding:9px 14px;font-size:14px}
+  .hero{padding-top:28px}
+  .hero h1{font-size:13.4vw;line-height:1}
+  .frame{width:100%;flex:none;height:auto;aspect-ratio:4/3;margin:16px 0}
+  .hero h1 .l1{display:block}
+  .hero{min-height:0}
+  .hero-foot{margin-top:28px}
+  .hero-foot p:not(.cap){font-size:17px}
+  .actions .btn{flex:1 1 auto;justify-content:center}
+  .bio{font-size:22px;line-height:1.25}
+  .bio .pic{width:4.6em;height:4.6em}
+  .facts{grid-template-columns:1fr;gap:14px}
+  .answer{min-height:0}
+  .answer dl{grid-template-columns:1fr;gap:2px}
+  .answer dd{margin-bottom:12px}
+  .who-head{margin-bottom:56px}
+  .row{grid-template-columns:1fr;margin-top:64px}
+  .row>div,.row figure{grid-column:1}
+  .r1 img{width:100%}
+  .r2 img{width:72%;margin-left:auto}
+  .r3 img{width:58%}
+  .r4 img{width:100%}
+  .price h2{font-size:12.4vw}
+  .price-list li{flex-direction:column;gap:2px}
+  .faq h2{font-size:11vw}
+  .faq-list{margin-top:40px}
+  .faq summary{font-size:19px;padding:14px 16px;margin-inline:-16px}
+  .faq details[open]{margin-inline:-16px;padding-inline:16px}
+  .faq details[open] summary{margin-inline:-16px}
+  .pont .ph{aspect-ratio:4/3}
+  .pont img{transform:scale(1.3)}
+  .mail{font-size:8.4vw}
+  .mail .br{display:block}
+  .contact-foot{flex-direction:column;gap:12px}
+  .foot h2{font-size:11vw}
+  .big{font-size:36vw}
+}
+</style>
+</head>
+<body>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<header class="nav">
+  <a class="mark" href="#top">Nicolas Ollivier<span>Ostéopathe · Saint-Maur</span></a>
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#orienter">Pour quoi consulter</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#acces">Horaires et accès</a></li>
+      <li><a href="#questions">Questions</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-accent" href="https://www.doctolib.fr/osteopathe/saint-maur-des-fosses/nicolas-ollivier" target="_blank" rel="noopener">Rendez-vous</a>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <h1 id="h1"><span class="l1">Ostéopathe<span class="frame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Albert_marquet_bords_de_marne_la_varenne_102544%29.jpg/1280px-Albert_marquet_bords_de_marne_la_varenne_102544%29.jpg" alt="" width="1280" height="1025" fetchpriority="high"></span></span> <span class="l2">à La Varenne</span></h1>
+    <div class="hero-foot">
+      <div>
+        <p>Nicolas Ollivier reçoit nourrissons, enfants, femmes enceintes, sportifs et seniors au 4&nbsp;bis avenue Curti, à Saint-Maur-des-Fossés. Il consulte aussi à domicile.</p>
+        <p class="cap">Dans le cadre : Albert Marquet, <i>Bords de Marne, La Varenne</i>.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-accent" href="https://www.doctolib.fr/osteopathe/saint-maur-des-fosses/nicolas-ollivier" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Réserver sur Doctolib</a>
+        <a class="btn btn-ink" href="tel:+33630593466">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>06 30 59 34 66</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about wrap" aria-labelledby="h-about">
+    <ul class="facts rv">
+      <li><b>De plain-pied</b>Cabinet accessible aux personnes à mobilité réduite</li>
+      <li><b>Zone bleue</b>Places de stationnement dans la rue et alentour</li>
+      <li><b>RER A</b>Gare de La Varenne–Chennevières</li>
+    </ul>
+    <div class="bio rv">
+      <h2 id="h-about" class="bio-name">Nicolas Ollivier</h2>
+      <p><img class="pic" src="https://media.doctolib.com/image/upload/c_fill,g_face,w_480,h_480,q_auto:eco,f_auto/wf2ltrnkfelmgj0ivgpj.jpg" alt="Portrait de Nicolas Ollivier en blouse dans son cabinet" width="480" height="480" loading="lazy"><strong>Diplômé en 2016</strong>, il reçoit à La Varenne-Saint-Hilaire des patients de tous âges&nbsp;: nourrissons, femmes enceintes ou jeunes mamans, sportifs, seniors, personnes en situation de handicap.</p>
+      <p>Pour ceux qui ne peuvent pas ou ne souhaitent pas se déplacer, il consulte à domicile, à Saint-Maur et jusqu’à 25 minutes de voiture. Consultations en français et en anglais.</p>
+    </div>
+  </section>
+
+  <section class="guide" id="orienter" aria-labelledby="h-guide">
+    <div class="guide-in wrap">
+      <div class="guide-l">
+      <h2 id="h-guide" class="rv">Pour quoi consulter&nbsp;?</h2>
+      <p class="lede rv">Choisissez votre situation&nbsp;: vous saurez quel rendez-vous prendre, comment le réserver et quoi apporter.</p>
+      </div>
+      <div class="picker rv">
+        <fieldset class="chips">
+          <legend>Le rendez-vous concerne…</legend>
+          <input type="radio" name="who" id="w-bebe" value="bebe" checked><label for="w-bebe">Un nourrisson ou un enfant</label>
+          <input type="radio" name="who" id="w-grossesse" value="grossesse"><label for="w-grossesse">Une grossesse ou l’après-accouchement</label>
+          <input type="radio" name="who" id="w-sport" value="sport"><label for="w-sport">Un sportif</label>
+          <input type="radio" name="who" id="w-adulte" value="adulte"><label for="w-adulte">Un adulte ou un senior</label>
+          <input type="radio" name="who" id="w-drainage" value="drainage"><label for="w-drainage">Un drainage lymphatique</label>
+          <input type="radio" name="who" id="w-domicile" value="domicile"><label for="w-domicile">Une séance à domicile</label>
+        </fieldset>
+        <div class="answer" id="answer" aria-live="polite">
+          <h3>Consultation pédiatrique au cabinet</h3>
+          <dl>
+            <dt>Réserver</dt><dd>En ligne sur Doctolib, ou par téléphone.</dd>
+            <dt>Tarif</dt><dd>70 € la séance au cabinet.</dd>
+            <dt>Apporter</dt><dd>Le carnet de santé. Un parent ou tuteur légal accompagne l’enfant.</dd>
+            <dt>À savoir</dt><dd>Avant six mois, la réglementation demande une attestation du médecin indiquant l’absence de contre-indication.</dd>
+          </dl>
+          <div class="actions"><a class="btn btn-accent" href="https://www.doctolib.fr/osteopathe/saint-maur-des-fosses/nicolas-ollivier" target="_blank" rel="noopener">Réserver sur Doctolib</a></div>
+        </div>
+      </div>
+      <p class="safety rv"><strong>Cet outil oriente, il ne pose aucun diagnostic.</strong> L’ostéopathie ne se substitue pas à un traitement médical. Douleur intense ou inhabituelle, fièvre, chute ou choc récent&nbsp;: consultez d’abord votre médecin, ou appelez le 15 en cas d’urgence.</p>
+    </div>
+  </section>
+
+  <section class="who wrap" aria-labelledby="h-who">
+    <div class="who-head rv">
+      <div>
+        <h2 id="h-who">Un suivi à chaque âge de la vie</h2>
+        <p>Approches structurelle, tissulaire, crânienne et viscérale, adaptées à chaque patient et à son histoire.</p>
+      </div>
+    </div>
+
+    <article class="row r1 rv">
+      <span class="side">Ostéopathie de l’enfant</span>
+      <div>
+        <h3>Nourrissons et enfants</h3>
+        <p>Des gestes doux, à l’écoute du rythme de l’enfant, toujours en présence d’un parent. La séance s’adapte à l’âge, du nourrisson à l’adolescent.</p>
+      </div>
+      <figure><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=640&q=70&auto=format&fit=crop" alt="Pieds d’un nourrisson dans une couverture blanche" width="640" height="800" loading="lazy"></figure>
+    </article>
+
+    <article class="row r2 rv">
+      <span class="side">Ostéopathie prénatale</span>
+      <div>
+        <h3>Grossesse et retour de couches</h3>
+        <p>Un accompagnement pendant la grossesse et dans les semaines qui suivent l’accouchement, en complément du suivi par votre sage-femme ou votre médecin.</p>
+      </div>
+      <figure><img src="https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?w=800&q=70&auto=format&fit=crop" alt="Mains posées sur un ventre de femme enceinte" width="800" height="533" loading="lazy"></figure>
+    </article>
+
+    <article class="row r3 rv">
+      <span class="side">Ostéopathie du sportif</span>
+      <div>
+        <h3>Sportifs</h3>
+        <p>Course, sports collectifs ou de raquette, en loisir ou en compétition&nbsp;: un suivi pensé autour de votre pratique et de votre calendrier.</p>
+      </div>
+      <figure><img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=70&auto=format&fit=crop" alt="Coureur montant des marches en pierre" width="600" height="600" loading="lazy"></figure>
+    </article>
+
+    <article class="row r4 rv">
+      <span class="side">Structurelle et tissulaire</span>
+      <div>
+        <h3>Adultes et seniors</h3>
+        <p>Au cabinet ou à domicile, une séance qui tient compte de votre âge, de votre activité et de vos antécédents. Pensez à apporter vos examens récents.</p>
+      </div>
+      <figure><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=700&q=70&auto=format&fit=crop" alt="Deux mains jointes, l’une tenant le poignet de l’autre" width="700" height="525" loading="lazy"></figure>
+    </article>
+  </section>
+
+  <section class="price wrap" id="tarifs" aria-labelledby="h-price">
+    <h2 id="h-price" class="rv">Une séance au cabinet&nbsp;: <span class="tag">70&nbsp;€</span></h2>
+    <div class="price-grid rv">
+      <ul class="price-list">
+        <li><span>Consultation au cabinet</span><span>70 €</span></li>
+        <li><span>Consultation à domicile, selon la distance</span><span>75 à 85 €</span></li>
+        <li><span>Drainage lymphatique, selon les zones</span><span>70 à 100 €</span></li>
+      </ul>
+      <p class="price-note">Non remboursé par la Sécurité sociale. Une facture vous est remise pour votre mutuelle, qui prend souvent en charge une partie des séances. Règlement en espèces, par chèque ou par carte bancaire.</p>
+      <div class="actions"><a class="btn btn-accent" href="https://www.doctolib.fr/osteopathe/saint-maur-des-fosses/nicolas-ollivier" target="_blank" rel="noopener">Choisir un créneau</a></div>
+    </div>
+  </section>
+
+  <section class="acces wrap" id="acces" aria-labelledby="h-acces">
+    <div class="acces-text rv">
+      <h2 id="h-acces">Horaires et accès</h2>
+      <p class="addr">4 bis avenue Curti<br>94100 Saint-Maur-des-Fossés</p>
+      <table class="hours">
+        <caption class="cap" style="caption-side:bottom;text-align:left">Sur rendez-vous uniquement.</caption>
+        <tr><th scope="row">Lundi au samedi</th><td>9 h – 12 h · 13 h 30 – 19 h 30</td></tr>
+        <tr class="closed"><th scope="row">Dimanche</th><td>Fermé</td></tr>
+      </table>
+      <ul>
+        <li><b>RER A</b>&nbsp;: La Varenne–Chennevières</li>
+        <li><b>Bus</b>&nbsp;: arrêt Église de la Varenne</li>
+        <li><b>Voiture</b>&nbsp;: stationnement en zone bleue</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=4+bis+avenue+Curti+94100+Saint-Maur-des-Foss%C3%A9s" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+      </div>
+    </div>
+    <figure class="map rv">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Hameau_du_Mesnil%2C_sur_les_bords_de_la_Marne%2C_commune_de_La_Varenne-Saint-Maur..._Plan_g%C3%A9n%C3%A9ral_de_la_propri%C3%A9t%C3%A9_et_du_lotissement_-_dress%C3%A9_par_Frion_-_btv1b8443221z.jpg/1280px-thumbnail.jpg" alt="Plan ancien du lotissement du Hameau du Mesnil, dans la boucle de la Marne à La Varenne" width="1280" height="864" loading="lazy">
+      <figcaption>La Varenne dans la boucle de la Marne, plan de lotissement du XIXᵉ siècle (Frion, BnF).</figcaption>
+    </figure>
+  </section>
+
+  <section class="faq wrap" id="questions" aria-labelledby="h-faq">
+    <h2 id="h-faq" class="rv">Vos questions avant la séance</h2>
+    <div class="faq-list rv">
+      <details open><summary>Faut-il une ordonnance&nbsp;?</summary><p>Non, vous pouvez prendre rendez-vous directement. Pour un nourrisson de moins de six mois, prévoyez une attestation de votre médecin indiquant l’absence de contre-indication.</p></details>
+      <details><summary>La séance est-elle remboursée&nbsp;?</summary><p>La Sécurité sociale ne rembourse pas l’ostéopathie. Une facture vous est remise&nbsp;: beaucoup de mutuelles remboursent une partie des séances, vérifiez votre contrat.</p></details>
+      <details><summary>Comment réserver une séance à domicile&nbsp;?</summary><p>Uniquement par téléphone, au 06&nbsp;30&nbsp;59&nbsp;34&nbsp;66. Nicolas Ollivier se déplace dans Saint-Maur et jusqu’à 25 minutes de voiture.</p></details>
+      <details><summary>Le cabinet est-il accessible&nbsp;?</summary><p>Oui. Le cabinet est de plain-pied et répond aux normes d’accessibilité pour les personnes à mobilité réduite.</p></details>
+      <details><summary>Que faut-il apporter&nbsp;?</summary><p>Vos examens récents (radios, comptes rendus) s’il y en a, le carnet de santé pour un enfant, et une tenue dans laquelle vous êtes à l’aise.</p></details>
+      <details><summary>L’ostéopathie remplace-t-elle mon médecin&nbsp;?</summary><p>Non. L’ostéopathie ne se substitue pas à un traitement médical. Elle vient en complément du suivi par votre médecin, qui reste votre interlocuteur pour tout diagnostic.</p></details>
+    </div>
+    <figure class="pont rv">
+      <div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Pont_de_Chennevi%C3%A8res_sur_la_Marne%2C_PH19593.jpg/1280px-Pont_de_Chennevi%C3%A8res_sur_la_Marne%2C_PH19593.jpg" alt="Photographie ancienne du pont de Chennevières sur la Marne, vers 1867" width="1280" height="967" loading="lazy"></div>
+      <figcaption>Le pont de Chennevières sur la Marne, à deux pas de La Varenne. Photographie de Paul Marcellin Berthier, 1867-1868.</figcaption>
+    </figure>
+  </section>
+
+  <section class="contact wrap" aria-labelledby="h-contact">
+    <h2 id="h-contact">Une question avant de réserver&nbsp;? Écrivez-lui.</h2>
+    <a class="mail" href="mailto:nollivier.osteopathe@gmail.com?subject=Question%20avant%20un%20rendez-vous">nollivier.osteopathe@<span class="br"></span>gmail.com</a>
+    <div class="contact-foot">
+      <span><a href="tel:+33630593466">06 30 59 34 66</a> · 4 bis avenue Curti, Saint-Maur-des-Fossés</span>
+      <a href="https://www.doctolib.fr/osteopathe/saint-maur-des-fosses/nicolas-ollivier" target="_blank" rel="noopener">Profil Doctolib</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <h2>Réservez votre séance</h2>
+      <div class="actions"><a class="btn btn-light" href="https://www.doctolib.fr/osteopathe/saint-maur-des-fosses/nicolas-ollivier" target="_blank" rel="noopener">Réserver sur Doctolib</a></div>
+      <ul>
+        <li><a href="tel:+33630593466">06 30 59 34 66</a></li>
+        <li><a href="mailto:nollivier.osteopathe@gmail.com">Écrire un e-mail</a></li>
+        <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=4+bis+avenue+Curti+94100+Saint-Maur-des-Foss%C3%A9s" target="_blank" rel="noopener">Itinéraire</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <p>L’ostéopathie ne se substitue pas à un traitement médical. Images&nbsp;: Albert Marquet, <i>Bords de Marne, La Varenne</i> (domaine public)&nbsp;; plan Frion, BnF (domaine public)&nbsp;; P.&nbsp;M.&nbsp;Berthier, <i>Pont de Chennevières</i> (CC0), via Wikimedia Commons&nbsp;; photos Unsplash&nbsp;; portrait&nbsp;: profil Doctolib.</p>
+      <p>Démo réalisée par Raul Hatos — site non officiel</p>
+    </div>
+  </div>
+  <div class="big" aria-hidden="true">Ollivier</div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var D='https://www.doctolib.fr/osteopathe/saint-maur-des-fosses/nicolas-ollivier';
+  var T='tel:+33630593466';
+  var data={
+    bebe:{t:'Consultation pédiatrique au cabinet',r:'En ligne sur Doctolib, ou par téléphone.',p:'70 € la séance au cabinet.',a:'Le carnet de santé. Un parent ou tuteur légal accompagne l’enfant.',k:'Avant six mois, la réglementation demande une attestation du médecin indiquant l’absence de contre-indication.'},
+    grossesse:{t:'Consultation pendant la grossesse ou après l’accouchement',r:'En ligne sur Doctolib, ou par téléphone.',p:'70 € la séance au cabinet.',a:'Vos derniers comptes rendus de suivi, si vous les avez.',k:'Signalez votre terme ou la date de l’accouchement à la prise de rendez-vous. Votre sage-femme ou votre médecin reste votre référent.'},
+    sport:{t:'Consultation du sportif',r:'En ligne sur Doctolib, ou par téléphone.',p:'70 € la séance au cabinet.',a:'Une tenue souple, vos examens récents s’il y en a.',k:'Précisez votre sport et vos prochaines échéances&nbsp;: la séance se cale sur votre calendrier.'},
+    adulte:{t:'Consultation adulte ou senior',r:'En ligne sur Doctolib, ou par téléphone.',p:'70 € la séance au cabinet.',a:'Vos examens récents (radios, comptes rendus) et la liste de vos traitements.',k:'Le cabinet est de plain-pied et accessible aux personnes à mobilité réduite.'},
+    drainage:{t:'Consultation à visée de drainage lymphatique',r:'En ligne sur Doctolib, ou par téléphone.',p:'70 € (ventre et membres inférieurs, ou ventre et membres supérieurs), 100 € (corps entier).',a:'Une tenue confortable.',k:'Précisez la zone souhaitée lors de la réservation.'},
+    domicile:{t:'Séance à domicile',r:'Uniquement par téléphone.',p:'75 à 85 € selon la distance.',a:'Un espace calme où vous allonger.',k:'Déplacement dans Saint-Maur et jusqu’à 25 minutes de voiture.',tel:true}
+  };
+  var box=document.getElementById('answer');
+  function render(k){
+    var d=data[k];
+    var btn=d.tel?'<a class="btn btn-accent" href="'+T+'">Appeler le 06 30 59 34 66</a>':'<a class="btn btn-accent" href="'+D+'" target="_blank" rel="noopener">Réserver sur Doctolib</a><a class="btn btn-ink" href="'+T+'">Appeler</a>';
+    box.innerHTML='<h3>'+d.t+'</h3><dl><dt>Réserver</dt><dd>'+d.r+'</dd><dt>Tarif</dt><dd>'+d.p+'</dd><dt>Apporter</dt><dd>'+d.a+'</dd><dt>À savoir</dt><dd>'+d.k+'</dd></dl><div class="actions">'+btn+'</div>';
+    box.classList.remove('swap');void box.offsetWidth;box.classList.add('swap');
+  }
+  document.querySelectorAll('input[name=who]').forEach(function(i){i.addEventListener('change',function(){render(i.value)})});
+  render('bebe');
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
