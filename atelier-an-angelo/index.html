@@ -4,389 +4,547 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Atelier An'Angelo · Coiffeur coloriste, Paris 13e</title>
-<meta name="description" content="Atelier An'Angelo, salon de coiffure au 1 rue Edmond-Gondinet, Paris 13e. Coupe, couleur, blond polaire, balayage, chignon. 5,0 sur 750 avis Treatwell.">
+<title>Atelier An'Angelo · Coloriste à Paris 13e</title>
+<meta name="description" content="Atelier An'Angelo, 1 rue Edmond-Gondinet, Paris 13e. Ariane, coloriste et coiffeuse visagiste : coloration dès 126 €, balayage dès 146 €, blond polaire dès 179 €. 5,0 sur 808 avis Treatwell.">
+<meta property="og:title" content="Atelier An'Angelo · Coloriste à Paris 13e">
+<meta property="og:description" content="Coloration, balayage, blond polaire. 1 rue Edmond-Gondinet, métro Corvisart. Réservation sur Treatwell.">
+<meta property="og:image" content="https://cdn1.treatwell.net/images/view/v2.i17656311.w1080.h720.xEA13A981/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2337e6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232337e6'/%3E%3Crect x='4' y='4' width='6' height='24' fill='%233d2b22'/%3E%3Crect x='13' y='4' width='6' height='24' fill='%23ad8458'/%3E%3Crect x='22' y='4' width='6' height='24' fill='%23f1e4c8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn1.treatwell.net">
+<link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HairSalon","name":"Atelier An'Angelo","telephone":"+33669336113","address":{"@type":"PostalAddress","streetAddress":"1 rue Edmond-Gondinet","postalCode":"75013","addressLocality":"Paris","addressCountry":"FR"},"openingHours":["Tu 09:00-19:00","We 09:00-13:00","Th 10:00-20:00","Fr 09:00-19:00","Sa 09:00-19:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"808"}}
+</script>
 <style>
 :root{
-  --bg:#dedad3;
-  --surface:#d3cec6;
-  --paper:#f2efea;
-  --ink:#0a0a0a;
-  --muted:#4f4b45;
-  --accent:#256f82;
-  --accent-press:#1b5868;
-  --accent-ink:#fff;
-  --m:clamp(16px,2vw,28px);
-  --step-small:clamp(.875rem,.84rem + .1vw,.9375rem);
+  --bg:#ffffff;
+  --surface:#f1f0ec;
+  --ink:#0d0d0f;
+  --muted:#55554f;
+  --blue:#2337e6;
+  --blue-press:#1a2bc0;
+  --blue-ink:#ffffff;
+  --copper:#ff5a36;
+  --copper-2:#f24b27;
+  --copper-ink:#0d0d0f;
+  --black:#0d0d0f;
+  --black-ink:#ffffff;
+  --black-soft:#c9c8c2;
+  /* hauteurs de ton 1 à 10 */
+  --t1:#1b1715;--t2:#2b201b;--t3:#3d2b22;--t4:#553a2b;--t5:#6e4c35;
+  --t6:#8c6644;--t7:#ad8458;--t8:#c9a678;--t9:#e0c79e;--t10:#f1e6cf;
+  --m:clamp(16px,2.2vw,32px);
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
   --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
   --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --step-head:clamp(2.5rem,1.2rem + 5vw,5.5rem);
-  --step-name:clamp(3.4rem,9vw,8.75rem);
+  --step-head:clamp(2.75rem,1.6rem + 4.6vw,5.5rem);
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.45 "Chivo",system-ui,sans-serif;letter-spacing:-.01em}
+html{-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scrollbar-color:var(--blue) var(--surface)}
+body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.5 "Work Sans",system-ui,sans-serif}
 img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
-::selection{background:var(--accent);color:#fff}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-html{scrollbar-color:var(--ink) var(--bg)}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+::selection{background:var(--blue);color:#fff}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.hero :focus-visible,.foot :focus-visible,.result :focus-visible{outline-color:#fff}
 .num{font-variant-numeric:tabular-nums}
-h1,h2,h3{font-weight:900;text-transform:uppercase;letter-spacing:-.05em;line-height:.88;text-wrap:balance}
+h1,h2,h3,.disp{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.01em;line-height:.88;text-wrap:balance}
 h2{font-size:var(--step-head)}
+.wrap{padding-left:var(--m);padding-right:var(--m)}
+.skip{position:absolute;left:var(--m);top:-60px;z-index:10;background:#fff;color:var(--blue);padding:12px 16px;font-weight:600}
+.skip:focus{top:8px}
+a,button,label{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* bandeau démo */
-.demo{background:var(--ink);color:var(--bg);font-size:var(--step-small);text-align:center;padding:8px var(--m)}
+.demo{background:var(--black);color:#fff;font-size:var(--step-small);text-align:center;padding:7px var(--m)}
 
-/* boutons : carrés, une couleur */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;font:700 1rem/1 "Chivo",sans-serif;text-decoration:none;border:2px solid transparent;transition:background .2s,color .2s,transform .2s var(--ease);white-space:nowrap}
-.btn:active{transform:scale(.97)}
-.btn-main{background:var(--accent);color:var(--accent-ink)}
-.btn-main:hover{background:var(--accent-press)}
-.btn-line{border-color:var(--ink);color:var(--ink)}
-.btn-line:hover{background:var(--ink);color:var(--bg)}
-.btn svg{width:18px;height:18px;flex:none}
-.arrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;text-decoration:none}
-.arrow:hover{text-decoration:underline}
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;font:600 1.0625rem/1 "Work Sans",sans-serif;text-decoration:none;border:2px solid transparent;transition-property:background-color,color,transform;transition-duration:.2s;transition-timing-function:ease-out;white-space:nowrap;cursor:pointer}
+.btn:active{transform:scale(.96)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-white:hover{background:var(--t10);color:var(--blue-press)}
+.btn-line{border-color:#fff;color:#fff}
+.btn-line:hover{background:#fff;color:var(--blue)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-press)}
 
-/* nav */
-.nav{position:sticky;top:0;z-index:30;background:var(--bg)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 var(--m)}
-.mark{font-weight:900;text-transform:uppercase;letter-spacing:-.04em;text-decoration:none;font-size:1.125rem}
-.nav ul{display:none;list-style:none;gap:28px;font-weight:700;font-size:var(--step-small)}
-.nav ul a{text-decoration:none}
+/* ===== hero ===== */
+.hero{background:var(--blue);color:var(--blue-ink);position:relative;overflow:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.mark{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:1.375rem;letter-spacing:.005em;text-decoration:none}
+.nav ul{display:none;list-style:none;gap:28px;font-weight:600;font-size:var(--step-small)}
+.nav ul a{text-decoration:none;padding:12px 0}
 .nav ul a:hover{text-decoration:underline}
 .nav .btn{min-height:44px;padding:0 18px;font-size:.9375rem}
+.hero-grid{display:grid;gap:28px;padding-top:20px;padding-bottom:36px;position:relative;z-index:2}
+.hero h1{font-size:clamp(3.6rem,15.5vw,10.5rem);line-height:.86}
+.hero h1 span{display:block}
+.lede{font-size:var(--step-lead);line-height:1.32;max-width:38ch;margin-top:20px}
+.offer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:24px;max-width:640px}
+.offer div{background:var(--blue-press);padding:14px 12px 12px}
+.offer b{display:block;font:400 clamp(1.9rem,1.3rem + 2.4vw,3.25rem)/1 "Anton",sans-serif;white-space:nowrap}
+.offer b small{font:600 .9375rem/1 "Work Sans",sans-serif;margin-right:4px}
+.offer span{display:block;margin-top:6px;font-size:var(--step-small);line-height:1.25}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+@media (max-width:639px){.cta .btn{flex:1 1 100%}}
+.rating{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:var(--step-small);font-weight:600}
+.rating .stars{display:flex;gap:2px}
+.rating svg{width:16px;height:16px}
+.rating .live{display:inline-flex;align-items:center;gap:8px;font-weight:400}
+.rating .live i{width:9px;height:9px;border-radius:50%;background:#fff;opacity:.55}
+.rating .live.yes i{background:#7dffa8;opacity:1}
 
-/* hero : le nom coupé en deux coins */
-.hero{position:relative}
-.pin{position:relative;z-index:2;padding:20px var(--m) 0;pointer-events:none}
-.pin h1{font-size:var(--step-name)}
-.pin .w1,.pin .w2{display:block}
-.pin .w2{text-align:right}
-.stage{display:grid;gap:0}
-.first{display:grid}
-.first-photo{order:-1;height:56svh;min-height:320px;overflow:hidden;background:var(--surface)}
-.first-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-.first-text{padding:28px var(--m) 8px}
-.lead{font-size:var(--step-lead);line-height:1.3;max-width:30ch;letter-spacing:-.02em}
-.rating{margin-top:18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:var(--step-small)}
-.stars{display:flex;gap:2px;color:var(--ink)}
-.stars svg{width:15px;height:15px}
-.actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.panel{padding:56px var(--m) 0}
-.panel figure{margin:0 auto;width:min(100%,520px)}
-.panel img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--surface)}
-.panel figcaption{margin-top:14px;display:flex;justify-content:space-between;gap:16px;font-size:var(--step-body)}
-.panel figcaption b{font-weight:700}
-.panel figcaption span{color:var(--muted);white-space:nowrap}
+.scraps{position:relative;height:96vw;max-height:520px;margin:0 calc(-1 * var(--m)) -60px}
+.scrap{position:absolute;margin:0;background:var(--blue-press)}
+.scrap img{width:100%;height:100%;object-fit:cover}
+.scrap figcaption{position:absolute;left:0;bottom:-30px;font-size:var(--step-small);font-weight:600;white-space:nowrap}
+.s1{right:-4%;top:6%;width:66%;aspect-ratio:3/4;transform:rotate(5deg);border-radius:999px 999px 0 0;overflow:hidden}
+.s1 figcaption{display:none}
+.s2{left:var(--m);top:0;width:40%;aspect-ratio:4/5;transform:rotate(-4deg)}
 
-/* prestations */
-.svc{padding:120px var(--m) 0}
-.svc-grid{display:grid;gap:28px}
-.svc-photo{position:sticky;top:64px;z-index:1;height:34svh;overflow:hidden;background:var(--surface)}
-.svc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease}
-.svc-photo img.on{opacity:1}
-.svc h2{margin-bottom:32px}
+/* la règle des tons : la couture du hero */
+.ruler{display:grid;grid-template-columns:repeat(10,1fr);position:relative;z-index:3}
+.ruler li{list-style:none;min-height:76px;padding:10px 4px;text-align:center;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.ruler li:nth-child(n+7){color:var(--ink)}
+.ruler b{font-weight:600;font-size:var(--step-lead);line-height:1}
+.ruler span{display:none;font-size:var(--step-small);line-height:1.2;margin-top:4px;min-height:2.4em}
+.ruler li:nth-child(1){background:var(--t1)}.ruler li:nth-child(2){background:var(--t2)}.ruler li:nth-child(3){background:var(--t3)}.ruler li:nth-child(4){background:var(--t4)}.ruler li:nth-child(5){background:var(--t5)}.ruler li:nth-child(6){background:var(--t6)}.ruler li:nth-child(7){background:var(--t7)}.ruler li:nth-child(8){background:var(--t8)}.ruler li:nth-child(9){background:var(--t9)}.ruler li:nth-child(10){background:var(--t10)}
+
+/* ===== outil : du ton au ton ===== */
+.tone{padding-top:120px;padding-bottom:40px}
+.tone-head{display:grid;gap:18px;margin-bottom:40px}
+.tone-head p{max-width:46ch}
+.tone-grid{display:grid;gap:36px}
+fieldset{border:0;min-width:0}
+legend{font-weight:600;font-size:var(--step-lead);margin-bottom:12px}
+.chips{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.chips label{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:84px;padding:9px 9px 8px;cursor:pointer;color:#fff;transition-property:transform;transition-duration:.25s;transition-timing-function:var(--ease)}
+.chips label:hover{transform:translateY(-3px)}
+.chips label:nth-child(n+7){color:var(--ink)}
+.chips input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chips b{font-weight:600;font-size:var(--step-lead);line-height:1}
+.chips span{font-size:.875rem;line-height:1.15}
+.chips label:has(input:checked){outline:4px solid var(--blue);outline-offset:-4px;transform:translateY(-6px)}
+.chips label:has(input:checked)::after{content:"";position:absolute;right:8px;top:9px;width:16px;height:16px;border-radius:50%;background:var(--blue);border:3px solid #fff}
+.chips label:has(input:focus-visible){outline:4px solid var(--blue);outline-offset:2px}
+.chips label:nth-child(1){background:var(--t1)}.chips label:nth-child(2){background:var(--t2)}.chips label:nth-child(3){background:var(--t3)}.chips label:nth-child(4){background:var(--t4)}.chips label:nth-child(5){background:var(--t5)}.chips label:nth-child(6){background:var(--t6)}.chips label:nth-child(7){background:var(--t7)}.chips label:nth-child(8){background:var(--t8)}.chips label:nth-child(9){background:var(--t9)}.chips label:nth-child(10){background:var(--t10)}
+.result{background:var(--blue);color:#fff;padding:clamp(22px,3vw,40px);display:grid;gap:14px;align-content:start}
+.result .gap{font-size:var(--step-small);font-weight:600}
+.result h3{font-size:clamp(2.25rem,1.6rem + 2.6vw,4rem)}
+.result .price{font:400 clamp(2.5rem,1.8rem + 3vw,4.75rem)/1 "Anton",sans-serif}
+.result .price small{font:600 1rem/1 "Work Sans",sans-serif;margin-right:6px}
+.result p{max-width:44ch}
+.result .meta{font-size:var(--step-small)}
+.result .btn{justify-self:start;margin-top:6px}
+.swatch{display:flex;height:22px}
+.swatch i{flex:1;transition-property:opacity;transition-duration:.3s}
+
+/* ===== spécimens ===== */
+.spec{padding-top:140px}
+.spec-grid{display:grid;gap:28px}
+.spec-intro p{margin-top:16px;max-width:30ch}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px 8px}
+.tile{margin:0}
+.tile .pad{aspect-ratio:4/5;padding:11%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tile.wide{grid-column:1/-1}
+.tile.wide .pad{aspect-ratio:8/5;padding:6%}
+.tile img{width:100%;height:100%;object-fit:cover;transition-property:transform;transition-duration:.6s;transition-timing-function:var(--ease)}
+.tile:hover img{transform:scale(1.04)}
+.tile figcaption{padding-top:10px}
+.tile figcaption b{display:block;font-weight:600;font-size:1.0625rem}
+.tile figcaption span{display:block;font-size:var(--step-small);color:var(--muted);line-height:1.35;margin-top:2px}
+.f-blue{background:var(--blue)}.f-copper{background:var(--copper)}.f-black{background:var(--black)}.f-t9{background:var(--t9)}
+
+/* ===== carte ===== */
+.carte{margin-top:140px;background:var(--black);color:var(--black-ink);padding-top:110px;padding-bottom:120px}
+.carte-head{display:grid;gap:18px;margin-bottom:48px}
+.carte-head p{max-width:52ch;color:var(--black-soft)}
+.carte table{width:100%;border-collapse:collapse;font-size:clamp(1.0625rem,.9rem + .7vw,1.5rem);line-height:1.25}
+.carte tbody th{position:sticky;top:0;z-index:1;background:var(--black);text-align:left;padding:56px 0 14px;font:400 clamp(1.5rem,1.1rem + 1.4vw,2.25rem)/1 "Anton",sans-serif;text-transform:uppercase;color:var(--copper)}
+.carte tbody tr:first-child th{padding-top:8px}
+.carte td{padding:9px 0;vertical-align:baseline}
+.carte td.d{color:var(--black-soft);white-space:nowrap;padding-left:24px;font-size:.8em}
+.carte td.p{text-align:right;white-space:nowrap;padding-left:24px}
+.carte .note{margin-top:36px;color:var(--black-soft);font-size:var(--step-small);max-width:60ch}
+.carte .btn{margin-top:28px}
+
+/* ===== portrait en mots ===== */
+.about{padding-top:150px;padding-bottom:150px}
+.about h2{margin-bottom:36px}
+.about-text{font-size:clamp(1.25rem,1rem + 1vw,2rem);line-height:1.3;color:var(--muted)}
+.about-text strong{color:var(--ink);font-weight:600}
+.hl{color:var(--ink);padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl.b{background:#cfd5ff}.hl.c{background:#ffcfc2}.hl.g{background:var(--t9)}
+.about-text a.hl{display:inline-block;margin-top:24px;background:var(--blue);color:#fff;text-decoration:none;padding:6px .3em;font-weight:600}
+.about-text a.hl:hover{background:var(--blue-press)}
+.awards{display:inline-block;margin-top:40px;background:var(--surface);padding:12px 16px;font-weight:600;font-size:var(--step-small)}
+
+/* ===== venir ===== */
+.visit{background:var(--copper);color:var(--copper-ink)}
+.visit h2{padding-top:110px;padding-bottom:28px}
 .rows{list-style:none}
-.row{background:var(--surface);margin-bottom:6px}
-.row button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;width:100%;min-height:58px;padding:16px 18px;cursor:pointer;font-size:clamp(1.125rem,1rem + .6vw,1.5rem);font-weight:700;letter-spacing:-.025em;line-height:1.15}
-.row button:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
-.row .p{font-size:var(--step-body);font-weight:400;color:var(--muted);white-space:nowrap}
-.row .d{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}
-.row .d>div{overflow:hidden}
-.row .d p{padding:0 18px 18px;max-width:46ch;font-size:var(--step-body);color:var(--ink)}
-.row.on{background:var(--ink);color:var(--bg)}
-.row.on .p{color:var(--bg)}
-.row.on .d{grid-template-rows:1fr}
-.row.on .d p{color:var(--bg)}
-.svc-note{margin-top:20px;font-size:var(--step-small);color:var(--muted);max-width:60ch}
+.rows a,.rows div{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;min-height:clamp(84px,9vw,150px);padding:0 var(--m) clamp(12px,1.4vw,22px);font:400 clamp(2rem,1.2rem + 3.6vw,5.25rem)/1 "Anton",sans-serif;text-transform:uppercase;text-decoration:none}
+.rows li:nth-child(odd)>*{background:var(--copper-2)}
+.rows a:hover{background:var(--black);color:#fff}
+.rows .go{transition-property:transform;transition-duration:.25s;transition-timing-function:var(--ease);}
+.rows a:hover .go{transform:translateX(6px);background:#fff;color:var(--ink)}
+.rows .go{display:inline-flex;align-items:center;justify-content:center;width:.9em;height:.9em;border-radius:50%;background:var(--black);color:#fff;flex:none}
+.rows .go svg{width:42%;height:42%}
+.rows .round{width:clamp(64px,7vw,120px);aspect-ratio:1;border-radius:50%;overflow:hidden;flex:none;align-self:center}
+.rows .round img{width:100%;height:100%;object-fit:cover}
+.hours{display:grid;gap:30px;padding:56px var(--m) 110px}
+.hours table{border-collapse:collapse;width:100%;max-width:520px;font-size:var(--step-lead)}
+.hours td{padding:6px 0}
+.hours td+td{text-align:right}
+.hours tr.today td{font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.25em}
+.hours tr.off td{opacity:.75}
+.status{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:var(--step-lead)}
+.status i{width:12px;height:12px;border-radius:50%;background:var(--ink)}
+.status.yes i{background:#0b7a3b;border:3px solid #fff;width:16px;height:16px}
+.hours p{max-width:40ch;margin-top:12px}
 
-/* la règle des longueurs */
-.ruler{padding:140px var(--m) 0}
-.ruler-grid{display:grid;gap:36px}
-.ruler h2{margin-bottom:20px}
-.ruler .intro{max-width:44ch}
-.lengths{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:28px}
-.lengths button{all:unset;box-sizing:border-box;text-align:center;min-height:52px;padding:10px 4px;background:var(--surface);font-weight:700;font-size:var(--step-small);cursor:pointer;transition:background .2s,color .2s}
-.lengths button:hover{background:#c6c0b6}
-.lengths button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
-.lengths button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.figure{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:clamp(20px,4vw,56px);align-items:start;background:var(--paper);padding:clamp(20px,3vw,40px)}
-.head svg{width:100%;height:auto;display:block}
-.hair{transition:d .6s var(--ease)}
-.tiers{display:grid;gap:22px}
-.tier .t{font-size:var(--step-small);font-weight:700}
-.tier .v{font-size:clamp(2.2rem,1.4rem + 3vw,4.75rem);font-weight:900;letter-spacing:-.05em;line-height:.95}
-.tier .s{font-size:var(--step-small);color:var(--muted)}
-.where{font-size:var(--step-small);color:var(--muted)}
+/* ===== pied ===== */
+.foot{background:var(--blue);color:#fff;min-height:90svh;display:flex;flex-direction:column;padding-top:40px;padding-bottom:28px}
+.foot-top{display:grid;gap:16px;font-size:var(--step-small)}
+.foot-top .mark{font-size:1.25rem}
+.foot-top a{text-decoration:none;font-weight:600}
+.foot-big{margin-top:auto;padding-top:22vh}
+.foot-big .ask{position:relative;z-index:1;font-size:var(--step-lead);font-family:"Work Sans",sans-serif;text-transform:none;font-weight:600;line-height:1.2;margin-bottom:12px}
+.foot-big a{display:block;font:400 clamp(3.4rem,15.5vw,13.5rem)/.9 "Anton",sans-serif;text-decoration:none;white-space:nowrap}
+.foot-big a:hover{text-decoration:underline;text-decoration-thickness:6px}
+.foot-meta{display:grid;gap:6px;margin-top:32px;font-size:var(--step-small)}
+.foot-meta a{font-weight:600}
 
-/* bande noire : la note */
-.proof{margin-top:160px;background:var(--ink);color:var(--bg);padding:96px var(--m)}
-.proof-grid{display:grid;gap:40px}
-.proof .big{font-size:clamp(5rem,3rem + 12vw,13rem);font-weight:900;letter-spacing:-.06em;line-height:.8}
-.proof h2{font-size:clamp(2rem,1rem + 3.4vw,3.75rem)}
-.proof p{max-width:52ch;margin-top:20px}
-.proof ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.proof li{background:#26241f;padding:8px 12px;font-size:var(--step-small);font-weight:700}
-
-/* venir */
-.visit{position:relative}
-.visit-photo{height:70svh;overflow:hidden;background:var(--surface)}
-.visit-photo img{width:100%;height:100%;object-fit:cover}
-.card{position:relative;margin:-80px var(--m) 0;background:var(--paper);padding:28px 24px 0;z-index:2}
-.card h2{font-size:clamp(2rem,1.4rem + 2vw,2.75rem);margin-bottom:18px}
-.card address{font-style:normal;line-height:1.35}
-.open{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:var(--step-small)}
-.open i{width:10px;height:10px;border-radius:50%;background:var(--muted)}
-.open.yes i{background:#1f8a4c}
-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:var(--step-body)}
-td{padding:7px 0}
-td+td{text-align:right;font-variant-numeric:tabular-nums}
-tr.today td{font-weight:700}
-tr.off td{color:var(--muted)}
-.card .links{display:grid;gap:10px;margin:22px 0 24px}
-.card .btn-main{width:calc(100% + 48px);margin:0 -24px;min-height:56px}
-
-/* pied */
-.foot{padding:20svh var(--m) 28px;display:grid;gap:8px;font-size:var(--step-small);color:var(--muted)}
-.foot nav{display:flex;flex-wrap:wrap;gap:8px 24px}
-.foot a{color:var(--ink)}
-
-/* entrées */
-.rise{opacity:1;transform:none}
-.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+/* ===== mouvement ===== */
+.js .rise{opacity:0;transform:translateY(24px);transition-property:opacity,transform;transition-duration:.8s;transition-timing-function:var(--ease)}
 .js .rise.in{opacity:1;transform:none}
-.drift{animation:drift 22s ease-in-out infinite alternate}
-@keyframes drift{to{transform:scale(1.07)}}
+.js .shutter{clip-path:inset(0 0 100% 0);transition-property:clip-path;transition-duration:1.2s;transition-timing-function:cubic-bezier(.65,0,.35,1)}
+.js .shutter img{transform:scale(1.12);transition-property:transform;transition-duration:1.6s;transition-timing-function:var(--ease)}
+.js .shutter.in{clip-path:inset(0 0 0 0)}
+.js .shutter.in img{transform:none}
+.js .ruler li{transform:scaleY(0);transform-origin:bottom;transition-property:transform;transition-duration:.7s;transition-timing-function:var(--ease)}
+.js .ruler.in li{transform:none}
+.drift{animation:drift 24s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.08) translateX(-2%)}}
 
-@media (min-width:900px){
+@media (min-width:640px){
+  .ruler span{display:block}
+  .ruler li{text-align:left;padding:12px 12px 12px var(--m)}
+  .chips{grid-template-columns:repeat(10,1fr)}
+  .chips label{min-height:118px}
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .tile.wide{grid-column:span 2}
+  .foot-meta{grid-template-columns:1fr auto 1fr}
+  .foot-meta .c{text-align:center}.foot-meta .r{text-align:right}
+}
+@media (min-width:1000px){
   .nav ul{display:flex}
-  .hero{height:330svh}
-  .pin{position:sticky;top:64px;height:calc(100svh - 64px);padding:24px var(--m) 28px;display:flex}
-  .pin h1{display:flex;flex-direction:column;justify-content:space-between;width:100%}
-  .stage{position:absolute;inset:0;top:0}
-  .first{height:calc(100svh - 64px);grid-template-columns:repeat(12,1fr)}
-  .first-text{grid-column:1/9;align-self:center;padding:0 0 0 calc(var(--m) + 12.5%);margin-top:-2vh}
-  .lead{max-width:24ch;font-size:clamp(1.75rem,1rem + 1.4vw,2.25rem)}
-  .first-photo{order:0;grid-column:9/13;height:calc(100% - min(9vw,8.75rem) - 56px);min-height:0}
-  .panel{height:100svh;display:flex;align-items:center;justify-content:center;padding:0}
-  .panel figure{width:auto}
-  .panel img{height:calc(100svh - 2 * min(9vw,8.75rem) - 150px);width:auto}
-  .panel:nth-child(2){justify-content:flex-start;align-items:flex-end;padding:0 0 7vh 16vw}
-  .panel:nth-child(3){justify-content:flex-end;align-items:flex-start;padding:22vh 12vw 0 0}
-  .panel:nth-child(3) figcaption{order:-1;margin:0 0 14px}
-  .panel:nth-child(3) figure{display:flex;flex-direction:column}
-  .panel:nth-child(n+2) figure{margin:0}
-  .svc{padding-top:200px}
-  .svc-grid{grid-template-columns:repeat(12,1fr);gap:0 24px;align-items:start}
-  .svc-photo{grid-column:1/6;top:14vh;height:auto;aspect-ratio:4/5}
-  .svc-list{grid-column:7/13}
-  .ruler{padding-top:220px}
-  .ruler-grid{grid-template-columns:5fr 7fr;gap:0 64px;align-items:center}
-  .tiers{grid-template-columns:1fr 1fr}
-  .proof{margin-top:220px;padding:140px var(--m)}
-  .proof-grid{grid-template-columns:5fr 7fr;gap:64px;align-items:end}
-  .visit{height:auto}
-  .visit-photo{height:100svh}
-  .card{position:absolute;top:60px;right:var(--m);margin:0;width:400px;padding:32px 32px 0}
-  .card .btn-main{width:calc(100% + 64px);margin:0 -32px}
-  .foot{padding-top:30svh;grid-template-columns:1fr auto 1fr;align-items:baseline}
-  .foot .r{text-align:right}
+  .hero-grid{grid-template-columns:repeat(12,1fr);gap:0 24px;min-height:calc(100svh - 68px - 37px - 112px);padding-top:18px;padding-bottom:40px;align-items:start}
+  .hero-copy{grid-column:1/8;position:relative;z-index:3}
+  .hero h1{font-size:clamp(5.5rem,8.2vw,9.5rem)}
+  .scraps{grid-column:8/13;height:100%;min-height:560px;margin:0}
+  .s1{right:-2vw;top:auto;bottom:-150px;width:min(30vw,440px);z-index:2}
+  .s2{left:-4%;top:2%;width:min(16vw,230px)}
+  .s2 figcaption{display:block}
+  .ruler li{min-height:112px;padding:12px var(--m)}
+  .tone-head{grid-template-columns:7fr 5fr;align-items:end;gap:48px}
+  .tone-grid{grid-template-columns:7fr 5fr;gap:48px;align-items:start}
+  .spec-grid{grid-template-columns:3fr 9fr;gap:24px}
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .tile.wide{grid-column:span 2}
+  .carte-head{grid-template-columns:7fr 5fr;align-items:end;gap:48px}
+  .carte td:first-child{width:62%}
+  .about-text{columns:2;column-gap:48px}
+  .about-text a.hl{margin-top:0}
+  .hours{grid-template-columns:7fr 5fr;gap:48px;align-items:start}
+  .foot-top{grid-template-columns:repeat(12,1fr);gap:24px}
+  .foot-top>*:nth-child(1){grid-column:1/3}.foot-top>*:nth-child(2){grid-column:3/6}.foot-top>*:nth-child(3){grid-column:6/9}.foot-top>*:nth-child(4){grid-column:11/13;text-align:right;white-space:nowrap}
+}
+@media (max-width:639px){
+  .carte tbody tr:not(:first-child){display:grid;grid-template-columns:1fr auto;padding:9px 0}
+  .carte td{padding:0}
+  .carte td:first-child{grid-column:1/-1;font-size:1.25rem}
+  .carte td.d{padding-left:0;font-size:.875rem;margin-top:3px}
+  .carte td.p{font-size:1rem;margin-top:3px}
+  .carte tbody th{display:block}
 }
 @media (prefers-reduced-motion:reduce){
-  *{transition:none!important;animation:none!important}
-  .js .rise{opacity:1;transform:none}
-  html{scroll-behavior:auto}
+  .js .rise,.js .shutter,.js .shutter img,.js .ruler li{opacity:1;transform:none;clip-path:none;transition:opacity .15s}
+  .drift{animation:none}
+  .chips label,.tile img{transition:none}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#ton">Aller au contenu</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<header class="nav">
-  <div class="nav-in">
-    <a class="mark" href="#top">An'Angelo</a>
+<header class="hero" id="top">
+  <nav class="nav wrap" aria-label="Navigation principale">
+    <a class="mark" href="#top" translate="no">Atelier An'Angelo</a>
     <ul>
-      <li><a href="#prestations">Prestations</a></li>
-      <li><a href="#longueur">Tarifs par longueur</a></li>
+      <li><a href="#ton">Votre ton</a></li>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#ariane">Ariane</a></li>
       <li><a href="#venir">Horaires et accès</a></li>
     </ul>
-    <a class="btn btn-main" href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener">Réserver</a>
+    <a class="btn btn-white" href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener">Réserver</a>
+  </nav>
+
+  <div class="hero-grid wrap">
+    <div class="hero-copy">
+      <h1><span>Du brun au</span> <span>blond polaire</span></h1>
+      <p class="lede">Atelier An'Angelo, coloriste au 1&nbsp;rue Edmond-Gondinet, Paris&nbsp;13e. Ariane y travaille la couleur, la coupe et le chignon avec Redken, Davines et Olaplex.</p>
+      <div class="offer num" role="list">
+        <div role="listitem"><b>126&nbsp;€</b><span>dès · coloration</span></div>
+        <div role="listitem"><b>146&nbsp;€</b><span>dès · balayage</span></div>
+        <div role="listitem"><b>179&nbsp;€</b><span>dès · blond polaire</span></div>
+      </div>
+      <div class="cta">
+        <a class="btn btn-white" href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener">Réserver sur Treatwell</a>
+        <a class="btn btn-line" href="tel:+33669336113"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>06 69 33 61 13</a>
+      </div>
+      <p class="rating"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span>5,0 sur 808 avis Treatwell <span class="live" data-live><i></i><span>Mardi au samedi</span></span></p>
+    </div>
+    <div class="scraps">
+      <figure class="scrap s2 shutter"><img class="drift" fetchpriority="high" src="https://images.unsplash.com/photo-1554519934-e32b1629d9ee?w=600&h=750&fit=crop&q=75&fm=jpg" width="600" height="750" alt="Cheveux longs balayés, vus de dos"><figcaption>Balayage, dès 146&nbsp;€</figcaption></figure>
+      <figure class="scrap s1 shutter"><img fetchpriority="high" src="https://cdn1.treatwell.net/images/view/v2.i17656311.w1080.h720.xEA13A981/" width="1080" height="720" style="object-position:38% 50%" alt="L'intérieur de l'Atelier An'Angelo : mur de brique blanche, miroirs et fauteuils noirs"><figcaption>Le salon</figcaption></figure>
+    </div>
   </div>
+
+  <ol class="ruler num" aria-label="Hauteurs de ton, du noir au blond très très clair">
+    <li><b>1</b><span>Noir</span></li>
+    <li><b>2</b><span>Brun</span></li>
+    <li><b>3</b><span>Châtain foncé</span></li>
+    <li><b>4</b><span>Châtain</span></li>
+    <li><b>5</b><span>Châtain clair</span></li>
+    <li><b>6</b><span>Blond foncé</span></li>
+    <li><b>7</b><span>Blond</span></li>
+    <li><b>8</b><span>Blond clair</span></li>
+    <li><b>9</b><span>Blond très clair</span></li>
+    <li><b>10</b><span>Blond très très clair</span></li>
+  </ol>
 </header>
 
-<main id="top">
-<section class="hero" aria-label="Atelier An'Angelo">
-  <div class="pin">
-    <h1><span class="w1">Atelier</span><span class="w2">An'Angelo</span></h1>
+<main>
+<section class="tone wrap" id="ton" aria-labelledby="ton-t">
+  <div class="tone-head">
+    <h2 id="ton-t" class="rise">D'où partez-vous&nbsp;?</h2>
+    <p class="rise">Les coloristes comptent la couleur en hauteurs de ton, de 1 pour le noir à 10 pour le blond très très clair. Choisissez la vôtre et celle dont vous rêvez&nbsp;: la carte du salon vous dit quelle prestation réserver.</p>
   </div>
-  <div class="stage">
-    <div class="first">
-      <div class="first-text">
-        <p class="lead">Coloriste et coiffeuse visagiste au 1&nbsp;rue Edmond-Gondinet, Paris&nbsp;13e. Coupe, couleur, blond polaire et chignons.</p>
-        <p class="rating"><span class="stars" aria-hidden="true">
-          <svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg>
-        </span>5,0 sur 750 avis Treatwell</p>
-        <div class="actions">
-          <a class="btn btn-main" href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener">Réserver sur Treatwell</a>
-          <a class="arrow" href="tel:+33669336113"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>06 69 33 61 13</a>
+  <div class="tone-grid">
+    <form id="tool" class="rise" onsubmit="return false">
+      <fieldset>
+        <legend>Aujourd'hui</legend>
+        <div class="chips" data-g="from">
+          <label><input type="radio" name="from" value="1"><b>1</b><span>Noir</span></label>
+          <label><input type="radio" name="from" value="2"><b>2</b><span>Brun</span></label>
+          <label><input type="radio" name="from" value="3"><b>3</b><span>Châtain foncé</span></label>
+          <label><input type="radio" name="from" value="4"><b>4</b><span>Châtain</span></label>
+          <label><input type="radio" name="from" value="5" checked><b>5</b><span>Châtain clair</span></label>
+          <label><input type="radio" name="from" value="6"><b>6</b><span>Blond foncé</span></label>
+          <label><input type="radio" name="from" value="7"><b>7</b><span>Blond</span></label>
+          <label><input type="radio" name="from" value="8"><b>8</b><span>Blond clair</span></label>
+          <label><input type="radio" name="from" value="9"><b>9</b><span>Blond très clair</span></label>
+          <label><input type="radio" name="from" value="10"><b>10</b><span>Très très clair</span></label>
         </div>
-      </div>
-      <div class="first-photo"><img class="drift" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1100&q=75&fm=jpg" width="1100" height="1400" alt="Cheveux longs méchés, vus de dos"></div>
-    </div>
-    <div class="panel">
-      <figure class="rise">
-        <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=900&h=1125&fit=crop&crop=faces&q=75&fm=jpg" width="900" height="1125" alt="Cheveux blonds bouclés" loading="lazy">
-        <figcaption><b>Blond polaire, patine, Olaplex</b><span class="num">dès 179&nbsp;€</span></figcaption>
-      </figure>
-    </div>
-    <div class="panel">
-      <figure class="rise">
-        <img src="https://images.unsplash.com/photo-1626954079979-ec4f7b05e032?w=900&h=1125&fit=crop&q=75&fm=jpg" width="900" height="1125" alt="Chignon tressé orné de pinces" loading="lazy">
-        <figcaption><b>Chignons et coiffures de mariée</b><span>sur rendez-vous</span></figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="svc" id="prestations">
-  <div class="svc-grid">
-    <div class="svc-photo" aria-hidden="true">
-      <img class="on" data-k="coupe" src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=900&h=1125&fit=crop&q=75&fm=jpg" width="900" height="1125" alt="" loading="lazy">
-      <img data-k="blond" src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=900&h=1125&fit=crop&crop=faces&q=75&fm=jpg" width="900" height="1125" alt="" loading="lazy">
-      <img data-k="balayage" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&h=1125&fit=crop&q=75&fm=jpg" width="900" height="1125" alt="" loading="lazy">
-      <img data-k="homme" src="https://images.unsplash.com/photo-1595475884562-073c30d45670?w=900&h=1125&fit=crop&q=75&fm=jpg" width="900" height="1125" alt="" loading="lazy">
-      <img data-k="junior" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&h=1125&fit=crop&q=75&fm=jpg" width="900" height="1125" alt="" loading="lazy">
-      <img data-k="soin" src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=900&h=1125&fit=crop&q=75&fm=jpg" width="900" height="1125" alt="" loading="lazy">
-      <img data-k="chignon" src="https://images.unsplash.com/photo-1626954079979-ec4f7b05e032?w=900&h=1125&fit=crop&q=75&fm=jpg" width="900" height="1125" alt="" loading="lazy">
-    </div>
-    <div class="svc-list">
-      <h2 class="rise">Prestations</h2>
-      <ul class="rows">
-        <li class="row on" data-k="coupe"><button aria-expanded="true">Coupe femme<span class="p num">dès 71&nbsp;€</span></button>
-          <div class="d"><div><p>Shampoing, soin, coupe et brushing. Le prix suit la longueur&nbsp;: 71, 75, 80 ou 85&nbsp;€.</p></div></div></li>
-        <li class="row" data-k="blond"><button aria-expanded="false">Blond polaire<span class="p num">dès 179&nbsp;€</span></button>
-          <div class="d"><div><p>Éclaircissement, patine, Olaplex, shampoing soin et brushing. Compter 3&nbsp;h&nbsp;15 sur cheveux courts.</p></div></div></li>
-        <li class="row" data-k="balayage"><button aria-expanded="false">Balayage<span class="p num">dès 146&nbsp;€</span></button>
-          <div class="d"><div><p>Lumière posée à main levée, puis patine pour régler le reflet.</p></div></div></li>
-        <li class="row" data-k="homme"><button aria-expanded="false">Homme<span class="p num">43&nbsp;€</span></button>
-          <div class="d"><div><p>Shampoing, coupe, coiffant et après-shampoing.</p></div></div></li>
-        <li class="row" data-k="junior"><button aria-expanded="false">Fille jusqu'à 10&nbsp;ans<span class="p num">31&nbsp;€</span></button>
-          <div class="d"><div><p>Coupe et shampoing, formule «&nbsp;Junior&nbsp;».</p></div></div></li>
-        <li class="row" data-k="soin"><button aria-expanded="false">Couleur, mèches, lissage<span class="p">sur Treatwell</span></button>
-          <div class="d"><div><p>Coloration, mèches, patine, défrisage et soins profonds&nbsp;: le détail et les créneaux sont sur la page de réservation.</p></div></div></li>
-        <li class="row" data-k="chignon"><button aria-expanded="false">Chignon et coiffure<span class="p">sur Treatwell</span></button>
-          <div class="d"><div><p>Chignons de mariée et coiffures d'occasion.</p></div></div></li>
-      </ul>
-      <p class="svc-note">Tarifs «&nbsp;à partir de&nbsp;» relevés sur Treatwell, à confirmer au moment de réserver.</p>
+      </fieldset>
+      <fieldset style="margin-top:32px">
+        <legend>Votre envie</legend>
+        <div class="chips" data-g="to">
+          <label><input type="radio" name="to" value="1"><b>1</b><span>Noir</span></label>
+          <label><input type="radio" name="to" value="2"><b>2</b><span>Brun</span></label>
+          <label><input type="radio" name="to" value="3"><b>3</b><span>Châtain foncé</span></label>
+          <label><input type="radio" name="to" value="4"><b>4</b><span>Châtain</span></label>
+          <label><input type="radio" name="to" value="5"><b>5</b><span>Châtain clair</span></label>
+          <label><input type="radio" name="to" value="6"><b>6</b><span>Blond foncé</span></label>
+          <label><input type="radio" name="to" value="7"><b>7</b><span>Blond</span></label>
+          <label><input type="radio" name="to" value="8" checked><b>8</b><span>Blond clair</span></label>
+          <label><input type="radio" name="to" value="9"><b>9</b><span>Blond très clair</span></label>
+          <label><input type="radio" name="to" value="10"><b>10</b><span>Blond polaire</span></label>
+        </div>
+      </fieldset>
+    </form>
+    <div class="result rise" aria-live="polite">
+      <div class="swatch" aria-hidden="true" id="swatch"></div>
+      <h3 id="r-name">Balayage</h3>
+      <p class="price num" id="r-price">146&nbsp;€</p>
+      <p class="gap" id="r-gap">À partir de · 3 tons à éclaircir</p>
+      <p id="r-desc">Mèches enveloppées ou décoloration, patine, Olaplex, shampoing, soin et brushing.</p>
+      <p class="meta num" id="r-meta">2 h 30 à 3 h 15 · avec la coupe&nbsp;: dès 163&nbsp;€</p>
+      <a class="btn btn-white" href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener">Réserver cette prestation</a>
+      <p class="meta">Repère tiré des tarifs Treatwell. La technique se décide avec la coloriste, au salon.</p>
     </div>
   </div>
 </section>
 
-<section class="ruler" id="longueur">
-  <div class="ruler-grid">
-    <div>
-      <h2 class="rise">Vos longueurs, votre prix</h2>
-      <p class="intro rise">Chez An'Angelo, la coupe et le blond se paient à la longueur. Choisissez la vôtre.</p>
-      <div class="lengths" role="group" aria-label="Longueur de cheveux">
-        <button type="button" data-i="0" aria-pressed="true">Courts</button>
-        <button type="button" data-i="1" aria-pressed="false">Mi-longs</button>
-        <button type="button" data-i="2" aria-pressed="false">Longs</button>
-        <button type="button" data-i="3" aria-pressed="false">Très longs</button>
-      </div>
+<section class="spec wrap" aria-labelledby="spec-t">
+  <div class="spec-grid">
+    <div class="spec-intro">
+      <h2 id="spec-t" class="rise">Le salon</h2>
+      <p class="rise">Une grande pièce de brique blanche, des miroirs, et les techniques de la carte.</p>
     </div>
-    <div class="figure" aria-live="polite">
-      <div class="head" aria-hidden="true">
-        <svg viewBox="0 0 160 300">
-          <rect x="0" y="0" width="160" height="300" fill="#f2efea"/>
-          <path d="M14 300 C16 210 40 172 80 168 C120 172 144 210 146 300 Z" fill="#d3cec6"/>
-          <path d="M66 100 L66 150 Q80 158 94 150 L94 100 Z" fill="#c6c0b6"/>
-          <path class="hair" id="hair" d="M44 76 C44 28 116 28 116 76 C118 96 116 112 114 124 Q80 132 46 124 C44 112 42 96 44 76 Z" fill="#0a0a0a"/>
-        </svg>
-        <p class="where" id="where">Au-dessus des oreilles</p>
-      </div>
-      <div class="tiers">
-        <div class="tier"><p class="t">Coupe, soin, brushing</p><p class="v num" id="cut">71&nbsp;€</p><p class="s" id="cutd">30&nbsp;min</p></div>
-        <div class="tier"><p class="t">Blond polaire complet</p><p class="v num" id="blond">179&nbsp;€</p><p class="s" id="blondd">3&nbsp;h&nbsp;15</p></div>
-      </div>
+    <div class="tiles">
+      <figure class="tile wide rise"><div class="pad f-blue"><img src="https://cdn1.treatwell.net/images/view/v2.i15212433.w1080.h720.x73D67DB2/" width="1080" height="720" loading="lazy" alt="Postes de coiffage de l'Atelier An'Angelo, plantes et orchidées en vitrine"></div><figcaption><b>Le salon</b><span>1 rue Edmond-Gondinet, une seule grande pièce</span></figcaption></figure>
+      <figure class="tile rise"><div class="pad f-copper"><img src="https://images.unsplash.com/photo-1554519934-e32b1629d9ee?w=700&h=875&fit=crop&q=75&fm=jpg" width="700" height="875" loading="lazy" alt="Cheveux longs balayés, vus de dos"></div><figcaption><b>Balayage</b><span>Mèches enveloppées ou décoloration, dès 146&nbsp;€</span></figcaption></figure>
+      <figure class="tile rise"><div class="pad f-t9"><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=700&h=875&fit=crop&crop=faces&q=75&fm=jpg" width="700" height="875" loading="lazy" alt="Longs cheveux ondulés aux reflets lavande"></div><figcaption><b>Patine</b><span>Séquentielle dans le blond polaire, dès 179&nbsp;€</span></figcaption></figure>
+      <figure class="tile rise"><div class="pad f-black"><img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=700&h=875&fit=crop&q=75&fm=jpg" width="700" height="875" loading="lazy" alt="Shampoing au bac, cheveux longs rincés"></div><figcaption><b>Soins Redken</b><span>ABS 36&nbsp;€, Heatcure 58&nbsp;€, Chemi-cure 91&nbsp;€</span></figcaption></figure>
+      <figure class="tile rise"><div class="pad f-blue"><img src="https://cdn1.treatwell.net/images/view/v2.i15212431.w1080.h720.x1B734D8B/" width="1080" height="720" loading="lazy" style="object-position:62% 50%" alt="Les bacs de l'Atelier An'Angelo, près d'un portrait de chien en costume dans un cadre doré"></div><figcaption><b>Les bacs</b><span>Redken, Davines et Olaplex</span></figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="proof" aria-labelledby="note">
-  <div class="proof-grid">
-    <p class="big num rise" aria-hidden="true">5,0</p>
-    <div>
-      <h2 id="note" class="rise">750 avis, une seule note</h2>
-      <p class="rise">Cinq étoiles de moyenne sur Treatwell, où se prennent tous les rendez-vous. Un petit salon du 13e, une coloriste, et le temps qu'il faut pour un blond.</p>
-      <ul class="rise">
-        <li>Coupe femme</li><li>Coupe homme</li><li>Enfant</li><li>Couleur</li><li>Mèches</li><li>Balayage</li><li>Blond polaire</li><li>Patine</li><li>Défrisage</li><li>Lissage</li><li>Chignon de mariée</li>
-      </ul>
+<section class="carte" id="carte" aria-labelledby="carte-t">
+  <div class="wrap">
+    <div class="carte-head">
+      <h2 id="carte-t" class="rise">La carte</h2>
+      <p class="rise">Toutes les prestations du salon, avec leur durée. «&nbsp;Dès&nbsp;»&nbsp;: le prix suit la longueur et l'épaisseur des cheveux.</p>
     </div>
-  </div>
-</section>
-
-<section class="visit" id="venir">
-  <div class="visit-photo"><img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=2000&q=75&fm=jpg" width="2000" height="1333" alt="Brosses, peigne et sèche-cheveux posés sur fond blanc" loading="lazy"></div>
-  <div class="card">
-    <h2>Venir au salon</h2>
-    <address>1 rue Edmond-Gondinet<br>75013 Paris</address>
-    <p class="open" id="open"><i></i><span>Horaires</span></p>
     <table class="num">
+      <caption class="sr">Prestations et tarifs de l'Atelier An'Angelo</caption>
+      <tbody>
+        <tr><th colspan="3" scope="colgroup">Couleur et blond</th></tr>
+        <tr><td>Coloration, shampoing, soin et brushing</td><td class="d">1 h 30 – 1 h 45</td><td class="p">dès 126&nbsp;€</td></tr>
+        <tr><td>Coloration, coupe, shampoing, soin et brushing</td><td class="d">1 h 30 – 2 h</td><td class="p">dès 146&nbsp;€</td></tr>
+        <tr><td>Balayage&nbsp;: mèches enveloppées ou décoloration, patine, Olaplex, soin et brushing</td><td class="d">2 h 30 – 3 h 15</td><td class="p">dès 146&nbsp;€</td></tr>
+        <tr><td>Balayage avec coupe</td><td class="d">2 h 30 – 3 h 30</td><td class="p">dès 163&nbsp;€</td></tr>
+        <tr><td>Blond polaire&nbsp;: patine séquentielle, Olaplex, soin et brushing</td><td class="d">3 h 15 – 4 h 45</td><td class="p">dès 179&nbsp;€</td></tr>
+      </tbody>
+      <tbody>
+        <tr><th colspan="3" scope="colgroup">Coupe et brushing</th></tr>
+        <tr><td>Shampoing, soin et brushing, ou forfait mensuel</td><td class="d">30 – 45 min</td><td class="p">dès 41&nbsp;€</td></tr>
+        <tr><td>Coupe cheveux courts, shampoing et brushing</td><td class="d">30 min</td><td class="p">51&nbsp;€</td></tr>
+        <tr><td>Coupe, shampoing, soin et brushing</td><td class="d">30 min – 1 h</td><td class="p">dès 71&nbsp;€</td></tr>
+        <tr><td>Bar à chignon</td><td class="d">20 – 30 min</td><td class="p">dès 38&nbsp;€</td></tr>
+      </tbody>
+      <tbody>
+        <tr><th colspan="3" scope="colgroup">Techniques et soins</th></tr>
+        <tr><td>Défrisage X-Tenso, réduction de volume, by Redken</td><td class="d">1 h</td><td class="p">68&nbsp;€</td></tr>
+        <tr><td>Permanente, shampoing, coupe et brushing</td><td class="d">2 h 30 – 3 h 30</td><td class="p">dès 136&nbsp;€</td></tr>
+        <tr><td>Lissage</td><td class="d">3 h</td><td class="p">300&nbsp;€</td></tr>
+        <tr><td>Soin profond ABS by Redken</td><td class="d">30 min</td><td class="p">36&nbsp;€</td></tr>
+        <tr><td>Soin Heatcure</td><td class="d">30 min</td><td class="p">58&nbsp;€</td></tr>
+        <tr><td>Soin Chemi-cure</td><td class="d">40 min</td><td class="p">91&nbsp;€</td></tr>
+      </tbody>
+      <tbody>
+        <tr><th colspan="3" scope="colgroup">Mariée et maquillage</th></tr>
+        <tr><td>Brushing et chignon de la mariée, pose des ornements</td><td class="d">1 h 30</td><td class="p">105&nbsp;€</td></tr>
+        <tr><td>Coiffure et maquillage de la mariée</td><td class="d">2 h 30</td><td class="p">168&nbsp;€</td></tr>
+        <tr><td>Coiffure de la mariée avec un essai</td><td class="d">1 h</td><td class="p">205&nbsp;€</td></tr>
+        <tr><td>Maquillage et réveil de la peau</td><td class="d">1 h</td><td class="p">63&nbsp;€</td></tr>
+      </tbody>
+      <tbody>
+        <tr><th colspan="3" scope="colgroup">Homme et enfant</th></tr>
+        <tr><td>Homme&nbsp;: shampoing, coupe, coiffant et conditioner</td><td class="d">30 min</td><td class="p">43&nbsp;€</td></tr>
+        <tr><td>Coloration Color Camo Plus et shampoing</td><td class="d">30 min</td><td class="p">43&nbsp;€</td></tr>
+        <tr><td>Color Camo Plus, coupe et coiffage, hors forfait</td><td class="d">1 h</td><td class="p">86&nbsp;€</td></tr>
+        <tr><td>Taille de la barbe</td><td class="d">30 min</td><td class="p">18&nbsp;€</td></tr>
+        <tr><td>Fille ou garçon jusqu'à 10 ans, coupe et shampoing «&nbsp;Junior&nbsp;»</td><td class="d">30 min</td><td class="p">31&nbsp;€</td></tr>
+        <tr><td>Fille de 11 à 16 ans, coupe, soin, shampoing et brushing</td><td class="d">30 – 45 min</td><td class="p">dès 45&nbsp;€</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Tarifs relevés sur la page Treatwell du salon en novembre 2026, à confirmer au moment de réserver.</p>
+    <a class="btn btn-blue" href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener">Choisir un créneau sur Treatwell</a>
+  </div>
+</section>
+
+<section class="about wrap" id="ariane" aria-labelledby="ariane-t">
+  <h2 id="ariane-t" class="rise">Ariane, coloriste</h2>
+  <p class="about-text rise"><strong>Ariane</strong> tient l'Atelier An'Angelo, au <span class="hl c">1 rue Edmond-Gondinet</span>, près du métro Corvisart. <span class="hl b">Coloriste et coiffeuse visagiste</span>, elle compte <span class="hl g">30 ans de coiffure</span> et se dit curieuse de toutes les tendances du métier. Elle commence par écouter vos envies, puis propose la technique&nbsp;: coloration, balayage en mèches enveloppées ou décoloration, blond polaire à patine séquentielle. Au bac comme au fauteuil, elle travaille avec <span class="hl b">Redken, Davines et Olaplex</span>, et rien d'autre. Le salon tient dans une seule grande pièce, entre brique blanche et miroirs. Les rendez-vous se prennent sur Treatwell ou par téléphone, du mardi au samedi, et les clientes le notent <span class="hl c">5,0 sur 808 avis</span>. <a class="hl" href="#venir">Venir au salon&nbsp;→</a></p>
+  <p class="awards">Distinction Treatwell Top Rated en 2019, 2021, 2022, 2024, 2025 et 2026</p>
+</section>
+
+<section class="visit" id="venir" aria-labelledby="venir-t">
+  <h2 id="venir-t" class="wrap rise">Venir au salon</h2>
+  <ul class="rows">
+    <li><div><span>Atelier An'Angelo</span><span class="round"><img src="https://cdn1.treatwell.net/images/view/v2.i17656311.w1080.h720.xEA13A981/" width="1080" height="720" loading="lazy" alt="" style="object-position:30% 50%"></span></div></li>
+    <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Atelier+An'Angelo+1+rue+Edmond+Gondinet+75013+Paris" target="_blank" rel="noopener"><span>1 rue Edmond-Gondinet</span><span class="sr">, itinéraire Google Maps</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    <li><div><span>75013 Paris</span></div></li>
+    <li><div><span>Métro Corvisart, ligne 6</span></div></li>
+    <li><a href="tel:+33669336113" class="num"><span>06 69 33 61 13</span><span class="sr">, appeler le salon</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    <li><a href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener"><span>Réserver</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+  </ul>
+  <div class="hours">
+    <div>
+      <p class="status" id="status"><i></i><span>Horaires du salon</span></p>
+      <p>Le lundi et le dimanche, le salon est fermé. Le mercredi, il ferme à 13&nbsp;h&nbsp;; le jeudi, il reste ouvert jusqu'à 20&nbsp;h.</p>
+    </div>
+    <table class="num">
+      <caption class="sr">Horaires d'ouverture</caption>
+      <tr data-d="1" class="off"><td>Lundi</td><td>Fermé</td></tr>
       <tr data-d="2"><td>Mardi</td><td>9 h – 19 h</td></tr>
-      <tr data-d="3"><td>Mercredi</td><td>9 h – 19 h</td></tr>
-      <tr data-d="4"><td>Jeudi</td><td>10 h – 19 h</td></tr>
+      <tr data-d="3"><td>Mercredi</td><td>9 h – 13 h</td></tr>
+      <tr data-d="4"><td>Jeudi</td><td>10 h – 20 h</td></tr>
       <tr data-d="5"><td>Vendredi</td><td>9 h – 19 h</td></tr>
       <tr data-d="6"><td>Samedi</td><td>9 h – 19 h</td></tr>
-      <tr class="off" data-d="0"><td>Dimanche, lundi</td><td>Fermé</td></tr>
+      <tr data-d="0" class="off"><td>Dimanche</td><td>Fermé</td></tr>
     </table>
-    <div class="links">
-      <a class="arrow" href="tel:+33669336113">06 69 33 61 13</a>
-      <a class="arrow" href="mailto:atelieranangelo@gmail.com">atelieranangelo@gmail.com</a>
-      <a class="arrow" href="https://www.google.com/maps/dir/?api=1&amp;destination=Atelier+An'Angelo+1+rue+Edmond+Gondinet+75013+Paris" target="_blank" rel="noopener">Itinéraire Google Maps →</a>
-    </div>
-    <a class="btn btn-main" href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener">Réserver un créneau</a>
   </div>
 </section>
 </main>
 
-<footer class="foot">
-  <span>Atelier An'Angelo, coiffeur à Paris 13e</span>
-  <nav><a href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener">Treatwell</a><a href="https://www.facebook.com/atelieranangelo/" target="_blank" rel="noopener">Facebook</a><a href="mailto:atelieranangelo@gmail.com">E-mail</a></nav>
-  <span class="r">Photos d'illustration Unsplash · démo 2026</span>
+<footer class="foot wrap">
+  <div class="foot-top">
+    <span class="mark">An'Angelo</span>
+    <span>1 rue Edmond-Gondinet, 75013 Paris<br>Métro Corvisart</span>
+    <span>Mardi au samedi<br>Coloriste et coiffeuse visagiste</span>
+    <a href="#top">Haut de page ↑</a>
+  </div>
+  <div class="foot-big">
+    <p class="ask">Un rendez-vous, une question&nbsp;?</p>
+    <a href="tel:+33669336113" class="num">06 69 33 61 13</a>
+  </div>
+  <div class="foot-meta">
+    <span><a href="https://www.treatwell.fr/salon/atelier-an-angelo/" target="_blank" rel="noopener">Treatwell</a> · <a href="https://www.facebook.com/atelieranangelo/" target="_blank" rel="noopener">Facebook</a></span>
+    <span class="c">Photos du salon&nbsp;: Treatwell · illustrations&nbsp;: Unsplash</span>
+    <span class="r">Démo non officielle · Paris 13e, 2026</span>
+  </div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
-// entrées
+// entrées : une fois, en ordre de lecture
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%4)*75+'ms';io.observe(el)});
+document.querySelectorAll('section').forEach(s=>s.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=Math.min(i,6)*80+'ms';io.observe(el)}));
+document.querySelectorAll('.shutter').forEach((el,i)=>{el.style.transitionDelay=(250+i*220)+'ms';requestAnimationFrame(()=>el.classList.add('in'))});
+const ruler=document.querySelector('.ruler');ruler.querySelectorAll('li').forEach((li,i)=>li.style.transitionDelay=(120+i*55)+'ms');requestAnimationFrame(()=>ruler.classList.add('in'));
 
-// prestations : une ligne active, la photo suit
-const rows=[...document.querySelectorAll('.row')],pics=[...document.querySelectorAll('.svc-photo img')];
-function activate(r){rows.forEach(x=>{const on=x===r;x.classList.toggle('on',on);x.querySelector('button').setAttribute('aria-expanded',on)});pics.forEach(p=>p.classList.toggle('on',p.dataset.k===r.dataset.k))}
-rows.forEach(r=>{const b=r.querySelector('button');b.addEventListener('click',()=>activate(r));if(matchMedia('(hover:hover)').matches)b.addEventListener('mouseenter',()=>activate(r))});
+// du ton au ton : la carte Treatwell
+const T=['--t1','--t2','--t3','--t4','--t5','--t6','--t7','--t8','--t9','--t10'];
+const P={
+ col:{n:'Coloration',p:126,d:'Shampoing, soin et brushing. Pour couvrir, raviver ou foncer, à un ton près.',m:'1 h 30 à 1 h 45 · avec la coupe : dès 146 €'},
+ bal:{n:'Balayage',p:146,d:'Mèches enveloppées ou décoloration, patine, Olaplex, shampoing, soin et brushing.',m:'2 h 30 à 3 h 15 · avec la coupe : dès 163 €'},
+ pol:{n:'Blond polaire',p:179,d:'Patine séquentielle, Olaplex, shampoing, soin et brushing.',m:'3 h 15 à 4 h 45'}};
+const $=id=>document.getElementById(id);
+function upd(){
+ const f=+document.querySelector('input[name=from]:checked').value,t=+document.querySelector('input[name=to]:checked').value,g=t-f;
+ const k=t===10&&f<10?'pol':g>=2?'bal':'col',r=P[k];
+ $('r-gap').textContent='À partir de · '+(g>0?g+(g>1?' tons':' ton')+' à éclaircir':g<0?(-g)+(g<-1?' tons':' ton')+' plus foncé':'même hauteur, on travaille le reflet');
+ $('r-name').textContent=r.n;$('r-price').innerHTML=r.p+'&nbsp;€';$('r-desc').textContent=r.d;$('r-meta').textContent=r.m;
+ const a=Math.min(f,t),b=Math.max(f,t);$('swatch').innerHTML=T.map((c,i)=>'<i style="background:var('+c+');opacity:'+(i+1>=a&&i+1<=b?1:.18)+'"></i>').join('');
+}
+document.getElementById('tool').addEventListener('change',upd);upd();
 
-// règle des longueurs : tarifs Treatwell « à partir de »
-const L=[
- {cut:'71 €',cutd:'30 min',blond:'179 €',blondd:'3 h 15',where:'Au-dessus des oreilles',y:124},
- {cut:'75 €',cutd:'45 min',blond:'230 €',blondd:'durée sur Treatwell',where:'Jusqu\'aux épaules',y:186},
- {cut:'80 €',cutd:'1 h',blond:'298 €',blondd:'durée sur Treatwell',where:'Sous les omoplates',y:238},
- {cut:'85 €',cutd:'durée sur Treatwell',blond:'—',blondd:'tarif sur Treatwell',where:'Milieu du dos et plus',y:288}];
-const hair=document.getElementById('hair'),btns=[...document.querySelectorAll('.lengths button')];
-function setL(i){const d=L[i];btns.forEach((b,j)=>b.setAttribute('aria-pressed',j===i));['cut','cutd','blond','blondd','where'].forEach(k=>document.getElementById(k).textContent=d[k]);const L2=d.y,c=Math.max(0,(L2-124)*.06);hair.setAttribute('d','M44 76 C44 28 116 28 116 76 C'+(118+c*4)+' 100 '+(122+c*6)+' '+(L2-30)+' '+(120+c*6)+' '+L2+' Q80 '+(L2+10)+' '+(40-c*6)+' '+L2+' C'+(38-c*6)+' '+(L2-30)+' '+(42-c*4)+' 100 44 76 Z')}
-btns.forEach((b,i)=>b.addEventListener('click',()=>setL(i)));setL(0);
-
-// ouvert maintenant (heure de Paris)
-(function(){const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'}));const d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
-const H={2:[9,19],3:[9,19],4:[10,19],5:[9,19],6:[9,19]};const o=H[d]&&h>=H[d][0]&&h<H[d][1];
-const el=document.getElementById('open');el.classList.toggle('yes',!!o);el.querySelector('span').textContent=o?'Ouvert en ce moment':'Fermé en ce moment';
-const tr=document.querySelector('tr[data-d="'+(d===1?0:d)+'"]');if(tr)tr.classList.add('today')})();
+// ouvert maintenant, heure de Paris
+(function(){
+ const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'})),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+ const H={2:[9,19],3:[9,13],4:[10,20],5:[9,19],6:[9,19]},o=H[d]&&h>=H[d][0]&&h<H[d][1];
+ const fmt=x=>Math.floor(x)+' h'+(x%1?' '+String(Math.round(x%1*60)).padStart(2,'0'):'');
+ let next='';for(let i=0;i<8&&!o;i++){const dd=(d+i)%7;if(H[dd]&&(i>0||h<H[dd][0])){next=(i===0?"aujourd'hui":i===1?'demain':['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'][dd])+' à '+fmt(H[dd][0]);break}}
+ const txt=o?'Ouvert, jusqu\'à '+fmt(H[d][1]):'Fermé · rouvre '+next;
+ const s=$('status');s.classList.toggle('yes',!!o);s.querySelector('span').textContent=txt;
+ const l=document.querySelector('[data-live]');l.classList.toggle('yes',!!o);l.querySelector('span').textContent=txt;
+ const tr=document.querySelector('tr[data-d="'+d+'"]');if(tr)tr.classList.add('today');
+})();
 </script>
 </body>
 </html>
