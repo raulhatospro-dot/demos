@@ -3,286 +3,525 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Le Verre Taquin · bar à vins nature, Paris 10e</title>
-<meta name="description" content="Le Verre Taquin, bar à vins nature au 22 rue Juliette Dodu, Paris 10e. Vins de petits producteurs, bières pression artisanales, assiettes maison et terrasse sur la place.">
+<meta name="robots" content="noindex, nofollow">
+<title>Le Verre Taquin · Bar à vins, Paris 10e</title>
+<meta name="description" content="Le Verre Taquin / La Taquinerie, bar à vins au 22 rue Juliette Dodu, Paris 10e, métro Colonel Fabien. Vins de petits producteurs, bières pression artisanales, planches maison, terrasse sur la place. Groupes jusqu'à 100 personnes.">
+<meta name="theme-color" content="#f1f0ee">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,600;62..125,800&display=swap" rel="stylesheet">
 <style>
+/* Les objets du bar : nappe papier, lie de vin, ardoise à la craie, ticket de caisse, sous-bocks.
+   Vert pet-nat pour l'action, comme la capsule d'une bulle nature. */
 :root{
-  --paper:#f2f1ef;
-  --paper-2:#e4e1de;
-  --ink:#1a1214;
-  --soft:#5c4f52;
+  --paper:#f1f0ee;      /* nappe papier */
+  --paper-2:#e4e2de;
+  --paper-3:#d4d0ca;
+  --ink:#1c1416;
+  --body:#2e2427;
+  --soft:#5f5155;
   --wine:#5e1228;       /* lie de vin */
-  --wine-2:#7d1a36;
-  --on-wine:#f5ece9;
-  --acid:#d6ec4f;       /* vert pet-nat */
-  --gutter:clamp(16px,2.2vw,32px);
-  --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
-  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --s-head:clamp(2rem,1.4rem + 1.8vw,2.75rem);
+  --wine-2:#76183a;
+  --on-wine:#f6ece8;
+  --slate:#253230;      /* ardoise */
+  --chalk:#eceee6;
+  --chalk-soft:#b7c0b9;
+  --acid:#d6ec4f;       /* capsule pet-nat */
+  --acid-2:#c6dc3a;
+  --ticket:#fafaf8;
+  --display:"Archivo",system-ui,sans-serif;
+  --price:700 1em/1 var(--display);
+  --pad:20px;
+  --r:14px;
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 var(--s-body)/1.55 Archivo,system-ui,sans-serif;font-variation-settings:"wdth" 100}
-img{display:block;max-width:100%}
+*{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--paper);color:var(--body);font:400 17px/1.55 var(--display);font-variation-settings:"wdth" 100;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
 ::selection{background:var(--acid);color:var(--ink)}
-:focus-visible{outline:3px solid var(--acid);outline-offset:3px}
-h1,h2,h3{font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.02em;line-height:1.02}
-p{margin:0}
+:focus-visible{outline:3px solid var(--wine);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:800;letter-spacing:-.03em;line-height:.98;text-wrap:balance;font-variation-settings:"wdth" 88}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+.nw{white-space:nowrap}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.tnum{font-variant-numeric:tabular-nums}
 
-/* bandeau démo */
-.demo{background:var(--ink);color:var(--paper);font-size:var(--s-small);padding:8px var(--gutter);text-align:center}
-
-/* boutons : un seul format, coins carrés */
-.btn{display:inline-flex;align-items:center;gap:.6em;min-height:52px;padding:0 22px;font:600 var(--s-body)/1 Archivo,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .25s}
-.btn:active{transform:translateY(2px)}
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;border:0;font:600 16px/1 var(--display);text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .2s,transform .2s var(--ease)}
+.btn:active{transform:scale(.97)}
 .btn svg{width:18px;height:18px;flex:none}
 .btn-acid{background:var(--acid);color:var(--ink)}
-.btn-acid:hover{background:#e3f56f}
+.btn-acid:hover{background:var(--acid-2)}
 .btn-wine{background:var(--wine);color:var(--on-wine)}
 .btn-wine:hover{background:var(--wine-2)}
-.btn-ghost{background:var(--paper-2);color:var(--ink)}
-.btn-ghost:hover{background:#ded8d1}
+.btn-soft{background:var(--paper-2);color:var(--ink)}
+.btn-soft:hover{background:var(--paper-3)}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.actions .btn{flex:1 1 auto}
 
-/* ---------- HERO ---------- */
-.hero{position:relative;background:var(--wine);color:var(--on-wine);min-height:calc(100svh - 36px);overflow:hidden}
-.hero-photo{position:absolute;left:20px;top:20px;bottom:20px;width:47%;margin:0}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
-.nav{position:absolute;top:24px;right:var(--gutter);display:flex;align-items:center;gap:28px;font-size:var(--s-small);z-index:3}
-.nav a:not(.btn){text-decoration:none;opacity:.86}
-.nav a:not(.btn):hover{opacity:1;text-decoration:underline}
-.nav .btn{min-height:44px;padding:0 18px;font-size:var(--s-small)}
-.hero-copy{position:absolute;left:calc(47% + 20px);right:0;top:24%;padding:0 var(--gutter) 0 clamp(32px,6vw,96px);z-index:2}
-.hero-copy p{font-size:clamp(1.25rem,1rem + 1vw,2rem);line-height:1.25;max-width:22ch}
-.hero-copy p.hero-sub{font-size:var(--s-body);line-height:1.5;max-width:36ch;margin-top:20px;opacity:.9}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.hero-actions .btn-ghost{background:rgba(245,236,233,.12);color:var(--on-wine)}
-.hero-actions .btn-ghost:hover{background:rgba(245,236,233,.2)}
-.wordmark{position:absolute;right:var(--gutter);bottom:40px;z-index:2;margin:0;font-size:clamp(64px,11.6vw,210px);line-height:.9;letter-spacing:-.045em;font-variation-settings:"wdth" 92;white-space:nowrap;color:var(--on-wine);transform-origin:100% 100%}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--paper)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:800 21px/1 var(--display);letter-spacing:-.03em;font-variation-settings:"wdth" 80}
+.mark svg{width:20px;height:28px;flex:none}
+.nav ul{display:none;list-style:none;gap:26px}
+.nav ul a{text-decoration:none;font-weight:600;color:var(--ink)}
+.nav ul a:hover{color:var(--wine)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
 
-/* ---------- SCÈNE PARTAGÉE ---------- */
-.split{display:grid;grid-template-columns:47% 1fr}
-.stage{position:sticky;top:0;height:100svh;padding:20px}
-.stage-inner{position:relative;height:100%;overflow:hidden;background:var(--paper-2)}
-.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .6s var(--ease),transform 1.6s var(--ease)}
-.stage img.on{opacity:1;transform:scale(1)}
-.stage figcaption{position:absolute;left:20px;bottom:20px;background:var(--paper);color:var(--ink);font-size:var(--s-small);padding:6px 10px;z-index:2;max-width:80%}
-.col{padding:clamp(96px,10vw,160px) var(--gutter) 0 clamp(32px,6vw,96px);min-width:0}
-.sec{padding-bottom:clamp(104px,10vw,160px);scroll-margin-top:24px}
-.sec h2{font-size:var(--s-head);margin-bottom:28px}
-.measure{max-width:46ch}
-.measure p+p{margin-top:1em}
-.lead{font-size:var(--s-lead);line-height:1.35;max-width:30ch}
-.m-photo{display:none}
+/* hero */
+.hero{padding:16px 0 72px}
+.hero-grid{display:grid;gap:32px}
+.hero h1{font-size:clamp(2.9rem,13.5vw,4.4rem);line-height:.9;font-variation-settings:"wdth" 76}
+.lead{margin-top:20px;font-size:19px;line-height:1.45;color:var(--ink);max-width:36ch}
+.hero .actions{margin-top:26px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:26px;list-style:none}
+.facts li{background:var(--paper-2);border-radius:var(--r);padding:12px 12px 13px;font-size:13px;line-height:1.3;color:var(--soft)}
+.facts b{display:block;font:800 26px/1 var(--display);letter-spacing:-.03em;color:var(--ink);margin-bottom:5px;font-variation-settings:"wdth" 85}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:600;color:var(--ink);font-size:15px}
+.status i{width:9px;height:9px;border-radius:50%;background:#2c8a4a;flex:none}
+.status.closed i{background:var(--soft)}
 
-/* ouvert maintenant */
-.now{padding:28px 28px 30px;background:var(--paper-2);max-width:560px;transition:background-color .4s}
-.now.is-open{background:var(--acid)}
-.now-state{font-size:var(--s-head);line-height:1}
-.now-detail{margin-top:12px;font-size:var(--s-body)}
-.hours{list-style:none;padding:0;margin:28px 0 0;max-width:560px}
-.hours li{display:flex;justify-content:space-between;gap:16px;padding:9px 12px}
-.hours li:nth-child(odd){background:var(--paper-2)}
-.hours li.today{font-weight:600}
-.hours li.today span:first-child::after{content:" · aujourd'hui";font-weight:400;color:var(--soft)}
-.hours .closed{color:var(--soft)}
+.pins{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:430px}
+.pin{position:relative;overflow:hidden;border-radius:var(--r);background:var(--paper-2);min-height:0;margin:0}
+.pin img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.pin:hover img{transform:scale(1.04)}
+.pin-a{grid-row:1/3;border-radius:28px}
+/* étiquette de bouteille en guise de légende */
+.tag{position:absolute;left:10px;bottom:10px;display:flex;align-items:baseline;gap:8px;background:var(--ticket);color:var(--ink);font:600 13px/1 var(--display);padding:9px 12px;border-radius:6px;white-space:nowrap}
+.tag b{font-weight:800;font-variant-numeric:tabular-nums}
 
-/* liste active */
-.menu{list-style:none;margin:0;padding:0;max-width:560px}
-.menu li:not(.on) button{color:var(--soft)}
-.menu button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:16px;min-height:58px;padding:12px 0;font-size:clamp(1.25rem,1.6vw,1.5rem);letter-spacing:-.01em}
-.menu button span:last-child{font-size:var(--s-small);color:var(--soft);white-space:nowrap}
-.menu button:focus-visible{outline:3px solid var(--wine);outline-offset:2px}
-.menu .desc{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
-.menu .desc>p{overflow:hidden;max-width:40ch;color:var(--soft)}
-.menu li.on .desc{grid-template-rows:1fr}
-.menu li.on .desc>p{padding-bottom:16px}
-.note{margin-top:28px;font-size:var(--s-small);color:var(--soft);max-width:46ch}
+/* sections */
+section{padding:80px 0}
+.h2{font-size:clamp(2.4rem,9.5vw,4.6rem);max-width:18ch}
+.intro{margin-top:18px;font-size:18px;max-width:52ch}
 
+/* ardoise */
+.ardoise-sec{background:var(--paper-2)}
+.ardoise-grid{display:grid;gap:12px;margin-top:40px}
+.slate{background:var(--slate);color:var(--chalk);border-radius:22px;padding:28px 24px 30px;border:10px solid #8b6a4d}
+.slate h3{color:var(--chalk);font-size:30px;font-variation-settings:"wdth" 75;text-transform:uppercase;letter-spacing:.01em;margin-bottom:8px}
+.slate ul{list-style:none}
+.slate li{display:flex;align-items:baseline;gap:10px;padding:12px 0;font-size:18px;color:var(--chalk)}
+.slate li::after{content:"";order:2;flex:1;border-bottom:2px dotted rgba(236,238,230,.35);transform:translateY(-4px)}
+.slate li span{order:1}
+.slate li b{order:3;font:800 24px/1 var(--display);color:var(--acid);white-space:nowrap;font-variant-numeric:tabular-nums}
+.slate small{display:block;font-size:14px;color:var(--chalk-soft)}
+.slate-note{margin-top:14px;font-size:14px;color:var(--chalk-soft)}
+.ardoise-grid .pin{border-radius:22px;aspect-ratio:4/5}
+.src{margin-top:20px;color:var(--soft);font-size:15px;max-width:60ch}
+
+/* tournée : ticket de caisse */
+.tour-grid{display:grid;gap:28px;margin-top:40px}
+.picker{display:grid;gap:8px;align-content:start}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.presets button{all:unset;cursor:pointer;padding:10px 16px;border-radius:999px;background:var(--paper-2);font:600 15px/1 var(--display);color:var(--ink);transition:background-color .2s}
+.presets button:hover{background:var(--paper-3)}
+.presets button[aria-pressed=true]{background:var(--wine);color:var(--on-wine)}
+.presets button:focus-visible{outline:3px solid var(--wine);outline-offset:2px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--paper-2);border-radius:var(--r);padding:10px 10px 10px 16px}
+.row p{font-weight:600;color:var(--ink);line-height:1.25}
+.row p small{display:block;font-weight:500;color:var(--soft);font-size:14px}
+.step{display:flex;align-items:center;gap:4px;flex:none}
+.step button{all:unset;cursor:pointer;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--paper);color:var(--ink);font:600 22px/1 var(--display);transition:background-color .2s}
+.step button:hover{background:var(--acid)}
+.step button:focus-visible{outline:3px solid var(--wine);outline-offset:2px}
+.step output{min-width:2.2ch;text-align:center;font:700 20px/1 var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
+.row.people{background:var(--wine)}
+.row.people p,.row.people output{color:var(--on-wine)}
+.row.people p small{color:#e3c9cf}
+.ticket{position:relative;background:var(--ticket);color:var(--ink);font:500 16px/1.5 var(--display);font-variation-settings:"wdth" 72;padding:30px 26px 34px;max-width:440px;width:100%;justify-self:centerborder-top:6px solid var(--paper-3);
+  --zig:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;-webkit-mask:var(--zig);mask:var(--zig)} /* taste-skill-ignore: dents du ticket, masque et non dégradé */
+.ticket h3{font:800 20px/1.2 var(--display);text-align:center;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.ticket .t-sub{text-align:center;font-size:14px;color:var(--soft);margin-top:4px}
+.t-lines,.t-total{border-top:2px dashed var(--paper-3);padding-top:16px;margin-top:16px} /* taste-skill-ignore: pointillés du ticket de caisse */
+.t-lines{padding-bottom:4px}
+.t-lines{list-style:none;min-height:3em}
+.t-lines li{display:flex;justify-content:space-between;gap:12px}
+.t-lines .empty{color:var(--soft)}
+.t-total{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:22px}
+.t-pp{display:flex;justify-content:space-between;margin-top:6px;color:var(--wine);font-weight:700}
+.t-foot{margin-top:16px;font-size:13px;color:var(--soft);text-align:center}
+.ticket .actions{margin-top:20px;font-family:var(--display)}
+
+/* avis : sous-bocks */
+.avis{background:var(--wine);color:var(--on-wine)}
+.avis h2,.avis h3{color:var(--on-wine)}
+.av-grid{display:grid;gap:40px}
+.big{font:800 clamp(6.5rem,32vw,12rem)/.8 var(--display);letter-spacing:-.06em;font-variation-settings:"wdth" 80;color:var(--on-wine);margin-top:24px}
+.big sup{font-size:.3em;vertical-align:top;position:relative;top:.3em;margin-left:6px;letter-spacing:-.02em}
+.av-sub{margin-top:14px;font-size:19px;font-weight:600;max-width:30ch}
+.coasters{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:32px;list-style:none;max-width:520px}
+.coasters li{aspect-ratio:1;border-radius:50%;background:var(--on-wine);color:var(--wine);display:grid;place-content:center;text-align:center;padding:10px;border:4px double rgba(94,18,40,.35);font-size:13px;line-height:1.2;font-weight:600}
+.coasters b{display:block;font:800 clamp(28px,7vw,40px)/1 var(--display);letter-spacing:-.03em;margin-bottom:4px}
+.quote{margin-top:32px;border-left:3px solid var(--acid);padding-left:18px;max-width:46ch}
+.quote p{font-size:19px;line-height:1.4}
+.quote cite{display:block;margin-top:8px;font-style:normal;font-size:14px;opacity:.8}
+.google{margin-top:26px;font-weight:600}
+.google b{font:800 34px/1 var(--display);letter-spacing:-.03em;margin-right:8px}
+.av-photo{border-radius:28px;overflow:hidden}
+.av-photo img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover}
+
+/* la maison */
+.maison-grid{display:grid;gap:36px}
+.maison-photo{border-radius:28px;overflow:hidden}
+.maison-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;list-style:none}
+.chips li{background:var(--paper-2);border-radius:999px;padding:10px 16px;font-weight:600;color:var(--ink);font-size:15px}
+.trio{display:grid;gap:8px;margin-top:56px;list-style:none}
+.trio li{background:var(--paper-2);border-radius:var(--r);padding:24px}
+.trio b{display:block;font:800 26px/1.05 var(--display);letter-spacing:-.03em;color:var(--ink);font-variation-settings:"wdth" 85;margin-bottom:8px}
 
 /* groupes */
-.occasions{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 32px;padding:0;list-style:none}
-.occasions li{background:var(--wine);color:var(--on-wine);padding:8px 14px;font-size:var(--s-small)}
-.row-actions{display:flex;flex-wrap:wrap;gap:12px}
+.groupes{background:var(--acid);color:var(--ink)}
+.gr-grid{display:grid;gap:36px}
+.cap{font:800 clamp(6rem,30vw,12rem)/.8 var(--display);letter-spacing:-.06em;font-variation-settings:"wdth" 80;color:var(--ink)}
+.cap small{display:block;font:600 20px/1.3 var(--display);letter-spacing:-.01em;margin-top:14px}
+.gr-list{list-style:none;display:grid;gap:6px;margin-top:28px}
+.gr-list li{display:flex;justify-content:space-between;gap:14px;background:rgba(28,20,22,.08);border-radius:12px;padding:14px 16px;font-weight:500}
+.gr-list li b{font-weight:700;text-align:right}
+.groupes .chips li{background:var(--ink);color:var(--acid)}
+.groupes .actions{margin-top:28px}
+.groupes .btn-soft{background:rgba(28,20,22,.1)}
+.groupes .btn-soft:hover{background:rgba(28,20,22,.18)}
 
-/* contact */
-.addr{font-size:clamp(1.5rem,1.1rem + 1.2vw,2rem);line-height:1.2;letter-spacing:-.02em;font-style:normal}
-.addr a{text-decoration:none}
-.addr a:hover{text-decoration:underline}
-.addr .soft{color:var(--soft)}
-.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+/* horaires */
+.ac-grid{display:grid;gap:40px;margin-top:40px}
+.now{border-radius:var(--r);background:var(--paper-2);padding:22px 22px 24px;margin-bottom:18px;transition:background-color .4s}
+.now.is-open{background:var(--acid)}
+.now-state{font:800 32px/1 var(--display);letter-spacing:-.03em;color:var(--ink);font-variation-settings:"wdth" 85}
+.now-detail{margin-top:8px}
+.hours{width:100%;border-collapse:collapse;font-size:18px}
+.hours th,.hours td{padding:14px 0;border-top:1px solid var(--paper-3);text-align:left;color:var(--ink)}
+.hours th{font-weight:600}
+.hours td{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.off td{color:var(--soft)}
+.hours tr.today th,.hours tr.today td{color:var(--wine);font-weight:700}
+.addr{background:var(--paper-2);border-radius:28px;padding:28px}
+.addr .where{font:800 clamp(2rem,8vw,3.2rem)/1 var(--display);letter-spacing:-.04em;color:var(--ink);font-variation-settings:"wdth" 85}
+.addr .meta{margin-top:16px;font-size:18px}
+.tel{display:block;margin-top:22px;font:800 clamp(1.9rem,8vw,2.6rem)/1 var(--display);letter-spacing:-.03em;color:var(--wine);text-decoration:none}
+.tel:hover{text-decoration:underline;text-underline-offset:6px}
+.addr .actions{margin-top:24px}
+.addr .btn-soft{background:var(--paper)}
+.ac-grid>:last-child{order:-1}
+.map{margin-top:12px;border-radius:28px;overflow:hidden;background:var(--paper-2)}
+.map svg{display:block;width:100%;height:auto}
 
-/* pied */
-.foot{background:var(--wine);color:var(--on-wine);padding:72px var(--gutter) 28px;overflow:hidden}
-.foot-name{font-size:18.4vw;line-height:.84;letter-spacing:-.05em;font-variation-settings:"wdth" 80;white-space:nowrap}
-.foot-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;margin-top:40px;font-size:var(--s-small)}
-.foot-line a{text-decoration:none}
-.foot-line a:hover{text-decoration:underline}
+/* final */
+.final{padding:88px 0 40px}
+.final-grid{display:grid;gap:32px;align-items:end}
+.final h2{font-size:clamp(2.6rem,10vw,5rem);max-width:12ch}
+.final .pin{aspect-ratio:16/10;border-radius:28px}
+.final .actions{margin-top:26px}
+footer{padding:48px 0 32px}
+.foot-name{font:800 clamp(3.4rem,15vw,12rem)/.84 var(--display);letter-spacing:-.05em;font-variation-settings:"wdth" 78;color:var(--ink)}
+.foot-name b{color:var(--wine);font-weight:800}
+.foot-row{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:28px;color:var(--soft);font-size:15px}
+.foot-row a{color:var(--ink)}
+.demo{background:var(--ink);color:#ddd2cf;font:500 13px/1 var(--display);text-align:center;padding:14px 16px}
 
-/* entrées */
-.js .rise{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0ms)}
-.js .rise.in{opacity:1;transform:none}
+/* apparition */
+.rv{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.pre{opacity:0;transform:translateY(24px)}
+@media (prefers-reduced-motion:reduce){.rv{transition:none}.js .rv.pre{opacity:1;transform:none}html{scroll-behavior:auto}}
 
-/* ---------- TÉLÉPHONE ---------- */
-@media (max-width:900px){
-  .hero{min-height:auto;padding-bottom:28px;display:flex;flex-direction:column}
-  .hero-photo{order:0}.wordmark{order:1}.hero-copy{order:2}
-  .hero-photo{position:relative;left:auto;top:auto;bottom:auto;width:auto;height:58svh;margin:12px 12px 0}
-  .nav{top:24px;right:24px;gap:16px}
-  .nav a:not(.btn){display:none}
-  .wordmark{position:relative;right:auto;bottom:auto;margin:-5vw 0 0 var(--gutter);font-size:19.5vw;white-space:normal;line-height:.84}
-  .wordmark span{display:block}
-  .hero-copy{position:static;padding:24px var(--gutter) 0}
-  .hero-copy p{font-size:1.375rem;max-width:22ch}
-  .hero-actions{margin-top:24px}
-  .hero-actions .btn{flex:1 1 auto;justify-content:center}
-  .split{display:block}
-  .stage{display:none}
-  .col{padding:72px var(--gutter) 0}
-  .sec{padding-bottom:104px}
-  .m-photo{display:block;margin:0 0 28px;aspect-ratio:4/3;width:100%;height:auto;object-fit:cover}
-  .btn{flex:1 1 auto;justify-content:center}
-  .foot-name{font-size:17vw;white-space:normal}
+@media (min-width:700px){
+  :root{--pad:32px}
+  .actions .btn{flex:0 0 auto}
+  .ardoise-grid{grid-template-columns:1fr 1fr}
+  .trio{grid-template-columns:repeat(3,1fr)}
+  .pins{height:520px}
 }
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .js .rise{opacity:1;transform:none;transition:none}
-  .stage img{transition:opacity .2s;transform:none}
-  .wordmark{transform:none!important}
+@media (min-width:1000px){
+  :root{--pad:40px}
+  .nav ul{display:flex}
+  .hero{padding:28px 0 120px}
+  .hero-grid{grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+  .hero h1{font-size:6rem}
+  .lead{font-size:21px}
+  .pins{height:min(78vh,690px)}
+  section{padding:136px 0}
+  .ardoise-grid{grid-template-columns:1.15fr .85fr 1fr;align-items:stretch}
+  .ardoise-grid .pin{aspect-ratio:auto}
+  .slate{padding:36px 34px 38px}
+  .tour-grid{grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+  .ticket{position:sticky;top:96px}
+  .av-grid{grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+  .maison-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .gr-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .ac-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .ac-grid>:last-child{order:0}
+  .addr{padding:44px}
+  .final-grid{grid-template-columns:1fr 1fr;gap:64px}
 }
 </style>
 </head>
 <body>
-<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<header class="hero">
-  <figure class="hero-photo"><img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=1400&q=72&auto=format&fit=crop" width="1400" height="2100" alt="Un vin rosé versé dans un verre à pied, sur fond sombre"></figure>
-  <nav class="nav" aria-label="Navigation principale">
-    <a href="#horaires">Horaires</a>
-    <a href="#comptoir">Au comptoir</a>
-    <a href="#terrasse">Terrasse</a>
-    <a href="#venir">Venir</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Le Verre Taquin, accueil"><svg viewBox="0 0 20 28" aria-hidden="true"><path d="M3 1h14c.6 5 .2 9.5-2 11.5-1.4 1.3-3 1.8-4 2V24h4v3H5v-3h4v-9.5c-1-.2-2.6-.7-4-2C2.8 10.5 2.4 6 3 1z" fill="#5e1228"/><path d="M3.6 6h12.8c-.2 3-1 5-2.2 6-1.2 1-2.8 1.5-4.2 1.5S7 13 5.8 12C4.6 11 3.8 9 3.6 6z" fill="#d6ec4f"/></svg>Le Verre Taquin</a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#ardoise">L’ardoise</a></li>
+        <li><a href="#tournee">La tournée</a></li>
+        <li><a href="#groupes">Groupes</a></li>
+        <li><a href="#horaires">Horaires</a></li>
+      </ul>
+    </nav>
     <a class="btn btn-acid" href="tel:+33981161268">Appeler</a>
-  </nav>
-  <div class="hero-copy">
-    <p class="rise">Bar à vins nature sur la place Juliette Dodu.</p>
-    <p class="hero-sub rise" style="--d:60ms">Vins de petits producteurs, assiettes maison, terrasse. Tout près du canal Saint-Martin, du lundi au samedi jusqu'à 2&nbsp;h.</p>
-    <div class="hero-actions rise" style="--d:90ms">
-      <a class="btn btn-acid" href="tel:+33981161268"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>09 81 16 12 68</a>
-      <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Verre%20Taquin%2C%2022%20rue%20Juliette%20Dodu%2C%2075010%20Paris" target="_blank" rel="noopener">Itinéraire</a>
-    </div>
   </div>
-  <h1 class="wordmark" id="wm"><span>le verre</span> <span>taquin</span></h1>
 </header>
 
-<main class="split">
-  <figure class="stage" aria-hidden="true">
-    <div class="stage-inner">
-      <img data-k="horaires" src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=1200&q=70&auto=format&fit=crop" width="1200" height="1800" alt="" loading="lazy">
-      <img data-k="equipe" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" alt="" loading="lazy">
-      <img data-k="vins" src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" alt="" loading="lazy">
-      <img data-k="bieres" src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=1200&q=70&auto=format&fit=crop" width="1200" height="1800" alt="" loading="lazy">
-      <img data-k="houmous" src="https://images.unsplash.com/photo-1637949385162-e416fb15b2ce?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" alt="" loading="lazy">
-      <img data-k="planche" src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" alt="" loading="lazy">
-      <img data-k="fromages" src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" alt="" loading="lazy">
-      <img data-k="groupes" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" alt="" loading="lazy">
-      <img data-k="hero" src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=1200&q=70&auto=format&fit=crop" width="1200" height="1800" alt="" loading="lazy">
-      <img data-k="venir" src="https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?w=1200&q=70&auto=format&fit=crop" width="1200" height="1800" alt="" loading="lazy">
+<main id="top">
+  <section class="hero" aria-labelledby="titre">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="titre" class="rv">Le verre à 5&nbsp;€ sur la&nbsp;place</h1>
+        <p class="lead rv">Bar à vins sur la place Juliette Dodu, Paris 10e. Vins de petits producteurs, bières pression artisanales, planches maison et une terrasse à cinq minutes du canal Saint-Martin.</p>
+        <div class="actions rv">
+          <a class="btn btn-wine" href="tel:+33981161268"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>09 81 16 12 68</a>
+          <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Verre%20Taquin%2C%2022%20rue%20Juliette%20Dodu%2C%2075010%20Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+        </div>
+        <ul class="facts rv" aria-label="En bref">
+          <li><b class="num">4,8/5</b>38 avis Privateaser</li>
+          <li><b>2 h</b>fermeture, du lundi au samedi</li>
+          <li><b class="num">100</b>personnes en groupe</li>
+        </ul>
+        <p class="status rv" id="status" hidden><i></i><span></span></p>
+      </div>
+      <div class="pins rv">
+        <figure class="pin pin-a">
+          <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=1100&q=78&auto=format&fit=crop" alt="Vin rosé versé dans un verre à pied" width="1100" height="1460" fetchpriority="high">
+          <figcaption class="tag">Verre de vin <b>5 €</b></figcaption>
+        </figure>
+        <figure class="pin">
+          <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=700&h=700&q=78&auto=format&fit=crop" alt="Planche de charcuterie et de fromages" width="700" height="700">
+          <figcaption class="tag">Charcuterie <b>10 €</b></figcaption>
+        </figure>
+        <figure class="pin">
+          <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=700&h=700&q=78&auto=format&fit=crop" alt="Bière pression servie au comptoir" width="700" height="700">
+          <figcaption class="tag">Pinte <b>5 €</b></figcaption>
+        </figure>
+      </div>
     </div>
-  </figure>
+  </section>
 
-  <div class="col">
-    <section class="sec" id="horaires" data-k="horaires" aria-labelledby="h-horaires">
-      <img class="m-photo" src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=900&q=70&auto=format&fit=crop" width="900" height="675" alt="Un vin rouge versé dans un verre" loading="lazy">
-      <h2 id="h-horaires" class="rise">On passe ce soir&nbsp;?</h2>
-      <div class="now rise" id="now" style="--d:80ms" aria-live="polite">
-        <p class="now-state" id="now-state">Du lundi au samedi</p>
-        <p class="now-detail" id="now-detail">Ouvert jusqu'à 2&nbsp;h du matin, fermé le dimanche.</p>
+  <section class="ardoise-sec" id="ardoise" aria-labelledby="t-ardoise">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-ardoise">L’ardoise du comptoir</h2>
+      <p class="intro rv">Des vins de petits producteurs, issus d’une agriculture raisonnée, qui changent souvent. Ce que vous buvez ce soir ne sera peut-être plus là le mois prochain.</p>
+      <div class="ardoise-grid">
+        <div class="slate rv">
+          <h3>À boire</h3>
+          <ul class="num">
+            <li><span>Verre de vin<small>petits producteurs, la sélection tourne</small></span><b>5 €</b></li>
+            <li><span>Pinte de bière<small>pression artisanale</small></span><b>5 €</b></li>
+            <li><span>Demi de bière</span><b>3 €</b></li>
+            <li><span>Cocktail</span><b>7 €</b></li>
+            <li><span>Mètre de shots<small>pour les anniversaires</small></span><b>30 €</b></li>
+          </ul>
+        </div>
+        <figure class="pin rv">
+          <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=800&h=1000&q=75&auto=format&fit=crop" alt="Vin rouge versé dans un verre" loading="lazy" width="800" height="1000">
+        </figure>
+        <div class="slate rv">
+          <h3>À grignoter</h3>
+          <ul class="num">
+            <li><span>Houmous<small>fait maison</small></span><b>8 €</b></li>
+            <li><span>Assiette de fromages</span><b>9 €</b></li>
+            <li><span>Assiette de charcuterie</span><b>10 €</b></li>
+          </ul>
+          <p class="slate-note">Planches et tapas à partager. Pour les groupes, les assiettes mixtes se commandent à l’avance.</p>
+        </div>
       </div>
-      <ul class="hours tnum rise" style="--d:160ms" id="hours">
-        <li data-d="1"><span>Lundi</span><span>10 h – 2 h</span></li>
-        <li data-d="2"><span>Mardi</span><span>10 h – 2 h</span></li>
-        <li data-d="3"><span>Mercredi</span><span>10 h – 2 h</span></li>
-        <li data-d="4"><span>Jeudi</span><span>10 h – 2 h</span></li>
-        <li data-d="5"><span>Vendredi</span><span>10 h – 2 h</span></li>
-        <li data-d="6"><span>Samedi</span><span>16 h – 2 h</span></li>
-        <li data-d="0" class="closed"><span>Dimanche</span><span>Fermé</span></li>
+      <p class="src rv">Prix relevés sur la fiche Privateaser du bar. La carte bouge avec les arrivages&nbsp;: demandez au comptoir ce qui vient d’arriver.</p>
+    </div>
+  </section>
+
+  <section id="tournee" aria-labelledby="t-tour">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-tour">Combien pour la tournée&nbsp;?</h2>
+      <p class="intro rv">Un afterwork, un anniversaire, une soirée à six&nbsp;: composez la commande, le ticket fait le compte et la part de chacun. Il ne reste plus qu’à l’envoyer au bar.</p>
+      <div class="tour-grid">
+        <div class="picker rv">
+          <div class="presets" role="group" aria-label="Exemples de commandes">
+            <button type="button" data-p="apero" aria-pressed="false">Apéro à deux</button>
+            <button type="button" data-p="after" aria-pressed="false">Afterwork à 10</button>
+            <button type="button" data-p="anniv" aria-pressed="false">Anniversaire à 25</button>
+          </div>
+          <div class="row people"><p>Nombre de personnes<small>pour calculer la part de chacun</small></p><div class="step"><button type="button" data-k="pers" data-d="-1" aria-label="Une personne de moins">−</button><output id="o-pers" class="num">4</output><button type="button" data-k="pers" data-d="1" aria-label="Une personne de plus">+</button></div></div>
+          <div id="rows"></div>
+        </div>
+        <div class="ticket rv" aria-live="polite">
+          <h3>Le Verre Taquin</h3>
+          <p class="t-sub">22 rue Juliette Dodu · 75010</p>
+          <ul class="t-lines num" id="t-lines"></ul>
+          <p class="t-total num"><span>TOTAL</span><span id="t-total">0 €</span></p>
+          <p class="t-pp num"><span id="t-ppl">Par personne (4)</span><span id="t-pp">0 €</span></p>
+          <p class="t-foot">Estimation indicative, prix à confirmer au comptoir.</p>
+          <div class="actions">
+            <a class="btn btn-wine" id="t-mail" href="mailto:contact@leverretaquin.fr">Envoyer au bar</a>
+            <a class="btn btn-soft" href="tel:+33981161268">Appeler</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="avis" id="avis" aria-labelledby="t-avis">
+    <div class="wrap av-grid">
+      <div>
+        <h2 class="rv" id="t-avis" style="font-size:clamp(2rem,6vw,3rem);max-width:20ch">Ce qu’en disent les groupes passés par là</h2>
+        <p class="big rv num" aria-label="4,8 sur 5">4,8<sup>/5</sup></p>
+        <p class="av-sub rv">sur 38 avis certifiés Privateaser, laissés après des anniversaires et des afterworks.</p>
+        <p class="google rv"><b class="num">4,4/5</b>sur Google, environ 300 avis</p>
+        <ul class="coasters rv num" aria-label="Notes détaillées">
+          <li><b>4,9</b>Accueil</li>
+          <li><b>4,7</b>Cadre et ambiance</li>
+          <li><b>4,8</b>Service sur place</li>
+        </ul>
+        <blockquote class="quote rv">
+          <p>«&nbsp;Équipe dynamique et hyper sympathique, verres pas chers, planches délicieuses.&nbsp;»</p>
+          <cite>Ingrid T., 23 personnes, avis Privateaser</cite>
+        </blockquote>
+      </div>
+      <figure class="av-photo rv">
+        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=900&h=1125&q=78&auto=format&fit=crop" alt="Des amis trinquent avec des verres de vin rouge" loading="lazy" width="900" height="1125">
+      </figure>
+    </div>
+  </section>
+
+  <section id="maison" aria-labelledby="t-maison">
+    <div class="wrap">
+      <div class="maison-grid">
+        <figure class="maison-photo rv">
+          <img src="https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?w=1100&h=825&q=78&auto=format&fit=crop" alt="Deux verres de vin rouge au soleil couchant" loading="lazy" width="1100" height="825">
+        </figure>
+        <div>
+          <h2 class="h2 rv" id="t-maison">Trois copains au comptoir</h2>
+          <p class="intro rv">Le bar est tenu par trois restaurateurs amis, toujours à l’affût du bon produit et du vigneron qu’on ne connaît pas encore. Déco brute, petits prix, et l’été, les tables sortent sur la place Juliette Dodu.</p>
+          <ul class="chips rv">
+            <li>Vins de petits producteurs</li><li>Bières pression artisanales</li><li>Plats maison</li><li>Terrasse</li><li>Accessible en fauteuil</li>
+          </ul>
+        </div>
+      </div>
+      <ul class="trio">
+        <li class="rv"><b>Le vin tourne</b>La sélection est renouvelée souvent. Le comptoir vous dira ce qui vient d’arriver.</li>
+        <li class="rv"><b>La place pour terrasse</b>Au cœur d’une petite place piétonne, tout près du canal Saint-Martin.</li>
+        <li class="rv"><b>On peut danser</b>Les soirées d’anniversaire montent parfois d’un cran&nbsp;: le bar le permet.</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section class="sec" id="equipe" data-k="equipe" aria-labelledby="h-equipe">
-      <img class="m-photo" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=900&q=70&auto=format&fit=crop" width="900" height="675" alt="Des amis trinquent avec des verres de vin rouge" loading="lazy">
-      <h2 id="h-equipe" class="rise">Trois copains au comptoir</h2>
-      <div class="measure">
-        <p class="lead rise" style="--d:80ms">Le Verre Taquin, c'est trois restaurateurs amis, toujours à l'affût du bon produit et du vigneron qu'on ne connaît pas encore.</p>
-        <p class="rise" style="--d:160ms">Ils servent des vins de petits producteurs, nature et en biodynamie, et la sélection change souvent&nbsp;: ce que vous buvez ce soir ne sera peut-être plus là le mois prochain.</p>
-        <p class="rise" style="--d:220ms">Déco brute, prix doux, bières pression artisanales et petits plats faits maison. On vient pour un verre, on reste pour la deuxième bouteille.</p>
+  <section class="groupes" id="groupes" aria-labelledby="t-groupes">
+    <div class="wrap gr-grid">
+      <div>
+        <p class="cap rv num">100<small>personnes au maximum pour une réservation de groupe.</small></p>
       </div>
-    </section>
-
-    <section class="sec" id="comptoir" data-k="vins" aria-labelledby="h-comptoir">
-      <img class="m-photo" id="m-menu" src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=900&q=70&auto=format&fit=crop" width="900" height="675" alt="Une planche de charcuterie et de fromages" loading="lazy">
-      <h2 id="h-comptoir" class="rise">Au verre, à l'assiette</h2>
-      <ul class="menu rise" style="--d:80ms" id="menu">
-        <li class="on" data-k="vins"><button type="button" aria-expanded="true" aria-controls="d1" id="b1"><span>Vins nature</span><span>au verre, en bouteille</span></button><div class="desc" id="d1" role="region" aria-labelledby="b1"><p>Petits producteurs, agriculture raisonnée, biodynamie. La carte tourne souvent&nbsp;: demandez ce qui vient d'arriver.</p></div></li>
-        <li data-k="bieres"><button type="button" aria-expanded="false" aria-controls="d2" id="b2"><span>Bières pression</span><span>artisanales</span></button><div class="desc" id="d2" role="region" aria-labelledby="b2"><p>Pour ceux qui commencent par une mousse avant de passer au rouge.</p></div></li>
-        <li data-k="houmous"><button type="button" aria-expanded="false" aria-controls="d3" id="b3"><span>Houmous</span><span>fait maison</span></button><div class="desc" id="d3" role="region" aria-labelledby="b3"><p>Préparé sur place, à partager avec le premier verre.</p></div></li>
-        <li data-k="planche"><button type="button" aria-expanded="false" aria-controls="d4" id="b4"><span>Assiette de charcuterie</span><span>à partager</span></button><div class="desc" id="d4" role="region" aria-labelledby="b4"><p>La planche qu'on pose au milieu de la table et qui disparaît en dix minutes.</p></div></li>
-        <li data-k="fromages"><button type="button" aria-expanded="false" aria-controls="d5" id="b5"><span>Assiette de fromages</span><span>à partager</span></button><div class="desc" id="d5" role="region" aria-labelledby="b5"><p>Pour finir la bouteille, ou pour en ouvrir une autre.</p></div></li>
-      </ul>
-      <p class="note rise" style="--d:140ms">La carte change avec les arrivages. Pour savoir ce qui est à l'ardoise ce soir, un coup de fil suffit.</p>
-    </section>
-
-    <section class="sec" id="terrasse" data-k="venir" aria-labelledby="h-terrasse">
-      <img class="m-photo" src="https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?w=900&q=70&auto=format&fit=crop" width="900" height="675" alt="Deux verres de vin rouge au soleil couchant" loading="lazy">
-      <h2 id="h-terrasse" class="rise">La terrasse sur la place</h2>
-      <p class="lead rise" style="--d:80ms">Aux beaux jours, les tables sortent sur la place Juliette Dodu. Un verre au soleil, tout près du canal Saint-Martin.</p>
-    </section>
-
-    <section class="sec" id="groupes" data-k="groupes" aria-labelledby="h-groupes">
-      <img class="m-photo" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=900&q=70&auto=format&fit=crop" width="900" height="675" alt="Une grande tablée d'amis autour de verres et d'assiettes" loading="lazy">
-      <h2 id="h-groupes" class="rise">Venir à plusieurs</h2>
-      <p class="measure rise" style="--d:80ms">Anniversaire, afterwork, pot de départ&nbsp;: le bar accueille les groupes jusqu'à une centaine de personnes. Les réservations se font par téléphone.</p>
-      <ul class="occasions rise" style="--d:140ms">
-        <li>Anniversaire</li><li>Afterwork</li><li>Pot de départ</li><li>Verre entre amis</li>
-      </ul>
-      <div class="row-actions rise" style="--d:200ms">
-        <a class="btn btn-wine" href="tel:+33981161268">Réserver par téléphone</a>
-        <a class="btn btn-ghost" href="mailto:contact@leverretaquin.fr?subject=Demande%20pour%20un%20groupe&amp;body=Bonjour%2C%0A%0ANous%20serions%20___%20personnes%20le%20___%20vers%20___%20h.%0A%0AMerci%20!">Écrire un e-mail</a>
+      <div>
+        <h2 class="h2 rv" id="t-groupes">Venir à plusieurs</h2>
+        <ul class="gr-list rv">
+          <li><span>Réservations</span><b>du lundi au samedi, <span class="nw">10 h – 2 h</span></b></li>
+          <li><span>Votre gâteau d’anniversaire</span><b>accepté, avec droit de fourchette</b></li>
+          <li><span>Assiettes mixtes</span><b>à commander à l’avance</b></li>
+          <li><span>Dimanche</span><b>pas de réservation</b></li>
+        </ul>
+        <ul class="chips rv">
+          <li>Anniversaire</li><li>Afterwork</li><li>Pot de départ</li><li>EVG &amp; EVJF</li><li>Verre entre amis</li>
+        </ul>
+        <div class="actions rv">
+          <a class="btn btn-wine" href="tel:+33981161268">Réserver par téléphone</a>
+          <a class="btn btn-soft" href="mailto:contact@leverretaquin.fr?subject=R%C3%A9servation%20de%20groupe&amp;body=Bonjour%2C%0A%0ANous%20serions%20___%20personnes%20le%20___%20vers%20___%20h.%0A%0AMerci%20!">Écrire au bar</a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="sec" id="venir" data-k="hero" aria-labelledby="h-venir">
-      <h2 id="h-venir" class="rise">Venir</h2>
-      <address class="addr rise" style="--d:80ms">
-        <p>22 rue Juliette Dodu</p>
-        <p>75010 Paris</p>
-        <p class="soft">Métro Colonel Fabien, ligne 2</p>
-        <p><a class="tnum" href="tel:+33981161268">09 81 16 12 68</a></p>
-      </address>
-      <div class="contact-actions rise" style="--d:160ms">
-        <a class="btn btn-wine" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Verre%20Taquin%2C%2022%20rue%20Juliette%20Dodu%2C%2075010%20Paris" target="_blank" rel="noopener">Ouvrir l'itinéraire</a>
-        <a class="btn btn-ghost" href="mailto:contact@leverretaquin.fr">contact@leverretaquin.fr</a>
-        <a class="btn btn-ghost" href="https://www.instagram.com/leverretaquin/" target="_blank" rel="noopener">Instagram</a>
+  <section id="horaires" aria-labelledby="t-horaires">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-horaires">Horaires et accès</h2>
+      <div class="ac-grid">
+        <div class="rv">
+          <div class="now" id="now" aria-live="polite">
+            <p class="now-state" id="now-state">Du lundi au samedi</p>
+            <p class="now-detail" id="now-detail">Ouvert jusqu’à 2 h du matin, fermé le dimanche.</p>
+          </div>
+          <table class="hours" aria-label="Horaires d’ouverture">
+            <tr data-d="1"><th>Lundi</th><td>10 h – 2 h</td></tr>
+            <tr data-d="2"><th>Mardi</th><td>10 h – 2 h</td></tr>
+            <tr data-d="3"><th>Mercredi</th><td>10 h – 2 h</td></tr>
+            <tr data-d="4"><th>Jeudi</th><td>10 h – 2 h</td></tr>
+            <tr data-d="5"><th>Vendredi</th><td>10 h – 2 h</td></tr>
+            <tr data-d="6"><th>Samedi</th><td>16 h – 2 h</td></tr>
+            <tr data-d="0" class="off"><th>Dimanche</th><td>Fermé</td></tr>
+          </table>
+        </div>
+        <div class="rv">
+          <div class="addr">
+            <p class="where">22 rue Juliette Dodu<br>75010 Paris</p>
+            <p class="meta">Métro Colonel Fabien (ligne 2), à quelques minutes à pied du canal Saint-Martin.</p>
+            <a class="tel num" href="tel:+33981161268">09 81 16 12 68</a>
+            <div class="actions">
+              <a class="btn btn-wine" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Verre%20Taquin%2C%2022%20rue%20Juliette%20Dodu%2C%2075010%20Paris" target="_blank" rel="noopener">Itinéraire</a>
+              <a class="btn btn-soft" href="mailto:contact@leverretaquin.fr">contact@leverretaquin.fr</a>
+            </div>
+          </div>
+          <figure class="map" aria-label="Plan schématique du quartier">
+            <svg viewBox="0 0 600 300" role="img" aria-labelledby="map-t">
+              <title id="map-t">Le bar sur la place Juliette Dodu, entre le métro Colonel Fabien et le canal Saint-Martin</title>
+              <rect width="600" height="300" fill="#e7e0d4"/>
+              <path d="M-10 250 C120 230 200 280 330 250 S520 210 610 230" fill="none" stroke="#9fb7b0" stroke-width="22"/>
+              <text x="420" y="270" font-family="Archivo,sans-serif" font-size="15" fill="#3e5853">Canal Saint-Martin</text>
+              <path d="M0 70 L600 40" stroke="#fbf9f3" stroke-width="16"/>
+              <text x="20" y="52" font-family="Archivo,sans-serif" font-size="13" fill="#5f5155">Bd de la Villette</text>
+              <path d="M300 55 L250 245" stroke="#fbf9f3" stroke-width="12"/>
+              <circle cx="300" cy="140" r="34" fill="#f3efe7" stroke="#d9d0c1" stroke-width="2"/>
+              <circle cx="300" cy="140" r="11" fill="#5e1228"/>
+              <circle cx="300" cy="140" r="4" fill="#d6ec4f"/>
+              <text x="342" y="136" font-family="Archivo,sans-serif" font-weight="700" font-size="16" fill="#1c1416">Le Verre Taquin</text>
+              <text x="342" y="156" font-family="Archivo,sans-serif" font-size="13" fill="#5f5155">place Juliette Dodu</text>
+              <circle cx="470" cy="58" r="13" fill="#1c1416"/>
+              <text x="470" y="63" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="13" fill="#f3efe7">M</text>
+              <text x="490" y="90" font-family="Archivo,sans-serif" font-size="13" fill="#5f5155">Colonel Fabien · 2</text>
+            </svg>
+          </figure>
+        </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <section class="final" id="contact" aria-labelledby="t-final">
+    <div class="wrap final-grid">
+      <div>
+        <h2 class="rv" id="t-final">On passe ce soir&nbsp;?</h2>
+        <p class="intro rv">Pour une table en terrasse, un groupe ou savoir ce qui est à l’ardoise, un coup de fil suffit. Les nouveautés passent aussi sur Instagram.</p>
+        <div class="actions rv">
+          <a class="btn btn-wine" href="tel:+33981161268">Appeler le bar</a>
+          <a class="btn btn-soft" href="https://www.instagram.com/leverretaquin/" target="_blank" rel="noopener">@leverretaquin</a>
+        </div>
+      </div>
+      <figure class="pin rv">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1200&h=750&q=75&auto=format&fit=crop" alt="Une grande tablée d’amis autour de verres et d’assiettes" loading="lazy" width="1200" height="750">
+      </figure>
+    </div>
+  </section>
 </main>
 
-<footer class="foot">
-  <p class="foot-name" aria-hidden="true">le verre taquin</p>
-  <div class="foot-line">
-    <span>Le Verre Taquin / La Taquinerie · 22 rue Juliette Dodu, Paris 10e</span>
-    <span><a href="https://www.instagram.com/leverretaquin/" target="_blank" rel="noopener">@leverretaquin</a> · <a href="https://www.facebook.com/leverretaquin" target="_blank" rel="noopener">Facebook</a></span>
-    <span>Photos d'ambiance Unsplash · Démo réalisée par Raul Hatos, site non officiel</span>
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span>Le Verre Taquin / La Taquinerie · 22 rue Juliette Dodu, 75010 Paris</span>
+      <a href="tel:+33981161268">09 81 16 12 68</a>
+      <a href="https://www.instagram.com/leverretaquin/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/leverretaquin" target="_blank" rel="noopener">Facebook</a>
+      <span>Photos d’ambiance : Unsplash</span>
+    </div>
   </div>
 </footer>
 
@@ -299,61 +538,82 @@ function status(d,m){
   if(t&&m>=t[0]*60) return {open:true,left:t[1]*60-m,service:d};
   for(let i=0;i<8;i++){const k=(d+i)%7,r=H[k];if(r&&(i>0||m<r[0]*60))return {open:false,day:i,at:r[0]}}
 }
-// auto-vérification de la logique
 console.assert(status(0,60).open,'sam. nuit');
 console.assert(!status(1,60).open,'lun. 1 h fermé');
 console.assert(!status(6,15*60).open&&status(6,15*60).at===16,'sam. 15 h');
 console.assert(status(3,23*60).left===180,'mer. 23 h');
 console.assert(status(0,3*60).day===1,'dim. → lundi');
-
 function paris(){
   const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
-  return {d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday),m:+p.hour*60+ +p.minute};
+  return {d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday),m:(+p.hour%24)*60+ +p.minute};
 }
 const dur=n=>n>=60?`${Math.floor(n/60)} h${n%60?' '+String(n%60).padStart(2,'0'):''}`:`${n} min`;
 function renderNow(){
-  const {d,m}=paris(),s=status(d,m),box=document.getElementById('now');
-  const st=document.getElementById('now-state'),dt=document.getElementById('now-detail');
-  box.classList.toggle('is-open',s.open);
+  const {d,m}=paris(),s=status(d,m);
+  const box=document.getElementById('now'),st=document.getElementById('now-state'),dt=document.getElementById('now-detail'),hs=document.getElementById('status');
+  box.classList.toggle('is-open',s.open);hs.classList.toggle('closed',!s.open);
   if(s.open){
     st.textContent='Ouvert, là.';
     dt.textContent=s.left>60?`Le comptoir ferme à 2 h : il reste ${dur(s.left)} pour un verre.`:`Dernier verre : fermeture dans ${dur(s.left)}.`;
+    hs.lastElementChild.textContent='Ouvert maintenant, jusqu’à 2 h';
   }else{
+    const when=s.day===0?"aujourd’hui":s.day===1?'demain':DAYS[(d+s.day)%7];
     st.textContent='Fermé pour l’instant.';
-    const when=s.day===0?"aujourd'hui":s.day===1?'demain':DAYS[(d+s.day)%7];
     dt.textContent=`On rouvre ${when} à ${s.at} h.`;
+    hs.lastElementChild.textContent=`Fermé, réouverture ${when} à ${s.at} h`;
   }
+  hs.hidden=false;
   const svc=s.open?s.service:d;
-  document.querySelectorAll('#hours li').forEach(li=>li.classList.toggle('today',+li.dataset.d===svc));
+  document.querySelectorAll('.hours tr').forEach(tr=>tr.classList.toggle('today',+tr.dataset.d===svc));
 }
 renderNow();setInterval(renderNow,30000);
 
-/* --- liste active + scène --- */
-const stageImgs=[...document.querySelectorAll('.stage img')];
-let current='';
-function show(k){if(k===current)return;current=k;stageImgs.forEach(i=>i.classList.toggle('on',i.dataset.k===k))}
-const items=[...document.querySelectorAll('#menu li')],mImg=document.getElementById('m-menu');
-const mSrc={vins:'1516594915697-87eb3b1c14ea',bieres:'1535958636474-b021ee887b13',houmous:'1637949385162-e416fb15b2ce',planche:'1541529086526-db283c563270',fromages:'1452195100486-9cc805987862'};
-let menuK='vins';
-function pick(li){
-  items.forEach(x=>{const on=x===li;x.classList.toggle('on',on);x.querySelector('button').setAttribute('aria-expanded',on)});
-  menuK=li.dataset.k;show(menuK);
-  mImg.src=`https://images.unsplash.com/photo-${mSrc[menuK]}?w=900&q=70&auto=format&fit=crop`;
+/* --- La tournée : ticket de caisse --- */
+// Prix de la fiche Privateaser du bar.
+const ITEMS=[
+  {k:'vin',n:'Verre de vin',s:'petits producteurs',p:5},
+  {k:'pinte',n:'Pinte de bière',s:'pression artisanale',p:5},
+  {k:'demi',n:'Demi de bière',s:'',p:3},
+  {k:'cocktail',n:'Cocktail',s:'',p:7},
+  {k:'houmous',n:'Houmous maison',s:'à partager',p:8},
+  {k:'fromages',n:'Assiette de fromages',s:'à partager',p:9},
+  {k:'charcut',n:'Assiette de charcuterie',s:'à partager',p:10}
+];
+const PRESETS={
+  apero:{pers:2,vin:4,houmous:1},
+  after:{pers:10,pinte:10,vin:10,charcut:2,fromages:2,houmous:1},
+  anniv:{pers:25,vin:30,pinte:20,cocktail:10,charcut:4,fromages:4,houmous:3}
+};
+const q={pers:4,vin:4,pinte:2,houmous:1,charcut:1};
+const euro=n=>(Math.round(n*100)/100).toLocaleString('fr-FR',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2})+' €';
+function total(o){return ITEMS.reduce((t,i)=>t+(o[i.k]||0)*i.p,0)}
+console.assert(total({vin:2,charcut:1})===20&&total({})===0,'total');
+document.getElementById('rows').innerHTML=ITEMS.map(i=>`<div class="row"><p>${i.n} · <span class="nw">${i.p} €</span>${i.s?`<small>${i.s}</small>`:''}</p><div class="step"><button type="button" data-k="${i.k}" data-d="-1" aria-label="${i.n} : un de moins">−</button><output id="o-${i.k}" class="num">0</output><button type="button" data-k="${i.k}" data-d="1" aria-label="${i.n} : un de plus">+</button></div></div>`).join('');
+function renderTicket(){
+  document.getElementById('o-pers').textContent=q.pers;
+  ITEMS.forEach(i=>document.getElementById('o-'+i.k).textContent=q[i.k]||0);
+  const lines=ITEMS.filter(i=>q[i.k]);
+  const ul=document.getElementById('t-lines');
+  ul.innerHTML=lines.length?lines.map(i=>`<li><span>${q[i.k]} × ${i.n}</span><span>${euro(q[i.k]*i.p)}</span></li>`).join(''):'<li class="empty">Rien commandé pour l’instant.</li>';
+  const t=total(q);
+  document.getElementById('t-total').textContent=euro(t);
+  document.getElementById('t-ppl').textContent=`Par personne (${q.pers})`;
+  document.getElementById('t-pp').textContent=euro(t/q.pers);
+  const body=`Bonjour,\n\nNous serions ${q.pers} personnes le ___ vers ___ h.\nCommande envisagée :\n${lines.map(i=>`- ${q[i.k]} × ${i.n}`).join('\n')}\n\nMerci !`;
+  document.getElementById('t-mail').href='mailto:contact@leverretaquin.fr?subject='+encodeURIComponent(`Réservation pour ${q.pers} personnes`)+'&body='+encodeURIComponent(body);
 }
-items.forEach(li=>{const b=li.querySelector('button');b.addEventListener('click',()=>pick(li));b.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover)').matches)pick(li)});b.addEventListener('focus',()=>pick(li))});
+document.querySelector('.tour-grid').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.p){Object.keys(q).forEach(k=>delete q[k]);Object.assign(q,PRESETS[b.dataset.p]);document.querySelectorAll('.presets button').forEach(x=>x.setAttribute('aria-pressed',x===b))}
+  else if(b.dataset.k){const k=b.dataset.k,min=k==='pers'?1:0;q[k]=Math.min(150,Math.max(min,(q[k]||0)+ +b.dataset.d));document.querySelectorAll('.presets button').forEach(x=>x.setAttribute('aria-pressed','false'))}
+  renderTicket();
+});
+renderTicket();
 
-const secs=[...document.querySelectorAll('.sec')];
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const k=e.target.id==='comptoir'?menuK:e.target.dataset.k;show(k)}})},{rootMargin:'-45% 0px -45% 0px'});
-secs.forEach(s=>io.observe(s));show('horaires');
-
-/* --- entrées --- */
-const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rise').forEach(el=>ro.observe(el));
-
-/* --- signature : le nom se resserre au défilement --- */
-const wm=document.getElementById('wm');
-if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&innerWidth>900){
-  addEventListener('scroll',()=>{const p=Math.min(scrollY/innerHeight,1);wm.style.transform=`scale(${1-p*.12}) translateY(${-p*30}px)`},{passive:true});
+/* --- apparition --- */
+if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach((el,i)=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pre');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)}});
 }
 </script>
 </body>
