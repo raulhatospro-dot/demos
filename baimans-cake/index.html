@@ -5,390 +5,822 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Baiman's Cake, pâtisserie et salon de thé à Montreuil</title>
-<meta name="description" content="Pâtisserie, salon de thé et ateliers au 71 rue Robespierre, Montreuil. Brunchs du Monde le week-end, gâteaux sur commande.">
+<meta name="description" content="Pâtisserie, salon de thé et ateliers au 71 rue Robespierre, Montreuil. Brunchs du Monde le week-end à 29 €, gâteaux sur commande.">
+<meta name="theme-color" content="#d4e3a6">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Baiman's Cake, pâtisserie et brunchs du monde à Montreuil">
+<meta property="og:description" content="Viennoiseries dès 7h30, Brunchs du Monde à 29 € le week-end, gâteaux sur commande et ateliers, 71 rue Robespierre.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=1200&amp;h=630&amp;q=78&amp;fit=crop">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b3194a'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='17' font-weight='700' fill='%23f7f6f3' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --canvas:#f5f1ec; --surface:#ebe7e1; --ink:#111111; --ink-2:#4a4744;
-  --accent:#c4163f; --accent-ink:#ffffff; --night:#111111; --on-night:#f5f1ec;
-  --m:clamp(16px,4vw,48px); --gap:clamp(96px,14vw,200px);
-  --ease:cubic-bezier(.16,1,.3,1);
+  --paper:#f7f6f3;
+  --paper-2:#ecebe6;
+  --pist:#d4e3a6;
+  --pist-2:#c3d68c;
+  --ink:#2b1810;
+  --ink-soft:#5b4237;
+  --choc:#3b2118;
+  --choc-2:#4c2c21;
+  --rasp:#b3194a;
+  --rasp-2:#9a1440;
+  --on-dark:#fff4ea;
+  --on-dark-soft:#e9d7c9;
+  --r:6px;
+  --m:clamp(16px,3.4vw,48px);
+  --gap-sec:clamp(80px,9vw,136px);
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.1875rem,1.05rem + .6vw,1.5rem);
+  --step-head:clamp(2.25rem,1.4rem + 3.4vw,4.25rem);
+  --step-h3:clamp(1.5rem,1.1rem + 1.4vw,2.4rem);
+  --ease-out:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--canvas);color:var(--ink);font:400 17px/1.55 "Schibsted Grotesk",system-ui,sans-serif;overflow-x:hidden}
-::selection{background:var(--accent);color:#fff}
-img{display:block;width:100%;height:100%;object-fit:cover}
-a{color:inherit;text-underline-offset:.2em}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.95;text-wrap:balance}
-h2{font-size:clamp(40px,7vw,104px)}
-h3{font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em;line-height:1.1}
-p{max-width:62ch}
-.wrap{padding-inline:var(--m)}
-section{margin-top:var(--gap)}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-optical-sizing:auto;font-size:var(--step-body);line-height:1.5;color:var(--ink);background:var(--paper);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1.5px}
+::selection{background:var(--rasp);color:var(--paper)}
+:focus-visible{outline:3px solid var(--rasp);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1;text-wrap:balance;font-variation-settings:"wdth" 88}
+p,li,dd{text-wrap:pretty}
+.num{font-variant-numeric:tabular-nums}
+.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:999px;font-weight:650}
+.skip:focus{top:12px}
+a,button,summary,select{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* bandeau démo */
-.demo{background:var(--ink);color:var(--on-night);font-size:13px;text-align:center;padding:7px var(--m)}
-
-/* nav */
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px var(--m)}
-.mark{font-weight:800;font-size:20px;letter-spacing:-.03em;text-decoration:none}
-nav ul{display:flex;gap:28px;list-style:none;font-weight:500}
-nav ul a{text-decoration:none}
-nav ul a:hover{text-decoration:underline}
-
-/* boutons */
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:700 16px/1 inherit;font-family:inherit;text-decoration:none;cursor:pointer;border:0;transition:transform .25s var(--ease),background .2s}
+/* buttons: one shape, fully round */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:inherit;font-size:var(--step-body);font-weight:650;text-decoration:none;cursor:pointer;border:0;transition-property:transform,background-color,color;transition-duration:.2s;transition-timing-function:var(--ease-out)}
 .btn:active{transform:scale(.97)}
-.btn-a{background:var(--accent);color:var(--accent-ink)}
-.btn-a:hover{background:#a30f32}
-.btn-b{background:var(--ink);color:var(--canvas)}
-.btn-b:hover{background:#333}
-.btn-c{background:var(--surface);color:var(--ink)}
-.btn-c:hover{background:#dfd9d0}
-.btn svg{width:18px;height:18px;flex:none}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-r{background:var(--rasp);color:var(--paper)}
+.btn-r:hover{background:var(--rasp-2)}
+.btn-p{background:var(--paper);color:var(--ink)}
+.btn-p:hover{background:var(--paper-2)}
+.btn-i{background:var(--ink);color:var(--paper)}
+.btn-i:hover{background:var(--choc-2)}
+.link{font-weight:650;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.link svg{width:18px;height:18px}
 
-/* hero */
-.hero{display:grid;grid-template-columns:1fr;gap:28px;padding:8px var(--m) 0}
-.hero h1{font-size:clamp(64px,13.5vw,212px);letter-spacing:-.05em;line-height:.86}
-.hero-lede{font-size:clamp(19px,1.8vw,24px);line-height:1.4;max-width:30ch;margin-top:28px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.hero-photo{aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
-.hero-photo img{transform:scale(1.06);animation:drift 14s var(--ease) forwards}
-@keyframes drift{to{transform:scale(1)}}
-.hero-facts{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:26px;font-weight:500}
-.hero-facts b{color:var(--accent)}
-@media(min-width:900px){
-  .hero{grid-template-columns:1.25fr 1fr;align-items:end;gap:48px}
-  .hero-photo{aspect-ratio:auto;height:calc(100svh - 150px);min-height:560px}
+/* demo strip + nav */
+.demo{background:var(--ink);color:var(--on-dark);font-size:var(--step-small);text-align:center;padding:8px var(--m)}
+.top{position:sticky;top:0;z-index:20;background:var(--pist)}
+.nav{display:flex;align-items:center;gap:24px;padding:12px var(--m);max-width:1520px;margin:0 auto}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:var(--step-lead);letter-spacing:-.02em;font-variation-settings:"wdth" 85}
+.mark b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--rasp);color:var(--paper);font-size:var(--step-body)}
+.nav ul{display:flex;gap:26px;list-style:none;margin-left:auto}
+.nav ul a{text-decoration:none;font-weight:550;font-size:var(--step-body);padding:10px 0;display:block}
+.nav ul a:hover{text-decoration:underline}
+.nav .btn{min-height:46px;padding:0 20px}
+
+/* main sits above the curtain footer */
+main{background:var(--paper)}
+
+/* HERO */
+.hero{background:var(--pist);padding:clamp(28px,4vw,64px) var(--m) clamp(56px,6vw,96px)}
+.hero-in{max-width:1520px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero h1{font-size:clamp(2.6rem,1.4rem + 3.6vw,4.5rem);line-height:.96;font-variation-settings:"wdth" 80}
+.lede{font-size:var(--step-lead);line-height:1.4;margin-top:28px;max-width:34ch}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:32px;list-style:none;max-width:640px}
+.facts li{background:var(--paper);border-radius:var(--r);padding:14px 14px 16px;min-width:0}
+.facts b{display:block;font-size:var(--step-h3);font-weight:750;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.facts span{display:block;font-size:var(--step-small);line-height:1.3;margin-top:8px;color:var(--ink-soft)}
+.facts li:first-child{background:var(--rasp);color:var(--paper)}
+.facts li:first-child span{color:var(--paper)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center}
+.status{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:22px;font-size:var(--step-small);font-weight:550}
+.status .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--ink-soft);margin-right:8px;vertical-align:1px}
+.status .open .dot{background:#2f7a2a}
+.status .closed .dot{background:var(--rasp)}
+
+/* postcards in the hero */
+.cards{position:relative;aspect-ratio:1/1.02;max-width:660px;width:100%;justify-self:end}
+.pc{position:absolute;background:var(--paper);padding:12px 12px 0;border-radius:4px;margin:0}
+.pc img{width:100%;height:100%;object-fit:cover;border-radius:2px}
+.pc .ph{overflow:hidden;border-radius:2px}
+.pc figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 4px 14px;font-size:var(--step-body);font-weight:600;line-height:1.2}
+.pc figcaption span{color:var(--ink-soft);font-weight:500;font-size:var(--step-small)}
+.pc-a{left:0;top:7%;width:56%;transform:rotate(-3deg);z-index:2}
+.pc-a .ph{aspect-ratio:4/5}
+.pc-b{right:0;top:0;width:41%;transform:rotate(3deg);z-index:1}
+.pc-b .ph{aspect-ratio:1/1}
+.pc-c{right:0;bottom:2%;width:45%;transform:rotate(-1.5deg);z-index:3}
+.pc-c .ph{aspect-ratio:5/4}
+.stamp{position:absolute;z-index:4;background:var(--paper);border:5px dotted var(--pist);padding:10px 12px;text-align:center;line-height:1;transform:rotate(6deg)}
+.stamp b{display:block;font-size:var(--step-h3);font-weight:800;letter-spacing:-.03em;color:var(--rasp)}
+.stamp span{display:block;font-size:var(--step-small);font-weight:600;margin-top:6px}
+.cards .stamp{left:41%;top:1%}
+.postmark{position:absolute;width:120px;height:120px;right:clamp(110px,10vw,170px);top:clamp(10px,2vw,30px);color:var(--ink);opacity:.75;transform:rotate(-14deg)}
+
+/* section scaffolding */
+.sec{padding:var(--gap-sec) var(--m)}
+.in{max-width:1520px;margin:0 auto}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,72px);align-items:end;margin-bottom:clamp(36px,4vw,56px)}
+.sec-head h2{font-size:var(--step-head)}
+.sec-head p{font-size:var(--step-lead);line-height:1.4;max-width:40ch}
+
+/* BRUNCH: stamps + postcard */
+.stamps{display:flex;flex-wrap:wrap;gap:12px;padding:8px 0 16px}
+.st{flex:1 0 150px;background:var(--paper-2);color:var(--ink);border:5px dotted var(--paper);border-radius:2px;padding:14px 14px 16px;text-align:left;font:inherit;cursor:pointer;transition-property:transform,background-color;transition-duration:.25s;transition-timing-function:var(--ease-out);min-height:96px}
+.st:hover{transform:translateY(-3px) rotate(-1deg)}
+.st b{display:block;font-size:var(--step-lead);font-weight:750;letter-spacing:-.02em;line-height:1.05}
+.st span{display:block;font-size:var(--step-small);color:var(--ink-soft);margin-top:6px}
+.st[aria-selected="true"]{background:var(--rasp);color:var(--paper)}
+.st[aria-selected="true"] span{color:var(--paper)}
+.postcard{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:var(--paper-2);border-radius:var(--r);overflow:hidden;margin-top:12px;min-height:520px}
+.postcard .front{position:relative;min-height:320px}
+.postcard .front img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.postcard .back{position:relative;padding:clamp(24px,3.4vw,52px);display:flex;flex-direction:column}
+.postcard h3{font-size:var(--step-h3);max-width:9ch}
+.menu-lines{list-style:none;margin-top:26px;display:grid;gap:14px;max-width:46ch}
+.menu-lines li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:12px;padding-bottom:14px;border-bottom:3px dotted var(--pist-2)}
+.menu-lines li span{font-weight:650}
+.included{margin-top:auto;padding-top:26px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between}
+.included p{font-size:var(--step-small);max-width:34ch;color:var(--ink-soft)}
+.postcard .stamp{right:clamp(20px,3vw,44px);top:clamp(20px,3vw,44px);border-color:var(--paper-2)}
+.panel[hidden]{display:none}
+.brunch-note{margin-top:18px;font-size:var(--step-small);color:var(--ink-soft);max-width:70ch}
+
+/* COMPTOIR */
+.comptoir{background:var(--pist)}
+.comptoir .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,88px);align-items:start}
+.giant{container-type:inline-size}
+.giant h2{font-size:31cqw;line-height:.82;letter-spacing:-.045em;font-variation-settings:"wdth" 75;font-weight:800}
+.giant>p{font-size:var(--step-lead);line-height:1.4;margin:22px 0 28px;max-width:36ch}
+.bars{display:grid;gap:6px}
+.bars details{background:var(--paper);border-radius:var(--r)}
+.bars summary{list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:58px;padding:0 20px;cursor:pointer;font-weight:650;font-size:var(--step-body)}
+.bars summary::-webkit-details-marker{display:none}
+.bars summary svg{width:22px;height:22px;transition:transform .3s var(--ease-out)}
+.bars details[open] summary svg{transform:rotate(45deg)}
+.bars ul{list-style:none;padding:0 20px 20px;display:grid;gap:12px}
+.bars li{display:flex;justify-content:space-between;gap:16px}
+.bars li small{display:block;font-size:var(--step-small);color:var(--ink-soft);margin-top:2px}
+.bars li .pr{font-weight:650;white-space:nowrap;font-variant-numeric:tabular-nums}
+.comptoir-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:sticky;top:96px}
+.comptoir-photos figure{margin:0}
+.comptoir-photos figure:first-child{grid-column:1/-1}
+.comptoir-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.comptoir-photos figure:not(:first-child) img{aspect-ratio:1/1}
+figcaption.cap{font-size:var(--step-small);margin-top:8px;color:var(--ink-soft)}
+
+/* COMMANDE: coupon */
+.coupon{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:var(--rasp);color:var(--paper);border-radius:14px}
+.coupon::before,.coupon::after{content:"";position:absolute;left:calc(45% - 16px);width:32px;height:32px;border-radius:50%;background:var(--paper)}
+.coupon::before{top:-16px}
+.coupon::after{bottom:-16px}
+.coupon-l{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;gap:22px}
+.coupon-l h2{font-size:var(--step-head);color:var(--paper)}
+.coupon-l p{font-size:var(--step-body);max-width:38ch}
+.coupon-l ol{list-style:none;display:grid;gap:10px;margin-top:auto}
+.coupon-l ol li{display:flex;gap:12px;align-items:baseline}
+.coupon-l ol b{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--paper);color:var(--rasp);font-size:var(--step-small)}
+.coupon-r{padding:clamp(28px,4vw,56px);border-left:5px dotted var(--paper)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form .full{grid-column:1/-1}
+.form label{display:block;font-size:var(--step-small);font-weight:600;margin-bottom:6px}
+.form input,.form select{width:100%;min-height:54px;padding:0 16px;border-radius:var(--r);border:2px solid transparent;background:var(--rasp-2);color:var(--paper);font:inherit;font-size:var(--step-body)}
+.form input::placeholder{color:#ffe2ea}
+.form input:focus,.form select:focus{outline:none;border-color:var(--paper)}
+.form select option{color:var(--ink);background:var(--paper)}
+.form ::-webkit-calendar-picker-indicator{filter:invert(1)}
+.form .btn{width:100%;min-height:56px}
+.form-hint{font-size:var(--step-small);margin-top:10px}
+.order-alt{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:var(--step-small)}
+.season{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);margin-top:clamp(48px,6vw,88px);align-items:stretch}
+.season figure{margin:0}
+.season figure img{width:100%;height:100%;min-height:280px;object-fit:cover;border-radius:var(--r)}
+.season .tag{background:var(--paper-2);border-radius:var(--r);padding:clamp(22px,2.6vw,36px)}
+.season h3{font-size:var(--step-h3)}
+.season .tag>p{margin-top:10px;color:var(--ink-soft);font-size:var(--step-small)}
+.price-list{list-style:none;margin-top:20px;display:grid;gap:12px}
+.price-list li{display:flex;justify-content:space-between;gap:14px;padding-bottom:12px;border-bottom:3px dotted var(--pist-2)}
+.price-list li:last-child{border-bottom:0;padding-bottom:0}
+.price-list .pr{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.price-list small{display:block;color:var(--ink-soft);font-size:var(--step-small)}
+
+/* ATELIERS: stacking sheets */
+.ateliers{padding-bottom:0}
+.sheets{position:relative}
+.sheet{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:min(62svh,520px);border-radius:28px 28px 0 0;overflow:hidden}
+.sheet:nth-child(1){background:var(--pist)}
+.sheet:nth-child(2){background:var(--choc);color:var(--on-dark);margin-top:-28px}
+.sheet:nth-child(3){background:var(--rasp);color:var(--paper);margin-top:-28px}
+.sheet-txt{padding:clamp(28px,3vw,48px) clamp(22px,3vw,48px) clamp(32px,4vw,56px);display:flex;flex-direction:column}
+.sheet h3{font-size:var(--step-h3);min-height:40px}
+.sheet-body{display:grid;gap:18px;padding-top:28px}
+.sheet-body p{max-width:42ch}
+.sheet-body ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.sheet-body ul li{background:rgba(255,252,246,.55);color:var(--ink);padding:8px 14px;border-radius:999px;font-size:var(--step-small);font-weight:600}
+.sheet:nth-child(2) .sheet-body ul li{background:var(--choc-2);color:var(--on-dark)}
+.sheet:nth-child(3) .sheet-body ul li{background:var(--rasp-2);color:var(--paper)}
+.sheet .big{font-size:var(--step-head);font-weight:800;letter-spacing:-.04em;line-height:1}
+.sheet .big small{font-size:var(--step-body);font-weight:600;letter-spacing:0;margin-left:8px}
+.sheet figure{margin:0;position:relative}
+.sheet figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sheet .btn{align-self:flex-start}
+
+/* MAISON: letter sheet */
+.maison{background:var(--choc);color:var(--on-dark)}
+.maison .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,640px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.letter{background:var(--paper);color:var(--ink);padding:clamp(28px,4vw,60px);border-radius:var(--r) var(--r) 0 0}
+.letter h2{font-size:var(--step-h3)}
+.letter p{margin-top:18px;line-height:1.6}
+.letter p.sign{font-size:var(--step-lead);font-style:italic;font-weight:500;margin-top:28px}
+.letter mark{background:var(--pist);color:inherit;padding:0 .15em;border-radius:3px}
+.tear{background:var(--paper);color:var(--ink);border-top:5px dotted var(--choc);border-radius:0 0 var(--r) var(--r);padding:20px clamp(28px,4vw,60px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+.tear a{font-weight:650}
+.maison figure{margin:0}
+.maison figure img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r)}
+.maison figure:last-child img{aspect-ratio:4/5}
+.maison figcaption{font-size:var(--step-small);margin-top:8px;color:var(--on-dark-soft)}
+.mfacts{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:26px}
+.mfacts li{background:var(--paper-2);border-radius:var(--r);padding:14px;font-size:var(--step-small);line-height:1.3}
+.mfacts b{display:block;font-size:var(--step-h3);letter-spacing:-.03em;line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums}
+
+/* INFOS */
+.infos .in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,40px)}
+.infos h2{grid-column:1/-1;font-size:var(--step-head);margin-bottom:clamp(8px,2vw,24px)}
+.box{background:var(--pist);border-radius:var(--r);padding:clamp(22px,2.6vw,36px)}
+.box h3,.col h3{font-size:var(--step-h3);margin-bottom:18px}
+.col{padding-top:clamp(22px,2.6vw,36px)}
+.col address{font-style:normal;font-size:var(--step-lead);font-weight:600;line-height:1.3}
+.col ul.lines{list-style:none;display:grid;gap:10px;margin:16px 0 22px}
+.col ul.lines a{font-weight:600}
+.col .btn{width:100%}
+.hours{list-style:none;display:grid;gap:4px}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:8px 12px;border-radius:4px;font-variant-numeric:tabular-nums}
+.hours li.today{background:var(--paper);font-weight:700}
+.box .note{margin-top:14px;font-size:var(--step-small);color:var(--ink-soft)}
+.box address{font-style:normal;font-size:var(--step-lead);font-weight:600;line-height:1.35}
+.box ul.lines{list-style:none;display:grid;gap:10px;margin:16px 0 22px}
+.box ul.lines a{font-weight:600}
+.box .btn{width:100%}
+.now{display:inline-flex;align-items:center;gap:8px;background:var(--paper);padding:6px 14px;border-radius:999px;font-weight:650;font-size:var(--step-small);margin-bottom:16px}
+.now .dot{width:10px;height:10px;border-radius:50%;background:var(--ink-soft)}
+.now.open .dot{background:#2f7a2a}
+.now.closed .dot{background:var(--rasp)}
+
+/* FOOTER: back of the postcard, curtain reveal */
+.foot{position:relative;background:var(--choc);padding:clamp(48px,6vw,88px) var(--m) 24px}
+.back{max-width:1240px;margin:0 auto;background:var(--paper);color:var(--ink);border-radius:var(--r);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;position:relative}
+.back-l{padding:clamp(26px,4vw,56px)}
+.back-l h2{font-size:var(--step-h3)}
+.back-l p{margin-top:16px;max-width:36ch}
+.back-r{padding:clamp(26px,4vw,56px);border-left:3px dotted var(--pist-2);position:relative}
+.back-r ul{list-style:none;display:grid;gap:12px;font-size:var(--step-body);margin-top:96px}
+.back-r ul a{font-weight:600}
+.back .stamp-ph{position:absolute;right:clamp(20px,3vw,40px);top:clamp(20px,3vw,40px);width:88px;background:var(--paper);border:5px dotted var(--pist);padding:4px;transform:rotate(3deg)}
+.back .stamp-ph img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.imprint{max-width:1240px;margin:20px auto 0;color:var(--on-dark-soft);font-size:var(--step-small);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+.imprint a{color:var(--on-dark)}
+
+/* motion: entrances (content visible without JS) */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);transition-delay:calc(var(--i,0) * 80ms)}
+.js .rv.on{opacity:1;transform:none}
+@keyframes deal{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
+.pc,.cards .stamp{animation:deal 1s var(--ease-out) both}
+.pc-b{animation-delay:.12s}.pc-c{animation-delay:.24s}.cards .stamp{animation-delay:.4s}
+@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.pc-a img{animation:drift 14s ease-in-out infinite alternate}
+.pc:hover{z-index:6}
+.pc{transition:rotate .4s var(--ease-out)}
+.pc:hover{rotate:2deg}
+.panel.show .front img{animation:settle .9s var(--ease-out)}
+.panel.show .back{animation:deal .7s var(--ease-out)}
+@keyframes settle{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+.comptoir-photos img,.season img,.maison figure img{transition:transform .6s var(--ease-out)}
+.comptoir-photos figure:hover img,.season figure:hover img{transform:scale(1.02)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:opacity .15s}
+  .pc,.cards .stamp,.pc-a img,.panel.show .front img,.panel.show .back{animation:none}
+  .btn,.st,.pc{transition:none}
+  .st:hover,.pc:hover{transform:none;rotate:none}
 }
 
-/* brunch : billets */
-.brunch{background:var(--night);color:var(--on-night);padding:clamp(72px,9vw,128px) var(--m)}
-.brunch-head{display:grid;gap:20px}
-.brunch-head p{font-size:clamp(18px,1.6vw,22px);color:#d9d3cb}
-@media(min-width:900px){.brunch-head{grid-template-columns:1.2fr 1fr;align-items:end;gap:48px}}
-.codes{display:flex;gap:6px;margin-top:48px;overflow-x:auto;scrollbar-width:none}
-.codes button{flex:1 0 auto;min-width:64px;background:#222;color:var(--on-night);border:0;font:800 clamp(22px,3.6vw,52px)/1 "Schibsted Grotesk",sans-serif;letter-spacing:-.03em;padding:18px 16px 14px;cursor:pointer;text-align:left;transition:background .2s,color .2s}
-.codes button small{display:block;font-size:13px;font-weight:500;letter-spacing:0;margin-top:8px;color:#bdb6ad}
-.codes button:hover{background:#2e2e2e}
-.codes button[aria-selected=true]{background:var(--canvas);color:var(--ink)}
-.codes button[aria-selected=true] small{color:var(--ink-2)}
-.ticket{display:grid;grid-template-columns:1fr;background:var(--canvas);color:var(--ink);margin-top:6px}
-.ticket-main{padding:clamp(24px,4vw,56px)}
-.ticket-main h3{font-size:clamp(34px,5vw,72px);letter-spacing:-.04em;line-height:.95}
-.ticket ol{list-style:none;margin-top:28px;display:grid;gap:14px;font-size:clamp(17px,1.4vw,20px)}
-.ticket ol li span{display:block;font-size:14px;font-weight:700;color:var(--accent)}
-.ticket-stub{background:var(--accent);color:#fff;padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:24px;}
-.ticket-stub .price{font-size:clamp(64px,8vw,120px);font-weight:800;letter-spacing:-.05em;line-height:.9}
-.ticket-stub p{font-weight:500}
-.ticket-stub .btn{background:#fff;color:var(--accent);align-self:flex-start}
-.ticket-stub .btn:hover{background:var(--canvas)}
-.panel[hidden]{display:none}
-.hero + .brunch{margin-top:clamp(56px,6vw,88px)}
-.panel{animation:rise .5s var(--ease)}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}}
-@media(min-width:900px){.ticket{grid-template-columns:1fr 340px}}
-
-/* comptoir */
-.counter{display:grid;gap:clamp(24px,4vw,56px)}
-.counter-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.counter-grid figure{position:relative;overflow:hidden;background:var(--surface)}
-.counter-grid figure:first-child{grid-column:span 2;aspect-ratio:16/10}
-.counter-grid figure:not(:first-child){aspect-ratio:1}
-.counter-grid figcaption{position:absolute;left:0;bottom:0;background:var(--canvas);padding:8px 14px;font-weight:700;font-size:15px}
-.counter-list{display:grid;gap:28px;align-content:start}
-.counter-list p{font-size:18px}
-.counter-list dl{display:grid;gap:18px}
-.counter-list dt{font-weight:800;font-size:22px;letter-spacing:-.02em}
-.counter-list dd{color:var(--ink-2)}
-@media(min-width:900px){.counter{grid-template-columns:1fr 1.15fr}.counter-grid figure:first-child{aspect-ratio:16/9}}
-
-/* commande */
-.order{background:var(--accent);color:#fff;display:grid}
-.order-photo{min-height:340px}
-.order-body{padding:clamp(40px,6vw,96px) var(--m)}
-.order-body h2{color:#fff}
-.order-body > p{font-size:clamp(18px,1.6vw,22px);margin-top:24px}
-.order-steps{list-style:none;display:grid;gap:18px;margin-top:36px;max-width:560px}
-.order-steps li{background:rgba(0,0,0,.14);padding:18px 22px;font-size:17px}
-.order-steps b{display:block;font-size:20px}
-.season{margin-top:36px;max-width:560px}
-.season h3{font-size:22px}
-.season p{margin-top:8px}
-.order .btn-light{background:#fff;color:var(--accent)}
-.order .btn-light:hover{background:var(--canvas)}
-.order .btn-ghost{background:rgba(0,0,0,.2);color:#fff}
-.order .btn-ghost:hover{background:rgba(0,0,0,.32)}
-.order-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
-@media(min-width:900px){.order{grid-template-columns:1fr 1.1fr}.order-photo{min-height:100%}}
-
-/* ateliers */
-.workshops{display:grid;gap:clamp(28px,4vw,64px)}
-.workshops-photo{aspect-ratio:4/3;overflow:hidden}
-.ws-list{display:grid;gap:10px;margin-top:32px}
-.ws{background:var(--surface);padding:22px 24px}
-.ws h3{font-size:22px}
-.ws p{margin-top:6px;color:var(--ink-2)}
-.ws-feature{background:var(--ink);color:var(--canvas)}
-.ws-feature p{color:#d9d3cb}
-@media(min-width:900px){.workshops{grid-template-columns:1.1fr 1fr;align-items:start}.workshops-photo{aspect-ratio:4/5;position:sticky;top:24px}}
-
-/* maison */
-.house{display:grid;gap:28px}
-.house blockquote{font-size:clamp(24px,2.6vw,36px);line-height:1.25;font-weight:500;letter-spacing:-.015em;max-width:30ch}
-.house-facts{display:grid;gap:22px;font-size:18px}
-.house-facts b{display:block;font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
-@media(min-width:900px){.house{grid-template-columns:1fr 1fr;gap:64px}}
-
-/* infos */
-.info{display:grid;gap:8px}
-.info > div{background:var(--surface);padding:clamp(24px,3vw,40px)}
-.info h3{font-size:clamp(24px,2.4vw,32px)}
-.hours{margin-top:18px;display:grid;gap:10px;font-variant-numeric:tabular-nums;font-size:18px}
-.hours div{display:flex;justify-content:space-between;gap:16px}
-.hours div.today{color:var(--accent);font-weight:700}
-.note{font-size:14px;color:var(--ink-2);margin-top:16px}
-.info address{font-style:normal;font-size:18px;margin-top:18px}
-.info .btn{margin-top:22px}
-.contact-lines{margin-top:18px;display:grid;gap:10px;font-size:18px}
-.contact-lines a{font-weight:700}
-@media(min-width:900px){.info{grid-template-columns:1.2fr 1fr}.info .hrs{grid-row:span 2}.info .hours{font-size:clamp(18px,1.6vw,22px);gap:14px}}
-
-/* footer */
-footer{margin-top:var(--gap);background:var(--ink);color:var(--on-night);padding:clamp(48px,6vw,88px) var(--m) 28px}
-.foot-name{font-size:clamp(60px,15.5vw,250px);font-weight:800;letter-spacing:-.055em;line-height:.85}
-.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:40px;font-size:14px;color:#bdb6ad}
-.foot-row a{color:var(--on-night)}
-
-/* entrées */
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.js .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
-@media(max-width:720px){nav ul{display:none}.btn{padding:0 20px}.codes{gap:4px}.codes button{flex:1 1 0;min-width:0;padding:14px 8px 12px;font-size:21px}.codes button small{font-size:11px}}
+/* tablet */
+@media (max-width:1080px){
+  .nav ul{display:none}
+  .nav .btn{margin-left:auto}
+  .hero-in{grid-template-columns:1fr}
+  .cards{justify-self:center;max-width:620px}
+  .comptoir .in{grid-template-columns:1fr}
+  .comptoir-photos{position:static}
+  .season{grid-template-columns:1fr 1fr}
+  .season figure{grid-column:1/-1}
+  .season figure img{aspect-ratio:16/9;min-height:0}
+  .maison .in{grid-template-columns:1fr 1fr}
+  .maison .letter-wrap{grid-column:1/-1;order:-1}
+  .infos .in{grid-template-columns:1fr 1fr}
+  .coupon{grid-template-columns:1fr}
+  .coupon::before,.coupon::after{display:none}
+  .coupon-r{border-left:0;border-top:5px dotted var(--paper)}
+}
+/* phone */
+@media (max-width:720px){
+  .demo{font-size:var(--step-small)}
+  .mark{font-size:var(--step-body)}
+  .mark b{width:32px;height:32px}
+  .nav{gap:12px}
+  .nav .btn{min-height:44px;padding:0 16px}
+  .hero h1{font-size:clamp(2.35rem,10.6vw,3.2rem);max-width:none}
+  .lede{margin-top:20px}
+  .facts{grid-template-columns:1fr 1fr;margin-top:24px}
+  .facts b{font-size:var(--step-h3)}
+  .actions .btn{flex:1 1 100%}
+  .cards{aspect-ratio:1/1.12;margin-top:8px}
+  .pc{padding:8px 8px 0}
+  .pc figcaption{font-size:var(--step-small);padding:8px 2px 10px;flex-direction:column;gap:2px}
+  .pc-a{width:55%;top:10%}
+  .pc-b{width:43%}
+  .pc-c{width:45%;bottom:0}
+  .pc figcaption span{display:none}
+  .cards .stamp{left:36%;top:0;padding:6px 8px}
+  .stamp b{font-size:var(--step-lead)}
+  .sec-head{grid-template-columns:1fr;gap:16px}
+  .st{flex:1 1 40%;min-height:80px;padding:10px 12px 12px}
+  .st:last-child{flex-basis:100%}
+  .st b{font-size:var(--step-lead)}
+  .postcard{grid-template-columns:1fr;min-height:0}
+  .postcard .front{min-height:0;aspect-ratio:4/3}
+  .postmark{display:none}
+  .postcard .stamp{position:static;align-self:flex-start;transform:rotate(-3deg);margin-bottom:18px;order:-1}
+  .menu-lines li{grid-template-columns:1fr;gap:2px}
+  .included .btn{width:100%}
+  .giant h2{font-size:31cqw}
+  .comptoir-photos{grid-template-columns:1fr 1fr;gap:8px}
+  .coupon{grid-template-columns:1fr;border-radius:var(--r)}
+  .coupon::before,.coupon::after{left:auto;top:auto;bottom:auto}
+  .coupon::before{display:none}
+  .coupon::after{display:none}
+  .coupon-r{border-left:0;border-top:5px dotted var(--paper)}
+  .form{grid-template-columns:1fr}
+  .season{grid-template-columns:1fr}
+  .sheet{grid-template-columns:1fr;min-height:0;border-radius:20px 20px 0 0}
+  .sheet:nth-child(n+2){margin-top:-20px}
+  .sheet h3{font-size:var(--step-lead)}
+  .sheet figure{order:-1;aspect-ratio:4/3}
+  .sheet-txt{padding:20px 20px 32px}
+  .sheet-body{padding-top:20px}
+  .sheet .btn{width:100%}
+  .maison .in{grid-template-columns:1fr 1fr;gap:12px}
+  .mfacts{grid-template-columns:1fr}
+  .tear{flex-direction:column;align-items:stretch}
+  .tear .btn{width:100%}
+  .infos .in{grid-template-columns:1fr}
+  .back{grid-template-columns:1fr}
+  .back-r{border-left:0;border-top:3px dotted var(--pist-2)}
+  .back .stamp-ph{width:60px;top:-30px}
+  .back-r{padding-top:44px}
+  .back-r ul{margin-top:0;font-size:var(--step-body)}
+}
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Aller au contenu</a>
 <div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
 
-<nav aria-label="Navigation principale">
-  <a class="mark" href="#top">Baiman's Cake</a>
-  <ul>
-    <li><a href="#brunch">Brunchs</a></li>
-    <li><a href="#comptoir">Comptoir</a></li>
-    <li><a href="#commande">Sur commande</a></li>
-    <li><a href="#ateliers">Ateliers</a></li>
-    <li><a href="#infos">Horaires</a></li>
-  </ul>
-  <a class="btn btn-b" href="tel:+33978811065">Appeler</a>
-</nav>
+<div class="top">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="mark" href="#top" translate="no"><b aria-hidden="true">B</b>Baiman's Cake</a>
+    <ul>
+      <li><a href="#brunch">Brunchs</a></li>
+      <li><a href="#comptoir">Comptoir</a></li>
+      <li><a href="#commande">Commande</a></li>
+      <li><a href="#ateliers">Ateliers</a></li>
+      <li><a href="#infos">Horaires</a></li>
+    </ul>
+    <a class="btn btn-r" href="tel:+33978811065"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler</a>
+  </nav>
+</div>
 
-<header class="hero" id="top">
-  <div>
-    <h1 class="rv">Baiman's Cake</h1>
-    <p class="hero-lede rv">Pâtisserie, salon de thé et ateliers au 71&nbsp;rue Robespierre, à Montreuil.</p>
-    <div class="hero-actions rv">
-      <a class="btn btn-a" href="#commande">Commander un gâteau</a>
-      <a class="btn btn-c" href="https://www.google.com/maps/dir/?api=1&destination=Baiman%27s+Cake+71+rue+Robespierre+93100+Montreuil" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-        Itinéraire</a>
+<main id="top">
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <h1 class="rv">Pâtisserie et brunchs du monde à Montreuil</h1>
+      <p class="lede rv" style="--i:1">Baiman's Cake, au 71 rue Robespierre&nbsp;: viennoiseries et gâteaux faits main dès 7h30, Brunchs du Monde le week-end, gâteaux sur commande et ateliers de pâtisserie.</p>
+      <ul class="facts rv" style="--i:2">
+        <li><b>29&nbsp;€</b><span>le brunch complet, boisson comprise</span></li>
+        <li><b>5</b><span>villes au menu des brunchs</span></li>
+        <li><b>7h30</b><span>ouverture du lundi au samedi</span></li>
+        <li><b>4,8</b><span>sur 5 sur Google</span></li>
+      </ul>
+      <div class="actions rv" style="--i:3">
+        <a class="btn btn-r" href="tel:+33978811065"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Réserver un brunch</a>
+        <a class="btn btn-p" href="#commande">Commander un gâteau</a>
+      </div>
+      <p class="status rv" style="--i:4">
+        <span id="hero-status"><span class="dot"></span>Lundi au samedi, 7h30 à 20h</span>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Baiman%27s+Cake+71+rue+Robespierre+93100+Montreuil" target="_blank" rel="noopener">Itinéraire, métro ligne 9</a>
+        <span>Cuisine halal</span>
+      </p>
     </div>
-    <p class="hero-facts rv"><span><b>4,8/5</b> sur Google</span><span>Métro Robespierre, ligne 9</span><span>Cuisine halal</span></p>
-  </div>
-  <div class="hero-photo rv">
-    <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=1400&q=78&fit=crop" alt="Gâteau à la crème couronné de mûres et de fleurs" fetchpriority="high">
+
+    <div class="cards" aria-label="Aperçu de la maison">
+      <figure class="pc pc-a">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=900&amp;h=1125&amp;q=78&amp;fit=crop" width="900" height="1125" alt="Gâteau à la crème couronné de mûres et de fleurs" fetchpriority="high"></div>
+        <figcaption>Gâteaux sur commande <span>à la demande</span></figcaption>
+      </figure>
+      <figure class="pc pc-b">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1623334044303-241021148842?w=700&amp;h=700&amp;q=75&amp;fit=crop" width="700" height="700" alt="Croissants dorés posés sur du papier cuisson"></div>
+        <figcaption>Viennoiseries <span>dès 7h30</span></figcaption>
+      </figure>
+      <figure class="pc pc-c">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1590412200988-a436970781fa?w=800&amp;h=640&amp;q=75&amp;fit=crop" width="800" height="640" alt="Shakshouka aux œufs dans une poêle"></div>
+        <figcaption>Brunch Istanbul <span>le week-end</span></figcaption>
+      </figure>
+      <div class="stamp" aria-hidden="true"><b>29&nbsp;€</b><span>le brunch</span></div>
+    </div>
   </div>
 </header>
 
-<section class="brunch" id="brunch" aria-labelledby="brunch-t">
-  <div class="brunch-head">
-    <h2 id="brunch-t" class="rv">Cinq brunchs, cinq villes</h2>
-    <p class="rv">Les Brunchs du Monde, chaque week-end&nbsp;: choisissez votre destination. Tout est fait maison et préparé à la commande, boisson comprise.</p>
-  </div>
+<section class="sec brunch" id="brunch" aria-labelledby="brunch-t">
+  <div class="in">
+    <div class="sec-head">
+      <h2 id="brunch-t" class="rv">Les Brunchs du Monde</h2>
+      <p class="rv" style="--i:1">Chaque week-end, choisissez votre escale. Tout est fait maison et préparé à la commande, pour 29&nbsp;€ avec une boisson.</p>
+    </div>
 
-  <div class="codes" role="tablist" aria-label="Choisir une destination">
-    <button role="tab" id="t-ist" aria-controls="p-ist" aria-selected="true">IST<small>Istanbul</small></button>
-    <button role="tab" id="t-rom" aria-controls="p-rom" aria-selected="false" tabindex="-1">ROM<small>Rome</small></button>
-    <button role="tab" id="t-par" aria-controls="p-par" aria-selected="false" tabindex="-1">PAR<small>Paris</small></button>
-    <button role="tab" id="t-nyc" aria-controls="p-nyc" aria-selected="false" tabindex="-1">NYC<small>New York</small></button>
-    <button role="tab" id="t-lon" aria-controls="p-lon" aria-selected="false" tabindex="-1">LON<small>Londres</small></button>
-  </div>
+    <div class="stamps rv" style="--i:2" role="tablist" aria-label="Choisir une destination">
+      <button class="st" role="tab" id="t-ist" aria-controls="p-ist" aria-selected="true"><b>Istanbul</b><span>shakshouka, mezzés</span></button>
+      <button class="st" role="tab" id="t-rom" aria-controls="p-rom" aria-selected="false" tabindex="-1"><b>Rome</b><span>lasagnes, tiramisu</span></button>
+      <button class="st" role="tab" id="t-par" aria-controls="p-par" aria-selected="false" tabindex="-1"><b>Paris</b><span>croque-madame</span></button>
+      <button class="st" role="tab" id="t-nyc" aria-controls="p-nyc" aria-selected="false" tabindex="-1"><b>New York</b><span>burger au croissant</span></button>
+      <button class="st" role="tab" id="t-lon" aria-controls="p-lon" aria-selected="false" tabindex="-1"><b>Londres</b><span>muffin bacon-œuf</span></button>
+    </div>
 
-  <div class="ticket">
-    <div class="ticket-main">
-      <div class="panel" role="tabpanel" id="p-ist" aria-labelledby="t-ist">
-        <h3>Istanbul</h3>
+    <div class="panel show" role="tabpanel" id="p-ist" aria-labelledby="t-ist">
+      <article class="postcard">
+        <div class="front"><img src="https://images.unsplash.com/photo-1590412200988-a436970781fa?w=1100&amp;h=900&amp;q=75&amp;fit=crop" width="1100" height="900" alt="Shakshouka aux œufs et aux herbes" loading="lazy"></div>
+        <div class="back">
+          <div class="stamp" aria-hidden="true"><b>29&nbsp;€</b><span>Istanbul</span></div>
+          <svg class="postmark" viewBox="0 0 140 140" aria-hidden="true"><defs><path id="pm" d="M70 70m-52 0a52 52 0 1 1 104 0a52 52 0 1 1-104 0"/></defs><circle cx="70" cy="70" r="66" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="70" cy="70" r="38" fill="none" stroke="currentColor" stroke-width="2"/><text font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="700" fill="currentColor"><textPath href="#pm">Montreuil · 71 rue Robespierre ·</textPath></text><text x="70" y="66" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="15" font-weight="800" fill="currentColor">93100</text><text x="70" y="84" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="13" font-weight="600" fill="currentColor">depuis 2021</text></svg>
+          <h3>Escale à Istanbul</h3>
+          <ul class="menu-lines">
+            <li><span>Plat</span>Shakshouka au sucuk</li>
+            <li><span>À partager</span>Houmous de pois chiche, houmous de betterave, tzatziki, börek au fromage, mini lahmacun</li>
+            <li><span>Dessert</span>Cheesecake baklava</li>
+          </ul>
+          <div class="included"><p>Avec un expresso, un latte, un americano, un cappuccino, un thé ou un jus d'orange pressé.</p><a class="btn btn-r" href="tel:+33978811065">Réserver ce week-end</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="panel" role="tabpanel" id="p-rom" aria-labelledby="t-rom">
+      <article class="postcard">
+        <div class="front"><img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=1100&amp;h=900&amp;q=75&amp;fit=crop" width="1100" height="900" alt="Part de lasagnes à la sauce tomate" loading="lazy"></div>
+        <div class="back">
+          <div class="stamp" aria-hidden="true"><b>29&nbsp;€</b><span>Rome</span></div>
+          <h3>Dolce Vita à Rome</h3>
+          <ul class="menu-lines">
+            <li><span>Plat</span>Lasagnes végétariennes</li>
+            <li><span>À partager</span>Antipasti, focaccia, salade de tomates et mozzarella di bufala</li>
+            <li><span>Dessert</span>Tiramisu</li>
+          </ul>
+          <div class="included"><p>Avec un expresso, un latte, un americano, un cappuccino, un thé ou un jus d'orange pressé.</p><a class="btn btn-r" href="tel:+33978811065">Réserver ce week-end</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="panel" role="tabpanel" id="p-par" aria-labelledby="t-par">
+      <article class="postcard">
+        <div class="front"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=1100&amp;h=900&amp;q=75&amp;fit=crop" width="1100" height="900" alt="Sandwich grillé coupé en triangles" loading="lazy"></div>
+        <div class="back">
+          <div class="stamp" aria-hidden="true"><b>29&nbsp;€</b><span>Paris</span></div>
+          <h3>Paris Gourmand</h3>
+          <ul class="menu-lines">
+            <li><span>Plat</span>Croque-madame, salade et pommes de terre grenaille rôties</li>
+            <li><span>À partager</span>Trio de fromages, pain et beurre, assortiment de mignardises</li>
+            <li><span>Dessert</span>Flan de saison ou mille-feuille</li>
+          </ul>
+          <div class="included"><p>Avec un expresso, un latte, un americano, un cappuccino, un thé ou un jus d'orange pressé.</p><a class="btn btn-r" href="tel:+33978811065">Réserver ce week-end</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="panel" role="tabpanel" id="p-nyc" aria-labelledby="t-nyc">
+      <article class="postcard">
+        <div class="front"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1100&amp;h=900&amp;q=75&amp;fit=crop" width="1100" height="900" alt="Burger garni de salade et de tomate" loading="lazy"></div>
+        <div class="back">
+          <div class="stamp" aria-hidden="true"><b>29&nbsp;€</b><span>New York</span></div>
+          <h3>New York City Brunch</h3>
+          <ul class="menu-lines">
+            <li><span>Plat</span>Burger au croissant, sauce américaine, salade et frites</li>
+            <li><span>À côté</span>Coleslaw maison, toast beurre de cacahuète et confiture</li>
+            <li><span>Dessert</span>Brownie</li>
+          </ul>
+          <div class="included"><p>Avec un expresso, un latte, un americano, un cappuccino, un thé ou un jus d'orange pressé.</p><a class="btn btn-r" href="tel:+33978811065">Réserver ce week-end</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="panel" role="tabpanel" id="p-lon" aria-labelledby="t-lon">
+      <article class="postcard">
+        <div class="front"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=1100&amp;h=900&amp;q=75&amp;fit=crop" width="1100" height="900" alt="Tartine de pain grillé et œuf au plat" loading="lazy"></div>
+        <div class="back">
+          <div class="stamp" aria-hidden="true"><b>29&nbsp;€</b><span>Londres</span></div>
+          <h3>Escapade londonienne</h3>
+          <ul class="menu-lines">
+            <li><span>Plat</span>Muffin bacon-œuf, salade et galettes de pommes de terre</li>
+            <li><span>À partager</span>Mini club sandwichs&nbsp;: fromage frais et cheddar, fromage frais, jambon et emmental</li>
+            <li><span>Dessert</span>Pudding maison, crème anglaise</li>
+          </ul>
+          <div class="included"><p>Avec un expresso, un latte, un americano, un cappuccino, un thé ou un jus d'orange pressé.</p><a class="btn btn-r" href="tel:+33978811065">Réserver ce week-end</a></div>
+        </div>
+      </article>
+    </div>
+    <p class="brunch-note">Les croissants des brunchs viennent d'Anthony Nguyen, pâtissier partenaire de la maison. Menus relevés par Sortiraparis en juin 2026, à confirmer en boutique.</p>
+  </div>
+</section>
+
+<section class="sec comptoir" id="comptoir" aria-labelledby="comptoir-t">
+  <div class="in">
+    <div class="giant">
+      <h2 id="comptoir-t" class="rv">Comptoir</h2>
+      <p class="rv" style="--i:1">En vitrine du lundi au samedi dès 7h30, à emporter ou à table dans la grande salle.</p>
+      <div class="bars rv" style="--i:2">
+        <details open>
+          <summary>Viennoiseries<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <ul>
+            <li><span>Croissants<small>pâte feuilletée maison</small></span><span class="pr">au comptoir</span></li>
+            <li><span>Pains au chocolat</span><span class="pr">au comptoir</span></li>
+            <li><span>Pains suisses<small>selon la fournée</small></span><span class="pr">au comptoir</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Pâtisseries<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <ul>
+            <li><span>Entremets<small>montés en couches, à la part</small></span><span class="pr">en vitrine</span></li>
+            <li><span>Tartes et gâteaux faits main</span><span class="pr">en vitrine</span></li>
+            <li><span>Flans</span><span class="pr">en vitrine</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Salé, le midi<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <ul>
+            <li><span>Sandwichs maison</span><span class="pr">au comptoir</span></li>
+            <li><span>Wraps gourmands</span><span class="pr">au comptoir</span></li>
+            <li><span>Bagels</span><span class="pr">au comptoir</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Thés et cafés<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <ul>
+            <li><span>Expresso, americano, latte, cappuccino</span><span class="pr">au comptoir</span></li>
+            <li><span>Thés choisis<small>servis au salon de thé</small></span><span class="pr">au comptoir</span></li>
+            <li><span>Jus d'orange pressé</span><span class="pr">au comptoir</span></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Galettes des rois, en janvier<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <ul>
+            <li><span>Frangipane<small>6 parts, saison 2026</small></span><span class="pr">30&nbsp;€</span></li>
+            <li><span>Frangipane à la cannelle<small>5 à 6 parts, saison 2026</small></span><span class="pr">36&nbsp;€</span></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+    <div class="comptoir-photos">
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=1100&amp;h=825&amp;q=75&amp;fit=crop" width="1100" height="825" alt="Tartelettes aux fruits frais vues de dessus" loading="lazy"><figcaption class="cap">Tartelettes aux fruits</figcaption></figure>
+      <figure class="rv" style="--i:1"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=700&amp;h=700&amp;q=75&amp;fit=crop" width="700" height="700" alt="Part d'entremets en couches" loading="lazy"><figcaption class="cap">Entremets</figcaption></figure>
+      <figure class="rv" style="--i:2"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&amp;h=700&amp;q=75&amp;fit=crop" width="700" height="700" alt="Trois cafés latte sur une table en bois" loading="lazy"><figcaption class="cap">Cafés et lattes</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec commande" id="commande" aria-labelledby="commande-t">
+  <div class="in">
+    <div class="coupon rv">
+      <div class="coupon-l">
+        <h2 id="commande-t">Votre gâteau sur commande</h2>
+        <p>Anniversaire, fête de famille, réunion de bureau&nbsp;: remplissez le bon, il s'ouvre en e-mail prêt à envoyer à la boutique.</p>
         <ol>
-          <li><span>Plat</span>Shakshouka au sucuk</li>
-          <li><span>À partager</span>Mezzés&nbsp;: houmous de pois chiche, houmous de betterave, tzatziki, börek au fromage, mini lahmacun</li>
-          <li><span>Dessert</span>Cheesecake baklava</li>
+          <li><b>1</b>La date et le nombre de parts</li>
+          <li><b>2</b>Les parfums et le décor, on vous conseille</li>
+          <li><b>3</b>Le retrait au 71 rue Robespierre</li>
         </ol>
       </div>
-      <div class="panel" role="tabpanel" id="p-rom" aria-labelledby="t-rom">
-        <h3>Rome, dolce vita</h3>
-        <ol>
-          <li><span>Plat</span>Lasagnes végétariennes</li>
-          <li><span>À partager</span>Antipasti, focaccia, tomates et mozzarella di bufala</li>
-          <li><span>Dessert</span>Tiramisu</li>
-        </ol>
-      </div>
-      <div class="panel" role="tabpanel" id="p-par" aria-labelledby="t-par">
-        <h3>Paris gourmet</h3>
-        <ol>
-          <li><span>Plat</span>Croque-monsieur ou croque-madame, salade et pommes de terre rôties</li>
-          <li><span>À partager</span>Plateau de trois fromages, pain et beurre, mignardises</li>
-          <li><span>Dessert</span>Crème caramel ou mille-feuille, selon la saison</li>
-        </ol>
-      </div>
-      <div class="panel" role="tabpanel" id="p-nyc" aria-labelledby="t-nyc">
-        <h3>New York</h3>
-        <ol>
-          <li><span>Plat</span>Burger au croissant, sauce américaine, salade, frites et coleslaw maison</li>
-          <li><span>À côté</span>Pain grillé au beurre de cacahuète et confiture</li>
-          <li><span>Dessert</span>Brownie</li>
-        </ol>
-      </div>
-      <div class="panel" role="tabpanel" id="p-lon" aria-labelledby="t-lon">
-        <h3>Londres</h3>
-        <ol>
-          <li><span>Plat</span>Muffin bacon-œuf et salade</li>
-          <li><span>À partager</span>Mini club sandwiches&nbsp;: fromage frais et cheddar, fromage frais et jambon, emmental</li>
-          <li><span>Dessert</span>Pudding maison, crème vanille</li>
-        </ol>
+      <div class="coupon-r">
+        <form class="form" id="order" action="mailto:contact@baimans.com" method="post" enctype="text/plain">
+          <div><label for="f-occ">Occasion</label>
+            <select id="f-occ" name="occasion"><option>Anniversaire</option><option>Fête de famille</option><option>Mariage ou fiançailles</option><option>Réunion de bureau</option><option>Autre occasion</option></select></div>
+          <div><label for="f-date">Date de retrait</label><input id="f-date" name="date" type="date" required></div>
+          <div><label for="f-parts">Nombre de parts</label><input id="f-parts" name="parts" type="number" min="4" max="200" inputmode="numeric" value="8" autocomplete="off" required></div>
+          <div><label for="f-name">Votre prénom</label><input id="f-name" name="prenom" type="text" autocomplete="given-name" required></div>
+          <div class="full"><label for="f-taste">Parfums souhaités</label><input id="f-taste" name="parfums" type="text" autocomplete="off" placeholder="pistache, chocolat noisette, fruits rouges…"></div>
+          <div class="full"><button class="btn btn-i" type="submit">Préparer mon e-mail de commande</button>
+            <p class="form-hint" id="order-msg" role="status" aria-live="polite">Rien n'est envoyé sans votre clic dans votre messagerie.</p></div>
+        </form>
+        <p class="order-alt"><a href="tel:+33978811065">Ou par téléphone&nbsp;: 09&nbsp;78&nbsp;81&nbsp;10&nbsp;65</a></p>
       </div>
     </div>
-    <div class="ticket-stub">
-      <div>
-        <div class="price">29&nbsp;€</div>
-        <p>Le brunch complet, avec un café au choix, un thé ou un jus d'orange pressé.</p>
+
+    <div class="season">
+      <div class="tag rv">
+        <h3>Les bûches de Noël</h3>
+        <p>La carte de l'an dernier, pour se faire une idée. Bûches pour 8, parts individuelles à 7&nbsp;€.</p>
+        <ul class="price-list">
+          <li><span>Vanille, caramel, pécan<small>mousse vanille, caramel au beurre salé</small></span><span class="pr">50&nbsp;€</span></li>
+          <li><span>Chocolat noisette<small>mousse chocolat noir 65&nbsp;%, praliné</small></span><span class="pr">52&nbsp;€</span></li>
+          <li><span>Pistache, fleur d'oranger<small>ganache fleur d'oranger, praliné pistache</small></span><span class="pr">52&nbsp;€</span></li>
+          <li><span>Coco, mangue, passion<small>dacquoise coco, insert mangue-passion</small></span><span class="pr">48&nbsp;€</span></li>
+        </ul>
       </div>
-      <a class="btn" href="tel:+33978811065">Réserver ce week-end</a>
+      <figure class="rv" style="--i:1"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&amp;h=1000&amp;q=75&amp;fit=crop" width="900" height="1000" alt="Gâteau au chocolat garni de rosaces de crème" loading="lazy"></figure>
+      <div class="tag rv" style="--i:2">
+        <h3>Pour un groupe</h3>
+        <p>Les questions à préparer avant d'appeler.</p>
+        <ul class="price-list">
+          <li><span>Combien de parts&nbsp;?<small>le format s'adapte au nombre d'invités</small></span></li>
+          <li><span>Quel parfum&nbsp;?<small>de saison ou vos préférés</small></span></li>
+          <li><span>Quelle date&nbsp;?<small>le plus tôt possible, surtout en décembre</small></span></li>
+          <li><span>Un message sur le gâteau&nbsp;?<small>prénom, âge, félicitations</small></span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="counter wrap" id="comptoir" aria-labelledby="comptoir-t">
-  <div class="counter-list">
-    <h2 id="comptoir-t" class="rv">Au comptoir dès 7h30</h2>
-    <p class="rv">Une grande salle sous de hauts plafonds, avec beaucoup de tables&nbsp;: on y vient seul, en famille ou à plusieurs.</p>
-    <dl class="rv">
-      <div><dt>Viennoiseries</dt><dd>Croissants et pains au chocolat pur beurre. Les croissants des brunchs portent la signature d'Anthony Nguyen, boulanger partenaire de la maison.</dd></div>
-      <div><dt>Pâtisseries</dt><dd>Entremets, tartes et gâteaux faits main, en vitrine chaque jour.</dd></div>
-      <div><dt>Salé</dt><dd>Sandwichs maison, wraps gourmands et bagels.</dd></div>
-      <div><dt>À boire</dt><dd>Thés et cafés choisis avec soin.</dd></div>
-    </dl>
-  </div>
-  <div class="counter-grid">
-    <figure class="rv"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1400&q=75&fit=crop" alt="Croissants saupoudrés de sucre"><figcaption>Viennoiseries</figcaption></figure>
-    <figure class="rv"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=800&q=75&fit=crop" alt="Part d'entremets en couches"><figcaption>Entremets</figcaption></figure>
-    <figure class="rv"><img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=800&q=75&fit=crop" alt="Tartelettes aux fruits frais"><figcaption>Tartelettes</figcaption></figure>
-  </div>
-</section>
-
-<section class="order" id="commande" aria-labelledby="commande-t">
-  <div class="order-photo"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&q=75&fit=crop" alt="Gâteau au chocolat garni de rosaces de crème"></div>
-  <div class="order-body">
-    <h2 id="commande-t" class="rv">Votre gâteau, sur commande</h2>
-    <p class="rv">Anniversaire, fête de famille, réunion de bureau&nbsp;: décrivez-nous l'occasion, on prépare le gâteau.</p>
-    <ol class="order-steps rv">
-      <li><b>Dites-nous la date et le nombre de parts</b>Par téléphone ou par e-mail, le plus tôt possible.</li>
-      <li><b>Choisissez parfums et décor</b>On vous conseille selon la saison et vos envies.</li>
-      <li><b>Retirez-le rue Robespierre</b>Prêt à l'heure convenue ensemble.</li>
-    </ol>
-    <div class="season rv">
-      <h3>Les fêtes de fin d'année</h3>
-      <p>Chaque décembre, la maison propose ses bûches. L'an dernier&nbsp;: vanille caramel pécan, chocolat noisette, pistache fleur d'oranger, coco mangue passion. En janvier, la galette frangipane à la cannelle.</p>
+<section class="sec ateliers" id="ateliers" aria-labelledby="ateliers-t">
+  <div class="in">
+    <div class="sec-head">
+      <h2 id="ateliers-t" class="rv">Les ateliers</h2>
+      <p class="rv" style="--i:1">Un grand atelier dans la maison, ouvert à tous&nbsp;: débutants, enfants accompagnés et passionnés.</p>
     </div>
-    <div class="order-actions rv">
-      <a class="btn btn-light" href="mailto:contact@baimans.com?subject=Commande%20de%20g%C3%A2teau&body=Bonjour%2C%0A%0AJe%20souhaite%20commander%20un%20g%C3%A2teau.%0AOccasion%20%3A%20%0ADate%20de%20retrait%20%3A%20%0ANombre%20de%20parts%20%3A%20%0AParfum(s)%20souhait%C3%A9(s)%20%3A%20%0A%0AMerci%20!">Écrire ma commande</a>
-      <a class="btn btn-ghost" href="tel:+33978811065">09 78 81 10 65</a>
+    <div class="sheets">
+      <article class="sheet">
+        <div class="sheet-txt">
+          <h3>Poche à douille et glaçage</h3>
+          <div class="sheet-body">
+            <p>Les gestes du décor&nbsp;: tenir la poche, pousser une rosace, lisser un glaçage, napper un gâteau.</p>
+            <ul><li>Débutants bienvenus</li><li>Petit groupe</li><li>Dates sur demande</li></ul>
+            <a class="btn btn-i" href="mailto:contact@baimans.com?subject=Atelier%20poche%20%C3%A0%20douille%20%3A%20prochaines%20dates">Demander les dates</a>
+          </div>
+        </div>
+        <figure><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=1300&amp;h=1000&amp;q=75&amp;fit=crop" width="1300" height="1000" alt="Décor à la poche à douille sur un gâteau en étages" loading="lazy"></figure>
+      </article>
+      <article class="sheet">
+        <div class="sheet-txt">
+          <h3>Entremets et desserts</h3>
+          <div class="sheet-body">
+            <p>Monter un dessert en couches, de l'insert au glaçage. En saison, décor de galette et desserts à composer soi-même.</p>
+            <ul><li>Entremets</li><li>Galettes en janvier</li><li>Flan</li></ul>
+            <a class="btn btn-p" href="mailto:contact@baimans.com?subject=Atelier%20entremets%20%3A%20prochaines%20dates">Demander les dates</a>
+          </div>
+        </div>
+        <figure><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1300&amp;h=1000&amp;q=75&amp;fit=crop" width="1300" height="1000" alt="Part de gâteau aux framboises et à la crème" loading="lazy"></figure>
+      </article>
+      <article class="sheet">
+        <div class="sheet-txt">
+          <h3>«&nbsp;Du beurre au cœur&nbsp;», la viennoiserie</h3>
+          <div class="sheet-body">
+            <p class="big num">349&nbsp;€<small>la journée</small></p>
+            <p>Une journée avec Anthony Nguyen, de 9h à 17h30&nbsp;: pâte à croissant, feuilletage inversé, croissants, pains au chocolat, démonstration de pain suisse. Petit-déjeuner et déjeuner compris.</p>
+            <a class="btn btn-p" href="mailto:contact@baimans.com?subject=Atelier%20Du%20beurre%20au%20c%C5%93ur%20%3A%20prochaines%20dates">Réserver une place</a>
+          </div>
+        </div>
+        <figure><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1300&amp;h=1000&amp;q=75&amp;fit=crop" width="1300" height="1000" alt="Croissants saupoudrés de sucre glace" loading="lazy"></figure>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="workshops wrap" id="ateliers" aria-labelledby="ateliers-t">
-  <div class="workshops-photo rv"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=1200&q=75&fit=crop" alt="Décor à la poche à douille sur un gâteau"></div>
-  <div>
-    <h2 id="ateliers-t" class="rv">Les ateliers</h2>
-    <p class="rv" style="margin-top:24px;font-size:19px">Un grand atelier au fond de la boutique, ouvert à tous, débutants comme passionnés.</p>
-    <div class="ws-list">
-      <div class="ws rv"><h3>Poche à douille et glaçage</h3><p>Les gestes du décor, de la rosace au nappage.</p></div>
-      <div class="ws rv"><h3>Entremets</h3><p>Montage d'un dessert en couches, de l'insert à la finition.</p></div>
-      <div class="ws rv"><h3>Galettes et desserts créatifs</h3><p>Décor de galette en saison, desserts à composer soi-même.</p></div>
-      <div class="ws ws-feature rv"><h3>« Du beurre au cœur », avec Anthony Nguyen</h3><p>Une journée de viennoiserie, de 9h à 17h30&nbsp;: pâte à croissant, feuilletage inversé, croissants, pains au chocolat, pains suisses. Petit-déjeuner et déjeuner compris.</p></div>
+<section class="sec maison" id="maison" aria-labelledby="maison-t">
+  <div class="in">
+    <figure class="rv"><img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&amp;h=800&amp;q=75&amp;fit=crop" width="600" height="800" alt="Tarte au citron meringuée entamée" loading="lazy"><figcaption>Tarte au citron meringuée</figcaption></figure>
+    <div class="letter-wrap rv" style="--i:1">
+      <div class="letter">
+        <h2 id="maison-t">La maison d'Amelle</h2>
+        <p>Après plus de dix ans dans le tourisme, Amelle passe un CAP de pâtissière. En 2021, elle s'installe au 71 rue Robespierre, dans un ancien espace de coworking dont elle garde <mark>les grands volumes et les hauts plafonds</mark>.</p>
+        <p>Le nom Baiman's réunit les prénoms de sa famille. La salle accueille les tablées d'amis comme les grandes familles, et les brunchs voyagent&nbsp;: Vietnam, Maroc et Tunisie sont à l'étude.</p>
+        <p class="sign">Baiman's Cake, cuisine halal, depuis 2021.</p>
+      </div>
+      <div class="tear"><a href="mailto:contact@baimans.com">contact@baimans.com</a><a class="btn btn-r" href="https://www.instagram.com/baimans.cake/" target="_blank" rel="noopener">Instagram @baimans.cake</a></div>
     </div>
-    <a class="btn btn-b rv" style="margin-top:28px" href="mailto:contact@baimans.com?subject=Ateliers%20%3A%20prochaines%20dates">Demander les prochaines dates</a>
+    <figure class="rv" style="--i:2"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&amp;h=750&amp;q=75&amp;fit=crop" width="600" height="750" alt="Salle de café lumineuse avec tables et plantes" loading="lazy"><figcaption>Photo d'ambiance</figcaption></figure>
   </div>
 </section>
 
-<section class="house wrap" id="maison" aria-labelledby="maison-t">
-  <div>
-    <h2 id="maison-t" class="rv">La maison d'Amelle</h2>
-    <blockquote class="rv" style="margin-top:32px">Amelle a installé sa pâtisserie dans un ancien espace de coworking, dont elle a gardé les grands volumes et les hauts plafonds.</blockquote>
-  </div>
-  <div class="house-facts rv">
-    <p><b>Plus de dix ans</b>dans le tourisme, avant un CAP de pâtissière.</p>
-    <p><b>Cinq enfants</b>et leurs prénoms réunis dans le nom de la maison.</p>
-    <p><b>Depuis 2021</b>au 71 rue Robespierre, à Montreuil.</p>
-  </div>
-</section>
-
-<section class="info wrap" id="infos" aria-labelledby="infos-t">
-  <h2 id="infos-t" class="rv" style="grid-column:1/-1;margin-bottom:32px">Horaires et accès</h2>
-  <div class="rv hrs">
-    <h3>Horaires</h3>
-    <div class="hours" id="hours">
-      <div data-d="1"><span>Lundi</span><span>7h30 – 20h</span></div>
-      <div data-d="2"><span>Mardi</span><span>7h30 – 20h</span></div>
-      <div data-d="3"><span>Mercredi</span><span>7h30 – 20h</span></div>
-      <div data-d="4"><span>Jeudi</span><span>7h30 – 20h</span></div>
-      <div data-d="5"><span>Vendredi</span><span>7h30 – 20h</span></div>
-      <div data-d="6"><span>Samedi</span><span>7h30 – 20h</span></div>
-      <div data-d="0"><span>Dimanche</span><span>Brunch du week-end</span></div>
+<section class="sec infos" id="infos" aria-labelledby="infos-t">
+  <div class="in">
+    <h2 id="infos-t" class="rv">Horaires et accès</h2>
+    <div class="box rv">
+      <h3>Horaires</h3>
+      <p class="now" id="now"><span class="dot"></span><span id="now-txt">Lundi au samedi, 7h30 à 20h</span></p>
+      <ul class="hours" id="hours">
+        <li data-d="1"><span>Lundi</span><span>7h30 – 20h</span></li>
+        <li data-d="2"><span>Mardi</span><span>7h30 – 20h</span></li>
+        <li data-d="3"><span>Mercredi</span><span>7h30 – 20h</span></li>
+        <li data-d="4"><span>Jeudi</span><span>7h30 – 20h</span></li>
+        <li data-d="5"><span>Vendredi</span><span>7h30 – 20h</span></li>
+        <li data-d="6"><span>Samedi</span><span>7h30 – 20h</span></li>
+        <li data-d="0"><span>Dimanche</span><span>brunch, à confirmer</span></li>
+      </ul>
+      <p class="note">Horaires indicatifs relevés par Sortiraparis, à confirmer par téléphone.</p>
     </div>
-    <p class="note">Horaires indicatifs, à confirmer par téléphone.</p>
-  </div>
-  <div class="rv">
-    <h3>Venir</h3>
-    <address>71 rue Robespierre<br>93100 Montreuil</address>
-    <p class="contact-lines"><span>Métro Robespierre ou Mairie de Montreuil, ligne 9</span></p>
-    <a class="btn btn-b" href="https://www.google.com/maps/dir/?api=1&destination=Baiman%27s+Cake+71+rue+Robespierre+93100+Montreuil" target="_blank" rel="noopener">Itinéraire Google Maps</a>
-  </div>
-  <div class="rv">
-    <h3>Contact</h3>
-    <p class="contact-lines">
-      <a href="tel:+33978811065">09 78 81 10 65</a>
-      <a href="mailto:contact@baimans.com">contact@baimans.com</a>
-      <a href="https://www.instagram.com/baimans.cake/" target="_blank" rel="noopener">Instagram @baimans.cake</a>
-    </p>
-    <a class="btn btn-a" href="tel:+33978811065">Appeler la boutique</a>
+    <div class="col rv" style="--i:1">
+      <h3>Venir</h3>
+      <address>71 rue Robespierre<br>93100 Montreuil</address>
+      <ul class="lines">
+        <li>Métro ligne 9, Robespierre ou Mairie de Montreuil</li>
+        <li>Grande salle, groupes et familles</li>
+      </ul>
+      <a class="btn btn-i" href="https://www.google.com/maps/dir/?api=1&amp;destination=Baiman%27s+Cake+71+rue+Robespierre+93100+Montreuil" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+    </div>
+    <div class="col rv" style="--i:2">
+      <h3>Contact</h3>
+      <ul class="lines">
+        <li><a href="tel:+33978811065">09 78 81 10 65</a></li>
+        <li><a href="mailto:contact@baimans.com">contact@baimans.com</a></li>
+        <li><a href="https://www.instagram.com/baimans.cake/" target="_blank" rel="noopener">Instagram @baimans.cake</a></li>
+      </ul>
+      <a class="btn btn-r" href="tel:+33978811065">Appeler la boutique</a>
+    </div>
   </div>
 </section>
+</main>
 
-<footer>
-  <div class="foot-name" aria-hidden="true">Baiman's Cake</div>
-  <div class="foot-row">
-    <span>71 rue Robespierre, 93100 Montreuil · <a href="tel:+33978811065">09 78 81 10 65</a></span>
-    <span>Démo réalisée par Raul Hatos — site non officiel. Photos d'illustration&nbsp;: Unsplash.</span>
+<footer class="foot" aria-labelledby="foot-t">
+  <div class="back">
+    <div class="back-l">
+      <h2 id="foot-t">À bientôt rue Robespierre</h2>
+      <p>Un croissant à 7h30, un brunch le week-end ou un gâteau pour dimanche&nbsp;: la porte est au 71, à deux pas du métro.</p>
+      <a class="link" href="#brunch">Revoir les cinq brunchs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="back-r">
+      <div class="stamp-ph" aria-hidden="true"><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=200&amp;h=266&amp;q=70&amp;fit=crop" width="200" height="266" alt="" loading="lazy"></div>
+      <ul>
+        <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Baiman%27s+Cake+71+rue+Robespierre+93100+Montreuil" target="_blank" rel="noopener">71 rue Robespierre, 93100 Montreuil</a></li>
+        <li><a href="tel:+33978811065">09 78 81 10 65</a></li>
+        <li><a href="mailto:contact@baimans.com">contact@baimans.com</a></li>
+        <li><a href="https://www.instagram.com/baimans.cake/" target="_blank" rel="noopener">@baimans.cake</a></li>
+      </ul>
+    </div>
   </div>
+  <p class="imprint"><span>Démo réalisée par Raul Hatos, site non officiel.</span><span>Photos d'illustration&nbsp;: Unsplash. Informations&nbsp;: Sortiraparis.</span></p>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
-// onglets des brunchs : clavier + clic
-const tabs=[...document.querySelectorAll('[role=tab]')];
-const show=t=>{tabs.forEach(b=>{const on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on})};
-tabs.forEach((b,i)=>{b.addEventListener('click',()=>show(b));b.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){const n=tabs[(i+k+tabs.length)%tabs.length];show(n);n.focus();e.preventDefault()}})});
-show(tabs[0]);
-// jour courant mis en avant
-const today=document.querySelector('#hours [data-d="'+new Date().getDay()+'"]');if(today)today.classList.add('today');
-// entrées échelonnées
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
-setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('in')),2500);
+(function(){
+  // Paris time, whatever the visitor's zone
+  var parts=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  var map={'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6,'dim.':0},wd=0,h=0,m=0;
+  parts.forEach(function(p){if(p.type==='weekday')wd=map[p.value];if(p.type==='hour')h=+p.value;if(p.type==='minute')m=+p.value;});
+  var t=h*60+m,open=450,close=1200,txt,cls;
+  if(wd===0){txt='Dimanche : brunch, appelez pour l\'horaire';cls='';}
+  else if(t>=open&&t<close){txt='Ouvert, jusqu\'à 20h';cls='open';}
+  else if(t<open){txt='Fermé, ouvre à 7h30';cls='closed';}
+  else{txt=wd===6?'Fermé, brunch demain':'Fermé, ouvre demain à 7h30';cls='closed';}
+  document.getElementById('now-txt').textContent=txt;
+  var nb=document.getElementById('now');if(cls)nb.classList.add(cls);
+  var hs=document.getElementById('hero-status');hs.innerHTML='<span class="dot"></span>'+txt;if(cls)hs.classList.add(cls);
+  var li=document.querySelector('#hours li[data-d="'+wd+'"]');if(li)li.classList.add('today');
+})();
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.st'));
+  var panels=tabs.map(function(b){return document.getElementById(b.getAttribute('aria-controls'));});
+  panels.forEach(function(p,i){if(i)p.hidden=true;});
+  function sel(i,focus){
+    tabs.forEach(function(b,j){var on=i===j;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;panels[j].hidden=!on;panels[j].classList.toggle('show',on);});
+    if(focus)tabs[i].focus();
+  }
+  tabs.forEach(function(b,i){
+    b.addEventListener('click',function(){sel(i);});
+    b.addEventListener('keydown',function(e){
+      var n=tabs.length,k=e.key;
+      if(k==='ArrowRight'){e.preventDefault();sel((i+1)%n,true);}
+      else if(k==='ArrowLeft'){e.preventDefault();sel((i-1+n)%n,true);}
+      else if(k==='Home'){e.preventDefault();sel(0,true);}
+      else if(k==='End'){e.preventDefault();sel(n-1,true);}
+    });
+  });
+})();
+(function(){
+  var f=document.getElementById('order'),msg=document.getElementById('order-msg');
+  var d=document.getElementById('f-date');
+  var min=new Date();min.setDate(min.getDate()+2);d.min=min.toISOString().slice(0,10);
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.reportValidity())return;
+    var v=function(id){return document.getElementById(id).value.trim();};
+    var dt=v('f-date')?new Date(v('f-date')+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}):'';
+    var body='Bonjour,\n\nJe souhaite commander un gâteau.\n\nOccasion : '+v('f-occ')+'\nDate de retrait : '+dt+'\nNombre de parts : '+v('f-parts')+'\nParfums souhaités : '+(v('f-taste')||'à voir ensemble')+'\n\nMerci,\n'+v('f-name');
+    location.href='mailto:contact@baimans.com?subject='+encodeURIComponent('Commande de gâteau, '+v('f-occ').toLowerCase()+' le '+dt)+'&body='+encodeURIComponent(body);
+    msg.textContent='Votre messagerie s\'ouvre avec la commande remplie. Vérifiez puis envoyez.';
+  });
+})();
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on');});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
 </script>
 </body>
 </html>
