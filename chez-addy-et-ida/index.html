@@ -4,421 +4,730 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Chez Addy &amp; Ida · Bar-brasserie, rue Jaucourt, Paris 12e</title>
-<meta name="description" content="Chez Addy & Ida, bar-brasserie au 4 rue Jaucourt, Paris 12e. Borsch, piroshki, medovik et classiques de bistrot. Ouvert du lundi au samedi jusqu'à minuit.">
-<!-- DESIGN.md « Zapier » (awesome-design) : toile chaude, encre café, un seul accent saturé (ici le rouge betterave du borsch), titres en graisse moyenne serrée -->
+<title>Chez Addy &amp; Ida · bar-brasserie, 4 rue Jaucourt, Paris 12e</title>
+<meta name="description" content="Bar-brasserie au 4 rue Jaucourt, Paris 12e. Borsch et piroshki côté Ida, entrecôte et burger côté Addy. Happy hour 16 h – 19 h.">
+<meta property="og:title" content="Chez Addy & Ida · bar-brasserie à Nation">
+<meta property="og:description" content="Côté Ida le borsch, côté Addy l’entrecôte. 4 rue Jaucourt, Paris 12e.">
+<meta property="og:image" content="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/Chez-Addy-et-Ida-662d1c5e533730.57159480.jpeg">
+<meta name="theme-color" content="#4e2419">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%234e2419'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='15' font-weight='700' fill='%23f3efe6' text-anchor='middle'%3EA%26I%3C/text%3E%3C/svg%3E">
+<!-- DESIGN : awesome-design « Airbnb » (hospitalité chaleureuse, un seul accent sur l’action, photos en vedette) adapté aux couleurs réelles du lieu.
+     taste-skill : direction « split-stage » (seed 130441507) — l’ardoise du mur reste fixe pendant qu’on lit la carte.
+     Palette relevée sur place : mur gris de la salle, boiserie chocolat de la devanture, ardoise, craie menthe et craie corail. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ground:#fbf8f6;
-  --soft:#f2ebe7;
-  --ink:#201515;
-  --body:#2f2a26;
-  --mute:#5e544f;
-  --beet:#a3123f;
-  --beet-press:#850c32;
-  --beet-soft:#f6dde4;
-  --dill:#24402c;
-  --on-dark:#fbf8f6;
-  --pad:clamp(16px,4vw,48px);
-  --display:"Unbounded",system-ui,sans-serif;
-  --text:"Golos Text",system-ui,sans-serif;
+  --wall:#e3e0da;      /* mur de la salle */
+  --wall-2:#d7d3cb;
+  --paper:#f1f0ec;     /* carte imprimée */
+  --ink:#251813;       /* encre chocolat */
+  --muted:#463a34;
+  --wood:#4e2419;      /* boiserie de la devanture */
+  --wood-2:#673223;
+  --slate:#232a2a;     /* l'ardoise */
+  --slate-2:#2f3838;
+  --chalk:#f1f0ec;
+  --chalk-soft:#dde3e0;
+  --mint:#9fd4bb;      /* craie verte des intitulés */
+  --mint-field:#b5dcc8;
+  --coral:#f2a07e;     /* craie corail des prix */
+  --ida:#b8402c;
+  --addy:#2c6e55;
+  --pad:clamp(20px,4vw,56px);
+  --gap:clamp(120px,13vw,200px);
+  --f:"Bricolage Grotesque",system-ui,sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
+  --s-small:clamp(.8125rem,.79rem + .1vw,.875rem);
+  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --s-head:clamp(2.25rem,1.4rem + 3.4vw,4.25rem);
+  --s-num:clamp(2.25rem,1.6rem + 2.2vw,3.4rem);
+  --s-big:clamp(2.1rem,.9rem + 3.95vw,4.6rem);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--ground);color:var(--body);font:400 17px/1.55 var(--text);padding-bottom:44px;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-padding-top:84px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:var(--wall);color:var(--ink);font:400 var(--s-body)/1.5 var(--f);overflow-x:hidden}
 img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.2em}
-::selection{background:var(--beet);color:#fff}
-:focus-visible{outline:3px solid var(--beet);outline-offset:3px}
-h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:500;letter-spacing:-.035em;line-height:1;text-wrap:balance}
-.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(78,36,25,.15)}
+.skip{position:absolute;left:16px;top:-80px;z-index:40;background:var(--ink);color:var(--chalk);padding:12px 18px;border-radius:999px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+::selection{background:var(--wood);color:var(--chalk)}
+:focus-visible{outline:3px solid var(--wood);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--mint)}
+h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.02;text-wrap:balance}
+p,li{text-wrap:pretty}
 .num{font-variant-numeric:tabular-nums}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* boutons */
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 16px/1 var(--text);text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s}
+/* boutons : une seule forme, la pilule */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:600 16px/1 var(--f);text-decoration:none;border:0;cursor:pointer;transition-property:transform,background-color,color;transition-duration:.18s;transition-timing-function:ease-out}
 .btn svg{width:18px;height:18px;flex:none}
-.btn--beet{background:var(--beet);color:#fff}
-.btn--beet:hover{background:var(--beet-press)}
-.btn--ink{background:var(--ink);color:var(--on-dark)}
-.btn--ink:hover{background:#3a2c2a}
-.btn--ghost{background:var(--soft);color:var(--ink)}
-.btn--ghost:hover{background:#e8dfda}
-.btn:active{transform:scale(.97)}
+.btn:active{transform:scale(.96)}
+.btn--wood{background:var(--wood);color:var(--chalk)}
+.btn--wood:hover{background:var(--wood-2)}
+.btn--plain{background:var(--paper);color:var(--ink)}
+.btn--plain:hover{background:#fff}
+.btn--chalk{background:var(--chalk);color:var(--slate)}
+.btn--chalk:hover{background:#fff}
 
-/* barre */
-.bar{position:sticky;top:0;z-index:20;background:var(--ground)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
-.mark{font:600 17px/1 var(--display);letter-spacing:-.03em;color:var(--ink);text-decoration:none}
-.mark b{color:var(--beet);font-weight:600}
-.bar nav{display:flex;gap:28px;align-items:center}
-.bar nav a:not(.btn){text-decoration:none;font-weight:500;color:var(--ink)}
-.bar nav a:not(.btn):hover{color:var(--beet)}
-.bar .btn{min-height:42px;padding:0 18px;font-size:15px}
-@media (max-width:760px){.bar nav .lk{display:none}}
+/* bandeau : l'enseigne de la devanture */
+.fascia{position:sticky;top:0;z-index:20;background:var(--wood);color:var(--chalk)}
+.fascia .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.mark{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-weight:700;font-size:22px;letter-spacing:-.02em;white-space:nowrap}
+.mark small{font-weight:400;font-size:var(--s-small);color:#e2cfc5;letter-spacing:0}
+.fascia nav{display:flex;align-items:center;gap:26px}
+.fascia nav a:not(.btn){text-decoration:none;font-weight:500;font-size:16px;padding:12px 0}
+.fascia nav a:not(.btn):hover{text-decoration:underline}
+.fascia .btn{min-height:44px;padding:0 18px;font-size:16px}
+@media (max-width:900px){.fascia nav .lk{display:none}.mark small{display:none}}
 
-/* hero */
-.hero{padding:clamp(28px,5vw,64px) 0 0}
-.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,64px);align-items:end}
-.hero h1{font-size:clamp(46px,7.4vw,112px);letter-spacing:-.045em;line-height:.92}
-.hero h1 .amp{color:var(--beet)}
-.lede{max-width:34ch;margin-top:32px;font-size:clamp(18px,1.6vw,21px);color:var(--ink)}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.status{display:flex;align-items:center;gap:12px;margin-top:36px;font-weight:500;color:var(--ink)}
-.dot{width:12px;height:12px;border-radius:50%;background:#8a817c;flex:none}
-.dot.on{background:#2f8f4e;box-shadow:0 0 0 0 rgba(47,143,78,.5);animation:pulse 2.4s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(47,143,78,0)}100%{box-shadow:0 0 0 0 rgba(47,143,78,0)}}
-.status small{display:block;color:var(--mute);font-size:15px;font-weight:400}
-.hero__pic{position:relative;height:clamp(420px,68vh,720px);overflow:hidden;border-radius:0 0 0 220px}
-.hero__pic img{width:100%;height:100%;object-fit:cover;animation:drift 18s var(--ease) both}
-@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero__pic figcaption{position:absolute;right:16px;bottom:16px;background:var(--ground);color:var(--ink);font-size:14px;padding:8px 14px;border-radius:999px}
-@media (max-width:860px){
-  .hero .wrap{grid-template-columns:1fr}
-  .hero__pic{height:62vw;min-height:280px;border-radius:0 0 0 120px;margin:0 calc(var(--pad)*-1)}
+/* premier écran */
+.hero{padding:clamp(28px,4vw,56px) 0 0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:start}
+.hero h1{font-size:var(--s-big);letter-spacing:-.04em;line-height:.98}
+.lede{margin-top:28px;font-size:var(--s-lead);line-height:1.38;max-width:31ch}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:32px}
+.fig{min-width:0;background:var(--paper);padding:14px 14px 16px}
+.fig b{display:block;font-size:var(--s-lead);font-weight:700;letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.fig span{display:block;margin-top:8px;font-size:var(--s-small);line-height:1.3;color:var(--muted)}
+
+.fig--on{background:var(--wood);color:var(--chalk)}
+.fig--on span{color:#ecdcd3}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.status{display:flex;align-items:center;gap:10px;margin-top:22px;font-weight:500;font-size:16px}
+.dot{width:10px;height:10px;border-radius:50%;background:#8b7d76;flex:none}
+.dot{position:relative}
+.dot.on{background:#2e8a55}
+.dot.on::after{content:"";position:absolute;inset:0;border-radius:50%;background:#2e8a55;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(2.6);opacity:0}}
+.status small{display:block;color:var(--muted);font-weight:400;font-size:var(--s-small)}
+
+.board{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:8px}
+.board figure{position:relative;overflow:hidden;background:var(--wall-2);margin:0}
+.board img{width:100%;height:100%;object-fit:cover;outline:1px solid rgba(0,0,0,.08);outline-offset:-1px}
+.board .b1{grid-column:1/-1;aspect-ratio:1125/600}
+.board .b1 img{object-position:50% 30%;animation:drift 22s var(--ease) both}
+@keyframes drift{from{transform:scale(1.07)}to{transform:scale(1)}}
+.board .b2,.board .b3{height:clamp(150px,19vw,290px)}
+.cap{position:absolute;left:10px;bottom:10px;background:var(--paper);color:var(--ink);font-size:var(--s-small);font-weight:500;line-height:1.2;padding:7px 12px;border-radius:999px}
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr)}
+  .board{order:-1}
+  .board .b2 .cap,.board .b3 .cap{display:none}
+}
+@media (max-width:640px){
+  .figs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .board{grid-template-columns:1fr 1fr}
+  .board .b1{aspect-ratio:4/3}
+  .cta .btn{flex:1 1 auto}
 }
 
-/* deux côtés */
-.sides{padding:clamp(96px,14vw,200px) 0 0}
-.sides .wrap{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,80px);align-items:start}
-.sides h2{font-size:clamp(34px,4.4vw,64px)}
-.sides p.big{font-size:clamp(20px,1.9vw,26px);line-height:1.4;color:var(--ink);margin-top:28px;max-width:30ch}
-.sides p.big em{font-style:normal;color:var(--beet)}
-.trio{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:auto auto;gap:12px}
-.trio figure{overflow:hidden;background:var(--soft)}
-.trio img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
-.trio figure:hover img{transform:scale(1.04)}
-.trio .t1{grid-row:span 2;aspect-ratio:3/4.4;border-radius:999px 999px 0 0}
-.trio .t2,.trio .t3{aspect-ratio:4/3.2}
-.trio figcaption{font-size:14px;color:var(--mute);padding:8px 0 0;background:var(--ground)}
-.trio figure{display:flex;flex-direction:column}
-.trio figure img{flex:1;min-height:0}
-@media (max-width:860px){.sides .wrap{grid-template-columns:1fr}}
+/* bande d'infos */
+.strip{margin-top:clamp(40px,5vw,72px);background:var(--wall-2)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 32px;padding-top:22px;padding-bottom:22px}
+.strip p{font-size:16px;line-height:1.35}
+.strip b{display:block;font-weight:600}
+.strip span{color:var(--muted)}
+@media (max-width:760px){.strip .wrap{grid-template-columns:1fr 1fr}}
 
-/* carte */
-.carte{padding:clamp(96px,14vw,200px) 0 0}
-.carte__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px 40px}
-.carte h2{font-size:clamp(40px,6vw,92px)}
-.switch{display:inline-flex;background:var(--soft);border-radius:999px;padding:5px;gap:2px}
-.switch button{border:0;background:none;font:600 15px/1 var(--text);color:var(--ink);padding:14px 18px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background-color .25s,color .25s}
-.switch button:hover{background:#e8dfda}
-.switch button[aria-pressed="true"]{background:var(--ink);color:var(--on-dark)}
-.switch button[data-side="est"][aria-pressed="true"]{background:var(--beet)}
-.carte__note{margin-top:20px;color:var(--mute);font-size:15px;max-width:60ch}
-.legend{display:inline-flex;align-items:center;gap:8px}
-.legend i{width:10px;height:10px;border-radius:50%;background:var(--beet)}
-.board{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:56px clamp(32px,6vw,96px)}
-.board section h3{font-size:clamp(22px,2vw,28px);padding-bottom:16px}
-.dish{display:grid;grid-template-columns:1fr auto;gap:2px 20px;padding:14px 0;transition:opacity .35s var(--ease),transform .35s var(--ease)}
-.dish+.dish{box-shadow:0 -1px 0 var(--soft)}
-.dish b{font-weight:600;color:var(--ink);display:flex;gap:10px;align-items:baseline}
-.dish b i{width:9px;height:9px;border-radius:50%;background:var(--beet);flex:none;transform:translateY(-1px)}
-.dish span{grid-column:1;color:var(--mute);font-size:15px}
-.dish em{grid-column:2;grid-row:1;font-style:normal;font-weight:600;color:var(--ink)}
-.dish.off{opacity:.18}
-.board.est .dish:not([data-s="est"]),.board.bistrot .dish[data-s="est"]{opacity:.18}
-.sugg{grid-column:1/-1;background:var(--beet-soft);padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:1fr 2fr;gap:24px 48px;border-radius:0 0 0 120px}
-.sugg h3{font-size:clamp(26px,2.6vw,38px)!important;color:var(--beet-press)}
-.sugg p{margin-top:12px;color:var(--ink);max-width:28ch}
-.sugg .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
-.sugg .dish+.dish{box-shadow:0 -1px 0 rgba(163,18,63,.15)}
-.sugg .dish span{color:#6b3a47}
-@media (max-width:860px){.board{grid-template-columns:minmax(0,1fr)}.sugg{grid-template-columns:1fr;border-radius:0 0 0 64px}.sugg .cols{grid-template-columns:1fr}}
+/* la carte : l'ardoise reste au mur */
+.carte{margin-top:var(--gap)}
+.carte__in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,88px);align-items:start}
+.stage{position:sticky;top:84px;height:calc(100svh - 108px);min-height:460px;max-height:880px;background:var(--slate);overflow:hidden}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:clamp(14px,2vw,28px);opacity:0;transition:opacity 1.6s ease}
+.stage img.on{opacity:1}
+.stage .cap{left:14px;bottom:14px}
+.read{max-width:640px}
+.read h2{font-size:var(--s-head)}
+.read>p{margin-top:20px;max-width:46ch}
+.sides{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.sides button{font:600 16px/1 var(--f);min-height:46px;padding:0 20px;border-radius:999px;border:0;background:var(--paper);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition-property:background-color,color,transform;transition-duration:.18s}
+.sides button:hover{background:#fff}
+.sides button:active{transform:scale(.96)}
+.sides button[aria-pressed="true"]{background:var(--ink);color:var(--chalk)}
+.sw{width:10px;height:10px;border-radius:50%;flex:none}
+.sw--ida{background:var(--ida)}
+.sw--addy{background:var(--addy)}
+.sides button[aria-pressed="true"] .sw--ida{background:#f08a72}
+.sides button[aria-pressed="true"] .sw--addy{background:var(--mint)}
+.grp{margin-top:56px}
+.grp h3{font-size:var(--s-lead);margin-bottom:10px}
+.row{display:grid;grid-template-columns:16px minmax(0,1fr) auto;column-gap:12px;align-items:baseline;padding:11px 0;transition:opacity .35s var(--ease)}
+.row .sw{transform:translateY(-1px)}
+.row b{font-weight:500}
+.row em{font-style:normal;font-weight:600;white-space:nowrap}
+.row small{grid-column:2/3;display:block;font-size:16px;color:var(--muted);margin-top:2px}
+.read.only-ida .row[data-s="addy"],.read.only-addy .row[data-s="ida"]{opacity:.28}
+.sugg{background:var(--paper);padding:clamp(20px,3vw,36px);margin-top:56px}
+.sugg h3{margin-bottom:6px}
+.sugg>p{color:var(--muted);font-size:16px;margin-bottom:10px}
+.note{margin-top:40px;font-size:var(--s-small);color:var(--muted);max-width:52ch}
+.dish-pic{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dish-pic figure{position:relative;margin:0;aspect-ratio:1/1;overflow:hidden}
+.dish-pic img{width:100%;height:100%;object-fit:cover}
+@media (max-width:960px){
+  .carte__in{grid-template-columns:minmax(0,1fr)}
+  .stage{position:relative;top:0;height:auto;min-height:0;aspect-ratio:3/4;max-height:78svh}
+  .read{max-width:none}
+}
 
-/* comptoir */
-.comptoir{margin-top:clamp(96px,14vw,200px);background:var(--dill);color:var(--on-dark);padding:clamp(72px,10vw,140px) 0}
-.comptoir h2{color:var(--on-dark);font-size:clamp(40px,6vw,92px)}
-.comptoir .wrap>.top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
-.hh{font-size:clamp(20px,1.9vw,26px);line-height:1.4;max-width:30ch;margin-top:24px}
-.hh strong{font-weight:600;background:var(--on-dark);color:var(--dill);padding:0 .3em;border-radius:6px}
-.comptoir .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.comptoir .pics img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
-.comptoir .pics img:first-child{border-radius:999px 999px 0 0}
-.drinks{margin-top:72px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px clamp(24px,3vw,48px)}
-.drinks h3{color:var(--on-dark);font-size:20px;padding-bottom:12px}
-.drinks .dish+.dish{box-shadow:0 -1px 0 rgba(251,248,246,.14)}
-.drinks .dish b,.drinks .dish em{color:var(--on-dark)}
-.drinks .dish span{color:#c9d3c8}
+/* la journée */
+.day{margin-top:var(--gap)}
+.day h2{font-size:var(--s-head);max-width:16ch}
+.day__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:40px}
+.slot{background:var(--paper);padding:clamp(20px,2.2vw,32px);display:flex;flex-direction:column;gap:12px;min-height:280px}
+.slot time{font-size:var(--s-num);font-weight:700;letter-spacing:-.04em;line-height:1}
+.slot h3{font-size:var(--s-lead)}
+.slot p{font-size:16px}
+.slot .price{font-weight:700;margin-top:-4px}
+.slot--hh{background:var(--mint-field)}
+.slot--night{background:var(--wood);color:var(--chalk)}
+.slot--night p{color:#ead9cf}
+@media (max-width:960px){.day__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.day__grid{grid-template-columns:1fr}.slot{min-height:0}}
+
+/* le comptoir, sur l'ardoise */
+.bar{margin-top:var(--gap);background:var(--slate);color:var(--chalk);padding:clamp(80px,9vw,140px) 0}
+.bar h2{font-size:var(--s-head);color:var(--chalk)}
+.bar__top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,88px);align-items:end}
+.bar__top p{margin-top:20px;font-size:var(--s-lead);line-height:1.38;max-width:30ch;color:var(--chalk)}
+.hh{background:var(--slate-2);padding:clamp(20px,2.4vw,32px)}
+.hh__state{font-size:var(--s-lead);font-weight:600;color:var(--mint)}
+.hh__state small{display:block;font-size:16px;font-weight:400;color:var(--chalk-soft);margin-top:6px}
+.toggle{display:inline-flex;background:var(--slate);border-radius:999px;padding:4px;margin-top:20px;gap:2px}
+.toggle button{white-space:nowrap;font:600 16px/1 var(--f);min-height:44px;padding:0 18px;border-radius:999px;border:0;background:none;color:var(--chalk);cursor:pointer;transition-property:background-color,color;transition-duration:.18s}
+.toggle button:hover{background:#3b4545}
+.toggle button[aria-pressed="true"]{background:var(--coral);color:var(--slate)}
+.drinks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px clamp(24px,3vw,48px);margin-top:72px}
+.drinks h3{font-size:var(--s-lead);color:var(--mint);margin-bottom:8px}
+.drinks .row{grid-template-columns:minmax(0,1fr) auto;padding:10px 0}
+.drinks .row small{grid-column:1/2;color:var(--chalk-soft)}
+.drinks .row em{color:var(--coral)}
+.p-hh{display:none}
+.is-hh .p-std{display:none}
+.is-hh .p-hh{display:inline}
+.is-hh .row.has-hh em{animation:chalk .5s var(--ease)}
+@keyframes chalk{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.bar__pic{margin-top:72px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:8px;align-items:stretch}
+.bar__pic figure{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;max-height:560px}
+.bar__pic img{width:100%;height:100%;object-fit:cover}
+.bar__pic .cap{background:var(--chalk);color:var(--slate)}
+.breakfast{background:var(--chalk);color:var(--slate);padding:clamp(24px,4vw,64px);display:flex;flex-direction:column;justify-content:center}
+.breakfast h3{font-size:var(--s-lead)}
+.breakfast ul{list-style:none;margin-top:18px}
+.breakfast li{padding:8px 0;display:flex;gap:12px;align-items:baseline}
+.breakfast li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ida);flex:none;transform:translateY(-2px)}
+.breakfast .price{display:flex;align-items:baseline;gap:14px;margin-top:20px}
+.breakfast .price b{white-space:nowrap}
+.breakfast .price b{font-size:var(--s-num);letter-spacing:-.04em;line-height:1}
 @media (max-width:1080px){.drinks{grid-template-columns:1fr 1fr}}
-@media (max-width:860px){.comptoir .wrap>.top{grid-template-columns:1fr}}
-@media (max-width:560px){.drinks{grid-template-columns:1fr}}
+@media (max-width:860px){.bar__top,.bar__pic{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.drinks{grid-template-columns:minmax(0,1fr)}}
 
-/* horaires + venir */
-.venir{padding:clamp(96px,14vw,200px) 0 0}
-.venir .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,5vw,80px)}
-.venir h2{font-size:clamp(40px,6vw,92px)}
-.hours{margin-top:36px;max-width:440px}
-.hours div{display:flex;justify-content:space-between;padding:13px 16px;font-size:18px;color:var(--ink);border-radius:12px}
-.hours div:nth-child(odd){background:var(--soft)}
-.hours div.today{background:var(--ink);color:var(--on-dark);font-weight:600}
-.addr{margin-top:40px;font-size:clamp(20px,1.9vw,26px);line-height:1.35;color:var(--ink)}
-.venir .cta{margin-top:24px}
-.map{position:relative;min-height:440px;background:var(--soft);overflow:hidden;border-radius:0 220px 0 0}
-.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
-.map a{position:absolute;left:16px;bottom:16px}
-@media (max-width:860px){.venir .wrap{grid-template-columns:1fr}.map{min-height:340px;border-radius:0 120px 0 0}}
+/* les vins : une assiette carrée, des onglets */
+.vins{margin-top:var(--gap)}
+.vins__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,88px);align-items:start}
+.vins figure{position:relative;margin:0;aspect-ratio:1/1;overflow:hidden}
+.vins figure img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.vins h2{font-size:var(--s-head)}
+.vins__in>div>p{margin-top:18px;max-width:44ch}
+.tabs{display:flex;gap:24px;margin-top:28px}
+.tabs button{font:700 22px/1 var(--f);border:0;background:none;color:var(--muted);cursor:pointer;padding:12px 0;min-height:44px;text-decoration:none;text-underline-offset:.35em;transition:color .18s}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{color:var(--wood);text-decoration:underline;text-decoration-thickness:3px}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:16px}
+th{font-weight:500;text-align:right;color:var(--muted);font-size:var(--s-small);padding:8px 0 8px 12px;white-space:nowrap}
+th:first-child{text-align:left;padding-left:0}
+td{padding:12px 0 12px 12px;text-align:right;vertical-align:top;white-space:nowrap;border-top:1px solid var(--wall-2)}
+td:first-child{text-align:left;padding-left:0;white-space:normal}
+td b{font-weight:600;display:block}
+td small{color:var(--muted);font-size:var(--s-small)}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:32px}
+.acts a{display:flex;align-items:center;justify-content:center;min-height:64px;font-weight:600;text-decoration:none;text-align:center;padding:0 12px;transition-property:background-color,transform;transition-duration:.18s}
+.acts a:active{transform:scale(.98)}
+.acts .a1{background:var(--wood);color:var(--chalk)}
+.acts .a1:hover{background:var(--wood-2)}
+.acts .a2{background:var(--wall-2);color:var(--ink)}
+.acts .a2:hover{background:#cbc6bd}
+@media (max-width:860px){.vins__in{grid-template-columns:minmax(0,1fr)}.vins figure{order:2;aspect-ratio:4/3}}
+@media (max-width:420px){th,td{padding-left:8px}table{font-size:16px}}
 
-/* pied */
-footer{margin-top:clamp(96px,14vw,200px);background:var(--beet);color:#fff;padding:clamp(56px,8vw,112px) 0 40px;overflow:hidden}
-footer .name{font:500 clamp(48px,11.5vw,196px)/.9 var(--display);letter-spacing:-.05em;white-space:nowrap}
-footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px;margin-top:48px;font-size:16px}
-footer a{color:#fff}
-footer .credits{font-size:13px;opacity:.85;margin-top:24px}
+/* venir : champ craie menthe */
+.venir{position:relative;margin-top:var(--gap);background:var(--mint-field);padding:48px 0 clamp(72px,8vw,120px);overflow:hidden}
+.reel-pause{position:absolute;right:var(--pad);top:206px;font:600 16px/1 var(--f);min-height:44px;padding:0 18px;border-radius:999px;border:0;background:var(--ink);color:var(--chalk);cursor:pointer;transition-property:background-color,transform;transition-duration:.18s}
+.reel-pause:hover{background:var(--wood)}
+.reel-pause:active{transform:scale(.96)}
+.reel.paused{animation-play-state:paused}
+@media (max-width:560px){.reel-pause{top:166px}}
+.reel{display:flex;gap:8px;width:max-content;animation:reel 60s linear infinite}
+.reel img{height:150px;width:auto;object-fit:cover}
+@keyframes reel{to{transform:translateX(-50%)}}
+.venir__in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,88px);margin-top:72px}
+.venir h2{font-size:var(--s-head)}
+.addr{margin-top:20px;font-size:var(--s-lead);line-height:1.3}
+.venir .muted{color:#2f4a3f;margin-top:8px}
+.hours{margin-top:28px;max-width:440px;list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:10px 14px;font-size:var(--s-body)}
+.hours li:nth-child(odd){background:rgba(255,255,255,.35)}
+.hours li.today{background:var(--ink);color:var(--chalk);font-weight:600}
+.map{position:relative;min-height:460px;background:var(--wall-2)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cells{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.cells a{display:flex;flex-direction:column;justify-content:center;min-height:88px;padding:12px 18px;background:#cdeadb;text-decoration:none;font-weight:600;transition:background-color .18s}
+.cells a:hover{background:#e3f4eb}
+.cells a span{font-weight:400;font-size:var(--s-small);color:#2f4a3f}
+.cells a.go{background:var(--ink);color:var(--chalk)}
+.cells a.go span{color:#d9cfc9}
+.cells a.go:hover{background:var(--wood)}
+@media (max-width:960px){.venir__in{grid-template-columns:minmax(0,1fr)}.map{min-height:340px}.hours{max-width:none}}
+@media (max-width:560px){.cells{grid-template-columns:minmax(0,1fr)}.reel img{height:110px}}
 
-.demo{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--ink);color:#e9e1dd;font-size:13px;text-align:center;padding:12px 16px}
+/* pied : la dernière photo */
+.foot{position:relative;margin-top:0;min-height:88svh;color:var(--chalk);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.foot>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42)}
+.foot .wrap{position:relative;width:100%}
+.foot__top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 40px;padding-top:32px;font-size:16px}
+.foot__top nav{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.foot__top a{display:inline-block;padding:10px 0}
+.foot__name{font-size:clamp(48px,11vw,180px);font-weight:700;letter-spacing:-.05em;line-height:.9;white-space:nowrap;padding-bottom:16px}
+.foot__legal{font-size:var(--s-small);color:#e4dcd6;padding-bottom:32px;max-width:90ch}
 
-/* entrées */
-.rise{opacity:1}
-.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.demo{background:var(--ink);color:#eadfd9;font-size:var(--s-small);text-align:center;padding:10px 16px}
+
+/* entrées, une par élément, déjà visibles sans script */
+.js .rise{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .js .rise.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .js .rise{opacity:1;transform:none}
+  *,*::before,*::after{animation:none!important}
+  .js .rise{opacity:1;transform:none;transition:none}
+  .stage img{transition:none}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#carte">Aller à la carte</a>
 <script>document.documentElement.classList.add('js')</script>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<header class="bar">
+<header class="fascia">
   <div class="wrap">
-    <a class="mark" href="#top">Addy <b>&amp;</b> Ida</a>
+    <a class="mark" href="#top">Chez Addy &amp; Ida <small>4 rue Jaucourt</small></a>
     <nav aria-label="Navigation principale">
       <a class="lk" href="#carte">La carte</a>
       <a class="lk" href="#comptoir">Le comptoir</a>
+      <a class="lk" href="#vins">Les vins</a>
       <a class="lk" href="#venir">Horaires</a>
-      <a class="btn btn--beet" href="https://www.google.com/maps/dir/?api=1&amp;destination=Chez+Addy+%26+Ida%2C+4+rue+Jaucourt%2C+75012+Paris" target="_blank" rel="noopener">Itinéraire</a>
+      <a class="btn btn--chalk" href="tel:+33143432744">Réserver</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero">
+  <section class="hero" aria-labelledby="h1">
     <div class="wrap">
       <div>
-        <h1>Chez Addy <span class="amp">&amp;</span>&nbsp;Ida</h1>
-        <p class="lede">Bar-brasserie au 4 rue Jaucourt, près de Nation. Borsch, piroshki et medovik d’un côté, entrecôte et burger savoyard de l’autre.</p>
-        <div class="cta">
-          <a class="btn btn--ink" href="#carte">Voir la carte</a>
-          <a class="btn btn--ghost" href="mailto:chezaddyetida@gmail.com?subject=Une%20table%20chez%20Addy%20%26%20Ida">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Nous écrire</a>
+        <h1 id="h1" class="rise">Chez Addy &amp; Ida,<br>brasserie à Nation</h1>
+        <p class="lede rise">Bar-brasserie au 4 rue Jaucourt, Paris 12e. Côté Ida, borsch, piroshki et medovik&#8239;; côté Addy, entrecôte, burger savoyard et Saint-Jacques. Du café de 7&nbsp;h au dernier cocktail.</p>
+        <div class="figs rise">
+          <div class="fig fig--on"><b class="num">10&nbsp;€</b><span>le petit-déjeuner complet</span></div>
+          <div class="fig"><b class="num">14,90&nbsp;€</b><span>le borsch rouge, poulet fermier</span></div>
+          <div class="fig"><b class="num">6,50&nbsp;€</b><span>cocktails à l’happy hour</span></div>
+          <div class="fig"><b class="num">4,6/5</b><span>la note des clients sur Google</span></div>
         </div>
-        <p class="status" id="status" aria-live="polite"><span class="dot" id="dot"></span><span><span id="st1">Du lundi au vendredi 7 h–minuit, le samedi 9 h–minuit</span><small id="st2">4,6 sur Google · 405 avis</small></span></p>
+        <div class="cta rise">
+          <a class="btn btn--wood" href="tel:+33143432744">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            <span class="num">01 43 43 27 44</span></a>
+          <a class="btn btn--plain" href="https://www.google.com/maps/dir/?api=1&amp;destination=Chez+Addy+%26+Ida%2C+4+rue+Jaucourt%2C+75012+Paris" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            Itinéraire</a>
+        </div>
+        <p class="status rise" aria-live="polite"><span class="dot" id="dot"></span><span><span id="st">Du lundi au vendredi 7&nbsp;h – minuit, le samedi 9&nbsp;h – minuit</span> <small id="st2">Réservation par téléphone</small></span></p>
       </div>
-      <figure class="hero__pic">
-        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1400&amp;q=75&amp;auto=format&amp;fit=crop" width="1400" height="1600" alt="Comptoir de bar en bois sous des ardoises écrites à la craie" fetchpriority="high">
-        <figcaption>Du café de 7 h au dernier cocktail</figcaption>
-      </figure>
+
+      <div class="board">
+        <figure class="b1">
+          <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/Chez-Addy-et-Ida-662d1c5e533730.57159480.jpeg" width="1125" height="740" alt="La devanture chocolat de Chez Addy & Ida, enseigne dorée, guirlande lumineuse et terrasse de chaises en rotin" fetchpriority="high">
+          <figcaption class="cap">La devanture, 4 rue Jaucourt</figcaption>
+        </figure>
+        <figure class="b2">
+          <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/chez-addy-et-ida-6638acc4ca50c1.63933943.jpg" width="1200" height="740" alt="La salle : tables en bois, chaises bistrot, mur de cadres photo et ardoises dans des cadres dorés" style="object-position:30% 50%">
+          <figcaption class="cap">La salle</figcaption>
+        </figure>
+        <figure class="b3">
+          <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/chez-addy-et-ida-6638acc51d6004.04322736.jpg" width="1020" height="740" alt="Burger au pain sésame et panier de frites maison sur une table en bois">
+          <figcaption class="cap">Côté Addy, le burger</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <section class="sides" aria-labelledby="sides-t">
+  <div class="strip" role="region" aria-label="En bref">
     <div class="wrap">
-      <div class="rise">
-        <h2 id="sides-t">Deux cuisines, une seule ardoise</h2>
-        <p class="big">Le hareng sous son manteau et le borsch au poulet fermier côtoient l’œuf cocotte et les Saint-Jacques. <em>Tout est fait maison</em>, même le pastrami, fumé sur place.</p>
-      </div>
-      <div class="trio rise">
-        <figure class="t1"><img loading="lazy" src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="1300" alt="Gâteau à étages fins, crème et cacao"><figcaption>Gâteau à étages, crème et cacao</figcaption></figure>
-        <figure class="t2"><img loading="lazy" src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=800&amp;q=72&amp;auto=format&amp;fit=crop" width="800" height="640" alt="Planche de charcuterie et fromages"><figcaption>La planche mixte, à partager</figcaption></figure>
-        <figure class="t3"><img loading="lazy" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&amp;q=72&amp;auto=format&amp;fit=crop" width="800" height="640" alt="Entrecôte grillée tranchée et frites"><figcaption>Côté bistrot</figcaption></figure>
-      </div>
+      <p><b>4 rue Jaucourt</b><span>75012 Paris</span></p>
+      <p><b>Métro Nation</b><span>lignes 1, 2, 6 et 9</span></p>
+      <p><b>Lundi au samedi</b><span>jusqu’à minuit, fermé le dimanche</span></p>
+      <p><b>Happy hour</b><span>de 16&nbsp;h à 19&nbsp;h</span></p>
     </div>
-  </section>
+  </div>
 
   <section class="carte" id="carte" aria-labelledby="carte-t">
-    <div class="wrap">
-      <div class="carte__head rise">
-        <h2 id="carte-t">La carte</h2>
-        <div class="switch" role="group" aria-label="Filtrer la carte">
-          <button type="button" data-side="all" aria-pressed="true">Tout</button>
-          <button type="button" data-side="est" aria-pressed="false">Côté Est</button>
-          <button type="button" data-side="bistrot" aria-pressed="false">Bistrot</button>
-        </div>
+    <div class="wrap carte__in">
+      <div class="stage" aria-hidden="true">
+        <img class="on" data-k="board" src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/0/medium/menu_000.jpg" width="886" height="1182" alt="" loading="lazy">
+        <img data-k="sugg" style="object-fit:cover;object-position:50% 33%;padding:0" src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/1/medium/menu_001.jpg" width="695" height="1507" alt="" loading="lazy">
+        <span class="cap" id="stage-cap">L’ardoise du mur, colonne Ida et colonne Addy</span>
       </div>
-      <p class="carte__note rise"><span class="legend"><i></i>Recettes d’Europe de l’Est</span> · (V) végétarien · Prix relevés sur la carte, l’ardoise change au fil des saisons.</p>
 
-      <div class="board" id="board">
-        <div class="sugg rise">
-          <div>
-            <h3>Suggestions de l’ardoise</h3>
-            <p>Les plats du moment, écrits à la craie au-dessus du comptoir.</p>
-          </div>
-          <div class="cols">
-            <div>
-              <div class="dish" data-s="est"><b><i></i>Hareng sous son manteau</b><em class="num">8,50 €</em><span>Betterave, carotte, pomme de terre</span></div>
-              <div class="dish" data-s="est"><b><i></i>Gaspacho betterave, tomate, ail et œuf</b><em class="num">8,90 €</em></div>
-              <div class="dish" data-s="bistrot"><b>Brochette de bœuf sauce échalote</b><em class="num">19,90 €</em><span>Frites et salade</span></div>
-            </div>
-            <div>
-              <div class="dish" data-s="bistrot"><b>Sardines en papillon, beurre d’ail</b><em class="num">16,90 €</em><span>Écrasé de pomme de terre</span></div>
-              <div class="dish" data-s="bistrot"><b>Tiramisu classique</b><em class="num">8,90 €</em></div>
-              <div class="dish" data-s="bistrot"><b>Mousse au chocolat</b><em class="num">8,50 €</em></div>
-            </div>
-          </div>
+      <div class="read" id="read">
+        <h2 id="carte-t" class="rise">Une ardoise, deux colonnes</h2>
+        <p class="rise">Au mur, la carte se lit en deux : à gauche Ida et ses recettes d’Europe de l’Est, à droite Addy et la cuisine de brasserie. Choisissez votre côté.</p>
+        <div class="sides rise" role="group" aria-label="Filtrer la carte">
+          <button type="button" data-side="all" aria-pressed="true">Les deux</button>
+          <button type="button" data-side="ida" aria-pressed="false"><span class="sw sw--ida"></span>Côté Ida</button>
+          <button type="button" data-side="addy" aria-pressed="false"><span class="sw sw--addy"></span>Côté Addy</button>
         </div>
 
-        <section class="rise" aria-labelledby="c-entrees">
-          <h3 id="c-entrees">Entrées</h3>
-          <div class="dish" data-s="est"><b><i></i>Foie de volaille à la polonaise</b><em class="num">7,10 €</em></div>
-          <div class="dish" data-s="est"><b><i></i>Duo de piroshki (V)</b><em class="num">7,50 €</em></div>
-          <div class="dish" data-s="bistrot"><b>Royal de foie gras, poêlée de shiitakés</b><em class="num">9,90 €</em></div>
-          <div class="dish" data-s="bistrot"><b>Œuf cocotte, espuma de parmesan</b><em class="num">8,90 €</em><span>Et son toast au jambon de pays</span></div>
-          <h3 style="margin-top:48px" id="c-partager">À partager</h3>
-          <div class="dish" data-s="bistrot"><b>Planche mixte</b><em class="num">18 €</em><span>Charcuterie et fromages</span></div>
-          <div class="dish" data-s="bistrot"><b>Tartines d’Ida</b><em class="num">13,50 €</em><span>Saumon fumé et tzatziki, tarama, pesto et tomates confites, tapenade</span></div>
-        </section>
+        <div class="grp rise">
+          <h3>Entrées</h3>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Foie de volaille à la polonaise</b><em class="num">7,10&nbsp;€</em></div>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Duo de piroshki (V)</b><em class="num">7,50&nbsp;€</em></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Royal de foie gras et sa poêlée de shiitakés</b><em class="num">9,90&nbsp;€</em></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Œuf cocotte, espuma de parmesan</b><em class="num">8,90&nbsp;€</em><small>et son toast au jambon de pays</small></div>
+        </div>
 
-        <section class="rise" aria-labelledby="c-plats">
-          <h3 id="c-plats">Plats</h3>
-          <div class="dish" data-s="est"><b><i></i>Borsch rouge et son poulet fermier</b><em class="num">14,90 €</em></div>
-          <div class="dish" data-s="est"><b><i></i>Sandwich pletzl au pastrami fumé maison</b><em class="num">15,90 €</em><span>Et son coleslaw</span></div>
-          <div class="dish" data-s="est"><b><i></i>Choux farcis au riz et petits légumes (V)</b><em class="num">13,50 €</em></div>
-          <div class="dish" data-s="est"><b><i></i>Mame boulettes et son grechka</b><em class="num">14,50 €</em><span>Boulettes de viande, sarrasin grillé</span></div>
-          <div class="dish" data-s="bistrot"><b>Burger savoyard, lard fumé</b><em class="num">15,90 €</em><span>Frites maison et salade</span></div>
-          <div class="dish" data-s="bistrot"><b>Entrecôte de race 250 g</b><em class="num">19,90 €</em><span>Gratin dauphinois et sauce du moment</span></div>
-          <div class="dish" data-s="bistrot"><b>Ravioles de Royans, crème au basilic (V)</b><em class="num">13,90 €</em><span>Copeaux de parmesan Reggiano</span></div>
-          <div class="dish" data-s="bistrot"><b>Poêlée de Saint-Jacques</b><em class="num">18,90 €</em><span>Risotto aux champignons, vinaigrette d’agrumes</span></div>
-        </section>
+        <div class="grp rise">
+          <h3>Plats</h3>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Borsch rouge et son poulet fermier</b><em class="num">14,90&nbsp;€</em></div>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Sandwich pletzl au pastrami fumé maison</b><em class="num">15,90&nbsp;€</em><small>accompagné de son coleslaw</small></div>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Choux farcis au riz et petits légumes (V)</b><em class="num">13,50&nbsp;€</em></div>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Mame boulettes et son grechka</b><em class="num">14,50&nbsp;€</em><small>boulettes de viande, sarrasin</small></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Burger savoyard, lard fumé</b><em class="num">15,90&nbsp;€</em><small>frites maison, salade</small></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Entrecôte de race 250&nbsp;g</b><em class="num">19,90&nbsp;€</em><small>gratin dauphinois et sa sauce du moment</small></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Ravioles de Royans crémeux basilic (V)</b><em class="num">13,90&nbsp;€</em><small>copeaux de parmesan Reggiano</small></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Poêlée de Saint-Jacques</b><em class="num">18,90&nbsp;€</em><small>risotto aux champignons, vinaigrette d’agrumes</small></div>
+        </div>
 
-        <section class="rise" aria-labelledby="c-desserts">
-          <h3 id="c-desserts">Desserts</h3>
-          <div class="dish" data-s="est"><b><i></i>Medovik, miel et noix</b><em class="num">7,50 €</em></div>
-          <div class="dish" data-s="bistrot"><b>Fondant au chocolat, glace vanille</b><em class="num">6,90 €</em></div>
-          <div class="dish" data-s="bistrot"><b>Crème brûlée à la vanille Bourbon</b><em class="num">6,90 €</em></div>
-          <div class="dish" data-s="bistrot"><b>Café ou thé gourmand</b><em class="num">8,90 €</em></div>
-        </section>
+        <div class="grp rise">
+          <h3>Desserts</h3>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Medovik (miel et noix)</b><em class="num">7,50&nbsp;€</em></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Fondant au chocolat, glace vanille</b><em class="num">6,90&nbsp;€</em></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Crème brûlée à la vanille Bourbon</b><em class="num">6,90&nbsp;€</em></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Café ou thé gourmand</b><em class="num">8,90&nbsp;€</em></div>
+        </div>
 
-        <section class="rise" aria-labelledby="c-vins">
-          <h3 id="c-vins">Vins au verre</h3>
-          <div class="dish" data-s="bistrot"><b>Ramaterra, côtes-de-provence rosé</b><em class="num">dès 6,60 €</em><span>Le vin du moment</span></div>
-          <div class="dish" data-s="bistrot"><b>Château Vessière, costières-de-nîmes</b><em class="num">dès 4,80 €</em><span>Rouge, bio et nature</span></div>
-          <div class="dish" data-s="bistrot"><b>Domaine Rière Cadène, « J’ai rendez-vous avec vous »</b><em class="num">dès 5,80 €</em><span>Rouge, côtes catalanes</span></div>
-        </section>
+        <div class="sugg rise" id="sugg">
+          <h3>Suggestions du chef</h3>
+          <p>La seconde ardoise, celle du moment.</p>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Hareng sous son manteau</b><em class="num">8,50&nbsp;€</em></div>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Gaspacho betterave, tomate, ail et œuf</b><em class="num">8,90&nbsp;€</em></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Brochette de bœuf sauce échalote</b><em class="num">19,90&nbsp;€</em><small>frites et salade</small></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Sardines en papillon, beurre d’ail</b><em class="num">16,90&nbsp;€</em><small>écrasé de pomme de terre</small></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Tiramisu classique</b><em class="num">8,90&nbsp;€</em></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Mousse au chocolat</b><em class="num">8,50&nbsp;€</em></div>
+        </div>
+
+        <div class="grp rise">
+          <h3>À partager</h3>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Planche mixte</b><em class="num">18&nbsp;€</em><small>charcuterie et fromages</small></div>
+          <div class="row" data-s="ida"><span class="sw sw--ida"></span><b>Tartines d’Ida</b><em class="num">13,50&nbsp;€</em><small>tzatziki saumon fumé, tarama, pesto et tomates confites, tapenade d’olives</small></div>
+          <div class="row" data-s="addy"><span class="sw sw--addy"></span><b>Assiette de frites</b><em class="num">6,50&nbsp;€</em></div>
+        </div>
+        <p class="note">(V) végétarien. Prix relevés sur l’ardoise et la carte publiées en ligne&#8239;; l’ardoise change au fil des saisons, la version du jour est au mur.</p>
       </div>
     </div>
   </section>
 
-  <section class="comptoir" id="comptoir" aria-labelledby="comptoir-t">
+  <section class="day" aria-labelledby="day-t">
     <div class="wrap">
-      <div class="top">
+      <h2 id="day-t" class="rise">De 7&nbsp;h à minuit, sans fermer</h2>
+      <div class="day__grid">
+        <article class="slot rise">
+          <time>7&nbsp;h</time>
+          <h3>Petit-déjeuner</h3>
+          <p class="price num">La formule à 10&nbsp;€</p>
+          <p>Boisson chaude, orange ou citron pressé, croissant ou pain au chocolat, tartine beurre confiture.</p>
+        </article>
+        <article class="slot rise">
+          <time>Midi</time>
+          <h3>Déjeuner</h3>
+          <p class="price num">Plats dès 13,50&nbsp;€</p>
+          <p>L’ardoise Ida et Addy, les suggestions du chef, le vin du moment au verre.</p>
+        </article>
+        <article class="slot slot--hh rise">
+          <time>16&nbsp;h</time>
+          <h3>Happy hour</h3>
+          <p class="price num">Cocktails 6,50&nbsp;€</p>
+          <p>Jusqu’à 19&nbsp;h, du lundi au samedi : cocktails classiques, mules, Apérol spritz, pressions et mocktails à prix doux.</p>
+        </article>
+        <article class="slot slot--night rise">
+          <time>Minuit</time>
+          <h3>Dernier verre</h3>
+          <p class="price num">Cocktails création à 11&nbsp;€</p>
+          <p>Le dîner, puis un cocktail création ou un digestif. Le samedi, on ouvre à 9&nbsp;h&#8239;; le dimanche, c’est fermé.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bar dark" id="comptoir" aria-labelledby="bar-t">
+    <div class="wrap">
+      <div class="bar__top">
         <div class="rise">
-          <h2 id="comptoir-t">Le comptoir</h2>
-          <p class="hh">Café crème le matin, Météor à la pression le soir. À l’happy hour, les cocktails classiques passent de 9 € à <strong class="num">6,50 €</strong>.</p>
+          <h2 id="bar-t">Le comptoir</h2>
+          <p>Météor à la pression, quatre mules, cinq spritz et les créations de la maison, dont le A&amp;I au champagne et porto rosé.</p>
         </div>
-        <div class="pics rise">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=700&amp;q=72&amp;auto=format&amp;fit=crop" width="700" height="875" alt="Trois cocktails alignés sur un comptoir en bois">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=700&amp;q=72&amp;auto=format&amp;fit=crop" width="700" height="875" alt="Bière pression versée dans un verre">
+        <div class="hh rise" id="hh">
+          <p class="hh__state" id="hh-state">Happy hour de 16&nbsp;h à 19&nbsp;h<small id="hh-sub">Du lundi au samedi. Comparez les prix :</small></p>
+          <div class="toggle" role="group" aria-label="Afficher les prix">
+            <button type="button" data-hh="0" aria-pressed="true">Prix normal</button>
+            <button type="button" data-hh="1" aria-pressed="false">Happy hour</button>
+          </div>
         </div>
       </div>
-      <div class="drinks">
-        <section class="rise" aria-labelledby="d-sig">
-          <h3 id="d-sig">Cocktails maison</h3>
-          <div class="dish"><b>Le A&amp;I</b><em class="num">11 €</em><span>Champagne, porto rosé, sirop de basilic, framboise</span></div>
-          <div class="dish"><b>Le Citrus</b><em class="num">11 €</em><span>Vodka, basilic, purée de yuzu, citron, pomme</span></div>
-          <div class="dish"><b>Le Choubidou</b><em class="num">11 €</em><span>Vodka, vanille, citron vert, passion, orange</span></div>
-          <div class="dish"><b>Le Jelly</b><em class="num">11 €</em><span>Rhum, orgeat, citron vert, ananas, passion</span></div>
+
+      <div class="drinks" id="drinks" aria-live="polite">
+        <section class="rise" aria-labelledby="d1">
+          <h3 id="d1">Classiques</h3>
+          <div class="row has-hh"><b>Les mules</b><em class="num"><span class="p-std">9&nbsp;€</span><span class="p-hh">6,50&nbsp;€</span></em><small>London, Moscow, Mexican, Caribbean</small></div>
+          <div class="row has-hh"><b>Apérol spritz</b><em class="num"><span class="p-std">9&nbsp;€</span><span class="p-hh">6,50&nbsp;€</span></em></div>
+          <div class="row"><b>St-Germain spritz</b><em class="num">10&nbsp;€</em></div>
+          <div class="row"><b>Italicus ou Chambord spritz</b><em class="num">11&nbsp;€</em></div>
+          <div class="row"><b>Limoncello spritz</b><em class="num">9&nbsp;€</em></div>
+          <div class="row"><b>Americano maison</b><em class="num">9&nbsp;€</em></div>
         </section>
-        <section class="rise" aria-labelledby="d-cla">
-          <h3 id="d-cla">Classiques</h3>
-          <div class="dish"><b>Les Mules</b><em class="num">9 €</em><span>London, Moscow, Mexican, Caribbean</span></div>
-          <div class="dish"><b>Les Spritz</b><em class="num">9 €</em><span>Apérol, St-Germain, Italicus, Limoncello, Chambord</span></div>
-          <div class="dish"><b>Americano maison</b><em class="num">9 €</em></div>
-          <div class="dish"><b>Kir</b><em class="num">5 €</em></div>
+        <section class="rise" aria-labelledby="d2">
+          <h3 id="d2">Créations, 11&nbsp;€</h3>
+          <div class="row"><b>Le A&amp;I</b><em class="num">11&nbsp;€</em><small>champagne, porto rosé, sirop basilic, framboise</small></div>
+          <div class="row"><b>Le Citrus</b><em class="num">11&nbsp;€</em><small>vodka, sirop basilic, purée de yuzu, citron, pomme</small></div>
+          <div class="row"><b>Le Choubidou</b><em class="num">11&nbsp;€</em><small>vodka, vanille, citron vert, maracuja, orange</small></div>
+          <div class="row"><b>Le Jelly</b><em class="num">11&nbsp;€</em><small>rhum, orgeat, citron vert, ananas, maracuja</small></div>
         </section>
-        <section class="rise" aria-labelledby="d-bie">
-          <h3 id="d-bie">Pression et sans alcool</h3>
-          <div class="dish"><b>Météor Pils</b><em class="num">dès 4 €</em></div>
-          <div class="dish"><b>Météor IPA</b><em class="num">dès 5 €</em></div>
-          <div class="dish"><b>Jus détox</b><em class="num">7,50 €</em><span>Pomme, basilic, concombre · ou gingembre, pomme, carotte</span></div>
-          <div class="dish"><b>Pink Flamingo</b><em class="num">dès 5 €</em><span>Ginger beer, pomme, framboise, basilic</span></div>
+        <section class="rise" aria-labelledby="d3">
+          <h3 id="d3">Pressions, 50&nbsp;cl</h3>
+          <div class="row has-hh"><b>Météor Pils</b><em class="num"><span class="p-std">7&nbsp;€</span><span class="p-hh">4,50&nbsp;€</span></em><small>25&nbsp;cl : 4&nbsp;€</small></div>
+          <div class="row has-hh"><b>Météor IPA</b><em class="num"><span class="p-std">9&nbsp;€</span><span class="p-hh">6,50&nbsp;€</span></em><small>25&nbsp;cl : 5&nbsp;€</small></div>
+          <div class="row has-hh"><b>Bière du moment</b><em class="num"><span class="p-std">9&nbsp;€</span><span class="p-hh">6,50&nbsp;€</span></em><small>25&nbsp;cl : 5&nbsp;€</small></div>
+          <div class="row has-hh"><b>Picon</b><em class="num"><span class="p-std">9,50&nbsp;€</span><span class="p-hh">7&nbsp;€</span></em><small>25&nbsp;cl : 5,50&nbsp;€</small></div>
         </section>
-        <section class="rise" aria-labelledby="d-caf">
-          <h3 id="d-caf">Le matin et au chaud</h3>
-          <div class="dish"><b>Expresso</b><em class="num">2,30 €</em></div>
-          <div class="dish"><b>Café crème</b><em class="num">4,70 €</em></div>
-          <div class="dish"><b>Cappuccino</b><em class="num">5,50 €</em></div>
-          <div class="dish"><b>Irish coffee</b><em class="num">9 €</em></div>
-          <div class="dish"><b>Grog</b><em class="num">7,50 €</em></div>
+        <section class="rise" aria-labelledby="d4">
+          <h3 id="d4">Sans alcool</h3>
+          <div class="row has-hh"><b>Mocktails</b><em class="num"><span class="p-std">7&nbsp;€</span><span class="p-hh">5&nbsp;€</span></em><small>Green Detox, Pink Flamingo, Red Hot</small></div>
+          <div class="row"><b>Jus détox</b><em class="num">7,50&nbsp;€</em><small>menthe pastèque concombre, basilic pomme concombre, gingembre pomme carotte</small></div>
+          <div class="row"><b>Limonade bio La French</b><em class="num">4,70&nbsp;€</em></div>
+          <div class="row"><b>Fruits pressés</b><em class="num">5,50&nbsp;€</em><small>orange, citron ou pamplemousse</small></div>
         </section>
+      </div>
+
+      <div class="bar__pic">
+        <figure class="rise">
+          <img loading="lazy" src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/3/medium/menu_003.jpg" width="886" height="1182" alt="La carte des boissons de Chez Addy & Ida ouverte sur une table en bois : caféterie, sodas, cocktails, bières">
+          <figcaption class="cap">La carte des boissons, sur la table</figcaption>
+        </figure>
+        <div class="breakfast rise">
+          <h3>Au comptoir dès 7&nbsp;h</h3>
+          <p class="price"><b class="num">10&nbsp;€</b><span>le petit-déjeuner complet, affiché en vitrine</span></p>
+          <ul>
+            <li>Expresso, allongé, noisette ou déca, 2,30&nbsp;€</li>
+            <li>Café crème ou chocolat chaud, 4,70&nbsp;€</li>
+            <li>Cappuccino, 5,50&nbsp;€&#8239;; viennois, 5,70&nbsp;€</li>
+            <li>Thé «&nbsp;Route des Comptoirs&nbsp;», 4,50&nbsp;€</li>
+            <li>Irish coffee, 9&nbsp;€&#8239;; grog, 7,50&nbsp;€</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vins" id="vins" aria-labelledby="vins-t">
+    <div class="wrap vins__in">
+      <figure class="rise">
+        <img loading="lazy" src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/2/medium/menu_002.jpg" width="886" height="1182" alt="La carte des vins de Chez Addy & Ida posée sur une table en bois">
+        <figcaption class="cap">La carte des vins</figcaption>
+      </figure>
+      <div>
+        <h2 id="vins-t" class="rise">Les vins, au verre ou en pichet</h2>
+        <p class="rise">Beaucoup de bio et de nature, du Rhône à la Loire, et une curiosité : trois cuvées de Purcari, en Moldavie. Le vin du moment, Ramaterra côtes-de-provence rosé : 6,60&nbsp;€ le verre, 22,50&nbsp;€ le pichet.</p>
+        <div class="tabs rise" role="tablist" aria-label="Couleur du vin">
+          <button type="button" role="tab" id="t-r" aria-controls="p-r" aria-selected="true">Rouges</button>
+          <button type="button" role="tab" id="t-b" aria-controls="p-b" aria-selected="false" tabindex="-1">Blancs</button>
+          <button type="button" role="tab" id="t-o" aria-controls="p-o" aria-selected="false" tabindex="-1">Rosés</button>
+        </div>
+        <div role="tabpanel" id="p-r" aria-labelledby="t-r" tabindex="0">
+          <table class="num">
+            <thead><tr><th scope="col">Vin</th><th scope="col">Verre 12&nbsp;cl</th><th scope="col">Pichet 50&nbsp;cl</th><th scope="col">Bouteille</th></tr></thead>
+            <tbody>
+              <tr><td><b>Château Vessière, Costières de Nîmes</b><small>Vallée du Rhône · bio, nature</small></td><td>4,80&nbsp;€</td><td>16,30&nbsp;€</td><td>24&nbsp;€</td></tr>
+              <tr><td><b>Rière Cadène, «&nbsp;J’ai rendez-vous avec vous&nbsp;»</b><small>Roussillon, Côtes catalanes</small></td><td>5,80&nbsp;€</td><td>19,70&nbsp;€</td><td>29&nbsp;€</td></tr>
+              <tr><td><b>Château Lauduc, «&nbsp;L’Invincible&nbsp;»</b><small>Bordeaux · nature, sans sulfites ajoutés</small></td><td>5,90&nbsp;€</td><td>20&nbsp;€</td><td>29,50&nbsp;€</td></tr>
+              <tr><td><b>Maison Ventenac, «&nbsp;Réserve de Jeanne&nbsp;»</b><small>Languedoc, Hérault IGP · bio</small></td><td>6,20&nbsp;€</td><td>21&nbsp;€</td><td>31&nbsp;€</td></tr>
+              <tr><td><b>Domaine Dozon, «&nbsp;Le Petit Chemin&nbsp;»</b><small>Loire, Chinon</small></td><td>7,10&nbsp;€</td><td>24,10&nbsp;€</td><td>35,50&nbsp;€</td></tr>
+              <tr><td><b>La Piffaudière, «&nbsp;Pif Gamay&nbsp;»</b><small>Loire, Touraine · bio</small></td><td>7,50&nbsp;€</td><td>25,50&nbsp;€</td><td>37,50&nbsp;€</td></tr>
+              <tr><td><b>Château Purcari, Rara Neagra</b><small>Purcari, Moldavie</small></td><td>–</td><td>–</td><td>47,50&nbsp;€</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div role="tabpanel" id="p-b" aria-labelledby="t-b" tabindex="0" hidden>
+          <table class="num">
+            <thead><tr><th scope="col">Vin</th><th scope="col">Verre 12&nbsp;cl</th><th scope="col">Pichet 50&nbsp;cl</th><th scope="col">Bouteille</th></tr></thead>
+            <tbody>
+              <tr><td><b>Château Vessière, Costières de Nîmes</b><small>Vallée du Rhône · bio, nature</small></td><td>4,80&nbsp;€</td><td>16,30&nbsp;€</td><td>24&nbsp;€</td></tr>
+              <tr><td><b>Château Ventenac, «&nbsp;Carole&nbsp;»</b><small>Languedoc, Hérault IGP · bio</small></td><td>5,10&nbsp;€</td><td>17,30&nbsp;€</td><td>25,50&nbsp;€</td></tr>
+              <tr><td><b>Rière Cadène, «&nbsp;J’ai rendez-vous avec vous&nbsp;»</b><small>Roussillon, Côtes catalanes</small></td><td>5,80&nbsp;€</td><td>19,70&nbsp;€</td><td>29&nbsp;€</td></tr>
+              <tr><td><b>La Piffaudière, «&nbsp;Pif Sauvignon&nbsp;»</b><small>Loire, Touraine · bio</small></td><td>7,50&nbsp;€</td><td>25,50&nbsp;€</td><td>37,50&nbsp;€</td></tr>
+              <tr><td><b>Grivot Goisot, Chablis</b><small>Bourgogne, Chablis AOP</small></td><td>8,90&nbsp;€</td><td>–</td><td>44,50&nbsp;€</td></tr>
+              <tr><td><b>Château Purcari, Viorica</b><small>Purcari, Moldavie</small></td><td>–</td><td>–</td><td>47,50&nbsp;€</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div role="tabpanel" id="p-o" aria-labelledby="t-o" tabindex="0" hidden>
+          <table class="num">
+            <thead><tr><th scope="col">Vin</th><th scope="col">Verre 12&nbsp;cl</th><th scope="col">Pichet 50&nbsp;cl</th><th scope="col">Bouteille</th></tr></thead>
+            <tbody>
+              <tr><td><b>Ramaterra, côtes-de-provence</b><small>le vin du moment, à l’ardoise</small></td><td>6,60&nbsp;€</td><td>22,50&nbsp;€</td><td>33&nbsp;€</td></tr>
+              <tr><td><b>Château Vessière, Costières de Nîmes</b><small>Vallée du Rhône · bio, nature</small></td><td>4,80&nbsp;€</td><td>16,30&nbsp;€</td><td>23&nbsp;€</td></tr>
+              <tr><td><b>Barbebelle, «&nbsp;Cuvée Fleuri&nbsp;»</b><small>Coteaux d’Aix-en-Provence AOP</small></td><td>6,40&nbsp;€</td><td>21,80&nbsp;€</td><td>32&nbsp;€</td></tr>
+              <tr><td><b>Château Purcari, rosé</b><small>Purcari, Moldavie</small></td><td>–</td><td>–</td><td>47,50&nbsp;€</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="acts rise">
+          <a class="a1" href="tel:+33143432744">Réserver une table</a>
+          <a class="a2" href="#comptoir">Voir les cocktails</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="venir" id="venir" aria-labelledby="venir-t">
-    <div class="wrap">
-      <div class="rise">
-        <h2 id="venir-t">Horaires</h2>
-        <div class="hours num" id="hours">
-          <div data-d="1"><span>Lundi</span><span>7 h – minuit</span></div>
-          <div data-d="2"><span>Mardi</span><span>7 h – minuit</span></div>
-          <div data-d="3"><span>Mercredi</span><span>7 h – minuit</span></div>
-          <div data-d="4"><span>Jeudi</span><span>7 h – minuit</span></div>
-          <div data-d="5"><span>Vendredi</span><span>7 h – minuit</span></div>
-          <div data-d="6"><span>Samedi</span><span>9 h – minuit</span></div>
-          <div data-d="0"><span>Dimanche</span><span>Fermé</span></div>
-        </div>
-        <p class="addr">4 rue Jaucourt<br>75012 Paris</p>
-        <p style="margin-top:8px;color:var(--mute)">À deux pas de la place de la Nation.</p>
-        <div class="cta">
-          <a class="btn btn--beet" href="https://www.google.com/maps/dir/?api=1&amp;destination=Chez+Addy+%26+Ida%2C+4+rue+Jaucourt%2C+75012+Paris" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
-          <a class="btn btn--ghost" href="mailto:chezaddyetida@gmail.com">chezaddyetida@gmail.com</a>
-        </div>
+    <div class="reel" id="reel" aria-hidden="true">
+      <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/chez-addy-et-ida-6638acc4ca50c1.63933943.jpg" alt="" width="243" height="150" loading="lazy">
+      <img src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/0/medium/menu_000.jpg" alt="" width="112" height="150" loading="lazy">
+      <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/chez-addy-et-ida-6638acc51d6004.04322736.jpg" alt="" width="207" height="150" loading="lazy">
+      <img src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/2/medium/menu_002.jpg" alt="" width="112" height="150" loading="lazy">
+      <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/Chez-Addy-et-Ida-662d1c5e533730.57159480.jpeg" alt="" width="228" height="150" loading="lazy">
+      <img src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/3/medium/menu_003.jpg" alt="" width="112" height="150" loading="lazy">
+      <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/chez-addy-et-ida-6638acc4ca50c1.63933943.jpg" alt="" width="243" height="150" loading="lazy">
+      <img src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/0/medium/menu_000.jpg" alt="" width="112" height="150" loading="lazy">
+      <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/chez-addy-et-ida-6638acc51d6004.04322736.jpg" alt="" width="207" height="150" loading="lazy">
+      <img src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/2/medium/menu_002.jpg" alt="" width="112" height="150" loading="lazy">
+      <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/Chez-Addy-et-Ida-662d1c5e533730.57159480.jpeg" alt="" width="228" height="150" loading="lazy">
+      <img src="https://images.menufans.com/menus/019c50684f957a0597e94dd5775842c7/3/medium/menu_003.jpg" alt="" width="112" height="150" loading="lazy">
+    </div>
+    <button type="button" class="reel-pause" id="reel-pause" aria-pressed="false">Arrêter le défilé</button>
+    <div class="wrap venir__in">
+      <div>
+        <h2 id="venir-t" class="rise">Horaires et accès</h2>
+        <p class="addr rise">4 rue Jaucourt, 75012 Paris</p>
+        <p class="muted rise">Métro Nation, lignes 1, 2, 6 et 9. Terrasse sur le trottoir.</p>
+        <ul class="hours num rise" id="hours">
+          <li data-d="1"><span>Lundi</span><span>7&nbsp;h – minuit</span></li>
+          <li data-d="2"><span>Mardi</span><span>7&nbsp;h – minuit</span></li>
+          <li data-d="3"><span>Mercredi</span><span>7&nbsp;h – minuit</span></li>
+          <li data-d="4"><span>Jeudi</span><span>7&nbsp;h – minuit</span></li>
+          <li data-d="5"><span>Vendredi</span><span>7&nbsp;h – minuit</span></li>
+          <li data-d="6"><span>Samedi</span><span>9&nbsp;h – minuit</span></li>
+          <li data-d="0"><span>Dimanche</span><span>Fermé</span></li>
+        </ul>
       </div>
-      <div class="map rise">
-        <iframe title="Plan : Chez Addy &amp; Ida, 4 rue Jaucourt, Paris 12e" loading="lazy" src="https://maps.google.com/maps?q=Chez%20Addy%20%26%20Ida%2C%204%20rue%20Jaucourt%2075012%20Paris&amp;z=16&amp;output=embed"></iframe>
+      <div class="rise">
+        <div class="map">
+          <iframe title="Plan : Chez Addy & Ida, 4 rue Jaucourt, Paris 12e" loading="lazy" src="https://maps.google.com/maps?q=Chez%20Addy%20%26%20Ida%2C%204%20rue%20Jaucourt%2075012%20Paris&amp;z=16&amp;output=embed"></iframe>
+        </div>
+        <div class="cells">
+          <a class="go" href="tel:+33143432744">Appeler<span class="num">01 43 43 27 44</span></a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Chez+Addy+%26+Ida%2C+4+rue+Jaucourt%2C+75012+Paris" target="_blank" rel="noopener">Itinéraire<span>depuis votre position</span></a>
+          <a href="#carte">La carte<span>Ida, Addy et suggestions</span></a>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer>
+<footer class="foot">
+  <img src="https://storage.googleapis.com/schlouk-map/cache/gallery/uploads/images/places/chez-addy-et-ida-6638acc4ca50c1.63933943.jpg" alt="" width="1200" height="740" loading="lazy">
+  <div class="wrap foot__top">
+    <nav aria-label="Pied de page">
+      <a href="#carte">La carte</a>
+      <a href="#comptoir">Le comptoir</a>
+      <a href="#vins">Les vins</a>
+      <a href="#venir">Horaires et accès</a>
+    </nav>
+    <p>4 rue Jaucourt, 75012 Paris<br><a class="num" href="tel:+33143432744">01 43 43 27 44</a></p>
+  </div>
   <div class="wrap">
-    <p class="name" aria-hidden="true">Addy &amp; Ida</p>
-    <div class="row">
-      <span>Chez Addy &amp; Ida · 4 rue Jaucourt, 75012 Paris</span>
-      <a href="mailto:chezaddyetida@gmail.com">chezaddyetida@gmail.com</a>
-    </div>
-    <p class="credits">Photos d’illustration : Unsplash.</p>
+    <p class="foot__name" aria-hidden="true">Addy &amp; Ida</p>
+    <p class="foot__legal">Photos : devanture, salle et burger via Schlouk Map&#8239;; ardoises et cartes via menufans. Prix et horaires relevés en ligne, à confirmer sur place. L’abus d’alcool est dangereux pour la santé.</p>
   </div>
 </footer>
 
-<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
-
 <script>
 (()=>{
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   // horaires : [ouverture, fermeture] en heures, 0 = dimanche
   const H={0:null,1:[7,24],2:[7,24],3:[7,24],4:[7,24],5:[7,24],6:[9,24]};
   const now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
-  const row=document.querySelector('#hours [data-d="'+d+'"]');if(row)row.classList.add('today');
-  const t=H[d],st1=document.getElementById('st1'),dot=document.getElementById('dot');
+  const li=document.querySelector('#hours [data-d="'+d+'"]');if(li)li.classList.add('today');
+  const t=H[d],st=document.getElementById('st'),dot=document.getElementById('dot');
   const fmt=x=>x===24?'minuit':x+' h';
+  const hhNow=!!t&&h>=16&&h<19;
   if(t&&h>=t[0]&&h<t[1]){
     dot.classList.add('on');
-    st1.textContent=h>=16&&h<19?'Ouvert, c’est l’happy hour jusqu’à 19 h':'Ouvert jusqu’à minuit';
+    st.textContent=hhNow?'Ouvert, c’est l’happy hour jusqu’à 19 h':'Ouvert jusqu’à minuit';
+  }else if(t&&h<t[0]){
+    st.textContent='Fermé, ouvre aujourd’hui à '+fmt(t[0]);
   }else{
-    let n=d,k=0;if(t&&h<t[0]){st1.textContent='Fermé, ouvre aujourd’hui à '+fmt(t[0]);return}
-    do{n=(n+1)%7;k++}while(!H[n]);
-    const j=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'][n];
-    st1.textContent='Fermé, ouvre '+(k===1?'demain':j)+' à '+fmt(H[n][0]);
+    let n=d,k=0;do{n=(n+1)%7;k++}while(!H[n]);
+    st.textContent='Fermé, ouvre '+(k===1?'demain':['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'][n])+' à '+fmt(H[n][0]);
   }
+
+  // happy hour : les prix basculent d'eux-mêmes entre 16 h et 19 h
+  const drinks=document.getElementById('drinks'),hb=document.querySelectorAll('.toggle button');
+  const setHH=on=>{drinks.classList.toggle('is-hh',on);hb.forEach(b=>b.setAttribute('aria-pressed',String((b.dataset.hh==='1')===on)))};
+  hb.forEach(b=>b.addEventListener('click',()=>setHH(b.dataset.hh==='1')));
+  if(hhNow){setHH(true);document.getElementById('hh-state').firstChild.textContent='C’est l’happy hour, jusqu’à 19 h';document.getElementById('hh-sub').textContent='Les prix affichés sont ceux de l’happy hour.'}
+
+  // côté Ida, côté Addy
+  const read=document.getElementById('read'),sb=document.querySelectorAll('.sides button');
+  sb.forEach(b=>b.addEventListener('click',()=>{
+    sb.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+    read.classList.remove('only-ida','only-addy');
+    if(b.dataset.side!=='all')read.classList.add('only-'+b.dataset.side);
+  }));
+
+  // défilé de photos : bouton pause (WCAG 2.2.2)
+  const rp=document.getElementById('reel-pause'),reel=document.getElementById('reel');
+  rp.addEventListener('click',()=>{const on=rp.getAttribute('aria-pressed')!=='true';rp.setAttribute('aria-pressed',String(on));reel.classList.toggle('paused',on);rp.textContent=on?'Relancer le défilé':'Arrêter le défilé'});
+  if(reduce)rp.hidden=true;
+
+  // onglets des vins (flèches gauche/droite)
+  const tabs=[...document.querySelectorAll('[role="tab"]')];
+  const pick=tb=>{tabs.forEach(x=>{const on=x===tb;x.setAttribute('aria-selected',String(on));x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})};
+  tabs.forEach((tb,i)=>{tb.addEventListener('click',()=>pick(tb));tb.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];pick(n);n.focus();e.preventDefault()}})});
+
+  // l'ardoise fixe change quand les suggestions arrivent
+  const imgs=document.querySelectorAll('.stage img'),cap=document.getElementById('stage-cap');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(es=>es.forEach(e=>{
+      const s=e.isIntersecting;
+      imgs.forEach(im=>im.classList.toggle('on',(im.dataset.k==='sugg')===s));
+      cap.textContent=s?'La seconde ardoise, suggestions du chef':'L’ardoise du mur, colonne Ida et colonne Addy';
+    }),{rootMargin:'-40% 0px -40% 0px'}).observe(document.getElementById('sugg'));
+
+    // entrées : chaque élément à son tour
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rise').forEach(el=>{
+      const sib=[...el.parentElement.children].filter(c=>c.classList.contains('rise'));
+      el.style.transitionDelay=reduce?'0ms':Math.min(sib.indexOf(el),5)*75+'ms';
+      io.observe(el);
+    });
+  }else document.querySelectorAll('.rise').forEach(el=>el.classList.add('in'));
 })();
-// filtre de la carte
-document.querySelectorAll('.switch button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.switch button').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  const bd=document.getElementById('board');bd.classList.remove('est','bistrot');
-  if(b.dataset.side!=='all')bd.classList.add(b.dataset.side);
-}));
-// entrées au défilement
-if('IntersectionObserver' in window){
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%3)*70+'ms';io.observe(el)});
-}else document.querySelectorAll('.rise').forEach(el=>el.classList.add('in'));
 </script>
 </body>
 </html>
