@@ -3,438 +3,539 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>L'École Buissonnière · bar, restaurant, épicerie · Paris 10e</title>
-<meta name="description" content="Bar, restaurant et épicerie au 8 rue Pierre Dupont, Paris 10e. Du café de 7h30 au dernier verre de 2h.">
+<meta name="robots" content="noindex, nofollow">
+<title>L'École Buissonnière · bar, cantine, épicerie · rue Pierre Dupont, Paris 10e</title>
+<meta name="description" content="Bar, cantine et épicerie au 8 rue Pierre Dupont, Paris 10e. Café dès 7h30, happy hour du lundi au samedi de 17h à 20h30, groupes jusqu'à 80 personnes.">
+<meta name="theme-color" content="#f3f4f3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Playwrite+FR+Moderne:wght@300;400&display=swap" rel="stylesheet">
 <style>
+/* Direction « cahier d'écolier » : papier blanc, encre bleu marine, rouge du stylo de correction pour l'action,
+   un seul aplat vert tableau noir. Le cursif scolaire (Playwrite FR Moderne) sert aux annotations, jamais aux titres. */
 :root{
-  --bg:#ffffff; --surface:#f2f2f2; --surface-2:#e8e8e8; --ink:#0a0a0a; --muted:#5f5f5f;
-  --accent:#d92b21; --accent-ink:#fff; --field:#000; --field-ink:#fff;
-  --seyes:#9fb4e6; --encre:#1f3a93;
-  --m:clamp(16px,2.2vw,32px);
-  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
-  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --step-head:clamp(2.5rem,1.2rem + 5vw,5.5rem);
+  --paper:#f3f4f3;
+  --sheet:#ffffff;
+  --card:#e9e9e2;
+  --card-deep:#dadad1;
+  --ink:#16244a;
+  --mute:#4f5873;
+  --red:#d3251c;
+  --red-press:#ad1b14;
+  --board:#1f4636;
+  --board-2:#285a46;
+  --chalk:#f1f3f1;
+  --pad:20px;
+  --sans:"Archivo",system-ui,sans-serif;
+  --hand:"Playwrite FR Moderne",cursive;
   --ease:cubic-bezier(.16,1,.3,1);
+  /* papier Seyès : une ligne forte tous les 32px, trois fines entre */
+  --seyes:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='32'%3E%3Crect y='31' width='8' height='1' fill='%238fa6dc'/%3E%3Crect y='7' width='8' height='1' fill='%23c9d4ef'/%3E%3Crect y='15' width='8' height='1' fill='%23c9d4ef'/%3E%3Crect y='23' width='8' height='1' fill='%23c9d4ef'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.5 Archivo,system-ui,sans-serif;font-stretch:100%;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--sans);overflow-x:clip}
 img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
-::selection{background:var(--accent);color:#fff}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.disp{font-weight:800;font-stretch:62%;text-transform:uppercase;letter-spacing:-.01em;line-height:.86;font-kerning:normal}
-.wrap{padding-inline:var(--m)}
-.btn{display:inline-flex;align-items:center;gap:.6em;background:var(--accent);color:var(--accent-ink);font:500 1rem/1 Archivo,sans-serif;padding:1rem 1.25rem;text-decoration:none;border:0;cursor:pointer;transition:background .25s,transform .35s var(--ease)}
-.btn:hover{background:#b8211a}
+a{color:inherit}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3{font-family:var(--sans);font-stretch:68%;font-weight:800;letter-spacing:-.02em;line-height:.95;color:var(--ink);text-wrap:balance}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hand{font-family:var(--hand);font-weight:400;letter-spacing:0}
+
+/* boutons : coins carrés, une seule couleur pleine */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;font:600 16px/1 var(--sans);text-decoration:none;border:0;cursor:pointer;white-space:nowrap;transition:background-color .2s,transform .2s var(--ease)}
 .btn:active{transform:scale(.97)}
-.btn svg{width:1em;height:1em;transition:transform .35s var(--ease)}
-.btn:hover svg{transform:translateX(3px)}
-.btn--ghost{background:var(--ink);color:#fff}
-.btn--ghost:hover{background:#333}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-press)}
+.btn-soft{background:var(--card);color:var(--ink)}
+.btn-soft:hover{background:var(--card-deep)}
+.btn-chalk{background:var(--chalk);color:var(--board)}
+.btn-chalk:hover{background:#fff}
 
-/* bandeau démo */
-.demo{background:var(--ink);color:#fff;font-size:var(--step-small);padding:.5rem var(--m);text-align:center}
+.demo{background:var(--ink);color:#d9deec;font:500 14px/1.3 var(--sans);text-align:center;padding:11px 16px}
 
-/* HERO */
-.hero{position:relative;min-height:calc(100svh - 2.3rem);display:grid;grid-template-rows:50svh auto 1fr}
-.hero__pic{position:relative;overflow:hidden}
-.hero__pic img{width:100%;height:100%;object-fit:cover;object-position:50% 78%;animation:drift 22s ease-in-out infinite alternate}
-@keyframes drift{to{transform:scale(1.07) translate(-1%,-1%)}}
-.nav{position:absolute;top:0;inset-inline:0;display:flex;justify-content:flex-end;gap:1.5rem;padding:1rem var(--m);background:rgba(0,0,0,.42);font-size:.9375rem;font-weight:500;color:#fff}
-.nav a{text-decoration:none;opacity:.92}
-.nav a:hover{opacity:1;text-decoration:underline}
-.nav .navm{display:none}
-.hero__row{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;padding:1.25rem var(--m) 0}
-.hero__row p{max-width:46ch;font-size:1.0625rem}
-.hero__name{align-self:end;margin:0 var(--m) 16px;font-size:13vw;transform-origin:50% 100%;display:flex;flex-direction:column;align-items:flex-start}
-.hero__name span{white-space:nowrap}
-@media (min-width:760px){
-  .hero{grid-template-rows:58svh auto 1fr;min-height:calc(100svh - 2.3rem)}
-  .hero__row{flex-direction:row;justify-content:space-between;align-items:center;padding-top:24px}
-  .hero__name{font-size:10.5vw;margin-bottom:24px;flex-direction:row;gap:.18em}
-}
-@supports (animation-timeline: scroll()){
-  .hero__name{animation:shrink linear both;animation-timeline:scroll(root);animation-range:0 90vh}
-  @keyframes shrink{to{scale:.93}}
-}
+/* nav */
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.mark{font:800 22px/1 var(--sans);font-stretch:68%;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.mark i{font-style:normal;color:var(--red)}
+.nav ul{display:none;list-style:none;gap:28px}
+.nav ul a{text-decoration:none;font-weight:600}
+.nav ul a:hover{color:var(--red)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
 
-/* INTRO */
-.intro{padding-block:clamp(96px,12vw,160px) clamp(80px,10vw,120px)}
-.intro__top{display:grid;gap:1.25rem}
-.intro h2{font-weight:300;font-size:clamp(2.6rem,1rem + 5.4vw,4.75rem);line-height:1;letter-spacing:-.03em;max-width:12ch}
-.intro__note{max-width:34ch}
-.facts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:32px 20px;margin-top:72px}
-.facts b{display:block;font-weight:300;font-size:clamp(1.625rem,1rem + 2vw,2.75rem);line-height:1.05;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.facts span{display:block;margin-top:.35rem;font-size:var(--step-small);color:var(--muted)}
-@media (min-width:900px){
-  .intro__top{grid-template-columns:repeat(12,1fr);align-items:end}
-  .intro h2{grid-column:1/8}
-  .intro__note{grid-column:9/13;max-width:none}
-  .facts{display:flex;justify-content:space-between;margin-top:120px}
-}
+/* hero */
+.hero{padding:16px 0 72px}
+.hero-grid{display:grid;gap:32px}
+.hero-txt{border-left:3px solid var(--red);padding-left:18px}
+.hero h1{font-size:clamp(3.1rem,15vw,5.6rem);line-height:.88}
+.lead{margin-top:20px;font-size:19px;line-height:1.45;max-width:38ch}
+.recre{margin-top:24px;background:var(--sheet);padding:16px 20px 14px;max-width:440px}
+.recre p:first-child{font:400 18px/1.3 var(--hand);color:var(--red)}
+.recre ul{list-style:none;margin-top:10px;display:grid;gap:4px}
+.recre li{display:flex;justify-content:space-between;gap:12px;font-weight:600;line-height:28px}
+.recre li s{color:var(--mute);font-weight:500;margin-right:8px}
+.recre li b{color:var(--red)}
+.recre small{display:block;margin-top:6px;color:var(--mute);font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.actions .btn{flex:1 1 auto}
+.rate{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:22px;font-weight:600}
+.rate svg{width:92px;height:17px}
+.rate span{color:var(--mute);font-weight:500}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-weight:600;font-size:15px}
+.status i{width:9px;height:9px;border-radius:50%;background:#1d8a4a;flex:none}
+.status.closed i{background:var(--mute)}
 
-/* CARTE */
-.carte{padding-block:clamp(64px,10vw,140px);display:grid;gap:56px}
-.carte__col{container-type:inline-size;max-width:640px}
-.carte__word{font-size:40cqw;margin-bottom:20px}
-details{background:var(--surface);margin-bottom:6px}
-details[open]{background:var(--surface-2)}
-summary{list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 18px;font-weight:500;cursor:pointer;transition:background .25s}
-summary::-webkit-details-marker{display:none}
-summary:hover{background:var(--surface-2)}
-summary svg{width:18px;height:18px;transition:transform .45s var(--ease);flex:none}
-details[open] summary svg{transform:rotate(45deg)}
-.items{list-style:none;padding:4px 18px 22px;display:grid;gap:14px}
-.items li{display:grid;gap:2px}
-.items small{font-size:var(--step-small);color:var(--muted)}
-.carte__aside{display:grid;gap:20px;align-content:start}
-.carte__aside img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.carte__aside p{max-width:36ch}
-@media (min-width:900px){
-  .carte{grid-template-columns:repeat(12,1fr);column-gap:24px}
-  .carte__col{grid-column:1/7}
-  .carte__aside{grid-column:8/13;padding-top:clamp(40px,6vw,96px)}
-  .carte__aside img{aspect-ratio:1/1}
-}
+/* emploi du temps en photos */
+.edt-pics{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:440px}
+.pic{position:relative;overflow:hidden;background:var(--card);min-height:0;margin:0}
+.pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.pic:hover img{transform:scale(1.04)}
+.pic-a{grid-row:1/3}
+.tag{position:absolute;left:10px;bottom:10px;display:flex;align-items:baseline;gap:8px;background:var(--sheet);color:var(--ink);font:600 14px/1 var(--sans);padding:9px 12px;white-space:nowrap}
+.tag b{font:400 14px/1 var(--hand);color:var(--red)}
 
-/* EPICERIE band */
-.band-sec{padding-block:clamp(48px,8vw,120px) 0}
-.band-sec h2{font-size:clamp(1.75rem,1rem + 2vw,2.75rem);font-weight:600;letter-spacing:-.02em;line-height:1.05;margin-bottom:20px;max-width:18ch}
-.band-sec .lede{max-width:52ch;margin-bottom:48px}
-.band{display:grid;grid-template-columns:64fr 36fr;grid-template-rows:1fr 1fr;height:84svh}
-.band figure{position:relative;overflow:hidden;margin:0}
-.band figure:nth-child(3){grid-column:1}
-.band img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.band figure:hover img{transform:scale(1.04)}
-.band figcaption{position:absolute;left:0;bottom:0;padding:14px 16px;color:#fff;font-weight:500;font-size:var(--step-small);background:rgba(0,0,0,.62)}
-.band figure:nth-child(1) figcaption{top:0;bottom:auto;font-size:clamp(1.25rem,1rem + 1vw,1.75rem);line-height:1.15;font-weight:600;padding:20px 24px;background:rgba(0,0,0,.6);max-width:16ch}
-.band-cap{padding:16px var(--m) 0;font-size:var(--step-small);color:var(--muted)}
-@media (min-width:760px){
-  .band-sec h2{margin-left:calc((100% - 2*var(--m))/6)}
-  .band-sec .lede{margin-left:calc((100% - 2*var(--m))/6)}
-  .band{display:flex;height:68svh}
-  .band figure{flex:2 1 0;transition:flex-grow .5s var(--ease)}
-  .band figure:nth-child(1){flex-grow:5}.band figure:nth-child(3){flex-grow:3}
-  .band:hover figure{flex-grow:2}
-  .band figure:hover{flex-grow:6!important}
-}
+.facts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:36px}
+.facts li{background:var(--card);padding:18px}
+.facts b{display:block;font:800 23px/1.05 var(--sans);font-stretch:72%;letter-spacing:-.01em}
+.facts span{display:block;margin-top:6px;font-size:15px;color:var(--mute)}
 
-/* EMPLOI DU TEMPS */
-.edt{padding-block:clamp(112px,14vw,200px) clamp(64px,8vw,120px)}
-.edt__head{display:grid;gap:16px;margin-bottom:40px}
-.edt h2{font-size:var(--step-head)}
-.status{display:inline-flex;align-items:center;gap:.6em;font-weight:600;font-size:var(--step-lead)}
-.status i{width:.7em;height:.7em;border-radius:50%;background:var(--muted);flex:none}
-.status.on i{background:#1f9d4c;animation:pulse 2s ease-out infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,157,76,.45)}100%{box-shadow:0 0 0 12px rgba(31,157,76,0)}}
-.edt table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.edt caption{text-align:left;font-size:var(--step-small);color:var(--muted);padding-bottom:12px}
-.edt th,.edt td{padding:0;text-align:left;font-weight:500}
-.edt tbody tr{border-top:1px solid #d6d6d6}
-.edt tbody th{width:7.5rem;padding:16px 0;font-size:var(--step-body)}
-.edt .hrs{width:7.5rem;text-align:right;padding-left:12px;white-space:nowrap}
-.track{position:relative;height:28px;background:var(--surface)}
-.track b{position:absolute;top:0;bottom:0;left:var(--a);right:var(--b);background:var(--ink);transform-origin:left;transition:transform 1s var(--ease)}
-.track .now{position:absolute;top:-6px;bottom:-6px;width:4px;background:var(--ink);box-shadow:0 0 0 2px #fff;left:var(--n)}
-.today th,.today .hrs{color:var(--accent)}
-.today .track b{background:var(--accent)}
-.ticks{display:flex;justify-content:space-between;font-size:var(--step-small);color:var(--muted);padding-top:10px}
-.edt__note{margin-top:28px;max-width:60ch}
+section{padding:80px 0}
+.h2{font-size:clamp(2.5rem,10vw,4.6rem);max-width:18ch}
+.intro{margin-top:18px;font-size:19px;max-width:54ch}
+
+/* carte */
+.carte-grid{display:grid;gap:32px;margin-top:40px}
+.page{background:var(--sheet);border-left:2px solid var(--red);padding:28px 20px 24px 24px}
+.page h3{font-size:30px;margin:0 0 6px}
+.page h3:not(:first-child){margin-top:34px}
+.page table{width:100%;border-collapse:collapse}
+.page th{font:400 14px/1.2 var(--hand);color:var(--red);text-align:right;padding:4px 0 8px 12px}
+.page th:first-child{text-align:left;padding-left:0}
+.page td{padding:9px 0;border-top:1px solid var(--card-deep);vertical-align:top}
+.page td+td{text-align:right;font-weight:700;white-space:nowrap;padding-left:12px;font-variant-numeric:tabular-nums}
+.page td.r{color:var(--red)}
+.page small{display:block;color:var(--mute);font-size:14px}
+.page .note{margin-top:22px;color:var(--mute);font-size:14px}
+.carte-pics{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-content:start}
+.carte-pics .pic img{aspect-ratio:4/5}
+.carte-pics .pic.wide{grid-column:1/3}
+.carte-pics .pic.wide img{aspect-ratio:16/10}
+.annot{grid-column:1/3;font:400 18px/1.5 var(--hand);color:var(--red);padding:6px 4px 0}
+
+/* groupes : l'aplat tableau noir */
+.board{background:var(--board);color:var(--chalk)}
+.board h2,.board h3{color:var(--chalk)}
+.bd-grid{display:grid;gap:40px}
+.big{margin-top:24px;font:800 clamp(8rem,40vw,15rem)/.8 var(--sans);font-stretch:62%;letter-spacing:-.03em}
+.big small{display:block;margin-top:14px;font:600 20px/1.3 var(--sans);font-stretch:100%;letter-spacing:0;max-width:26ch}
+.keys{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:32px}
+.keys li{background:var(--board-2);padding:18px}
+.keys b{display:block;font:800 22px/1.05 var(--sans);font-stretch:72%}
+.keys span{display:block;margin-top:4px;font-size:15px}
+.board .actions{margin-top:28px}
+.bd-photo{overflow:hidden;margin:0}
+.bd-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.bd-photo figcaption{font:400 17px/1.4 var(--hand);padding-top:14px}
+
+/* mot d'absence */
+.mot{background:var(--card)}
+.mot-grid{display:grid;gap:40px;margin-top:40px}
+form{display:grid;gap:18px;max-width:560px}
+label,.q legend{display:grid;gap:8px;font-weight:600;font-size:15px}
+.q{border:0}
+.q legend{margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:46px;padding:0 16px;background:var(--paper);font-weight:600;font-size:15px;transition:background-color .2s,color .2s}
+.chip:hover span{background:#fff}
+.chip input:checked+span{background:var(--ink);color:#fff}
+.chip input:focus-visible+span{outline:3px solid var(--red);outline-offset:2px}
+input[type=text],input[type=number],input[type=time],input[type=date]{font:500 17px var(--sans);color:var(--ink);background:var(--paper);border:0;border-bottom:2px solid var(--card-deep);border-radius:0;padding:12px 14px;min-height:52px;width:100%}
+input:focus{outline:0;border-bottom-color:var(--red)}
+.row3{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3 label:first-child{grid-column:1/3}
+.sheet{background:var(--sheet);background-image:var(--seyes);background-position:0 20px;border-left:2px solid var(--red);padding:52px 22px 40px 30px;font:400 17px/32px var(--hand);color:var(--ink);transform:rotate(-1deg);transition:transform .6s var(--ease)}
+.sheet:hover{transform:rotate(0)}
+.sheet h3{font:400 22px/32px var(--hand);color:var(--red);margin-bottom:32px;letter-spacing:0}
+.sheet p+p{margin-top:0}
+.sheet .f{color:var(--red)}
+.sheet .sig{margin-top:32px;text-align:right}
+.mot .actions{margin-top:28px}
+.mot small{display:block;margin-top:12px;color:var(--mute);font-size:14px}
+
+/* bulletin */
+.bu-grid{display:grid;gap:32px;margin-top:40px}
+.bulletin{width:100%;border-collapse:collapse;background:var(--sheet)}
+.bulletin caption{text-align:left;font:400 20px/1.3 var(--hand);color:var(--red);padding-bottom:14px}
+.bulletin th,.bulletin td{padding:16px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--card)}
+.bulletin tbody th{font-weight:700;width:34%}
+.bulletin tbody th small{display:block;font-weight:500;color:var(--mute);font-size:14px}
+.bulletin .note{font:800 30px/1 var(--sans);font-stretch:72%;color:var(--red);white-space:nowrap}
+.bulletin td.app{font:400 17px/1.5 var(--hand)}
+.bu-side{display:grid;gap:8px;align-content:start}
+.bu-side .pic img{aspect-ratio:4/3}
+.bu-side p{background:var(--card);padding:20px;font-size:17px}
+
+/* horaires & accès */
+.acces{background:var(--card)}
+.ac-grid{display:grid;gap:40px;margin-top:40px}
+.week{width:100%;border-collapse:collapse}
+.week th,.week td{padding:11px 0;text-align:left;border-top:1px solid var(--card-deep);font-weight:600}
+.week th{width:6.5rem}
+.week td.h{width:6.5rem;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.track{position:relative;height:22px;background:var(--paper);margin:0 12px}
+.track b{position:absolute;top:0;bottom:0;left:var(--a);right:var(--b);background:var(--ink)}
+.track .now{position:absolute;top:-5px;bottom:-5px;width:4px;left:var(--n);background:var(--red)}
+.week tr.today th,.week tr.today td.h{color:var(--red)}
+.week tr.today .track b{background:var(--red)}
+.ticks{display:flex;justify-content:space-between;margin:8px calc(6.5rem + 12px) 0;font-size:14px;color:var(--mute)}
+.wk-note{margin-top:18px;font-size:15px;color:var(--mute);max-width:56ch}
+.addr{background:var(--sheet);padding:28px}
+.where{font:800 clamp(2.2rem,9vw,3.4rem)/1 var(--sans);font-stretch:68%;letter-spacing:-.02em}
+.meta{margin-top:14px;font-size:18px}
+.tel{display:block;margin-top:22px;font:800 clamp(2rem,9vw,3rem)/1 var(--sans);font-stretch:72%;color:var(--red);text-decoration:none}
+.tel:hover{text-decoration:underline;text-underline-offset:6px}
+.mail{display:block;margin-top:10px;font-weight:600;overflow-wrap:anywhere}
+.map{margin-top:24px;aspect-ratio:4/3;background:var(--card-deep)}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(1)}
+
+/* fin */
+.final{padding:96px 0 48px}
+.fin-grid{display:grid;gap:32px;align-items:end}
+.final h2{font-size:clamp(2.6rem,11vw,5rem);max-width:12ch}
+.final .pic img{aspect-ratio:16/10}
+footer{padding:24px 0 32px}
+.foot-row{display:flex;flex-wrap:wrap;gap:10px 28px;color:var(--mute);font-size:15px}
+.foot-row a{color:var(--ink)}
+.foot-name{margin-top:40px;font:800 clamp(2.6rem,10.4vw,10.5rem)/.82 var(--sans);font-stretch:62%;letter-spacing:-.02em;white-space:nowrap}
+.foot-name i{font-style:normal;color:var(--red)}
+
+.rv{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.pre{opacity:0;transform:translateY(24px)}
+@media (prefers-reduced-motion:reduce){.rv,.pic img,.sheet{transition:none}.js .rv.pre{opacity:1;transform:none}html{scroll-behavior:auto}}
+
 @media (max-width:640px){
-  .edt{--tl:3.4rem;--tr:0px}
-  .edt tbody th{width:3.4rem}.edt .hrs{display:none}
+  .week th{width:3.2rem}.week td.h{display:none}
+  .ticks{margin:8px 12px 0 calc(3.2rem + 12px)}
   .day-l{display:none}
+  .bulletin th,.bulletin td{padding:14px 10px}
 }
 @media (min-width:641px){.day-s{display:none}}
-@media (min-width:900px){.edt__head{grid-template-columns:1fr auto;align-items:end}}
-
-/* MOT D'ABSENCE */
-.mot{background:var(--surface);padding-block:clamp(96px,12vw,180px)}
-.mot__grid{display:grid;gap:48px}
-.mot h2{font-size:clamp(2.6rem,1rem + 5vw,5rem);margin-bottom:24px}
-.mot__intro p{max-width:40ch}
-form{display:grid;gap:18px;margin-top:36px;max-width:520px}
-label{display:grid;gap:6px;font-weight:500;font-size:var(--step-small)}
-input,select{font:400 1.0625rem Archivo,sans-serif;padding:.85rem .9rem;border:0;background:#fff;color:var(--ink);border-radius:0;width:100%;min-height:52px;box-shadow:inset 0 -2px 0 #bdbdbd;transition:box-shadow .25s}
-input:focus,select:focus{outline:0;box-shadow:inset 0 -3px 0 var(--accent)}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.paper{position:relative;background-color:#fff;
-  background-image:linear-gradient(90deg,transparent 54px,var(--accent) 54px,var(--accent) 56px,transparent 56px),
-   linear-gradient(var(--seyes) 1px,transparent 1px),
-   linear-gradient(rgba(159,180,230,.45) 1px,transparent 1px);
-  background-size:100% 100%,100% 32px,100% 8px;background-position:0 0,0 23px,0 23px;
-  padding:56px 28px 48px 76px;min-height:420px;color:var(--encre);font-size:1.1875rem;line-height:32px;box-shadow:0 18px 40px -18px rgba(0,0,0,.28);transform:rotate(-1.2deg);transition:transform .6s var(--ease)}
-.paper:hover{transform:rotate(0)}
-.paper h3{font-size:1.1875rem;font-weight:700;line-height:32px;text-decoration:underline;text-decoration-thickness:2px;margin-bottom:32px}
-.paper p{margin:0}
-.paper .f{font-weight:700;color:var(--ink)}
-.paper .sig{margin-top:32px;text-align:right;font-style:italic}
-.mot__send{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-@media (min-width:900px){.mot__grid{grid-template-columns:5fr 6fr;column-gap:6vw;align-items:start}.paper{margin-top:clamp(120px,12vw,180px);font-size:1.375rem;padding:64px 40px 56px 96px;background-position:0 0,0 23px,0 23px}.paper h3{font-size:1.375rem}}
-
-/* CONTACT */
-.contact{background:var(--field);color:var(--field-ink);min-height:86svh;display:grid;grid-template-rows:auto 1fr auto;padding:clamp(40px,6vw,72px) var(--m) clamp(32px,4vw,48px);gap:40px}
-.contact h2{font-size:clamp(1.125rem,1rem + .5vw,1.375rem);font-weight:500;max-width:30ch;line-height:1.35}
-.contact .mail{align-self:center;display:flex;flex-direction:column;align-items:flex-start;width:fit-content;text-decoration:none;font-weight:800;font-stretch:62%;text-transform:uppercase;line-height:.9;letter-spacing:-.01em;font-size:clamp(3rem,13.4vw,13rem);transition:color .3s}
-.contact .mail span{display:block}
-.contact .mail:hover{color:var(--accent)}
-.contact__foot{display:grid;gap:12px;font-size:.9375rem}
-.contact__foot a{text-decoration:none}.contact__foot a:hover{text-decoration:underline}
-.contact__acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
-@media (min-width:900px){.contact__foot{grid-template-columns:1fr 1fr;align-items:end}.contact__acts{justify-content:flex-end;margin:0}}
-
-/* FOOTER */
-footer{background:var(--accent);color:#fff;padding:clamp(48px,6vw,80px) var(--m) 24px;overflow:hidden}
-.foot__name{font-size:9vw;white-space:nowrap;width:fit-content}
-.foot__grid{display:grid;gap:40px;margin-top:72px}
-.places{list-style:none;display:grid;gap:6px}
-.places a{font-size:clamp(1.5rem,1rem + 1.4vw,2.25rem);font-weight:600;text-decoration:none;letter-spacing:-.01em;line-height:1.15}
-.places a:hover{text-decoration:underline}
-.foot__cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;font-size:.9375rem}
-.foot__cols ul{list-style:none;display:grid;gap:6px}
-.foot__cols a{text-decoration:none}.foot__cols a:hover{text-decoration:underline}
-.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:72px;font-size:.875rem}
-@media (min-width:900px){.foot__grid{grid-template-columns:5fr 7fr}.foot__cols{grid-template-columns:repeat(3,1fr)}}
-
-/* entrances */
-.js .rv>*{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.js .rv.in>*{opacity:1;transform:none}
-.js .rv.in>*:nth-child(2){transition-delay:.08s}.js .rv.in>*:nth-child(3){transition-delay:.16s}.js .rv.in>*:nth-child(4){transition-delay:.24s}
-.js .edt:not(.in) .track b{transform:scaleX(0)}
-@media (max-width:899px){.nav a:not(.navm){display:none}.nav .navm{display:inline}}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .js .rv>*{opacity:1;transform:none}
+@media (min-width:700px){
+  :root{--pad:32px}
+  .facts,.keys{grid-template-columns:repeat(4,1fr)}
+  .actions .btn{flex:0 0 auto}
+  .sheet{padding:60px 40px 48px 52px;font-size:20px}
+}
+@media (min-width:1000px){
+  :root{--pad:40px}
+  .nav ul{display:flex}
+  .hero{padding:28px 0 110px}
+  .hero-grid{grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+  .hero-txt{padding-left:28px}
+  .edt-pics{height:min(76vh,650px)}
+  section{padding:130px 0}
+  .carte-grid{grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+  .page{padding:40px 40px 32px 48px}
+  .bd-grid{grid-template-columns:1.25fr 1fr;gap:72px;align-items:center}
+  .mot-grid{grid-template-columns:1fr 1.05fr;gap:72px;align-items:start}
+  .bu-grid{grid-template-columns:7fr 4fr;gap:56px}
+  .ac-grid{grid-template-columns:1.2fr 1fr;gap:64px;align-items:start}
+  .addr{padding:44px}
+  .fin-grid{grid-template-columns:1fr 1fr;gap:64px}
 }
 </style>
 </head>
 <body>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<header class="hero">
-  <div class="hero__pic">
-    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=2000&q=75&auto=format&fit=crop" width="2000" height="1333" alt="Comptoir de bar en bois sous des ardoises écrites à la craie">
-    <nav class="nav" aria-label="Navigation principale">
-      <a href="#carte">Carte</a><a href="#epicerie">Épicerie</a><a href="#horaires">Horaires</a><a href="#mot">Réserver</a>
-      <a class="navm" href="#horaires">Horaires</a><a class="navm" href="#mot">Réserver</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="L'École Buissonnière, accueil">L'École Buissonnière<i>.</i></a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#carte">La carte</a></li>
+        <li><a href="#groupes">Groupes</a></li>
+        <li><a href="#bulletin">Bulletin</a></li>
+        <li><a href="#acces">Horaires</a></li>
+      </ul>
     </nav>
+    <a class="btn btn-red" href="#mot">Réserver</a>
   </div>
-  <div class="hero__row">
-    <p>Bar, restaurant et épicerie au 8 rue Pierre Dupont, Paris 10e. Du premier café au dernier verre.</p>
-    <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=L'%C3%89cole+Buissonni%C3%A8re+8+rue+Pierre+Dupont+75010+Paris" target="_blank" rel="noopener">Itinéraire <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
-  </div>
-  <h1 class="hero__name disp fit" aria-label="L'École Buissonnière"><span>L'École </span><span>Buissonnière</span></h1>
 </header>
 
-<main>
-<section class="intro wrap" aria-labelledby="t-intro">
-  <div class="intro__top rv">
-    <h2 id="t-intro">Ici, on sèche avec méthode.</h2>
-    <p class="intro__note">Un café avant le métro, une assiette à midi, un verre en terrasse le soir, et l'épicerie pour ne pas repartir les mains vides. La rue porte le nom de Pierre Dupont, chansonnier du XIXe siècle&nbsp;: elle a toujours eu l'esprit buissonnier.</p>
-  </div>
-  <ul class="facts rv" aria-label="En bref">
-    <li><b>7h30 → 2h</b><span>Horaires affichés en ligne</span></li>
-    <li><b>4,2 / 5</b><span>153 avis clients</span></li>
-    <li><b>3 en 1</b><span>Bar, restaurant, épicerie</span></li>
-    <li><b>Gare de l'Est</b><span>Métro le plus proche</span></li>
-  </ul>
-</section>
-
-<section class="carte wrap" id="carte" aria-labelledby="t-carte">
-  <div class="carte__col">
-    <h2 id="t-carte" class="carte__word disp">Carte</h2>
-    <details open>
-      <summary>Au comptoir <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="currentColor" stroke-width="2"/></svg></summary>
-      <ul class="items">
-        <li>Café, dès l'ouverture<small>Pour ceux qui passent avant le travail</small></li>
-        <li>Pinte de blonde</li>
-        <li>Vin blanc au verre</li>
-        <li>Cocktails<small>Mojito, ti-punch, tequila sunrise</small></li>
-      </ul>
-    </details>
-    <details>
-      <summary>À partager <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="currentColor" stroke-width="2"/></svg></summary>
-      <ul class="items">
-        <li>Planche de charcuterie et fromages</li>
-        <li>Bruschetta</li>
-        <li>Potatoes</li>
-      </ul>
-    </details>
-    <details>
-      <summary>À table <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="currentColor" stroke-width="2"/></svg></summary>
-      <ul class="items">
-        <li>Camembert rôti, charcuterie et frites</li>
-        <li>Grandes salades</li>
-        <li>Entrecôte, confit de canard<small>Sur demande pour les groupes</small></li>
-      </ul>
-    </details>
-    <details>
-      <summary>Groupes et anniversaires <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="currentColor" stroke-width="2"/></svg></summary>
-      <ul class="items">
-        <li>Afterworks, anniversaires, soirées entre amis<small>Écrivez-nous avec la date et le nombre de personnes</small></li>
-        <li>Privatisation du bar<small>Sur demande</small></li>
-      </ul>
-    </details>
-  </div>
-  <div class="carte__aside rv">
-    <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=1100&q=70&auto=format&fit=crop" width="1100" height="1375" loading="lazy" alt="Fromages, figues et noix sur une planche">
-    <p>Les plats changent avec les saisons et l'humeur de la cuisine. Demandez au comptoir ce qui se fait aujourd'hui.</p>
-  </div>
-</section>
-
-<section class="band-sec" id="epicerie" aria-labelledby="t-epi">
-  <div class="wrap rv">
-    <h2 id="t-epi">Le bar, la table, l'épicerie.</h2>
-    <p class="lede">Trois adresses sous le même toit. On y boit, on y mange, et on repart avec ses courses du soir sans faire un détour.</p>
-  </div>
-  <div class="band">
-    <figure><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=1400&q=70&auto=format&fit=crop" width="1400" height="933" loading="lazy" alt="Comptoir, étagères garnies et ardoise"><figcaption>L'épicerie, au fil du comptoir</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=70&auto=format&fit=crop" width="900" height="600" loading="lazy" alt="Trois cafés trinqués au-dessus d'une table"><figcaption>7h30, le café</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=900&q=70&auto=format&fit=crop" width="900" height="600" loading="lazy" alt="Une bière tirée à la pression"><figcaption>18h, la pression</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=900&q=70&auto=format&fit=crop" width="900" height="600" loading="lazy" alt="Verres de vin rouge levés pour trinquer"><figcaption>Minuit, encore un verre</figcaption></figure>
-  </div>
-  <p class="band-cap">Une journée rue Pierre Dupont, du premier service au dernier.</p>
-</section>
-
-<section class="edt wrap" id="horaires" aria-labelledby="t-edt">
-  <div class="edt__head rv">
-    <h2 id="t-edt" class="disp">Emploi du temps</h2>
-    <p class="status" id="status" aria-live="polite"><i></i><span>Ouvert tous les jours de 7h30 à 2h</span></p>
-  </div>
-  <table>
-    <caption>Une barre par jour, de 6h à 3h du matin. Le jour en rouge, c'est aujourd'hui.</caption>
-    <tbody id="edt-body"></tbody>
-  </table>
-  <div class="ticks" aria-hidden="true" style="margin-left:var(--tl,7.5rem);margin-right:var(--tr,7.5rem)"><span>6h</span><span>12h</span><span>18h</span><span>0h</span><span>3h</span></div>
-  <p class="edt__note">Jours fériés et soirées privatisées&nbsp;: un mot à l'adresse e-mail plus bas et on vous répond.</p>
-</section>
-
-<section class="mot" id="mot" aria-labelledby="t-mot">
-  <div class="wrap mot__grid">
-    <div class="mot__intro rv">
-      <h2 id="t-mot" class="disp">Le mot d'absence</h2>
-      <p>Une table, un anniversaire, un afterwork qui s'annonce long&nbsp;? Remplissez le mot, on le reçoit par e-mail et on vous confirme.</p>
-      <form id="f" novalidate>
-        <label>Votre nom<input id="nom" name="nom" autocomplete="name" placeholder="Camille Martin"></label>
-        <div class="row2">
-          <label>Nombre de camarades<input id="nb" name="nb" type="number" min="1" max="80" value="4" inputmode="numeric"></label>
-          <label>Heure<input id="h" name="h" type="time" value="19:00"></label>
+<main id="top">
+  <section class="hero" aria-labelledby="titre">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-txt">
+          <h1 id="titre" class="rv">L'École Buissonnière</h1>
+          <p class="lead rv">Bar, cantine et épicerie au 8 rue Pierre Dupont, Paris 10e. Le café dès 7h30, les planches le soir, le dernier verre à 2h.</p>
+          <div class="recre rv">
+            <p>La récré, lun.–sam. de 17h à 20h30</p>
+            <ul class="num">
+              <li>Pinte de blonde <span><s>5,50 €</s><b>4 €</b></span></li>
+              <li>Verre de vin blanc <span><s>4,50 €</s><b>3 €</b></span></li>
+              <li>Cocktail <span><s>7 €</s><b>5 €</b></span></li>
+            </ul>
+          </div>
+          <div class="actions rv">
+            <a class="btn btn-red" href="#mot">Réserver une table</a>
+            <a class="btn btn-soft" href="tel:+33953026919">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+              09 53 02 69 19</a>
+          </div>
+          <div class="rate rv">
+            <svg viewBox="0 0 100 18" aria-hidden="true"><g fill="#d3251c"><path id="s" d="M9 0l2.6 5.8 6.4.6-4.8 4.2 1.4 6.3L9 13.6 3.4 16.9l1.4-6.3L0 6.4l6.4-.6z"/><use href="#s" x="20.5"/><use href="#s" x="41"/><use href="#s" x="61.5"/></g><use href="#s" x="82" fill="#dadad1"/></svg>
+            4,2/5 <span>153 avis Google</span>
+          </div>
+          <p class="status" id="status" hidden><i></i><span></span></p>
         </div>
-        <label>Date<input id="d" name="d" type="date"></label>
-        <label>Motif
-          <select id="motif" name="motif">
-            <option>Un verre entre amis</option>
-            <option>Un anniversaire</option>
-            <option>Un afterwork</option>
-            <option>Un déjeuner</option>
-            <option>Le petit café du matin</option>
-          </select>
-        </label>
-      </form>
-    </div>
-    <div>
-      <div class="paper rv" aria-live="polite">
-        <div>
-          <h3>Mot d'absence</h3>
-          <p>Madame, Monsieur,</p>
-          <p>Je vous prie d'excuser <span class="f" id="p-nb">4 camarades</span> qui ne seront pas en classe le <span class="f" id="p-d">jour qui vous conviendra</span> à partir de <span class="f" id="p-h">19h00</span>.</p>
-          <p>Motif&nbsp;: <span class="f" id="p-m">un verre entre amis</span>, au 8 rue Pierre Dupont.</p>
-          <p class="sig" id="p-sig">Signé&nbsp;: un élève</p>
+        <div class="edt-pics rv">
+          <figure class="pic pic-a">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&h=1300&fit=crop&q=75" alt="Comptoir de bar en bois sous des ardoises écrites à la craie" width="1000" height="1300">
+            <figcaption class="tag"><b>17h</b> la récré au comptoir</figcaption>
+          </figure>
+          <figure class="pic">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=760&h=640&fit=crop&q=75" alt="Trois cafés crème sur une table en bois" width="760" height="640">
+            <figcaption class="tag"><b>7h30</b> premier café</figcaption>
+          </figure>
+          <figure class="pic">
+            <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=760&h=640&fit=crop&q=75" alt="Fromages, figues et noix sur une planche" width="760" height="640">
+            <figcaption class="tag"><b>21h</b> planche à 15 €</figcaption>
+          </figure>
         </div>
       </div>
-      <div class="mot__send">
-        <a class="btn" id="send" href="mailto:ecolebuissonniere@outlook.com">Envoyer le mot <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+      <ul class="facts rv">
+        <li><b>8 rue Pierre Dupont</b><span>Paris 10e, métro Gare de l'Est ou Château-Landon</span></li>
+        <li><b>7h30 → 2h</b><span>tous les jours, du café au dernier verre</span></li>
+        <li><b>Jusqu'à 80</b><span>personnes pour un groupe ou une fête</span></li>
+        <li><b>Bar, cantine, épicerie</b><span>sous le même toit</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="carte" aria-labelledby="t-carte">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-carte">Au menu de la cantine</h2>
+      <p class="intro rv">Des planches à partager, un camembert rôti, de grandes salades, et l'œuf cocotte au maroilles que Time Out conseillait de ne pas manquer.</p>
+      <div class="carte-grid">
+        <div class="page rv">
+          <h3>Au comptoir</h3>
+          <table>
+            <thead><tr><th scope="col"><span class="sr">Boisson</span></th><th scope="col">la récré</th><th scope="col">le reste du temps</th></tr></thead>
+            <tbody class="num">
+              <tr><td>Pinte de blonde</td><td class="r">4 €</td><td>5,50 €</td></tr>
+              <tr><td>Verre de vin blanc</td><td class="r">3 €</td><td>4,50 €</td></tr>
+              <tr><td>Cocktails<small>mojito, ti-punch, tequila sunrise</small></td><td class="r">5 €</td><td>7 €</td></tr>
+              <tr><td>Rhum arrangé maison</td><td></td><td>au comptoir</td></tr>
+            </tbody>
+          </table>
+          <h3>À partager</h3>
+          <table class="num">
+            <tr><td>Planche charcuterie et fromages</td><td>15 €</td></tr>
+            <tr><td>Bruschetta</td><td>7 €</td></tr>
+            <tr><td>Potatoes</td><td>3,50 €</td></tr>
+          </table>
+          <h3>À table</h3>
+          <table class="num">
+            <tr><td>Camembert rôti<small>avec charcuterie et frites</small></td><td>13 €</td></tr>
+            <tr><td>Œuf cocotte au maroilles</td><td>à l'ardoise</td></tr>
+            <tr><td>Grandes salades</td><td>à l'ardoise</td></tr>
+          </table>
+          <p class="note">Tarifs relevés sur la fiche Privateaser du bar. Demandez l'ardoise du jour au comptoir.</p>
+        </div>
+        <div class="carte-pics rv">
+          <figure class="pic wide"><img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=1000&h=625&fit=crop&q=75" alt="Une bière blonde tirée à la pression" loading="lazy" width="1000" height="625"></figure>
+          <figure class="pic"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=750&fit=crop&q=75" alt="Cocktail ambré avec un zeste et du romarin" loading="lazy" width="600" height="750"></figure>
+          <figure class="pic"><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&h=750&fit=crop&q=75" alt="Comptoir d'épicerie-café, étagères garnies et ardoise" loading="lazy" width="600" height="750"></figure>
+          <p class="annot">Et l'épicerie, pour repartir avec les courses du soir.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="contact" aria-labelledby="t-contact">
-  <h2 id="t-contact">Une question, une table, un groupe&nbsp;? Écrivez-nous.</h2>
-  <a class="mail fit" href="mailto:ecolebuissonniere@outlook.com"><span>ecolebuissonniere</span><span>@outlook.com</span></a>
-  <div class="contact__foot">
-    <div>8 rue Pierre Dupont, 75010 Paris<br>Métro Gare de l'Est<br><a href="tel:+33953026919">09 53 02 69 19</a></div>
-    <div class="contact__acts">
-      <a class="btn" href="tel:+33953026919">Appeler</a>
-      <a class="btn btn--ghost" style="background:#fff;color:#000" href="https://www.google.com/maps/dir/?api=1&destination=L'%C3%89cole+Buissonni%C3%A8re+8+rue+Pierre+Dupont+75010+Paris" target="_blank" rel="noopener">Itinéraire</a>
+  <section class="board" id="groupes" aria-labelledby="t-groupes">
+    <div class="wrap bd-grid">
+      <div>
+        <h2 class="h2 rv" id="t-groupes">Une sortie de classe&nbsp;?</h2>
+        <p class="big rv num">80<small>personnes au plus pour un anniversaire, un afterwork ou un pot de départ.</small></p>
+        <ul class="keys rv">
+          <li><b>Privatisation</b><span>du bar, sur demande</span></li>
+          <li><b>Sono et projecteur</b><span>et votre propre musique</span></li>
+          <li><b>Votre gâteau</b><span>d'anniversaire est le bienvenu</span></li>
+          <li><b>Buffet</b><span>entrecôte, confit, salades, sur demande</span></li>
+        </ul>
+        <div class="actions rv">
+          <a class="btn btn-chalk" href="#mot">Écrire le mot d'absence</a>
+        </div>
+      </div>
+      <figure class="bd-photo rv">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=900&h=1125&fit=crop&q=75" alt="Une tablée d'amis qui trinquent autour de verres et d'assiettes" loading="lazy" width="900" height="1125">
+        <figcaption>Afterworks, anniversaires, enterrements de vie de garçon ou de jeune fille.</figcaption>
+      </figure>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="mot" id="mot" aria-labelledby="t-mot">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-mot">Le mot d'absence</h2>
+      <p class="intro rv">Remplissez le mot, il part par e-mail au bar, déjà rédigé. L'équipe vous répond pour confirmer la table.</p>
+      <div class="mot-grid">
+        <form id="f" class="rv" onsubmit="return false">
+          <fieldset class="q">
+            <legend>Le motif</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="m" value="un verre entre amis" checked><span>Un verre entre amis</span></label>
+              <label class="chip"><input type="radio" name="m" value="un anniversaire"><span>Un anniversaire</span></label>
+              <label class="chip"><input type="radio" name="m" value="un afterwork"><span>Un afterwork</span></label>
+              <label class="chip"><input type="radio" name="m" value="un déjeuner"><span>Un déjeuner</span></label>
+              <label class="chip"><input type="radio" name="m" value="une privatisation"><span>Une privatisation</span></label>
+            </div>
+          </fieldset>
+          <div class="row3">
+            <label>Votre nom<input type="text" id="nom" autocomplete="name" placeholder="Camille Martin"></label>
+            <label>Nombre<input type="number" id="nb" min="1" max="80" value="6" inputmode="numeric"></label>
+            <label>Heure<input type="time" id="h" value="18:00"></label>
+          </div>
+          <label>Date<input type="date" id="d"></label>
+        </form>
+        <div class="rv">
+          <div class="sheet" aria-live="polite">
+            <h3>Mot d'absence</h3>
+            <p>Madame, Monsieur,</p>
+            <p>Je vous prie d'excuser <span class="f" id="p-nb">6 élèves</span> qui ne seront pas en classe <span class="f" id="p-d">le jour qui vous conviendra</span>, à partir de <span class="f" id="p-h">18h00</span>.</p>
+            <p>Motif&nbsp;: <span class="f" id="p-m">un verre entre amis</span>, au 8 rue Pierre Dupont.</p>
+            <p class="sig" id="p-sig">Signé&nbsp;: un élève</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-red" id="send" href="mailto:ecolebuissonniere@outlook.com">Envoyer le mot</a>
+            <a class="btn btn-soft" href="tel:+33953026919">Appeler le bar</a>
+          </div>
+          <small>Votre messagerie s'ouvre avec la demande rédigée, à l'adresse ecolebuissonniere@outlook.com.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bulletin" aria-labelledby="t-bulletin">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-bulletin">Le bulletin trimestriel</h2>
+      <p class="intro rv">Les notes viennent des clients et de la presse. On recopie, sans rien inventer.</p>
+      <div class="bu-grid">
+        <div class="rv">
+          <table class="bulletin">
+            <caption>Appréciations relevées en ligne</caption>
+                        <tbody>
+              <tr><th scope="row">Avis Google<small>153 avis clients</small></th><td class="note num">4,2/5</td><td class="app">Moyenne de la fiche Google du bar.</td></tr>
+              <tr><th scope="row">Privateaser<small>14 avis certifiés</small></th><td class="note num">4,6/5</td><td class="app">Cadre et ambiance notés 4,8 sur 5.</td></tr>
+              <tr><th scope="row">Time Out Paris<small>critique «&nbsp;Recommandé&nbsp;», 2012</small></th><td class="note num">4/5</td><td class="app">«&nbsp;Happy-hour généreux&nbsp;», bric-à-brac chaleureux, banquette en cuir.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="bu-side rv">
+          <figure class="pic"><img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?w=800&h=600&fit=crop&q=75" alt="Bar vu de la rue le soir, vitrine éclairée" loading="lazy" width="800" height="600"></figure>
+          <p>Mobilier en bois, banquette en cuir, déco chinée&nbsp;: un bar de quartier où les habitués passent boire un demi en rentrant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="acces" id="acces" aria-labelledby="t-acces">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-acces">L'emploi du temps</h2>
+      <div class="ac-grid">
+        <div class="rv">
+          <table class="week" aria-label="Horaires d'ouverture, de 6h à 3h du matin">
+            <tbody id="week"></tbody>
+          </table>
+          <div class="ticks" aria-hidden="true"><span>6h</span><span>12h</span><span>18h</span><span>0h</span><span>3h</span></div>
+          <p class="wk-note">Le trait rouge marque l'heure qu'il est. Jours fériés et soirées privatisées&nbsp;: un coup de fil au bar avant de venir.</p>
+          <div class="map"><iframe title="Plan : 8 rue Pierre Dupont, Paris 10e" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=8%20rue%20Pierre%20Dupont%2075010%20Paris&amp;z=16&amp;output=embed"></iframe></div>
+        </div>
+        <div class="addr rv">
+          <p class="where">8 rue Pierre Dupont<br>75010 Paris</p>
+          <p class="meta">À deux pas de la Gare de l'Est, côté hôpital Saint-Louis. Métro Gare de l'Est, Château-Landon ou Colonel Fabien.</p>
+          <a class="tel" href="tel:+33953026919">09 53 02 69 19</a>
+          <a class="mail" href="mailto:ecolebuissonniere@outlook.com">ecolebuissonniere@outlook.com</a>
+          <div class="actions">
+            <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&amp;destination=L'%C3%89cole+Buissonni%C3%A8re+8+rue+Pierre+Dupont+75010+Paris" target="_blank" rel="noopener">Itinéraire</a>
+            <a class="btn btn-soft" href="#mot">Réserver une table</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap fin-grid">
+      <div>
+        <h2 class="rv" id="t-final">On sèche ce soir&nbsp;?</h2>
+        <p class="intro rv">La récré commence à 17h. Une table pour six, un anniversaire, un pot de départ&nbsp;: écrivez le mot, on garde la place.</p>
+        <div class="actions rv">
+          <a class="btn btn-red" href="#mot">Écrire le mot d'absence</a>
+          <a class="btn btn-soft" href="tel:+33953026919">Appeler le bar</a>
+        </div>
+      </div>
+      <figure class="pic rv"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1200&h=750&fit=crop&q=75" alt="Verres de vin rouge levés pour trinquer" loading="lazy" width="1200" height="750"></figure>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <p class="foot__name disp fit" aria-hidden="true">L'École Buissonnière</p>
-  <div class="foot__grid">
-    <ul class="places">
-      <li><a href="https://www.google.com/maps/search/?api=1&query=L'%C3%89cole+Buissonni%C3%A8re+8+rue+Pierre+Dupont+75010+Paris" target="_blank" rel="noopener">8 rue Pierre Dupont</a></li>
-      <li><a href="mailto:ecolebuissonniere@outlook.com">Nous écrire</a></li>
-      <li><a href="tel:+33953026919">09 53 02 69 19</a></li>
-    </ul>
-    <div class="foot__cols">
-      <ul><li><a href="#carte">Carte</a></li><li><a href="#epicerie">Épicerie</a></li></ul>
-      <ul><li><a href="#horaires">Horaires</a></li><li><a href="#mot">Réserver</a></li></ul>
-      <ul><li>Photos&nbsp;: Unsplash</li><li>Paris 10e</li></ul>
+  <div class="wrap">
+    <div class="foot-row">
+      <span>8 rue Pierre Dupont, 75010 Paris</span>
+      <a href="tel:+33953026919">09 53 02 69 19</a>
+      <a href="mailto:ecolebuissonniere@outlook.com">ecolebuissonniere@outlook.com</a>
+      <span>Photos&nbsp;: Unsplash</span>
+      <span>Sources&nbsp;: Time Out Paris, Privateaser, Google</span>
     </div>
+    <p class="foot-name" aria-hidden="true">L'École Buissonnière<i>.</i></p>
   </div>
-  <div class="legal"><span>Démo réalisée par Raul Hatos — site non officiel</span><a href="#top" onclick="scrollTo({top:0});return false">Revenir en haut</a></div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
-// ouvert si l'heure tombe dans 7h30–2h (la plage passe minuit)
-const OPEN=7.5, CLOSE=26; // heures depuis minuit, 26 = 2h le lendemain
-function isOpen(h){const x=h<6?h+24:h;return x>=OPEN&&x<CLOSE}
+// ouvert de 7h30 à 2h tous les jours ; la plage passe minuit
+var OPEN=7.5,CLOSE=26;
+function isOpen(h){var x=h<6?h+24:h;return x>=OPEN&&x<CLOSE}
 console.assert(isOpen(8)&&isOpen(23.9)&&isOpen(1.5)&&!isOpen(2)&&!isOpen(5)&&!isOpen(7.4),'isOpen');
 
-const days=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
-const now=new Date(), hh=now.getHours()+now.getMinutes()/60;
-// avant 6h, on est encore dans la soirée de la veille
-let ti=(now.getDay()+6)%7; if(hh<6) ti=(ti+6)%7;
-const pos=h=>((h<6?h+24:h)-6)/21*100; // échelle 6h → 3h
-const body=document.getElementById('edt-body');
-body.innerHTML=days.map((d,i)=>`<tr class="${i===ti?'today':''}"><th scope="row"><span class="day-l">${d}</span><span class="day-s">${d.slice(0,3)}.</span></th><td><div class="track"><b style="--a:${pos(OPEN)}%;--b:${100-pos(CLOSE-24)}%"></b>${i===ti?`<span class="now" style="--n:${pos(hh)}%" title="Maintenant"></span>`:''}</div></td><td class="hrs">7h30 – 2h</td></tr>`).join('');
+var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'})),hh=now.getHours()+now.getMinutes()/60;
+var ti=(now.getDay()+6)%7; if(hh<6) ti=(ti+6)%7; // avant 6h, c'est encore la soirée de la veille
+var days=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
+var pos=function(h){return((h<6?h+24:h)-6)/21*100}; // échelle 6h → 3h
+document.getElementById('week').innerHTML=days.map(function(d,i){
+  return '<tr'+(i===ti?' class="today"':'')+'><th scope="row"><span class="day-l">'+d+'</span><span class="day-s">'+d.slice(0,3)+'.</span></th><td><div class="track"><b style="--a:'+pos(OPEN)+'%;--b:'+(100-pos(CLOSE-24))+'%"></b>'+(i===ti?'<span class="now" style="--n:'+pos(hh)+'%"></span>':'')+'</div></td><td class="h">7h30 – 2h</td></tr>'}).join('');
+var st=document.getElementById('status');
+if(isOpen(hh)){st.querySelector('span').textContent='Ouvert maintenant, jusqu’à 2h'+(ti<6&&hh>=17&&hh<20.5?' · c’est la récré':'')}
+else{st.classList.add('closed');st.querySelector('span').textContent='Fermé, ouvre à 7h30'}
+st.hidden=false;
 
-const st=document.getElementById('status');
-if(isOpen(hh)){st.classList.add('on');st.querySelector('span').textContent='Ouvert maintenant · ferme à 2h'}
-else{st.querySelector('span').textContent='Fermé · ouvre à 7h30'}
-
-// mot d'absence → mailto
-const $=id=>document.getElementById(id), send=$('send');
-const dIn=$('d'); dIn.min=new Date().toISOString().slice(0,10);
-function fmtDate(v){return v?new Date(v+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}):'jour qui vous conviendra'}
-function renderMot(){
-  const n=Math.max(1,Math.min(80,parseInt($('nb').value)||1)), nom=$('nom').value.trim(), h=($('h').value||'19:00').replace(':','h'), m=$('motif').value;
-  $('p-nb').textContent=n+(n>1?' camarades':' camarade');
-  $('p-d').textContent=fmtDate(dIn.value);
-  $('p-h').textContent=h;
-  $('p-m').textContent=m.charAt(0).toLowerCase()+m.slice(1);
+// mot d'absence → mailto rédigé
+var $=function(id){return document.getElementById(id)},f=$('f'),send=$('send');
+$('d').min=new Date().toISOString().slice(0,10);
+function fmt(v){return v?'le '+new Date(v+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}):'le jour qui vous conviendra'}
+function upd(){
+  var n=Math.max(1,Math.min(80,parseInt($('nb').value,10)||1)),nom=$('nom').value.trim(),h=($('h').value||'18:00').replace(':','h'),m=f.querySelector('input[name=m]:checked').value,d=fmt($('d').value);
+  $('p-nb').textContent=n+(n>1?' élèves':' élève');$('p-d').textContent=d;$('p-h').textContent=h;$('p-m').textContent=m;
   $('p-sig').textContent='Signé : '+(nom||'un élève');
-  const txt=`Bonjour,\n\nJe souhaite réserver pour ${n} personne${n>1?'s':''}, le ${fmtDate(dIn.value)} à partir de ${h}.\nMotif : ${m}.\n\nNom : ${nom}\n\nMerci !`;
-  send.href='mailto:ecolebuissonniere@outlook.com?subject='+encodeURIComponent('Réservation · '+n+' pers. · '+fmtDate(dIn.value))+'&body='+encodeURIComponent(txt);
+  var body='Bonjour,\n\nJe souhaite réserver pour '+n+' personne'+(n>1?'s':'')+', '+d+' à partir de '+h+'.\nMotif : '+m+'.\n\nNom : '+nom+'\nTéléphone : \n\nMerci !';
+  send.href='mailto:ecolebuissonniere@outlook.com?subject='+encodeURIComponent('Réservation · '+n+' pers. · '+d)+'&body='+encodeURIComponent(body);
 }
-document.getElementById('f').addEventListener('input',renderMot);
-document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();location.href=send.href});
-renderMot();
+f.addEventListener('input',upd);f.addEventListener('change',upd);upd();
 
-// le nom remplit exactement la largeur disponible
-function fitAll(){document.querySelectorAll('.fit').forEach(el=>{
-  const avail=el.parentElement.clientWidth-parseFloat(getComputedStyle(el.parentElement).paddingLeft)-parseFloat(getComputedStyle(el.parentElement).paddingRight)-parseFloat(getComputedStyle(el).marginLeft)*2;
-  el.style.fontSize='100px';el.style.width='max-content';
-  const w=el.getBoundingClientRect().width;el.style.width='';
-  el.style.fontSize=Math.min(100*avail/w,420)+'px';
-})}
-let lastW=innerWidth,tm;fitAll();document.fonts.ready.then(fitAll);
-addEventListener('resize',()=>{clearTimeout(tm);tm=setTimeout(()=>{if(innerWidth!==lastW){lastW=innerWidth;fitAll()}},150)});
-
-// entrées au défilement
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -12% 0px'});
-document.querySelectorAll('.rv,.edt').forEach(el=>io.observe(el));
+// apparition, grand écran seulement
+if('IntersectionObserver' in window&&matchMedia('(min-width:1000px) and (prefers-reduced-motion:no-preference)').matches){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el,i){if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pre');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)}});
+}
 </script>
 </body>
 </html>
