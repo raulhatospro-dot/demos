@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>La Maison des Trois Thés — maison de thé chinoise, Paris 5e</title>
+<meta name="description" content="Maison de thé chinoise de Maître Yu Hui Tseng depuis 1995, 1 rue Saint-Médard, Paris 5e. Cave de plus de 1 000 thés, dégustations en gong fu cha.">
+<!--
+  Démo non officielle. Direction : « la page est l'objet » (taste-skill, seed 499579354) — la page est la carte de la maison, posée sur un champ céladon.
+  Système : DESIGN.md « Apple » (awesome-design) : boutons pilule, corps 17-19px, alternance de champs pleins, la photo d'abord, échelle d'espacement 8/12/17/24/32/48.
+  Type : Bebas Neue + EB Garamond. Couleur : sarcelle sur papier, un seul rouge cinabre pour les sceaux.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&text=%E4%B8%89%E6%9B%BE&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f9f8; --surface:#e6eeeb; --surface-2:#d9e5e1;
+  --ink:#06525c; --muted:#2f6b74; --accent:#06525c; --accent-ink:#f7f9f8;
+  --field:#06525c; --field-ink:#f7f9f8; --field-soft:#0d6670; --field-mute:#a9cdd0;
+  --seal:#b8322a;
+  --display:"Bebas Neue",Impact,sans-serif; --text:"EB Garamond",Garamond,Georgia,serif;
+  --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --s-body:clamp(1.125rem,1.06rem + .25vw,1.25rem);
+  --s-lead:clamp(1.375rem,1.2rem + .7vw,1.75rem);
+  --s-head:clamp(3rem,1.6rem + 6vw,7rem);
+  --s-giant:clamp(5.5rem,2rem + 16vw,15rem);
+  --m:clamp(16px,3vw,40px);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--field);color:var(--ink);font-family:var(--text);font-size:var(--s-body);line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+::selection{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:3px solid var(--seal);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.disp{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:-.01em;line-height:.88}
+.num{font-variant-numeric:tabular-nums lining-nums}
+
+/* boutons : pilule pleine, une seule forme */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 1.5rem;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);font:500 1.0625rem/1 var(--text);text-decoration:none;cursor:pointer;transition:transform .25s var(--ease),background-color .25s}
+.btn:hover{background:#04434b}
+.btn:active{transform:scale(.97)}
+.btn.alt{background:var(--surface);color:var(--ink)}
+.btn.alt:hover{background:var(--surface-2)}
+.btn.light{background:var(--bg);color:var(--ink)}
+.btn.light:hover{background:#fff}
+
+/* bandeau démo */
+.demo{background:#043c43;color:var(--field-mute);font-size:var(--s-small);text-align:center;padding:7px var(--m)}
+
+/* ——— rideau : main glisse au-dessus du pied ——— */
+main{background:var(--field)}
+
+/* ——— HERO : la carte ——— */
+.hero{position:relative;min-height:100svh;padding:0 var(--m);overflow:hidden;color:var(--field-ink)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.mono{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--field-ink);font-size:var(--s-small)}
+.seal{display:grid;place-items:center;width:44px;height:44px;background:var(--seal);color:#fbeee9;font:600 26px/1 "Noto Serif SC","Songti SC",serif;border-radius:4px}
+.toplinks{display:none;gap:28px}
+.toplinks a{color:var(--field-ink);text-decoration:none;font-size:1.0625rem}
+.toplinks a:hover{text-decoration:underline}
+.top .btn{min-height:42px;padding:0 1.1rem;font-size:1rem}
+.card{position:relative;margin:28px auto 0;width:100%;max-width:640px;aspect-ratio:5/7;background:var(--bg);color:var(--ink);text-align:center;padding:clamp(40px,7vw,64px) clamp(22px,5vw,56px) 0;
+  --r:22px;
+  /* taste-skill-ignore: masque de découpe des coins festonnés, pas un dégradé visible */
+  -webkit-mask:radial-gradient(circle var(--r) at 0 0,#0000 98%,#000) top left,radial-gradient(circle var(--r) at 100% 0,#0000 98%,#000) top right; /* taste-skill-ignore */
+  -webkit-mask-size:51% 100%;-webkit-mask-repeat:no-repeat;
+  mask:radial-gradient(circle var(--r) at 0 0,#0000 98%,#000) top left,radial-gradient(circle var(--r) at 100% 0,#0000 98%,#000) top right; /* taste-skill-ignore */
+  mask-size:51% 100%;mask-repeat:no-repeat}
+.card .seal{margin:0 auto 26px;width:56px;height:56px;font-size:34px}
+.card h1{font-size:clamp(4.2rem,18vw,8.6rem);color:var(--ink)}
+.card h1 span{display:block}
+.card .sub{max-width:30ch;margin:26px auto 0;font-size:var(--s-lead);line-height:1.3}
+.facts-line{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px 16px;margin:28px auto 0;font-size:var(--s-small);color:var(--muted)}
+.facts-line .dia{display:none}
+.facts-line span{white-space:nowrap}
+.dia{width:9px;height:9px;background:var(--seal);transform:rotate(45deg);flex:none}
+.card .acts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
+.card .plate{margin:44px auto 0;width:min(78%,380px);aspect-ratio:4/5;object-fit:cover}
+.card .cap{font-size:var(--s-small);color:var(--muted);margin-top:10px;font-style:italic}
+
+/* ——— INTRO : la cave ——— */
+.intro{background:var(--bg);padding:clamp(88px,12vw,160px) var(--m) clamp(88px,10vw,140px)}
+.intro .row1{display:grid;gap:22px;max-width:1360px;margin:0 auto}
+.intro h2{font-size:var(--s-head)}
+.intro .note{max-width:36ch}
+.fact-row{display:grid;grid-template-columns:1fr 1fr;gap:36px 24px;max-width:1360px;margin:clamp(56px,8vw,110px) auto 0}
+.fact b{display:block;font:400 clamp(2.6rem,1.6rem + 3.4vw,4.6rem)/.9 var(--display);letter-spacing:-.01em}
+.fact span{display:block;font-size:var(--s-small);color:var(--muted);margin-top:8px;max-width:22ch}
+.intro figure{max-width:1360px;margin:clamp(48px,6vw,80px) auto 0}
+.intro figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+figcaption{font-size:var(--s-small);color:var(--muted);font-style:italic;margin-top:10px}
+
+/* ——— SHOWCASE : photo + fiches ——— */
+.show{position:relative;min-height:100svh;overflow:hidden;color:var(--bg);display:flex;flex-direction:column;justify-content:space-between}
+.show > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 2.4s var(--ease)}
+.show.in > img{transform:scale(1)}
+.show .txt{position:relative;margin:clamp(72px,10vw,120px) var(--m) 0;max-width:620px;padding:28px;background:rgba(4,30,34,.62)}
+.show h2{font-size:clamp(2.6rem,1.6rem + 3.6vw,4.8rem);margin-bottom:18px}
+.show .txt p{font-size:var(--s-lead);line-height:1.32}
+.show .txt p + p{margin-top:14px;font-size:var(--s-body);line-height:1.5}
+.slips{position:relative;display:flex;gap:12px;align-items:flex-end;overflow-x:auto;scroll-snap-type:x mandatory;padding:56px var(--m) 0;scrollbar-width:none}
+.slips::-webkit-scrollbar{display:none}
+.slip{flex:0 0 min(64vw,250px);scroll-snap-align:start;background:var(--bg);color:var(--ink);padding:20px 20px 40px;font-size:1rem;line-height:1.4}
+.slip:nth-child(1){min-height:240px;transform:rotate(-1.2deg)}
+.slip:nth-child(2){min-height:300px}
+.slip:nth-child(3){min-height:260px;transform:rotate(1.4deg)}
+.slip:nth-child(4){min-height:320px}
+.slip:nth-child(5){min-height:250px;transform:rotate(-1deg)}
+.slip:nth-child(6){min-height:290px}
+@media (max-width:759px){.slips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;overflow:visible;padding-top:40px}.slip{min-height:0!important;padding-bottom:24px}.slip:nth-child(even){margin-top:28px}}
+.slip strong{display:block;font:400 1.9rem/.95 var(--display);letter-spacing:.005em}
+.slip .cut{display:block;max-width:100%;color:var(--muted);letter-spacing:.3em;margin:8px 0 10px;overflow:hidden;white-space:nowrap}
+
+/* ——— GONG FU : rangée de moments ——— */
+.steps{background:var(--bg);padding:clamp(88px,12vw,170px) 0 clamp(88px,10vw,150px)}
+.steps-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:0 var(--m)}
+.steps h2{font-size:var(--s-head)}
+.steps-head p{max-width:40ch;margin-top:16px}
+.arrows{display:none;gap:8px}
+.arrows button{width:52px;height:52px;border:0;background:var(--ink);color:var(--bg);font:400 1.6rem/1 var(--text);cursor:pointer;border-radius:999px;transition:transform .2s var(--ease)}
+.arrows button:active{transform:scale(.92)}
+.bar{height:6px;background:var(--surface);margin:28px var(--m) 0;position:relative}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:20%;background:var(--ink);transition:width .2s linear}
+.row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--m);padding:36px var(--m) 8px;scrollbar-width:none}
+.row::-webkit-scrollbar{display:none}
+.mom{flex:0 0 76vw;scroll-snap-align:start;display:flex;flex-direction:column}
+.mom h3{font:400 2.2rem/.95 var(--display)}
+.mom p{margin-top:10px;color:var(--ink);font-size:1.0625rem}
+.mom img{width:100%;aspect-ratio:4/5;object-fit:cover;margin-top:auto}
+.mom .gap{flex:none}
+@media (max-width:1099px){
+  .row{display:grid;gap:28px;overflow:visible;padding:36px var(--m) 0}
+  .mom{display:grid;grid-template-columns:38% 1fr;gap:0 18px;align-items:start}
+  .mom img{grid-column:1;grid-row:1/3;margin:0}
+  .mom h3,.mom p{grid-column:2}
+  .mom .gap,.arrows,.bar{display:none}
+}
+
+/* ——— MINUTEUR ——— */
+.timer{background:var(--field);color:var(--field-ink);padding:clamp(88px,12vw,160px) var(--m)}
+.timer .wrap{max-width:1360px;margin:0 auto;display:grid;gap:44px}
+.timer h2{font-size:var(--s-head)}
+.timer .lede{margin-top:16px;max-width:42ch;color:#e3f0ef}
+.fam{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.fam button{min-height:46px;padding:0 1.15rem;border-radius:999px;border:0;background:var(--field-soft);color:var(--field-ink);font:500 1.0625rem/1 var(--text);cursor:pointer;transition:background-color .2s,transform .2s var(--ease)}
+.fam button:hover{background:#127580}
+.fam button:active{transform:scale(.96)}
+.fam button[aria-pressed="true"]{background:var(--bg);color:var(--ink)}
+.spec{margin-top:30px;font:400 clamp(1.5rem,1.3rem + .6vw,1.875rem)/1.1 var(--display);text-transform:uppercase}
+.spec span{display:block}
+.dial{display:grid;justify-items:center;gap:18px}
+.ring{position:relative;width:min(78vw,400px);aspect-ratio:1}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:10}
+.ring .trk{stroke:var(--field-soft)}
+.ring .val{stroke:var(--bg);stroke-linecap:round;transition:stroke-dashoffset .25s linear}
+.ring .read{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ring .sec{font:400 clamp(5.5rem,22vw,9rem)/.85 var(--display)}
+.ring .lab{font-size:var(--s-body);color:#e3f0ef;margin-top:6px}
+.dial .ctl{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.pips{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.pips i{width:12px;height:12px;border-radius:50%;background:var(--field-soft);transition:background-color .3s}
+.pips i.done{background:var(--bg)}
+.pips i.now{background:var(--seal)}
+.timer .fine{font-size:var(--s-small);color:var(--field-mute);max-width:46ch}
+
+/* ——— THÉS : mot géant + barres ——— */
+.list{background:var(--bg);padding:clamp(88px,12vw,170px) var(--m)}
+.list .col{max-width:640px;margin:0 auto;container-type:inline-size}
+.list h2{font-size:46cqw;line-height:.8;text-align:center;letter-spacing:-.02em}
+.list .note{margin:22px 0 26px}
+details{background:var(--surface);margin-top:6px}
+summary{list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:60px;padding:0 20px;font-size:1.1875rem;font-weight:500;cursor:pointer;transition:background-color .2s}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:var(--surface-2)}
+summary::after{content:"+";font:400 2rem/1 var(--display);transition:transform .3s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details .in{padding:2px 20px 24px}
+details .in p{font-size:1.0625rem}
+details .in dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin-top:14px;font-size:1rem}
+details .in dt{color:var(--muted)}
+
+/* ——— MAÎTRE TSENG : la feuille ——— */
+.about{background:var(--field);padding:clamp(88px,12vw,170px) 0}
+.sheet{max-width:680px;margin:0 auto;background:var(--bg);padding:clamp(28px,6vw,64px);
+  /* taste-skill-ignore: masque du bord festonné */
+  -webkit-mask:radial-gradient(circle 9px at 50% 100%,#0000 96%,#000) bottom/26px 100% repeat-x;mask:radial-gradient(circle 9px at 50% 100%,#0000 96%,#000) bottom/26px 100% repeat-x;padding-bottom:calc(clamp(28px,6vw,64px) + 10px)} /* taste-skill-ignore */
+.sheet .who{display:flex;align-items:center;gap:16px}
+.sheet .who .seal{width:64px;height:64px;font-size:40px}
+.sheet h2{font-size:clamp(2.8rem,1.8rem + 3.4vw,4.6rem)}
+.sheet .who small{display:block;font-size:var(--s-small);color:var(--muted)}
+.sheet p{margin-top:20px;line-height:1.55}
+.sheet .sign{margin-top:28px;font-style:italic;font-size:1.375rem}
+.sheet .sign small{display:block;font-style:normal;font-size:var(--s-small);color:var(--muted)}
+.stub{max-width:680px;margin:0 auto;background:var(--surface);padding:22px clamp(24px,6vw,64px);display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;border-top:6px dotted var(--field)}
+.stub a.mail{font-size:var(--s-lead);text-decoration:none}
+.stub a.mail:hover{text-decoration:underline}
+
+/* ——— HORAIRES & ACCÈS ——— */
+.hours{background:var(--surface);padding:clamp(88px,12vw,160px) var(--m)}
+.hours .wrap{max-width:1360px;margin:0 auto;display:grid;gap:40px}
+.hours h2{font-size:var(--s-head)}
+.big{font:400 clamp(3.4rem,1.6rem + 4.6vw,6.4rem)/.85 var(--display);margin-top:18px;white-space:nowrap}
+.status{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-size:1.0625rem}
+.status i{width:12px;height:12px;border-radius:50%;background:var(--muted)}
+.status.open i{background:#1c8a4a}
+table{border-collapse:collapse;width:100%;font-size:1.0625rem}
+th,td{text-align:left;padding:12px 0;border-bottom:1px solid #c7d8d3;font-weight:400}
+td{text-align:right}
+tr.today th,tr.today td{font-weight:600}
+.where p{margin-top:12px}
+.where .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+/* ——— COUPON ——— */
+.coupon-s{background:var(--bg);padding:clamp(88px,12vw,160px) 12px}
+.coupon{max-width:1180px;margin:0 auto;background:var(--field);color:var(--field-ink);display:grid;position:relative;
+  overflow:hidden}
+.coupon .l{position:relative;padding:36px 28px 30px;border-bottom:6px dotted var(--bg)}
+.coupon .l::before,.coupon .l::after{content:"";position:absolute;width:32px;height:32px;border-radius:50%;background:var(--bg);bottom:-19px}
+.coupon .l::before{left:-16px}.coupon .l::after{right:-16px}
+.coupon h2{font-size:clamp(2.6rem,1.8rem + 2.8vw,4.2rem)}
+.coupon .l p{margin-top:16px;color:#e3f0ef}
+.coupon form{padding:28px 28px 36px;display:grid;gap:10px}
+.coupon input,.coupon select{width:100%;height:54px;border:0;border-radius:0;background:var(--field-soft);color:var(--field-ink);font:400 1.0625rem var(--text);padding:0 16px;appearance:none}
+.coupon input::placeholder{color:#bfdcdd}
+.coupon input:focus,.coupon select:focus{outline:3px solid var(--bg);outline-offset:0}
+.coupon .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.coupon button{height:56px;border:0;background:var(--bg);color:var(--ink);font:500 1.125rem var(--text);cursor:pointer;border-radius:999px;margin-top:6px;transition:transform .2s var(--ease)}
+.coupon button:hover{background:#fff}
+.coupon button:active{transform:scale(.98)}
+.coupon .hint{font-size:var(--s-small);color:var(--field-mute)}
+
+/* ——— PIED : le dos de la carte ——— */
+footer{background:var(--field);padding:56px 12px 24px}
+.back{max-width:1180px;margin:0 auto;background:var(--bg);color:var(--ink);padding:56px clamp(22px,5vw,56px) 22px;
+  /* taste-skill-ignore: masque des festons du dos de carte */
+  -webkit-mask:radial-gradient(circle 24px at 50% 0,#0000 96%,#000) top/64px 100% repeat-x;mask:radial-gradient(circle 24px at 50% 0,#0000 96%,#000) top/64px 100% repeat-x; /* taste-skill-ignore */
+  display:grid;gap:32px}
+.back h2{font-size:clamp(2.6rem,1.8rem + 2.6vw,4rem)}
+.back .msg p{margin-top:12px;max-width:40ch}
+.back .addr{display:grid;gap:10px;align-content:start;position:relative;font-size:1.125rem}
+.back .addr a{text-decoration:none}
+.back .addr a:hover{text-decoration:underline}
+.stamp{width:72px;padding:5px;background:var(--surface);justify-self:end}
+.stamp img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.imprint{grid-column:1/-1;text-align:center;font-size:var(--s-small);color:var(--muted);padding-top:8px}
+
+/* entrées */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}.show > img{transform:none}}
+
+/* ——— ≥ 760 ——— */
+@media (min-width:760px){
+  .toplinks{display:flex}
+  .facts-line{flex-direction:row}
+  .facts-line .dia{display:block}
+  .intro .row1{grid-template-columns:repeat(12,1fr);align-items:end}
+  .intro h2{grid-column:1/8}
+  .intro .note{grid-column:9/13}
+  .fact-row{display:flex;justify-content:space-between}
+  .intro figure{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+  .intro figure img{grid-column:4/13}
+  .intro figcaption{grid-column:1/4;align-self:end}
+  .slip{flex:1 1 0;min-width:0}
+  .slips{overflow:visible}
+  .mom{flex:0 0 300px}
+  .arrows{display:flex}
+  .timer .wrap{grid-template-columns:1fr 1fr;align-items:center}
+  .hours .wrap{grid-template-columns:5fr 4fr 4fr;gap:56px;align-items:start}
+  .coupon{grid-template-columns:46% 54%}
+  .coupon .l::before,.coupon .l::after{left:auto;right:-19px;bottom:auto}
+  .coupon .l::before{top:-16px}.coupon .l::after{bottom:-16px}
+  .coupon .l{border-bottom:0;border-right:6px dotted var(--bg);padding:48px;display:flex;flex-direction:column;justify-content:space-between}
+  .coupon form{padding:48px}
+  .back{grid-template-columns:1fr 1fr;min-height:420px}
+  .stamp{position:absolute;top:0;right:0;width:88px}
+  .back .addr{padding-top:110px}
+}
+@media (min-width:1100px){
+  .card{max-width:640px;margin-top:40px}
+  .row{display:grid;grid-template-columns:repeat(5,1fr);overflow:visible}
+  .mom{flex:none}
+  .arrows,.bar{display:none}
+  .show .txt{margin-left:18%}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+<main>
+
+<!-- HERO : la carte de la maison -->
+<header class="hero" id="haut">
+  <nav class="top" aria-label="Navigation principale">
+    <a class="mono" href="#haut" aria-label="La Maison des Trois Thés, retour en haut"><span class="seal" aria-hidden="true">三</span><span>Paris 5e</span></a>
+    <div class="toplinks"><a href="#cave">La cave</a><a href="#gongfu">Le gong fu cha</a><a href="#maitre">Maître Tseng</a><a href="#horaires">Horaires</a></div>
+    <a class="btn light" href="#reserver">Réserver</a>
+  </nav>
+  <div class="card">
+    <span class="seal" aria-hidden="true">三</span>
+    <h1 class="disp"><span>Maison des</span><span>Trois Thés</span></h1>
+    <p class="sub">La maison de thé chinoise de Maître Yu Hui Tseng, au 1 rue Saint-Médard depuis 1995.</p>
+    <p class="facts-line"><span>Mardi au dimanche, 11 h – 19 h 30</span><i class="dia" aria-hidden="true"></i><span>Place Monge, Paris 5e</span><i class="dia" aria-hidden="true"></i><span>On sonne pour entrer</span></p>
+    <div class="acts">
+      <a class="btn" href="#reserver">Réserver une dégustation</a>
+      <a class="btn alt" href="tel:+33143369384">01 43 36 93 84</a>
+    </div>
+    <img class="plate" src="https://images.unsplash.com/photo-1532136868905-8094ef8ef5f2?w=900&q=75&auto=format&fit=crop" width="900" height="1125" alt="Petite théière en argile brune et sa tasse posées sur un tabouret de bois">
+    <p class="cap">Une théière par thé : l'argile garde la chaleur et prend le goût.</p>
+  </div>
+</header>
+
+<!-- INTRO : la cave -->
+<section class="intro" id="cave" aria-labelledby="t-cave">
+  <div class="row1">
+    <h2 class="disp rv" id="t-cave">Une cave à thés</h2>
+    <p class="note rv">On garde ici le thé comme on garde un vin : dans des chambres réglées en température et en humidité, où certains thés vieillissent depuis plus de cent ans.</p>
+  </div>
+  <div class="fact-row">
+    <p class="fact rv"><b class="num">1995</b><span>Ouverture au coin de la place Monge</span></p>
+    <p class="fact rv"><b class="num">1 000</b><span>Références de thé, choisies sur place en Asie</span></p>
+    <p class="fact rv"><b class="num">500</b><span>Millésimes qui vieillissent en cave</span></p>
+    <p class="fact rv"><b class="num">20 €</b><span>La dégustation, à partir de</span></p>
+  </div>
+  <figure class="rv">
+    <img src="https://images.unsplash.com/photo-1765809411613-9870f2f2d459?w=1600&q=72&auto=format&fit=crop" width="1600" height="1200" loading="lazy" alt="Galettes de thé pu-erh empilées sur des étagères vitrées">
+    <figcaption>Galettes de pu-erh : le thé qui gagne à vieillir.</figcaption>
+  </figure>
+</section>
+
+<!-- SHOWCASE : la dégustation -->
+<section class="show" aria-labelledby="t-show">
+  <img src="https://images.unsplash.com/photo-1531969179221-3946e6b5a5e7?w=2000&q=70&auto=format&fit=crop" width="2000" height="2500" loading="lazy" alt="Une main verse l'eau d'une petite théière au-dessus d'une rangée de tasses fumantes">
+  <div class="txt rv">
+    <h2 class="disp" id="t-show">Déguster, pas boire</h2>
+    <p>La maison sert ses thés selon le gong fu cha, une méthode chinoise qui se pratique comme une dégustation de vin.</p>
+    <p>Petites théières en argile, tasses en porcelaine, une carte qui décrit chaque saveur : on s'assoit, on choisit, on vous guide.</p>
+  </div>
+  <div class="slips" aria-label="Ce qu'on trouve au 1 rue Saint-Médard">
+    <p class="slip"><strong>La porte</strong><span class="cut" aria-hidden="true">· · · · · · · · · · · · · · · · · · · ·</span>On sonne.<br>On vous ouvre.<br>On entre dans le calme.</p>
+    <p class="slip"><strong>La salle</strong><span class="cut" aria-hidden="true">· · · · · · · · · · · · · · · · · · · ·</span>Murs de brique rouge,<br>meubles anciens cirés,<br>hautes tables,<br>grandes baies vitrées.</p>
+    <p class="slip"><strong>La carte</strong><span class="cut" aria-hidden="true">· · · · · · · · · · · · · · · · · · · ·</span>Chaque thé décrit<br>par sa saveur.<br>Débutant bienvenu :<br>on vous conseille.</p>
+    <p class="slip"><strong>Les boîtes</strong><span class="cut" aria-hidden="true">· · · · · · · · · · · · · · · · · · · ·</span>Thé en vrac<br>dans des boîtes<br>calligraphiées,<br>de plusieurs tailles.</p>
+    <p class="slip"><strong>À emporter</strong><span class="cut" aria-hidden="true">· · · · · · · · · · · · · · · · · · · ·</span>On peut acheter<br>sans déguster.<br>Et goûter avant<br>d'acheter.</p>
+    <p class="slip"><strong>Les horaires</strong><span class="cut" aria-hidden="true">· · · · · · · · · · · · · · · · · · · ·</span>Boutique<br>11 h – 19 h 30<br>Dégustation<br>13 h – 18 h 30</p>
+  </div>
+</section>
+
+<!-- GONG FU CHA -->
+<section class="steps" id="gongfu" aria-labelledby="t-gongfu">
+  <div class="steps-head">
+    <div>
+      <h2 class="disp rv" id="t-gongfu">Le gong fu cha</h2>
+      <p class="rv">Une dégustation à la maison suit toujours le même fil, en cinq temps.</p>
+    </div>
+    <div class="arrows"><button type="button" data-dir="-1" aria-label="Moment précédent">‹</button><button type="button" data-dir="1" aria-label="Moment suivant">›</button></div>
+  </div>
+  <div class="bar" aria-hidden="true"><i></i></div>
+  <div class="row" tabindex="0" aria-label="Les cinq temps du gong fu cha">
+    <article class="mom"><h3>D'abord, chauffer</h3><p>L'eau chaude passe sur la petite théière en argile vide. Elle doit être chaude avant d'accueillir les feuilles.</p><span class="gap" style="height:72px"></span><img src="https://images.unsplash.com/photo-1531876066433-09d3a1f79fac?w=700&q=72&auto=format&fit=crop" width="700" height="875" loading="lazy" alt="Eau versée d'une bouilloire en fonte sur une théière blanche"></article>
+    <article class="mom"><h3>Puis les feuilles</h3><p>Le thé entre dans la théière. Chaque thé a la sienne, qui finit par en garder le goût.</p><span class="gap" style="height:24px"></span><img src="https://images.unsplash.com/photo-1759523710626-199a2da96085?w=700&q=72&auto=format&fit=crop" width="700" height="875" loading="lazy" alt="Feuilles de thé noir roulées dans une tasse en terre"></article>
+    <article class="mom"><h3>Rincer les feuilles</h3><p>Une, deux, plusieurs eaux rapides : les feuilles s'ouvrent et libèrent leurs arômes.</p><span class="gap" style="height:104px"></span><img src="https://images.unsplash.com/photo-1546852199-2d8e8c4aaada?w=700&q=72&auto=format&fit=crop" width="700" height="875" loading="lazy" alt="Feuilles de thé vert dépliées dans un gaiwan sur un plateau de bois"></article>
+    <article class="mom"><h3>Sentir</h3><p>Le thé passe dans une première tasse, étroite, qu'on ne boit pas : elle sert à respirer le parfum.</p><span class="gap" style="height:44px"></span><img src="https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=700&q=72&auto=format&fit=crop" width="700" height="875" loading="lazy" alt="Plateau à thé en bois, théière en argile et tasse de thé ambré"></article>
+    <article class="mom"><h3>Enfin, boire</h3><p>La seconde tasse se boit. Puis on recommence : un même thé se goûte en plusieurs infusions.</p><span class="gap" style="height:88px"></span><img src="https://images.unsplash.com/photo-1641997825980-cbaf406765db?w=700&q=72&auto=format&fit=crop" width="700" height="875" loading="lazy" alt="Théière en fonte, tasses de thé vert et feuilles sur une table de bois"></article>
+  </div>
+</section>
+
+<!-- MINUTEUR -->
+<section class="timer" id="minuteur" aria-labelledby="t-timer">
+  <div class="wrap">
+    <div>
+      <h2 class="disp rv" id="t-timer">Infuser chez soi</h2>
+      <p class="lede rv">Vous repartez avec une boîte ? Choisissez la famille de votre thé : le minuteur enchaîne le rinçage puis les infusions, de plus en plus longues.</p>
+      <div class="fam" role="group" aria-label="Famille de thé">
+        <button type="button" data-k="vert">Thé vert</button>
+        <button type="button" data-k="blanc">Thé blanc</button>
+        <button type="button" data-k="oolong" aria-pressed="true">Oolong</button>
+        <button type="button" data-k="rouge">Thé rouge</button>
+        <button type="button" data-k="puer">Pu-erh</button>
+      </div>
+      <p class="spec num" aria-live="polite"><span>Eau à <b id="sp-t" style="font-weight:400">95 °C</b></span><span><b id="sp-n" style="font-weight:400">7</b> infusions</span><span>La première : <b id="sp-s" style="font-weight:400">20 s</b></span></p>
+    </div>
+    <div class="dial">
+      <div class="ring">
+        <svg viewBox="0 0 220 220" aria-hidden="true"><circle class="trk" cx="110" cy="110" r="100"/><circle class="val" id="arc" cx="110" cy="110" r="100" stroke-dasharray="628.3" stroke-dashoffset="0"/></svg>
+        <div class="read"><span class="sec num" id="sec" aria-live="off">10</span><span class="lab" id="lab" aria-live="polite">Rinçage</span></div>
+      </div>
+      <div class="pips" id="pips" aria-hidden="true"></div>
+      <div class="ctl">
+        <button class="btn light" type="button" id="go">Lancer</button>
+        <button class="btn" type="button" id="reset" style="background:var(--field-soft)">Recommencer</button>
+      </div>
+      <p class="fine">Repères usuels du gong fu cha, pour une petite théière bien garnie. À l'achat, la maison vous dira comment infuser votre thé.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THÉS -->
+<section class="list" id="thes" aria-labelledby="t-thes">
+  <div class="col">
+    <h2 class="disp rv" id="t-thes">Thés</h2>
+    <p class="note rv">Plus de mille références, rangées par grandes familles. La carte du jour se lit sur place, et se goûte.</p>
+    <details open><summary>Thés verts</summary><div class="in"><p>Feuilles chauffées tout de suite après la cueillette pour stopper l'oxydation : notes végétales, fraîches, parfois grillées.</p><dl><dt>Eau</dt><dd>75 à 85 °C</dd></dl></div></details>
+    <details><summary>Thés blancs</summary><div class="in"><p>Bourgeons et jeunes feuilles simplement flétris puis séchés. Le thé le moins travaillé, doux et floral.</p><dl><dt>Eau</dt><dd>80 à 90 °C</dd></dl></div></details>
+    <details><summary>Oolongs</summary><div class="in"><p>À mi-chemin entre vert et rouge : une oxydation partielle, des notes de fleurs, de fruits ou de torréfaction selon la maison qui les roule.</p><dl><dt>Eau</dt><dd>90 à 100 °C</dd></dl></div></details>
+    <details><summary>Thés rouges</summary><div class="in"><p>Ce que l'Occident appelle thé noir : feuilles entièrement oxydées, notes de miel, de cacao, de fruits secs.</p><dl><dt>Eau</dt><dd>85 à 95 °C</dd></dl></div></details>
+    <details><summary>Pu-erh et thés sombres</summary><div class="in"><p>Pressés en galettes ou en briques, ils évoluent avec le temps. C'est là que la cave prend tout son sens : certains millésimes ont plus d'un siècle.</p><dl><dt>Eau</dt><dd>95 à 100 °C</dd></dl></div></details>
+    <details><summary>Accessoires</summary><div class="in"><p>Petites théières en argile, tasses en porcelaine et boîtes calligraphiées, pour refaire le gong fu cha chez soi.</p></div></details>
+  </div>
+</section>
+
+<!-- MAÎTRE TSENG -->
+<section class="about" id="maitre" aria-labelledby="t-maitre">
+  <div class="sheet rv">
+    <div class="who"><span class="seal" aria-hidden="true">曾</span><div><h2 class="disp" id="t-maitre">Maître Tseng</h2><small>Yu Hui Tseng, maître de thé</small></div></div>
+    <p>Yu Hui Tseng s'est formée au gong fu cha auprès du maître Zhang Tian Fu. En 1995, elle ouvre sa maison au 1 rue Saint-Médard, sur la place Monge.</p>
+    <p>Elle part elle-même en Asie choisir ses thés et suivre chaque étape de leur production. De ces voyages vient une cave de plus de mille références.</p>
+    <p>Des chefs comme Pierre Gagnaire, Olivier Roellinger, Guy Savoy ou Joël Robuchon lui ont confié le choix de leurs thés. Les pâtissiers Pierre Hermé et Jacques Génin aussi.</p>
+    <p>Elle est aujourd'hui l'une des rares femmes reconnues maîtres de thé, et l'une des seules à exercer hors de Chine.</p>
+    <p class="sign">Yu Hui Tseng<small>Fondatrice, La Maison des Trois Thés</small></p>
+  </div>
+  <div class="stub rv"><a class="mail" href="mailto:info@maisondestroisthes.com">info@maisondestroisthes.com</a><a class="btn" href="#reserver">Réserver</a></div>
+</section>
+
+<!-- HORAIRES -->
+<section class="hours" id="horaires" aria-labelledby="t-horaires">
+  <div class="wrap">
+    <div>
+      <h2 class="disp rv" id="t-horaires">Horaires</h2>
+      <p class="big num rv">11 h – 19 h 30</p>
+      <p class="status rv" id="status"><i></i><span>Du mardi au dimanche</span></p>
+    </div>
+    <table class="rv">
+      <caption class="sr">Horaires d'ouverture</caption>
+      <tbody id="days">
+        <tr data-d="2"><th scope="row">Mardi</th><td class="num">11 h – 19 h 30</td></tr>
+        <tr data-d="3"><th scope="row">Mercredi</th><td class="num">11 h – 19 h 30</td></tr>
+        <tr data-d="4"><th scope="row">Jeudi</th><td class="num">11 h – 19 h 30</td></tr>
+        <tr data-d="5"><th scope="row">Vendredi</th><td class="num">11 h – 19 h 30</td></tr>
+        <tr data-d="6"><th scope="row">Samedi</th><td class="num">11 h – 19 h 30</td></tr>
+        <tr data-d="0"><th scope="row">Dimanche</th><td class="num">11 h – 19 h 30</td></tr>
+        <tr data-d="1"><th scope="row">Lundi</th><td>Fermé</td></tr>
+      </tbody>
+    </table>
+    <div class="where rv">
+      <p><strong>Dégustation de 13 h à 18 h 30.</strong> Mieux vaut réserver.</p>
+      <p>1 rue Saint-Médard, 75005 Paris. Métro Place Monge, ligne 7, à deux pas de la rue Mouffetard.</p>
+      <div class="acts">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=La+Maison+des+Trois+Th%C3%A9s%2C+1+rue+Saint-M%C3%A9dard%2C+75005+Paris" target="_blank" rel="noopener">Itinéraire</a>
+        <a class="btn alt" href="tel:+33143369384">Appeler</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉSERVATION -->
+<section class="coupon-s" id="reserver" aria-labelledby="t-res">
+  <div class="coupon rv">
+    <div class="l">
+      <h2 class="disp" id="t-res">Réserver une dégustation</h2>
+      <p>Indiquez le jour, l'heure et le nombre de personnes. Votre message part vers la maison, qui vous confirme la table.</p>
+    </div>
+    <form id="resa" action="mailto:info@maisondestroisthes.com" method="post" enctype="text/plain">
+      <label class="sr" for="f-nom">Nom</label><input id="f-nom" name="nom" placeholder="Votre nom" autocomplete="name" required>
+      <div class="two">
+        <div><label class="sr" for="f-date">Date</label><input id="f-date" name="date" type="date" required aria-describedby="f-hint"></div>
+        <div><label class="sr" for="f-heure">Heure</label><select id="f-heure" name="heure"><option>13 h</option><option>14 h</option><option>15 h</option><option>16 h</option><option>17 h</option><option>18 h</option></select></div>
+      </div>
+      <label class="sr" for="f-nb">Nombre de personnes</label><select id="f-nb" name="personnes"><option value="1">1 personne</option><option value="2" selected>2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option><option value="5">5 personnes ou plus</option></select>
+      <label class="sr" for="f-tel">Téléphone</label><input id="f-tel" name="tel" type="tel" placeholder="Votre téléphone" autocomplete="tel">
+      <button type="submit">Envoyer la demande</button>
+      <p class="hint" id="f-hint">Du mardi au dimanche. Ou par téléphone : <a href="tel:+33143369384">01 43 36 93 84</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- LE DOS DE LA CARTE -->
+<footer aria-labelledby="t-foot">
+  <div class="back">
+    <div class="msg">
+      <h2 class="disp" id="t-foot">À bientôt, place Monge</h2>
+      <p>Sonnez au 1 rue Saint-Médard. On vous ouvre, on vous installe, et la théière chauffe déjà.</p>
+    </div>
+    <div class="addr">
+      <div class="stamp"><img src="https://images.unsplash.com/photo-1565101468699-e4fb8b9b8cec?w=200&q=70&auto=format&fit=crop" width="200" height="267" loading="lazy" alt="Théière en argile sur un ponton de bois"></div>
+      <a href="https://www.google.com/maps/search/?api=1&query=1+rue+Saint-M%C3%A9dard+75005+Paris" target="_blank" rel="noopener">1 rue Saint-Médard, 75005 Paris</a>
+      <a href="tel:+33143369384">01 43 36 93 84</a>
+      <a href="mailto:info@maisondestroisthes.com">info@maisondestroisthes.com</a>
+      <a href="https://www.facebook.com/maisontroisthes/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="imprint">La Maison des Trois Thés, depuis 1995 · Photos d'illustration : Unsplash · Démo réalisée par Raul Hatos — site non officiel</p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// entrées échelonnées par section
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;if(t.classList.contains('show')){t.classList.add('in')}else{t.classList.add('on')}io.unobserve(t)}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('section,header').forEach(s=>s.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%6)*75+'ms';io.observe(el)}));
+document.querySelectorAll('.show').forEach(s=>io.observe(s));
+
+// rangée gong fu : barre + flèches
+const row=document.querySelector('.row'),bar=document.querySelector('.bar i');
+const upd=()=>{const m=row.scrollWidth-row.clientWidth;bar.style.width=(m>0?20+80*row.scrollLeft/m:100)+'%'};
+row.addEventListener('scroll',upd,{passive:true});upd();
+document.querySelectorAll('.arrows button').forEach(b=>b.onclick=()=>row.scrollBy({left:+b.dataset.dir*316,behavior:'smooth'}));
+
+// minuteur gong fu : rinçage puis infusions croissantes
+const F={vert:{t:'80 °C',s:15,inc:5,n:4},blanc:{t:'85 °C',s:20,inc:10,n:6},oolong:{t:'95 °C',s:20,inc:5,n:7},rouge:{t:'90 °C',s:15,inc:5,n:5},puer:{t:'100 °C',s:10,inc:5,n:8}};
+const RINSE=10,C=628.3;let k='oolong',step=0,left=RINSE,total=RINSE,tick=null;
+const $=id=>document.getElementById(id),go=$('go');
+const steps=()=>[RINSE,...Array.from({length:F[k].n},(_,i)=>F[k].s+i*F[k].inc)];
+function pips(){$('pips').innerHTML=steps().map((_,i)=>`<i class="${i<step?'done':i===step?'now':''}"></i>`).join('')}
+function draw(){$('sec').textContent=left;$('arc').style.strokeDashoffset=C*(1-left/total);$('lab').textContent=step===0?'Rinçage':`Infusion ${step} sur ${F[k].n}`;pips()}
+function load(i){const a=steps();step=Math.min(i,a.length-1);left=total=a[step];draw()}
+function stop(){clearInterval(tick);tick=null;go.textContent=step>0&&left===total?'Infusion suivante':'Lancer'}
+function chime(){try{const c=new (window.AudioContext||webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.frequency.value=880;g.gain.setValueAtTime(.2,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+1.2);o.connect(g).connect(c.destination);o.start();o.stop(c.currentTime+1.2)}catch(e){}}
+go.onclick=()=>{if(tick){stop();go.textContent='Reprendre';return}go.textContent='Pause';tick=setInterval(()=>{left--;draw();if(left<=0){clearInterval(tick);tick=null;chime();if(step<steps().length-1){load(step+1);go.textContent='Infusion suivante'}else{$('lab').textContent='Dernière infusion terminée';go.textContent='Lancer';step=steps().length}}},1000)};
+$('reset').onclick=()=>{clearInterval(tick);tick=null;load(0);go.textContent='Lancer'};
+document.querySelectorAll('.fam button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.fam button').forEach(x=>x.setAttribute('aria-pressed',x===b));k=b.dataset.k;$('sp-t').textContent=F[k].t;$('sp-s').textContent=F[k].s+' s';$('sp-n').textContent=F[k].n;clearInterval(tick);tick=null;load(0);go.textContent='Lancer'});
+document.querySelectorAll('.fam button:not([aria-pressed])').forEach(b=>b.setAttribute('aria-pressed','false'));
+load(0);
+
+// horaires : jour courant + ouvert maintenant (heure de Paris)
+const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'})),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+const tr=document.querySelector(`#days tr[data-d="${d}"]`);if(tr)tr.classList.add('today');
+const open=d!==1&&h>=11&&h<19.5,st=$('status');st.classList.toggle('open',open);
+st.querySelector('span').textContent=open?'Ouvert en ce moment':d===1?'Fermé le lundi, ouvert demain dès 11 h':'Fermé en ce moment, ouverture à 11 h';
+
+// réservation : mailto rédigé
+$('resa').addEventListener('submit',e=>{e.preventDefault();const f=e.target;if(!f.reportValidity())return;
+  const dt=new Date(f.date.value+'T12:00');const jour=dt.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+  const body=`Bonjour,\n\nJe souhaite réserver une dégustation le ${jour} à ${f.heure.value}, pour ${f.personnes.options[f.personnes.selectedIndex].text}.\n\n${f.nom.value}${f.tel.value?'\n'+f.tel.value:''}`;
+  location.href='mailto:info@maisondestroisthes.com?subject='+encodeURIComponent('Réservation dégustation — '+jour)+'&body='+encodeURIComponent(body)});
+// pas de lundi, pas de date passée
+const today=new Date();$('f-date').min=today.toISOString().slice(0,10);
+$('f-date').addEventListener('change',e=>{const v=new Date(e.target.value+'T12:00');e.target.setCustomValidity(v.getDay()===1?'La maison est fermée le lundi.':'')});
+</script>
+</body>
+</html>
