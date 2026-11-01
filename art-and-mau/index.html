@@ -3,436 +3,610 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Atelier Art &amp; Mau · Architecture d'intérieur · Alfortville</title>
-<meta name="description" content="Atelier Art & Mau, architecture d'intérieur. Rénovation, réagencement et réunification d'appartements à Paris, en Val-de-Marne et au Luxembourg. Gaëlle Perot et Bénédicte Artault, Alfortville (94).">
+<meta name="robots" content="noindex, nofollow">
+<title>Atelier Art &amp; Mau · Architecture d'intérieur à Alfortville</title>
+<meta name="description" content="Atelier Art & Mau, architecture d'intérieur depuis 2014. Rénovation, réagencement et réunification d'appartements à Paris, en Île-de-France et au Luxembourg. Gaëlle Perot et Bénédicte Artault, 91 rue Véron, Alfortville.">
+<meta name="theme-color" content="#f1f1ee">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
 <style>
+/* Direction « planche d'architecte » : papier calque, trait graphite, et les deux couleurs du plan de rénovation
+   (rouge = à construire, jaune = à démolir). Structure des démos validées : hero dense + composition légendée,
+   outil métier, offre chiffrée, bande couleur, atelier, accès. */
 :root{
-  --bg:#eeecea; --surface:#e4e1dd; --field:#cdc3b6; --ink:#2f2e2d; --muted:#5f5b57;
-  --accent:#4f5e48; --accent-press:#3d4a37; --accent-ink:#fff;
-  --m:clamp(16px,5vw,80px); --gap:16px;
-  --small:clamp(.875rem,.85rem + .1vw,.9375rem);
-  --body:clamp(1.0625rem,1rem + .3vw,1.25rem);
-  --lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --head:clamp(2.25rem,1.4rem + 3.4vw,4.25rem);
-  --display:clamp(3.25rem,1rem + 8.4vw,9.5rem);
+  --ground:#f1f1ee;
+  --card:#e4e4df;
+  --card-deep:#d3d3cb;
+  --ink:#16191c;
+  --body:#2a2e32;
+  --mute:#585d62;
+  --accent:#b3122a;
+  --accent-press:#8c0d20;
+  --on-accent:#fff;
+  --demol:#d9a300;
+  --r-md:12px;
+  --r-lg:22px;
+  --pad:20px;
+  --font:"Archivo",system-ui,sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
 }
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:var(--body);line-height:1.55;font-optical-sizing:auto;text-rendering:optimizeLegibility}
-::selection{background:var(--accent);color:var(--accent-ink)}
-img{display:block;max-width:100%;height:auto}
-a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
-a:hover{text-decoration-thickness:2px}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-h1,h2,h3{font-weight:300;letter-spacing:-.03em;line-height:.98;margin:0;text-wrap:balance}
-p{margin:0}
-.ph{filter:saturate(.72) contrast(.96) brightness(1.02);object-fit:cover;width:100%;height:100%;background:var(--surface)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 1.4em;border:0;border-radius:0;background:var(--accent);color:var(--accent-ink);font:500 var(--small)/1 "Newsreader",serif;font-size:1rem;text-decoration:none;cursor:pointer;transition:background .25s var(--ease),transform .2s var(--ease)}
-.btn:hover{background:var(--accent-press)}
-.btn:active{transform:translateY(1px) scale(.98)}
-.btn.ghost{background:var(--surface);color:var(--ink)}
-.btn.ghost:hover{background:var(--field)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip;scroll-padding-top:20px}
+body{background:var(--ground);color:var(--body);font:400 17px/1.55 var(--font);font-variation-settings:"wdth" 100;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{color:var(--ink);font-weight:800;font-variation-settings:"wdth" 72;letter-spacing:-.02em;line-height:.95;text-wrap:balance}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+.red{color:var(--accent)}
 
-/* demo strip */
-.demo{margin:0;background:var(--ink);color:#e9e6e2;font-size:.8125rem;text-align:center;padding:6px var(--m)}
+/* bandeau démo */
+.demo{background:var(--ink);color:#f1f1ee;text-align:center;font-size:13px;font-weight:500;padding:7px 16px}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:600 16px/1 var(--font);text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,transform .2s var(--ease);white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--accent);color:var(--on-accent)}
+.btn-main:hover{background:var(--accent-press)}
+.btn-soft{background:var(--card);color:var(--ink)}
+.btn-soft:hover{background:var(--card-deep)}
+.btn svg{width:18px;height:18px;flex:none}
 
 /* nav */
-.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px var(--m);background:var(--bg)}
-.brand{font-size:1.25rem;font-weight:500;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
-.nav ul{display:flex;gap:28px;list-style:none;margin:0 auto 0 40px;padding:0;font-size:1rem}
-.nav ul a{text-decoration:none}
-.nav ul a:hover{text-decoration:underline}
-.nav .btn{min-height:40px;padding:0 1.1em;font-size:.9375rem}
-@media (max-width:820px){.nav ul{display:none}}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.mark{display:flex;align-items:center;gap:10px;font:800 22px/1 var(--font);font-variation-settings:"wdth" 80;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.mark svg{width:26px;height:26px}
+.nav ul{display:none;list-style:none;gap:28px}
+.nav ul a{text-decoration:none;font-weight:600;color:var(--ink)}
+.nav ul a:hover{color:var(--accent)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
 
 /* hero */
-.hero{position:relative;padding:0 var(--m) 40px;min-height:calc(100svh - 100px);display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap);grid-template-rows:1fr auto;row-gap:32px}
-.hero .big{grid-column:6/11;grid-row:1;margin-top:3vh;height:min(56svh,44vw);aspect-ratio:4/5;position:relative;overflow:hidden;justify-self:start}
-.hero .big img{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
-.hero .big img.on{opacity:1}
-.hero .small{grid-column:2/4;grid-row:1;align-self:start;margin-top:16vh;aspect-ratio:1;overflow:hidden}
-.hero .small img{filter:saturate(.72) contrast(.96) brightness(.88)}
-.hero h1{grid-column:1/10;grid-row:2;align-self:end;font-size:min(var(--display),12.5vh);font-weight:300;letter-spacing:-.05em;line-height:.88}
+.hero{padding:16px 0 64px}
+.hero-grid{display:grid;gap:32px}
+.hero h1{font-size:clamp(2.6rem,12vw,5.2rem);line-height:.9;letter-spacing:-.025em;font-variation-settings:"wdth" 62}
 .hero h1 span{display:block;white-space:nowrap}
-.hero .side{grid-column:10/13;grid-row:1/3;align-self:end;display:flex;flex-direction:column;gap:20px}
-.hero .side p{font-size:1.0625rem;color:var(--ink);max-width:32ch}
-.acts{display:flex;flex-wrap:wrap;gap:8px}
-.cap{font-size:var(--small);color:var(--muted);margin-top:8px}
-@media (max-width:820px){
-  .hero{display:block;min-height:0;padding-top:12px}
-  .hero .big{width:78%;height:auto;margin:0 0 0 auto}
-  .hero .small{width:34%;margin:-18% 0 0 0;position:relative;z-index:1;border:6px solid var(--bg)}
-  .hero h1{margin-top:28px;font-size:clamp(3.25rem,15vw,5rem)}
-  .hero .side{margin-top:20px}
-}
+.lead{margin-top:22px;font-size:19px;line-height:1.45;color:var(--ink);max-width:38ch}
+.proof{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:8px clamp(16px,4vw,28px);margin-top:26px}
+.proof b{display:block;white-space:nowrap;font:800 clamp(26px,7vw,34px)/1 var(--font);font-variation-settings:"wdth" 72;color:var(--ink);letter-spacing:-.02em}
+.proof span{display:block;margin-top:4px;font-size:14px;color:var(--mute);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.actions .btn{flex:1 1 auto}
+.status{display:flex;align-items:center;gap:8px;margin-top:16px;font-weight:600;color:var(--ink);font-size:15px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+
+.pins{display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:480px}
+.pin{position:relative;overflow:hidden;border-radius:var(--r-md);background:var(--card);min-height:0}
+.pin img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.pin:hover img{transform:scale(1.04)}
+.pin-a{grid-row:1/3;border-radius:var(--r-lg)}
+.sheet{background:#fafafa;display:flex;flex-direction:column}
+.sheet svg{flex:1;width:100%;min-height:0}
+.tag{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font:600 13px/1 var(--font);padding:9px 12px;border-radius:999px;white-space:nowrap}
+.tag b{font-weight:700;color:var(--accent)}
+@media (max-width:699px){.tag{white-space:normal;line-height:1.25;max-width:calc(100% - 16px);left:8px;bottom:8px;font-size:13px;padding:7px 10px;border-radius:12px}}
+.sheet .tag{background:var(--ink);color:#fff}
+.sheet .tag b{color:#ffb3bd}
+
+/* cartouche : la grille du cartouche d'un plan, tracée par l'écart entre cases */
+.cart{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:40px;background:var(--ink);border:3px solid var(--ink);border-radius:var(--r-md);overflow:hidden}
+.cart li{background:var(--ground);padding:14px 16px}
+.cart small{display:block;font-size:13px;font-weight:600;color:var(--mute)}
+.cart b{display:block;margin-top:4px;font:700 19px/1.15 var(--font);font-variation-settings:"wdth" 85;color:var(--ink)}
+.cart li.wide,.cart li:last-child{grid-column:1/-1}
 
 /* sections */
-section{padding:clamp(96px,12vw,200px) var(--m) 0}
-.sh{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap);align-items:end;margin-bottom:clamp(40px,5vw,72px)}
-.sh h2{grid-column:1/7;font-size:var(--head)}
-.sh p{grid-column:8/13;font-size:var(--body);max-width:44ch}
-@media (max-width:820px){.sh{display:block}.sh p{margin-top:20px}}
+section{padding:80px 0}
+.h2{font-size:clamp(2.5rem,10vw,4.6rem);max-width:18ch}
+.intro{margin-top:18px;font-size:19px;max-width:56ch}
 
-/* projects wall: picture area proportional to real surface */
-.wall{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;column-gap:clamp(16px,2.4vw,40px);row-gap:clamp(40px,5vw,80px)}
-.pj{margin:0;width:calc(var(--k) * clamp(150px,27vw,410px));flex:none}
-.pj:nth-child(4n+2){margin-top:clamp(40px,7vw,120px)}
-.pj:nth-child(4n+3){margin-top:clamp(16px,2.5vw,40px)}
-.pj:nth-child(4n){margin-top:clamp(64px,10vw,170px)}
-.pj .fr{aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
-.pj .fr img{transition:transform 1.2s var(--ease)}
-.pj:hover .fr img{transform:scale(1.035)}
-.pj figcaption{margin-top:12px;font-size:var(--small);line-height:1.45}
-.pj h3{font-size:1.1875rem;font-weight:500;letter-spacing:-.01em;line-height:1.2;display:flex;flex-wrap:wrap;justify-content:space-between;column-gap:12px}
-.pj h3 b{font-weight:500;white-space:nowrap}
-.pj h3 span{font-weight:400;font-variant-numeric:tabular-nums;white-space:nowrap}
-.pj .where{color:var(--ink);font-style:italic}
-.pj p{color:var(--muted);margin-top:4px}
-@media (max-width:820px){
-  .wall{column-gap:12px;row-gap:36px}
-  .pj{width:calc(var(--k) * 52vw)}
-  .pj:nth-child(n){margin-top:0}
-  .pj:nth-child(4n+2),.pj:nth-child(4n+3){margin-top:28px}
-  .pj h3{font-size:1.0625rem}
-  .pj h3 b{white-space:normal;hyphens:auto;-webkit-hyphens:auto}
-  .pj figcaption{hyphens:auto;-webkit-hyphens:auto}
+/* programme (outil) */
+.prog{background:var(--card)}
+.pg-grid{display:grid;gap:36px;margin-top:40px}
+.q{border:0;margin:0 0 26px;padding:0}
+.q legend,.q label.lg{display:block;margin-bottom:12px;font-weight:700;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip>span{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:999px;background:var(--ground);font-weight:600;color:var(--ink);font-size:15px;transition:background-color .2s,color .2s}
+.chip:hover>span{background:#fff}
+.chip>input:checked+span{background:var(--ink);color:var(--ground)}
+.chip>input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.range{display:flex;align-items:center;gap:16px}
+.range input{flex:1;accent-color:var(--accent);height:30px}
+.range output{font:700 20px/1 var(--font);color:var(--ink);min-width:4.2ch;text-align:right}
+
+.fiche{background:#fafafa;border-radius:var(--r-lg);overflow:hidden;align-self:start}
+.fiche-top{padding:26px 26px 6px}
+.fiche h3{font-size:clamp(2rem,7vw,2.7rem)}
+.fiche .sub{margin-top:8px;color:var(--mute);font-size:15px}
+.scale{display:block;width:100%;height:150px;margin-top:6px}
+.scale-cap{padding:0 26px;color:var(--mute);font-size:14px}
+.fiche dl{display:grid;grid-template-columns:auto 1fr;margin:18px 26px 0}
+.fiche dt,.fiche dd{padding:12px 0;background:var(--ground);margin:0 0 6px}
+.fiche dt{padding-left:16px;border-radius:10px 0 0 10px;color:var(--mute);font-size:15px;font-weight:600}
+.fiche dd{padding:12px 16px;border-radius:0 10px 10px 0;color:var(--ink);font-weight:600;text-align:right}
+.near{margin:12px 26px 0;padding:18px;border-radius:var(--r-md);background:var(--ink);color:#e9e9e4;font-size:16px}
+.near b{color:#fff}
+.fiche .actions{padding:0 26px;margin-top:20px}
+.fiche .hint{display:block;padding:14px 26px 26px;color:var(--mute);font-size:14px}
+
+/* projets */
+.filters{margin-top:32px}
+.grid-pj{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:24px}
+#projets .chip>span{background:var(--card)}
+#projets .chip>input:checked+span{background:var(--ink);color:var(--ground)}
+.pj{background:var(--card);border-radius:var(--r-md);overflow:hidden;display:flex;flex-direction:column}
+.pj[hidden]{display:none}
+.pj .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.pj .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.pj:hover .ph img{transform:scale(1.04)}
+.cote{position:absolute;left:12px;right:12px;top:12px;display:flex;align-items:center;gap:8px;color:#fff;font:700 14px/1 var(--font)}
+.cote::before,.cote::after{content:"";flex:1;height:2px;background:#fff}
+.cote span{background:var(--ink);padding:6px 9px;border-radius:999px}
+.pj-body{padding:14px 14px 16px}
+.pj h3{font-size:22px;font-variation-settings:"wdth" 80}
+.pj .where{margin-top:6px;font-weight:600;color:var(--accent);font-size:15px}
+.pj p{margin-top:8px;font-size:15px;line-height:1.45}
+.pj .where{font-size:14px}
+@media (max-width:699px){.cote{left:8px;right:8px;top:8px;font-size:13px}}
+.note{margin-top:20px;color:var(--mute);font-size:15px;max-width:70ch}
+
+/* bande réunir */
+.band{background:var(--accent);color:#fff}
+.band h2,.band h3{color:#fff}
+.bd-grid{display:grid;gap:40px}
+.sum{margin-top:36px;display:grid;gap:8px}
+.sum li{list-style:none;background:rgba(0,0,0,.18);border-radius:var(--r-md);padding:20px}
+.sum b{display:block;white-space:nowrap;font:800 clamp(2.4rem,11vw,4.4rem)/.95 var(--font);font-variation-settings:"wdth" 70;letter-spacing:-.02em}
+.sum span{display:block;margin-top:8px;font-weight:500;font-size:16px}
+.band .btn{background:#fff;color:var(--accent);margin-top:28px}
+.band .btn:hover{background:var(--ground)}
+.bd-photo{border-radius:var(--r-lg);overflow:hidden;position:relative}
+.bd-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+
+/* prestations */
+.board{display:grid;gap:8px;margin-top:40px}
+.offer{background:var(--card);border-radius:var(--r-md);padding:24px;display:flex;flex-direction:column}
+.offer h3{font-size:30px;font-variation-settings:"wdth" 78}
+.offer p{margin-top:10px}
+.offer p.rg{margin-top:8px;font-weight:700;font-size:19px;color:var(--accent)}
+.offer.photo{padding:0;overflow:hidden;min-height:260px;position:relative}
+.offer.photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+
+/* atelier */
+.at-grid{display:grid;gap:40px}
+.quote{margin-top:30px;font:600 clamp(1.4rem,4.6vw,2rem)/1.25 var(--font);font-variation-settings:"wdth" 88;color:var(--ink);max-width:34ch;text-wrap:pretty}
+.quote-by{margin-top:14px;font-weight:600;color:var(--mute)}
+.path{list-style:none;display:grid;gap:6px;margin-top:36px}
+.path li{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:baseline;background:var(--card);border-radius:var(--r-md);padding:16px 18px}
+.path b{font:800 22px/1 var(--font);font-variation-settings:"wdth" 72;color:var(--accent)}
+.path span{color:var(--ink);font-weight:500}
+.at-photo{border-radius:var(--r-lg);overflow:hidden}
+.at-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+
+/* méthode */
+.method{background:var(--card)}
+.me-grid{display:grid;gap:32px;margin-top:40px}
+.me-photo{position:relative;border-radius:var(--r-lg);overflow:hidden}
+.me-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.steps{list-style:none;display:grid;gap:0;counter-reset:s}
+.steps li{padding:22px 0 22px 0;display:grid;gap:8px}
+.steps li+li{border-top:3px solid var(--card-deep)}
+.steps h3{font-size:clamp(2rem,6vw,2.8rem)}
+.steps p{font-size:18px;max-width:46ch}
+
+/* accès */
+.ac-grid{display:grid;gap:24px;margin-top:40px}
+.addr{background:var(--card);border-radius:var(--r-lg);padding:28px}
+.where-big{font:800 clamp(2rem,8vw,3.2rem)/1 var(--font);font-variation-settings:"wdth" 72;letter-spacing:-.02em;color:var(--ink)}
+.meta{margin-top:14px;font-size:18px}
+.tel{display:block;margin-top:24px;font:800 clamp(2rem,8vw,2.9rem)/1 var(--font);font-variation-settings:"wdth" 72;color:var(--accent);text-decoration:none}
+.tel:hover{text-decoration:underline;text-underline-offset:6px}
+.tel-by{margin-top:6px;color:var(--mute);font-size:15px;font-weight:600}
+.mail{display:inline-block;margin-top:14px;font-weight:700;color:var(--ink);font-size:18px}
+.rdv{margin-top:22px;background:var(--ground);border-radius:var(--r-md);padding:16px 18px;font-weight:500}
+.rdv b{color:var(--ink)}
+.map{border-radius:var(--r-lg);overflow:hidden;min-height:340px;background:var(--card-deep)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(1) contrast(1.05)}
+
+/* final */
+.final{padding:88px 0 40px}
+.final h2{font-size:clamp(2.6rem,11vw,5rem);max-width:16ch}
+.final .actions{max-width:520px}
+.fin-grid{display:grid;gap:36px;align-items:center}
+.fin-photo{position:relative;border-radius:var(--r-lg);overflow:hidden}
+.fin-photo img{width:100%;aspect-ratio:3/2;object-fit:cover}
+footer{padding:40px 0 64px;color:var(--mute);font-size:15px}
+.ft{display:grid;gap:12px}
+footer a{color:var(--ink)}
+
+@media (min-width:700px){
+  :root{--pad:40px}
+  .cart{grid-template-columns:repeat(3,1fr)}
+  .cart li.wide,.cart li:last-child{grid-column:auto}
+  .pj-body{padding:18px 18px 20px}
+  .pj h3{font-size:26px}
+  .sum{grid-template-columns:1fr 1fr}
+  .board{grid-template-columns:1fr 1fr}
+  .actions .btn{flex:0 0 auto}
 }
-
-/* live: your surface */
-.scale{background:var(--surface);margin-top:clamp(96px,12vw,200px);padding:clamp(48px,6vw,96px) var(--m)}
-.scale-in{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap);row-gap:32px;align-items:start}
-.scale h2{grid-column:1/6;font-size:var(--head)}
-.scale .ctl{grid-column:1/6;display:flex;flex-direction:column;gap:20px}
-.scale label{font-size:1.0625rem}
-.rowin{display:flex;align-items:center;gap:16px}
-.scale output{font-size:var(--head);font-weight:300;letter-spacing:-.04em;font-variant-numeric:tabular-nums;min-width:4.2ch;line-height:1}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer}
-input[type=range]::-webkit-slider-runnable-track{height:6px;background:var(--field)}
-input[type=range]::-moz-range-track{height:6px;background:var(--field)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-11px;background:var(--accent);border:0;border-radius:0}
-input[type=range]::-moz-range-thumb{width:28px;height:28px;background:var(--accent);border:0;border-radius:0}
-.scale .res{font-size:var(--lead);line-height:1.3;max-width:30ch}
-.scale figure{grid-column:7/13;grid-row:1/4;margin:0}
-.scale svg{width:100%;height:auto;display:block}
-.scale figcaption{font-size:var(--small);color:var(--muted);margin-top:12px}
-@media (max-width:820px){.scale-in{display:block}.scale .ctl{margin-top:24px}.scale figure{margin-top:36px}}
-
-/* services */
-.svc{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap)}
-.svc ol{grid-column:1/8;list-style:none;margin:0;padding:0}
-.svc li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;padding:28px 0;border-bottom:6px solid var(--surface)}
-.svc li:first-child{padding-top:0}
-.svc li h3{font-size:clamp(1.5rem,1.1rem + 1.4vw,2.25rem);font-weight:400;letter-spacing:-.025em;line-height:1.08}
-.svc li p{font-size:1rem;color:var(--ink)}
-.svc li p em{color:var(--muted)}
-.svc .pic{grid-column:9/13;aspect-ratio:3/4;overflow:hidden;position:sticky;top:96px}
-@media (max-width:820px){.svc{display:block}.svc li{grid-template-columns:1fr;gap:10px}.svc .pic{display:none}}
-
-/* about mosaic */
-.about .lead{font-size:var(--lead);line-height:1.4;max-width:42ch;margin-top:24px}
-.mos{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-top:72px;align-items:start}
-.mos .wide{grid-column:1/9;position:relative;aspect-ratio:16/10;overflow:hidden}
-.mos .note{position:absolute;top:0;right:0;width:min(380px,48%);background:var(--bg);padding:24px;font-size:1rem;line-height:1.55}
-.mos .tile{grid-column:9/13;background:var(--field);padding:24px;aspect-ratio:1/1.02;display:flex;flex-direction:column;justify-content:space-between}
-.mos .tile svg{width:100%;height:auto}
-.mos .tile p{font-size:var(--small);line-height:1.4}
-.facts{grid-column:9/13;display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;margin:8px 0 0;font-size:var(--small)}
-.facts dt{color:var(--muted)}
-.facts dd{margin:2px 0 0;font-size:1.0625rem}
-@media (max-width:820px){
-  .mos{display:block}
-  .mos .wide{aspect-ratio:4/3}
-  .mos .note{position:static;width:auto;padding:20px 0 0;background:none}
-  .mos .wide{overflow:visible;aspect-ratio:auto}
-  .mos .wide img{aspect-ratio:4/3}
-  .mos .tile{margin-top:32px;aspect-ratio:auto;gap:20px}
-  .facts{margin-top:24px}
+@media (min-width:1024px){
+  :root{--pad:56px}
+  .nav ul{display:flex}
+  .hero{padding:24px 0 72px}
+  .hero-grid{grid-template-columns:1fr 1.12fr;gap:56px;align-items:center}
+  .pins{height:600px}
+  .cart{grid-template-columns:repeat(6,1fr)}
+  .pg-grid{grid-template-columns:1fr 1fr;gap:56px}
+  .grid-pj{grid-template-columns:repeat(4,1fr)}
+  .bd-grid{grid-template-columns:1.25fr 1fr;gap:64px;align-items:center}
+  .sum{grid-template-columns:1fr}
+  .board{grid-template-columns:repeat(3,1fr)}
+  .at-grid{grid-template-columns:1.2fr 1fr;gap:64px;align-items:start}
+  .ac-grid{grid-template-columns:1fr 1.2fr}
+  .ft{grid-template-columns:1fr 1fr}
+  .fin-grid{grid-template-columns:1fr 1fr;gap:64px}
+  .me-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .me-photo{position:sticky;top:24px}
+  section{padding:104px 0}
 }
-
-/* method row */
-.mt-top{display:flex;justify-content:space-between;align-items:end;gap:24px}
-.mt-top h2{font-size:var(--head)}
-.arrows{display:flex;gap:8px}
-.arrows button{width:48px;height:48px;border:0;border-radius:0;background:var(--ink);color:var(--bg);cursor:pointer;display:grid;place-items:center;transition:background .2s}
-.arrows button:hover{background:var(--accent)}
-.arrows svg{width:20px;height:20px}
-.bar{height:6px;background:var(--surface);margin:24px 0 40px}
-.bar i{display:block;height:100%;width:25%;background:var(--ink);transition:width .2s linear}
-.row{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--m);margin:0 calc(var(--m) * -1);padding:0 var(--m) 8px;scrollbar-width:none;list-style:none}
-.row::-webkit-scrollbar{display:none}
-.row li{flex:0 0 clamp(260px,24vw,340px);scroll-snap-align:start;display:flex;flex-direction:column}
-.row h3{font-size:1.25rem;font-weight:500;letter-spacing:-.01em;line-height:1.2}
-.row p{font-size:1rem;margin-top:10px;max-width:32ch}
-.row .fr{aspect-ratio:4/5;overflow:hidden;margin-top:var(--sp)}
-.row li:last-child{margin-right:var(--m)}
-@media (max-width:820px){.arrows{display:none}.row li{flex-basis:72vw}.row{gap:16px}.row .fr{margin-top:calc(var(--sp) * .4)}}
-
-/* contact band */
-.contact{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap);padding-bottom:120px;align-items:start}
-.contact h2{grid-column:1/6;font-size:clamp(1.75rem,1.1rem + 1.9vw,2.25rem);font-weight:400;letter-spacing:-.025em;line-height:1.15}
-.contact .sq{grid-column:7/9;aspect-ratio:1;overflow:hidden;max-width:200px}
-.contact .ways{grid-column:9/13;font-size:1.0625rem}
-.contact .ways h3{font-size:1.125rem;font-weight:500;letter-spacing:0;line-height:1.3}
-.contact .ways ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}
-.contact .ways .meta{font-size:var(--small);color:var(--muted);margin-top:20px}
-.contact .acts{margin-top:24px}
-@media (max-width:820px){
-  .contact{display:grid;grid-template-columns:96px 1fr;gap:20px 16px}
-  .contact h2{grid-column:1/-1;font-size:1.5rem}
-  .contact .sq{grid-column:1}
-  .contact .ways{grid-column:2}
-}
-
-/* footer */
-footer{background:var(--ink);color:#ece8e3;padding:clamp(48px,6vw,96px) var(--m) 32px;overflow:hidden}
-footer .name{font-size:clamp(4.25rem,.5rem + 19.5vw,21rem);font-weight:300;letter-spacing:-.06em;line-height:.8;white-space:nowrap;margin:0}
-footer .fr2{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap);margin-top:72px}
-footer .places{grid-column:1/7;list-style:none;margin:0;padding:0;display:grid;gap:6px}
-footer .places a{font-size:clamp(1.5rem,1rem + 1.4vw,2.125rem);letter-spacing:-.02em;color:#dfe6d9;text-decoration:none}
-footer .places a:hover{text-decoration:underline}
-footer .more{grid-column:8/13;font-size:.9375rem;line-height:1.6;color:#cfc9c2}
-footer .more p+p{margin-top:12px}
-footer .legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:96px;font-size:.8125rem;color:#bdb6ae}
-footer a{color:inherit}
-@media (max-width:820px){footer .fr2{display:block}footer .more{margin-top:40px}}
-
-/* entrances: visible by default, hidden only once JS is ready */
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0) * 80ms)}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0)*90ms)}
 .js .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .js .rv{opacity:1;transform:none;transition:none}
-  .hero .big img{transition:none}
-  .pj .fr img{transition:none}
-}
+.js .pin img{transform:scale(1.08);transition:transform 1.6s var(--ease)}
+.js .pins.in .pin img{transform:none}
+.sheet .wall{stroke-dasharray:500;stroke-dashoffset:500;transition:stroke-dashoffset 1.4s var(--ease) .4s}
+.pins.in .sheet .wall,html:not(.js) .sheet .wall{stroke-dashoffset:0}
+.chip>span{transition:background-color .2s,color .2s,transform .2s var(--ease)}
+.chip:active>span{transform:scale(.96)}
+.pj{transition:opacity .4s var(--ease),transform .4s var(--ease)}
+@media (prefers-reduced-motion:reduce){.js .rv,.js .pin img{opacity:1!important;transform:none!important}.sheet .wall{stroke-dashoffset:0!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+<div class="demo">Démo réalisée par Raul Hatos, site non officiel</div>
 
 <header class="nav">
-  <a class="brand" href="#top">Art &amp; Mau</a>
-  <ul>
-    <li><a href="#projets">Projets</a></li>
-    <li><a href="#prestations">Prestations</a></li>
-    <li><a href="#atelier">L'atelier</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a class="btn" href="mailto:artandmau@gmail.com?subject=Projet%20d'architecture%20int%C3%A9rieure">Écrire à l'atelier</a>
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Atelier Art &amp; Mau, haut de page">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3h20v20H3z" fill="none" stroke="#16191c" stroke-width="3"/><path d="M3 13h10v10" fill="none" stroke="#b3122a" stroke-width="3"/></svg>
+      Art &amp; Mau
+    </a>
+    <ul>
+      <li><a href="#programme">Votre projet</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#prestations">Prestations</a></li>
+      <li><a href="#atelier">L'atelier</a></li>
+      <li><a href="#acces">Contact</a></li>
+    </ul>
+    <a class="btn btn-main" href="tel:+33608366005">Appeler</a>
+  </div>
 </header>
 
 <main id="top">
-<div class="hero">
-  <div class="big" aria-hidden="false">
-    <img class="ph on" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1100&q=78&auto=format&fit=crop" width="880" height="1100" alt="Séjour lumineux sur parquet en chevrons" fetchpriority="high">
-    <img class="ph" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1100&q=78&auto=format&fit=crop" width="880" height="1100" alt="Salon épuré aux murs blancs" loading="lazy">
-    <img class="ph" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1100&q=78&auto=format&fit=crop" width="880" height="1100" alt="Pièce à vivre ouverte sur une fenêtre d'immeuble ancien" loading="lazy">
-  </div>
-  <div class="small"><img class="ph" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=500&q=75&auto=format&fit=crop" width="400" height="400" alt="Table blanche et chaise près d'une fenêtre voilée"></div>
-  <h1><span>Atelier</span><span>Art &amp; Mau</span></h1>
-  <div class="side">
-    <p>Architecture d'intérieur. Rénovation, réagencement et réunification d'appartements, de Paris au Val-de-Marne, jusqu'au Luxembourg.</p>
-    <div class="acts">
-      <a class="btn" href="#projets">Voir les projets</a>
-      <a class="btn ghost" href="tel:+33608366005">Appeler</a>
-    </div>
-  </div>
-</div>
+<section class="hero" aria-labelledby="titre">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1 id="titre"><span>Rénover, réagencer,</span><span class="red">réunir.</span></h1>
+        <p class="lead">L'Atelier Art &amp; Mau dessine des intérieurs d'appartements et de maisons depuis 2014. Gaëlle Perot et Bénédicte Artault, architectes d'intérieur au 91 rue Véron, à Alfortville.</p>
+        <div class="proof">
+          <div><b class="num">12</b><span>projets publiés</span></div>
+          <div><b class="num">40 à 170 m²</b><span>du studio au grand appartement</span></div>
+          <div><b class="num">2014</b><span>création de l'atelier</span></div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-main" href="#programme">Décrire mon projet</a>
+          <a class="btn btn-soft" href="tel:+33608366005"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="num">06 08 36 60 05</span></a>
+        </div>
+        <p class="status"><i aria-hidden="true"></i>Sur rendez-vous, à Paris, en Île-de-France et au Luxembourg</p>
+      </div>
 
-<section id="projets" aria-labelledby="h-projets">
-  <div class="sh">
-    <h2 id="h-projets" class="rv">Douze projets, à l'échelle</h2>
-    <p class="rv" style="--d:1">Chaque image occupe une surface proportionnelle au projet qu'elle représente : 170&nbsp;m² à Neuilly, 50&nbsp;m² dans le XVII<sup>e</sup>, deux studios de 40&nbsp;m² à Luxembourg.</p>
-  </div>
-  <div class="wall">
-    <figure class="pj rv" style="--k:1"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : salon à moulures et cheminée"></div>
-      <figcaption><h3><b>Projet Roule</b> <span>170 m²</span></h3><p class="where">Neuilly-sur-Seine</p><p>Rénovation d'un appartement privé.</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.664;--d:1"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : cuisine aux façades gris anthracite"></div>
-      <figcaption><h3><b>Projet Péri</b> <span>75 m²</span></h3><p class="where">Saint-Maur-des-Fossés (94)</p><p>Rénovation d'une maison individuelle.</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.759;--d:2"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : chambre entre deux fenêtres"></div>
-      <figcaption><h3><b>Projet Tournelles</b> <span>98 m²</span></h3><p class="where">Paris III</p><p>Réagencement d'un appartement privé.</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.542;--d:3"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : salle de bains en pierre grise"></div>
-      <figcaption><h3><b>Projet Dames</b> <span>50 m²</span></h3><p class="where">Paris XVII</p><p>Rénovation d'un appartement privé.</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.569"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : petit séjour avec bibliothèque"></div>
-      <figcaption><h3><b>Projet Jussieu</b> <span>55 m²</span></h3><p class="where">Paris V</p><p>Réunification de deux appartements (29&nbsp;m² + 22&nbsp;m² + couloir de 4&nbsp;m²).</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.898;--d:1"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : fauteuil jaune et lampe laiton"></div>
-      <figcaption><h3><b>Projet Suffren</b> <span>137 m²</span></h3><p class="where">Paris VII</p><p>Aménagement d'un appartement privé.</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.669;--d:2"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : vasque suspendue en bois clair"></div>
-      <figcaption><h3><b>Fensterschlass 1</b> <span>76 m²</span></h3><p class="where">Luxembourg ville</p><p>Aménagement d'un logement privé dans le cadre d'une réhabilitation d'immeuble.</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.804;--d:3"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : canapé clair et table basse en bois"></div>
-      <figcaption><h3><b>Projet Cléry</b> <span>110 m²</span></h3><p class="where">Paris II</p><p>Rénovation d'un appartement privé.</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.874"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : bureau devant un mur vert sauge"></div>
-      <figcaption><h3><b>Projet 42RL</b> <span>130 m²</span></h3><p class="where">Paris XI</p><p>Rénovation d'un appartement privé.</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.485;--d:1"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : salle d'eau sombre et baignoire"></div>
-      <figcaption><h3><b>Fensterschlass 2</b> <span>2 × 40 m²</span></h3><p class="where">Luxembourg ville</p><p>Deux studios aux plans en miroir, dans le cadre d'une réhabilitation d'immeuble.</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.840;--d:2"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : séjour ouvert avec canapé en cuir"></div>
-      <figcaption><h3><b>Projet Silly</b> <span>120 m²</span></h3><p class="where">Boulogne-Billancourt (92)</p><p>Réaménagement d'un logement privé dans le cadre de la réunification de deux appartements (63&nbsp;m² + 57&nbsp;m²).</p></figcaption></figure>
-    <figure class="pj rv" style="--k:.748;--d:3"><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900&q=75&auto=format&fit=crop" width="720" height="900" loading="lazy" alt="Ambiance : plan de travail de cuisine en marbre"></div>
-      <figcaption><h3><b>Projet Saint-Maur</b> <span>95 m²</span></h3><p class="where">Paris XI</p><p>Réaménagement des zones entrée et cuisine d'un appartement privé.</p></figcaption></figure>
+      <div class="pins">
+        <figure class="pin pin-a">
+          <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1000&q=78&auto=format&fit=crop" width="800" height="1000" alt="Séjour lumineux sur parquet en chevrons, fauteuil et rangements bas" fetchpriority="high">
+          <figcaption class="tag">Ambiance · <b>rénovation complète</b></figcaption>
+        </figure>
+        <figure class="pin sheet" aria-label="Schéma de principe du projet Jussieu">
+          <svg viewBox="0 0 320 230" role="img" aria-labelledby="sch-t">
+            <title id="sch-t">Schéma de principe : deux logements de 29 et 22 m² reliés par un couloir de 4 m², réunis en 55 m²</title>
+            <defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="#dcdcd4" stroke-width=".6"/></pattern></defs>
+            <rect width="320" height="230" fill="url(#grid)"/>
+            <!-- cote totale -->
+            <g stroke="#16191c" stroke-width="1.2"><path d="M30 28h262M30 22v12M292 22v12"/></g>
+            <text x="161" y="20" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="14" fill="#b3122a">55 m²</text>
+            <!-- murs existants -->
+            <g fill="none" stroke="#16191c" stroke-width="6" stroke-linejoin="miter">
+              <path class="wall" d="M30 48h262v120H30z"/>
+            </g>
+            <!-- murs démolis (jaune pointillé) -->
+            <g stroke="#d9a300" stroke-width="6" stroke-dasharray="7 5"><path d="M168 48v52M188 116v52"/></g>
+            <!-- murs construits (rouge) -->
+            <g stroke="#b3122a" stroke-width="6"><path d="M168 100v12M188 48v34"/></g>
+            <g font-family="Archivo,sans-serif" font-weight="700" font-size="13" fill="#16191c" text-anchor="middle">
+              <text x="99" y="112">29 m²</text><text x="178" y="140" font-size="11">4</text><text x="240" y="112">22 m²</text>
+            </g>
+            <g stroke="#16191c" stroke-width="1.2"><path d="M30 186h138M168 180v12M30 180v12M188 186h104M188 180v12M292 180v12"/></g>
+            <g font-family="Archivo,sans-serif" font-size="11" font-weight="600" fill="#585d62">
+              <rect x="30" y="200" width="14" height="5" fill="#b3122a"/><text x="50" y="206">à construire</text>
+              <rect x="130" y="200" width="14" height="5" fill="#d9a300"/><text x="150" y="206">à démolir</text>
+            </g>
+          </svg>
+          <figcaption class="tag">Jussieu · <b>29 + 22 + 4 m²</b></figcaption>
+        </figure>
+        <figure class="pin">
+          <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=700&q=75&auto=format&fit=crop" width="560" height="600" alt="Main qui dessine un plan d'appartement au feutre">
+          <figcaption class="tag">L'esquisse <b>en plan</b></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <ul class="cart" aria-label="Cartouche de l'atelier">
+      <li class="wide"><small>Atelier</small><b>91 rue Véron, Alfortville</b></li>
+      <li><small>Architectes d'intérieur</small><b>G. Perot, B. Artault</b></li>
+      <li><small>Formation</small><b>LISAA, Paris</b></li>
+      <li><small>Parcours</small><b>De Portzamparc, RDAI</b></li>
+      <li><small>Partenaire</small><b>MoreThanPurple, Luxembourg</b></li>
+      <li><small>Rendez-vous</small><b>06 08 36 60 05</b></li>
+    </ul>
   </div>
 </section>
 
-<div class="scale" id="surface" aria-labelledby="h-surface">
-  <div class="scale-in">
-    <h2 id="h-surface" class="rv">Et votre surface&nbsp;?</h2>
-    <div class="ctl rv" style="--d:1">
-      <label for="m2">Indiquez la surface de votre logement.</label>
-      <div class="rowin"><output id="out" for="m2">65&nbsp;m²</output><input id="m2" type="range" min="15" max="250" step="1" value="65" aria-describedby="res"></div>
-      <p class="res" id="res" aria-live="polite">Votre logement se place entre les projets Jussieu (55&nbsp;m²) et Fensterschlass&nbsp;1 (76&nbsp;m²).</p>
-      <div class="acts"><a class="btn" id="mail" href="mailto:artandmau@gmail.com?subject=Projet%20de%2065%20m%C2%B2">Parler de mes 65&nbsp;m²</a></div>
-    </div>
-    <figure>
-      <svg id="plan" viewBox="0 0 1000 300" role="img" aria-label="Surfaces des douze projets et de votre logement, à la même échelle"></svg>
-      <figcaption>Carrés à la même échelle : les douze projets de l'atelier, et le vôtre en vert.</figcaption>
-    </figure>
-  </div>
-</div>
+<section class="prog" id="programme" aria-labelledby="t-prog">
+  <div class="wrap">
+    <h2 class="rv h2" id="t-prog">Votre projet, en programme</h2>
+    <p class="rv intro">Un architecte d'intérieur commence par le programme : ce qu'on change, où, sur quelle surface. Remplissez le vôtre, placez-le à l'échelle des douze projets de l'atelier, puis envoyez la fiche à Gaëlle Perot.</p>
+    <div class="pg-grid">
+      <form id="pg" onsubmit="return false">
+        <div class="q"><label class="lg" for="m2">La surface</label>
+          <div class="range"><input id="m2" type="range" min="20" max="200" step="1" value="65"><output id="out" class="num" for="m2">65 m²</output></div>
+        </div>
+        <fieldset class="q"><legend>Le chantier</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="type" value="renov" checked><span>Rénovation complète</span></label>
+            <label class="chip"><input type="radio" name="type" value="reunir"><span>Réunir deux logements</span></label>
+            <label class="chip"><input type="radio" name="type" value="reagencer"><span>Réagencer les pièces</span></label>
+            <label class="chip"><input type="radio" name="type" value="cuisine"><span>Entrée et cuisine</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="q"><legend>Où</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="lieu" value="Paris" checked><span>Paris</span></label>
+            <label class="chip"><input type="radio" name="lieu" value="Val-de-Marne"><span>Val-de-Marne</span></label>
+            <label class="chip"><input type="radio" name="lieu" value="Hauts-de-Seine"><span>Hauts-de-Seine</span></label>
+            <label class="chip"><input type="radio" name="lieu" value="ailleurs en Île-de-France"><span>Autre Île-de-France</span></label>
+            <label class="chip"><input type="radio" name="lieu" value="Luxembourg"><span>Luxembourg</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="q"><legend>Les pièces concernées</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="piece" value="cuisine" checked><span>Cuisine</span></label>
+            <label class="chip"><input type="checkbox" name="piece" value="salle de bains"><span>Salle de bains</span></label>
+            <label class="chip"><input type="checkbox" name="piece" value="entrée"><span>Entrée</span></label>
+            <label class="chip"><input type="checkbox" name="piece" value="séjour" checked><span>Séjour</span></label>
+            <label class="chip"><input type="checkbox" name="piece" value="chambres"><span>Chambres</span></label>
+            <label class="chip"><input type="checkbox" name="piece" value="rangements"><span>Rangements</span></label>
+          </div>
+        </fieldset>
+      </form>
 
-<section id="prestations" aria-labelledby="h-prest">
-  <div class="sh">
-    <h2 id="h-prest" class="rv">Ce que l'atelier prend en charge</h2>
-    <p class="rv" style="--d:1">De l'esquisse en plan jusqu'à la réalisation, pour des particuliers, selon vos attentes et votre budget.</p>
-  </div>
-  <div class="svc">
-    <ol>
-      <li class="rv"><h3>Rénovation complète</h3><p>Appartements et maisons, du studio au grand appartement familial. <em>Roule, 42RL, Cléry, Dames, Péri.</em></p></li>
-      <li class="rv"><h3>Réunification de deux appartements</h3><p>Deux logements voisins réunis en un seul, avec un nouveau plan. <em>Jussieu, Silly.</em></p></li>
-      <li class="rv"><h3>Réagencement</h3><p>Redistribuer les pièces sans changer de surface. <em>Tournelles, Suffren.</em></p></li>
-      <li class="rv"><h3>Entrée et cuisine</h3><p>Repenser les pièces qui servent le plus. <em>Saint-Maur.</em></p></li>
-      <li class="rv"><h3>Réhabilitation d'immeuble</h3><p>Aménagement de logements dans un immeuble en cours de réhabilitation. <em>Fensterschlass 1 et 2.</em></p></li>
-    </ol>
-    <div class="pic rv"><img class="ph" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=75&auto=format&fit=crop" width="600" height="800" loading="lazy" alt="Ambiance : salon clair, fauteuils et cadres au mur"></div>
+      <div class="fiche" aria-live="polite">
+        <div class="fiche-top">
+          <h3 id="f-title">Rénovation complète, 65 m²</h3>
+          <p class="sub">Fiche programme · à l'échelle des projets de l'atelier</p>
+        </div>
+        <svg class="scale" id="scale" role="img" aria-label="Votre surface comparée aux douze projets"></svg>
+        <p class="scale-cap">Carrés à la même échelle. Le vôtre est en rouge.</p>
+        <dl>
+          <dt>Chantier</dt><dd id="f-type">Rénovation complète</dd>
+          <dt>Lieu</dt><dd id="f-lieu">Paris</dd>
+          <dt>Pièces</dt><dd id="f-pieces">cuisine, séjour</dd>
+        </dl>
+        <p class="near" id="near">Projet le plus proche : <b>Dames</b>, 50 m², Paris XVII.</p>
+        <div class="actions">
+          <a class="btn btn-main" id="mail" href="mailto:artandmau@gmail.com">Envoyer ma fiche</a>
+          <a class="btn btn-soft" href="tel:+33608366005">Appeler Gaëlle</a>
+        </div>
+        <small class="hint">Votre messagerie s'ouvre avec la fiche rédigée. Ajoutez l'adresse et vos disponibilités pour un premier rendez-vous.</small>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="atelier" class="about" aria-labelledby="h-atelier">
-  <h2 id="h-atelier" class="rv" style="font-size:var(--head)">L'atelier</h2>
-  <p class="lead rv" style="--d:1">Créé en 2014, l'atelier réunit Gaëlle Perot et Bénédicte Artault, rue Véron, à Alfortville.</p>
-  <div class="mos">
-    <div class="wide rv"><img class="ph" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1400&q=75&auto=format&fit=crop" width="1280" height="800" loading="lazy" alt="Ambiance : séjour aux murs blancs, commode et lampadaire">
-      <p class="note">«&nbsp;Diplômée de l'école d'architecture intérieure et de design LISAA à Paris, j'ai travaillé plusieurs années dans l'agence De Portzamparc, avant de rejoindre l'équipe de l'agence RDAI où j'y ai acquis une rigueur propre à l'univers exigeant du luxe.&nbsp;»</p></div>
-    <div class="tile rv" style="--d:1">
-      <svg viewBox="0 0 300 200" aria-labelledby="jt">
-        <title id="jt">Plan schématique du projet Jussieu : deux appartements de 29 et 22 m² reliés par un couloir de 4 m²</title>
-        <rect x="10" y="20" width="150" height="160" fill="#2f2e2d"/>
-        <rect x="160" y="80" width="30" height="35" fill="#4f5e48"/>
-        <rect x="190" y="40" width="100" height="140" fill="#2f2e2d"/>
-        <text x="85" y="108" fill="#eeecea" font-family="Newsreader,serif" font-size="22" text-anchor="middle">29 m²</text>
-        <text x="240" y="118" fill="#eeecea" font-family="Newsreader,serif" font-size="22" text-anchor="middle">22 m²</text>
-      </svg>
-      <p>Jussieu, Paris V&nbsp;: deux logements de 29 et 22&nbsp;m² et 4&nbsp;m² de couloir, réunis en un appartement de 55&nbsp;m².</p>
+<section id="projets" aria-labelledby="t-pj">
+  <div class="wrap">
+    <h2 class="rv h2" id="t-pj">Douze projets, de 40 à 170 m²</h2>
+    <p class="rv intro">Les projets publiés par l'atelier, avec leur surface et leur adresse. De Neuilly au Luxembourg, en passant par Saint-Maur-des-Fossés.</p>
+    <div class="chips filters" role="group" aria-label="Filtrer les projets">
+      <label class="chip"><input type="radio" name="f" value="all" checked><span>Tous</span></label>
+      <label class="chip"><input type="radio" name="f" value="renov"><span>Rénovation</span></label>
+      <label class="chip"><input type="radio" name="f" value="reunir"><span>Réunification</span></label>
+      <label class="chip"><input type="radio" name="f" value="reagencer"><span>Réagencement</span></label>
+      <label class="chip"><input type="radio" name="f" value="lux"><span>Luxembourg</span></label>
     </div>
-    <dl class="facts rv" style="--d:2">
-      <div><dt>Création</dt><dd>2014</dd></div>
-      <div><dt>Formation</dt><dd>LISAA, Paris</dd></div>
-      <div><dt>Parcours</dt><dd>De Portzamparc, RDAI</dd></div>
-      <div><dt>Partenaire</dt><dd>MoreThanPurple, Luxembourg</dd></div>
-    </dl>
+    <div class="grid-pj" id="pjs">
+      <article class="pj" data-k="renov"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : salon à moulures et cheminée"><p class="cote"><span>170 m²</span></p></div><div class="pj-body"><h3>Roule</h3><p class="where">Neuilly-sur-Seine</p><p>Rénovation d'un appartement privé.</p></div></article>
+      <article class="pj" data-k="reagencer"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : fauteuil jaune et lampe laiton"><p class="cote"><span>137 m²</span></p></div><div class="pj-body"><h3>Suffren</h3><p class="where">Paris VII</p><p>Aménagement d'un appartement privé.</p></div></article>
+      <article class="pj" data-k="renov"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : bureau devant un mur vert sauge"><p class="cote"><span>130 m²</span></p></div><div class="pj-body"><h3>42RL</h3><p class="where">Paris XI</p><p>Rénovation d'un appartement privé.</p></div></article>
+      <article class="pj" data-k="reunir"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : séjour ouvert avec canapé en cuir"><p class="cote"><span>120 m²</span></p></div><div class="pj-body"><h3>Silly</h3><p class="where">Boulogne-Billancourt (92)</p><p>Réaménagement après la réunification de deux appartements de 63 et 57 m².</p></div></article>
+      <article class="pj" data-k="renov"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : canapé clair et table basse en bois"><p class="cote"><span>110 m²</span></p></div><div class="pj-body"><h3>Cléry</h3><p class="where">Paris II</p><p>Rénovation d'un appartement privé.</p></div></article>
+      <article class="pj" data-k="reagencer"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : chambre entre deux fenêtres"><p class="cote"><span>98 m²</span></p></div><div class="pj-body"><h3>Tournelles</h3><p class="where">Paris III</p><p>Réagencement d'un appartement privé.</p></div></article>
+      <article class="pj" data-k="cuisine"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : plan de travail de cuisine en marbre"><p class="cote"><span>95 m²</span></p></div><div class="pj-body"><h3>Saint-Maur</h3><p class="where">Paris XI</p><p>Réaménagement de l'entrée et de la cuisine d'un appartement privé.</p></div></article>
+      <article class="pj" data-k="lux"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : vasque suspendue en bois clair"><p class="cote"><span>76 m²</span></p></div><div class="pj-body"><h3>Fensterschlass 1</h3><p class="where">Luxembourg ville</p><p>Un logement privé dans un immeuble en réhabilitation.</p></div></article>
+      <article class="pj" data-k="renov"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : cuisine aux façades gris anthracite"><p class="cote"><span>75 m²</span></p></div><div class="pj-body"><h3>Péri</h3><p class="where">Saint-Maur-des-Fossés (94)</p><p>Rénovation d'une maison individuelle.</p></div></article>
+      <article class="pj" data-k="reunir"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : petit séjour avec bibliothèque"><p class="cote"><span>55 m²</span></p></div><div class="pj-body"><h3>Jussieu</h3><p class="where">Paris V</p><p>Deux appartements de 29 et 22 m² et un couloir de 4 m², réunis.</p></div></article>
+      <article class="pj" data-k="renov"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : salle de bains en pierre grise"><p class="cote"><span>50 m²</span></p></div><div class="pj-body"><h3>Dames</h3><p class="where">Paris XVII</p><p>Rénovation d'un appartement privé.</p></div></article>
+      <article class="pj" data-k="lux"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=700&q=72&auto=format&fit=crop" width="600" height="450" alt="Ambiance : salle d'eau sombre et baignoire"><p class="cote"><span>2 × 40 m²</span></p></div><div class="pj-body"><h3>Fensterschlass 2</h3><p class="where">Luxembourg ville</p><p>Deux studios aux plans en miroir, dans un immeuble en réhabilitation.</p></div></article>
+    </div>
+    <p class="note">Photographies d'ambiance (Unsplash) en attendant les photos des réalisations de l'atelier. Noms, surfaces et descriptions : artandmau.com.</p>
   </div>
 </section>
 
-<section id="methode" aria-labelledby="h-methode">
-  <div class="mt-top">
-    <h2 id="h-methode" class="rv">Comment se passe un projet</h2>
-    <div class="arrows">
-      <button type="button" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <button type="button" id="next" aria-label="Étape suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+<section class="band" aria-labelledby="t-band">
+  <div class="wrap">
+    <div class="bd-grid">
+      <div>
+        <h2 class="rv h2" id="t-band">Deux logements, un seul plan</h2>
+        <p class="rv intro">Réunir deux appartements voisins, c'est le travail le plus « plan » qui soit : quels murs tombent, où passe la circulation, où va la cuisine. Deux des projets publiés le racontent.</p>
+        <ul class="sum">
+          <li><b class="num">29 + 22 + 4 = 55 m²</b><span>Jussieu, Paris V : deux appartements et un couloir de 4 m²</span></li>
+          <li><b class="num">63 + 57 = 120 m²</b><span>Silly, Boulogne-Billancourt : deux appartements réunis</span></li>
+        </ul>
+        <a class="btn" href="#programme">Mon projet de réunification</a>
+      </div>
+      <figure class="bd-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=75&auto=format&fit=crop" width="720" height="900" alt="Ambiance : pièce à vivre ouverte, fenêtre d'immeuble ancien">
+        <figcaption class="tag">Ambiance · <b>pièce à vivre ouverte</b></figcaption>
+      </figure>
     </div>
   </div>
-  <div class="bar" aria-hidden="true"><i id="prog"></i></div>
-  <ol class="row" id="row" tabindex="0" aria-label="Étapes d'un projet">
-    <li class="rv" style="--sp:80px"><h3>D'abord, une rencontre</h3><p>Un premier rendez-vous pour comprendre vos besoins, votre façon de vivre et ce que le lieu permet.</p><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=700&q=75&auto=format&fit=crop" width="560" height="700" loading="lazy" alt="Ambiance : table ronde près d'une fenêtre"></div></li>
-    <li class="rv" style="--sp:140px;--d:1"><h3>Puis l'esquisse en plan</h3><p>Le plan se dessine : circulation, pièces, rangements. Chaque projet est un nouveau défi.</p><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=700&q=75&auto=format&fit=crop" width="560" height="700" loading="lazy" alt="Ambiance : pièce à vivre et fenêtre sur rue"></div></li>
-    <li class="rv" style="--sp:100px;--d:2"><h3>Jusqu'à la réalisation</h3><p>L'atelier vous accompagne jusqu'à l'aboutissement du projet.</p><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700&q=75&auto=format&fit=crop" width="560" height="700" loading="lazy" alt="Ambiance : cuisine blanche et suspensions noires"></div></li>
-    <li class="rv" style="--sp:60px;--d:3"><h3>Selon votre budget</h3><p>Le projet avance selon vos attentes et selon votre budget.</p><div class="fr"><img class="ph" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=700&q=75&auto=format&fit=crop" width="560" height="700" loading="lazy" alt="Ambiance : parquet en chevrons et banquette bleue"></div></li>
-  </ol>
 </section>
 
-<section id="contact" aria-labelledby="h-contact">
-  <div class="contact">
-    <h2 id="h-contact" class="rv">Un appartement à rénover, deux à réunir, une cuisine à repenser&nbsp;? Parlons-en autour d'un premier rendez-vous.</h2>
-    <div class="sq rv" style="--d:1"><img class="ph" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=75&auto=format&fit=crop" width="200" height="200" loading="lazy" alt="Ambiance : fauteuil jaune"></div>
-    <div class="ways rv" style="--d:2">
-      <h3>Atelier Art &amp; Mau</h3>
-      <ul>
-        <li><a href="mailto:artandmau@gmail.com">artandmau@gmail.com</a></li>
-        <li><a href="tel:+33608366005">06 08 36 60 05</a> <span style="color:var(--muted)">(Gaëlle Perot)</span></li>
-        <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=91+rue+V%C3%A9ron+94140+Alfortville" target="_blank" rel="noopener">91 rue Véron, 94140 Alfortville</a></li>
-      </ul>
-      <p class="meta">Sur rendez-vous. Projets à Paris, en Île-de-France et au Luxembourg.</p>
-      <div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=91+rue+V%C3%A9ron+94140+Alfortville" target="_blank" rel="noopener">Itinéraire</a></div>
+<section id="prestations" aria-labelledby="t-off">
+  <div class="wrap">
+    <h2 class="rv h2" id="t-off">Ce que l'atelier prend en charge</h2>
+    <p class="rv intro">De l'esquisse en plan jusqu'à la réalisation, pour des particuliers. Besoins et budget se fixent au premier rendez-vous.</p>
+    <div class="board">
+      <article class="offer"><h3>Rénovation complète</h3><p class="rg num">50 à 170 m²</p><p>Des appartements privés et une maison individuelle. Roule, 42RL, Cléry, Dames, Péri.</p></article>
+      <article class="offer"><h3>Réunification</h3><p class="rg num">55 à 120 m²</p><p>Deux logements voisins réunis en un seul, avec un nouveau plan. Jussieu, Silly.</p></article>
+      <article class="offer photo"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=72&auto=format&fit=crop" width="600" height="600" alt="Ambiance : salon clair, fauteuils et cadres au mur"></article>
+      <article class="offer"><h3>Réagencement</h3><p class="rg num">98 à 137 m²</p><p>Redistribuer les pièces sans changer de surface. Tournelles, Suffren.</p></article>
+      <article class="offer"><h3>Entrée et cuisine</h3><p class="rg num">95 m²</p><p>Repenser les pièces qui servent le plus, sans tout refaire. Saint-Maur, Paris XI.</p></article>
+      <article class="offer"><h3>Immeuble en réhabilitation</h3><p class="rg num">40 à 76 m²</p><p>Aménager des logements dans un immeuble en réhabilitation, au Luxembourg. Fensterschlass 1 et 2.</p></article>
     </div>
+  </div>
+</section>
+
+<section class="method" aria-labelledby="t-met">
+  <div class="wrap">
+    <h2 class="rv h2" id="t-met">Comment se passe un projet</h2>
+    <p class="rv intro">Le déroulé décrit par l'atelier, de la première rencontre au chantier fini.</p>
+    <div class="me-grid"><figure class="me-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=75&auto=format&fit=crop" width="720" height="900" alt="Plans d'architecte déroulés sur une table de travail"></figure>
+    <ol class="steps">
+      <li><h3>Une rencontre</h3><p>Un premier rendez-vous pour cerner vos besoins, votre façon de vivre et ce que le lieu permet.</p></li>
+      <li><h3>L'esquisse en plan</h3><p>Le plan se dessine : circulation, pièces, rangements. Chaque projet est un nouveau défi.</p></li>
+      <li><h3>La réalisation</h3><p>L'atelier vous accompagne jusqu'à l'aboutissement du chantier.</p></li>
+      <li><h3>Selon votre budget</h3><p>Le projet avance selon vos attentes et selon le budget posé au départ.</p></li>
+    </ol></div>
+  </div>
+</section>
+
+<section id="atelier" aria-labelledby="t-at">
+  <div class="wrap">
+    <div class="at-grid">
+      <div>
+        <h2 class="rv h2" id="t-at">L'atelier, de l'agence au plan</h2>
+        <p class="quote">« Mettre un savoir-faire au service d'une clientèle diversifiée. »</p>
+        <p class="quote-by">Gaëlle Perot, sur artandmau.com</p>
+        <ol class="path">
+          <li><b>LISAA</b><span>École d'architecture intérieure et de design, Paris</span></li>
+          <li><b>Agences</b><span>De Portzamparc, puis RDAI</span></li>
+          <li><b class="num">2011</b><span>L'idée d'une société indépendante commence à germer</span></li>
+          <li><b class="num">2014</b><span>Création de l'Atelier Art &amp; Mau</span></li>
+          <li><b>Lux.</b><span>Collaboration avec l'agence luxembourgeoise MoreThanPurple</span></li>
+        </ol>
+      </div>
+      <figure class="at-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=900&q=75&auto=format&fit=crop" width="720" height="900" alt="Ambiance : séjour aux murs blancs, commode et lampadaire">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="acces" id="acces" aria-labelledby="t-ac">
+  <div class="wrap">
+    <h2 class="rv h2" id="t-ac">Rencontrer l'atelier</h2>
+    <div class="ac-grid">
+      <div class="addr">
+        <p class="where-big">91 rue Véron<br>94140 Alfortville</p>
+        <p class="meta">L'atelier reçoit sur rendez-vous. Projets à Paris, en Île-de-France et au Luxembourg.</p>
+        <a class="tel num" href="tel:+33608366005">06 08 36 60 05</a>
+        <p class="tel-by">Gaëlle Perot</p>
+        <a class="mail" href="mailto:artandmau@gmail.com">artandmau@gmail.com</a>
+        <p class="rdv"><b>Sur rendez-vous.</b> Appelez ou écrivez pour fixer le premier rendez-vous.</p>
+        <div class="actions">
+          <a class="btn btn-main" href="https://www.google.com/maps/dir/?api=1&amp;destination=91+rue+V%C3%A9ron+94140+Alfortville" target="_blank" rel="noopener">Itinéraire</a>
+          <a class="btn btn-soft" href="mailto:artandmau@gmail.com?subject=Premier%20rendez-vous">Écrire à l'atelier</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Plan d'accès : 91 rue Véron, Alfortville" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=91%20rue%20V%C3%A9ron%2C%2094140%20Alfortville&amp;z=15&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="t-fin">
+  <div class="wrap fin-grid">
+    <div>
+    <h2 id="t-fin">Un plan à redessiner ?</h2>
+    <p class="rv intro">Tout commence par un premier rendez-vous, pour poser le programme.</p>
+    <div class="actions">
+      <a class="btn btn-main" href="#programme">Remplir ma fiche</a>
+      <a class="btn btn-soft" href="tel:+33608366005">Appeler l'atelier</a>
+    </div>
+    </div>
+    <figure class="fin-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=900&q=75&auto=format&fit=crop" width="900" height="600" alt="Ambiance : table ronde et chaise près d'une fenêtre voilée"><figcaption class="tag">Le premier <b>rendez-vous</b></figcaption></figure>
   </div>
 </section>
 </main>
 
 <footer>
-  <p class="name" aria-hidden="true">Art &amp; Mau</p>
-  <div class="fr2">
-    <ul class="places">
-      <li><a href="mailto:artandmau@gmail.com">artandmau@gmail.com</a></li>
-      <li><a href="tel:+33608366005">06 08 36 60 05</a></li>
-      <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=91+rue+V%C3%A9ron+94140+Alfortville" target="_blank" rel="noopener">Alfortville (94)</a></li>
-    </ul>
-    <div class="more">
-      <p>Atelier Art &amp; Mau, architecture d'intérieur. Gaëlle Perot et Bénédicte Artault.</p>
-      <p>Art and Mau SAS, 91 rue Véron, 94140 Alfortville. RCS Paris 803 870 120.</p>
-      <p>Photographies d'ambiance : Unsplash. Elles illustrent l'esprit des projets, pas les réalisations elles-mêmes.</p>
-    </div>
+  <div class="wrap ft">
+    <p>Atelier Art &amp; Mau, architecture d'intérieur. Gaëlle Perot et Bénédicte Artault.<br>Art and Mau SAS, 91 rue Véron, 94140 Alfortville. RCS Paris 803 870 120.</p>
+    <p>Photographies d'ambiance : Unsplash. Elles illustrent l'esprit des projets, pas les réalisations.<br>Démo réalisée par Raul Hatos, site non officiel. <a href="#top">Haut de page</a></p>
   </div>
-  <div class="legal"><span>Démo réalisée par Raul Hatos — site non officiel</span><a href="#top">Haut de page</a></div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Projets publiés sur artandmau.com : [nom, m², lieu, type]
+const P=[['Roule',170,'Neuilly-sur-Seine','renov'],['Suffren',137,'Paris VII','reagencer'],['42RL',130,'Paris XI','renov'],['Silly',120,'Boulogne-Billancourt','reunir'],['Cléry',110,'Paris II','renov'],['Tournelles',98,'Paris III','reagencer'],['Saint-Maur',95,'Paris XI','cuisine'],['Fensterschlass 1',76,'Luxembourg','lux'],['Péri',75,'Saint-Maur-des-Fossés','renov'],['Jussieu',55,'Paris V','reunir'],['Dames',50,'Paris XVII','renov'],['Fensterschlass 2',40,'Luxembourg','lux']];
+const LABEL={renov:'Rénovation complète',reunir:'Réunir deux logements',reagencer:'Réagencer les pièces',cuisine:'Entrée et cuisine'};
+const $=s=>document.querySelector(s), form=$('#pg'), r=$('#m2'), svg=$('#scale');
 
-// entrances
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
-// hero crossfade
-if(!reduce){const imgs=[...document.querySelectorAll('.hero .big img')];let i=0;
-  setInterval(()=>{if(document.hidden)return;imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on')},5600)}
-
-// your surface, at the same scale as the 12 projects
-const P=[['Roule',170],['Suffren',137],['42RL',130],['Silly',120],['Cléry',110],['Tournelles',98],['Saint-Maur',95],['Fensterschlass 1',76],['Péri',75],['Jussieu',55],['Dames',50],['Fensterschlass 2',40]];
-const svg=document.getElementById('plan'),r=document.getElementById('m2'),out=document.getElementById('out'),res=document.getElementById('res'),mail=document.getElementById('mail');
-const nb=n=>n+' m²';
-function draw(v){
-  const all=P.map(([n,s])=>({n,s,me:false})).concat([{n:'Vous',s:v,me:true}]).sort((a,b)=>b.s-a.s);
-  const k=3.6, gap=10, H=300; // side = k*sqrt(m²)
-  const w=all.reduce((t,o)=>t+k*Math.sqrt(o.s)+gap,0)-gap;
-  svg.setAttribute('viewBox',`0 0 ${Math.ceil(w)} ${H}`);
-  let x=0,html='';
-  for(const o of all){const s=k*Math.sqrt(o.s);
-    html+=`<rect x="${x.toFixed(1)}" y="${(H-40-s).toFixed(1)}" width="${s.toFixed(1)}" height="${s.toFixed(1)}" fill="${o.me?'#4f5e48':'#cdc3b6'}"/>`;
-    if(o.me) html+=`<text x="${(x+s/2).toFixed(1)}" y="${H-12}" text-anchor="middle" font-family="Newsreader,serif" font-size="17" fill="#2f2e2d">vous</text>`;
-    x+=s+gap}
-  svg.innerHTML=html;
-  out.textContent=nb(v);
-  const above=P.filter(p=>p[1]>=v).sort((a,b)=>a[1]-b[1])[0], below=P.filter(p=>p[1]<v).sort((a,b)=>b[1]-a[1])[0];
-  res.textContent= !above ? `Plus grand que tous les projets présentés ici ; le plus proche est ${below[0]} (${nb(below[1])}, Neuilly).`
-    : !below ? `Plus petit que les projets présentés ici ; le plus proche est ${above[0]} (${nb(above[1])}).`
-    : above[1]===v ? `Exactement la surface du projet ${above[0]}.`
-    : `Votre logement se place entre les projets ${below[0]} (${nb(below[1])}) et ${above[0]} (${nb(above[1])}).`;
-  mail.textContent=`Parler de mes ${nb(v)}`;
-  mail.href='mailto:artandmau@gmail.com?subject='+encodeURIComponent(`Projet de ${v} m²`)+'&body='+encodeURIComponent(`Bonjour,\n\nJe souhaite vous parler d'un projet d'environ ${v} m² (adresse : ).\n\nMerci,\n`);
+function nearest(type,v){
+  const same=P.filter(p=>p[3]===type), pool=same.length?same:P;
+  return pool.reduce((a,b)=>Math.abs(b[1]-v)<Math.abs(a[1]-v)?b:a);
 }
-r.addEventListener('input',()=>draw(+r.value));draw(+r.value);
+function draw(){
+  const v=+r.value, type=form.type.value, lieu=form.lieu.value;
+  const pieces=[...form.querySelectorAll('[name=piece]:checked')].map(i=>i.value);
+  $('#out').textContent=v+' m²';
+  $('#f-title').textContent=LABEL[type]+', '+v+' m²';
+  $('#f-type').textContent=LABEL[type];
+  $('#f-lieu').textContent=lieu;
+  $('#f-pieces').textContent=pieces.length?pieces.join(', '):'à définir';
+  const n=nearest(type,v);
+  $('#near').innerHTML=`Projet comparable : <b>${n[0]}</b>, ${n[1]} m², ${n[2]}. `+(v>170?'Le vôtre dépasse le plus grand projet publié.':v<40?'Le vôtre est plus petit que les studios de Fensterschlass 2.':'');
+  // carrés à l'échelle : côté proportionnel à la racine de la surface
+  const all=P.map(p=>({n:p[0],s:p[1],me:0})).concat([{n:'vous',s:v,me:1}]).sort((a,b)=>b.s-a.s);
+  const k=8,gap=8,H=160,base=128;
+  const w=all.reduce((t,o)=>t+k*Math.sqrt(o.s)+gap,0)-gap+40;
+  svg.setAttribute('viewBox',`-20 0 ${Math.ceil(w)} ${H}`);
+  let x=0,h='';
+  for(const o of all){const s=k*Math.sqrt(o.s);
+    h+=`<rect x="${x}" y="${base-s}" width="${s}" height="${s}" fill="${o.me?'#b3122a':'#d3d3cb'}"/>`;
+    if(o.me)h+=`<text x="${x+s/2}" y="${base+18}" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="20" fill="#b3122a">vous</text>`;
+    x+=s+gap}
+  svg.innerHTML=h;
+  const body=`Bonjour,\n\nVoici mon projet :\n- Chantier : ${LABEL[type]}\n- Surface : environ ${v} m²\n- Lieu : ${lieu}\n- Pièces concernées : ${pieces.join(', ')||'à définir'}\n\nAdresse : \nDisponibilités pour un premier rendez-vous : \n\nMerci,\n`;
+  $('#mail').href='mailto:artandmau@gmail.com?subject='+encodeURIComponent(`Projet : ${LABEL[type].toLowerCase()}, ${v} m²`)+'&body='+encodeURIComponent(body);
+}
+form.addEventListener('input',draw);draw();
 
-// method row
-const row=document.getElementById('row'),prog=document.getElementById('prog');
-const step=()=>row.querySelector('li').getBoundingClientRect().width+32;
-document.getElementById('prev').onclick=()=>row.scrollBy({left:-step(),behavior:reduce?'auto':'smooth'});
-document.getElementById('next').onclick=()=>row.scrollBy({left:step(),behavior:reduce?'auto':'smooth'});
-const upd=()=>{const m=row.scrollWidth-row.clientWidth;prog.style.width=(m<=0?100:25+75*row.scrollLeft/m)+'%'};
-row.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+// entrées au défilement
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:"0px 0px 15% 0px"});
+document.querySelectorAll('.rv,.pins').forEach(el=>io.observe(el));
+// filtres des projets
+document.querySelectorAll('[name=f]').forEach(i=>i.addEventListener('change',()=>{
+  const f=i.value;
+  document.querySelectorAll('#pjs .pj').forEach(a=>{const k=a.dataset.k;a.hidden=!(f==='all'||k===f||(f==='renov'&&k==='cuisine'))});
+}));
 </script>
 </body>
 </html>
