@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Jean-Baptiste Padoin, ostéopathe D.O. à Vincennes</title>
+<meta name="description" content="Cabinet d'ostéopathie de Jean-Baptiste Padoin, ostéopathe D.O., 34 rue Victor Basch à Vincennes. Métro Bérault (ligne 1). Rendez-vous sur Doctolib ou au 07 84 55 64 78.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#ffffff; --ink:#111111; --body:#2b2f36; --muted:#5b6170;
+  --soft:#f4f4f2; --soft2:#e9e9e6;
+  --l1:#ffcd00; --l1-ink:#1a1500;
+  --display:"Cal Sans","Inter",system-ui,sans-serif; --text:"Inter",system-ui,sans-serif;
+  --m:clamp(16px,4vw,48px); --gap:clamp(96px,14vw,200px);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--ink);font:400 17px/1.55 var(--text);font-feature-settings:"tnum" 0}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+::selection{background:var(--l1);color:var(--l1-ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{padding-inline:var(--m);max-width:1440px;margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
+h2{font-size:clamp(40px,6.4vw,92px)}
+h3{font-size:clamp(22px,2vw,28px);line-height:1.15;letter-spacing:-.01em}
+p{text-wrap:pretty}
+.lead{font-size:clamp(18px,1.6vw,22px);line-height:1.45;color:var(--body);max-width:36ch}
+
+/* demo strip */
+.demo{background:var(--soft);color:var(--muted);font-size:13px;text-align:center;padding:7px var(--m)}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:18px}
+.brand{font-family:var(--display);font-size:20px;text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.brand span{color:var(--muted);font-family:var(--text);font-size:14px;margin-left:8px}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 16px/1 var(--text);text-decoration:none;transition:transform .25s var(--ease),background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#2a2a2a}
+.btn-l1{background:var(--l1);color:var(--l1-ink)}
+.btn-l1:hover{background:#ffd633}
+.btn-ghost{background:var(--soft);color:var(--ink)}
+.btn-ghost:hover{background:var(--soft2)}
+.btn svg{width:18px;height:18px}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;padding-top:clamp(32px,6vw,88px)}
+.hero h1{font-size:clamp(52px,8.6vw,132px);letter-spacing:-.035em;line-height:.94}
+.hero .lead{margin-top:36px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero-fig{position:relative}
+.hero-fig img{width:100%;aspect-ratio:4/5;max-height:min(66svh,640px);object-fit:cover;object-position:50% 30%;filter:grayscale(1) contrast(1.06);background:var(--soft)}
+.card{position:absolute;left:clamp(-120px,-6vw,-24px);bottom:28px;width:min(330px,82%);background:#fff;border-radius:16px;padding:20px 22px;box-shadow:0 18px 40px -12px rgba(0,0,0,.28)}
+.card .t{font:600 16px/1.3 var(--text)}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin-top:12px;font-size:14px;color:var(--body)}
+.card dt{color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:14px;font-weight:600}
+.dot{width:10px;height:10px;border-radius:50%;background:#9aa0a6}
+.status.open .dot{background:#16a34a}
+
+/* domain line */
+.domain{margin-top:clamp(56px,8vw,120px);display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline;padding-block:22px;background:var(--soft);padding-inline:clamp(18px,3vw,36px);border-radius:16px;font-size:15px;color:var(--body)}
+.domain b{font-family:var(--display);font-weight:400;font-size:clamp(20px,2.2vw,28px);color:var(--ink);letter-spacing:-.01em}
+
+section{margin-top:var(--gap)}
+
+/* séance — the live thing */
+.seance{background:var(--l1);color:var(--l1-ink);padding-block:clamp(72px,10vw,140px)}
+.seance-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end}
+.seance-head p{max-width:40ch;font-size:clamp(17px,1.4vw,20px)}
+.big45{font-family:var(--display);font-size:clamp(120px,22vw,320px);line-height:.8;letter-spacing:-.05em}
+.big45 small{font-size:.22em;letter-spacing:-.01em;margin-left:.15em}
+.track{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:clamp(40px,6vw,72px)}
+.track button{all:unset;cursor:pointer;display:block;padding:18px 0 0;border-top:8px solid rgba(26,21,0,.22);font:600 clamp(16px,1.5vw,20px)/1.2 var(--text);transition:border-color .3s var(--ease)}
+.track button[aria-selected=true]{border-top-color:var(--l1-ink)}
+.track button:hover{border-top-color:rgba(26,21,0,.55)}
+.track button:focus-visible{outline:3px solid var(--l1-ink);outline-offset:6px}
+.track span{display:block;font-weight:400;font-size:14px;margin-top:4px;opacity:.75}
+.panel{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,80px);margin-top:40px;min-height:200px}
+.panel h3{font-size:clamp(30px,3.6vw,52px)}
+.panel p{font-size:clamp(17px,1.4vw,20px);max-width:44ch}
+.panel[hidden]{display:none}
+.bring{margin-top:clamp(48px,6vw,80px);background:var(--l1-ink);color:#fff;border-radius:20px;padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:1fr 1.4fr;gap:32px}
+.bring h3{font-size:clamp(26px,2.6vw,36px)}
+.bring ul{list-style:none;display:grid;gap:14px}
+.bring label{display:flex;gap:14px;align-items:flex-start;cursor:pointer;font-size:17px}
+.bring input{appearance:none;flex:none;width:24px;height:24px;border-radius:7px;background:#3a3420;margin-top:1px;display:grid;place-items:center;cursor:pointer;transition:background .2s}
+.bring input:checked{background:var(--l1)}
+.bring input:checked::after{content:"";width:6px;height:11px;border:solid var(--l1-ink);border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+.bring input:focus-visible{outline:3px solid var(--l1);outline-offset:3px}
+.bring .count{color:#d9d3b8;font-size:15px;margin-top:12px}
+
+/* pour qui */
+.who{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(32px,6vw,96px)}
+.who-list{list-style:none;display:grid;gap:clamp(28px,3vw,44px)}
+.who-list li{display:grid;grid-template-columns:minmax(0,11em) 1fr;gap:24px;align-items:baseline}
+.who-list h3{font-size:clamp(24px,2.4vw,34px)}
+.who-list p{color:var(--body)}
+
+/* motifs */
+.motifs{background:var(--soft);padding-block:clamp(72px,9vw,128px)}
+.motifs-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);margin-top:48px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;list-style:none;align-content:flex-start}
+.tags li{background:#fff;border-radius:999px;padding:10px 18px;font-size:16px}
+.note{background:var(--ink);color:#fff;border-radius:20px;padding:clamp(24px,3vw,40px);align-self:start}
+.note h3{font-size:clamp(24px,2.4vw,32px)}
+.note p{margin-top:14px;color:#e4e4e4}
+.note strong{color:#fff}
+
+/* praticien */
+.prat{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(32px,6vw,96px);align-items:center}
+.prat-figs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.prat-figs img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05);background:var(--soft)}
+.prat-figs figcaption{grid-column:1/-1;font-size:14px;color:var(--muted)}
+.cv{list-style:none;margin-top:40px;display:grid;gap:0}
+.cv li{display:grid;grid-template-columns:minmax(0,12ch) 1fr;gap:24px;padding-block:16px}
+.cv b{font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:-.01em}
+
+/* tarifs */
+.tarifs{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,96px);align-items:end}
+.tarifs .facts{display:grid;gap:12px}
+.fact{background:var(--soft);border-radius:16px;padding:22px 24px}
+.fact b{display:block;font-size:18px;margin-bottom:4px}
+.fact p{color:var(--body);font-size:16px}
+
+/* accès */
+.acces{display:grid;grid-template-columns:1.1fr 1fr;gap:0;margin-top:var(--gap)}
+.acces-img{position:relative;min-height:520px;background:var(--soft)}
+.acces-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.acces-img figcaption{position:absolute;left:16px;bottom:14px;background:#fff;font-size:13px;padding:6px 10px;border-radius:8px}
+.acces-body{background:var(--ink);color:#fff;padding:clamp(32px,5vw,72px)}
+.acces-body h2{font-size:clamp(40px,5vw,76px)}
+.addr{font-size:clamp(20px,1.8vw,26px);margin-top:24px;line-height:1.35}
+.lines{list-style:none;display:grid;gap:14px;margin-top:32px}
+.lines li{display:flex;gap:14px;align-items:center;font-size:17px}
+.pill{flex:none;min-width:40px;height:40px;border-radius:999px;display:grid;place-items:center;font:600 15px/1 var(--text);padding:0 10px}
+.p-m{background:var(--l1);color:var(--l1-ink)}
+.p-r{background:#e2231a;color:#fff}
+.p-b{background:#fff;color:var(--ink)}
+.hours{margin-top:36px;display:grid;grid-template-columns:auto 1fr;gap:8px 28px;font-size:17px;max-width:360px}
+.hours dt{color:#bdbdbd}
+.hours .today{color:var(--l1)}
+.acces-body .actions{margin-top:36px}
+.acces-body .btn-ghost{background:#262626;color:#fff}
+.acces-body .btn-ghost:hover{background:#333}
+
+/* footer */
+footer{padding-block:clamp(72px,9vw,120px) 32px}
+.foot-name{font-family:var(--display);font-size:clamp(46px,10.4vw,168px);letter-spacing:-.04em;line-height:.9}
+.foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;font-size:16px;color:var(--body)}
+.foot-grid b{display:block;color:var(--ink);margin-bottom:6px}
+.legal{margin-top:56px;font-size:13px;color:var(--muted);max-width:90ch}
+
+/* reveal */
+.rv{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* mobile */
+.mbar{display:none}
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero,.seance-head,.panel,.bring,.who,.motifs-grid,.prat,.tarifs,.acces,.foot-grid{grid-template-columns:1fr}
+  .hero{gap:40px}
+  .card{left:12px;bottom:12px;width:calc(100% - 24px)}
+  .who-list li,.cv li{grid-template-columns:1fr;gap:6px}
+  .acces-img{min-height:300px}
+  .prat-figs img{aspect-ratio:1}
+  .big45{margin-top:8px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;inset:auto 0 0 0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;box-shadow:0 -8px 24px -12px rgba(0,0,0,.25);z-index:10}
+  .mbar .btn{min-height:50px;padding:0 12px}
+  body{padding-bottom:76px}
+}
+@media (max-width:420px){.brand span{display:none}}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="wrap">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="brand" href="#top">J-B Padoin<span>Ostéopathe D.O.</span></a>
+    <ul>
+      <li><a href="#seance">La séance</a></li>
+      <li><a href="#pour-qui">Pour qui</a></li>
+      <li><a href="#praticien">Le praticien</a></li>
+      <li><a href="#acces">Accès et horaires</a></li>
+    </ul>
+    <a class="btn btn-ink" href="https://www.doctolib.fr/osteopathe/vincennes/jean-baptiste-padoin" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </nav>
+</header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div class="rv">
+      <h1>Ostéopathe à Vincennes</h1>
+      <p class="lead">Jean-Baptiste Padoin, ostéopathe D.O. Cabinet au 34 rue Victor Basch, à quelques minutes du métro Bérault, du lundi au samedi.</p>
+      <div class="actions">
+        <a class="btn btn-ink" href="https://www.doctolib.fr/osteopathe/vincennes/jean-baptiste-padoin" target="_blank" rel="noopener">Réserver sur Doctolib</a>
+        <a class="btn btn-ghost" href="tel:+33784556478"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>07 84 55 64 78</a>
+      </div>
+    </div>
+    <figure class="hero-fig rv">
+      <img src="https://static.wixstatic.com/media/d68a17_3827e433939f463e8ff99620b1808fda~mv2.jpg/v1/fill/w_900,h_1125,al_c,q_85/padoin.jpg" width="900" height="1125" alt="Portrait de Jean-Baptiste Padoin, ostéopathe, en blouse blanche">
+      <div class="card" aria-label="Consultation ostéopathique">
+        <div class="t">Consultation ostéopathique</div>
+        <dl>
+          <dt>Durée</dt><dd>45 minutes en moyenne</dd>
+          <dt>Lieu</dt><dd>34 rue Victor Basch, Vincennes</dd>
+        </dl>
+        <div class="status" id="status"><span class="dot"></span><span id="status-t">Lun–ven 9h–21h · sam 9h–18h</span></div>
+      </div>
+    </figure>
+  </div>
+
+  <p class="domain rv"><b>jbpadoin-osteopathe.fr</b> Son propre nom de domaine, sans publicité, lisible sur téléphone, avec la prise de rendez-vous en un geste.</p>
+</div>
+
+<section class="seance" id="seance" aria-labelledby="seance-h">
+  <div class="wrap">
+    <div class="seance-head">
+      <div class="rv">
+        <h2 id="seance-h">Une séance, trois temps</h2>
+        <p style="margin-top:24px">Touchez une étape pour voir ce qui se passe, puis préparez ce qu'il faut apporter.</p>
+      </div>
+      <div class="big45 rv" aria-label="45 minutes en moyenne">45<small>min</small></div>
+    </div>
+
+    <div class="track" role="tablist" aria-label="Déroulé de la consultation">
+      <button role="tab" id="t1" aria-controls="p1" aria-selected="true">L'anamnèse<span>On fait le point</span></button>
+      <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Observation et tests<span>On évalue</span></button>
+      <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Le traitement<span>On traite</span></button>
+    </div>
+    <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+      <h3>On commence par parler</h3>
+      <p>La séance débute par une discussion. Elle permet de cerner le motif de votre consultation et de recueillir les informations utiles : antécédents, examens déjà faits, contexte de la douleur.</p>
+    </div>
+    <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+      <h3>Votre posture, vos mouvements</h3>
+      <p>L'ostéopathe observe votre posture et vous fait réaliser quelques mouvements pour évaluer la mobilité de vos articulations, debout, assis puis allongé sur la table.</p>
+    </div>
+    <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+      <h3>Des techniques manuelles</h3>
+      <p>Le traitement porte sur les zones identifiées pendant l'examen, avec des manipulations différentes d'un massage classique. Aucun médicament n'est prescrit.</p>
+    </div>
+
+    <div class="bring rv">
+      <div>
+        <h3>À préparer avant de venir</h3>
+        <p class="count" id="count" aria-live="polite">0 sur 3 prêts</p>
+      </div>
+      <ul>
+        <li><label><input type="checkbox" data-k="tenue"> Une tenue adaptée : la séance se fait souvent en sous-vêtements</label></li>
+        <li><label><input type="checkbox" data-k="exam"> Vos examens si vous en avez : radios, IRM, scanners</label></li>
+        <li><label><input type="checkbox" data-k="mut"> Votre carte de mutuelle, pour demander un remboursement</label></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="pour-qui" aria-labelledby="qui-h">
+  <div class="who">
+    <div class="rv">
+      <h2 id="qui-h">Pour qui ?</h2>
+      <p class="lead" style="margin-top:24px">L'ostéopathie s'adresse à tout le monde, petits et grands. Au cabinet, quatre publics reviennent souvent.</p>
+    </div>
+    <ul class="who-list">
+      <li class="rv"><h3>Les nourrissons</h3><p>Une prise en charge après la naissance, en complément du suivi par le médecin ou le pédiatre.</p></li>
+      <li class="rv"><h3>Les sportifs</h3><p>Un suivi de l'équilibre du corps, en lien avec les autres professionnels de santé. Expérience de stages en rugby, football et capoeira.</p></li>
+      <li class="rv"><h3>Les femmes enceintes</h3><p>Un accompagnement pendant la grossesse, pour s'adapter aux nouvelles contraintes physiques et préparer l'accouchement sereinement.</p></li>
+      <li class="rv"><h3>Les seniors</h3><p>Un travail régulier pour accompagner les douleurs liées au vieillissement.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="motifs" aria-labelledby="motifs-h">
+  <div class="wrap">
+    <h2 id="motifs-h" class="rv">Quand consulter ?</h2>
+    <div class="motifs-grid">
+      <div class="rv">
+        <p class="lead" style="margin-bottom:28px">Les motifs de consultation les plus fréquents :</p>
+        <ul class="tags">
+          <li>Lumbago</li><li>Torticolis</li><li>Douleurs lombaires</li><li>Douleurs cervicales</li><li>Douleurs dorsales</li><li>Névralgie cervico-brachiale</li><li>Sciatique, cruralgie</li><li>Maux de tête</li><li>Cheville, genou, hanche</li><li>Épaule, coude, poignet</li><li>Canal carpien</li><li>Syndrome de l'essuie-glace</li><li>Bilan annuel</li>
+        </ul>
+        <p style="margin-top:28px;color:var(--body)">La liste n'est pas exhaustive : en cas de doute, posez la question au cabinet avant de réserver.</p>
+      </div>
+      <aside class="note rv" aria-label="Information importante">
+        <h3>L'ostéopathie ne se substitue pas à un traitement médical</h3>
+        <p>Elle intervient en complément. En cas de traumatisme récent, de fièvre, de douleur intense ou inhabituelle, <strong>consultez d'abord votre médecin</strong>. En cas d'urgence, appelez le 15.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="praticien" aria-labelledby="prat-h">
+  <div class="prat">
+    <figure class="prat-figs rv">
+      <img src="https://static.wixstatic.com/media/d68a17_dc5122b3256b4422a7a336a0027e49b4.jpg/v1/fill/w_700,h_875,al_c,q_85/cabinet.jpg" width="700" height="875" alt="Le bureau de consultation du cabinet" loading="lazy">
+      <img src="https://static.wixstatic.com/media/d68a17_022bf3cbd4c047d2887350659e17695a~mv2_d_3264_2448_s_4_2.jpg/v1/fill/w_700,h_875,al_c,q_85/attente.jpg" width="700" height="875" alt="La salle d'attente du cabinet" loading="lazy">
+      <figcaption>Le cabinet, 34 rue Victor Basch.</figcaption>
+    </figure>
+    <div>
+      <h2 id="prat-h" class="rv">Le praticien</h2>
+      <p class="lead rv" style="margin-top:24px;max-width:44ch">Jean-Baptiste Padoin est ostéopathe exclusif, diplômé après six ans de formation.</p>
+      <ul class="cv">
+        <li class="rv"><b>Formation</b><p>Six ans à l'École Supérieure d'Ostéopathie de Paris, école agréée par le ministère de la Santé délivrant un diplôme reconnu.</p></li>
+        <li class="rv"><b>Clinique</b><p>Quatre années de pratique clinique au sein de la clinique intégrée à l'école.</p></li>
+        <li class="rv"><b>Stages</b><p>En milieu sportif (rugby, football, capoeira), en maternité (femmes enceintes et nourrissons) et en entreprise (prise en charge des salariés).</p></li>
+        <li class="rv"><b>Posturologie</b><p>Formation auprès de Christophe Buisson.</p></li>
+        <li class="rv"><b>Relation thérapeutique</b><p>Formation avancée dispensée par Emmanuel Mengin.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="tarifs" aria-labelledby="tarifs-h">
+  <div class="tarifs">
+    <div class="rv">
+      <h2 id="tarifs-h">Tarif et remboursement</h2>
+      <p class="lead" style="margin-top:24px">Le tarif de la consultation est affiché au moment de la réservation sur Doctolib.</p>
+    </div>
+    <div class="facts">
+      <div class="fact rv"><b>Assurance maladie</b><p>Les honoraires d'ostéopathie ne sont pas remboursés par l'Assurance maladie. Pas de prise en charge CMU.</p></div>
+      <div class="fact rv"><b>Mutuelles</b><p>Beaucoup de mutuelles remboursent tout ou partie d'une ou plusieurs séances par an, selon votre contrat. Une facture vous est remise.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="acces" id="acces" aria-labelledby="acces-h">
+  <figure class="acces-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Station_B%C3%A9rault_M%C3%A9tro_Paris_Ligne_1_-_Vincennes_%28FR94%29_-_2022-06-28_-_3.jpg/1920px-Station_B%C3%A9rault_M%C3%A9tro_Paris_Ligne_1_-_Vincennes_%28FR94%29_-_2022-06-28_-_3.jpg" alt="Quai de la station Bérault, ligne 1 du métro" loading="lazy">
+    <figcaption>Station Bérault, ligne 1</figcaption>
+  </figure>
+  <div class="acces-body">
+    <h2 id="acces-h" class="rv">Accès et horaires</h2>
+    <p class="addr rv">34 rue Victor Basch<br>94300 Vincennes</p>
+    <ul class="lines rv">
+      <li><span class="pill p-m">M 1</span>Métro ligne 1, station Bérault</li>
+      <li><span class="pill p-r">RER A</span>RER A, station Vincennes</li>
+      <li><span class="pill p-b">56</span>Bus 56, arrêt Lycée Hector Berlioz</li>
+    </ul>
+    <dl class="hours rv" id="hours">
+      <dt data-d="1">Lundi – vendredi</dt><dd data-d="1">9h – 21h</dd>
+      <dt data-d="6">Samedi</dt><dd data-d="6">9h – 18h</dd>
+      <dt data-d="0">Dimanche</dt><dd data-d="0">Fermé</dd>
+    </dl>
+    <div class="actions rv">
+      <a class="btn btn-l1" href="https://www.google.com/maps/dir/?api=1&destination=34+rue+Victor+Basch+94300+Vincennes" target="_blank" rel="noopener">Itinéraire</a>
+      <a class="btn btn-ghost" href="mailto:jbpadoin@gmail.com?subject=Demande%20de%20rendez-vous">Écrire un email</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <p class="foot-name">Jean-Baptiste Padoin</p>
+  <div class="foot-grid">
+    <p><b>Ostéopathe D.O.</b>34 rue Victor Basch<br>94300 Vincennes</p>
+    <p><b>Contact</b><a href="tel:+33784556478">07 84 55 64 78</a><br><a href="mailto:jbpadoin@gmail.com">jbpadoin@gmail.com</a></p>
+    <p><b>Rendez-vous</b><a href="https://www.doctolib.fr/osteopathe/vincennes/jean-baptiste-padoin" target="_blank" rel="noopener">Doctolib</a> ou par téléphone</p>
+  </div>
+  <p class="legal">L'ostéopathie ne se substitue pas à un traitement médical. Photo de la station Bérault : « Station Bérault Métro Paris Ligne 1 - Vincennes (FR94) - 2022-06-28 - 3 » par Chabe01, CC BY-SA 4.0, via Wikimedia Commons. Démo réalisée par Raul Hatos — site non officiel.</p>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-ghost" href="tel:+33784556478">Appeler</a>
+  <a class="btn btn-ink" href="https://www.doctolib.fr/osteopathe/vincennes/jean-baptiste-padoin" target="_blank" rel="noopener">Doctolib</a>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+// tabs
+const tabs=[...document.querySelectorAll('[role=tab]')];
+function sel(t){tabs.forEach(b=>{const on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on});}
+tabs.forEach((b,i)=>{b.addEventListener('click',()=>sel(b));b.addEventListener('keydown',e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){const n=tabs[(i+d+tabs.length)%tabs.length];sel(n);n.focus();}});});
+// checklist
+const boxes=[...document.querySelectorAll('.bring input')],count=document.getElementById('count');
+function upd(){const n=boxes.filter(b=>b.checked).length;count.textContent=n===3?'Tout est prêt. À bientôt au cabinet.':n+' sur 3 prêts';try{localStorage.setItem('jbp-bring',JSON.stringify(boxes.map(b=>b.checked)))}catch(e){}}
+try{const s=JSON.parse(localStorage.getItem('jbp-bring')||'[]');boxes.forEach((b,i)=>b.checked=!!s[i])}catch(e){}
+boxes.forEach(b=>b.addEventListener('change',upd));upd();
+// open now (Europe/Paris)
+(function(){const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+const g=t=>p.find(x=>x.type===t).value,d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),h=+g('hour')+(+g('minute'))/60;
+const close=d===0?0:d===6?18:21,open=d!==0&&h>=9&&h<close;
+const st=document.getElementById('status');document.getElementById('status-t').textContent=open?'Ouvert, jusqu’à '+close+'h':(d===0?'Fermé · ouvre lundi à 9h':h<9?'Fermé · ouvre à 9h':d===6?'Fermé · ouvre lundi à 9h':'Fermé · ouvre demain à 9h');st.classList.toggle('open',open);
+const key=d===0?'0':d===6?'6':'1';document.querySelectorAll('#hours [data-d="'+key+'"]').forEach(e=>e.classList.add('today'));})();
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+</script>
+</body>
+</html>
