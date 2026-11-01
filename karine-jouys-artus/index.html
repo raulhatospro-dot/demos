@@ -5,366 +5,448 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Karine Jouys Artus, psychologue du travail à Vincennes</title>
-<meta name="description" content="Karine Jouys Artus, psychologue du travail et accompagnement professionnel. Cabinet 40 avenue Aubert, Vincennes. Sur rendez-vous au 07 83 32 07 53.">
+<meta name="description" content="Karine Jouys Artus, psychologue du travail au 40 avenue Aubert, Vincennes. Consultation d’une heure à 60 €, accompagnement professionnel sur devis. Sur rendez-vous au 07 83 32 07 53.">
+<meta name="theme-color" content="#ecebe7">
+<meta property="og:title" content="Karine Jouys Artus, psychologue du travail à Vincennes">
+<meta property="og:description" content="Un espace de parole pour comprendre ce qui pèse au travail. Consultation 1 h, 60 €. Mardi, jeudi et samedi, 40 avenue Aubert.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?auto=format&fit=crop&w=1200&h=630&q=70">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2338450f'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' fill='%23ecebe7' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* DESIGN.md « ElevenLabs » (awesome-design) : toile blanc cassé, encre brun-noir chaud, titrage léger (300), bouton pilule encre ; les orbes pastel remplacés par deux aplats francs : bleu ciel et vert du Bois de Vincennes */
+/* Direction taste-skill « split stage », palette « olive on bone » : un seul vert olive pour l’encre, photos calmes en tons sauge */
 :root{
-  --ground:#f5f4f1; --paper:#ffffff; --ink:#292524; --body:#3d3936; --muted:#6b645d;
-  --sky:#cddceb; --sky-ink:#1d2b38; --wood:#24392f; --wood-ink:#eef2ec; --wood-soft:#b9c9bd;
-  --step:#ebe8e3;
-  --display:"Newsreader",Georgia,serif; --text:"Inter",system-ui,sans-serif;
-  --m:clamp(16px,4vw,56px); --gap:clamp(96px,12vw,200px);
+  --bg:#ecebe7; --surface:#e1dfd9; --paper:#f4f4f1; --sage:#d3dac6;
+  --ink:#2b340b; --olive:#38450f; --soft:#4f5a2f;
+  --field:#38450f; --field-ink:#ecebe7; --field-soft:#cfd5bd;
+  --display:"STIX Two Text",Georgia,serif; --text:"Instrument Sans",system-ui,sans-serif;
+  --m:clamp(16px,3.4vw,56px); --gap:clamp(96px,11vw,176px);
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--ground);color:var(--ink);font:400 17px/1.6 var(--text);letter-spacing:.005em}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--text);touch-action:manipulation;overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
-a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
-::selection{background:var(--sky);color:var(--sky-ink)}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+::selection{background:var(--olive);color:var(--field-ink)}
+:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+.field :focus-visible,.foot :focus-visible{outline-color:#fff}
 .wrap{padding-inline:var(--m);max-width:1440px;margin-inline:auto}
-h1,h2,h3{font-family:var(--display);font-weight:300;letter-spacing:-.025em;line-height:1.04;text-wrap:balance}
-h2{font-size:clamp(38px,5.6vw,80px)}
-h3{font-size:clamp(24px,2.2vw,32px);line-height:1.15;letter-spacing:-.015em;font-weight:400}
+h1,h2,h3{font-family:var(--display);font-weight:400;color:var(--olive);text-wrap:balance;letter-spacing:-.022em;line-height:1.06}
+h2{font-size:clamp(34px,4.2vw,60px)}
+h3{font-size:clamp(23px,2vw,28px);line-height:1.18;letter-spacing:-.012em}
 p{text-wrap:pretty}
-.lead{font-size:clamp(18px,1.55vw,22px);line-height:1.5;color:var(--body);max-width:40ch}
+.num{font-variant-numeric:tabular-nums}
+.skip{position:absolute;left:12px;top:-60px;background:var(--olive);color:var(--field-ink);padding:12px 18px;z-index:20;transition:top .2s}
+.skip:focus{top:12px}
 
-.demo{background:var(--step);color:var(--muted);font-size:13px;text-align:center;padding:7px var(--m)}
+.demo{background:var(--olive);color:var(--field-ink);font-size:13px;text-align:center;padding:7px var(--m)}
 
 /* nav */
-.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:20px}
-.brand{font-family:var(--display);font-size:22px;text-decoration:none;letter-spacing:-.01em;white-space:nowrap;font-weight:400}
-.nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500}
-.nav ul a{text-decoration:none}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:18px}
+.brand{font:500 21px/1.1 var(--display);color:var(--olive);text-decoration:none;white-space:nowrap;letter-spacing:-.01em}
+.brand small{display:block;font:400 13px/1.3 var(--text);color:var(--soft);letter-spacing:0}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:15px;font-weight:500}
+.nav ul a{text-decoration:none;display:inline-flex;min-height:44px;align-items:center}
 .nav ul a:hover{text-decoration:underline}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:500 16px/1 var(--text);text-decoration:none;border:0;cursor:pointer;transition:transform .3s var(--ease),background-color .2s}
-.btn:active{transform:scale(.97)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;font:500 16px/1 var(--text);text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s,color .2s;white-space:nowrap}
+.btn:active{transform:scale(.96)}
 .btn svg{width:18px;height:18px;flex:none}
-.btn-ink{background:var(--ink);color:#fff}
-.btn-ink:hover{background:#0c0a09}
-.btn-soft{background:var(--step);color:var(--ink)}
-.btn-soft:hover{background:#e0dcd5}
-.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+.btn-ink{background:var(--olive);color:var(--field-ink)}
+.btn-ink:hover{background:#262f08}
+.btn-soft{background:var(--surface);color:var(--olive)}
+.btn-soft:hover{background:var(--sage)}
+.btn-light{background:var(--field-ink);color:var(--olive)}
+.btn-light:hover{background:#fff}
+.btn-line{background:#4a5a1c;color:var(--field-ink)}
+.btn-line:hover{background:#56671f}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
 
 /* hero */
-.hero{display:grid;grid-template-columns:1.45fr 1fr;gap:clamp(32px,4vw,64px);align-items:center;padding-top:clamp(40px,7vw,104px)}
-.hero h1{font-size:clamp(46px,5.5vw,96px);letter-spacing:-.035em;line-height:1}
-.hero .lead{margin-top:36px}
-.hero .who{margin-top:28px;font-size:16px;color:var(--muted)}
-.hero .who b{color:var(--ink);font-weight:500}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.hero figure{position:relative}
-.hero figure img{width:100%;height:min(66vh,640px);object-fit:cover;object-position:30% 50%;border-radius:4px}
-.hero figcaption{margin-top:12px;font-size:14px;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(28px,3.6vw,64px);align-items:center;padding-top:clamp(12px,2.4vw,36px)}
+.hero h1{font-size:clamp(40px,4.8vw,80px);line-height:1.02;letter-spacing:-.03em;max-width:17ch}
+.hero .lead{margin-top:26px;font-size:clamp(18px,1.4vw,21px);line-height:1.5;max-width:42ch}
+.offer-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:30px;list-style:none}
+.offer-row li{background:var(--surface);padding:16px 16px 18px}
+.offer-row b{display:block;font:400 clamp(28px,2.4vw,36px)/1 var(--display);color:var(--olive);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.offer-row span{display:block;margin-top:8px;font-size:14px;line-height:1.4;color:var(--soft)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.status{display:flex;align-items:center;gap:10px;margin-top:20px;font-size:15px;color:var(--soft)}
+.status b{color:var(--ink);font-weight:500}
+.dot{width:9px;height:9px;border-radius:50%;background:#5f8a3a;flex:none}
+.dot.off{background:#a7a28f}
+
+.stage{position:relative;height:min(80svh,700px);min-height:540px}
+.stage figure{position:relative;overflow:hidden;margin:0}
+.stage img{width:100%;height:100%;object-fit:cover}
+.stage .s1{position:absolute;inset:0}
+.stage .s1 img{object-position:40% 50%}
+.cluster{position:absolute;left:18px;bottom:18px;width:min(300px,48%);display:flex;flex-direction:column;gap:10px}
+.stage .s2{width:100%;aspect-ratio:16/11;background:var(--paper);padding:8px}
+.stage .s2 img{object-position:50% 40%}
+.stage .me{background:var(--paper);display:grid;grid-template-columns:84px minmax(0,1fr);gap:14px;align-items:center;padding:12px}
+.stage .me img{width:84px;height:108px;object-fit:cover;object-position:50% 20%}
+.stage .me p{font-size:14px;line-height:1.45;color:var(--soft)}
+.stage .me p b{display:block;font:400 19px/1.2 var(--display);color:var(--olive);margin-bottom:4px}
 
 /* orientation */
 .orient{margin-top:var(--gap)}
-.orient-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px);align-items:start}
-.orient h2{max-width:11ch}
-.orient .intro{margin-top:24px;max-width:36ch;color:var(--body)}
-.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none}
-.chip{font:400 17px/1.35 var(--text);text-align:left;background:var(--paper);color:var(--ink);border:0;border-radius:999px;padding:13px 20px;cursor:pointer;transition:background-color .2s,color .2s,transform .3s var(--ease)}
-.chip:hover{background:var(--sky)}
-.chip:active{transform:scale(.98)}
-.chip[aria-pressed="true"]{background:var(--ink);color:#fff}
-.answer{margin-top:28px;background:var(--sky);color:var(--sky-ink);border-radius:4px;padding:clamp(24px,3.4vw,44px);min-height:250px}
-.answer h3{max-width:22ch}
-.answer p{margin-top:14px;max-width:52ch}
-.answer .meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:20px;font-size:15px}
-.answer .meta b{font-weight:600}
-.answer .actions{margin-top:24px}
-.answer .note{font-size:14px;margin-top:18px;opacity:.85}
-.answer.swap{animation:swap .5s var(--ease)}
-@keyframes swap{from{opacity:.2;transform:translateY(10px)}to{opacity:1;transform:none}}
+.orient-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:end}
+.orient-head p{max-width:46ch}
+.orient-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,72px);margin-top:clamp(36px,4vw,56px);align-items:stretch}
+.situ{list-style:none;display:grid;gap:6px;align-content:start}
+.situ button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;background:var(--surface);color:var(--ink);border:0;padding:15px 20px;min-height:56px;font:400 17px/1.35 var(--text);cursor:pointer;transition:background-color .2s,color .2s,transform .25s var(--ease)}
+.situ button::after{content:"";width:9px;height:9px;flex:none;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:rotate(45deg);opacity:.55;transition:transform .25s var(--ease),opacity .2s}
+.situ button:hover{background:var(--sage)}
+.situ button:hover::after{transform:translateX(3px) rotate(45deg)}
+.situ button:active{transform:scale(.98)}
+.situ button[aria-pressed="true"]{background:var(--olive);color:var(--field-ink)}
+.situ button[aria-pressed="true"]::after{opacity:1}
+.answer{background:var(--field);color:var(--field-ink);padding:clamp(26px,3.2vw,48px);display:flex;flex-direction:column}
+.answer h3{color:#fff;max-width:22ch;font-size:clamp(26px,2.4vw,34px)}
+.answer p{margin-top:14px;max-width:48ch;color:var(--field-ink)}
+.answer dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:24px}
+.answer dl div{background:#45541a;padding:14px 16px}
+.answer dt{font-size:14px;color:var(--field-soft)}
+.answer dd{font:400 24px/1.2 var(--display);color:#fff;margin-top:4px;font-variant-numeric:tabular-nums}
+.answer .actions{margin-top:auto;padding-top:26px}
+.answer .note{font-size:14px;margin-top:16px;color:var(--field-soft)}
+.answer.swap > *{animation:swap .5s var(--ease) both}
+@keyframes swap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
 /* signaux */
-.signs{margin-top:var(--gap);background:var(--wood);color:var(--wood-ink);padding-block:clamp(72px,9vw,140px)}
-.signs-head{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,5vw,80px);align-items:end}
-.signs-head p{color:var(--wood-soft);max-width:44ch}
-.signs-list{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,48px);margin-top:clamp(48px,6vw,88px)}
-.signs-list h3{font-size:clamp(28px,2.6vw,38px);color:#fff}
-.signs-list p{margin-top:14px;color:var(--wood-soft);font-size:16px}
-.signs-foot{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,64px);align-items:center}
-.signs-foot blockquote{font:300 clamp(24px,2.4vw,34px)/1.25 var(--display);letter-spacing:-.015em;color:#fff;max-width:26ch}
-.signs-foot img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px}
+.signs{margin-top:var(--gap);background:var(--sage);padding-block:clamp(72px,8vw,128px)}
+.signs-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,88px);align-items:start}
+.signs-grid figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.signs-grid figcaption{margin-top:10px;font-size:14px;color:var(--soft)}
+.signs h2{max-width:16ch}
+.signs .intro{margin-top:20px;max-width:52ch}
+.signs-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px clamp(24px,3vw,48px);margin-top:clamp(36px,4vw,56px)}
+.signs-list p{margin-top:8px;font-size:16px}
+.signs-quote{margin-top:clamp(36px,4vw,56px);background:var(--paper);padding:clamp(22px,2.6vw,34px);font:400 clamp(22px,2vw,28px)/1.3 var(--display);color:var(--olive);letter-spacing:-.01em}
 
-/* accompagnements */
+/* accompagnements : la feuille de tarifs */
 .offer{margin-top:var(--gap)}
-.offer > h2{max-width:14ch}
-.track{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,88px);align-items:center;margin-top:clamp(48px,6vw,96px)}
-.track + .track{margin-top:clamp(72px,9vw,140px)}
-.track img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:4px}
-.track.rev figure{order:2}
-.track .price{display:flex;flex-wrap:wrap;gap:6px 32px;margin-top:22px;font-size:16px}
-.track .price span b{font-family:var(--display);font-weight:400;font-size:clamp(30px,3vw,42px);letter-spacing:-.02em;display:block;line-height:1.1}
-.track p{margin-top:16px;max-width:52ch;color:var(--body)}
-.track ul{margin-top:18px;padding-left:1.1em;color:var(--body);max-width:52ch}
-.track li{margin-top:6px}
-.track li::marker{color:var(--muted)}
+.offer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,88px);align-items:start}
+.offer h2{max-width:14ch}
+.offer .intro{margin-top:20px;max-width:46ch}
+.offer-grid > div > figure{margin-top:clamp(32px,4vw,48px)}
+.offer-grid figure img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.offer-grid figcaption{margin-top:10px;font-size:14px;color:var(--soft)}
+.sheet{background:var(--paper);padding:clamp(26px,3.4vw,52px)}
+.sheet + .sheet{margin-top:10px}
+.sheet h3{font-size:clamp(25px,2.2vw,32px)}
+.sheet .sub{margin-top:8px;color:var(--soft);font-size:16px}
+.rows{list-style:none;margin-top:22px}
+.rows li{display:flex;align-items:baseline;gap:10px;padding-block:9px}
+.rows li .lab{flex:none}
+.rows li .lead-dots{flex:1;border-bottom:4px dotted #b6b8a3;transform:translateY(-4px);min-width:24px}
+.rows li .val{flex:none;font:400 21px/1.2 var(--display);color:var(--olive);font-variant-numeric:tabular-nums;text-align:right}
+.sheet ul.plain{margin-top:18px;padding-left:1.1em;max-width:54ch}
+.sheet ul.plain li{margin-top:6px}
+.sheet ul.plain li::marker{color:var(--soft)}
+.sheet p.body{margin-top:16px;max-width:56ch}
 
 /* parcours */
-.about{margin-top:var(--gap);display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px)}
-.about blockquote{font:300 clamp(30px,3.4vw,46px)/1.15 var(--display);letter-spacing:-.025em;max-width:16ch}
-.about blockquote cite{display:block;margin-top:20px;font:400 15px/1.5 var(--text);font-style:normal;color:var(--muted);letter-spacing:0}
-.about .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px clamp(24px,3vw,48px);margin-top:36px}
-.about .cols h3{font-size:24px}
-.about .cols p{margin-top:10px;font-size:16px;color:var(--body)}
-.about .lead{max-width:48ch}
+.about{margin-top:var(--gap)}
+.about-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,5vw,88px);align-items:start}
+.about .portrait img{width:100%;max-width:300px;aspect-ratio:294/408;object-fit:cover}
+.about .portrait figcaption{margin-top:10px;font-size:14px;color:var(--soft)}
+.about blockquote{font:400 clamp(26px,2.6vw,36px)/1.22 var(--display);color:var(--olive);letter-spacing:-.015em;max-width:24ch;margin-top:22px}
+.about .letter{margin-top:24px;max-width:60ch;font-size:clamp(17px,1.25vw,19px)}
+.about .letter + .letter{margin-top:14px}
+.creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:clamp(32px,3.6vw,48px)}
+.creds div{background:var(--sage);padding:20px}
+.creds h3{font-size:22px}
+.creds p{margin-top:8px;font-size:15px}
 
 /* pratique */
-.practice{margin-top:var(--gap);background:var(--paper);padding-block:clamp(72px,9vw,140px)}
-.practice-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px)}
-.status{margin-top:20px;font-size:17px;display:flex;align-items:center;gap:10px}
-.dot{width:10px;height:10px;border-radius:50%;background:#7a9a86;flex:none}
-.dot.off{background:#c2b8ac}
-.week{list-style:none;margin-top:32px;display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
-.week li{background:var(--ground);border-radius:4px;padding:14px 6px 16px;text-align:center;font-size:14px;color:var(--muted);min-height:118px}
-.week li b{display:block;font-weight:600;color:var(--ink);font-size:15px;margin-bottom:8px}
-.week li.on{background:var(--sky);color:var(--sky-ink)}
-.week li.today{outline:2px solid var(--ink);outline-offset:-2px}
-.facts{list-style:none;margin-top:8px}
-.facts li{padding:18px 0;display:grid;grid-template-columns:150px 1fr;gap:16px;font-size:16px;color:var(--body)}
-.facts li + li{margin-top:4px}
-.facts li b{color:var(--ink);font-weight:500}
+.practice{margin-top:var(--gap)}
+.practice-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,88px);align-items:start}
+.week{list-style:none;margin-top:28px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.week li{background:var(--surface);padding:14px 4px 16px;text-align:center;font-size:14px;color:var(--soft);min-height:122px;font-variant-numeric:tabular-nums}
+.week li b{display:block;font-weight:600;color:var(--ink);font-size:15px;margin-bottom:10px}
+.week li.on{background:var(--sage);color:var(--ink)}
+.week li.today{background:var(--olive);color:var(--field-ink)}
+.week li.today b{color:#fff}
+.practice .status{margin-top:22px;font-size:16px}
+.facts{list-style:none;display:grid;gap:8px}
+.facts li{background:var(--paper);padding:18px 22px;display:grid;grid-template-columns:150px 1fr;gap:16px;font-size:16px}
+.facts li b{font-weight:600;color:var(--olive)}
 
 /* contact */
-.contact{margin-top:var(--gap);display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,6vw,96px);align-items:start}
-.contact h2{max-width:12ch}
-.contact .lines{margin-top:32px;font-size:clamp(20px,1.8vw,24px);line-height:1.5}
-.contact .lines a{text-decoration:none}
-.contact .lines a:hover{text-decoration:underline}
-.contact .actions{margin-top:32px}
-.contact figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
-.contact figcaption{margin-top:12px;font-size:14px;color:var(--muted)}
-.urgent{margin-top:40px;font-size:15px;color:var(--muted);max-width:52ch}
-.urgent a{color:var(--ink);font-weight:500}
+.contact{margin-top:var(--gap);background:var(--field);color:var(--field-ink);padding-block:clamp(72px,8vw,128px)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,88px);align-items:center}
+.contact h2{color:#fff;max-width:14ch}
+.lines{list-style:none;margin-top:30px}
+.lines li{font:400 clamp(24px,2.4vw,34px)/1.25 var(--display);letter-spacing:-.015em;padding-block:6px}
+.lines a{text-decoration:none;color:#fff}
+.lines a:hover{text-decoration:underline}
+.lines small{display:block;font:400 14px/1.4 var(--text);color:var(--field-soft);letter-spacing:0}
+.contact .actions{margin-top:30px}
+.contact figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.contact figcaption{margin-top:10px;font-size:14px;color:var(--field-soft)}
+.urgent{margin-top:30px;font-size:15px;color:var(--field-soft);max-width:54ch}
+.urgent a{color:#fff;font-weight:600}
 
-footer{margin-top:var(--gap);padding-bottom:110px}
-.bigname{font:300 clamp(46px,10.4vw,168px)/.95 var(--display);letter-spacing:-.045em;white-space:nowrap}
-.legal{margin-top:28px;font-size:13px;color:var(--muted);max-width:110ch}
+.foot{background:var(--field);color:var(--field-soft);padding-bottom:120px}
+.foot .name{font:400 clamp(40px,8.6vw,138px)/.95 var(--display);color:var(--field-ink);letter-spacing:-.04em;white-space:nowrap;padding-top:clamp(24px,3vw,48px)}
+.legal{margin-top:24px;font-size:13px;max-width:110ch}
+.legal a{color:var(--field-ink)}
 
-/* mobile bar */
 .mbar{display:none}
 
+@media (max-width:1180px){
+  .offer-row li{padding:14px 12px 16px}
+  .offer-row b{font-size:28px}
+  .stage{min-height:480px}
+  .creds{grid-template-columns:1fr 1fr}
+  .creds div:last-child{grid-column:1/-1}
+}
 @media (max-width:900px){
   .nav ul{display:none}
-  .hero,.orient-grid,.signs-head,.track,.about,.practice-grid,.contact,.signs-foot{grid-template-columns:1fr}
-  .hero figure img{height:auto;aspect-ratio:4/3}
-  .track.rev figure{order:0}
-  .signs-list{grid-template-columns:1fr 1fr}
-  .about .cols{grid-template-columns:1fr}
-  .contact figure{order:-1}
+  .hero,.orient-head,.orient-grid,.signs-grid,.offer-grid,.about-grid,.practice-grid,.contact-grid{grid-template-columns:minmax(0,1fr)}
+  .hero{gap:28px}
+  .stage{order:-1;height:clamp(200px,36svh,380px);min-height:0}
+  .cluster{left:10px;bottom:10px;width:40%}
+  .stage .s2{padding:5px}
+  .stage .me{display:none}
+  .signs-grid figure{order:2}
+  .signs-grid figure img{aspect-ratio:16/10}
+  .about .portrait img{max-width:180px}
   .contact figure img{aspect-ratio:16/10}
-  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--ground);box-shadow:0 -6px 20px rgba(41,37,36,.08);z-index:10}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--bg);z-index:10}
   .mbar .btn{min-height:48px}
+  .mbar{transition:transform .35s var(--ease)}
+  .mbar.away{transform:translateY(110%)}
 }
 @media (max-width:560px){
   body{font-size:16px}
+  .hero h1{font-size:clamp(34px,9.4vw,44px)}
+  .hero .lead{margin-top:18px}
+  .offer-row{grid-template-columns:1fr;gap:6px;margin-top:22px}
+  .offer-row li{padding:12px 14px;display:flex;align-items:baseline;gap:14px}
+  .offer-row b{font-size:24px;flex:none;width:72px}
+  .offer-row span{margin-top:0;font-size:14px}
   .signs-list{grid-template-columns:1fr}
-  .week{grid-template-columns:repeat(7,1fr);gap:4px}
-  .week li{font-size:11px;padding:10px 2px;min-height:96px}
+  .creds{grid-template-columns:1fr}
+  .week{gap:4px}
+  .week li{font-size:12px;padding:10px 1px;min-height:100px}
   .week li b{font-size:13px}
   .facts li{grid-template-columns:1fr;gap:4px}
   .actions .btn{flex:1 1 100%}
   .nav .btn{display:none}
+  .rows li .val{font-size:18px}
+  .answer dd{font-size:19px}
+  .foot .name{white-space:normal}
 }
 
 /* motion */
-.rise{opacity:1;transform:none}
-.js .rise{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rise{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .js .rise.in{opacity:1;transform:none}
-.hero figure img{animation:breathe 22s var(--ease) both}
-@keyframes breathe{from{transform:scale(1.06)}to{transform:scale(1)}}
+.stage .s1 img{animation:settle 2.4s var(--ease) both}
+@keyframes settle{from{transform:scale(1.07)}to{transform:scale(1)}}
+figure img{transition:transform .9s var(--ease)}
+figure:hover img{transform:scale(1.02)}
 @media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
   .js .rise{opacity:1;transform:none;transition:none}
-  .hero figure img,.answer.swap{animation:none}
+  .stage .s1 img,.answer.swap > *{animation:none}
+  figure img,figure:hover img{transition:none;transform:none}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 <div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
 
 <header class="wrap">
   <nav class="nav" aria-label="Navigation principale">
-    <a class="brand" href="#">Karine Jouys Artus</a>
+    <a class="brand" href="#" translate="no">Karine Jouys Artus<small>Psychologue du travail · Vincennes</small></a>
     <ul>
       <li><a href="#orienter">Ce qui vous amène</a></li>
       <li><a href="#accompagnements">Accompagnements</a></li>
       <li><a href="#parcours">Parcours</a></li>
-      <li><a href="#pratique">En pratique</a></li>
+      <li><a href="#pratique">Horaires</a></li>
     </ul>
-    <a class="btn btn-ink" href="tel:+33783320753">07 83 32 07 53</a>
+    <a class="btn btn-ink num" href="tel:+33783320753">07&nbsp;83&nbsp;32&nbsp;07&nbsp;53</a>
   </nav>
 </header>
 
-<main>
-<section class="wrap hero">
+<main id="contenu">
+<section class="wrap hero" aria-labelledby="t-hero">
   <div>
-    <h1 class="rise">Et vous, au travail, comment ça va&nbsp;?</h1>
-    <p class="lead rise">Psychologue du travail à Vincennes, je vous propose un espace de parole pour identifier les raisons de votre mal-être au travail et prendre du recul.</p>
-    <p class="who rise"><b>Karine Jouys Artus</b> · psychologue du travail, accompagnement professionnel · Vincennes</p>
+    <h1 id="t-hero" class="rise">Et vous, au travail, comment ça va&nbsp;?</h1>
+    <p class="lead rise"><span translate="no">Karine Jouys Artus</span>, psychologue du travail au 40 avenue Aubert à Vincennes. Un espace de parole pour identifier ce qui pèse au travail et prendre du recul.</p>
+    <ul class="offer-row rise">
+      <li><b>60&nbsp;€</b><span>la consultation d’une heure</span></li>
+      <li><b>1&nbsp;h&nbsp;30</b><span>accompagnement, 1<sup>er</sup> entretien gratuit</span></li>
+      <li><b>8&nbsp;h</b><span>dès 8&nbsp;h mardi, jeudi et samedi</span></li>
+    </ul>
     <div class="actions rise">
-      <a class="btn btn-ink" href="tel:+33783320753"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Prendre rendez-vous</a>
+      <a class="btn btn-ink" href="tel:+33783320753"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Prendre rendez-vous</a>
       <a class="btn btn-soft" href="#orienter">Ce qui vous amène</a>
     </div>
+    <p class="status rise" id="status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span>Sur rendez-vous&nbsp;: <b>mardi, jeudi 8&nbsp;h–20&nbsp;h, samedi 8&nbsp;h–13&nbsp;h&nbsp;30</b></span></p>
   </div>
-  <figure class="rise">
-    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&w=1600&q=75" alt="Un open space vide, fauteuils et lampe, lumière du jour" width="1200" height="1500">
-    <figcaption>Le travail prend une place immense. Il mérite qu’on en parle.</figcaption>
-  </figure>
+  <div class="stage">
+    <figure class="s1"><img src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?auto=format&fit=crop&w=1400&h=1400&q=72" alt="Une pièce aux murs vert sauge, bureau, fauteuils et plante à la lumière du jour" width="1400" height="1400"></figure>
+    <div class="cluster"><figure class="s2"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&h=700&q=72" alt="Une main écrit dans un carnet à côté d’une tasse" width="900" height="700"></figure>
+    <figure class="me"><img src="https://karine-psy-travail.weebly.com/uploads/7/2/4/7/72474013/published/img-0986-3.jpg" alt="Portrait de Karine Jouys Artus" width="294" height="408"><figcaption><p><b translate="no">Karine Jouys Artus</b>Psychologue du travail, diplômée du Cnam</p></figcaption></figure></div>
+  </div>
 </section>
 
 <section class="wrap orient" id="orienter" aria-labelledby="t-orient">
+  <div class="orient-head">
+    <h2 id="t-orient" class="rise">Ce qui vous amène</h2>
+    <p class="rise">Choisissez la phrase la plus proche de ce que vous vivez. Vous voyez quel accompagnement s’y prête, combien de temps il dure, et un message prêt à envoyer.</p>
+  </div>
   <div class="orient-grid">
-    <div>
-      <h2 id="t-orient" class="rise">Ce qui vous amène</h2>
-      <p class="intro rise">Choisissez la phrase la plus proche de votre situation. Vous verrez quel accompagnement s’y prête et comment se passe un premier rendez-vous.</p>
-    </div>
-    <div>
-      <ul class="chips rise" role="list">
-        <li><button class="chip" type="button" data-k="deborde" aria-pressed="false">Je suis débordé·e, j’ai peur de craquer</button></li>
-        <li><button class="chip" type="button" data-k="reprise" aria-pressed="false">Je dois reprendre après un arrêt</button></li>
-        <li><button class="chip" type="button" data-k="conflit" aria-pressed="false">Un conflit, une relation qui me pèse</button></li>
-        <li><button class="chip" type="button" data-k="confiance" aria-pressed="false">Je ne crois plus en moi</button></li>
-        <li><button class="chip" type="button" data-k="equilibre" aria-pressed="false">Le travail déborde sur ma vie</button></li>
-        <li><button class="chip" type="button" data-k="avenir" aria-pressed="false">Je m’interroge sur mon avenir pro</button></li>
-        <li><button class="chip" type="button" data-k="manager" aria-pressed="false">Ma posture de manager</button></li>
-      </ul>
-      <div class="answer" id="answer" aria-live="polite">
-        <h3>Une consultation en psychologie du travail est souvent le bon point de départ.</h3>
-        <p>Lors du premier échange, nous abordons vos difficultés au travail, le contexte et vos attentes. Cette séance détermine ensuite le travail à mener.</p>
-        <div class="meta"><span><b>Séance</b> 1 h en face à face</span><span><b>Tarif</b> 60 €</span></div>
-        <div class="actions">
-          <a class="btn btn-ink" href="tel:+33783320753">Appeler</a>
-          <a class="btn btn-soft" id="mail" style="background:#fff" href="mailto:psy.jouysartus@icloud.com?subject=Demande%20de%20premier%20rendez-vous">Écrire un message</a>
-        </div>
-        <p class="note">Une orientation, pas un diagnostic&nbsp;: nous en parlerons ensemble.</p>
-      </div>
+    <ul class="situ rise">
+      <li><button type="button" data-k="deborde" aria-pressed="true" aria-controls="answer">Je suis surchargé·e, j’ai peur de craquer</button></li>
+      <li><button type="button" data-k="reprise" aria-pressed="false" aria-controls="answer">Je dois reprendre après un arrêt</button></li>
+      <li><button type="button" data-k="conflit" aria-pressed="false" aria-controls="answer">Une relation de travail me pèse</button></li>
+      <li><button type="button" data-k="confiance" aria-pressed="false" aria-controls="answer">Je perds confiance en moi</button></li>
+      <li><button type="button" data-k="equilibre" aria-pressed="false" aria-controls="answer">Le travail déborde sur ma vie</button></li>
+      <li><button type="button" data-k="avenir" aria-pressed="false" aria-controls="answer">Je m’inquiète pour mon avenir pro</button></li>
+      <li><button type="button" data-k="manager" aria-pressed="false" aria-controls="answer">Je veux penser ma posture de manager</button></li>
+    </ul>
+    <div class="answer rise" id="answer" aria-live="polite">
+      <h3>Une consultation en psychologie du travail</h3>
+      <p>Surcharge, fatigue, sommeil qui se dérègle&nbsp;: le premier échange sert à poser votre situation, son contexte et vos attentes. Il détermine ensuite le travail à mener.</p>
+      <dl><div><dt>Durée</dt><dd>1&nbsp;h, en face à face</dd></div><div><dt>Tarif</dt><dd>60&nbsp;€ la séance</dd></div></dl>
+      <div class="actions"><a class="btn btn-light" href="tel:+33783320753">Appeler</a><a class="btn btn-line" id="mailbtn" href="mailto:psy.jouysartus@icloud.com?subject=Premier%20rendez-vous">Écrire un message</a></div>
+      <p class="note">Une orientation, pas un diagnostic&nbsp;: vous en parlerez ensemble au premier rendez-vous.</p>
     </div>
   </div>
 </section>
 
 <section class="signs" id="signaux" aria-labelledby="t-signs">
-  <div class="wrap">
-    <div class="signs-head">
+  <div class="wrap signs-grid">
+    <figure class="rise"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1000&h=1250&q=70" alt="Un bureau vide face à une baie vitrée, des plantes au premier plan" loading="lazy" width="1000" height="1250"><figcaption>Un bureau, une baie vitrée, des plantes</figcaption></figure>
+    <div>
       <h2 id="t-signs" class="rise">Quand le travail se fait sentir ailleurs</h2>
-      <p class="rise">Les signes ne sont pas toujours propres au travail, d’où la difficulté à faire le lien avec votre situation professionnelle. Vous avez peut-être déjà parlé d’un symptôme persistant à votre médecin.</p>
-    </div>
-    <div class="signs-list">
-      <div class="rise"><h3>Dans le corps</h3><p>Douleurs abdominales, musculaires ou articulaires, troubles du sommeil ou de l’appétit, palpitations, maux de tête ou de dos, fatigue profonde.</p></div>
-      <div class="rise"><h3>Dans les émotions</h3><p>Irritabilité, angoisse, anxiété, découragement, tristesse, mal-être confus, crises de larmes.</p></div>
-      <div class="rise"><h3>Dans la pensée</h3><p>Difficultés de concentration, trous de mémoire, mal à prendre des décisions.</p></div>
-      <div class="rise"><h3>Dans les actes</h3><p>Absences, repli sur soi, agressivité ou passivité, image de soi abîmée, sentiment d’inutilité ou d’injustice, troubles alimentaires, consommations (alcool, médicaments, cannabis…).</p></div>
-    </div>
-    <div class="signs-foot">
-      <blockquote class="rise">Sortir du silence, mettre des mots sur ce mal-être qui vous empêche d’agir.</blockquote>
-      <img class="rise" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=70" alt="Un sentier en sous-bois, lumière filtrée entre les arbres" loading="lazy" width="1400" height="788">
+      <p class="intro rise">Vous avez peut-être déjà parlé à votre médecin d’un symptôme persistant, qui vous semblait banal. Les signes ne sont pas toujours propres au travail&nbsp;: d’où la difficulté à faire le lien avec votre situation professionnelle.</p>
+      <div class="signs-list">
+        <div class="rise"><h3>Dans le corps</h3><p>Douleurs abdominales, musculaires ou articulaires, troubles du sommeil ou de l’appétit, hypertension, palpitations, maux de tête ou de dos, épuisement.</p></div>
+        <div class="rise"><h3>Dans les émotions</h3><p>Irritabilité, angoisse, anxiété, découragement, tristesse, mal-être confus, crises de larmes.</p></div>
+        <div class="rise"><h3>Dans la pensée</h3><p>Troubles de la concentration et de la mémoire, difficulté à prendre des décisions.</p></div>
+        <div class="rise"><h3>Dans les comportements</h3><p>Absentéisme, agressivité ou passivité, repli sur soi, image de soi abîmée, sentiment d’inutilité ou d’injustice, troubles alimentaires, consommations (alcool, médicaments, cannabis…).</p></div>
+      </div>
+      <p class="signs-quote rise">N’attendez pas&nbsp;: sortir du silence, c’est déjà mettre des mots sur ce qui vous empêche d’agir.</p>
     </div>
   </div>
 </section>
 
 <section class="wrap offer" id="accompagnements" aria-labelledby="t-offer">
-  <h2 id="t-offer" class="rise">Deux façons de travailler ensemble</h2>
-
-  <article class="track">
-    <figure class="rise"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=72" alt="Une pièce claire et calme, un canapé, une plante, une lampe" loading="lazy" width="1200" height="960"></figure>
+  <div class="offer-grid">
     <div>
-      <h3 class="rise">Consultation individuelle en psychologie du travail</h3>
-      <div class="price rise"><span><b>1 h</b>en face à face</span><span><b>60 €</b>la séance</span></div>
-      <p class="rise">Un espace de parole et d’échange, protecteur et bienveillant, qui vous permet de&nbsp;:</p>
-      <ul class="rise">
-        <li>vous exprimer sur votre vécu professionnel et sortir du silence&nbsp;;</li>
-        <li>identifier ce mal-être qui vous empêche d’agir&nbsp;;</li>
-        <li>mobiliser vos ressources pour faire face à vos difficultés&nbsp;;</li>
-        <li>redonner du sens au travail, en lien avec vos aspirations&nbsp;;</li>
-        <li>retrouver un équilibre entre vie professionnelle et vie personnelle.</li>
-      </ul>
-      <p class="rise">Le premier échange recueille le contexte et vos attentes. Si vous souhaitez poursuivre, nous convenons ensemble du rythme des séances.</p>
+      <h2 id="t-offer" class="rise">Deux accompagnements</h2>
+      <p class="intro rise">Une consultation quand le travail fait souffrir. Un accompagnement professionnel quand il s’agit de comprendre ce qui freine, d’aborder un changement ou de penser sa place de manager.</p>
+      <figure class="rise"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&h=800&q=70" alt="Des fauteuils clairs et une lampe dans un espace lumineux" loading="lazy" width="1200" height="800"><figcaption>Fauteuils, lampe, lumière du jour</figcaption></figure>
     </div>
-  </article>
-
-  <article class="track rev">
-    <figure class="rise"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1200&q=72" alt="Une passerelle en bois traversant une forêt dense" loading="lazy" width="1200" height="960"></figure>
     <div>
-      <h3 class="rise">Accompagnement professionnel&nbsp;: la médiation singulière</h3>
-      <div class="price rise"><span><b>1 h 30</b>au cabinet</span><span><b>Sur devis</b>après un entretien préliminaire gratuit</span></div>
-      <p class="rise">Pour comprendre ce qui vous freine, aborder un changement ou travailler votre posture managériale. Une démarche alternative au coaching, appuyée sur une analyse du monde du travail, de ses exigences et de ses contradictions.</p>
-      <p class="rise"><strong>Médiation</strong>, parce que vous construisez votre propre réponse à partir de votre raisonnement, de vos acquis et de votre parcours. <strong>Singulière</strong>, parce que votre situation, votre poste et votre entreprise sont uniques.</p>
-      <p class="rise">Sens, valeurs, décision, rapport à l’autorité et à l’institution, délégation, confiance, loyauté&nbsp;: un temps pour questionner, élaborer, décider.</p>
+      <article class="sheet rise">
+        <h3>Consultation en psychologie du travail</h3>
+        <p class="sub">Un espace de parole protecteur et bienveillant.</p>
+        <ul class="rows">
+          <li><span class="lab">Durée</span><span class="lead-dots" aria-hidden="true"></span><span class="val">1&nbsp;h</span></li>
+          <li><span class="lab">Format</span><span class="lead-dots" aria-hidden="true"></span><span class="val">face à face</span></li>
+          <li><span class="lab">Tarif</span><span class="lead-dots" aria-hidden="true"></span><span class="val">60&nbsp;€</span></li>
+          <li><span class="lab">Règlement</span><span class="lead-dots" aria-hidden="true"></span><span class="val">espèces, chèque</span></li>
+        </ul>
+        <ul class="plain">
+          <li>vous exprimer sur votre vécu professionnel, sortir du silence&nbsp;;</li>
+          <li>identifier ce mal-être qui vous empêche d’agir&nbsp;;</li>
+          <li>mobiliser vos ressources pour faire face&nbsp;;</li>
+          <li>redonner un sens au travail, en lien avec vos aspirations&nbsp;;</li>
+          <li>retrouver un équilibre entre vie professionnelle et personnelle.</li>
+        </ul>
+      </article>
+      <article class="sheet rise">
+        <h3>La médiation singulière</h3>
+        <p class="sub">Un accompagnement professionnel, alternative au coaching, appuyé sur une analyse du monde du travail.</p>
+        <ul class="rows">
+          <li><span class="lab">Durée</span><span class="lead-dots" aria-hidden="true"></span><span class="val">1&nbsp;h&nbsp;30</span></li>
+          <li><span class="lab">Lieu</span><span class="lead-dots" aria-hidden="true"></span><span class="val">au cabinet</span></li>
+          <li><span class="lab">Entretien préliminaire</span><span class="lead-dots" aria-hidden="true"></span><span class="val">gratuit</span></li>
+          <li><span class="lab">Tarif</span><span class="lead-dots" aria-hidden="true"></span><span class="val">sur devis</span></li>
+        </ul>
+        <p class="body"><strong>Médiation</strong>&nbsp;: vous construisez votre propre réponse à partir de votre raisonnement, de vos acquis, de votre parcours. <strong>Singulière</strong>&nbsp;: votre situation, votre poste et votre entreprise sont uniques. Sens, valeurs, décision, rapport à l’autorité, délégation, confiance, loyauté&nbsp;: un temps pour questionner, élaborer, décider.</p>
+      </article>
     </div>
-  </article>
+  </div>
 </section>
 
 <section class="wrap about" id="parcours" aria-labelledby="t-about">
-  <div>
-    <blockquote class="rise">Penser votre travail, et non penser à votre travail.</blockquote>
-  </div>
-  <div>
-    <h2 id="t-about" class="rise">Mon parcours</h2>
-    <p class="lead rise" style="margin-top:24px">Pendant près de quinze ans, j’ai été actrice et observatrice des scènes de travail en entreprise. Je me suis souvent demandé ce qui permet, ou empêche, une personne de mobiliser ses ressources. Cette question m’a menée vers la psychologie clinique et la psychopathologie du travail.</p>
-    <div class="cols">
-      <div class="rise"><h3>Formation</h3><p>Diplômée du Conservatoire national des arts et métiers (Cnam) en psychologie du travail. Orientation&nbsp;: la clinique du travail, en référence aux travaux d’Yves Clot et de Christophe Dejours.</p></div>
-      <div class="rise"><h3>Déontologie</h3><p>Je m’appuie sur le code de déontologie des psychologues. Un travail personnel auprès d’une psychanalyste et une supervision individuelle et collective encadrent ma pratique.</p></div>
-      <div class="rise"><h3>Titre de psychologue</h3><p>Professionnelle de santé reconnue par l’Agence régionale de santé. N° ADELI&nbsp;: 9393&nbsp;1509&nbsp;9.</p></div>
-      <div class="rise"><h3>Pour qui</h3><p>Salariés, cadres et managers&nbsp;: surcharge, perte de confiance, conflit, reprise après un arrêt, un burn-out ou un licenciement, questions d’avenir professionnel.</p></div>
+  <div class="about-grid">
+    <figure class="portrait rise"><img src="https://karine-psy-travail.weebly.com/uploads/7/2/4/7/72474013/published/img-0986-3.jpg" alt="Karine Jouys Artus, assise, souriante" loading="lazy" width="294" height="408"></figure>
+    <div>
+      <h2 id="t-about" class="rise">Mon parcours</h2>
+      <blockquote class="rise">«&nbsp;Penser votre travail, et non penser à votre travail.&nbsp;»</blockquote>
+      <p class="letter rise">Pendant près de quinze ans, j’ai été actrice et observatrice des scènes de travail en entreprise. Je me suis souvent demandé ce qui permet, ou empêche, une personne de mobiliser ses ressources. Cette question du travail et de ses effets m’a menée vers la psychologie clinique et la psychopathologie du travail.</p>
+      <p class="letter rise">Alors que le travail exige un engagement individuel qui met à l’épreuve votre équilibre et votre santé, je vous propose une écoute, un soutien et un cadre pour analyser les raisons de ce mal-être.</p>
+      <div class="creds">
+        <div class="rise"><h3>Formation</h3><p>Diplômée du Conservatoire national des arts et métiers (Cnam) en psychologie du travail, dans l’orientation de la clinique du travail. Références&nbsp;: Yves Clot, Christophe Dejours.</p></div>
+        <div class="rise"><h3>Déontologie</h3><p>Code de déontologie des psychologues et charte des psychologues du travail. Travail personnel auprès d’une psychanalyste, supervision individuelle et collective.</p></div>
+        <div class="rise"><h3>Titre</h3><p>Professionnelle de santé reconnue par l’Agence régionale de santé pour le titre de psychologue. N°&nbsp;ADELI <span class="num">9393&nbsp;1509&nbsp;9</span>.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="practice" id="pratique" aria-labelledby="t-practice">
-  <div class="wrap practice-grid">
+<section class="wrap practice" id="pratique" aria-labelledby="t-practice">
+  <div class="practice-grid">
     <div>
-      <h2 id="t-practice" class="rise">En pratique</h2>
-      <p class="status rise" id="status"><span class="dot" aria-hidden="true"></span><span>Consultations sur rendez-vous, mardi, jeudi et samedi matin.</span></p>
+      <h2 id="t-practice" class="rise">Horaires et modalités</h2>
       <ol class="week rise" id="week" aria-label="Jours de consultation">
-        <li data-d="1"><b>Lun</b>—</li>
-        <li data-d="2" class="on"><b>Mar</b>8 h<br>20 h</li>
-        <li data-d="3"><b>Mer</b>—</li>
-        <li data-d="4" class="on"><b>Jeu</b>8 h<br>20 h</li>
-        <li data-d="5"><b>Ven</b>—</li>
-        <li data-d="6" class="on"><b>Sam</b>8 h<br>13 h 30</li>
-        <li data-d="0"><b>Dim</b>—</li>
+        <li data-d="1"><b>Lun</b>fermé</li>
+        <li data-d="2" class="on"><b>Mar</b>8&nbsp;h<br>20&nbsp;h</li>
+        <li data-d="3"><b>Mer</b>fermé</li>
+        <li data-d="4" class="on"><b>Jeu</b>8&nbsp;h<br>20&nbsp;h</li>
+        <li data-d="5"><b>Ven</b>fermé</li>
+        <li data-d="6" class="on"><b>Sam</b>8&nbsp;h<br>13&nbsp;h&nbsp;30</li>
+        <li data-d="0"><b>Dim</b>fermé</li>
       </ol>
+      <p class="status rise" id="status2" aria-live="polite"><span class="dot" aria-hidden="true"></span><span>Consultations sur rendez-vous uniquement.</span></p>
     </div>
     <ul class="facts">
       <li class="rise"><b>Règlement</b><span>À la fin de chaque séance, en espèces ou par chèque.</span></li>
       <li class="rise"><b>Remboursement</b><span>Les consultations en cabinet ne sont pas prises en charge par la Sécurité sociale. Certaines mutuelles et assurances remboursent tout ou partie des séances.</span></li>
-      <li class="rise"><b>Annulation</b><span>Tout rendez-vous non décommandé 48 h à l’avance reste dû.</span></li>
-      <li class="rise"><b>Rythme</b><span>Le nombre de séances dépend de votre situation et de son évolution. Nous le convenons ensemble.</span></li>
+      <li class="rise"><b>Annulation</b><span>Tout rendez-vous non décommandé 48&nbsp;h à l’avance reste dû.</span></li>
+      <li class="rise"><b>Rythme</b><span>Le nombre de séances dépend de votre situation et de son évolution&nbsp;; le rythme se convient ensemble.</span></li>
     </ul>
   </div>
 </section>
 
-<section class="wrap contact" id="contact" aria-labelledby="t-contact">
-  <div>
-    <h2 id="t-contact" class="rise">Prendre un premier rendez-vous</h2>
-    <p class="lines rise">
-      40 avenue Aubert, 94300 Vincennes<br>
-      <a href="tel:+33783320753">07 83 32 07 53</a><br>
-      <a href="mailto:psy.jouysartus@icloud.com">psy.jouysartus@icloud.com</a>
-    </p>
-    <div class="actions rise">
-      <a class="btn btn-ink" href="tel:+33783320753">Appeler</a>
-      <a class="btn btn-soft" href="mailto:psy.jouysartus@icloud.com?subject=Demande%20de%20rendez-vous">Écrire</a>
-      <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&destination=40%20avenue%20Aubert%2094300%20Vincennes" target="_blank" rel="noopener">Itinéraire</a>
+<section class="contact" id="contact" aria-labelledby="t-contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="t-contact" class="rise">Prendre rendez-vous</h2>
+      <ul class="lines">
+        <li class="rise">40 avenue Aubert, 94300 Vincennes</li>
+        <li class="rise"><a class="num" href="tel:+33783320753">07&nbsp;83&nbsp;32&nbsp;07&nbsp;53</a></li>
+        <li class="rise"><a href="mailto:psy.jouysartus@icloud.com">psy.jouysartus@icloud.com</a></li>
+      </ul>
+      <div class="actions rise">
+        <a class="btn btn-light" href="tel:+33783320753">Appeler</a>
+        <a class="btn btn-line" href="mailto:psy.jouysartus@icloud.com?subject=Demande%20de%20rendez-vous">Écrire</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&destination=40%20avenue%20Aubert%2094300%20Vincennes" target="_blank" rel="noopener">Itinéraire</a>
+      </div>
+      <p class="urgent rise">En cas de détresse ou de pensées suicidaires, le <a href="tel:3114">3114</a> répond 24&nbsp;h/24, gratuitement. Urgence médicale&nbsp;: <a href="tel:15">15</a>.</p>
     </div>
-    <p class="urgent rise">En cas de détresse ou de pensées suicidaires, le <a href="tel:3114">3114</a> répond 24 h/24, gratuitement. Urgence médicale&nbsp;: <a href="tel:15">15</a>.</p>
+    <figure class="rise"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&h=1250&q=70" alt="Une jeune plante verte sur fond blanc" loading="lazy" width="1000" height="1250"></figure>
   </div>
-  <figure class="rise">
-    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=72" alt="Une plume qui écrit sur une feuille" loading="lazy" width="1000" height="1250">
-    <figcaption>Un message suffit&nbsp;: je vous rappelle pour convenir d’un créneau.</figcaption>
-  </figure>
 </section>
 </main>
 
-<footer class="wrap">
-  <p class="bigname" aria-hidden="true">Karine Jouys Artus</p>
-  <p class="legal">Karine Jouys Artus, psychologue du travail, 40 avenue Aubert, 94300 Vincennes. N° ADELI 9393 1509 9. Photos Unsplash. Démo réalisée par Raul Hatos — site non officiel.</p>
+<footer class="foot" id="pied">
+  <div class="wrap">
+    <p class="name" aria-hidden="true" translate="no">Karine Jouys Artus</p>
+    <p class="legal">Karine Jouys Artus, psychologue du travail, 40 avenue Aubert, 94300 Vincennes. N° ADELI 9393 1509 9. Portrait&nbsp;: site <a href="https://karine-psy-travail.weebly.com" rel="noopener">karine-psy-travail.weebly.com</a>. Autres photos&nbsp;: Unsplash, illustrations. Démo réalisée par Raul Hatos — site non officiel.</p>
+  </div>
 </footer>
 
 <div class="mbar">
@@ -374,39 +456,53 @@ footer{margin-top:var(--gap);padding-bottom:110px}
 
 <script>
 document.documentElement.classList.add('js');
+const C={t:'Une consultation en psychologie du travail',m:[['Durée','1 h, en face à face'],['Tarif','60 € la séance']]};
+const P={t:'L’accompagnement professionnel',m:[['Séance','1 h 30 au cabinet'],['Premier entretien','gratuit, puis devis']]};
 const A={
-  deborde:['Une consultation en psychologie du travail est souvent le bon point de départ.','Surcharge, fatigue, sommeil qui se dérègle&nbsp;: le premier échange sert à poser votre situation, son contexte et vos attentes, puis à déterminer le travail à mener.','c','Je suis débordé·e au travail'],
-  reprise:['Une consultation peut préparer votre retour.','Reprendre après un arrêt maladie, un burn-out, un conflit ou un licenciement se prépare. Nous commençons par votre vécu et ce que la reprise réveille.','c','Je dois reprendre le travail après un arrêt'],
-  conflit:['Commençons par une consultation.','Les difficultés relationnelles au travail débordent souvent sur la famille. La séance permet d’en parler à distance de l’entreprise, dans un cadre protégé.','c','Un conflit au travail me pèse'],
-  confiance:['Une consultation, pour retrouver prise.','Quand on ne parvient plus à tenir ses engagements et que la confiance s’effrite, mettre des mots sur ce qui se passe est un premier pas.','c','Je perds confiance en moi au travail'],
-  equilibre:['Une consultation, pour remettre de l’espace entre les deux.','Nous regardons ensemble ce que le travail prend dans votre vie, et ce qui permettrait de retrouver un équilibre.','c','Le travail déborde sur ma vie personnelle'],
-  avenir:['L’accompagnement professionnel est fait pour cela.','Vous construisez votre futur professionnel à partir de votre situation actuelle, avec vos propres réponses. Tout commence par un entretien préliminaire gratuit.','p','Je m’interroge sur mon avenir professionnel'],
-  manager:['L’accompagnement professionnel, pour penser votre posture.','Autorité, délégation, confiance, loyauté&nbsp;: un temps pour questionner votre rôle et décider. Un entretien préliminaire gratuit précède tout engagement.','p','Je souhaite travailler ma posture de manager']
+  deborde:[C,'Surcharge, fatigue, sommeil qui se dérègle : le premier échange sert à poser votre situation, son contexte et vos attentes. Il détermine ensuite le travail à mener.','Je me sens surchargé·e au travail'],
+  reprise:[C,'Reprendre après un arrêt maladie, un burn-out, un conflit ou un licenciement se prépare. Vous commencez par votre vécu et ce que la reprise réveille.','Je dois reprendre le travail après un arrêt'],
+  conflit:[C,'Les difficultés relationnelles au travail débordent souvent sur la famille. La séance permet d’en parler à distance de l’entreprise, dans un cadre protégé.','Une relation de travail me pèse'],
+  confiance:[C,'Quand on ne parvient plus à tenir ses engagements et que la confiance s’effrite, mettre des mots sur ce qui se passe est un premier pas.','Je perds confiance en moi au travail'],
+  equilibre:[C,'Vous regardez ensemble ce que le travail prend dans votre vie, et ce qui permettrait de retrouver un équilibre.','Le travail déborde sur ma vie personnelle'],
+  avenir:[P,'Vous structurez votre futur professionnel à partir de votre situation actuelle, avec vos propres réponses. Tout commence par un entretien préliminaire gratuit.','Je m’inquiète pour mon avenir professionnel'],
+  manager:[P,'Autorité, délégation, confiance, loyauté : un temps pour questionner votre rôle et décider. L’entretien préliminaire gratuit précède tout engagement.','Je souhaite travailler ma posture de manager']
 };
 const box=document.getElementById('answer');
-document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));
-  const [h,p,t,subj]=A[b.dataset.k];
-  const meta=t==='c'?'<span><b>Séance</b> 1 h en face à face</span><span><b>Tarif</b> 60 €</span>':'<span><b>Séance</b> 1 h 30 au cabinet</span><span><b>Premier entretien</b> gratuit, puis sur devis</span>';
+const esc=s=>s.replace(/ (?=[:;?!€h])/g,' ');
+function show(k){
+  const [o,p,subj]=A[k];
+  box.querySelector('h3').textContent=o.t;
+  box.querySelector('p').textContent=esc(p);
+  box.querySelector('dl').innerHTML=o.m.map(([a,b])=>`<div><dt>${a}</dt><dd>${esc(b)}</dd></div>`).join('');
   const body=encodeURIComponent('Bonjour Madame Jouys Artus,\n\n'+subj+' et je souhaiterais un premier rendez-vous.\n\nMes disponibilités : \n\nMerci,\n');
-  box.innerHTML=`<h3>${h}</h3><p>${p}</p><div class="meta">${meta}</div><div class="actions"><a class="btn btn-ink" href="tel:+33783320753">Appeler</a><a class="btn btn-soft" style="background:#fff" href="mailto:psy.jouysartus@icloud.com?subject=${encodeURIComponent('Premier rendez-vous')}&body=${body}">Écrire un message</a></div><p class="note">Une orientation, pas un diagnostic&nbsp;: nous en parlerons ensemble.</p>`;
+  document.getElementById('mailbtn').href='mailto:psy.jouysartus@icloud.com?subject='+encodeURIComponent('Premier rendez-vous')+'&body='+body;
   box.classList.remove('swap');void box.offsetWidth;box.classList.add('swap');
+}
+document.querySelectorAll('.situ button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.situ button').forEach(c=>c.setAttribute('aria-pressed',String(c===b)));
+  show(b.dataset.k);
 }));
+show('deborde');box.classList.remove('swap');
 
-// jour de consultation : aujourd'hui / prochain
+// jour de consultation, à l’heure de Paris
 (()=>{
   const H={2:[8,20],4:[8,20],6:[8,13.5]},N=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-  const now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+  const f=t=>{const h=Math.floor(t),m=Math.round((t-h)*60);return h+' h'+(m?' '+m:'')};
+  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date()).map(p=>[p.type,p.value]));
+  const d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(parts.weekday),h=+parts.hour+ +parts.minute/60;
   document.querySelector(`#week li[data-d="${d}"]`)?.classList.add('today');
-  const s=document.getElementById('status'),dot=s.querySelector('.dot'),txt=s.querySelector('span:last-child');
-  if(H[d]&&h>=H[d][0]&&h<H[d][1]){txt.textContent='Jour de consultation aujourd’hui. Appelez pour un créneau.';return}
-  dot.classList.add('off');
-  for(let i=1;i<=7;i++){const n=(d+i)%7;if(H[n]){txt.textContent=`Prochain jour de consultation : ${i===1?'demain':N[n]}, à partir de 8 h.`;break}}
-  if(H[d]&&h<H[d][0])txt.textContent='Consultations aujourd’hui à partir de 8 h.';
+  let txt,on=false;
+  if(H[d]&&h>=H[d][0]&&h<H[d][1]){on=true;txt=`Jour de consultation aujourd’hui, jusqu’à ${f(H[d][1])}. Appelez pour un créneau.`}
+  else if(H[d]&&h<H[d][0])txt=`Consultations aujourd’hui à partir de ${f(H[d][0])}.`;
+  else for(let i=1;i<=7;i++){const n=(d+i)%7;if(H[n]){txt=`Prochain jour de consultation : ${i===1?'demain':N[n]}, à partir de 8 h.`;break}}
+  txt=esc(txt);
+  ['status','status2'].forEach(id=>{const s=document.getElementById(id);s.querySelector('.dot').classList.toggle('off',!on);s.querySelector('span:last-child').textContent=txt});
 })();
 
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+const mb=document.querySelector('.mbar'),seen=new Set(),mo=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));mb.classList.toggle('away',seen.size>0)});
+['contact','pied'].forEach(id=>mo.observe(document.getElementById(id)));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%4)*75+'ms';io.observe(el)});
 </script>
 </body>
 </html>
