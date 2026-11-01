@@ -4,273 +4,333 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Cosmos Café · bar-café rue de la Roquette, Paris 11e</title>
-<meta name="description" content="Cosmos Café, bar-café au 53 rue de la Roquette, Paris 11e, près de Bastille. Ouvert tous les jours de 8 h à 2 h, happy hour de 17 h à 21 h, tapas, plats et cocktails.">
+<title>Cosmos Café · bar-café, 53 rue de la Roquette, Paris 11e</title>
+<meta name="description" content="Cosmos Café, bar-café au 53 rue de la Roquette (Paris 11e), à cinq minutes de Bastille. Ouvert tous les jours de 8 h à 2 h. Happy hour de 17 h à 21 h : pinte 5 €, cocktail 5,50 €.">
+<meta name="theme-color" content="#efeeea">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cosmos Café · bar-café rue de la Roquette, Paris 11e">
+<meta property="og:description" content="Ouvert tous les jours de 8 h à 2 h. Happy hour de 17 h à 21 h : pinte 5 €, cocktail 5,50 €.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=1200&amp;h=630&amp;q=72&amp;auto=format&amp;fit=crop">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231e3932'/%3E%3Ccircle cx='50' cy='50' r='16' fill='%23f5c32c'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&display=swap" rel="stylesheet">
-<!-- DESIGN.md « Miro » (awesome-design) : toile blanche, encre #1c1c1e, jaune canari, grands panneaux pastel à rayon 32px, boutons pilule noirs.
-     Couleurs reprises du lieu : bois vert bouteille, carreaux bleus, grandes fleurs jaunes (le cosmos), store rayé. -->
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<!-- Système : DESIGN.md « Starbucks » (awesome-design) — toile crème, vert maison profond en bandes, boutons pilule, pression scale(.96).
+     Accent : le jaune de la fleur de cosmos, pour l'action et l'happy hour. Titres en Archivo condensé, comme une enseigne de bar. -->
 <style>
 :root{
-  --canvas:#ffffff;
-  --surface:#f6f5f0;
-  --ink:#1c1c1e;
-  --ink-2:#3d3d44;
-  --yellow:#ffd02f;
-  --yellow-soft:#fff4c4;
-  --green:#1e3d2f;        /* boiseries vert bouteille */
-  --green-2:#2a5240;
-  --on-green:#f3f1e6;
-  --on-green-2:#c9d6c8;
-  --blue:#2c5aa0;         /* carreaux bleus */
-  --blue-soft:#dde8f6;
-  --rose:#fde0e6;         /* façade pastel */
-  --r-xl:32px;
+  --canvas:#efeeea;
+  --ceramic:#e2e1dc;
+  --paper:#ffffff;
+  --ink:#1b1f1c;
+  --ink-2:#454b46;
+  --green:#1e3932;
+  --green-2:#2b5148;
+  --on-green:#efeeea;
+  --on-green-2:#c6d6cf;
+  --yellow:#f5c32c;
+  --yellow-2:#ffd75e;
+  --r-lg:28px;
   --r-md:18px;
-  --gutter:clamp(16px,3vw,40px);
-  --s-small:.9375rem;
-  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --s-lead:clamp(1.25rem,1.1rem + .6vw,1.5rem);
-  --s-head:clamp(2.25rem,1.5rem + 3vw,4rem);
-  --s-giant:clamp(4rem,1.5rem + 11vw,11rem);
-  --ease:cubic-bezier(.16,1,.3,1);
+  --r-sm:12px;
+  --gutter:clamp(16px,3.2vw,48px);
+  --gap:clamp(12px,1.4vw,20px);
+  --sec:clamp(112px,12vw,200px);
+  --t-small:.9375rem;
+  --t-body:1.0625rem;
+  --t-lead:clamp(1.1875rem,1.05rem + .45vw,1.4375rem);
+  --t-h3:clamp(1.625rem,1.3rem + 1vw,2.25rem);
+  --t-h2:clamp(2.5rem,1.4rem + 3.6vw,4.75rem);
+  --t-h1:clamp(2.875rem,1.5rem + 4.2vw,5.375rem);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --fast:.18s;
+  --normal:.35s;
+  --slow:.7s;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
-body{margin:0;background:var(--canvas);color:var(--ink);font:400 var(--s-body)/1.55 "Bricolage Grotesque",system-ui,sans-serif;font-optical-sizing:auto}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{margin:0;background:var(--canvas);color:var(--ink);font:400 var(--t-body)/1.55 "Archivo",system-ui,sans-serif;font-stretch:100%}
 img{display:block;max-width:100%}
 a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1.5px}
 ::selection{background:var(--yellow);color:var(--ink)}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
-h1,h2,h3{font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.03em;line-height:1}
-p{margin:0}
-ul{margin:0;padding:0;list-style:none}
-.wrap{padding-inline:var(--gutter);max-width:1520px;margin-inline:auto}
+:focus-visible{outline:3px solid var(--green-2);outline-offset:3px;border-radius:8px}
+.on-dark :focus-visible{outline-color:var(--yellow)}
+h1,h2,h3{margin:0;font-weight:800;font-stretch:72%;letter-spacing:-.02em;word-spacing:.05em;line-height:.95;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:1480px;margin-inline:auto;padding-inline:var(--gutter)}
 .tnum{font-variant-numeric:tabular-nums}
+.skip{position:absolute;left:16px;top:-80px;z-index:50;background:var(--yellow);color:var(--ink);padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(30,57,50,.15)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding-top:var(--sec)}
 
 /* bandeau démo */
-.demo{background:var(--ink);color:#f2f2f2;font-size:var(--s-small);padding:7px var(--gutter);text-align:center}
+.demo{background:var(--ink);color:#efeee9;font-size:var(--t-small);text-align:center;padding:7px var(--gutter)}
 
-/* boutons : pilules (Miro) */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:54px;padding:0 26px;border-radius:999px;font:500 1.0625rem/1 "Bricolage Grotesque",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .3s var(--ease),background-color .25s}
+/* boutons pilule */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:0 24px;border-radius:999px;border:0;font:600 var(--t-body)/1 "Archivo",sans-serif;text-decoration:none;cursor:pointer;transition-property:transform,background-color,color;transition-duration:var(--fast);transition-timing-function:ease-out}
 .btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(1px)}
+.btn:active{transform:scale(.96)}
 .btn svg{width:19px;height:19px;flex:none}
-.btn-ink{background:var(--ink);color:#fff}
-.btn-ink:hover{background:#34343a}
 .btn-yellow{background:var(--yellow);color:var(--ink)}
-.btn-yellow:hover{background:#ffdb5c}
-.btn-soft{background:var(--surface);color:var(--ink)}
-.btn-soft:hover{background:#ecebe3}
+.btn-yellow:hover{background:var(--yellow-2)}
+.btn-green{background:var(--green);color:var(--on-green)}
+.btn-green:hover{background:var(--green-2)}
+.btn-soft{background:var(--ceramic);color:var(--ink)}
+.btn-soft:hover{background:#dcd7ca}
 .btn-light{background:var(--on-green);color:var(--green)}
 .btn-light:hover{background:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
 
 /* nav */
-.nav{position:sticky;top:0;z-index:20;background:var(--canvas)}
+.nav{position:sticky;top:0;z-index:30;background:var(--canvas)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
-.brand svg{width:34px;height:34px}
-.nav-links{display:flex;gap:28px}
-.nav-links a{text-decoration:none;font-weight:500}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-stretch:80%;font-size:var(--t-lead);letter-spacing:-.01em}
+.brand svg{width:32px;height:32px;flex:none}
+.nav-links{display:flex;gap:26px;font-weight:500}
+.nav-links a{text-decoration:none;padding:10px 0}
 .nav-links a:hover{text-decoration:underline}
 .nav .btn{min-height:46px;padding:0 20px}
-@media (max-width:860px){.nav-links{display:none}}
-
-/* store rayé */
-.awning{height:22px;background:repeating-linear-gradient(90deg,var(--green) 0 34px,#e6dfc4 34px 68px);-webkit-mask:radial-gradient(circle at 17px 0,#000 17px,transparent 17.5px) 0 0/34px 22px repeat-x, linear-gradient(#000,#000) 0 0/100% 4px no-repeat;mask:radial-gradient(circle at 17px 0,#000 17px,transparent 17.5px) 0 0/34px 22px repeat-x, linear-gradient(#000,#000) 0 0/100% 4px no-repeat}
+@media (max-width:900px){.nav-links{display:none}}
 
 /* ---------- HERO ---------- */
-.hero{padding-top:clamp(20px,3vw,40px)}
-.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(20px,3vw,40px);align-items:stretch}
-.hero-text{display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding-block:clamp(8px,2vw,24px)}
-.hero h1{font-size:var(--s-giant);font-weight:500;letter-spacing:-.035em;line-height:.86}
-.hero h1 span{display:block}
-.hero .lead{font-size:var(--s-lead);line-height:1.4;max-width:36ch;margin-top:32px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.hero-photo{margin:0;border-radius:var(--r-xl);overflow:hidden;position:relative;min-height:540px;background:var(--rose)}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:drift 22s var(--ease) both}
-.hero-photo figcaption{position:absolute;left:16px;bottom:16px;background:var(--canvas);border-radius:999px;padding:9px 16px;font-size:var(--s-small);font-weight:500}
-@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
-@media (max-width:860px){
+.hero{padding-top:clamp(16px,2.6vw,40px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(24px,3.4vw,56px);align-items:stretch}
+.hero-txt{padding-block:clamp(8px,1.6vw,24px)}
+.hero h1{font-size:var(--t-h1)}
+.hero .lead{font-size:var(--t-lead);line-height:1.45;max-width:40ch;margin-top:28px}
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:32px;background:var(--green-2);color:var(--on-green);border-radius:var(--r-md);overflow:hidden}
+.offer li{background:var(--green);padding:18px 18px 16px;display:flex;flex-direction:column;gap:6px}
+.offer b{font-weight:800;font-stretch:72%;font-size:var(--t-h3);line-height:.95;color:var(--yellow);letter-spacing:-.01em}
+.offer span{font-size:var(--t-small);line-height:1.3;color:var(--on-green-2)}
+.hero .actions{margin-top:24px}
+.live{display:flex;align-items:center;gap:10px;margin-top:20px;font-weight:600}
+.dot{width:10px;height:10px;border-radius:50%;background:#2f8f5b;flex:none}
+.live.closed .dot{background:#b5452f}
+
+.collage{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:var(--gap);min-height:560px}
+.collage figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r-lg);background:var(--ceramic)}
+.collage figure:first-child{grid-row:1/3}
+.collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;outline:1px solid rgba(0,0,0,.08);outline-offset:-1px}
+.collage figure:first-child img{animation:drift 24s var(--ease) both}
+@keyframes drift{from{transform:scale(1.1)}to{transform:scale(1)}}
+.collage figcaption{position:absolute;left:14px;bottom:14px;background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:var(--t-small);font-weight:600;line-height:1.2}
+.collage figcaption em{font-style:normal;color:#8a5a00}
+
+.infos{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-top:clamp(24px,3vw,40px)}
+.infos li{background:var(--ceramic);border-radius:var(--r-md);padding:18px 20px;line-height:1.4}
+.infos b{display:block;font-weight:700;margin-bottom:2px}
+.infos li span{font-size:var(--t-small);color:var(--ink-2)}
+@media (max-width:1020px){
   .hero-grid{grid-template-columns:1fr}
-  .hero-photo{min-height:0;aspect-ratio:4/3.4;order:2}
-  .hero .lead{margin-top:20px}
-  .hero-text{gap:28px}
+  .collage{height:auto;min-height:0;grid-template-rows:auto auto;grid-template-columns:1fr 1fr}
+  .collage figure:first-child{aspect-ratio:4/3.3;grid-row:auto;grid-column:1/3}
+  .collage figure:not(:first-child){aspect-ratio:1}
+  .infos{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .offer{grid-template-columns:1fr}
+  .offer li{flex-direction:row;align-items:baseline;gap:12px;padding:14px 18px}
+  .offer b{min-width:3.6em}
+  .infos{grid-template-columns:1fr}
+  .hero .actions .btn{flex:1 1 100%}
 }
 
-/* ---------- LA JOURNÉE (élément interactif) ---------- */
-.day{margin-top:clamp(20px,3vw,40px);background:var(--yellow);border-radius:var(--r-xl);padding:clamp(24px,4vw,56px)}
-.day-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
-.day h2{font-size:var(--s-head)}
-.status{font-size:var(--s-lead);font-weight:500;line-height:1.3;margin-top:14px;max-width:36ch}
-.status b{font-weight:700}
-.clock{font-size:clamp(3rem,2rem + 4vw,6rem);font-weight:500;letter-spacing:-.04em;line-height:.9}
-.track{position:relative;margin-top:clamp(28px,4vw,48px)}
-.bands{display:grid;grid-template-columns:4fr 5fr 4fr 5fr;gap:6px;height:84px}
-.band{border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between;font-size:var(--s-small);line-height:1.2;transition:transform .35s var(--ease),background-color .3s}
-.band b{font-weight:700;font-size:1rem}
-.band.b1{background:var(--yellow-soft)}
-.band.b2{background:var(--canvas)}
-.band.b3{background:var(--green);color:var(--on-green)}
-.band.b4{background:var(--blue);color:#fff}
-.band.on{transform:translateY(-6px)}
-.ticks{position:relative;height:22px;margin-top:30px;font-size:.875rem;font-weight:500}
-.ticks span{position:absolute;top:0;white-space:nowrap;transform:translateX(-50%)}
-.ticks span:first-child{transform:none}
-.ticks span:last-child{transform:translateX(-100%)}
-.cursor{position:absolute;top:92px;height:18px;width:18px;margin-left:-9px;background:var(--ink);clip-path:polygon(50% 0,100% 100%,0 100%);pointer-events:none;transition:left .4s var(--ease)}
-.range{display:flex;align-items:center;gap:16px;margin-top:22px;flex-wrap:wrap}
-.range label{font-weight:500}
-.range input{flex:1;min-width:200px;accent-color:var(--ink);height:32px}
-.range button{font:500 var(--s-small) "Bricolage Grotesque",sans-serif;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 16px;cursor:pointer}
-.range button:hover{background:#34343a}
-@media (max-width:700px){
-  .day-head{grid-template-columns:1fr}
-  .clock{order:-1}
-  .bands{grid-template-columns:1fr;height:auto;gap:6px}
-  .band{flex-direction:row;align-items:center;gap:12px;padding:14px 16px}
-  .band.on{transform:translateX(6px)}
-  .ticks,.cursor{display:none}
+/* ---------- HAPPY HOUR : LA TOURNÉE ---------- */
+.hh{background:var(--green);color:var(--on-green);border-radius:var(--r-lg);padding:clamp(28px,5vw,80px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,80px);align-items:start}
+.hh h2{font-size:var(--t-h2);color:var(--on-green)}
+.hh h2 .y{color:var(--yellow)}
+.hh .lead{font-size:var(--t-lead);line-height:1.45;color:var(--on-green-2);margin-top:24px;max-width:36ch}
+.hh .lead strong{color:var(--on-green);font-weight:600}
+.mode{display:inline-flex;margin-top:32px;background:var(--green-2);border-radius:999px;padding:4px}
+.mode button{font:600 var(--t-small)/1 "Archivo",sans-serif;border:0;background:transparent;color:var(--on-green);min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;transition-property:background-color,color;transition-duration:var(--fast)}
+.mode button[aria-pressed="true"]{background:var(--yellow);color:var(--ink)}
+.picks{margin-top:20px;display:grid;gap:8px}
+.pick{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;background:var(--green-2);border-radius:var(--r-sm);padding:10px 10px 10px 18px}
+.pick b{display:block;font-weight:700}
+.pick small{display:block;font-size:var(--t-small);color:var(--on-green-2)}
+.step{display:flex;align-items:center;gap:4px}
+.step button{width:44px;height:44px;border-radius:50%;border:0;background:var(--green);color:var(--on-green);font:700 var(--t-lead)/1 "Archivo",sans-serif;cursor:pointer;transition-property:transform,background-color;transition-duration:var(--fast)}
+.step button:hover{background:#163029}
+.step button:active{transform:scale(.92)}
+.step output{min-width:2ch;text-align:center;font-weight:700}
+
+.ticket-wrap{position:sticky;top:96px}
+.ticket{background:var(--paper);color:var(--ink);padding:30px clamp(22px,2.6vw,36px) 32px;position:relative;
+  /* taste-skill-ignore: bord dentelé du ticket de caisse, découpe et non dégradé visible */
+  -webkit-mask:radial-gradient(circle 7px at 50% 0,#0000 98%,#000) 0 0/22px 51% repeat-x,radial-gradient(circle 7px at 50% 100%,#0000 98%,#000) 0 100%/22px 51% repeat-x; /* taste-skill-ignore */
+  mask:radial-gradient(circle 7px at 50% 0,#0000 98%,#000) 0 0/22px 51% repeat-x,radial-gradient(circle 7px at 50% 100%,#0000 98%,#000) 0 100%/22px 51% repeat-x /* taste-skill-ignore */}
+.ticket h3{font-size:var(--t-h3);text-align:center}
+.ticket .addr{text-align:center;font-size:var(--t-small);color:var(--ink-2);margin-top:6px}
+.ticket .lines{margin-top:22px;padding-top:14px;border-top:4px dotted #c9c3b5;min-height:120px}
+.ticket .lines li{display:flex;justify-content:space-between;gap:12px;padding:7px 0}
+.ticket .empty{color:var(--ink-2);padding:7px 0}
+.ticket .sum{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-top:14px;padding-top:16px;border-top:4px dotted #c9c3b5}
+.ticket .sum span{font-weight:700}
+.ticket .total{font-weight:800;font-stretch:72%;font-size:var(--t-h3);line-height:.85;letter-spacing:-.02em;display:inline-block}
+.ticket .total.bump{animation:bump .35s var(--ease)}
+@keyframes bump{40%{transform:scale(1.06)}}
+.ticket .save{margin-top:14px;background:var(--yellow);border-radius:var(--r-sm);padding:12px 14px;font-weight:600;line-height:1.35}
+.ticket .save[hidden]{display:none}
+.ticket .fine{margin-top:14px;font-size:var(--t-small);color:var(--ink-2);line-height:1.45}
+.ticket .btn{width:100%;margin-top:18px}
+@media (max-width:980px){.hh{grid-template-columns:1fr}.ticket-wrap{position:static}}
+
+/* ---------- LA CARTE ---------- */
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,64px);align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.head h2{font-size:var(--t-h2)}
+.head p{font-size:var(--t-lead);line-height:1.45;max-width:38ch}
+@media (max-width:860px){.head{grid-template-columns:1fr}}
+
+.menu{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.panel{border-radius:var(--r-lg);padding:clamp(24px,2.8vw,40px);background:var(--paper)}
+.panel h3{font-size:var(--t-h3);margin-bottom:18px}
+.items{display:grid}
+.items li{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:12px 0;line-height:1.35}
+.items li+li{border-top:2px solid var(--line,var(--canvas))}
+.items .p{font-weight:700;white-space:nowrap;text-align:right}
+.items .p small{display:block;font-weight:500;font-size:var(--t-small);color:#7a5200}
+.items .d{grid-column:1/-1;font-size:var(--t-small);color:var(--ink-2);margin-top:-2px}
+.m-bar{grid-column:1/5}
+.m-nib{grid-column:5/9}
+.m-photo{grid-column:9/13;margin:0;border-radius:var(--r-lg);overflow:hidden;position:relative;min-height:360px}
+.m-photo img,.m-photo2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.m-plats{grid-column:1/8;background:var(--green);color:var(--on-green)}
+.m-plats{--line:var(--green-2);display:flex;flex-direction:column}
+.m-plats .note{margin-top:auto;padding-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+.m-plats .note li{background:var(--green-2);border-radius:999px;padding:8px 14px;font-size:var(--t-small);font-weight:600}
+.m-plats li:nth-child(2){border-top:0}
+.m-plats ul{grid-template-columns:1fr 1fr;column-gap:0}
+.m-plats li{display:block;padding-right:28px}
+.m-side{grid-column:8/13;display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.m-sweet{background:var(--yellow)}
+.m-sweet{--line:#e2ab12}
+.m-morning{background:var(--ceramic)}
+.m-morning{--line:#d2d0c8}
+.m-photo2{grid-column:1/3;margin:0;border-radius:var(--r-lg);overflow:hidden;position:relative;min-height:220px}
+.menu-foot{grid-column:1/13;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-top:12px}
+.menu-foot p{max-width:64ch}
+@media (max-width:1100px){
+  .m-bar,.m-nib{grid-column:span 6}
+  .m-photo{grid-column:1/13;min-height:0;aspect-ratio:16/8}
+  .m-plats,.m-side{grid-column:1/13}
+}
+@media (max-width:640px){
+  .m-bar,.m-nib{grid-column:1/13}
+  .m-plats ul{grid-template-columns:1fr}
+  .m-plats li:nth-child(2){border-top:2px solid var(--green-2)}
+  .m-side{grid-template-columns:1fr}
+  .m-photo2{grid-column:1;min-height:0;aspect-ratio:4/3}
+  .m-photo{aspect-ratio:4/3}
 }
 
-section{padding-top:clamp(96px,12vw,200px)}
-.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);align-items:end;margin-bottom:clamp(32px,4vw,56px)}
-.sec-head h2{font-size:var(--s-head)}
-.sec-head p{font-size:var(--s-lead);line-height:1.4;max-width:34ch}
-@media (max-width:860px){.sec-head{grid-template-columns:1fr}}
-
-/* ---------- AMBIANCE ---------- */
-.amb-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,20px)}
-.amb-grid figure{margin:0;border-radius:var(--r-xl);overflow:hidden;position:relative}
-.amb-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
-.amb-grid figure:hover img{transform:scale(1.04)}
-.amb-a{grid-column:1/8;aspect-ratio:7/5}
-.amb-tiles{grid-column:8/13;border-radius:var(--r-xl);background-color:var(--blue);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232c5aa0'/%3E%3Crect x='2' y='2' width='60' height='60' fill='%233466b2'/%3E%3Cpath d='M32 10 L54 32 L32 54 L10 32Z' fill='none' stroke='%23dde8f6' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ffd02f'/%3E%3Cpath d='M2 2h8M2 2v8M62 2h-8M62 2v8M2 62h8M2 62v-8M62 62h-8M62 62v-8' stroke='%23dde8f6' stroke-width='3'/%3E%3C/svg%3E");background-size:64px 64px;display:flex;align-items:flex-end;padding:clamp(16px,2vw,24px)}
-.amb-tiles .note{background:var(--canvas);border-radius:var(--r-md);padding:clamp(20px,2.4vw,32px);font-size:var(--s-lead);line-height:1.35;font-weight:500}
-.amb-b{grid-column:1/5;aspect-ratio:1}
-.amb-c{grid-column:5/13;aspect-ratio:16/8}
-.amb-list{grid-column:1/13;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,20px);margin-top:8px}
-.amb-list li{background:var(--surface);border-radius:var(--r-md);padding:22px 24px;line-height:1.4}
-.amb-list b{display:block;font-size:1.125rem;margin-bottom:6px}
-@media (max-width:860px){
-  .amb-a,.amb-tiles,.amb-b,.amb-c{grid-column:1/13}
-  .amb-tiles{min-height:300px}
-  .amb-b{aspect-ratio:4/3}
-  .amb-list{grid-template-columns:1fr 1fr}
-}
-@media (max-width:520px){.amb-list{grid-template-columns:1fr}}
-
-/* ---------- HAPPY HOUR ---------- */
-.hh{background:var(--green);color:var(--on-green);border-radius:var(--r-xl);display:grid;grid-template-columns:1.1fr 1fr;overflow:hidden}
-.hh-text{padding:clamp(28px,5vw,72px);display:flex;flex-direction:column;gap:28px;justify-content:space-between}
-.hh h2{font-size:var(--s-head)}
-.hh .hh-big{font-size:clamp(4rem,2rem + 8vw,9.5rem);font-weight:500;letter-spacing:-.05em;line-height:.85;color:var(--yellow)}
-.hh p{color:var(--on-green-2);max-width:40ch}
-.hh p strong{color:var(--on-green);font-weight:500}
-.hh figure{margin:0;position:relative;min-height:420px}
-.hh img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media (max-width:860px){.hh{grid-template-columns:1fr}.hh figure{min-height:0;aspect-ratio:4/3}}
-
-/* ---------- CARTE ---------- */
-.menu{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,20px)}
-.course{border-radius:var(--r-xl);padding:clamp(24px,3vw,40px)}
-.course h3{font-size:clamp(1.75rem,1.3rem + 1.4vw,2.5rem);margin-bottom:22px}
-.course li{padding:13px 0;display:flex;justify-content:space-between;gap:16px;line-height:1.35}
-.course li+li{box-shadow:inset 0 2px 0 rgba(28,28,30,.08)}
-.course li small{font-size:var(--s-small);color:var(--ink-2);white-space:nowrap}
-.c-share{grid-column:1/6;background:var(--yellow-soft)}
-.c-mains{grid-column:6/13;background:var(--surface)}
-.c-mains ul{columns:2;column-gap:40px}
-.c-mains li{break-inside:avoid}
-.c-sweet{grid-column:1/5;background:var(--rose)}
-.c-morning{grid-column:5/9;background:var(--blue-soft)}
-.c-photo{grid-column:9/13;margin:0;border-radius:var(--r-xl);overflow:hidden;min-height:320px;position:relative}
-.c-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.menu-note{grid-column:1/13;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;padding:8px 4px 0}
-.menu-note p{max-width:62ch}
-@media (max-width:1000px){
-  .c-share,.c-mains{grid-column:1/13}
-  .c-sweet,.c-morning{grid-column:span 6}
-  .c-photo{grid-column:1/13;min-height:0;aspect-ratio:16/9}
-}
-@media (max-width:620px){
-  .c-mains ul{columns:1}
-  .c-sweet,.c-morning{grid-column:1/13}
+/* ---------- LA JOURNÉE ---------- */
+.day{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.moment{border-radius:var(--r-lg);overflow:hidden;background:var(--paper);display:flex;flex-direction:column;transition-property:transform,background-color;transition-duration:var(--normal);transition-timing-function:var(--ease)}
+.moment figure{margin:0;aspect-ratio:4/5;overflow:hidden;position:relative}
+.moment img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.moment:hover img{transform:scale(1.04)}
+.moment .txt{padding:22px 22px 26px;display:flex;flex-direction:column;gap:8px}
+.moment .h{font-weight:800;font-stretch:72%;font-size:var(--t-h3);line-height:.9;letter-spacing:-.02em}
+.moment h3{font-size:var(--t-lead);font-stretch:90%;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.moment p{color:var(--ink-2);line-height:1.45}
+.moment.now{background:var(--yellow);transform:translateY(-8px)}
+.moment.now p{color:var(--ink)}
+.moment .badge{display:none;font-weight:700;font-size:var(--t-small)}
+.moment.now .badge{display:block}
+@media (max-width:1020px){.day{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){
+  .day{grid-template-columns:1fr}
+  .moment{display:grid;grid-template-columns:120px 1fr}
+  .moment figure{aspect-ratio:auto;height:100%;min-height:150px}
+  .moment .txt{padding:18px}
+  .moment.now{transform:none}
 }
 
 /* ---------- GROUPES ---------- */
-.groups{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(20px,4vw,64px);align-items:center}
-.groups figure{margin:0;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:5/4}
-.groups img{width:100%;height:100%;object-fit:cover}
-.groups h2{font-size:var(--s-head);margin-bottom:24px}
-.groups .lead{font-size:var(--s-lead);line-height:1.4;margin-bottom:28px;max-width:32ch}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
-.chips li{background:var(--surface);border-radius:999px;padding:10px 18px;font-weight:500}
-@media (max-width:860px){.groups{grid-template-columns:1fr}.groups figure{order:2}}
+.groups{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap);align-items:stretch}
+.groups figure{margin:0;border-radius:var(--r-lg);overflow:hidden;position:relative;min-height:520px}
+.groups figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.groups .g-txt{background:var(--yellow);border-radius:var(--r-lg);padding:clamp(28px,4vw,64px);display:flex;flex-direction:column;gap:24px;justify-content:space-between}
+.groups h2{font-size:var(--t-h2)}
+.groups .lead{font-size:var(--t-lead);line-height:1.45;max-width:34ch}
+.big40{display:flex;align-items:baseline;gap:16px}
+.big40 b{font-weight:800;font-stretch:72%;font-size:var(--t-h2);line-height:.8;letter-spacing:-.03em}
+.big40 span{font-weight:600;font-size:var(--t-lead);line-height:1.25;max-width:14ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips li{background:var(--paper);border-radius:999px;padding:9px 16px;font-weight:600;font-size:var(--t-small)}
+@media (max-width:900px){.groups{grid-template-columns:1fr}.groups figure{min-height:0;aspect-ratio:4/3;order:2}}
 
-/* ---------- HORAIRES & VENIR ---------- */
-.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,20px)}
-.hours{background:var(--surface);border-radius:var(--r-xl);padding:clamp(24px,3vw,44px)}
-.hours h3,.where h3{font-size:clamp(1.75rem,1.3rem + 1.4vw,2.5rem);margin-bottom:20px}
-.hours table{width:100%;border-collapse:collapse;font-size:1.125rem}
-.hours td{padding:12px 0;border-top:2px solid rgba(28,28,30,.07)}
+/* ---------- HORAIRES & ACCÈS ---------- */
+.visit{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.hours{grid-column:1/6;background:var(--paper);border-radius:var(--r-lg);padding:clamp(24px,3vw,44px)}
+.hours h3,.where h3{font-size:var(--t-h3);margin-bottom:18px}
+.hours table{width:100%;border-collapse:collapse}
+.hours td{padding:11px 0;border-top:2px solid var(--canvas)}
 .hours td:last-child{text-align:right}
 .hours tr.today td{font-weight:700}
-.hours tr.today td:first-child::after{content:" · aujourd’hui";font-weight:500;color:var(--blue)}
-.hours .hhline{margin-top:20px;background:var(--yellow);border-radius:var(--r-md);padding:16px 20px;font-weight:500}
-.where{background:var(--blue);color:#fff;border-radius:var(--r-xl);padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:24px}
-.where address{font-style:normal;font-size:var(--s-lead);line-height:1.35;font-weight:500}
-.metro li{display:flex;align-items:center;gap:12px;padding:8px 0}
-.lines{display:flex;gap:6px}
-.lines i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--blue);font-weight:700;font-size:.9375rem}
-.map{grid-column:1/3;border-radius:var(--r-xl);overflow:hidden;height:420px;background:var(--blue-soft)}
+.hours tr.today td:first-child::after{content:" · aujourd’hui";font-weight:600;color:#7a5200}
+.hours .hhline{margin-top:18px;background:var(--green);color:var(--on-green);border-radius:var(--r-sm);padding:14px 16px;font-weight:600}
+.where{grid-column:6/13;background:var(--green);color:var(--on-green);border-radius:var(--r-lg);padding:clamp(24px,3vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;align-content:start}
+.where h3{grid-column:1/-1;margin-bottom:0}
+.where address{font-style:normal;font-size:var(--t-lead);line-height:1.35;font-weight:600}
+.metro li{display:flex;align-items:center;gap:12px;padding:5px 0}
+.lns{display:flex;gap:5px}
+.lns i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--on-green);color:var(--green);font-weight:800;font-size:var(--t-small)}
+.where .perks{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
+.where .perks li{background:var(--green-2);border-radius:999px;padding:8px 14px;font-size:var(--t-small);font-weight:500}
+.where .actions{grid-column:1/-1}
+.map{grid-column:1/13;border-radius:var(--r-lg);overflow:hidden;height:400px;background:var(--ceramic)}
 .map iframe{width:100%;height:100%;border:0;display:block}
-@media (max-width:860px){.visit{grid-template-columns:1fr}.map{grid-column:1;height:320px}}
+@media (max-width:980px){.hours,.where{grid-column:1/13}.where{grid-template-columns:1fr}.map{height:320px}}
 
-/* ---------- CONTACT / FOOTER ---------- */
-.contact{background:var(--rose);border-radius:var(--r-xl);padding:clamp(28px,5vw,72px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:end}
-.contact h2{font-size:var(--s-head);margin-bottom:20px}
-.contact p{font-size:var(--s-lead);line-height:1.4;max-width:32ch}
-.contact-links{display:flex;flex-direction:column;gap:12px;align-items:stretch}
-.contact-links .btn{justify-content:space-between}
+/* ---------- CONTACT / PIED ---------- */
+.contact{background:var(--ink);color:var(--canvas);border-radius:var(--r-lg);padding:clamp(28px,5vw,72px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:end}
+.contact h2{font-size:var(--t-h2)}
+.contact p{font-size:var(--t-lead);line-height:1.45;max-width:34ch;margin-top:20px;color:#d9d6cd}
+.contact .col{display:flex;flex-direction:column;gap:10px}
+.contact .btn{justify-content:space-between;width:100%}
 @media (max-width:860px){.contact{grid-template-columns:1fr}}
-footer{padding:clamp(96px,10vw,160px) 0 32px}
-.foot-name{display:flex;align-items:center;gap:clamp(12px,2vw,28px);font-size:clamp(3.5rem,1rem + 12vw,13rem);font-weight:500;letter-spacing:-.05em;line-height:.85}
-.foot-name svg{width:.8em;height:.8em;flex:none;animation:spin 60s linear infinite}
+footer{padding:clamp(140px,12vw,200px) 0 28px}
+.foot-name{display:flex;align-items:center;gap:clamp(10px,1.6vw,24px);font-weight:800;font-stretch:66%;font-size:clamp(4rem,1rem + 13vw,15rem);line-height:.8;letter-spacing:-.03em}
+.foot-name svg{width:.72em;height:.72em;flex:none;animation:spin 80s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.foot-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;margin-top:40px;font-size:var(--s-small);color:var(--ink-2)}
+.foot-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 32px;margin-top:36px;font-size:var(--t-small);color:var(--ink-2)}
 
-/* entrées */
-.rv{opacity:1}
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+/* entrées échelonnées */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity var(--slow) var(--ease),transform var(--slow) var(--ease)}
 .js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  *{animation:none!important}
-  .js .rv{opacity:1;transform:none;transition:none}
-  .cursor,.band{transition:none}
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important}
+  .js .rv{opacity:1;transform:none;transition:opacity .15s}
+  .btn,.moment,.moment img,.step button{transition:none}
+  .btn:hover,.btn:active,.moment.now{transform:none}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Aller au contenu</a>
 <div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <g id="cosmos">
-      <g fill="#ffd02f">
-        <ellipse cx="50" cy="22" rx="13" ry="22"/>
-        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(45 50 50)"/>
-        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(90 50 50)"/>
-        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(135 50 50)"/>
-        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(180 50 50)"/>
-        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(225 50 50)"/>
-        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(270 50 50)"/>
-        <ellipse cx="50" cy="22" rx="13" ry="22" transform="rotate(315 50 50)"/>
+      <g fill="#f5c32c">
+        <ellipse cx="50" cy="22" rx="12" ry="22"/>
+        <ellipse cx="50" cy="22" rx="12" ry="22" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="22" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="22" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="22" transform="rotate(180 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="22" transform="rotate(225 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="22" transform="rotate(270 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="22" transform="rotate(315 50 50)"/>
       </g>
-      <circle cx="50" cy="50" r="13" fill="#e8930c"/>
-      <circle cx="50" cy="50" r="6" fill="#1e3d2f"/>
+      <circle cx="50" cy="50" r="14" fill="#1e3932"/>
     </g>
   </defs>
 </svg>
@@ -279,113 +339,108 @@ footer{padding:clamp(96px,10vw,160px) 0 32px}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Cosmos Café, retour en haut"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#cosmos"/></svg>Cosmos Café</a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#journee">Maintenant</a>
-      <a href="#carte">La carte</a>
       <a href="#happy-hour">Happy hour</a>
+      <a href="#carte">La carte</a>
+      <a href="#journee">La journée</a>
+      <a href="#groupes">Groupes</a>
       <a href="#venir">Horaires et accès</a>
     </nav>
-    <a class="btn btn-ink" href="tel:+33143142583"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Réserver</a>
+    <a class="btn btn-green" href="tel:+33143142583"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Réserver</a>
   </div>
-  <div class="awning" aria-hidden="true"></div>
 </header>
 
 <main id="top">
   <div class="hero wrap">
     <div class="hero-grid">
-      <div class="hero-text">
-        <div>
-          <h1><span>Cosmos</span><span>Café</span></h1>
-          <p class="lead">Le bar-café du 53 rue de la Roquette, à deux pas de Bastille. Café le matin, tapas et cocktails le soir, de 8&nbsp;h à 2&nbsp;h tous les jours.</p>
-        </div>
+      <div class="hero-txt">
+        <h1>Du premier café au dernier verre</h1>
+        <p class="lead">Cosmos Café, le bar-café du 53 rue de la Roquette, à cinq minutes de Bastille. Café le matin, plats faits maison le midi, tapas et cocktails jusqu’à 2&nbsp;h, sept jours sur sept.</p>
+        <ul class="offer tnum" aria-label="L’essentiel">
+          <li><b>5&nbsp;€</b><span>la pinte, en happy hour de 17 à 21&nbsp;h</span></li>
+          <li><b>5,50&nbsp;€</b><span>le cocktail, en happy hour</span></li>
+          <li><b>4,6/5</b><span>332 avis Google</span></li>
+        </ul>
         <div class="actions">
-          <a class="btn btn-ink" href="tel:+33143142583"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>01 43 14 25 83</a>
-          <a class="btn btn-yellow" href="https://www.google.com/maps/dir/?api=1&destination=Cosmos+Caf%C3%A9+53+rue+de+la+Roquette+75011+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>Itinéraire</a>
-          <a class="btn btn-soft" href="#carte">Voir la carte</a>
+          <a class="btn btn-yellow" href="tel:+33143142583"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Réserver au 01 43 14 25 83</a>
+          <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cosmos+Caf%C3%A9+53+rue+de+la+Roquette+75011+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>Itinéraire</a>
         </div>
+        <p class="live" id="live" aria-live="polite"><span class="dot" aria-hidden="true"></span><span id="live-txt">Ouvert tous les jours de 8&nbsp;h à 2&nbsp;h</span></p>
       </div>
-      <figure class="hero-photo">
-        <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1600&q=75&auto=format&fit=crop" alt="Terrasse de café parisien, tables sur le trottoir et ardoise posée devant la façade" fetchpriority="high">
-        <figcaption>Ouvert tous les jours, 8 h – 2 h</figcaption>
-      </figure>
-    </div>
-
-    <div class="day" id="journee">
-      <div class="day-head">
-        <div>
-          <h2>Au Cosmos, maintenant</h2>
-          <p class="status" id="status" aria-live="polite">Ouvert tous les jours de 8&nbsp;h à 2&nbsp;h. Happy hour de 17&nbsp;h à 21&nbsp;h.</p>
-        </div>
-        <p class="clock tnum" id="clock" aria-hidden="true">8:00</p>
-      </div>
-      <div class="track">
-        <div class="bands">
-          <div class="band b1" data-from="8" data-to="12"><b>Le matin</b><span>Café, petit-déjeuner</span></div>
-          <div class="band b2" data-from="12" data-to="17"><b>Le midi</b><span>Déjeuner, terrasse</span></div>
-          <div class="band b3" data-from="17" data-to="21"><b>Happy hour</b><span>17 h – 21 h</span></div>
-          <div class="band b4" data-from="21" data-to="26"><b>Le soir</b><span>Tapas, cocktails, jusqu’à 2 h</span></div>
-        </div>
-        <div class="ticks tnum" aria-hidden="true"><span style="left:0">8 h</span><span style="left:22.22%">12 h</span><span style="left:50%">17 h</span><span style="left:72.22%">21 h</span><span style="left:88.89%">0 h</span><span style="left:100%">2 h</span></div>
-        <div class="cursor" id="cursor" aria-hidden="true"></div>
-      </div>
-      <div class="range">
-        <label for="hour">Choisir une heure</label>
-        <input type="range" id="hour" min="8" max="25.75" step="0.25" value="18">
-        <button type="button" id="now">Revenir à maintenant</button>
+      <div class="collage">
+        <figure><img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=1100&amp;q=72&amp;auto=format&amp;fit=crop" alt="Salle de café animée, clients attablés sous des suspensions" fetchpriority="high" width="1100" height="1300"><figcaption>Midi, la salle se remplit</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=700&amp;q=72&amp;auto=format&amp;fit=crop" alt="Lait versé dans un cappuccino tenu à la main" width="700" height="700"><figcaption>8&nbsp;h, le premier café</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700&amp;q=72&amp;auto=format&amp;fit=crop" alt="Cocktail ambré garni d’agrume séché, posé sur une planche en bois" width="700" height="700"><figcaption>Cocktail · <em>5,50&nbsp;€</em> en happy hour</figcaption></figure>
       </div>
     </div>
+    <ul class="infos">
+      <li><b>53 rue de la Roquette</b><span>Paris 11e · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Cosmos+Caf%C3%A9+53+rue+de+la+Roquette+75011+Paris" target="_blank" rel="noopener">itinéraire</a></span></li>
+      <li><b>Métro Bastille</b><span>Lignes 1, 5 et 8 · Ledru-Rollin, Voltaire</span></li>
+      <li><b>Tous les jours, 8 h – 2 h</b><span>Happy hour de 17 h à 21 h, 7 jours sur 7</span></li>
+      <li><b>Groupes jusqu’à 40</b><span>Anniversaires, afterworks, pots</span></li>
+    </ul>
   </div>
 
-  <section id="ambiance" class="wrap">
-    <div class="sec-head rv">
-      <h2>Bois vert, carreaux bleus, fleurs jaunes</h2>
-      <p>Une petite salle bien pensée, des boiseries vert bouteille, des carreaux bleus, des suspensions qui chauffent la lumière et une terrasse sur la façade.</p>
-    </div>
-    <div class="amb-grid">
-      <figure class="amb-a rv"><img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=1400&q=75&auto=format&fit=crop" alt="Salle de café animée, clients attablés sous des suspensions" loading="lazy"></figure>
-      <div class="amb-tiles rv"><p class="note">Le midi, ça se remplit vite&nbsp;: venez tôt ou appelez avant de passer.</p></div>
-      <figure class="amb-b rv"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=75&auto=format&fit=crop" alt="Trois cafés trinqués au-dessus d’une table en bois" loading="lazy"></figure>
-      <figure class="amb-c rv"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=75&auto=format&fit=crop" alt="Table dressée pour le dîner, verres de vin et assiettes" loading="lazy"></figure>
-      <ul class="amb-list rv">
-        <li><b>Pour tout le monde</b>Plats végétariens et halal, cartes, sans contact et titres-restaurant acceptés.</li>
-        <li><b>Chiens bienvenus</b>À l’intérieur comme en terrasse.</li>
-        <li><b>Un lieu safe</b>LGBTQ+ friendly, accueillant pour les personnes trans.</li>
-        <li><b>Accessible</b>Entrée et places adaptées aux fauteuils roulants, Wi-Fi gratuit.</li>
-      </ul>
-    </div>
-  </section>
-
   <section id="happy-hour" class="wrap">
-    <div class="hh rv">
-      <div class="hh-text">
-        <h2>Happy hour tous les soirs</h2>
-        <p class="hh-big tnum">17–21&nbsp;h</p>
-        <p><strong>Bières, vins et cocktails à prix réduit</strong>, sept jours sur sept. La Paloma revient souvent dans les avis. Une planche, des frites maison à l’aïoli aux herbes, et la soirée démarre.</p>
-        <div class="actions"><a class="btn btn-light" href="tel:+33143142583">Réserver une table</a></div>
+    <div class="hh on-dark">
+      <div>
+        <h2 class="rv">La tournée de <span class="y">17 à 21&nbsp;h</span></h2>
+        <p class="lead rv">Tous les soirs, <strong>la pinte passe de 7 à 5&nbsp;€ et le cocktail de 7,50 à 5,50&nbsp;€</strong>. Composez la tournée de la table et voyez l’addition, à l’happy hour ou après.</p>
+        <div class="mode rv" role="group" aria-label="Moment de la commande">
+          <button type="button" data-mode="hh" aria-pressed="true">Pendant l’happy hour</button>
+          <button type="button" data-mode="std" aria-pressed="false">Après 21 h</button>
+        </div>
+        <ul class="picks rv" id="picks">
+          <li class="pick" data-id="pinte" data-std="7" data-hh="5"><div><b>Pinte de bière</b><small>7 € · 5 € en happy hour</small></div><div class="step"><button type="button" data-d="-1" aria-label="Retirer une pinte">−</button><output>0</output><button type="button" data-d="1" aria-label="Ajouter une pinte">+</button></div></li>
+          <li class="pick" data-id="cocktail" data-std="7.5" data-hh="5.5"><div><b>Cocktail</b><small>7,50 € · 5,50 € en happy hour</small></div><div class="step"><button type="button" data-d="-1" aria-label="Retirer un cocktail">−</button><output>0</output><button type="button" data-d="1" aria-label="Ajouter un cocktail">+</button></div></li>
+          <li class="pick" data-id="vin" data-std="5" data-hh="5"><div><b>Verre de vin</b><small>5 €</small></div><div class="step"><button type="button" data-d="-1" aria-label="Retirer un verre de vin">−</button><output>0</output><button type="button" data-d="1" aria-label="Ajouter un verre de vin">+</button></div></li>
+          <li class="pick" data-id="frites" data-std="5.5" data-hh="5.5"><div><b>Frites maison</b><small>5,50 €</small></div><div class="step"><button type="button" data-d="-1" aria-label="Retirer des frites">−</button><output>0</output><button type="button" data-d="1" aria-label="Ajouter des frites">+</button></div></li>
+          <li class="pick" data-id="planche" data-std="15" data-hh="15"><div><b>Planche de charcuterie</b><small>Maison Montalet · 15 €</small></div><div class="step"><button type="button" data-d="-1" aria-label="Retirer une planche">−</button><output>0</output><button type="button" data-d="1" aria-label="Ajouter une planche">+</button></div></li>
+        </ul>
       </div>
-      <figure><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1400&q=75&auto=format&fit=crop" alt="Trois cocktails colorés alignés sur un comptoir" loading="lazy"></figure>
+      <div class="ticket-wrap rv">
+        <aside class="ticket" aria-label="Addition estimée">
+          <h3>Cosmos Café</h3>
+          <p class="addr">53 rue de la Roquette · Paris 11e</p>
+          <ul class="lines tnum" id="lines"><li class="empty">Ajoutez une pinte ou un cocktail.</li></ul>
+          <div class="sum"><span>Total estimé</span><output class="total tnum" id="total" aria-live="polite">0&nbsp;€</output></div>
+          <p class="save" id="save" hidden></p>
+          <p class="fine">Prix relevés en ligne en 2025, à confirmer au comptoir.</p>
+          <a class="btn btn-green" href="tel:+33143142583">Réserver la table</a>
+        </aside>
+      </div>
     </div>
   </section>
 
   <section id="carte" class="wrap">
-    <div class="sec-head rv">
-      <h2>La carte, du café au dernier verre</h2>
-      <p>Des assiettes faites maison et généreuses. Voici des plats déjà servis au Cosmos&nbsp;; la carte bouge, demandez celle du jour.</p>
+    <div class="head">
+      <h2 class="rv">La carte</h2>
+      <p class="rv">Des assiettes faites maison, à partager ou pas. La carte bouge au fil des saisons&nbsp;: voici ce qui est déjà passé sur les tables du Cosmos.</p>
     </div>
     <div class="menu">
-      <div class="course c-share rv">
-        <h3>À partager</h3>
-        <ul>
-          <li>Arancini frits au comté, sauce chimichurri</li>
-          <li>Burrata</li>
-          <li>Guacamole, pointe de citron</li>
-          <li>Frites maison, aïoli aux herbes</li>
-          <li>Planche de charcuterie <small>Maison Montalet</small></li>
-          <li>Tapas et planches du moment</li>
+      <div class="panel m-bar rv">
+        <h3>Au comptoir</h3>
+        <ul class="items tnum">
+          <li><span>Pinte de bière</span><span class="p">7 €<small>5 € à l’happy hour</small></span></li>
+          <li><span>Cocktail</span><span class="p">7,50 €<small>5,50 € à l’happy hour</small></span></li>
+          <li><span>Verre de vin</span><span class="p">5 €</span></li>
+          <li><span>Bouteille de vin</span><span class="p">25 €</span></li>
+          <li><span>Café, cappuccino, chocolat chaud</span><span class="p">au comptoir</span></li>
         </ul>
       </div>
-      <div class="course c-mains rv">
+      <div class="panel m-nib rv">
+        <h3>À grignoter</h3>
+        <ul class="items tnum">
+          <li><span>Frites maison</span><span class="p">5,50 €</span></li>
+          <li><span>Aïoli aux herbes</span><span class="p">5,50 €</span></li>
+          <li><span>Planche de charcuterie</span><span class="p">15 €</span><span class="d">Maison Montalet</span></li>
+          <li><span>Arancini frits au comté</span><span class="p">ardoise</span><span class="d">sauce chimichurri</span></li>
+          <li><span>Burrata · guacamole citronné</span><span class="p">ardoise</span></li>
+        </ul>
+      </div>
+      <figure class="m-photo rv"><img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=900&amp;q=72&amp;auto=format&amp;fit=crop" alt="Frites dorées dans un panier en métal, sur une table en bois" loading="lazy" width="900" height="1000"></figure>
+      <div class="panel m-plats rv">
         <h3>Les plats</h3>
-        <ul>
+        <ul class="items">
           <li>Agneau cuit 7 heures, courgettes au cumin, boulgour</li>
           <li>Gnocchi à la crème de potimarron</li>
           <li>Entrecôte grillée</li>
@@ -395,60 +450,81 @@ footer{padding:clamp(96px,10vw,160px) 0 32px}
           <li>Coquillettes jambon et truffe</li>
           <li>Couscous poulet ou végétarien</li>
           <li>Saucisson lyonnais, purée maison</li>
+          <li>Bagel au saumon, au brunch</li>
         </ul>
+        <ul class="note"><li>Plats végétariens et halal</li><li>Sur place ou à emporter</li><li>Titres-restaurant acceptés</li></ul>
       </div>
-      <div class="course c-sweet rv">
-        <h3>Desserts</h3>
-        <ul>
-          <li>Mousse au chocolat</li>
-          <li>Crumble à la mangue</li>
-          <li>Tiramisu</li>
-          <li>Fondant au chocolat</li>
-        </ul>
+      <div class="m-side">
+        <div class="panel m-sweet rv">
+          <h3>Desserts</h3>
+          <ul class="items"><li>Mousse au chocolat</li><li>Crumble à la mangue</li><li>Tiramisu</li><li>Fondant au chocolat</li></ul>
+        </div>
+        <div class="panel m-morning rv">
+          <h3>Le matin</h3>
+          <ul class="items"><li>Café, cappuccino</li><li>Chocolat chaud</li><li>Petit-déjeuner</li><li>Brunch</li></ul>
+        </div>
+        <figure class="m-photo2 rv"><img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=900&amp;q=72&amp;auto=format&amp;fit=crop" alt="Planche garnie de charcuterie, fromages, olives et raisin" loading="lazy" width="900" height="600"></figure>
       </div>
-      <div class="course c-morning rv">
-        <h3>Matin et brunch</h3>
-        <ul>
-          <li>Café, cappuccino</li>
-          <li>Chocolat chaud</li>
-          <li>Petit-déjeuner</li>
-          <li>Brunch, bagel au saumon</li>
-        </ul>
-      </div>
-      <figure class="c-photo rv"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1000&q=75&auto=format&fit=crop" alt="Entrecôte grillée tranchée et frites sur une assiette blanche" loading="lazy"></figure>
-      <div class="menu-note rv">
-        <p>Sur place, à emporter ou en livraison. Les prix sont affichés au Cosmos.</p>
-        <a class="btn btn-ink" href="tel:+33143142583">Appeler pour réserver</a>
+      <div class="menu-foot rv">
+        <p>Comptez 20 à 30&nbsp;€ par personne pour un repas. Sur place, à emporter ou en livraison. Les prix des plats sont à l’ardoise.</p>
+        <a class="btn btn-green" href="tel:+33143142583">Réserver une table</a>
       </div>
     </div>
+  </section>
+
+  <section id="journee" class="wrap">
+    <div class="head">
+      <h2 class="rv">Une journée au Cosmos</h2>
+      <p class="rv">Dix-huit heures d’ouverture, quatre façons d’y passer. Le moment en cours s’allume en jaune.</p>
+    </div>
+    <ol class="day">
+      <li class="moment rv" data-from="8" data-to="12">
+        <figure><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&amp;q=72&amp;auto=format&amp;fit=crop" alt="Deux cappuccinos levés au-dessus d’une table en bois" loading="lazy" width="700" height="875"></figure>
+        <div class="txt"><span class="h tnum">8 h</span><h3>Café et petit-déjeuner</h3><p>Cappuccino, chocolat chaud, petit-déjeuner, et le brunch avec son bagel au saumon.</p><span class="badge">C’est maintenant</span></div>
+      </li>
+      <li class="moment rv" data-from="12" data-to="17">
+        <figure><img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=700&amp;q=72&amp;auto=format&amp;fit=crop" alt="Œufs pochés nappés de sauce sur une assiette" loading="lazy" width="700" height="875"></figure>
+        <div class="txt"><span class="h tnum">12 h</span><h3>Le déjeuner</h3><p>Agneau de sept heures, tartare, cabillaud, salade au halloumi. Titres-restaurant acceptés.</p><span class="badge">C’est maintenant</span></div>
+      </li>
+      <li class="moment rv" data-from="17" data-to="21">
+        <figure><img src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=700&amp;q=72&amp;auto=format&amp;fit=crop" alt="Bière blonde fraîche vue de près, bulles et mousse" loading="lazy" width="700" height="875"></figure>
+        <div class="txt"><span class="h tnum">17 h</span><h3>L’happy hour</h3><p>Pinte à 5&nbsp;€, cocktail à 5,50&nbsp;€, verre de vin à 5&nbsp;€. Jusqu’à 21&nbsp;h, tous les jours.</p><span class="badge">C’est maintenant</span></div>
+      </li>
+      <li class="moment rv" data-from="21" data-to="26">
+        <figure><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=700&amp;q=72&amp;auto=format&amp;fit=crop" alt="Un barman verse un cocktail ambré sur un gros glaçon" loading="lazy" width="700" height="875"></figure>
+        <div class="txt"><span class="h tnum">21 h</span><h3>Tapas et derniers verres</h3><p>Planches, arancini, burrata, et le bar ouvert jusqu’à 2&nbsp;h du matin.</p><span class="badge">C’est maintenant</span></div>
+      </li>
+    </ol>
   </section>
 
   <section id="groupes" class="wrap">
     <div class="groups">
-      <figure class="rv"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1200&q=75&auto=format&fit=crop" alt="Un barman verse un cocktail ambré dans un verre à whisky" loading="lazy"></figure>
-      <div class="rv">
-        <h2>Un verre à plusieurs</h2>
-        <p class="lead">Anniversaire, afterwork, pot de départ&nbsp;: le Cosmos reçoit les groupes. Apportez votre gâteau, on s’occupe des verres.</p>
-        <ul class="chips">
-          <li>Anniversaires</li><li>Afterworks</li><li>Pots de départ</li><li>EVJF et EVG</li><li>Brunch entre amis</li>
-        </ul>
-        <div class="actions">
-          <a class="btn btn-ink" href="tel:+33143142583">Appeler le 01 43 14 25 83</a>
-          <a class="btn btn-soft" href="mailto:cosmoscafe@gmail.com?subject=R%C3%A9servation%20de%20groupe&body=Bonjour%2C%0A%0ANous%20serions%20%5Bnombre%5D%20personnes%20le%20%5Bdate%5D%20vers%20%5Bheure%5D%20pour%20%5Boccasion%5D.%0A%0AMerci%20!">Écrire un e-mail</a>
+      <div class="g-txt">
+        <div>
+          <h2 class="rv">À plusieurs</h2>
+          <p class="lead rv" style="margin-top:20px">Anniversaire, afterwork, pot de départ&nbsp;: le Cosmos réserve pour les groupes, en dîner assis ou en apéritif avec planches et tapas.</p>
+        </div>
+        <p class="big40 rv"><b class="tnum">40</b><span>convives au maximum, sur réservation</span></p>
+        <ul class="chips rv"><li>Anniversaires</li><li>Afterworks</li><li>Pots de départ</li><li>Dîners de groupe</li><li>Cocktail dînatoire sur demande</li></ul>
+        <div class="actions rv">
+          <a class="btn btn-green" href="tel:+33143142583">Appeler le 01 43 14 25 83</a>
+          <a class="btn btn-light" href="mailto:cosmoscafe@gmail.com?subject=R%C3%A9servation%20de%20groupe&amp;body=Bonjour%2C%0A%0ANous%20serions%20%5Bnombre%5D%20personnes%20le%20%5Bdate%5D%20vers%20%5Bheure%5D%20pour%20%5Boccasion%5D.%0A%0AMerci%20!">Écrire un e-mail</a>
         </div>
       </div>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1100&amp;q=72&amp;auto=format&amp;fit=crop" alt="Trois cocktails servis en verres à pied sur un comptoir" loading="lazy" width="1100" height="1100"></figure>
     </div>
   </section>
 
   <section id="venir" class="wrap">
-    <div class="sec-head rv">
-      <h2>Horaires et accès</h2>
-      <p>Sept jours sur sept, du premier café au dernier verre. À cinq minutes à pied de la place de la Bastille.</p>
+    <div class="head">
+      <h2 class="rv">Horaires et accès</h2>
+      <p class="rv">Sept jours sur sept, de 8&nbsp;h à 2&nbsp;h. Entre Bastille et Voltaire, sur la rue de la Roquette.</p>
     </div>
     <div class="visit">
       <div class="hours rv">
         <h3>Ouvert tous les jours</h3>
         <table class="tnum">
+          <caption class="sr">Horaires d’ouverture du Cosmos Café</caption>
           <tbody id="hours">
             <tr data-d="1"><td>Lundi</td><td>8 h – 2 h</td></tr>
             <tr data-d="2"><td>Mardi</td><td>8 h – 2 h</td></tr>
@@ -461,79 +537,89 @@ footer{padding:clamp(96px,10vw,160px) 0 32px}
         </table>
         <p class="hhline">Happy hour chaque jour de 17&nbsp;h à 21&nbsp;h</p>
       </div>
-      <div class="where rv">
+      <div class="where on-dark rv">
         <h3>Venir au Cosmos</h3>
         <address>53 rue de la Roquette<br>75011 Paris</address>
         <ul class="metro">
-          <li><span class="lines"><i>1</i><i>5</i><i>8</i></span>Bastille</li>
-          <li><span class="lines"><i>8</i></span>Ledru-Rollin</li>
-          <li><span class="lines"><i>9</i></span>Voltaire</li>
+          <li><span class="lns"><i>1</i><i>5</i><i>8</i></span>Bastille</li>
+          <li><span class="lns"><i>8</i></span>Ledru-Rollin</li>
+          <li><span class="lns"><i>9</i></span>Voltaire</li>
         </ul>
-        <div class="actions"><a class="btn btn-yellow" href="https://www.google.com/maps/dir/?api=1&destination=Cosmos+Caf%C3%A9+53+rue+de+la+Roquette+75011+Paris" target="_blank" rel="noopener">Ouvrir l’itinéraire</a></div>
+        <ul class="perks" aria-label="Sur place">
+          <li>Plats végétariens et halal</li><li>Chiens bienvenus</li><li>Accès fauteuil roulant</li><li>Wi-Fi gratuit</li><li>Cartes, sans contact, titres-restaurant</li><li>LGBTQ+ friendly</li>
+        </ul>
+        <div class="actions"><a class="btn btn-yellow" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cosmos+Caf%C3%A9+53+rue+de+la+Roquette+75011+Paris" target="_blank" rel="noopener">Ouvrir l’itinéraire</a></div>
       </div>
       <div class="map rv">
-        <iframe title="Plan d’accès au Cosmos Café, 53 rue de la Roquette" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=53+rue+de+la+Roquette+75011+Paris&z=16&output=embed"></iframe>
+        <iframe title="Plan d’accès au Cosmos Café, 53 rue de la Roquette, Paris 11e" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=53+rue+de+la+Roquette+75011+Paris&amp;z=16&amp;output=embed"></iframe>
       </div>
     </div>
   </section>
 
   <section id="contact" class="wrap">
-    <div class="contact rv">
+    <div class="contact on-dark rv">
       <div>
-        <h2>Une table, une question&nbsp;?</h2>
-        <p>Le plus simple, c’est d’appeler. Pour un groupe, un e-mail marche aussi.</p>
+        <h2>Une table pour ce soir&nbsp;?</h2>
+        <p>Le plus simple, c’est d’appeler. Pour un groupe ou une question, l’e-mail marche aussi.</p>
       </div>
-      <div class="contact-links">
-        <a class="btn btn-ink" href="tel:+33143142583">01 43 14 25 83 <span aria-hidden="true">→</span></a>
-        <a class="btn btn-soft" href="mailto:cosmoscafe@gmail.com">cosmoscafe@gmail.com <span aria-hidden="true">→</span></a>
+      <div class="col">
+        <a class="btn btn-yellow" href="tel:+33143142583">01 43 14 25 83 <span aria-hidden="true">→</span></a>
+        <a class="btn btn-light" href="mailto:cosmoscafe@gmail.com">cosmoscafe@gmail.com <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="wrap">
-  <p class="foot-name"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#cosmos"/></svg>Cosmos</p>
+  <p class="foot-name"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#cosmos"/></svg>Cosmos Café</p>
   <div class="foot-meta">
-    <span>Cosmos Café · 53 rue de la Roquette, 75011 Paris · tous les jours 8 h – 2 h</span>
-    <span>Photos d’ambiance : Unsplash · Démo réalisée par Raul Hatos — site non officiel</span>
+    <span>53 rue de la Roquette, 75011 Paris · tous les jours 8 h – 2 h · 01 43 14 25 83</span>
+    <span>Photos d’ambiance&nbsp;: Unsplash · Démo réalisée par Raul Hatos — site non officiel</span>
   </div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
-// entrées
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+// entrées : chaque bloc se révèle une fois, décalé de 70 ms au sein de sa section
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('section,.hero').forEach(s=>s.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=Math.min(i,5)*70+'ms';io.observe(el)}));
 
-// jour courant dans les horaires
-const dow=new Date().getDay();
-document.querySelector('#hours tr[data-d="'+dow+'"]')?.classList.add('today');
-
-// la journée du Cosmos : heures 8 → 26 (= 2 h du matin)
-const range=document.getElementById('hour'),cursor=document.getElementById('cursor'),statusEl=document.getElementById('status'),clock=document.getElementById('clock'),bands=[...document.querySelectorAll('.band')];
-const fmt=h=>{h=((h%24)+24)%24;const H=Math.floor(h),M=Math.round((h-H)*60);return H+':'+String(M).padStart(2,'0')};
-const dur=m=>{m=Math.round(m);const h=Math.floor(m/60),r=m%60;return h?(h+' h'+(r?' '+String(r).padStart(2,'0'):'')):r+' min'};
-function nowH(){const d=new Date();let h=d.getHours()+d.getMinutes()/60;if(h<8)h+=24;return h} // 0 h – 8 h compté comme la nuit précédente
-function render(h,live){
-  const open=h>=8&&h<26;
-  clock.textContent=fmt(h);
-  bands.forEach(b=>b.classList.toggle('on',open&&h>=+b.dataset.from&&h<+b.dataset.to));
-  const pos=Math.min(Math.max((h-8)/18,0),1);
-  cursor.style.left=(pos*100)+'%';
-  const at=live?'En ce moment':'À '+fmt(h).replace(':00',' h').replace(':',' h ');
-  let s;
-  if(!open){const until=(32-h)*60;s=at+', <b>le Cosmos est fermé</b>. Réouverture à 8 h, dans '+dur(until)+'.'}
-  else if(h<17){s=at+', <b>le Cosmos est ouvert</b>. Happy hour dans '+dur((17-h)*60)+'.'}
-  else if(h<21){s=at+', <b>c’est l’happy hour</b>, encore '+dur((21-h)*60)+'.'}
-  else{s=at+', <b>le Cosmos est ouvert</b> jusqu’à 2 h, encore '+dur((26-h)*60)+'.'}
-  statusEl.innerHTML=s;
-  range.setAttribute('aria-valuetext',fmt(h));
+// heure de Paris, 0 h – 8 h comptées comme la nuit précédente (8 → 26)
+function paris(){const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',hour:'numeric',minute:'numeric',weekday:'short',hourCycle:'h23'}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t).value;const days={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6};return{h:+g('hour')+(+g('minute'))/60,d:days[g('weekday')]}}
+const dur=m=>{m=Math.round(m);const h=Math.floor(m/60),r=m%60;return h?(h+' h'+(r?' '+(r<10?'0':'')+r:'')):r+' min'};
+function now(){
+  const t=paris();let h=t.h;if(h<8)h+=24;
+  const open=h>=8&&h<26,hh=h>=17&&h<21;
+  const live=document.getElementById('live'),txt=document.getElementById('live-txt');
+  live.classList.toggle('closed',!open);
+  txt.textContent=!open?'Fermé, réouverture à 8 h (dans '+dur((32-h)*60)+')':hh?'Ouvert · happy hour encore '+dur((21-h)*60):h<17?'Ouvert · happy hour dans '+dur((17-h)*60):'Ouvert jusqu’à 2 h, encore '+dur((26-h)*60);
+  document.querySelectorAll('.moment').forEach(m=>m.classList.toggle('now',open&&h>=+m.dataset.from&&h<+m.dataset.to));
+  const today=t.h<2?(t.d+6)%7:t.d; // après minuit, on est encore sur la journée d'hier
+  document.querySelectorAll('#hours tr').forEach(r=>r.classList.toggle('today',+r.dataset.d===today));
+  return h>=21&&h<26;
 }
-let live=true;
-function tick(){if(live){const h=nowH();if(h<26)range.value=Math.min(h,25.75);render(h,true)}}
-range.addEventListener('input',()=>{live=false;render(+range.value,false)});
-document.getElementById('now').addEventListener('click',()=>{live=true;tick()});
-tick();setInterval(tick,30000);
+let mode=now()?'std':'hh'; // hors soirée, on montre le tarif happy hour
+setInterval(now,60000);
+
+// la tournée
+const picks=[...document.querySelectorAll('.pick')],qty={};
+const eur=v=>new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',minimumFractionDigits:Number.isInteger(v)?0:2}).format(v);
+const modeBtns=[...document.querySelectorAll('.mode button')];
+function render(){
+  modeBtns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
+  let tot=0,totStd=0;const rows=[];
+  picks.forEach(p=>{const n=qty[p.dataset.id]||0;p.querySelector('output').textContent=n;if(!n)return;const u=+p.dataset[mode],s=+p.dataset.std;tot+=n*u;totStd+=n*s;rows.push('<li><span>'+n+' × '+p.querySelector('b').textContent+'</span><span>'+eur(n*u)+'</span></li>')});
+  document.getElementById('lines').innerHTML=rows.join('')||'<li class="empty">Ajoutez une pinte ou un cocktail.</li>';
+  const t=document.getElementById('total');t.textContent=eur(tot);t.classList.remove('bump');void t.offsetWidth;t.classList.add('bump');
+  const save=document.getElementById('save'),diff=totStd-tot;
+  if(mode==='hh'&&diff>0){save.hidden=false;save.textContent='Happy hour : '+eur(diff)+' d’économisés sur la tournée.'}
+  else if(mode==='std'&&rows.length){const hhTot=picks.reduce((a,p)=>a+(qty[p.dataset.id]||0)*+p.dataset.hh,0);if(totStd-hhTot>0){save.hidden=false;save.textContent='Avant 21 h, la même tournée coûte '+eur(hhTot)+'.'}else save.hidden=true}
+  else save.hidden=true;
+}
+picks.forEach(p=>p.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const id=p.dataset.id;qty[id]=Math.max(0,Math.min(20,(qty[id]||0)+ +b.dataset.d));render()})));
+modeBtns.forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;render()}));
+qty.pinte=2;qty.cocktail=2;qty.planche=1; // une table de quatre pour l'exemple
+render();
 </script>
 </body>
 </html>
