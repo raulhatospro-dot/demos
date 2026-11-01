@@ -5,287 +5,430 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Azaytoona · Restaurant indien halal, rue Simart, Paris 18e</title>
-<meta name="description" content="Azaytoona, restaurant indien halal au 3 rue Simart, Paris 18e. Naans maison, butter chicken, biryani d'agneau, jus frais. Sur place, à emporter ou en livraison.">
+<meta name="description" content="Azaytoona, restaurant indien halal au 3 rue Simart, Paris 18e. Currys, tandoor, rolls, naans et jus pressés maison. Mélange de trois plats à 10 €. À emporter ou en livraison.">
+<meta property="og:title" content="Azaytoona · Restaurant indien halal, Paris 18e">
+<meta property="og:description" content="Currys, tandoor et jus pressés au 3 rue Simart. Mélange de trois plats à 10 €.">
+<meta property="og:image" content="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/9D63A38A-3238-E61D-23F5-05CD7642000C-512x512.jpg">
+<meta name="theme-color" content="#f3f3f0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f08a1d'/%3E%3Ctext x='32' y='45' font-family='Arial' font-weight='800' font-size='36' text-anchor='middle' fill='%231b1611'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://storage.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#000;--body:#3d3d3d;--canvas:#fff;--soft:#efefef;--softer:#f6f6f6;--pressed:#e2e2e2;
-  --olive:#4a5716;--olive-ink:#f1f3e4;--live:#2f8f3a;
-  --pad:clamp(16px,4vw,48px);--max:1320px;
-  --f:'Outfit',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --ground:#f3f3f0;--paper:#fff;--tone:#e7e6e2;--tone-2:#dad9d4;
+  --ink:#1b1611;--ink-2:#544b42;
+  --orange:#f08a1d;--orange-hi:#f59a33;--orange-deep:#9c4a00;
+  --steel:#d6dbde;--steel-2:#c5cbcf;--steel-3:#e6e9eb;--steel-ink:#1b1f22;
+  --espresso:#1f1813;--on-dark:#f3f3f0;--on-dark-2:#cfc6bb;
+  --live:#2e7d32;--closed:#b3261e;
+  --pad:clamp(16px,4vw,56px);--max:1320px;--r:14px;
+  --f:'Gabarito',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--canvas);color:var(--ink);font:400 17px/1.55 var(--f);-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{background:var(--ground);color:var(--ink);font:400 17px/1.55 var(--f);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--olive);outline-offset:3px;border-radius:4px}
+h1,h2,h3{text-wrap:balance;font-weight:800;letter-spacing:-.03em}
+p,li{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;z-index:99}
+.skip:focus{left:12px}
 
 /* démo */
-.demo{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:7px var(--pad)}
+.demo{background:var(--ink);color:#f3f3f0;font-size:14px;text-align:center;padding:7px var(--pad)}
 
 /* nav */
-nav{position:sticky;top:0;z-index:20;background:#fff}
-nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
-.mark{font-weight:800;font-size:22px;letter-spacing:-.03em;text-decoration:none}
-nav ul{display:none;list-style:none;gap:28px;margin-left:auto;font-weight:500;font-size:16px}
-nav ul a{text-decoration:none}
-nav ul a:hover{text-decoration:underline;text-underline-offset:5px}
-nav .pill{margin-left:auto}
-@media(min-width:860px){nav ul{display:flex}nav .pill{margin-left:8px}}
+.nav{position:sticky;top:0;z-index:20;background:var(--ground)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.mark{display:flex;align-items:baseline;gap:8px;text-decoration:none;font-weight:800;font-size:26px;letter-spacing:-.035em}
+.mark small{font-weight:600;font-size:15px;letter-spacing:0;color:var(--orange-deep)}
+.nav nav{margin-left:auto}
+.nav ul{display:none;list-style:none;gap:26px;font-weight:500;font-size:16px}
+.nav ul a{text-decoration:none;padding:10px 0;transition:color .15s}
+.nav ul a:hover{color:var(--orange-deep)}
+.nav .btn{margin-left:auto}
+@media(min-width:900px){.nav ul{display:flex}.nav .btn{margin-left:4px}}
+@media(max-width:899px){.nav nav{display:none}}
 
-/* boutons Uber : pilule, plats */
-.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font:500 17px/1 var(--f);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s;white-space:nowrap}
-.pill:active{transform:scale(.97)}
-.pill.dark{background:var(--ink);color:#fff}
-.pill.dark:hover{background:#282828}
-.pill.light{background:var(--soft);color:var(--ink)}
-.pill.light:hover{background:var(--pressed)}
-.pill.sm{height:42px;padding:0 18px;font-size:15px}
+/* boutons : pilule pleine, appui scale(.96) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 17px/1 var(--f);text-decoration:none;border:0;cursor:pointer;white-space:nowrap;transition-property:transform,background-color,color;transition-duration:.16s;transition-timing-function:ease-out}
+.btn:active{transform:scale(.96)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.go{background:var(--orange);color:var(--ink)}
+.btn.go:hover{background:var(--orange-hi)}
+.btn.ink{background:var(--ink);color:#fff}
+.btn.ink:hover{background:#3a3129}
+.btn.soft{background:var(--tone);color:var(--ink)}
+.btn.soft:hover{background:var(--tone-2)}
+.btn.sm{min-height:44px;padding:0 20px;font-size:15px}
 
 /* hero */
-.hero{padding:20px 0 0}
-.hero .wrap{display:grid;gap:28px}
-.hero h1{font-weight:800;font-size:clamp(42px,6.2vw,92px);line-height:.95;letter-spacing:-.045em;max-width:15ch}
-.hero .lede{font-size:clamp(18px,1.6vw,21px);max-width:34ch;margin-top:24px;color:var(--body)}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.status{display:flex;align-items:center;gap:10px;margin-top:22px;font-weight:500;font-size:16px}
+.hero{padding:28px 0 0}
+.hero .wrap{display:grid;gap:36px}
+.hero h1{font-size:clamp(44px,5.6vw,84px);line-height:.98;letter-spacing:-.045em;max-width:12ch}
+.lede{font-size:clamp(17px,1.4vw,20px);line-height:1.5;max-width:36ch;margin-top:24px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:30px;max-width:540px}
+.facts div{background:var(--paper);border-radius:var(--r);padding:14px 14px 12px}
+.facts div:first-child{background:var(--orange)}
+.facts b{display:block;font-size:clamp(26px,2.8vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.facts span{display:block;font-size:14px;line-height:1.3;margin-top:6px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.status{display:flex;align-items:center;gap:10px;margin-top:20px;font-weight:600;font-size:16px}
 .dot{width:10px;height:10px;border-radius:50%;background:var(--live);flex:none}
-.status.closed .dot{background:#b3261e}
-.rating{margin-top:6px;font-size:16px;color:var(--body)}
-.hero figure{position:relative;margin:0 calc(-1*var(--pad));overflow:hidden}
-.hero figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
-@media(min-width:960px){
-  .hero{padding-top:36px}
-  .hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center;gap:56px}
-  .hero figure{margin:0;border-radius:16px}
-  .hero figure img{height:min(76vh,700px);aspect-ratio:auto}
+.closed .dot{background:var(--closed)}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mosaic figure{position:relative;overflow:hidden;border-radius:var(--r);background:var(--tone);aspect-ratio:1}
+.mosaic figure:first-child{grid-column:1/3;aspect-ratio:1.3}
+@media(min-width:600px){.mosaic{grid-template-columns:1.45fr 1fr;grid-template-rows:1fr 1fr;gap:10px;aspect-ratio:1.26}.mosaic figure,.mosaic figure:first-child{aspect-ratio:auto}.mosaic figure:first-child{grid-column:auto;grid-row:1/3}}
+.mosaic figcaption{white-space:nowrap}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic figcaption{position:absolute;left:10px;bottom:10px;background:var(--paper);border-radius:999px;padding:7px 13px;font-size:15px;font-weight:600;line-height:1}
+.mosaic figcaption span{color:var(--orange-deep)}
+@media(min-width:1000px){
+  .hero{padding-top:44px}
+  .hero .wrap{grid-template-columns:1fr 1.08fr;align-items:center;gap:56px}
 }
 
-/* raisons */
-.why{padding:clamp(96px,12vw,180px) 0 0}
-.why h2,.sec h2{font-weight:800;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.04em}
-.why-grid{display:grid;gap:40px;margin-top:44px}
-.why-item img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}
-.why-item h3{font-weight:700;font-size:24px;letter-spacing:-.02em;margin-top:18px;line-height:1.15}
-.why-item p{margin-top:8px;max-width:38ch}
-@media(min-width:860px){.why-grid{grid-template-columns:repeat(3,1fr);gap:28px}.why-item:nth-child(2){margin-top:72px}}
+/* rangée d'infos */
+.hero .wrap.strip{display:block;margin-top:44px}
+.strip ul{list-style:none;display:grid;gap:8px;grid-template-columns:1fr 1fr}
+.strip li{background:var(--tone);border-radius:var(--r);padding:16px 18px;font-size:15px;line-height:1.4}
+.strip b{display:block;font-size:17px;font-weight:700;margin-bottom:2px}
+.strip a{text-underline-offset:3px}
+@media(min-width:900px){.strip ul{grid-template-columns:repeat(4,1fr)}}
 
-/* carte + ticket */
-.sec{padding:clamp(96px,12vw,180px) 0 0}
-.menu-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px}
-.menu-head p{max-width:40ch;color:var(--body)}
-.menu-layout{display:grid;gap:40px;margin-top:40px}
-@media(min-width:1040px){.menu-layout{grid-template-columns:1fr 380px;align-items:start}}
-.cat{margin-bottom:44px}
-.cat h3{font-weight:700;font-size:26px;letter-spacing:-.02em;margin-bottom:14px}
-.dishes{list-style:none;display:grid;gap:8px}
-@media(min-width:700px){.dishes{grid-template-columns:1fr 1fr}}
-.dish{display:flex;align-items:center;gap:14px;background:var(--softer);border-radius:14px;padding:10px 10px 10px 10px}
-.dish img{width:76px;height:76px;object-fit:cover;border-radius:10px;flex:none}
-.dish .noimg{width:76px;height:76px;border-radius:10px;flex:none;background:var(--olive);color:var(--olive-ink);display:grid;place-items:center;font-weight:800;font-size:26px;letter-spacing:-.03em}
-.dish div{flex:1;min-width:0}
-.dish b{display:block;font-weight:700;font-size:18px;line-height:1.2}
-.dish span{display:block;font-size:15px;color:var(--body);line-height:1.35;margin-top:2px}
-.add{width:44px;height:44px;border-radius:50%;border:0;background:#fff;font:500 24px/1 var(--f);cursor:pointer;flex:none;transition:background .15s,transform .15s}
-.add:hover{background:var(--pressed)}
-.add:active{transform:scale(.9)}
-.add[aria-pressed="true"]{background:var(--ink);color:#fff}
-.veg{background:var(--olive);color:var(--olive-ink);border-radius:16px;padding:22px 24px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}
-.veg b{font-size:20px}
+/* sections */
+.sec{padding:clamp(88px,11vw,170px) 0 0}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(32px,4vw,52px)}
+.sec-head h2{font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.04em;max-width:16ch}
+.sec-head p{font-size:clamp(17px,1.35vw,20px);max-width:44ch}
+@media(min-width:900px){.sec-head{grid-template-columns:1.1fr 1fr;align-items:end;gap:48px}}
 
-.ticket{background:var(--ink);color:#fff;border-radius:16px;padding:24px}
-@media(min-width:1040px){.ticket{position:sticky;top:84px}}
-.ticket h3{font-weight:700;font-size:24px;letter-spacing:-.02em}
-.ticket .hint{color:#bdbdbd;font-size:15px;margin-top:6px}
-.ticket ul{list-style:none;margin:18px 0;display:grid;gap:6px}
-.ticket li{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#1c1c1c;border-radius:10px;padding:8px 8px 8px 14px;font-size:16px}
-.ticket li button{width:32px;height:32px;border-radius:50%;border:0;background:#333;color:#fff;font:500 18px/1 var(--f);cursor:pointer}
-.ticket li button:hover{background:#4b4b4b}
-.ticket .empty{background:transparent;padding:0;color:#bdbdbd}
-.ticket .pill{width:100%}
-.ticket .pill.dark{background:#fff;color:#000}
-.ticket .pill.dark:hover{background:var(--pressed)}
-.ticket .pill.light{background:#282828;color:#fff;margin-top:8px}
-.ticket .pill.light:hover{background:#3a3a3a}
-.ticket small{display:block;color:#bdbdbd;font-size:14px;margin-top:12px;line-height:1.4}
+/* mélange : le bac inox */
+.mix{margin-top:clamp(88px,11vw,170px);background:var(--steel);color:var(--steel-ink);padding:clamp(64px,8vw,120px) 0}
+.mix-grid{display:grid;gap:36px}
+@media(min-width:1000px){.mix-grid{grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}}
+.mix h2{font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.04em;max-width:13ch}
+.mix .intro{font-size:clamp(17px,1.35vw,20px);margin-top:18px;max-width:40ch}
+.picks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
+@media(min-width:600px){.picks{grid-template-columns:repeat(3,1fr)}}
+.pick{width:100%;display:flex;align-items:center;gap:10px;text-align:left;background:var(--steel-3);border:0;border-radius:12px;padding:6px 10px 6px 6px;font:inherit;color:inherit;cursor:pointer;min-height:68px;transition-property:background-color,transform;transition-duration:.16s;transition-timing-function:ease-out}
+.pick:hover{background:#f3f5f6}
+.pick:active{transform:scale(.97)}
+.pick img{width:56px;height:56px;border-radius:9px;object-fit:cover;flex:none}
+.pick b{display:block;font-size:15px;font-weight:700;line-height:1.15}
+.pick small{display:block;font-size:14px;line-height:1.25;margin-top:3px;color:#3b4247}
+.pick[aria-pressed="true"]{background:var(--ink);color:#fff}
+.pick[aria-pressed="true"] small{color:#d7d1c9}
+.tray{background:var(--steel-2);border-radius:20px;padding:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bac{position:relative;aspect-ratio:.62;border-radius:12px;background:#aab2b8;border:0;padding:0;cursor:pointer;font:inherit;color:var(--steel-ink);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;transition:background-color .2s}
+.bac::before{content:"";position:absolute;inset:9px;border-radius:8px;background:#b9c0c5}
+.bac .lbl{position:relative;font-size:15px;font-weight:600;padding:0 8px 14px;text-align:center;line-height:1.2}
+.bac img{position:absolute;inset:9px;width:calc(100% - 18px);height:calc(100% - 18px);object-fit:cover;border-radius:8px;opacity:0;transform:scale(1.08);transition:opacity .35s var(--ease),transform .5s var(--ease)}
+.bac.full img{opacity:1;transform:none}
+.bac.full .lbl{background:var(--paper);border-radius:999px;padding:7px 11px;margin:0 6px 14px;font-size:14px}
+.bac:disabled{cursor:default}
+.readout{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;align-items:end;margin-top:22px}
+.readout .big{font-size:clamp(56px,6vw,88px);font-weight:800;letter-spacing:-.05em;line-height:.85}
+.readout p{font-size:16px;line-height:1.4}
+.readout p b{font-weight:700}
+.veg-tag{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:4px 10px;font-size:14px;font-weight:600;margin-top:6px}
+.veg-tag[hidden]{display:none}
+.mix .cta{margin-top:22px}
+.mix .note{font-size:14px;margin-top:14px;color:#3b4247}
 
-/* bandeau mobile commande */
-.bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:flex;gap:8px;transform:translateY(130%);transition:transform .25s}
-.bar.on{transform:none}
-.bar .pill{flex:1;box-shadow:0 6px 24px rgba(0,0,0,.25)}
-@media(min-width:1040px){.bar{display:none}}
+/* carte */
+.carte-top{display:grid;gap:20px;margin-bottom:28px;align-items:center}
+@media(min-width:900px){.carte-top{grid-template-columns:1fr minmax(0,520px);gap:48px}}
+.counter{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1.5;background:var(--tone);margin:0}
+.counter img{position:absolute;left:0;top:0;width:200%;max-width:none;height:auto}
+.counter figcaption{position:absolute;left:10px;bottom:10px;background:var(--paper);border-radius:999px;padding:7px 13px;font-size:14px;font-weight:600;line-height:1}
+.carte-top p{font-size:16px;margin-top:18px;max-width:46ch}
+.jump{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:var(--tone);text-decoration:none;font-weight:600;font-size:15px;transition:background-color .15s}
+.jump a:hover{background:var(--tone-2)}
+.cats{columns:1;column-gap:12px}
+@media(min-width:760px){.cats{columns:2}}
+@media(min-width:1180px){.cats{columns:3}}
+.cat{break-inside:avoid;background:var(--paper);border-radius:18px;padding:18px 18px 10px;margin-bottom:12px}
+.cat-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.cat-head img{width:72px;height:72px;border-radius:12px;object-fit:cover;flex:none}
+.cat h3{font-size:26px;line-height:1.05}
+.cat-head p{font-size:15px;line-height:1.35;margin-top:3px;color:var(--ink-2)}
+.cat ul{list-style:none}
+.cat li{display:grid;grid-template-columns:1fr auto;gap:0 14px;padding:9px 0}
+.cat li+li{border-top:0;background:none}
+.cat .n{font-weight:700;font-size:17px;line-height:1.25}
+.cat .d{grid-column:1;font-size:15px;line-height:1.35;color:var(--ink-2)}
+.cat .p{grid-column:2;grid-row:1/3;font-weight:700;font-size:17px;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.cat .p small{display:block;font-weight:500;font-size:14px;color:var(--ink-2)}
+.v{color:#2b5e31;font-weight:600}
+.formules{break-inside:avoid;background:var(--ink);color:#fff;border-radius:18px;padding:22px 20px;margin-bottom:12px}
+.formules h3{font-size:26px}
+.formules p{color:#d7d1c9;font-size:15px;margin-top:4px}
+.formules ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:16px}
+.formules li{background:#342b23;border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.25}
+.formules li b{display:block;font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--orange);font-variant-numeric:tabular-nums}
+.carte-note{font-size:15px;color:var(--ink-2);margin-top:8px}
+
+/* jus */
+.jus{margin-top:clamp(88px,11vw,170px);background:var(--orange);padding:clamp(64px,8vw,120px) 0}
+.jus .sec-head p{color:var(--ink)}
+.glasses{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:640px){.glasses{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.glasses{grid-template-columns:repeat(6,1fr)}}
+.glasses li{background:var(--paper);border-radius:var(--r);padding:6px 6px 14px}
+.glasses img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 40%;border-radius:10px}
+.glasses b{display:block;font-size:16px;font-weight:700;margin:10px 8px 0;line-height:1.2}
+.glasses span{display:block;font-size:15px;margin:2px 8px 0;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.glasses li.softs{background:var(--ink);color:#fff;padding:18px 16px;display:flex;flex-direction:column;justify-content:flex-end}
+.glasses li.softs b{margin:0 0 10px;font-size:20px}
+.glasses li.softs span{color:#e7e6e2;margin:3px 0 0;font-size:15px}
+.jus .sec-head h2{max-width:none}
 
 /* boucherie */
-.meat{margin-top:clamp(96px,12vw,180px);background:var(--olive);color:var(--olive-ink)}
-.meat .wrap{display:grid;gap:32px;padding-top:clamp(56px,8vw,112px);padding-bottom:clamp(56px,8vw,112px)}
-.meat h2{font-weight:800;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.04em;color:#fff;max-width:16ch}
-.meat p{font-size:clamp(18px,1.6vw,22px);max-width:36ch;margin-top:20px}
-.meat img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}
-@media(min-width:860px){.meat .wrap{grid-template-columns:1fr 1fr;align-items:center;gap:64px}}
+.meat{background:var(--espresso);color:var(--on-dark);padding:clamp(64px,8vw,120px) 0}
+.meat-grid{display:grid;gap:36px}
+@media(min-width:960px){.meat-grid{grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}}
+.meat h2{font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.04em;max-width:14ch}
+.meat .txt{font-size:clamp(17px,1.35vw,20px);margin-top:20px;max-width:40ch}
+.meat ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px;max-width:520px}
+.meat li{background:#2e251e;border-radius:12px;padding:13px 14px;font-size:15px;line-height:1.3}
+.meat li b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--orange)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.duo figure{position:relative;border-radius:var(--r);overflow:hidden}
+.duo figure:nth-child(2){margin-top:56px}
+.duo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.duo figcaption{position:absolute;left:10px;bottom:10px;background:var(--paper);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:14px;font-weight:600;line-height:1}
 
 /* horaires + accès */
-.info{display:grid;gap:56px;margin-top:40px}
+.info{display:grid;gap:56px}
 @media(min-width:960px){.info{grid-template-columns:1fr 1.2fr;gap:64px}}
+.info h3{font-size:26px;margin-bottom:14px}
+.now{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border-radius:999px;padding:10px 16px;font-weight:600;font-size:16px;margin-bottom:16px}
 .hours{list-style:none;display:grid;gap:4px}
-.hours li{display:flex;justify-content:space-between;padding:14px 18px;border-radius:12px;font-size:18px;background:var(--softer)}
-.hours li.today{background:var(--ink);color:#fff;font-weight:700}
-.hours-note{margin-top:14px;color:var(--body);font-size:15px}
-.contact-lines{display:grid;gap:4px;margin-top:4px}
-.contact-lines a,.contact-lines p{display:flex;justify-content:space-between;gap:16px;padding:16px 18px;border-radius:12px;background:var(--softer);text-decoration:none;font-size:18px;transition:background .15s}
-.contact-lines a:hover{background:var(--pressed)}
-.contact-lines span{color:var(--body);font-size:15px;align-self:center}
-.map{margin-top:12px;border-radius:16px;overflow:hidden;background:var(--soft);aspect-ratio:16/10}
+.hours li{display:flex;justify-content:space-between;padding:13px 18px;border-radius:12px;font-size:17px;background:var(--tone);font-variant-numeric:tabular-nums}
+.hours li.today{background:var(--orange);font-weight:700}
+.hours-note{margin-top:14px;font-size:15px;color:var(--ink-2);max-width:46ch}
+.lines{display:grid;gap:4px}
+.lines a{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:12px 18px;border-radius:12px;background:var(--paper);text-decoration:none;font-size:17px;transition:background-color .15s}
+.lines a:hover{background:var(--tone)}
+.lines span{color:var(--ink-2);font-size:15px;flex:none}
+.map{margin-top:10px;border-radius:var(--r);overflow:hidden;background:var(--tone);aspect-ratio:16/10}
 .map iframe{width:100%;height:100%;border:0;display:block}
-.info h3{font-weight:700;font-size:26px;letter-spacing:-.02em;margin-bottom:14px}
 
 /* footer */
-footer{margin-top:clamp(96px,12vw,180px);background:var(--ink);color:#fff;padding:56px 0 110px}
-footer .big{font-weight:800;font-size:clamp(64px,19vw,290px);line-height:.85;letter-spacing:-.06em}
-footer .row{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:28px;font-size:16px}
-footer .row a{text-decoration:none}
-footer .row a:hover{text-decoration:underline}
-footer .credit{color:#9a9a9a;font-size:13px;margin-top:28px;max-width:80ch}
-@media(min-width:1040px){footer{padding-bottom:56px}}
+footer{margin-top:clamp(88px,11vw,170px);background:var(--ink);color:var(--on-dark);padding:56px 0}
+footer .big{font-weight:800;font-size:clamp(64px,17.5vw,268px);line-height:.82;letter-spacing:-.06em;color:var(--orange)}
+footer .row{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:30px;font-size:16px}
+footer .row a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+footer .row a:hover{text-decoration:underline;text-underline-offset:4px}
+footer .row span{display:inline-flex;align-items:center;min-height:44px}
+footer .credit{color:var(--on-dark-2);font-size:14px;margin-top:22px;max-width:80ch}
 
-/* entrées */
-.rise{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+
+/* mouvement */
+.rise{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .7s var(--ease)}
 .rise.in{opacity:1;transform:none}
-.hero figure img{animation:drift 18s ease-out both}
-@keyframes drift{from{transform:scale(1.06)}to{transform:scale(1)}}
-@media(prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none}.hero figure img{animation:none}html{scroll-behavior:auto}}
 .no-js .rise{opacity:1;transform:none}
+.mosaic figure:first-child img{animation:drift 20s ease-out both}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise{transform:none;transition:opacity .2s}
+  .mosaic figure:first-child img{animation:none}
+  .bac img{transition:opacity .2s;transform:none}
+  .btn:active,.pick:active{transform:none}
+}
 </style>
 </head>
 <body class="no-js">
+<a class="skip" href="#main">Aller au contenu</a>
 <div class="demo">Démo réalisée par Raul Hatos · site non officiel</div>
 
-<nav aria-label="Navigation principale">
+<header class="nav">
   <div class="wrap">
-    <a class="mark" href="#top">Azaytoona</a>
-    <ul>
-      <li><a href="#carte">La carte</a></li>
-      <li><a href="#horaires">Horaires</a></li>
-      <li><a href="#acces">Accès</a></li>
-    </ul>
-    <a class="pill dark sm" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener">Commander</a>
+    <a class="mark" href="#main">Azaytoona <small>Paris 18e</small></a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#melange">Le mélange</a></li>
+        <li><a href="#carte">La carte</a></li>
+        <li><a href="#jus">Les jus</a></li>
+        <li><a href="#horaires">Horaires et accès</a></li>
+      </ul>
+    </nav>
+    <a class="btn go sm" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener">Commander</a>
   </div>
-</nav>
+</header>
 
-<main id="top">
-<section class="hero">
+<main id="main">
+<section class="hero" aria-labelledby="t-hero">
   <div class="wrap">
     <div>
-      <h1 class="rise">La vraie cuisine indienne comme à&nbsp;la maison</h1>
-      <p class="lede rise">Restaurant indien halal au 3, rue Simart, Paris 18e. Naans maison, jus pressés, viande de notre boucherie. Sur place, à emporter ou en livraison.</p>
+      <h1 id="t-hero" class="rise">Currys, tandoor et jus pressés</h1>
+      <p class="lede rise">Azaytoona, restaurant indien halal au 3, rue Simart, Paris 18e. Butter chicken, biryanis, rolls au cheese naan, samosas faits maison, jus de fruits frais pressés. À emporter ou livré, 7 jours sur 7.</p>
+      <div class="facts rise">
+        <div><b class="num">10&nbsp;€</b><span>le mélange de trois plats</span></div>
+        <div><b class="num">4,6/5</b><span>1&nbsp;052 avis Google</span></div>
+        <div><b class="num">3&nbsp;€</b><span>l'orange pressée maison</span></div>
+      </div>
       <div class="cta rise">
-        <a class="pill dark" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener">Commander en ligne</a>
-        <a class="pill light" href="tel:+33142572468">Appeler le 01 42 57 24 68</a>
+        <a class="btn go" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener">Commander en ligne</a>
+        <a class="btn soft" href="tel:+33142572468"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>01 42 57 24 68</a>
       </div>
-      <p class="status rise" id="status"><span class="dot" aria-hidden="true"></span><span id="status-txt">Ouvert tous les jours, 11 h 30 – 23 h</span></p>
-      <p class="rating rise">4,6&nbsp;sur&nbsp;5 · 1 052 avis Google</p>
+      <p class="status rise" data-status><span class="dot" aria-hidden="true"></span><span data-status-txt>Ouvert tous les jours, 11 h 30 – 23 h</span></p>
     </div>
-    <figure class="rise">
-      <img src="https://images.unsplash.com/photo-1617692855027-33b14f061079?w=1400&q=78&auto=format&fit=crop" alt="Panier de naans chauds à côté d'un poulet tandoori" fetchpriority="high">
-    </figure>
+    <div class="mosaic rise">
+      <figure><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/9D63A38A-3238-E61D-23F5-05CD7642000C-512x512.jpg" alt="Azaytoona mix tandoors : côtelettes d'agneau, paneer, kebabs et poulet grillés sur une assiette blanche" width="512" height="512" fetchpriority="high"><figcaption>Mix tandoors · <span>15&nbsp;€</span></figcaption></figure>
+      <figure><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/D7E8297C-70C7-89E9-56E2-E5F1FCD8BD44-512x512.jpg" alt="Assiette de butter chicken posée sur le comptoir en bois" width="512" height="512"><figcaption>Butter chicken · <span>9&nbsp;€</span></figcaption></figure>
+      <figure><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/E854FAA9-4D5C-34D8-F95B-2AB306259D65-512x512.jpg" alt="Panier de garlic naans" width="512" height="512"><figcaption>Garlic naan · <span>2&nbsp;€</span></figcaption></figure>
+    </div>
+  </div>
+  <div class="wrap strip rise">
+    <ul>
+      <li><b>3, rue Simart</b>Paris 18e · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Azaytoona%2C+3+rue+Simart%2C+75018+Paris" target="_blank" rel="noopener">itinéraire</a></li>
+      <li><b>7 jours sur 7</b>De 11 h 30 à 23 h</li>
+      <li><b>Cuisine halal</b>Viande de notre boucherie</li>
+      <li><b>À emporter ou livré</b>Dès 5&nbsp;€ à emporter, 18&nbsp;€ en livraison</li>
+    </ul>
   </div>
 </section>
 
-<section class="why" aria-labelledby="why-t">
-  <div class="wrap">
-    <h2 id="why-t" class="rise">Pourquoi nous choisir</h2>
-    <div class="why-grid">
-      <article class="why-item rise">
-        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=900&q=75&auto=format&fit=crop" alt="Naan à l'ail posé sur un curry" loading="lazy">
-        <h3>Des naans maison</h3>
-        <p>Nature, à l'ail ou au fromage, pour accompagner chaque plat.</p>
-      </article>
-      <article class="why-item rise">
-        <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=900&q=75&auto=format&fit=crop" alt="Trois jus de fruits frais en bocaux" loading="lazy">
-        <h3>Jus maison délicieux</h3>
-        <p>Tous nos jus sont faits maison, avec des fruits frais pressés.</p>
-      </article>
-      <article class="why-item rise">
-        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=900&q=75&auto=format&fit=crop" alt="Brochettes de paneer grillé et légumes" loading="lazy">
-        <h3>Des plats végétariens</h3>
-        <p>Bien entendu, vous trouverez aussi des plats 100&nbsp;% végétariens sur notre carte.</p>
-      </article>
+<section class="mix" id="melange" aria-labelledby="t-mix">
+  <div class="wrap mix-grid">
+    <div>
+      <h2 id="t-mix" class="rise">Trois plats, une barquette, 10&nbsp;€</h2>
+      <p class="intro rise">Le mélange de trois plats : vous en choisissez trois parmi ces neuf, le prix reste le même. Composez votre barquette, puis commandez-la en ligne.</p>
+      <ul class="picks rise" aria-label="Les neuf plats du mélange">
+<li><button type="button" class="pick" data-n="Butter chicken" data-p="9" data-veg="0" data-img="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/D7E8297C-70C7-89E9-56E2-E5F1FCD8BD44-512x512.jpg" aria-pressed="false"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/D7E8297C-70C7-89E9-56E2-E5F1FCD8BD44-512x512.jpg" alt="" width="56" height="56" loading="lazy"><span><b>Butter chicken</b><small>9 € à la carte</small></span></button></li>
+<li><button type="button" class="pick" data-n="Chicken tikka masala" data-p="9" data-veg="0" data-img="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/986CB5C4-6DAE-7796-1133-AB390A6E6BA6-512x512.jpg" aria-pressed="false"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/986CB5C4-6DAE-7796-1133-AB390A6E6BA6-512x512.jpg" alt="" width="56" height="56" loading="lazy"><span><b>Chicken tikka masala</b><small>9 € à la carte</small></span></button></li>
+<li><button type="button" class="pick" data-n="Chicken korma" data-p="9" data-veg="0" data-img="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/50E7B59D-5996-38CC-401A-87BBA3DADC3C-512x512.jpg" aria-pressed="false"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/50E7B59D-5996-38CC-401A-87BBA3DADC3C-512x512.jpg" alt="" width="56" height="56" loading="lazy"><span><b>Chicken korma</b><small>9 € à la carte</small></span></button></li>
+<li><button type="button" class="pick" data-n="Palak paneer" data-p="9.5" data-veg="1" data-img="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/342087EA-F1D2-B050-3537-D1DE423FDCC3-512x512.jpg" aria-pressed="false"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/342087EA-F1D2-B050-3537-D1DE423FDCC3-512x512.jpg" alt="" width="56" height="56" loading="lazy"><span><b>Palak paneer</b><small>9,50 € à la carte · végé</small></span></button></li>
+<li><button type="button" class="pick" data-n="Aloo gobi" data-p="9" data-veg="1" data-img="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/63BB1E8C-57F4-664E-8970-792B1F9E3A9C-512x512.jpg" aria-pressed="false"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/63BB1E8C-57F4-664E-8970-792B1F9E3A9C-512x512.jpg" alt="" width="56" height="56" loading="lazy"><span><b>Aloo gobi</b><small>9 € à la carte · végé</small></span></button></li>
+<li><button type="button" class="pick" data-n="Aubergines" data-p="9" data-veg="1" data-img="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/7FF51CA0-9A69-FC9E-2B31-AC187F983009-512x512.jpg" aria-pressed="false"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/7FF51CA0-9A69-FC9E-2B31-AC187F983009-512x512.jpg" alt="" width="56" height="56" loading="lazy"><span><b>Aubergines</b><small>9 € à la carte · végé</small></span></button></li>
+<li><button type="button" class="pick" data-n="Mix vegetables" data-p="9" data-veg="1" data-img="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/457EB8AF-8CA1-2D82-0F00-ED9AFEB0E4D3-512x512.jpg" aria-pressed="false"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/457EB8AF-8CA1-2D82-0F00-ED9AFEB0E4D3-512x512.jpg" alt="" width="56" height="56" loading="lazy"><span><b>Mix vegetables</b><small>9 € à la carte · végé</small></span></button></li>
+<li><button type="button" class="pick" data-n="Courge butternut" data-p="8.8" data-veg="1" data-img="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/F98C05F0-D876-F234-F652-0C80C3D40B01-512x512.jpg" aria-pressed="false"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/F98C05F0-D876-F234-F652-0C80C3D40B01-512x512.jpg" alt="" width="56" height="56" loading="lazy"><span><b>Courge butternut</b><small>8,80 € à la carte · végé</small></span></button></li>
+<li><button type="button" class="pick" data-n="Daal" data-p="6.5" data-veg="1" data-img="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/619FCE25-2898-2395-465C-405744F9FBA0-512x512.jpg" aria-pressed="false"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/619FCE25-2898-2395-465C-405744F9FBA0-512x512.jpg" alt="" width="56" height="56" loading="lazy"><span><b>Daal</b><small>6,50 € à la carte · végé</small></span></button></li>
+      </ul>
     </div>
-  </div>
-</section>
-
-<section class="sec" id="carte" aria-labelledby="carte-t">
-  <div class="wrap">
-    <div class="menu-head">
-      <h2 id="carte-t" class="rise">La carte</h2>
-      <p class="rise">Touchez + pour préparer votre ticket, puis commandez en un clic. Prix et carte complète sur le webshop.</p>
-    </div>
-    <div class="menu-layout">
-      <div>
-        <div class="cat rise">
-          <h3>Pour commencer</h3>
-          <ul class="dishes">
-            <li class="dish"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Samoussas</b><span>Croustillants, à partager ou pas</span></div><button class="add" data-d="Samoussas" aria-pressed="false" aria-label="Ajouter Samoussas">+</button></li>
-            <li class="dish"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Rolls tikka</b><span>Rouleau garni de tikka</span></div><button class="add" data-d="Rolls tikka" aria-pressed="false" aria-label="Ajouter Rolls tikka">+</button></li>
-            <li class="dish"><span class="noimg" aria-hidden="true"><svg width="52" height="52" viewBox="0 0 52 52"><g fill="currentColor"><ellipse cx="18" cy="30" rx="12" ry="9" transform="rotate(-20 18 30)"/><ellipse cx="34" cy="22" rx="11" ry="8" transform="rotate(25 34 22)"/><ellipse cx="34" cy="38" rx="9" ry="7"/></g><g fill="#4a5716"><circle cx="14" cy="28" r="1.4"/><circle cx="22" cy="33" r="1.2"/><circle cx="33" cy="20" r="1.3"/><circle cx="36" cy="39" r="1.2"/></g></svg></span><div><b>Potatoes amritsari</b><span>Pommes de terre épicées façon Amritsar</span></div><button class="add" data-d="Potatoes amritsari" aria-pressed="false" aria-label="Ajouter Potatoes amritsari">+</button></li>
-          </ul>
-        </div>
-        <div class="cat rise">
-          <h3>Les plats</h3>
-          <ul class="dishes">
-            <li class="dish"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Butter chicken</b><span>Poulet dans une sauce tomate au beurre</span></div><button class="add" data-d="Butter chicken" aria-pressed="false" aria-label="Ajouter Butter chicken">+</button></li>
-            <li class="dish"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Biryani d'agneau</b><span>Riz épicé et agneau de notre boucherie</span></div><button class="add" data-d="Biryani d'agneau" aria-pressed="false" aria-label="Ajouter Biryani d'agneau">+</button></li>
-          </ul>
-        </div>
-        <div class="cat rise">
-          <h3>Naans maison</h3>
-          <ul class="dishes">
-            <li class="dish"><img src="https://images.unsplash.com/photo-1617692855027-33b14f061079?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Naan nature</b><span>Le pain indien, tout simple</span></div><button class="add" data-d="Naan nature" aria-pressed="false" aria-label="Ajouter Naan nature">+</button></li>
-            <li class="dish"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Naan à l'ail</b><span>Ail et herbes fraîches</span></div><button class="add" data-d="Naan à l'ail" aria-pressed="false" aria-label="Ajouter Naan à l'ail">+</button></li>
-            <li class="dish"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Naan au fromage</b><span>Fourré au fromage fondu</span></div><button class="add" data-d="Naan au fromage" aria-pressed="false" aria-label="Ajouter Naan au fromage">+</button></li>
-          </ul>
-        </div>
-        <div class="cat rise">
-          <h3>À boire</h3>
-          <ul class="dishes">
-            <li class="dish"><img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Mango lassi</b><span>Yaourt et mangue, bien frais</span></div><button class="add" data-d="Mango lassi" aria-pressed="false" aria-label="Ajouter Mango lassi">+</button></li>
-            <li class="dish"><img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=200&q=70&auto=format&fit=crop" alt="" loading="lazy"><div><b>Jus frais</b><span>Fruits frais pressés maison</span></div><button class="add" data-d="Jus frais" aria-pressed="false" aria-label="Ajouter Jus frais">+</button></li>
-          </ul>
-        </div>
-        <div class="veg rise"><b>Végétarien ?</b><span>Plusieurs plats 100&nbsp;% végétariens à la carte.</span></div>
-      </div>
-
-      <aside class="ticket" aria-labelledby="ticket-t">
-        <h3 id="ticket-t">Votre ticket</h3>
-        <p class="hint" id="ticket-hint">Rien pour l'instant. Ajoutez un plat avec +.</p>
-        <ul id="ticket-list" aria-live="polite"></ul>
-        <a class="pill dark" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener" id="go">Commander en ligne</a>
-        <a class="pill light" href="tel:+33142572468">Ou appeler le restaurant</a>
-        <small id="copied">Votre liste est copiée en ouvrant le webshop : vous la retrouvez d'un coup d'œil pendant la commande.</small>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<section class="meat" aria-labelledby="meat-t">
-  <div class="wrap">
     <div class="rise">
-      <h2 id="meat-t">Viande de qualité avec traçabilité garantie</h2>
-      <p>Nous nous fournissons en viande directement auprès de notre boucherie, ce qui nous permet d'avoir une garantie sur la qualité de nos viandes. Cuisine halal.</p>
+      <div class="tray" role="group" aria-label="Votre barquette">
+        <button type="button" class="bac" data-i="0" disabled><img alt=""><span class="lbl">Plat 1</span></button>
+        <button type="button" class="bac" data-i="1" disabled><img alt=""><span class="lbl">Plat 2</span></button>
+        <button type="button" class="bac" data-i="2" disabled><img alt=""><span class="lbl">Plat 3</span></button>
+      </div>
+      <div class="readout">
+        <span class="big num">10&nbsp;€</span>
+        <p id="mix-out" aria-live="polite"><b>Choisissez trois plats.</b><br>À la carte, chacun coûte de 6,50 à 9,50&nbsp;€.</p>
+      </div>
+      <span class="veg-tag" id="mix-veg" hidden>100&nbsp;% végétarien</span>
+      <div class="cta">
+        <a class="btn ink" id="mix-go" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener">Commander ce mélange</a>
+        <button type="button" class="btn soft" id="mix-reset">Vider la barquette</button>
+      </div>
+      <p class="note">Sur la boutique en ligne, ouvrez « Formules » puis « Mélange de trois plats ». Votre choix est copié pour l'avoir sous les yeux.</p>
     </div>
-    <img class="rise" src="https://images.unsplash.com/photo-1628294895950-9805252327bc?w=1100&q=75&auto=format&fit=crop" alt="Morceaux de viande grillés et épicés" loading="lazy">
   </div>
 </section>
 
-<section class="sec" id="horaires" aria-labelledby="h-t">
+<section class="sec" id="carte" aria-labelledby="t-carte">
   <div class="wrap">
-    <h2 id="h-t" class="rise">Horaires et accès</h2>
+    <div class="sec-head">
+      <h2 id="t-carte" class="rise">La carte</h2>
+      <p class="rise">Plus de quatre-vingts références, du pappadam à 1&nbsp;€ au mix tandoors à 15&nbsp;€.</p>
+    </div>
+    <div class="carte-top rise">
+      <div>
+        <ul class="jump" aria-label="Rubriques de la carte">
+          <li><a href="#c-plats">Plats</a></li><li><a href="#c-tandoor">Tandoor</a></li><li><a href="#c-rolls">Rolls</a></li><li><a href="#c-biryanis">Biryanis</a></li><li><a href="#c-fritures">Fritures</a></li><li><a href="#c-naans">Naans</a></li><li><a href="#c-desserts">Desserts</a></li><li><a href="#jus">Jus et lassis</a></li>
+        </ul>
+        <p>Prix à emporter, relevés sur notre boutique en ligne. Les plats marqués « végé » sont sans viande.</p>
+      </div>
+      <figure class="counter"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/66BD79EA-35FA-A124-9890-DBF9332F5490-1024x1024.jpg" alt="Trois bacs inox du comptoir remplis de currys" width="1024" height="575" loading="lazy"><figcaption>Le comptoir, rue Simart</figcaption></figure>
+    </div>
+    <div class="cats">
+      <section class="formules" aria-labelledby="h-formules">
+        <h3 id="h-formules">Les formules</h3>
+        <p>Composition au comptoir ou sur la boutique en ligne.</p>
+        <ul>
+          <li><b>10&nbsp;€</b>Mélange de trois plats</li>
+          <li><b>14&nbsp;€</b>Formule tandoors</li>
+          <li><b>17&nbsp;€</b>Formule plats</li>
+          <li><b>20&nbsp;€</b>Formule mix tandoors</li>
+        </ul>
+      </section>
+<section class="cat" id="c-plats" aria-labelledby="h-plats"><div class="cat-head"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/D7E8297C-70C7-89E9-56E2-E5F1FCD8BD44-512x512.jpg" alt="" width="72" height="72" loading="lazy"><div><h3 id="h-plats">Les plats</h3><p>Currys, kormas et légumes cuisinés, servis en barquette.</p></div></div><ul><li><span class="n">Butter chicken</span><span class="d">Blanc de poulet mariné, cuit au tandoor, sauce au beurre</span><span class="p">9 €</span></li><li><span class="n">Chicken tikka masala</span><span class="d">Cuisse de poulet marinée, cuite au tandoor, sauce relevée</span><span class="p">9 €</span></li><li><span class="n">Azaytoona chicken korma</span><span class="d">Boulettes de poulet, sauce douce</span><span class="p">9 €</span></li><li><span class="n">Lamb curry</span><span class="d">Gigot d&#x27;agneau désossé, sauce relevée aux épices</span><span class="p">10,80 €</span></li><li><span class="n">Lamb korma</span><span class="d">Gigot d&#x27;agneau désossé mariné, sauce douce</span><span class="p">10,80 €</span></li><li><span class="n">Lamb tikka masala</span><span class="d">Gigot d&#x27;agneau désossé mariné, sauce relevée</span><span class="p">10,80 €</span></li><li><span class="n">Beef curry</span><span class="d">Bœuf désossé, sauce relevée aux épices</span><span class="p">10,50 €</span></li><li><span class="n">Beef korma</span><span class="d">Bœuf désossé, sauce douce</span><span class="p">10,50 €</span></li><li><span class="n">Palak paneer korma</span><span class="d">Fromage indien et épinards émincés en sauce · <span class="v">végé</span></span><span class="p">9,50 €</span></li><li><span class="n">Aubergines</span><span class="d">Baingan ki sabzi · <span class="v">végé</span></span><span class="p">9 €</span></li><li><span class="n">Chou-fleur et pomme de terre</span><span class="d">Aloo gobi · <span class="v">végé</span></span><span class="p">9 €</span></li><li><span class="n">Mix vegetables</span><span class="d">Haricots verts, chou-fleur, carottes, petits pois, poivrons · <span class="v">végé</span></span><span class="p">9 €</span></li><li><span class="n">Courge butternut</span><span class="d">Cuisinée à l&#x27;indienne · <span class="v">végé</span></span><span class="p">8,80 €</span></li><li><span class="n">Daal</span><span class="d">Lentilles cuisinées à l&#x27;indienne · <span class="v">végé</span></span><span class="p">6,50 €</span></li></ul></section>
+<section class="cat" id="c-tandoor" aria-labelledby="h-tandoor"><div class="cat-head"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/630F81BD-305D-230E-CD60-B651C010FDAB-512x512.jpg" alt="" width="72" height="72" loading="lazy"><div><h3 id="h-tandoor">Tandoor</h3><p>Marinés puis grillés au four tandoor.</p></div></div><ul><li><span class="n">Azaytoona mix tandoors</span><span class="d">Assortiment de la maison</span><span class="p">15 €</span></li><li><span class="n">Lamb chops</span><span class="d">Côtelettes d&#x27;agneau marinées</span><span class="p">9,80 €</span></li><li><span class="n">Paneer tikka</span><span class="d">Fromage indien mariné · <span class="v">végé</span></span><span class="p">9 €</span></li><li><span class="n">Chicken tikka</span><span class="d">Cuisse de poulet désossée marinée</span><span class="p">8 €</span></li><li><span class="n">Malaï chicken tikka</span><span class="d">Blanc de poulet mariné</span><span class="p">8 €</span></li><li><span class="n">Chicken kebab</span><span class="d">Cuisse de poulet hachée marinée</span><span class="p">8 €</span></li><li><span class="n">Seekh kebab</span><span class="d">Gigot d&#x27;agneau haché mariné</span><span class="p">8 €</span></li><li><span class="n">Vegetable seekh kebab</span><span class="d">Brochette de légumes hachés, épices douces · <span class="v">végé</span></span><span class="p">7,50 €</span></li><li><span class="n">Tandoori chicken</span><span class="d">Cuisse de poulet marinée</span><span class="p">7 €</span></li><li><span class="n">Peri peri chicken wings</span><span class="d">Ailes de poulet marinées</span><span class="p">7 €</span></li></ul></section>
+<section class="cat" id="c-rolls" aria-labelledby="h-rolls"><div class="cat-head"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/999D33EC-4F22-5CAD-FFB1-BCEAB9F7F899-512x512.jpg" alt="" width="72" height="72" loading="lazy"><div><h3 id="h-rolls">Rolls</h3><p>Avec potatoes amritsari, ou seuls.</p></div></div><ul><li><span class="n">Chicken tikka roll</span><span class="d">Cuisse de poulet marinée, dans un cheese naan</span><span class="p">11 €<small>seul 8,80 €</small></span></li><li><span class="n">Chicken kebab roll</span><span class="d">Cuisse de poulet hachée marinée, dans un cheese naan</span><span class="p">11 €<small>seul 8,80 €</small></span></li><li><span class="n">Seekh kebab roll</span><span class="d">Gigot d&#x27;agneau haché mariné, dans un cheese naan</span><span class="p">11 €<small>seul 8,80 €</small></span></li><li><span class="n">Paneer tikka roll</span><span class="d">Fromage indien mariné, dans un cheese naan · <span class="v">végé</span></span><span class="p">11 €<small>seul 8,80 €</small></span></li></ul></section>
+<section class="cat" id="c-biryanis" aria-labelledby="h-biryanis"><div class="cat-head"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/A8E9EF1F-8A6F-3800-CFDB-55C3B0C87CA6-512x512.jpg" alt="" width="72" height="72" loading="lazy"><div><h3 id="h-biryanis">Biryanis et poêlées</h3><p>Biryanis servis avec raïta.</p></div></div><ul><li><span class="n">Lamb biryani</span><span class="d">Riz épicé à l&#x27;agneau désossé, raïta</span><span class="p">10,80 €</span></li><li><span class="n">Beef biryani</span><span class="d">Riz épicé au bœuf, raïta</span><span class="p">10,50 €</span></li><li><span class="n">Chicken biryani</span><span class="d">Riz épicé au poulet, raïta</span><span class="p">10 €</span></li><li><span class="n">Vegetables biryani</span><span class="d">Riz épicé aux légumes, raïta · <span class="v">végé</span></span><span class="p">9,50 €</span></li><li><span class="n">Chili chicken</span><span class="d">Poulet pané sauté à la poêle, poivrons, oignons</span><span class="p">12,50 €</span></li><li><span class="n">Chili paneer</span><span class="d">Fromage indien sauté à la poêle, poivrons, oignons · <span class="v">végé</span></span><span class="p">12,50 €</span></li><li><span class="n">Honey chili potatoes</span><span class="d">Frites au miel sautées, poivrons, oignons · <span class="v">végé</span></span><span class="p">12 €</span></li></ul></section>
+<section class="cat" id="c-fritures" aria-labelledby="h-fritures"><div class="cat-head"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/91606F12-FE75-FC09-880D-6BCE18E68EE2-512x512.jpg" alt="" width="72" height="72" loading="lazy"><div><h3 id="h-fritures">Fritures</h3><p>Samosas et beignets faits maison.</p></div></div><ul><li><span class="n">4 samosas légumes</span><span class="d">Faits maison · <span class="v">végé</span></span><span class="p">6,80 €</span></li><li><span class="n">4 samosas poulet</span><span class="d">Faits maison</span><span class="p">6,80 €</span></li><li><span class="n">4 samosas agneau</span><span class="d">Faits maison</span><span class="p">6,80 €</span></li><li><span class="n">5 chicken amritsari pakoras</span><span class="d">Poulet tikka pané à l&#x27;indienne</span><span class="p">7 €</span></li><li><span class="n">6 batata vada</span><span class="d">Beignets de pomme de terre écrasée aux épices · <span class="v">végé</span></span><span class="p">6,50 €</span></li><li><span class="n">6 pakoras aubergine</span><span class="d">Beignets à l&#x27;aubergine · <span class="v">végé</span></span><span class="p">6,50 €</span></li><li><span class="n">6 pakoras pomme de terre</span><span class="d">Beignets à la pomme de terre · <span class="v">végé</span></span><span class="p">6,50 €</span></li><li><span class="n">Potatoes amritsari</span><span class="d">Frites maison panées à l&#x27;indienne · <span class="v">végé</span></span><span class="p">4,90 €</span></li></ul></section>
+<section class="cat" id="c-naans" aria-labelledby="h-naans"><div class="cat-head"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/E854FAA9-4D5C-34D8-F95B-2AB306259D65-512x512.jpg" alt="" width="72" height="72" loading="lazy"><div><h3 id="h-naans">Naans</h3><p>Nature, garnis ou fourrés.</p></div></div><ul><li><span class="n">Butter naan</span><span class="d">Au beurre</span><span class="p">1,80 €</span></li><li><span class="n">Garlic naan</span><span class="d">Garni à l&#x27;ail</span><span class="p">2 €</span></li><li><span class="n">Tarbo naan</span><span class="d">Garni aux épices</span><span class="p">2 €</span></li><li><span class="n">Potato naan</span><span class="d">Fourré à la pomme de terre</span><span class="p">2,50 €</span></li><li><span class="n">Cheese naan</span><span class="d">Fourré au fromage</span><span class="p">2,90 €</span></li><li><span class="n">Kheema naan</span><span class="d">Fourré au poulet haché</span><span class="p">2,90 €</span></li><li><span class="n">Naan sans gluten</span><span class="d">Garni à l&#x27;ail</span><span class="p">3 €</span></li><li><span class="n">Cheese potato garlic naan</span><span class="d">Fromage, pomme de terre et ail</span><span class="p">3,80 €</span></li></ul></section>
+<section class="cat" id="c-accompagnements" aria-labelledby="h-accompagnements"><div class="cat-head"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/C74F7A3B-0350-1987-9D84-F0BBD9F35D16-512x512.jpg" alt="" width="72" height="72" loading="lazy"><div><h3 id="h-accompagnements">Accompagnements</h3><p>Pour compléter la barquette.</p></div></div><ul><li><span class="n">Pappadam</span><span class="d">Galette croustillante</span><span class="p">1 €</span></li><li><span class="n">Raïta</span><span class="d">Crudités au yaourt nature</span><span class="p">2 €</span></li><li><span class="n">Riz du jour</span><span class="p">3,50 €</span></li><li><span class="n">Sauce butter chicken</span><span class="d">Sans viande, 180 ml</span><span class="p">3 €</span></li><li><span class="n">Sauce chicken tikka masala</span><span class="d">Sans viande</span><span class="p">3 €</span></li></ul></section>
+<section class="cat" id="c-desserts" aria-labelledby="h-desserts"><div class="cat-head"><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/0F6F81B2-DD20-D404-DEB3-17B2A764A5E5-512x512.jpg" alt="" width="72" height="72" loading="lazy"><div><h3 id="h-desserts">Desserts</h3><p>Halwas, gulab jamun et naan au Nutella.</p></div></div><ul><li><span class="n">Gajar halwa</span><span class="d">Carottes râpées aux amandes</span><span class="p">5,50 €</span></li><li><span class="n">Suji halwa</span><span class="d">Semoule, carottes râpées, cajous, raisins secs</span><span class="p">4,50 €</span></li><li><span class="n">Gulab jamun</span><span class="d">Deux boulettes de pâte au sirop</span><span class="p">3 €</span></li><li><span class="n">Nutella naan</span><span class="d">Naan enroulé au Nutella</span><span class="p">3 €</span></li><li><span class="n">Ananas</span><span class="d">En morceaux</span><span class="p">3 €</span></li></ul></section>
+    </div>
+    <p class="carte-note">Allergies : demandez au comptoir avant de commander.</p>
+  </div>
+</section>
+
+<section class="jus" id="jus" aria-labelledby="t-jus">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="t-jus" class="rise">Jus pressés maison, dès 3&nbsp;€</h2>
+      <p class="rise">Tous nos jus sont faits maison, avec des fruits frais pressés. Et quatre lassis au yaourt, mangue, fraise, sucré ou salé.</p>
+    </div>
+  </div>
+  <div class="wrap"><ul class="glasses rise" aria-label="Jus et lassis">
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/F681EC4C-5D28-9D6F-D096-3F20F829D833-512x512.jpg" alt="Verre de orange pressée sur le comptoir" width="512" height="512" loading="lazy"><b>Orange pressée</b><span>3 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/C81D97AA-10A8-8F7A-3861-F17B02F06D4D-512x512.jpg" alt="Verre de orange et carotte sur le comptoir" width="512" height="512" loading="lazy"><b>Orange et carotte</b><span>3,80 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/A24D4F2A-D664-1C7A-961E-6DEBF8677B0E-512x512.jpg" alt="Verre de ananas pressé sur le comptoir" width="512" height="512" loading="lazy"><b>Ananas pressé</b><span>3,50 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/DA78AF1F-8C51-45FB-DB08-07D2F547A56B-512x512.jpg" alt="Verre de ananas et pomme sur le comptoir" width="512" height="512" loading="lazy"><b>Ananas et pomme</b><span>3,80 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/A3D2D799-2687-224E-0003-A643FA8B9EBB-512x512.jpg" alt="Verre de ananas et poire sur le comptoir" width="512" height="512" loading="lazy"><b>Ananas et poire</b><span>3,80 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/67A74EE1-F749-7161-2703-44451BD82E8D-512x512.jpg" alt="Verre de pomme pressée sur le comptoir" width="512" height="512" loading="lazy"><b>Pomme pressée</b><span>3,80 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/5DA6338E-0F3C-E8D4-5A66-8225EE455752-512x512.jpg" alt="Verre de pamplemousse pressé sur le comptoir" width="512" height="512" loading="lazy"><b>Pamplemousse pressé</b><span>3,80 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/39190D9F-0481-2524-63EE-33736D00CEAF-512x512.jpg" alt="Verre de lassi mangue sur le comptoir" width="512" height="512" loading="lazy"><b>Lassi mangue</b><span>3,80 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/CD99F0EF-4573-66D1-8470-74598080477D-512x512.jpg" alt="Verre de lassi fraise sur le comptoir" width="512" height="512" loading="lazy"><b>Lassi fraise</b><span>3,80 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/DC495F3F-ADEA-35DD-B139-D1ECB31A7761-512x512.jpg" alt="Verre de lassi sucré sur le comptoir" width="512" height="512" loading="lazy"><b>Lassi sucré</b><span>3,80 € · 27 cl</span></li>
+<li><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/6F267624-4D35-1911-B178-CA472961420F-512x512.jpg" alt="Verre de lassi salé sur le comptoir" width="512" height="512" loading="lazy"><b>Lassi salé</b><span>3,80 € · 27 cl</span></li>
+    <li class="softs"><b>Et en bouteille</b><span>Badoit 2,80&nbsp;€</span><span>Evian 2,50&nbsp;€</span><span>Breizh Cola, zéro 3&nbsp;€</span><span>Orangina 3&nbsp;€</span></li>
+  </ul></div>
+
+</section>
+
+<section class="meat" aria-labelledby="t-meat">
+  <div class="wrap meat-grid">
+    <div>
+      <h2 id="t-meat" class="rise">La viande vient de notre boucherie</h2>
+      <p class="txt rise">Nous nous fournissons en viande directement auprès de notre boucherie : une garantie sur la qualité et la traçabilité. Cuisine halal. Et pour qui n'en mange pas, six plats 100&nbsp;% végétariens, du daal au palak paneer.</p>
+      <ul class="rise">
+        <li><b class="num">9,80&nbsp;€</b>Lamb chops au tandoor</li>
+        <li><b class="num">10,80&nbsp;€</b>Lamb biryani et raïta</li>
+        <li><b class="num">8&nbsp;€</b>Seekh kebab d'agneau</li>
+        <li><b class="num">6,50&nbsp;€</b>Le daal, végétarien</li>
+      </ul>
+    </div>
+    <div class="duo rise">
+      <figure><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/630F81BD-305D-230E-CD60-B651C010FDAB-512x512.jpg" alt="Côtelettes d'agneau marinées grillées au tandoor" width="512" height="512" loading="lazy"><figcaption>Lamb chops · 9,80&nbsp;€</figcaption></figure>
+      <figure><img src="https://storage.googleapis.com/f7w-product-images/3a522ac2ed8898921629183fb68bd78744ee14d1/A8E9EF1F-8A6F-3800-CFDB-55C3B0C87CA6-512x512.jpg" alt="Assiette de lamb biryani" width="512" height="512" loading="lazy"><figcaption>Lamb biryani · 10,80&nbsp;€</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="horaires" aria-labelledby="t-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="t-h" class="rise">Horaires et accès</h2>
+      <p class="rise">Au 3, rue Simart, dans le 18e. Passez commander au comptoir, appelez, ou commandez en ligne.</p>
+    </div>
     <div class="info">
       <div class="rise">
         <h3>Ouvert 7 jours sur 7</h3>
+        <p class="now" data-status><span class="dot" aria-hidden="true"></span><span data-status-txt>De 11 h 30 à 23 h</span></p>
         <ul class="hours" id="hours">
           <li data-d="1"><span>Lundi</span><span>11 h 30 – 23 h</span></li>
           <li data-d="2"><span>Mardi</span><span>11 h 30 – 23 h</span></li>
@@ -295,17 +438,17 @@ footer .credit{color:#9a9a9a;font-size:13px;margin-top:28px;max-width:80ch}
           <li data-d="6"><span>Samedi</span><span>11 h 30 – 23 h</span></li>
           <li data-d="0"><span>Dimanche</span><span>11 h 30 – 23 h</span></li>
         </ul>
-        <p class="hours-note">Sur place, à emporter, ou en livraison via le webshop.</p>
+        <p class="hours-note">Commande en ligne : créneaux de 11 h 45 à 22 h, à emporter dès 5&nbsp;€ ou en livraison dès 18&nbsp;€ de commande.</p>
       </div>
-      <div class="rise" id="acces">
-        <h3>3, rue Simart, Paris 18e</h3>
-        <div class="contact-lines">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Azaytoona%2C+3+rue+Simart%2C+75018+Paris" target="_blank" rel="noopener">Itinéraire <span>Google Maps</span></a>
+      <div class="rise">
+        <h3>3, rue Simart, 75018 Paris</h3>
+        <div class="lines">
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Azaytoona%2C+3+rue+Simart%2C+75018+Paris" target="_blank" rel="noopener">Itinéraire <span>Google Maps</span></a>
           <a href="tel:+33142572468">01 42 57 24 68 <span>Appeler</span></a>
           <a href="mailto:azaytoonarestaurant@gmail.com?subject=Question%20pour%20Azaytoona">azaytoonarestaurant@gmail.com <span>Écrire</span></a>
           <a href="https://instagram.com/azaytoonaparis" target="_blank" rel="noopener">@azaytoonaparis <span>Instagram</span></a>
         </div>
-        <div class="map"><iframe title="Plan d'accès : 3 rue Simart, Paris 18e" loading="lazy" src="https://www.google.com/maps?q=3+rue+Simart,+75018+Paris&z=16&output=embed"></iframe></div>
+        <div class="map"><iframe title="Plan : 3 rue Simart, Paris 18e" loading="lazy" src="https://www.google.com/maps?q=3+rue+Simart,+75018+Paris&amp;z=16&amp;output=embed"></iframe></div>
       </div>
     </div>
   </div>
@@ -314,61 +457,72 @@ footer .credit{color:#9a9a9a;font-size:13px;margin-top:28px;max-width:80ch}
 
 <footer>
   <div class="wrap">
-    <p class="big">Azaytoona</p>
+    <p class="big" aria-hidden="true">Azaytoona</p>
     <div class="row">
       <span>Restaurant indien halal · 3, rue Simart, 75018 Paris</span>
       <a href="tel:+33142572468">01 42 57 24 68</a>
       <a href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener">Commander en ligne</a>
+      <a href="https://instagram.com/azaytoonaparis" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <p class="credit">Démo réalisée par Raul Hatos · site non officiel. Photos d'illustration : Unsplash (licence Unsplash), à remplacer par les photos du restaurant.</p>
+    <p class="credit">Démo réalisée par Raul Hatos · site non officiel. Photos et prix : boutique en ligne d'Azaytoona, relevés le 1er novembre 2026.</p>
   </div>
 </footer>
 
-<div class="bar" id="bar">
-  <a class="pill dark" href="https://webshop.fulleapps.io/s/azaytoona/MTU0NzcyXzVhZTg" target="_blank" rel="noopener" id="bar-go">Commander</a>
-  <a class="pill light" href="tel:+33142572468" style="flex:none;width:52px;padding:0" aria-label="Appeler le restaurant"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></a>
-</div>
+
 
 <script>
 document.body.classList.remove('no-js');
-// ouvert / fermé selon l'heure de Paris
+// ouvert / fermé, heure de Paris
 (function(){
   var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
   var g=function(t){return (p.find(function(x){return x.type===t})||{}).value};
-  var days={lun:1,mar:2,mer:3,jeu:4,ven:5,sam:6,dim:0};
-  var d=days[(g('weekday')||'').slice(0,3)], m=(+g('hour'))*60+(+g('minute'));
+  var d={lun:1,mar:2,mer:3,jeu:4,ven:5,sam:6,dim:0}[(g('weekday')||'').slice(0,3)], m=(+g('hour'))%24*60+(+g('minute'));
   var li=document.querySelector('#hours li[data-d="'+d+'"]'); if(li) li.classList.add('today');
-  var open=m>=690&&m<1380, s=document.getElementById('status'), t=document.getElementById('status-txt');
-  if(open){t.textContent='Ouvert maintenant · jusqu’à 23 h'}
-  else{s.classList.add('closed');t.textContent='Fermé · ouvre à 11 h 30'+(m>=1380?' demain':'')}
+  var open=m>=690&&m<1380;
+  var txt=open?'Ouvert maintenant, jusqu’à 23 h':'Fermé, ouvre à 11 h 30'+(m>=1380?' demain':'');
+  document.querySelectorAll('[data-status]').forEach(function(s){s.classList.toggle('closed',!open);s.querySelector('[data-status-txt]').textContent=txt});
 })();
-// ticket
+// le mélange de trois plats
 (function(){
-  var items={}, list=document.getElementById('ticket-list'), hint=document.getElementById('ticket-hint'), bar=document.getElementById('bar'), barGo=document.getElementById('bar-go');
+  var picks=[].slice.call(document.querySelectorAll('.pick')), bacs=[].slice.call(document.querySelectorAll('.bac'));
+  var out=document.getElementById('mix-out'), veg=document.getElementById('mix-veg'), go=document.getElementById('mix-go');
+  var slots=[null,null,null];
+  var fmt=function(n){return n.toFixed(2).replace('.',',').replace(',00','')+' €'};
   function render(){
-    list.innerHTML=''; var n=0;
-    Object.keys(items).forEach(function(k){
-      n+=items[k]; var li=document.createElement('li');
-      li.innerHTML='<span>'+items[k]+' × '+k+'</span>';
-      var b=document.createElement('button'); b.textContent='−'; b.setAttribute('aria-label','Retirer '+k);
-      b.onclick=function(){items[k]--; if(!items[k]) delete items[k]; render()};
-      li.appendChild(b); list.appendChild(li);
+    bacs.forEach(function(b,i){
+      var s=slots[i], im=b.querySelector('img'), l=b.querySelector('.lbl');
+      b.classList.toggle('full',!!s); b.disabled=!s;
+      if(s){im.src=s.dataset.img; l.textContent=s.dataset.n; b.setAttribute('aria-label','Retirer '+s.dataset.n+' de la barquette')}
+      else{l.textContent='Plat '+(i+1); b.removeAttribute('aria-label')}
     });
-    hint.textContent=n?n+(n>1?' articles':' article')+' sur votre ticket.':'Rien pour l’instant. Ajoutez un plat avec +.';
-    document.querySelectorAll('.add').forEach(function(b){b.setAttribute('aria-pressed',items[b.dataset.d]?'true':'false')});
-    barGo.textContent=n?'Commander · '+n+(n>1?' articles':' article'):'Commander';
+    picks.forEach(function(p){p.setAttribute('aria-pressed',slots.indexOf(p)>-1?'true':'false')});
+    var chosen=slots.filter(Boolean), sum=chosen.reduce(function(a,p){return a+(+p.dataset.p)},0);
+    if(chosen.length<3){
+      out.innerHTML='<b>'+(chosen.length?'Encore '+(3-chosen.length)+' plat'+(3-chosen.length>1?'s':'')+' à choisir.':'Choisissez trois plats.')+'</b><br>'+(chosen.length?'Déjà '+fmt(sum)+' à la carte.':'À la carte, chacun coûte de 6,50 à 9,50 €.');
+    }else{
+      out.innerHTML='<b>À la carte : '+fmt(sum)+'</b><br>Avec le mélange, vous gardez '+fmt(sum-10)+'.';
+    }
+    veg.hidden=!(chosen.length===3&&chosen.every(function(p){return p.dataset.veg==='1'}));
   }
-  document.querySelectorAll('.add').forEach(function(b){b.onclick=function(){items[b.dataset.d]=(items[b.dataset.d]||0)+1; render()}});
-  function copy(){var txt=Object.keys(items).map(function(k){return items[k]+' x '+k}).join('\n'); if(txt&&navigator.clipboard) navigator.clipboard.writeText(txt).catch(function(){})}
-  document.getElementById('go').addEventListener('click',copy); barGo.addEventListener('click',copy);
-  // bandeau mobile après le premier écran
-  addEventListener('scroll',function(){bar.classList.toggle('on',scrollY>innerHeight*.7)},{passive:true});
+  picks.forEach(function(p){p.addEventListener('click',function(){
+    var i=slots.indexOf(p);
+    if(i>-1){slots[i]=null}else{var e=slots.indexOf(null); if(e<0){slots.shift();slots.push(null);e=2} slots[e]=p}
+    render();
+  })});
+  bacs.forEach(function(b,i){b.addEventListener('click',function(){slots[i]=null;render()})});
+  document.getElementById('mix-reset').addEventListener('click',function(){slots=[null,null,null];render()});
+  go.addEventListener('click',function(){
+    var c=slots.filter(Boolean).map(function(p){return p.dataset.n});
+    if(c.length&&navigator.clipboard) navigator.clipboard.writeText('Mélange de trois plats : '+c.join(', ')).catch(function(){});
+  });
+  ['Butter chicken','Palak paneer','Daal'].forEach(function(n,i){slots[i]=picks.filter(function(p){return p.dataset.n===n})[0]||null});
+  render();
 })();
-// entrées
+// entrées échelonnées
 (function(){
   var els=document.querySelectorAll('.rise');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.querySelectorAll(':scope > .rise'));e.target.style.transitionDelay=Math.max(0,sib.indexOf(e.target))*80+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.children).filter(function(x){return x.classList.contains('rise')});e.target.style.transitionDelay=Math.max(0,sib.indexOf(e.target))*75+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
