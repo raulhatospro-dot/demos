@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Bistrot Charbon · Bar-brasserie, 131 rue Saint-Martin, Paris 4e</title>
+<meta name="description" content="Bistrot Charbon, bar-brasserie au 131 rue Saint-Martin (Paris 4e), à deux pas du Centre Pompidou. Terrasse, frites maison, burgers, pizzas, happy hour de 16 h à minuit.">
+<meta name="theme-color" content="#131313">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+/* Système adapté du DESIGN.md « The Verge » (awesome-design) : toile presque noire #131313, aplats saturés
+   en blocs pleins, tout en pilule, zéro dégradé, zéro ombre.
+   Adapté : le noir devient le charbon de l'enseigne ; la menthe et l'ultraviolet sont remplacés par le code
+   couleur des gaines du Centre Pompidou voisin (bleu air, vert eau, jaune électricité, rouge circulation).
+   Le motif unique : le tube à bouts ronds. Il fait les boutons, les cadres photo, les puces et les bandes. */
+:root{
+  --charbon:#131313;
+  --charbon-2:#222221;
+  --paper:#f2f1ee;
+  --paper-2:#e6e4df;
+  --ink:#131313;
+  --ink-soft:#4a4946;
+  --on-dark:#f2f1ee;
+  --on-dark-soft:#b9b7b1;
+  --bleu:#1f55c9;   /* gaines d'air */
+  --vert:#13804a;   /* eau */
+  --jaune:#f5d10f;  /* électricité */
+  --rouge:#d8312a;  /* circulation */
+  --m:clamp(16px,3vw,48px);
+  --s-small:1rem;
+  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --s-head:clamp(2.25rem,1.3rem + 3.6vw,4.5rem);
+  --s-mega:clamp(4rem,.4rem + 13vw,12.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:76px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Albert Sans",system-ui,sans-serif;font-size:var(--s-body);line-height:1.5;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1;text-wrap:balance}
+h2{font-size:var(--s-head)}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--bleu);outline-offset:3px}
+::selection{background:var(--jaune);color:var(--charbon)}
+html{scrollbar-color:var(--ink-soft) var(--paper)}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:20;background:var(--paper);padding:8px 14px;border-radius:999px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
+
+/* boutons : un seul dessin, le tube */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:0 1.6em;border-radius:999px;border:0;font:600 1rem/1 "Albert Sans",sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .18s,color .18s,transform .18s var(--ease)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn:active{transform:scale(.96)}
+.btn-jaune{background:var(--jaune);color:var(--charbon)}.btn-jaune:hover{background:#fff}
+.btn-ink{background:var(--charbon);color:var(--on-dark)}.btn-ink:hover{background:var(--bleu)}
+.btn-soft{background:var(--paper-2);color:var(--ink)}.btn-soft:hover{background:#d8d5ce}
+.btn-paper{background:var(--paper);color:var(--ink)}.btn-paper:hover{background:#fff}
+
+/* bandeau démo */
+.demo{background:#000;color:#bdbbb5;font-size:.8125rem;text-align:center;padding:7px var(--m);margin:0}
+
+/* ---------- en-tête ---------- */
+.top{position:sticky;top:0;z-index:10;background:var(--charbon);color:var(--on-dark)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:68px}
+.mark{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.125rem;letter-spacing:-.02em;text-decoration:none;margin-right:auto}
+.mark i{display:grid;gap:3px}
+.mark b{display:block;height:5px;border-radius:9px}
+.mark b:nth-child(1){width:26px;background:var(--bleu)}.mark b:nth-child(2){width:20px;background:var(--vert)}
+.mark b:nth-child(3){width:26px;background:var(--jaune)}.mark b:nth-child(4){width:14px;background:var(--rouge)}
+.nav{display:flex;gap:26px;font-size:var(--s-small);font-weight:500}
+.nav a{text-decoration:none;color:var(--on-dark-soft);transition:color .15s}
+.nav a:hover{color:#fff}
+.top .btn{min-height:44px;padding:0 1.2em}
+@media (max-width:880px){.nav{display:none}}
+
+/* ---------- héros ---------- */
+.hero{background:var(--charbon);color:var(--on-dark);position:relative;overflow:hidden;padding-top:clamp(36px,4.4vw,64px)}
+.hero h1{font-size:var(--s-mega);letter-spacing:-.05em;line-height:.88;white-space:nowrap}
+.hero-sub{display:grid;grid-template-columns:minmax(0,46ch) auto;justify-content:space-between;align-items:end;gap:24px 48px;margin-top:clamp(28px,3vw,44px)}
+.hero-sub p{font-size:var(--s-lead);line-height:1.35;color:var(--on-dark)}
+.now{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 20px 0 14px;border-radius:999px;background:var(--charbon-2);font-weight:500;font-size:1rem;white-space:nowrap}
+.now i{width:28px;height:12px;border-radius:9px;background:var(--on-dark-soft);flex:none}
+.now[data-state="open"] i{background:#3ccf7d}
+.now[data-state="hh"] i{background:var(--jaune)}
+.now[data-state="closed"] i{background:var(--rouge)}
+
+/* la pile de tubes */
+.tubes{position:relative;margin-top:clamp(36px,4vw,60px);padding-top:calc(var(--strip)*4)}
+.tube{position:absolute;left:var(--m);right:var(--m);top:0;bottom:0;border-radius:clamp(56px,7vw,110px) clamp(56px,7vw,110px) 0 0;display:flex;align-items:flex-start;text-decoration:none;padding:0 clamp(28px,4vw,64px);transition:transform .45s var(--ease)}
+.tube span{display:flex;align-items:center;height:var(--strip);font-weight:600;font-size:clamp(1rem,.9rem + .4vw,1.25rem);gap:12px}
+.tube span svg{width:20px;height:20px;transition:transform .3s var(--ease)}
+.tube:hover{transform:translateY(-10px)}
+.tube:hover span svg{transform:translateX(6px)}
+.tubes{--strip:clamp(52px,4.6vw,66px)}
+.t1{top:0;background:var(--bleu);color:#fff}
+.t2{top:var(--strip);background:var(--vert);color:#fff}
+.t3{top:calc(var(--strip)*2);background:var(--jaune);color:var(--charbon)}
+.t4{top:calc(var(--strip)*3);background:var(--rouge);color:#fff}
+.t1 span{margin-left:0}.t2 span{margin-left:18%}.t3 span{margin-left:40%}.t4 span{margin-left:62%}
+.front{position:relative;margin-inline:var(--m);min-height:clamp(260px,24vw,360px);background:var(--paper);color:var(--ink);border-radius:clamp(56px,7vw,110px) clamp(56px,7vw,110px) 0 0;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start;padding:clamp(28px,3.2vw,48px) clamp(28px,4vw,64px) clamp(32px,3vw,48px)}
+.front h2{font-size:clamp(1.5rem,1.1rem + 1.4vw,2.25rem);letter-spacing:-.03em;line-height:1.05;max-width:20ch}
+.front .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.front figure{width:clamp(150px,17vw,260px);aspect-ratio:1/1.3;border-radius:999px;overflow:hidden}
+.front figure img{width:100%;height:100%;object-fit:cover}
+
+@media (max-width:720px){
+  .hero h1{white-space:normal;font-size:clamp(4.25rem,22vw,7rem);line-height:.86}
+  .hero-sub{grid-template-columns:1fr}
+  .hero-sub p{font-size:1.1875rem}
+  .tube{left:0;right:0;border-radius:40px 40px 0 0;padding:0 24px}
+  .t1 span,.t2 span,.t3 span,.t4 span{margin-left:0}
+  .t2 span{margin-left:22%}.t3 span{margin-left:44%}.t4 span{margin-left:auto}
+  .t4{justify-content:flex-end}
+  .tubes{--strip:50px}
+  .front{margin-inline:0;min-height:0;grid-template-columns:1fr;border-radius:40px 40px 0 0;padding:28px 20px 40px}
+  .front figure{display:none}
+  .front .acts .btn{flex:1 1 100%}
+}
+
+/* ---------- happy hour (champ jaune) ---------- */
+.hh{background:var(--jaune);color:var(--charbon);padding-block:clamp(88px,10vw,160px)}
+.hh-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,104px);align-items:start}
+.hh h2{max-width:11ch}
+.hh-grid>div:first-child{position:sticky;top:120px}
+@media (max-width:860px){.hh-grid{grid-template-columns:1fr}.hh-grid>div:first-child{position:static}}
+.hh-live{margin-top:36px;font-size:var(--s-lead);line-height:1.3;font-weight:500;max-width:26ch}
+.hh-live strong{font-weight:800}
+.switch{display:inline-flex;margin-top:32px;background:var(--charbon);border-radius:999px;padding:5px}
+.switch button{font:600 1rem/1 "Albert Sans",sans-serif;border:0;min-height:44px;padding:0 20px;border-radius:999px;background:transparent;color:var(--on-dark);cursor:pointer;transition:background .2s,color .2s}
+.switch button[aria-pressed="true"]{background:var(--jaune);color:var(--charbon)}
+.switch button:hover:not([aria-pressed="true"]){background:#333}
+.hh-note{margin-top:28px;font-size:var(--s-small);max-width:40ch}
+.prices h3{font-size:var(--s-lead);letter-spacing:-.02em;margin:0 0 14px}
+.prices h3:not(:first-child){margin-top:44px}
+.prices table{width:100%;border-collapse:collapse}
+.prices td{padding:9px 0;vertical-align:baseline;border-bottom:2px solid rgba(19,19,19,.14)}
+.prices td:first-child{font-weight:600;padding-right:16px}
+.prices td small{display:block;font-weight:400;font-size:var(--s-small);color:#3d3a2a}
+.prices td.p{text-align:right;white-space:nowrap;width:1%;font-weight:800;font-size:1.125rem}
+.prices td.p s{font-weight:500;color:#5a5440;margin-right:10px;text-decoration-thickness:2px}
+.prices .hhp{display:none}
+.prices.is-hh .hhp{display:inline}
+.prices.is-hh .np{text-decoration:line-through;font-weight:500;color:#5a5440;margin-right:10px;font-size:1rem}
+
+/* ---------- la carte ---------- */
+.carte{padding-block:clamp(96px,11vw,176px)}
+.carte-head{display:grid;grid-template-columns:1fr minmax(0,44ch);gap:24px 64px;align-items:end}
+.carte-head p{font-size:var(--s-body);max-width:52ch}
+.formules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:clamp(40px,4vw,64px)}
+.formules div{background:var(--bleu);color:#fff;border-radius:999px;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.formules div:nth-child(2){background:var(--charbon)}
+.formules div:nth-child(3){background:var(--paper-2);color:var(--ink)}
+.formules b{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.formules span{font-weight:500;line-height:1.25}
+.menu{display:grid;grid-template-columns:minmax(260px,4fr) 8fr;gap:clamp(32px,5vw,88px);margin-top:clamp(56px,6vw,96px);position:relative}
+.cats{position:sticky;top:96px;align-self:start;min-width:0}
+.panels{min-width:0}
+.cats ul{display:grid;gap:2px}
+.cats button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:14px;width:100%;padding:8px 0;font-size:clamp(1.375rem,1rem + 1.2vw,2.125rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--ink);transition:opacity .24s,color .2s}
+.cats button i{width:40px;height:10px;border-radius:9px;background:var(--paper-2);flex:none;transform:scaleX(.45);transform-origin:left;transition:transform .3s var(--ease),background .2s;margin-right:-22px}
+.cats button[aria-selected="true"] i{transform:none;background:var(--rouge);margin-right:0}
+.cats button:focus-visible{outline:3px solid var(--bleu);outline-offset:4px;border-radius:999px}
+.cats ul:has(button:hover) button:not(:hover){opacity:.45}
+.preview{margin-top:28px;width:min(100%,280px);aspect-ratio:1/1.3;border-radius:999px;overflow:hidden;background:var(--paper-2);position:relative}
+.preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .24s ease}
+.preview img.on{opacity:1}
+.panel{display:none}
+.panel.on{display:block}
+.no-js .panel{display:block;margin-bottom:64px}
+.panel h3{font-size:clamp(2rem,1.4rem + 1.8vw,3.125rem);display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:40px}
+.panel h3 small{font-size:1rem;font-weight:500;letter-spacing:0;color:var(--ink-soft)}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:34px 64px}
+.items li{display:grid;grid-template-columns:22px 1fr;gap:0 16px}
+.items li::before{content:"";width:22px;height:11px;border-radius:9px;background:var(--c,var(--bleu));margin-top:.5em}
+.items .row{display:flex;justify-content:space-between;gap:16px;font-weight:700;font-size:1.0625rem;line-height:1.35}
+.items .row span:last-child{white-space:nowrap}
+.items p{grid-column:2;font-size:1rem;color:var(--ink-soft);margin-top:4px;max-width:38ch;line-height:1.45}
+.panel-note{max-width:62ch;margin-top:40px;font-size:var(--s-small);color:var(--ink-soft)}
+
+@media (max-width:900px){
+  .carte-head{grid-template-columns:1fr}
+  .formules{grid-template-columns:1fr}
+  .menu{grid-template-columns:1fr}
+  .cats{top:68px;z-index:5;background:var(--paper);margin-inline:calc(var(--m)*-1);padding:10px var(--m)}
+  .cats ul{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity}
+  .cats ul::-webkit-scrollbar{display:none}
+  .cats button{font-size:1rem;font-weight:600;letter-spacing:0;padding:0 18px;min-height:44px;border-radius:999px;background:var(--paper-2);white-space:nowrap;scroll-snap-align:start}
+  .cats button i{display:none}
+  .cats button[aria-selected="true"]{background:var(--charbon);color:var(--on-dark)}
+  .cats ul:has(button:hover) button:not(:hover){opacity:1}
+  .preview{display:none}
+  .items{grid-template-columns:1fr;gap:26px}
+  .panel h3{margin-bottom:28px}
+}
+
+/* ---------- terrasse (vitrine) ---------- */
+.terrasse{background:var(--vert);color:#fff}
+.terrasse .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);min-height:88svh;align-items:center;padding-block:clamp(80px,8vw,120px)}
+.terrasse figure{border-radius:999px;overflow:hidden;aspect-ratio:1/1.12;max-height:76svh;justify-self:center;width:min(100%,600px)}
+.terrasse figure img{width:100%;height:100%;object-fit:cover}
+.ter-txt{display:flex;flex-direction:column;justify-content:space-between;gap:48px;align-self:stretch;padding-block:24px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{font:600 1.0625rem/1 "Albert Sans",sans-serif;border:0;min-height:44px;padding:0 20px;border-radius:999px;background:transparent;color:#fff;cursor:pointer;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55);transition:background .2s,color .2s}
+.tabs button[aria-selected="true"]{background:#fff;color:var(--vert);box-shadow:none}
+.tabs button:hover:not([aria-selected="true"]){background:rgba(255,255,255,.14)}
+.ter-txt h2{max-width:12ch}
+.ter-txt .moment{margin-top:40px;font-size:var(--s-lead);line-height:1.35;max-width:30ch;min-height:5.4em}
+.ter-acts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ter-acts .btn{min-height:64px}
+.btn-vert{background:#0d5f36;color:#fff}.btn-vert:hover{background:#0a4a2a}
+@media (max-width:820px){
+  .terrasse .wrap{grid-template-columns:1fr;min-height:0}
+  .terrasse figure{aspect-ratio:1/1.05}
+  .ter-txt{padding:0;gap:32px}
+  .ter-txt .moment{min-height:0;font-size:1.1875rem}
+  .ter-acts{grid-template-columns:1fr}
+}
+
+/* ---------- ce qu'on vient chercher ---------- */
+.pourquoi{padding-block:clamp(96px,11vw,176px)}
+.pq{display:grid;grid-template-columns:3fr 9fr;gap:clamp(32px,4vw,64px)}
+.pq-head p{margin-top:20px;max-width:30ch}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 10px}
+.tile .ph{border-radius:999px;overflow:hidden;aspect-ratio:4/5;background:var(--c)}
+.tile.wide{grid-column:span 2}
+.tile.wide .ph{aspect-ratio:8/5}
+.tile .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.tile:hover .ph img{transform:scale(1.04)}
+.tile h3{font-size:1.25rem;font-weight:700;letter-spacing:-.015em;margin-top:16px}
+.tile p{font-size:1rem;color:var(--ink-soft);margin-top:4px;max-width:30ch}
+@media (max-width:980px){.pq{grid-template-columns:1fr}.tiles{grid-template-columns:1fr 1fr;gap:24px 8px}.tile.wide{grid-column:1/-1;order:-1}.tile h3{font-size:1.0625rem}.tile p{font-size:.9375rem}}
+
+/* ---------- coupon groupes ---------- */
+.groupes{padding-bottom:clamp(96px,11vw,176px)}
+.coupon{--notch:30px;background:var(--bleu);color:#fff;display:grid;grid-template-columns:46fr 54fr;margin-inline:auto;max-width:1240px;
+  -webkit-mask:radial-gradient(circle var(--notch) at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--notch) at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle var(--notch) at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--notch) at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+.coupon .l{padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;position:relative}
+.coupon .l::after{content:"";position:absolute;right:-3px;top:44px;bottom:44px;width:6px;background:radial-gradient(circle,var(--paper) 2.6px,transparent 3px) 0 0/6px 16px repeat-y}
+.coupon h2{font-size:clamp(2rem,1.4rem + 2vw,3.25rem);max-width:10ch}
+.coupon .l p{max-width:34ch}
+.coupon form{padding:clamp(32px,4vw,56px);display:grid;gap:10px;align-content:center}
+.coupon .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.coupon input,.coupon textarea{width:100%;font:500 1rem/1.3 "Albert Sans",sans-serif;color:#fff;background:#3a6bd3;border:0;border-radius:26px;padding:15px 22px;min-height:52px}
+.coupon textarea{min-height:96px;resize:vertical}
+.coupon ::placeholder{color:#dce5fa}
+.coupon input:focus-visible,.coupon textarea:focus-visible{outline:3px solid var(--jaune);outline-offset:2px}
+.coupon button{min-height:56px;margin-top:6px}
+.coupon .err{min-height:1.4em;font-size:var(--s-small);color:#fff;font-weight:600}
+@media (max-width:820px){
+  .coupon{grid-template-columns:1fr;
+   -webkit-mask:radial-gradient(circle var(--notch) at 0 var(--cut),#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--notch) at 100% var(--cut),#0000 98%,#000) right/51% 100% no-repeat;
+   mask:radial-gradient(circle var(--notch) at 0 var(--cut),#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--notch) at 100% var(--cut),#0000 98%,#000) right/51% 100% no-repeat;--cut:330px}
+  .coupon .l{min-height:330px}
+  .coupon .l::after{right:36px;left:36px;top:auto;bottom:-3px;width:auto;height:6px;background:radial-gradient(circle,var(--paper) 2.6px,transparent 3px) 0 0/16px 6px repeat-x}
+  .coupon .two{grid-template-columns:1fr}
+}
+
+/* ---------- infos (charbon) ---------- */
+.infos{background:var(--charbon);color:var(--on-dark);padding-block:clamp(96px,10vw,160px) clamp(64px,6vw,96px)}
+.infos-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,104px)}
+.hours{margin-top:40px;display:grid;gap:6px;max-width:520px}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:12px 22px;border-radius:999px;background:var(--charbon-2);font-weight:500}
+.hours div.today{background:var(--jaune);color:var(--charbon);font-weight:700}
+.hours-note{margin-top:16px;font-size:var(--s-small);color:var(--on-dark-soft)}
+.addr{font-size:clamp(1.75rem,1.2rem + 2vw,3rem);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.addr-sub{margin-top:18px;font-size:var(--s-lead);line-height:1.35;color:var(--on-dark);max-width:30ch}
+.contacts{margin-top:44px;display:grid;gap:10px}
+.contacts a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;padding:0 30px;border-radius:999px;text-decoration:none;font-weight:600;font-size:clamp(1.0625rem,1rem + .4vw,1.3125rem);transition:transform .25s var(--ease),background .2s}
+.contacts a:hover{transform:translateX(6px)}
+.contacts a span:last-child{font-weight:500;opacity:.85;font-size:1rem;text-align:right}
+.c1{background:var(--rouge);color:#fff}.c2{background:var(--bleu);color:#fff}.c3{background:var(--vert);color:#fff}.c4{background:var(--charbon-2);color:var(--on-dark)}
+@media (max-width:900px){.infos-grid{grid-template-columns:1fr}.contacts a{padding:0 24px;min-height:64px}.contacts a span:last-child{display:none}}
+
+/* ---------- pied : le nom construit en tubes ---------- */
+.foot{background:var(--charbon);color:var(--on-dark);padding-bottom:40px}
+.word{display:flex;align-items:flex-end;gap:4px;height:clamp(150px,30svh,300px)}
+.word span{flex:1;display:flex;align-items:center;justify-content:center;border-radius:999px 999px 0 0;font-weight:800;font-size:clamp(2rem,7.4vw,7.5rem);line-height:1;letter-spacing:-.04em;padding-top:.15em}
+.word span:nth-child(1){height:100%;background:var(--bleu);color:#fff}
+.word span:nth-child(2){height:72%;background:var(--vert);color:#fff}
+.word span:nth-child(3){height:88%;background:var(--jaune);color:var(--charbon)}
+.word span:nth-child(4){height:64%;background:var(--rouge);color:#fff}
+.word span:nth-child(5){height:94%;background:var(--paper);color:var(--charbon)}
+.word span:nth-child(6){height:78%;background:var(--bleu);color:#fff}
+.word span:nth-child(7){height:60%;background:var(--vert);color:#fff}
+.foot-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:32px 24px;margin-top:56px;font-size:1rem;color:var(--on-dark-soft)}
+.foot-grid nav{grid-column:span 2;display:grid;gap:8px;align-content:start}
+.foot-grid nav a{text-decoration:none;color:var(--on-dark)}
+.foot-grid nav a:hover{text-decoration:underline}
+.foot-grid .code{grid-column:span 4}
+.foot-grid .who{grid-column:span 4;color:var(--on-dark)}
+.foot-grid .code p+p,.foot-grid .who p+p{margin-top:8px}
+.foot-last{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;font-size:.875rem;color:var(--on-dark-soft)}
+.foot-last .btn{min-height:44px}
+@media (max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid nav{grid-column:span 1}.foot-grid .code,.foot-grid .who{grid-column:1/-1}.word{height:22svh}}
+
+/* ---------- mouvement ---------- */
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.js .rise.in{opacity:1;transform:none}
+.js .tube,.js .front{animation:slide 1s var(--ease) both}
+.js .t1{animation-delay:.05s}.js .t2{animation-delay:.13s}.js .t3{animation-delay:.21s}.js .t4{animation-delay:.29s}.js .front{animation-delay:.37s}
+@keyframes slide{from{transform:translateX(-14%);opacity:0}to{transform:none;opacity:1}}
+.drift{animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.12) translateY(-2%)}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise{opacity:1;transform:none;transition:none}
+  .js .tube,.js .front{animation:none}
+  .drift{animation:none}
+  .tube:hover,.contacts a:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#carte">Aller à la carte</a>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Bistrot Charbon, retour en haut"><i aria-hidden="true"><b></b><b></b><b></b><b></b></i>Bistrot Charbon</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#carte">La carte</a>
+      <a href="#happy-hour">Happy hour</a>
+      <a href="#terrasse">Terrasse</a>
+      <a href="#infos">Horaires et accès</a>
+    </nav>
+    <a class="btn btn-jaune" href="https://wiicmenu-qrcode.com/app/reservation_client.php?resto=199" target="_blank" rel="noopener">Réserver</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <h1 id="h1">Bistrot Charbon</h1>
+    <div class="hero-sub">
+      <p>Bar-brasserie au 131 rue Saint-Martin, à deux pas du Centre Pompidou. Ouvert dès 10&nbsp;h, happy hour de 16&nbsp;h à minuit.</p>
+      <p class="now" id="now" data-state="unknown"><i aria-hidden="true"></i><span>Lun–jeu 10&nbsp;h – minuit</span></p>
+    </div>
+  </div>
+  <div class="tubes">
+    <a class="tube t1" href="#carte"><span>La carte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="tube t2" href="#terrasse"><span>La terrasse <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="tube t3" href="#happy-hour"><span>Happy hour <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="tube t4" href="#infos"><span>Horaires <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <div class="front">
+      <div>
+        <h2>Une pinte en terrasse, un burger, ou le match du soir.</h2>
+        <div class="acts">
+          <a class="btn btn-ink" href="https://wiicmenu-qrcode.com/app/reservation_client.php?resto=199" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>Réserver une table</a>
+          <a class="btn btn-soft" href="tel:+33140299647"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3.5h3l1.5 4-2 1.4a11 11 0 0 0 6 6l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></svg>01 40 29 96 47</a>
+          <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bistrot+Charbon,+131+Rue+Saint-Martin,+75004+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+        </div>
+      </div>
+      <figure><img class="drift" src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=600&amp;h=900&amp;fit=crop&amp;q=70" width="600" height="900" alt="Une bière blonde tirée à la pression"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="hh" id="happy-hour" aria-labelledby="hh-t">
+  <div class="wrap hh-grid">
+    <div>
+      <h2 id="hh-t" class="rise">Happy hour 16&nbsp;h – minuit</h2>
+      <p class="hh-live rise" style="--i:1" id="hh-live" aria-live="polite">Tous les jours de 16&nbsp;h à minuit&nbsp;: la Kanter blonde à <strong>5&nbsp;€</strong> au lieu de 7&nbsp;€, les cocktails à <strong>7&nbsp;€</strong>.</p>
+      <div class="switch rise" style="--i:2" role="group" aria-label="Afficher les prix">
+        <button type="button" data-mode="hh" aria-pressed="true">Prix happy hour</button>
+        <button type="button" data-mode="normal" aria-pressed="false">Prix normaux</button>
+      </div>
+      <p class="hh-note rise" style="--i:3">Le dimanche, le bar ferme à 22&nbsp;h. Les prix de la carte peuvent évoluer&nbsp;: la carte du jour fait foi.</p>
+    </div>
+    <div class="prices is-hh" id="prices">
+      <h3 class="rise">Bières pression, 50&nbsp;cl</h3>
+      <table class="rise" style="--i:1">
+        <tr><td>Kanter blonde</td><td class="p"><span class="np">7,00&nbsp;€</span><span class="hhp">5,00&nbsp;€</span></td></tr>
+        <tr><td>Kanter blanche</td><td class="p"><span class="np">8,00&nbsp;€</span><span class="hhp">6,50&nbsp;€</span></td></tr>
+        <tr><td>Kanter abbaye</td><td class="p"><span class="np">8,00&nbsp;€</span><span class="hhp">6,50&nbsp;€</span></td></tr>
+        <tr><td>Kanter IPA</td><td class="p"><span class="np">9,00&nbsp;€</span><span class="hhp">7,50&nbsp;€</span></td></tr>
+        <tr><td>La Chouffe</td><td class="p"><span class="np">9,00&nbsp;€</span><span class="hhp">7,50&nbsp;€</span></td></tr>
+        <tr><td>Picon bière</td><td class="p"><span class="np">9,00&nbsp;€</span><span class="hhp">7,00&nbsp;€</span></td></tr>
+        <tr><td>Bière sirop</td><td class="p"><span class="np">8,00&nbsp;€</span><span class="hhp">6,00&nbsp;€</span></td></tr>
+      </table>
+      <h3 class="rise">Cocktails et vin</h3>
+      <table class="rise" style="--i:1">
+        <tr><td>Les onze cocktails<small>Mojito, piña colada, Aperol spritz, sex on the beach, tequila sunrise, gin fizz, margarita, caïpirinha, mai tai, blue lagoon, gin tonic</small></td><td class="p"><span class="np">8,50&nbsp;€</span><span class="hhp">7,00&nbsp;€</span></td></tr>
+        <tr><td>Cocktails sans alcool<small>Virgin mojito, Bora Bora, Afterglow, virgin colada</small></td><td class="p"><span class="np">7,00&nbsp;€</span><span class="hhp">5,50&nbsp;€</span></td></tr>
+        <tr><td>Vin happy hour, 25&nbsp;cl<small>Merlot, chardonnay ou rosé du Var</small></td><td class="p">5,00&nbsp;€</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="carte" id="carte" aria-labelledby="carte-t">
+  <div class="wrap">
+    <div class="carte-head">
+      <h2 id="carte-t" class="rise">La carte</h2>
+      <p class="rise" style="--i:1">Brasserie française, frites maison, burgers, pizzas et salades. Des plats végétariens sont proposés. Servie midi et soir, avec un menu enfant à 11&nbsp;€.</p>
+    </div>
+    <div class="formules">
+      <div class="rise"><span>Entrée, plat et dessert du jour</span><b>19,80&nbsp;€</b></div>
+      <div class="rise" style="--i:1"><span>Entrée et plat, ou plat et dessert</span><b>17,80&nbsp;€</b></div>
+      <div class="rise" style="--i:2"><span>Café gourmand à la place du dessert</span><b>+2&nbsp;€</b></div>
+    </div>
+
+    <div class="menu" id="menu">
+      <div class="cats">
+        <ul role="tablist" aria-label="Rubriques de la carte">
+          <li><button role="tab" id="tab-plats" aria-controls="p-plats" aria-selected="true" data-img="0"><i aria-hidden="true"></i>Les plats</button></li>
+          <li><button role="tab" id="tab-burgers" aria-controls="p-burgers" aria-selected="false" tabindex="-1" data-img="1"><i aria-hidden="true"></i>Burgers</button></li>
+          <li><button role="tab" id="tab-pizzas" aria-controls="p-pizzas" aria-selected="false" tabindex="-1" data-img="2"><i aria-hidden="true"></i>Pizzas</button></li>
+          <li><button role="tab" id="tab-salades" aria-controls="p-salades" aria-selected="false" tabindex="-1" data-img="3"><i aria-hidden="true"></i>Salades</button></li>
+          <li><button role="tab" id="tab-entrees" aria-controls="p-entrees" aria-selected="false" tabindex="-1" data-img="4"><i aria-hidden="true"></i>Entrées</button></li>
+          <li><button role="tab" id="tab-croques" aria-controls="p-croques" aria-selected="false" tabindex="-1" data-img="5"><i aria-hidden="true"></i>Croques et snacks</button></li>
+          <li><button role="tab" id="tab-planches" aria-controls="p-planches" aria-selected="false" tabindex="-1" data-img="6"><i aria-hidden="true"></i>Planches</button></li>
+          <li><button role="tab" id="tab-desserts" aria-controls="p-desserts" aria-selected="false" tabindex="-1" data-img="7"><i aria-hidden="true"></i>Desserts et glaces</button></li>
+          <li><button role="tab" id="tab-matin" aria-controls="p-matin" aria-selected="false" tabindex="-1" data-img="8"><i aria-hidden="true"></i>Petit-déjeuner</button></li>
+        </ul>
+        <div class="preview" aria-hidden="true">
+          <img class="on" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=560&amp;h=728&amp;fit=crop&amp;q=70" alt="" width="560" height="728">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=560&amp;h=728&amp;fit=crop&amp;q=70" alt="" width="560" height="728" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=560&amp;h=728&amp;fit=crop&amp;q=70" alt="" width="560" height="728" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=560&amp;h=728&amp;fit=crop&amp;q=70" alt="" width="560" height="728" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=560&amp;h=728&amp;fit=crop&amp;q=70&amp;crop=left" alt="" width="560" height="728" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=560&amp;h=728&amp;fit=crop&amp;q=70" alt="" width="560" height="728" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?w=560&amp;h=728&amp;fit=crop&amp;q=70" alt="" width="560" height="728" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=560&amp;h=728&amp;fit=crop&amp;q=70" alt="" width="560" height="728" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=560&amp;h=728&amp;fit=crop&amp;q=70" alt="" width="560" height="728" loading="lazy">
+        </div>
+      </div>
+
+      <div class="panels">
+        <div class="panel on" id="p-plats" role="tabpanel" aria-labelledby="tab-plats" style="--c:var(--rouge)">
+          <h3>Les plats <small>10 plats</small></h3>
+          <ul class="items">
+            <li><div class="row"><span>Steak à cheval</span><span>16,80&nbsp;€</span></div><p>Frites maison et salade</p></li>
+            <li><div class="row"><span>Entrecôte, 300&nbsp;g</span><span>23,00&nbsp;€</span></div><p>Frites maison et salade, sauce poivre ou roquefort</p></li>
+            <li><div class="row"><span>Tartare de bœuf</span><span>16,80&nbsp;€</span></div><p>Frites maison et salade</p></li>
+            <li><div class="row"><span>Tartare de saumon</span><span>17,80&nbsp;€</span></div><p>Frites maison et salade</p></li>
+            <li><div class="row"><span>Magret de canard</span><span>18,80&nbsp;€</span></div><p>Pommes de terre sautées</p></li>
+            <li><div class="row"><span>Dos de saumon</span><span>18,80&nbsp;€</span></div><p>Tagliatelles</p></li>
+            <li><div class="row"><span>Fish &amp; chips</span><span>16,80&nbsp;€</span></div></li>
+            <li><div class="row"><span>Escalope de poulet milanaise</span><span>16,80&nbsp;€</span></div><p>Tagliatelles</p></li>
+            <li><div class="row"><span>Tagliatelles aux deux saumons</span><span>16,80&nbsp;€</span></div></li>
+            <li><div class="row"><span>Tagliatelles au pesto et burrata</span><span>16,80&nbsp;€</span></div></li>
+          </ul>
+          <p class="panel-note">Menu enfant 11&nbsp;€&nbsp;: steak haché, jambon blanc, saucisse de Francfort ou fish &amp; chips, avec frites, puis une boule de glace ou une crêpe.</p>
+        </div>
+
+        <div class="panel" id="p-burgers" role="tabpanel" aria-labelledby="tab-burgers" style="--c:var(--jaune)">
+          <h3>Burgers <small>3 burgers</small></h3>
+          <ul class="items">
+            <li><div class="row"><span>Le Classic</span><span>16,00&nbsp;€</span></div><p>Steak haché 180&nbsp;g, cheddar, tomate, oignons, salade et cornichons</p></li>
+            <li><div class="row"><span>Le Chicken</span><span>16,00&nbsp;€</span></div><p>Poulet croustillant, cheddar, tomate, oignons, salade et cornichons</p></li>
+            <li><div class="row"><span>Le Beaubourg</span><span>17,00&nbsp;€</span></div><p>Steak haché 180&nbsp;g, cheddar, salade, œuf à cheval et cornichons</p></li>
+            <li><div class="row"><span>Frites maison, la portion</span><span>5,00&nbsp;€</span></div></li>
+          </ul>
+        </div>
+
+        <div class="panel" id="p-pizzas" role="tabpanel" aria-labelledby="tab-pizzas" style="--c:var(--rouge)">
+          <h3>Pizzas <small>8 pizzas</small></h3>
+          <ul class="items">
+            <li><div class="row"><span>Margarita</span><span>12,50&nbsp;€</span></div><p>Tomate, mozzarella, olive et origan</p></li>
+            <li><div class="row"><span>Regina</span><span>14,00&nbsp;€</span></div><p>Tomate, mozzarella, jambon, olive et origan</p></li>
+            <li><div class="row"><span>Quatre fromages</span><span>16,00&nbsp;€</span></div><p>Tomate, mozzarella, gorgonzola, parmesan, chèvre et origan</p></li>
+            <li><div class="row"><span>Neptune</span><span>16,00&nbsp;€</span></div><p>Tomate, mozzarella, thon, œuf, oignons et origan</p></li>
+            <li><div class="row"><span>Campagnarde</span><span>16,00&nbsp;€</span></div><p>Tomate, mozzarella, jambon de pays, chèvre et origan</p></li>
+            <li><div class="row"><span>Orientale</span><span>16,00&nbsp;€</span></div><p>Tomate, mozzarella, merguez, œuf, origan et poivrons</p></li>
+            <li><div class="row"><span>Végétarienne</span><span>16,00&nbsp;€</span></div><p>Tomate, mozzarella, artichauts, champignons, poivrons et origan</p></li>
+            <li><div class="row"><span>Pizza truffée</span><span>18,50&nbsp;€</span></div><p>Purée de tomate, mozzarella, crème de truffe, jambon de Parme et basilic</p></li>
+          </ul>
+        </div>
+
+        <div class="panel" id="p-salades" role="tabpanel" aria-labelledby="tab-salades" style="--c:var(--vert)">
+          <h3>Salades <small>4 salades</small></h3>
+          <ul class="items">
+            <li><div class="row"><span>Chèvre chaud et miel</span><span>15,80&nbsp;€</span></div><p>Salade, tomate, concombre, jambon de pays, toasts de chèvre rôtis au miel, oignon, noix</p></li>
+            <li><div class="row"><span>Thon, sauce aux agrumes</span><span>15,80&nbsp;€</span></div><p>Salade, tomate, concombre, œuf dur, carottes, thon, oignons rouges</p></li>
+            <li><div class="row"><span>Végétarienne</span><span>15,80&nbsp;€</span></div><p>Salade, tomate, concombre, mozzarella, oignon rouge, pamplemousse ou melon</p></li>
+            <li><div class="row"><span>César</span><span>15,80&nbsp;€</span></div><p>Salade, tomate, concombre, œuf dur, poulet croustillant, parmesan, croûtons</p></li>
+          </ul>
+        </div>
+
+        <div class="panel" id="p-entrees" role="tabpanel" aria-labelledby="tab-entrees" style="--c:var(--bleu)">
+          <h3>Entrées <small>8 entrées</small></h3>
+          <ul class="items">
+            <li><div class="row"><span>Œuf mayonnaise</span><span>7,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Tomate mozzarella</span><span>7,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Tomate burrata</span><span>8,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Nems végétariens, 4 pièces</span><span>7,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Crevettes tempura, 4 pièces</span><span>7,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Assiette de charcuterie</span><span>8,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Terrine de campagne</span><span>8,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Escargots de Bourgogne</span><span>9 / 16&nbsp;€</span></div><p>Les six ou les douze</p></li>
+          </ul>
+        </div>
+
+        <div class="panel" id="p-croques" role="tabpanel" aria-labelledby="tab-croques" style="--c:var(--jaune)">
+          <h3>Croques et snacks <small>11 choix</small></h3>
+          <ul class="items">
+            <li><div class="row"><span>Croque-monsieur, pain de mie</span><span>11,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Croque-monsieur, pain de campagne</span><span>13,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Croque Segun</span><span>14,80&nbsp;€</span></div><p>Pain de campagne, emmental, chèvre et jambon</p></li>
+            <li><div class="row"><span>Croque provençal</span><span>14,80&nbsp;€</span></div><p>Pain de campagne, mozzarella et tomate</p></li>
+            <li><div class="row"><span>Croque à la crème de truffe</span><span>16,80&nbsp;€</span></div><p>Pain de campagne, crème de truffe, emmental et jambon</p></li>
+            <li><div class="row"><span>Club sandwich</span><span>11,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Hot-dog</span><span>11,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Omelette nature</span><span>10,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Omelette jambon ou fromage</span><span>11,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Omelette mixte</span><span>11,50&nbsp;€</span></div></li>
+            <li><div class="row"><span>Supplément œuf</span><span>1,00&nbsp;€</span></div></li>
+          </ul>
+        </div>
+
+        <div class="panel" id="p-planches" role="tabpanel" aria-labelledby="tab-planches" style="--c:var(--vert)">
+          <h3>Planches <small>4 planches</small></h3>
+          <ul class="items">
+            <li><div class="row"><span>Planche de charcuterie</span><span>16,80&nbsp;€</span></div></li>
+            <li><div class="row"><span>Planche mixte</span><span>17,80&nbsp;€</span></div><p>Charcuterie et fromage</p></li>
+            <li><div class="row"><span>Planche fusion</span><span>17,80&nbsp;€</span></div><p>Onion rings, nems, crevettes tempura et sticks de poulet</p></li>
+            <li><div class="row"><span>Planche apéro croque</span><span>19,80&nbsp;€</span></div><p>Croque provençal et croque pain de campagne coupés en morceaux</p></li>
+          </ul>
+        </div>
+
+        <div class="panel" id="p-desserts" role="tabpanel" aria-labelledby="tab-desserts" style="--c:var(--bleu)">
+          <h3>Desserts et glaces <small>maison</small></h3>
+          <ul class="items">
+            <li><div class="row"><span>Cheesecake aux fruits rouges</span><span>7,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Crème brûlée</span><span>7,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Mousse au chocolat</span><span>7,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Dessert du jour</span><span>8,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Café ou thé gourmand</span><span>8,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Crêpes sucre, nutella ou confiture</span><span>5,50 / 6,50&nbsp;€</span></div><p>Deux crêpes</p></li>
+            <li><div class="row"><span>Coupe deux boules</span><span>6,00&nbsp;€</span></div><p>Vanille, chocolat, café, caramel, fraise, pistache, sorbet citron</p></li>
+            <li><div class="row"><span>Café ou chocolat liégeois</span><span>8,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Dame blanche</span><span>8,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Coupe colonel</span><span>8,50&nbsp;€</span></div><p>Sorbet citron et vodka</p></li>
+          </ul>
+        </div>
+
+        <div class="panel" id="p-matin" role="tabpanel" aria-labelledby="tab-matin" style="--c:var(--jaune)">
+          <h3>Petit-déjeuner <small>dès l'ouverture</small></h3>
+          <ul class="items">
+            <li><div class="row"><span>Petit-déjeuner français</span><span>9,20&nbsp;€</span></div><p>Orange pressée, boisson chaude, croissant, tartine confiture ou miel</p></li>
+            <li><div class="row"><span>Petit-déjeuner anglais</span><span>12,00&nbsp;€</span></div><p>Le français, avec un œuf au plat ou une omelette</p></li>
+            <li><div class="row"><span>Croissant</span><span>2,20&nbsp;€</span></div></li>
+            <li><div class="row"><span>Pain au chocolat</span><span>2,40&nbsp;€</span></div></li>
+            <li><div class="row"><span>Tartine beurre</span><span>2,00&nbsp;€</span></div></li>
+            <li><div class="row"><span>Tartine beurre et confiture</span><span>2,50&nbsp;€</span></div></li>
+            <li><div class="row"><span>Œuf au plat</span><span>6,20&nbsp;€</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="terrasse" id="terrasse" aria-labelledby="ter-t">
+  <div class="wrap">
+    <figure class="rise"><img class="drift" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1100&amp;h=1240&amp;fit=crop&amp;q=70" width="1100" height="1240" alt="Une terrasse de café parisien, tables sur le trottoir" loading="lazy"></figure>
+    <div class="ter-txt">
+      <div class="tabs" role="tablist" aria-label="Moments de la journée">
+        <button role="tab" aria-selected="true" data-m="0" id="m0">Le matin</button>
+        <button role="tab" aria-selected="false" data-m="1" id="m1" tabindex="-1">Le midi</button>
+        <button role="tab" aria-selected="false" data-m="2" id="m2" tabindex="-1">Le soir</button>
+      </div>
+      <div>
+        <h2 id="ter-t" class="rise">La terrasse de la rue Saint-Martin</h2>
+        <p class="moment" id="moment" aria-live="polite">Dès 10&nbsp;h en semaine, un petit-déjeuner dehors avant le quartier&nbsp;: le français à 9,20&nbsp;€, l'anglais à 12&nbsp;€.</p>
+      </div>
+      <div class="ter-acts">
+        <a class="btn btn-paper" href="https://wiicmenu-qrcode.com/app/reservation_client.php?resto=199" target="_blank" rel="noopener">Réserver une table</a>
+        <a class="btn btn-vert" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bistrot+Charbon,+131+Rue+Saint-Martin,+75004+Paris" target="_blank" rel="noopener">Itinéraire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pourquoi" aria-labelledby="pq-t">
+  <div class="wrap pq">
+    <div class="pq-head">
+      <h2 id="pq-t" class="rise">Les classiques</h2>
+      <p class="rise" style="--i:1">Une adresse de quartier à deux minutes de Beaubourg, notée 4,3 sur 5 sur Google.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile rise" style="--c:var(--jaune)"><div class="ph"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=560&amp;h=700&amp;fit=crop&amp;q=70" width="560" height="700" alt="Des frites dorées dans un panier" loading="lazy"></div><h3>Les frites maison</h3><p>Avec chaque plat, ou seules à 5&nbsp;€.</p></div>
+      <div class="tile wide rise" style="--i:1;--c:var(--vert)"><div class="ph"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1120&amp;h=700&amp;fit=crop&amp;q=70" width="1120" height="700" alt="Un ballon de football sur la pelouse" loading="lazy"></div><h3>Les matchs</h3><p>Le foot et le sport sur les écrans du bar.</p></div>
+      <div class="tile rise" style="--i:2;--c:var(--rouge)"><div class="ph"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=560&amp;h=700&amp;fit=crop&amp;q=70" width="560" height="700" alt="Un cheeseburger" loading="lazy"></div><h3>Le burger Beaubourg</h3><p>Steak haché 180&nbsp;g et œuf à cheval, 17&nbsp;€.</p></div>
+      <div class="tile rise" style="--c:var(--bleu)"><div class="ph"><img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?w=560&amp;h=700&amp;fit=crop&amp;q=70" width="560" height="700" alt="Un spritz servi dans un verre à pied" loading="lazy"></div><h3>Le spritz de 16&nbsp;h</h3><p>7&nbsp;€ pendant le happy hour.</p></div>
+      <div class="tile rise" style="--i:1;--c:var(--jaune)"><div class="ph"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=560&amp;h=700&amp;fit=crop&amp;q=70" width="560" height="700" alt="Une pizza margherita" loading="lazy"></div><h3>Les pizzas</h3><p>Huit recettes, de 12,50 à 18,50&nbsp;€.</p></div>
+      <div class="tile wide rise" style="--i:2;--c:var(--vert)"><div class="ph"><img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?w=1120&amp;h=700&amp;fit=crop&amp;q=70" width="1120" height="700" alt="Des amis trinquent avec des pintes" loading="lazy"></div><h3>Les tablées</h3><p>Réservations possibles pour les groupes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="groupes" aria-labelledby="gr-t">
+  <div class="wrap">
+    <div class="coupon rise">
+      <div class="l">
+        <h2 id="gr-t">Une table pour toute la bande</h2>
+        <p>Anniversaire, pot de départ, soir de match&nbsp;: dites-nous quand et combien, on vous répond par e-mail.</p>
+      </div>
+      <form id="grp" novalidate>
+        <div class="two">
+          <label class="sr" for="g-nom">Votre nom</label><input id="g-nom" name="nom" placeholder="Votre nom" autocomplete="name" required>
+          <label class="sr" for="g-tel">Votre téléphone</label><input id="g-tel" name="tel" type="tel" placeholder="Votre téléphone" autocomplete="tel">
+        </div>
+        <div class="two">
+          <label class="sr" for="g-date">Date souhaitée</label><input id="g-date" name="date" placeholder="Date, par ex. samedi 14" required>
+          <label class="sr" for="g-nb">Nombre de personnes</label><input id="g-nb" name="nb" inputmode="numeric" placeholder="Nombre de personnes" required>
+        </div>
+        <label class="sr" for="g-msg">Message</label><textarea id="g-msg" name="msg" placeholder="Heure, occasion, match à diffuser…"></textarea>
+        <button class="btn btn-ink" type="submit">Envoyer la demande</button>
+        <p class="err" id="g-err" role="alert"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="infos" id="infos" aria-labelledby="inf-t">
+  <div class="wrap infos-grid">
+    <div>
+      <h2 id="inf-t" class="rise">Horaires et accès</h2>
+      <div class="hours rise" style="--i:1" id="hours">
+        <div data-d="1"><span>Lundi</span><span>10&nbsp;h – minuit</span></div>
+        <div data-d="2"><span>Mardi</span><span>10&nbsp;h – minuit</span></div>
+        <div data-d="3"><span>Mercredi</span><span>10&nbsp;h – minuit</span></div>
+        <div data-d="4"><span>Jeudi</span><span>10&nbsp;h – minuit</span></div>
+        <div data-d="5"><span>Vendredi</span><span>10&nbsp;h – 1&nbsp;h</span></div>
+        <div data-d="6"><span>Samedi</span><span>10&nbsp;h – 1&nbsp;h</span></div>
+        <div data-d="0"><span>Dimanche</span><span>12&nbsp;h – 22&nbsp;h</span></div>
+      </div>
+      <p class="hours-note">Horaires susceptibles de varier les jours fériés.</p>
+    </div>
+    <div>
+      <p class="addr rise">131 rue Saint-Martin<br>75004 Paris</p>
+      <p class="addr-sub rise" style="--i:1">Métro Rambuteau, ligne 11. Le Centre Pompidou est à deux pas, Châtelet – Les Halles à quelques minutes à pied.</p>
+      <div class="contacts">
+        <a class="c1 rise" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bistrot+Charbon,+131+Rue+Saint-Martin,+75004+Paris" target="_blank" rel="noopener"><span>Itinéraire</span><span>Google Maps</span></a>
+        <a class="c2 rise" style="--i:1" href="tel:+33140299647"><span>01 40 29 96 47</span><span>Appeler</span></a>
+        <a class="c3 rise" style="--i:2" href="mailto:bistrotcharbon4@gmail.com"><span>bistrotcharbon4@gmail.com</span><span>Écrire</span></a>
+        <a class="c4 rise" style="--i:3" href="https://www.instagram.com/bistrotcharbon/" target="_blank" rel="noopener"><span>@bistrotcharbon</span><span>Instagram</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="word" aria-label="Charbon" role="img"><span>C</span><span>h</span><span>a</span><span>r</span><span>b</span><span>o</span><span>n</span></div>
+    <div class="foot-grid">
+      <nav aria-label="Pied de page"><a href="#carte">La carte</a><a href="#happy-hour">Happy hour</a><a href="#terrasse">Terrasse</a></nav>
+      <nav aria-label="Liens utiles"><a href="https://wiicmenu-qrcode.com/app/reservation_client.php?resto=199" target="_blank" rel="noopener">Réserver</a><a href="https://www.instagram.com/bistrotcharbon/" target="_blank" rel="noopener">Instagram</a><a href="https://g.page/r/CQUoW7kx2rBaEBM/review" target="_blank" rel="noopener">Laisser un avis</a></nav>
+      <div class="code"><p>Les couleurs de cette page viennent des gaines du Centre Pompidou voisin&nbsp;: bleu pour l'air, vert pour l'eau, jaune pour l'électricité, rouge pour circuler.</p></div>
+      <div class="who"><p>Bistrot Charbon<br>131 rue Saint-Martin, 75004 Paris</p><p><a href="tel:+33140299647">01 40 29 96 47</a></p></div>
+    </div>
+    <div class="foot-last">
+      <span>Démo réalisée par Raul Hatos — site non officiel. Photos d'illustration&nbsp;: Unsplash.</span>
+      <a class="btn btn-jaune" href="#top">Haut de page</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  // heure de Paris, quel que soit le fuseau du visiteur
+  function paris(){
+    var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());
+    var o={};p.forEach(function(x){o[x.type]=x.value});
+    var days={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6};
+    return {d:days[o.weekday],m:(+o.hour)*60+(+o.minute)};
+  }
+  // ouverture en minutes depuis minuit ; la fermeture peut dépasser 24 h
+  var H={0:[720,1320],1:[600,1440],2:[600,1440],3:[600,1440],4:[600,1440],5:[600,1500],6:[600,1500]};
+  var HH=960;
+  function fmt(min){var h=Math.floor(min/60)%24,m=min%60;return h===0&&m===0?'minuit':h+' h'+(m?String(m).padStart(2,'0'):'')}
+  function dur(min){var h=Math.floor(min/60),m=min%60;return (h?h+' h':'')+(h&&m?' ':'')+(m?m+' min':'')||'1 min'}
+  function state(){
+    var t=paris(),d=t.d,m=t.m;
+    var prev=(d+6)%7;
+    // après minuit, on est encore dans la soirée de la veille
+    if(H[prev][1]>1440&&m<H[prev][1]-1440) return {open:true,close:H[prev][1],now:m+1440,day:prev};
+    var h=H[d];
+    if(m>=h[0]&&m<h[1]) return {open:true,close:h[1],now:m,day:d};
+    var nd=m<h[0]?d:(d+1)%7;
+    return {open:false,next:H[nd][0],nextDay:nd,today:nd===d};
+  }
+  var s=state();
+  var now=document.getElementById('now'),live=document.getElementById('hh-live');
+  var hhEnd=function(st){return Math.min(st.close,1440)};
+  var inHH=s.open&&s.now>=HH&&s.now<hhEnd(s);
+  if(s.open){
+    now.dataset.state=inHH?'hh':'open';
+    now.querySelector('span').textContent=inHH?'Happy hour en cours, jusqu’à '+fmt(hhEnd(s)):'Ouvert, ferme à '+fmt(s.close);
+  }else{
+    now.dataset.state='closed';
+    now.querySelector('span').textContent='Fermé, ouvre '+(s.today?'à ':'demain à ')+fmt(s.next);
+  }
+  if(inHH){
+    live.innerHTML='Happy hour en cours, encore <strong>'+dur(hhEnd(s)-s.now)+'</strong>. La Kanter blonde est à <strong>5 €</strong> au lieu de 7 €, les cocktails à <strong>7 €</strong>.';
+  }else if(s.open&&s.now<HH){
+    live.innerHTML='Prochain happy hour dans <strong>'+dur(HH-s.now)+'</strong>, à 16 h. La Kanter blonde passera à <strong>5 €</strong> au lieu de 7 €, les cocktails à <strong>7 €</strong>.';
+  }
+  // bascule des prix : happy hour par défaut quand il est en cours, sinon les prix normaux
+  var prices=document.getElementById('prices'),btns=document.querySelectorAll('.switch button');
+  function mode(m){prices.classList.toggle('is-hh',m==='hh');btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.mode===m)})}
+  btns.forEach(function(b){b.addEventListener('click',function(){mode(b.dataset.mode)})});
+  mode(inHH||!s.open?'hh':'normal');
+
+  // horaires : surligner le jour
+  var today=document.querySelector('#hours [data-d="'+paris().d+'"]');if(today)today.classList.add('today');
+
+  // carte : onglets + aperçu photo
+  var tabs=[].slice.call(document.querySelectorAll('.cats [role=tab]')),imgs=document.querySelectorAll('.preview img');
+  function show(i){imgs.forEach(function(im,k){im.classList.toggle('on',k===i)})}
+  function sel(t,focus){
+    tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).classList.toggle('on',on)});
+    show(+t.dataset.img);if(focus)t.focus();
+    if(matchMedia('(max-width:900px)').matches){t.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'})}
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(t)});
+    t.addEventListener('mouseenter',function(){show(+t.dataset.img)});
+    t.addEventListener('keydown',function(e){var k={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];if(k){e.preventDefault();sel(tabs[(i+k+tabs.length)%tabs.length],true)}});
+  });
+  document.querySelector('.cats ul').addEventListener('mouseleave',function(){var a=tabs.filter(function(x){return x.getAttribute('aria-selected')==='true'})[0];show(+a.dataset.img)});
+
+  // terrasse : trois moments
+  var M=['Dès 10 h en semaine, un petit-déjeuner dehors avant le quartier\u00a0: le français à 9,20 €, l’anglais à 12 €.','Le midi, la formule du jour\u00a0: entrée et plat ou plat et dessert à 17,80 €, les trois à 19,80 €.','Le soir, happy hour jusqu’à minuit, pizzas et planches à partager, et le match sur les écrans.'];
+  var mt=[].slice.call(document.querySelectorAll('.tabs [role=tab]')),mp=document.getElementById('moment');
+  function msel(b,f){mt.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1});mp.textContent=M[+b.dataset.m];if(f)b.focus()}
+  mt.forEach(function(b,i){b.addEventListener('click',function(){msel(b)});b.addEventListener('keydown',function(e){var k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){e.preventDefault();msel(mt[(i+k+3)%3],true)}})});
+  var hr=Math.floor(paris().m/60);msel(mt[hr<12?0:hr<16?1:2]);
+
+  // coupon groupes : ouvre un e-mail prérempli
+  document.getElementById('grp').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target,err=document.getElementById('g-err');
+    var miss=['nom','date','nb'].filter(function(n){return !f[n].value.trim()});
+    if(miss.length){err.textContent='Il manque '+miss.map(function(n){return {nom:'votre nom',date:'la date',nb:'le nombre de personnes'}[n]}).join(', ')+'.';f[miss[0]].focus();return}
+    err.textContent='';
+    var body='Bonjour,\n\nJe souhaite réserver pour un groupe.\n\nNom : '+f.nom.value+'\nTéléphone : '+f.tel.value+'\nDate : '+f.date.value+'\nNombre de personnes : '+f.nb.value+'\n\n'+f.msg.value+'\n';
+    location.href='mailto:bistrotcharbon4@gmail.com?subject='+encodeURIComponent('Réservation de groupe, '+f.nb.value+' personnes')+'&body='+encodeURIComponent(body);
+  });
+
+  // entrées des sections
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rise').forEach(function(el){io.observe(el)});
+})();
+</script>
+<noscript><style>.panel{display:block;margin-bottom:64px}.prices .hhp{display:inline;margin-left:10px}</style></noscript>
+</body>
+</html>
