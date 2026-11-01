@@ -4,204 +4,303 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Le Mezze du Chef · Cantine turque végétarienne, Ménilmontant</title>
-<meta name="description" content="Le Mezze du Chef, cantine turque végétarienne au 80 rue de Ménilmontant, Paris 20e. Çiğ köfte végétalien, mezzés, kumpir, baklava. Ouvert tous les jours.">
-<meta name="theme-color" content="#a3162b">
+<title>Le Mezze du Chef · Çiğ köfte et mezzés, Paris 20e</title>
+<meta name="description" content="Le Mezze du Chef, cantine turque 100 % végétarienne au 80 rue de Ménilmontant, Paris 20e. Çiğ köfte aux 27 épices, mezzés, kumpir, börek, baklava.">
+<meta name="theme-color" content="#c3121e">
+<meta property="og:title" content="Le Mezze du Chef · Çiğ köfte et mezzés, Ménilmontant">
+<meta property="og:description" content="Cantine turque végétarienne au 80 rue de Ménilmontant. Çiğ köfte aux 27 épices, mezzés, kumpir.">
+<meta property="og:image" content="https://media.timeout.com/images/105160841/1372/772/image.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23c3121e'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23c3121e'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,800;1,500&family=Libre+Franklin:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Yellowtail&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ground:#d7d4ce;
-  --paper:#f3f2ef;
-  --surface:#e5e3de;
-  --ink:#0d0b0a;
-  --soft:#4f4a44;
-  --carmin:#a3162b;
-  --carmin-press:#7f0f20;
-  --on-carmin:#fff;
-  --display:"Besley",Georgia,serif;
-  --text:"Libre Franklin",system-ui,sans-serif;
+  --ground:#f7f2f0;
+  --surface:#efe6e3;
+  --rose:#f6d7d4;
+  --pistache:#dfe6c8;
+  --ink:#231416;
+  --soft:#5b4a4b;
+  --red:#c3121e;
+  --red-press:#9c0d17;
+  --maroon:#6b1018;
+  --on-red:#fff;
+  --text:"Bricolage Grotesque",system-ui,sans-serif;
+  --script:"Yellowtail","Brush Script MT",cursive;
   --s-small:clamp(.8125rem,.79rem + .1vw,.875rem);
-  --s-body:clamp(1.0625rem,1.02rem + .25vw,1.1875rem);
-  --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --s-head:clamp(2.25rem,1.4rem + 3.4vw,4.25rem);
-  --m:clamp(18px,2.4vw,28px);
+  --s-body:clamp(1rem,.96rem + .2vw,1.125rem);
+  --s-lead:clamp(1.125rem,1.02rem + .45vw,1.375rem);
+  --s-head:clamp(2rem,1.3rem + 2.6vw,3.5rem);
+  --s-hero:clamp(2.6rem,1.4rem + 4.2vw,5.25rem);
+  --m:clamp(16px,3.2vw,48px);
+  --gap:10px;
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 body{background:var(--ground);color:var(--ink);font:400 var(--s-body)/1.55 var(--text);overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
-::selection{background:var(--carmin);color:#fff}
-:focus-visible{outline:3px solid var(--carmin);outline-offset:3px}
-h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:.95;text-wrap:balance}
+a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.skip{position:absolute;left:8px;top:-60px;z-index:50;background:var(--ink);color:#fff;padding:12px 16px;font-weight:600}
+.skip:focus{top:8px}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3{font-weight:800;letter-spacing:-.03em;line-height:.98;text-wrap:balance;font-variation-settings:"opsz" 96}
+p,li{text-wrap:pretty}
 .num{font-variant-numeric:tabular-nums}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--m)}
 
 /* bandeau démo */
-.demo{background:var(--ink);color:#e9e3d9;font-size:var(--s-small);text-align:center;padding:7px 16px}
+.demo{background:var(--ink);color:#f3e9e7;font-size:var(--s-small);text-align:center;padding:7px 16px}
 
-/* nav */
-.nav{position:sticky;top:0;z-index:30;background:var(--ground)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 var(--m)}
-.mark{font:800 var(--s-body)/1 var(--display);letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
-.nav ul{display:none;list-style:none;gap:28px;font-weight:600;font-size:var(--s-small)}
-.nav ul a{text-decoration:none}
-.nav ul a:hover{color:var(--carmin)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;font:600 var(--s-body)/1 var(--text);text-decoration:none;border:0;cursor:pointer;transition:background .2s,color .2s,transform .25s var(--ease);white-space:nowrap}
+/* nav : l'enseigne */
+.nav{position:sticky;top:0;z-index:30;background:var(--red);color:#fff}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.mark{font:400 clamp(1.6rem,1.3rem + 1vw,2.1rem)/1 var(--script);text-decoration:none;white-space:nowrap;padding-top:4px}
+.nav ul{display:none;list-style:none;gap:28px;font-weight:600;font-size:var(--s-body)}
+.nav ul a{text-decoration:none;padding:10px 0;transition:opacity .2s}
+.nav ul a:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;font:600 var(--s-body)/1 var(--text);text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,color .2s,transform .2s var(--ease);white-space:nowrap}
 .btn:active{transform:scale(.97)}
 .btn svg{width:18px;height:18px;flex:none}
-.btn-c{background:var(--carmin);color:var(--on-carmin)}
-.btn-c:hover{background:var(--carmin-press)}
-.btn-k{background:var(--ink);color:var(--paper)}
-.btn-k:hover{background:var(--carmin)}
-.nav .btn{min-height:42px;padding:0 16px;font-size:var(--s-small)}
+.btn-red{background:var(--red);color:var(--on-red)}
+.btn-red:hover{background:var(--red-press)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--maroon)}
+.btn-white{background:#fff;color:var(--red)}
+.btn-white:hover{background:var(--rose)}
+.nav .btn{min-height:44px;padding:0 16px}
 
-/* awning stripe */
-.stripe{display:block;width:100%;height:48px}
-.stripe rect.on{fill:var(--carmin)}
-.stripe rect.off{fill:var(--paper)}
+/* ---------- HERO ---------- */
+.hero{display:grid;gap:28px;padding-top:28px;padding-bottom:56px}
+.hero h1{font-size:var(--s-hero);max-width:11ch}
+.hero .lead{margin-top:20px;font-size:var(--s-lead);line-height:1.4;max-width:34ch}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:26px;list-style:none;max-width:520px}
+.facts li{background:var(--surface);padding:14px 16px 15px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.facts b{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.facts span{font-size:var(--s-body);line-height:1.35;color:var(--soft)}
+.facts li.hot{background:var(--red);color:#fff}
+.facts li.hot span{color:#ffe3e1}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.status{display:flex;align-items:center;gap:10px;margin-top:18px;font-weight:600;font-size:var(--s-body)}
+.status i{width:10px;height:10px;border-radius:50%;background:#2c7a3f;flex:none}
+.status.closed i{background:var(--red)}
+.status a{font-weight:400;color:var(--soft)}
+.src{font-size:var(--s-small);color:var(--soft);margin-top:12px;max-width:52ch}
 
-/* hero */
-.hero{display:grid;gap:12px;padding:0 var(--m)}
-.hero-photo{position:relative;height:30svh;min-height:210px;overflow:hidden;background:var(--surface)}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease;transform:scale(1.04);animation:drift 22s ease-in-out infinite alternate}
-.hero-photo img.on{opacity:1}
-@keyframes drift{to{transform:scale(1.12) translate(-1.5%,-1%)}}
-.card{background:var(--paper);position:relative;margin-top:-24px;z-index:2;text-align:center;padding:0 0 28px}
-.card-body{padding:22px 20px 0;display:flex;flex-direction:column;align-items:center}
-.wordmark{font:800 clamp(2.6rem,11vw,6rem)/.9 var(--display);letter-spacing:-.03em}
-.wordmark span{display:block}
-.card .sub{font:500 italic var(--s-lead)/1.2 var(--display);letter-spacing:0;margin-top:18px}
-.card .lead{margin-top:20px;max-width:36ch;font-size:var(--s-body)}
-.status{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-weight:600;font-size:var(--s-body);background:var(--surface);padding:10px 16px}
-.status i{width:10px;height:10px;border-radius:50%;background:#1d7a45;flex:none}
-.status.closed i{background:var(--carmin)}
-.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px;width:100%}
-.actions .btn{flex:1 1 220px;max-width:320px}
-.card-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-top:26px;font-weight:600;font-size:var(--s-small)}
+/* la colonne de tuiles, comme le flanc de la devanture */
+.wall{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.tile{position:relative;overflow:hidden;background:var(--rose);margin:0}
+.tile img{width:100%;height:100%;object-fit:cover;aspect-ratio:5/4;transition:transform .6s var(--ease)}
+.tile:hover img{transform:scale(1.04)}
+.tile.facade{grid-column:1/-1}
+.tile.opt{display:none}
+.tile.facade img{aspect-ratio:16/10;object-position:50% 40%;animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.1) translate(-1.5%,1%)}}
+.tag{position:absolute;left:8px;bottom:8px;background:#fff;color:var(--red);padding:6px 9px 7px;display:flex;flex-direction:column;line-height:1.1;max-width:calc(100% - 16px)}
+.tag b{font-weight:800;font-size:var(--s-small)}
+.tag span{font-weight:800;color:var(--ink);font-size:var(--s-body);font-variant-numeric:tabular-nums}
+.tile.facade .tag{background:var(--ink);color:#fff}
+.tile.facade .tag span{color:#fff;font-weight:600;font-size:var(--s-small)}
 
-/* sections */
-section{padding:120px var(--m) 0}
+/* ---------- CARTE : index avec aperçu ---------- */
+.carte{padding-top:120px}
+.carte-head{display:grid;gap:18px;align-items:end}
+.carte-head h2,.sec-h{font-size:var(--s-head)}
+.carte-head p{max-width:56ch}
+.idx{display:grid;gap:40px;margin-top:40px;align-items:start}
+.groups{display:grid;gap:30px}
+.group h3{font-size:var(--s-lead);letter-spacing:-.01em;margin-bottom:8px;color:var(--red)}
+.rows{list-style:none;display:grid}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:4px 16px;align-items:center;width:100%;text-align:left;background:none;border:0;font:inherit;color:inherit;padding:14px 12px;cursor:default}
+.rows li:nth-child(odd) .row{background:var(--surface)}
+.row .th{width:76px;aspect-ratio:5/4;object-fit:cover;grid-row:1/3}
+.row .nm{font-weight:600;font-size:var(--s-lead);line-height:1.2}
+.row .pr{font-weight:800;font-size:var(--s-lead);font-variant-numeric:tabular-nums;white-space:nowrap}
+.row .ds{grid-column:2/4;font-size:var(--s-body);color:var(--soft);line-height:1.45}
+.row.noimg{grid-template-columns:1fr auto}
+.row.noimg .ds{grid-column:1/-1}
+.row[data-img]{cursor:pointer}
+.row.on{background:var(--ink)!important;color:#fff}
+.row.on .ds{color:#e9dcda}
+.preview{display:none}
+.side-lists{display:grid;gap:30px}
+.mini{list-style:none;display:grid;gap:2px}
+.mini li{display:flex;justify-content:space-between;gap:16px;padding:9px 12px;background:var(--surface)}
+.mini li:nth-child(even){background:transparent}
+.mini li span:last-child{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mini small{display:block;color:var(--soft);font-size:var(--s-body)}
+.price-note{margin-top:26px;font-size:var(--s-body);color:var(--soft);max-width:62ch}
 
-/* carte */
-.carte{display:grid;gap:40px;align-items:start}
-.carte-col{container-type:inline-size;max-width:640px;width:100%}
-.giant{font:800 24cqw/.8 var(--display);letter-spacing:-.04em;text-transform:uppercase;margin-left:-.04em}
-.carte-note{margin-top:22px;max-width:52ch}
-.bars{margin-top:28px;display:grid;gap:6px}
-.bars details{background:var(--surface)}
-.bars summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:0 20px;cursor:pointer;font-weight:600;font-size:var(--s-body);transition:background .2s}
-.bars summary::-webkit-details-marker{display:none}
-.bars summary:hover{background:#dcd7cf}
-.bars summary .pm{position:relative;width:16px;height:16px;flex:none}
-.bars summary .pm::before,.bars summary .pm::after{content:"";position:absolute;left:0;top:7px;width:16px;height:2px;background:var(--ink);transition:transform .3s var(--ease)}
-.bars summary .pm::after{transform:rotate(90deg)}
-.bars details[open] summary .pm::after{transform:rotate(0)}
-.bars details[open] summary{background:var(--ink);color:var(--paper)}
-.bars details[open] summary .pm::before,.bars details[open] summary .pm::after{background:var(--paper)}
-.items{list-style:none;padding:18px 20px 22px;display:grid;gap:14px}
-.items li{display:grid;grid-template-columns:1fr auto;gap:2px 16px}
-.items b{font-weight:600}
-.items .p{font-weight:600;text-align:right}
-.items .p.q{font-weight:400;color:var(--soft)}
-.items small{grid-column:1/-1;font-size:var(--s-small);color:var(--soft);line-height:1.45}
-.carte-photo{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--surface)}
-.carte-photo img{width:100%;height:100%;object-fit:cover}
-.carte-photo figcaption,.cap{font-size:var(--s-small);color:var(--soft);margin-top:10px}
-.carte-side .two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-.carte-side .two img{aspect-ratio:1;object-fit:cover;width:100%}
+/* ---------- ASSIETTE À COMPOSER ---------- */
+.plate-sec{background:var(--red);color:#fff;margin-top:120px;padding:96px 0 104px}
+.plate-grid{display:grid;gap:36px;align-items:center}
+.plate-sec h2{font-size:var(--s-head)}
+.plate-sec .intro{margin-top:16px;font-size:var(--s-lead);line-height:1.4;max-width:36ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;list-style:none}
+.chip{min-height:44px;padding:0 14px;border:0;background:var(--maroon);color:#fff;font:600 var(--s-body)/1 var(--text);cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:background-color .2s,color .2s,transform .2s var(--ease)}
+.chip:hover{background:#4f0b12}
+.chip:active{transform:scale(.96)}
+.chip i{width:14px;height:14px;border-radius:50%;flex:none;background:var(--c);border:2px solid rgba(255,255,255,.6)}
+.chip .p{font-weight:400;opacity:.9;font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:#fff;color:var(--ink)}
+.chip[aria-pressed="true"] i{border-color:var(--ink)}
+.plate-wrap{position:relative;max-width:560px;width:100%;margin:0 auto}
+.plate{width:100%;height:auto;display:block}
+.plate .ram{transform-box:fill-box;transform-origin:center;transition:transform .45s var(--ease),opacity .3s;opacity:0;transform:scale(.4)}
+.plate .ram.on{opacity:1;transform:none}
+.total{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-top:26px}
+.total b{font-size:clamp(2.4rem,1.8rem + 2vw,3.5rem);font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.total span{font-size:var(--s-body)}
+.verdict{margin-top:10px;max-width:46ch;min-height:3.1em}
+.plate-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.plate-actions .reset{background:transparent;color:#fff;border:2px solid #fff}
+.plate-actions .reset:hover{background:var(--maroon)}
 
-/* çiğ köfte sheet */
-.sheet-wrap{background:var(--carmin);margin-top:120px;padding:96px var(--m) 110px}
-.sheet{background:var(--paper);max-width:860px;margin:0 auto;padding:56px clamp(22px,6vw,64px) 48px;position:relative}
-.sheet h2{font-size:var(--s-head)}
-.sheet .lead{margin-top:26px;font-size:var(--s-lead);line-height:1.35;max-width:30ch}
-.sheet p{margin-top:18px;max-width:60ch}
-.spices{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;list-style:none}
-.spices li{background:var(--surface);padding:10px 14px;font-weight:600;font-size:var(--s-small);transition:background .2s,color .2s}
-.spices li:hover{background:var(--ink);color:var(--paper)}
-.spices li.n{background:var(--carmin);color:#fff}
-.src{font-size:var(--s-small);color:var(--soft);margin-top:24px}
-.scallop{display:block;width:100%;height:20px;position:absolute;left:0;bottom:-19px}
-.scallop circle{fill:var(--paper)}
-.stub{background:var(--paper);max-width:860px;margin:40px auto 0;border-top:6px dotted var(--carmin);padding:22px clamp(22px,6vw,64px);display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between}
-.stub p{font-weight:600}
-.stub a.mail{font-weight:600;word-break:break-all}
+/* ---------- ÇIĞ KÖFTE ---------- */
+.ck{padding-top:120px}
+.ck-grid{display:grid;gap:36px;align-items:center}
+.ck-photo{margin:0}
+.ck-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:55% 30%}
+.ck-photo figcaption,.cap{font-size:var(--s-small);color:var(--soft);margin-top:10px}
+.ck .lead{margin-top:18px;font-size:var(--s-lead);line-height:1.4;max-width:34ch}
+.ck p.body{margin-top:16px;max-width:58ch}
+.ingr{display:flex;flex-wrap:wrap;gap:6px;margin-top:24px;list-style:none}
+.ingr li{background:var(--pistache);padding:9px 13px;font-weight:600;font-size:var(--s-body)}
+.ingr li.k{background:var(--red);color:#fff}
+.two-ways{display:grid;grid-template-columns:1fr;gap:8px;margin-top:24px}
+.two-ways div{background:var(--surface);padding:16px}
+.two-ways b{display:block;font-size:var(--s-lead);font-weight:800;font-variant-numeric:tabular-nums}
+.two-ways span{font-size:var(--s-body);color:var(--soft)}
+blockquote.press{margin-top:26px;padding:20px 22px;background:var(--rose);font-size:var(--s-lead);line-height:1.4;max-width:40ch}
+blockquote.press cite{display:block;margin-top:10px;font-style:normal;font-size:var(--s-small);color:var(--soft)}
 
-/* visite */
-.visit{padding:0;position:relative;margin-top:0}
-.visit-photo{position:relative;height:70svh;min-height:420px;overflow:hidden}
-.visit-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-.vcard{background:var(--paper);position:relative;z-index:2;margin:-80px var(--m) 0;padding:28px 24px 0}
-.vcard h2{font-size:clamp(2rem,1.4rem + 2.4vw,3rem)}
-.vcard address{font-style:normal;margin-top:16px;font-size:var(--s-body)}
-.hours{list-style:none;margin-top:20px;display:grid;gap:0}
-.hours li{display:flex;justify-content:space-between;gap:16px;padding:9px 10px;margin:0 -10px}
-.hours li.today{background:var(--ink);color:var(--paper);font-weight:600}
-.live{margin-top:16px;font-weight:600}
-.vcard .tel{display:inline-block;margin-top:16px;font-weight:600;font-size:var(--s-lead);text-decoration:none}
-.vcard .tel:hover{color:var(--carmin)}
-.vcard .btn{width:calc(100% + 48px);margin:24px -24px 0;min-height:56px}
+/* ---------- VENIR ---------- */
+.venir{padding-top:120px}
+.venir-grid{display:grid;gap:var(--gap)}
+.v-photo{margin:0;position:relative;overflow:hidden;background:var(--surface)}
+.v-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;object-position:100% 50%}
+.v-card{background:var(--maroon);color:#fff;padding:28px 24px 26px}
+.v-card h2{font-size:var(--s-head)}
+.v-card address{font-style:normal;margin-top:14px;font-size:var(--s-lead);line-height:1.35}
+.hours{list-style:none;margin-top:20px;display:grid}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:8px 10px;margin:0 -10px}
+.hours li.today{background:#fff;color:var(--ink);font-weight:600}
+.live{margin-top:14px;font-weight:600;min-height:1.55em}
+.v-card .src{color:#f0d6d4}
+.v-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.v-actions .btn{flex:1 1 180px}
+.v-card .btn-ink{background:#fff;color:var(--maroon)}
+.v-card .btn-ink:hover{background:var(--rose)}
+.v-card .btn-red{background:var(--red)}
+.access{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.access div{background:var(--surface);padding:18px 18px 20px}
+.access h3{font-size:var(--s-lead);letter-spacing:-.01em}
+.access p{margin-top:6px;font-size:var(--s-body)}
 
-/* footer */
-footer{padding:150px var(--m) 0}
-.back{background:var(--paper);position:relative;max-width:1180px;margin:0 auto;padding:44px clamp(22px,5vw,64px) 28px}
-.back .scallop{top:-19px;bottom:auto}
-.back-grid{display:grid;gap:36px}
-.back h2{font-size:clamp(2rem,1.4rem + 2.4vw,3rem);max-width:12ch}
-.back .msg{margin-top:18px;max-width:40ch}
-.addr{list-style:none;display:grid;gap:12px;font-size:var(--s-lead);position:relative;padding-right:84px}
-.addr a{text-decoration:none;font-weight:600}
-.addr a:hover{color:var(--carmin);text-decoration:underline}
-.stamp{position:absolute;right:0;top:0;width:68px;background:var(--paper);padding:5px;border:4px dotted var(--ground);transform:rotate(4deg)}
-.stamp img{aspect-ratio:3/4;object-fit:cover;width:100%}
-.imprint{margin-top:44px;text-align:center;font-size:var(--s-small);color:var(--soft)}
-.end-stripe{margin-top:0}
-.bottom-gap{height:var(--m)}
+/* ---------- FOOTER EN TUILES ---------- */
+footer{padding:120px 0 var(--m)}
+.board{display:grid;gap:var(--gap);grid-template-columns:repeat(2,minmax(0,1fr))}
+.board > *{padding:20px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.b-mark{grid-column:1/-1;background:var(--red);color:#fff;min-height:180px;align-items:flex-start}
+.b-mark span{font:400 clamp(2.4rem,1rem + 7vw,8.5rem)/1 var(--script);white-space:nowrap;padding-top:.1em}
+.b-call{grid-column:1/-1;background:var(--ink);color:#fff;text-decoration:none;transition:background-color .25s}
+.b-call:hover{background:var(--maroon)}
+.b-call b{font-size:var(--s-head);font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.b-call svg{width:40px;height:40px;align-self:flex-end;transition:transform .3s var(--ease)}
+.b-call:hover svg{transform:translateX(6px)}
+.b-nav,.b-mail,.b-time,.b-legal{background:var(--surface)}
+.b-nav ul{list-style:none;display:grid;gap:6px}
+.b-nav a,.b-mail a{font-weight:600}
+.b-mail{grid-column:1/-1}
+.b-mail a{font-size:var(--s-body);overflow-wrap:anywhere}
+.b-time b{font-size:var(--s-lead);font-variant-numeric:tabular-nums}
+.b-legal{grid-column:1/-1;font-size:var(--s-small);color:var(--soft);min-height:0!important;justify-content:flex-start!important;gap:6px!important}
+.b-legal p{max-width:70ch}
 
-/* motion */
-.rv{opacity:1;transform:none}
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0ms)}
+.lbl{font-size:var(--s-small);color:var(--soft)}
+
+/* ---------- motion ---------- */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0ms)}
 .js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .hero-photo img{animation:none;transition:none}
+  .tile.facade img{animation:none}
+  .tile img,.plate .ram{transition:opacity .15s}
   .js .rv{opacity:1;transform:none;transition:none}
 }
 
-@media (min-width:900px){
+/* ---------- ≥ 720 ---------- */
+@media (min-width:720px){
+  .wall{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .tile.opt{display:block}
+  .two-ways{grid-template-columns:1fr 1fr}
+  .tile.facade{grid-column:1/3;grid-row:1/3}
+  .tile.facade img{aspect-ratio:auto;height:100%}
+  .access{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .board{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .b-mark{grid-column:1/4}
+  .b-call{grid-column:4/5}
+  .b-legal{grid-column:1/-1}
+  .b-mail{grid-column:auto}
+}
+/* ---------- ≥ 980 : desktop ---------- */
+@media (min-width:980px){
   .nav ul{display:flex}
-  .hero{grid-template-columns:1fr 1fr;height:calc(100svh - 64px - 31px);min-height:620px;padding-bottom:var(--m)}
-  .hero-photo{height:auto;order:2}
-  .card{margin-top:0;display:flex;flex-direction:column}
-  .card-body{flex:1;justify-content:center;padding:28px 40px 0}
-  .stripe{height:56px}
-  .carte{grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:clamp(40px,6vw,96px);max-width:1440px;margin:0 auto}
-  .carte-side{position:sticky;top:96px}
-  .sheet-wrap{padding:140px var(--m) 150px}
-  .visit-photo{height:100svh}
-  .vcard{position:absolute;right:60px;top:60px;width:400px;margin:0;padding:32px 32px 0}
-  .vcard .btn{width:calc(100% + 64px);margin:26px -32px 0}
-  .back-grid{grid-template-columns:1.1fr 1fr;gap:64px}
-  .addr{padding-right:110px}
-  .stamp{width:92px}
+  .hero{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,4vw,64px);align-items:center;min-height:calc(100svh - 64px - 34px);padding-top:24px;padding-bottom:40px}
+  .carte-head{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px}
+  .idx{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,4vw,64px)}
+  .row .th{display:none}
+  .row{grid-template-columns:1fr auto}
+  .row .ds{grid-column:1/-1}
+  .preview{display:block;position:sticky;top:96px;margin:0}
+  .preview .frame{position:relative;aspect-ratio:5/4;background:var(--rose);overflow:hidden}
+  .preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .24s ease}
+  .preview img.on{opacity:1}
+  .preview figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:12px;font-weight:600;font-size:var(--s-lead)}
+  .preview figcaption span:last-child{font-variant-numeric:tabular-nums}
+  .side-lists{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:56px}
+  .plate-grid{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(40px,5vw,80px)}
+  .ck-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,5vw,80px)}
+  .venir-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .v-photo img{aspect-ratio:auto;position:absolute;inset:0;object-position:100% 50%}
+  .v-card{padding:36px 36px 32px}
+  .access{grid-column:1/-1}
+  .board > *{min-height:200px;padding:24px}
+  .b-mark{min-height:280px}
+}
+@media (min-width:980px) and (max-height:820px){
+  .hero{padding-top:16px;padding-bottom:24px}
+  .hero h1{font-size:clamp(2.5rem,1rem + 3.6vw,4.4rem)}
+  .hero .lead{margin-top:14px;font-size:var(--s-body)}
+  .facts{margin-top:18px}
+  .facts li{padding:10px 14px 11px}
+  .facts span{font-size:var(--s-small)}
+  .actions{margin-top:16px}
+  .status{margin-top:12px}
+}
+@media (min-width:99999px){
+  .facts{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none}
+  .facts b{font-size:1.75rem}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Aller au contenu</a>
 <div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
 
 <header class="nav">
-  <div class="nav-in">
-    <a class="mark" href="#top">Le Mezze du Chef</a>
+  <div class="wrap nav-in">
+    <a class="mark" translate="no" href="#top" aria-label="Le Mezze du Chef, haut de page">Le Mezze du Chef</a>
     <ul>
       <li><a href="#carte">La carte</a></li>
+      <li><a href="#assiette">Votre assiette</a></li>
       <li><a href="#cig-kofte">Le çiğ köfte</a></li>
-      <li><a href="#venir">Horaires et accès</a></li>
+      <li><a href="#venir">Horaires</a></li>
     </ul>
-    <a class="btn btn-k" href="tel:+33695651920" aria-label="Appeler le restaurant">
+    <a class="btn btn-white" href="tel:+33695651920">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
       Appeler
     </a>
@@ -209,213 +308,316 @@ footer{padding:150px var(--m) 0}
 </header>
 
 <main id="top">
-  <div class="hero">
-    <div class="hero-photo" aria-hidden="true">
-      <img class="on" fetchpriority="high" src="https://images.unsplash.com/photo-1783455442171-16dbde079c53?w=1600&q=75&auto=format&fit=crop" alt="" width="1600" height="1100">
-      <img src="https://images.unsplash.com/photo-1777891257688-cdf5c386bbb2?w=1600&q=75&auto=format&fit=crop" alt="" width="1600" height="1100" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1637949385162-e416fb15b2ce?w=1600&q=75&auto=format&fit=crop" alt="" width="1600" height="1100" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1771574206132-74f127909c02?w=1600&q=75&auto=format&fit=crop" alt="" width="1600" height="1100" loading="lazy">
+  <section class="wrap hero" aria-labelledby="h1">
+    <div>
+      <h1 id="h1">Le çiğ köfte aux 27&nbsp;épices</h1>
+      <p class="lead">Le Mezze du Chef, cantine turque 100&nbsp;% végétarienne au 80 rue de Ménilmontant. Çiğ köfte, mezzés, kumpir et börek, sur place ou à emporter.</p>
+      <ul class="facts">
+        <li class="hot"><b>7,50&nbsp;€</b><span>le sandwich çiğ köfte</span></li>
+        <li><b>16&nbsp;€</b><span>l'assiette de dix mezzés</span></li>
+        <li><b>23&nbsp;€</b><span>le brunch à volonté du week-end</span></li>
+        <li><b>4/5</b><span>la note de Time Out Paris</span></li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-red" href="tel:+33695651920">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          06 95 65 19 20
+        </a>
+        <a class="btn btn-ink" href="#carte">Voir la carte</a>
+      </div>
+      <p class="status" id="status" aria-live="polite"><i></i><span>Ouvert tous les jours</span> <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Mezze+du+Chef+80+rue+de+M%C3%A9nilmontant+75020+Paris" target="_blank" rel="noopener">Itinéraire</a></p>
     </div>
 
-    <div class="card">
-      <svg class="stripe" aria-hidden="true" preserveAspectRatio="none"><defs><pattern id="aw" width="56" height="56" patternUnits="userSpaceOnUse"><rect class="on" width="28" height="56"/><rect class="off" x="28" width="28" height="56"/></pattern></defs><rect width="100%" height="100%" fill="url(#aw)"/></svg>
-      <div class="card-body">
-        <h1 class="wordmark"><span>Le Mezze</span><span>du Chef</span></h1>
-        <p class="sub">Cantine turque végétarienne à Ménilmontant</p>
-        <p class="lead">Çiğ köfte végétalien, mezzés, kumpir et baklava, au 80 rue de Ménilmontant. Sans viande, sans chichis, tous les jours.</p>
-        <p class="status" id="status" aria-live="polite"><i></i><span>Ouvert tous les jours dès 9 h</span></p>
-        <div class="actions">
-          <a class="btn btn-c" href="tel:+33695651920">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-            06 95 65 19 20
-          </a>
-          <a class="btn btn-k" href="https://www.google.com/maps/dir/?api=1&destination=Le+Mezze+du+Chef+80+rue+de+M%C3%A9nilmontant+75020+Paris" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Itinéraire
-          </a>
+    <div class="wall">
+      <figure class="tile facade">
+        <img fetchpriority="high" src="https://media.timeout.com/images/105160841/1372/772/image.jpg" alt="La devanture rouge du Mezze du Chef, enseigne blanche et vitrine « Restaurant végétarien, sandwich çiğ köfte »" width="1372" height="772">
+        <figcaption class="tag"><b>La devanture</b><span>80 rue de Ménilmontant</span></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/87c33d3fe542047f3b2592a709c20ad4/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="Assiette de çiğ köfte en couronne autour d'une salade et d'une sauce à la grenade" width="550" height="440">
+        <figcaption class="tag"><b>Assiette çiğ köfte</b><span>16&nbsp;€</span></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/592e3525bf2d7de80547f01d3ca097f8/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="Sandwich çiğ köfte roulé dans un pain galette avec salade et persil" width="550" height="440">
+        <figcaption class="tag"><b>Sandwich</b><span>7,50&nbsp;€</span></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/91d1e9775639071743952cb2aca4197f/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="Mezzés en coupelles : houmous, caviar d'aubergines, poivrons, avec çiğ köfte" width="550" height="440" loading="lazy">
+        <figcaption class="tag"><b>Mezzés</b><span>dès 5&nbsp;€</span></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/1d773c44392ef10e2ba355dba64b4951/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="Kumpir, pomme de terre au four garnie de mezzés, avec salade et feta" width="550" height="440" loading="lazy">
+        <figcaption class="tag"><b>Kumpir</b><span>16&nbsp;€</span></figcaption>
+      </figure>
+      <figure class="tile opt">
+        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/08f99e6b62df6f33663568e344dfb463/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="Bol de çorba, soupe de lentilles et de légumes" width="550" height="440" loading="lazy">
+        <figcaption class="tag"><b>Çorba</b><span>9&nbsp;€</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap carte" id="carte" aria-labelledby="carte-h">
+    <div class="carte-head">
+      <h2 id="carte-h" class="rv">La carte</h2>
+      <p class="rv" style="--d:80ms">Rien que du végétarien, une bonne part végétalien. Le çiğ köfte existe en version douce ou piquante, au même prix. Passez sur un plat pour le voir.</p>
+    </div>
+
+    <div class="idx">
+      <div class="groups">
+        <div class="group rv">
+          <h3>Assiettes et sandwichs</h3>
+          <ul class="rows">
+            <li><button type="button" class="row on" data-img="ck" data-n="Assiette de çiğ köfte" data-p="16 €"><img class="th" src="https://tb-static.uber.com/prod/image-proc/processed_images/87c33d3fe542047f3b2592a709c20ad4/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy"><span class="nm">Assiette de çiğ köfte</span><span class="pr">16&nbsp;€</span><span class="ds">250 g de çiğ köfte (boulgour, noix, légumes, 27 épices), salade, tomate, persil, menthe, cornichons, sauce à la grenade. Douce ou piquante.</span></button></li>
+            <li><button type="button" class="row" data-img="sand" data-n="Sandwich çiğ köfte" data-p="7,50 €"><img class="th" src="https://tb-static.uber.com/prod/image-proc/processed_images/592e3525bf2d7de80547f01d3ca097f8/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy"><span class="nm">Sandwich çiğ köfte</span><span class="pr">7,50&nbsp;€</span><span class="ds">La même garniture roulée dans un pain galette. Doux ou piquant.</span></button></li>
+            <li><button type="button" class="row" data-img="mezze" data-n="Assiette de mezzés" data-p="16 €"><img class="th" src="https://tb-static.uber.com/prod/image-proc/processed_images/91d1e9775639071743952cb2aca4197f/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy"><span class="nm">Assiette de mezzés</span><span class="pr">16&nbsp;€</span><span class="ds">Feuille de vigne, houmous, tzatziki, aubergines aux noix, caviar d'aubergines, champignons, haricots verts, haricots rouges, feta et çiğ köfte.</span></button></li>
+            <li><button type="button" class="row noimg" data-img="mezze" data-n="Assiette de mezzés vegan" data-p="16 €"><span class="nm">Assiette de mezzés vegan</span><span class="pr">16&nbsp;€</span><span class="ds">Feuille de vigne, salade de haricots, houmous, haricots verts, çiğ köfte, salade d'olives.</span></button></li>
+          </ul>
         </div>
-        <p class="card-links"><a href="#carte">Voir la carte</a><a href="#cig-kofte">C'est quoi, le çiğ köfte ?</a><a href="mailto:lemezzeduchef1970@gmail.com">Écrire</a></p>
+        <div class="group rv">
+          <h3>Plats chauds</h3>
+          <ul class="rows">
+            <li><button type="button" class="row" data-img="kumpir" data-n="Kumpir" data-p="16 €"><img class="th" src="https://tb-static.uber.com/prod/image-proc/processed_images/1d773c44392ef10e2ba355dba64b4951/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy"><span class="nm">Kumpir</span><span class="pr">16&nbsp;€</span><span class="ds">Pomme de terre chaude garnie de cinq mezzés, salade de feta. Existe en version vegan, même prix.</span></button></li>
+            <li><button type="button" class="row" data-img="borek" data-n="Börek" data-p="11 €"><img class="th" src="https://tb-static.uber.com/prod/image-proc/processed_images/230a9f81986a3674f33826592b356000/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy"><span class="nm">Börek</span><span class="pr">11&nbsp;€</span><span class="ds">Feuilleté au fromage, servi avec une salade de feta.</span></button></li>
+            <li><button type="button" class="row" data-img="corba" data-n="Çorba" data-p="9 €"><img class="th" src="https://tb-static.uber.com/prod/image-proc/processed_images/08f99e6b62df6f33663568e344dfb463/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy"><span class="nm">Çorba</span><span class="pr">9&nbsp;€</span><span class="ds">Soupe de lentilles et de légumes.</span></button></li>
+            <li><button type="button" class="row" data-img="helva" data-n="Helva pistache" data-p="5,50 €"><img class="th" src="https://tb-static.uber.com/prod/image-proc/processed_images/a8e8d15ae6ef9052b41870acd0de8314/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy"><span class="nm">Helva pistache</span><span class="pr">5,50&nbsp;€</span><span class="ds">Pâte de sésame sucrée aux pistaches, en dessert.</span></button></li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="preview" aria-hidden="true">
+        <div class="frame">
+          <img class="on" data-k="ck" src="https://tb-static.uber.com/prod/image-proc/processed_images/87c33d3fe542047f3b2592a709c20ad4/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy">
+          <img data-k="sand" src="https://tb-static.uber.com/prod/image-proc/processed_images/592e3525bf2d7de80547f01d3ca097f8/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy">
+          <img data-k="mezze" src="https://tb-static.uber.com/prod/image-proc/processed_images/91d1e9775639071743952cb2aca4197f/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy">
+          <img data-k="kumpir" src="https://tb-static.uber.com/prod/image-proc/processed_images/1d773c44392ef10e2ba355dba64b4951/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy">
+          <img data-k="borek" src="https://tb-static.uber.com/prod/image-proc/processed_images/230a9f81986a3674f33826592b356000/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy">
+          <img data-k="corba" src="https://tb-static.uber.com/prod/image-proc/processed_images/08f99e6b62df6f33663568e344dfb463/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy">
+          <img data-k="helva" src="https://tb-static.uber.com/prod/image-proc/processed_images/a8e8d15ae6ef9052b41870acd0de8314/a19bb09692310dfd41e49a96c424b3a6.jpeg" alt="" width="550" height="440" loading="lazy">
+        </div>
+        <figcaption><span id="pv-n">Assiette de çiğ köfte</span><span id="pv-p">16 €</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="side-lists">
+      <div class="rv">
+        <h3 class="sub-h" style="font-size:var(--s-lead);letter-spacing:-.01em;margin-bottom:8px;color:var(--red)">Mezzés à la portion</h3>
+        <ul class="mini num">
+          <li><span>Houmous, tzatziki<small>100 g</small></span><span>5&nbsp;€</span></li>
+          <li><span>Caviar d'aubergines, aubergines aux noix<small>100 g</small></span><span>5&nbsp;€</span></li>
+          <li><span>Carottes au fromage, feta<small>100 g</small></span><span>5&nbsp;€</span></li>
+          <li><span>Champignons, haricots rouges, haricots verts<small>100 g</small></span><span>5&nbsp;€</span></li>
+          <li><span>Feuille de vigne<small>à l'unité</small></span><span>1,30&nbsp;€</span></li>
+          <li><span>Pain galette<small>à l'unité</small></span><span>0,70&nbsp;€</span></li>
+        </ul>
+      </div>
+      <div class="rv" style="--d:80ms">
+        <h3 style="font-size:var(--s-lead);letter-spacing:-.01em;margin-bottom:8px;color:var(--red)">Douceurs</h3>
+        <ul class="mini num">
+          <li><span>Baklava<small>feuilleté aux pistaches</small></span><span>2&nbsp;€</span></li>
+          <li><span>Assortiment de loukoums<small>nature, rose, pistache, 3 pièces</small></span><span>4&nbsp;€</span></li>
+          <li><span>Helva nature<small>pâte de sésame sucrée</small></span><span>5&nbsp;€</span></li>
+          <li><span>Helva pistache</span><span>5,50&nbsp;€</span></li>
+          <li><span>Kadayif<small>vermicelles et pistaches, sur place</small></span><span>3,90&nbsp;€</span></li>
+        </ul>
+      </div>
+      <div class="rv" style="--d:160ms">
+        <h3 style="font-size:var(--s-lead);letter-spacing:-.01em;margin-bottom:8px;color:var(--red)">À boire</h3>
+        <ul class="mini num">
+          <li><span>Ayran<small>boisson au yaourt légèrement salée, 25 cl</small></span><span>2,50&nbsp;€</span></li>
+          <li><span>Şalgam<small>carotte noire et navet, épicé, 25 cl</small></span><span>2,50&nbsp;€</span></li>
+          <li><span>Jus de cerise, jus de pêche</span><span>2,50&nbsp;€</span></li>
+          <li><span>Sodas, Perrier, jus d'orange</span><span>2,50&nbsp;€</span></li>
+          <li><span>Eau</span><span>2&nbsp;€</span></li>
+        </ul>
       </div>
     </div>
-  </div>
+    <p class="price-note">Prix de la carte en livraison sur Uber Eats. Sur place, Time Out relevait en mars 2025 l'assiette de çiğ köfte à 12&nbsp;€, l'assiette de mezzés végans à 12&nbsp;€, le kadayif à 3,90&nbsp;€, le baklava à 1,60&nbsp;€ et le brunch à volonté du week-end à 23&nbsp;€.</p>
+  </section>
 
-  <section id="carte" aria-labelledby="carte-h">
-    <div class="carte">
-      <div class="carte-col">
-        <h2 class="giant rv" id="carte-h">Carte</h2>
-        <p class="carte-note rv" style="--d:80ms">Tout est végétarien, une grande partie végétalien. Les prix indiqués sont ceux relevés en 2025 ; les autres se découvrent sur place.</p>
-        <div class="bars">
-          <details open class="rv" style="--d:120ms">
-            <summary>Çiğ köfte, la spécialité <span class="pm" aria-hidden="true"></span></summary>
-            <ul class="items">
-              <li><b>Çiğ köfte à l'assiette</b><span class="p num">12 €</span><small>Boulgour complet, noix, purées de tomate et de poivron, piment, ail, sirop de grenade et 27 épices. Végétalien.</small></li>
-              <li><b>Çiğ köfte en galette</b><span class="p q">sur place</span><small>La même préparation, roulée pour la route.</small></li>
-            </ul>
-          </details>
-          <details class="rv" style="--d:160ms">
-            <summary>Mezzés <span class="pm" aria-hidden="true"></span></summary>
-            <ul class="items">
-              <li><b>Assiette de mezzés végans</b><span class="p num">12 €</span><small>Houmous, caviar d'aubergines, aubergines aux noix, tomates épicées.</small></li>
-              <li><b>Feuilles de vigne farcies</b><span class="p q">sur place</span></li>
-              <li><b>Taboulé</b><span class="p q">sur place</span></li>
-            </ul>
-          </details>
-          <details class="rv" style="--d:200ms">
-            <summary>Plats chauds <span class="pm" aria-hidden="true"></span></summary>
-            <ul class="items">
-              <li><b>Kumpir</b><span class="p q">sur place</span><small>Pomme de terre au four garnie de mezzés, servie avec une salade à la feta.</small></li>
-              <li><b>Soupe de lentilles</b><span class="p q">sur place</span></li>
-            </ul>
-          </details>
-          <details class="rv" style="--d:240ms">
-            <summary>Douceurs turques <span class="pm" aria-hidden="true"></span></summary>
-            <ul class="items">
-              <li><b>Kadayif</b><span class="p num">3,90 €</span><small>Vermicelles croustillants à la pistache.</small></li>
-              <li><b>Baklava</b><span class="p num">1,60 €</span><small>Feuilleté à la pistache, à la pièce.</small></li>
-            </ul>
-          </details>
-          <details class="rv" style="--d:280ms">
-            <summary>À boire <span class="pm" aria-hidden="true"></span></summary>
-            <ul class="items">
-              <li><b>Ayran</b><span class="p q">sur place</span><small>Boisson salée au yaourt, la meilleure alliée du piment.</small></li>
-              <li><b>Café à la pistache</b><span class="p q">sur place</span></li>
-              <li><b>Café gourmand</b><span class="p q">sur place</span></li>
-            </ul>
-          </details>
-          <details class="rv" style="--d:320ms">
-            <summary>Brunch du week-end <span class="pm" aria-hidden="true"></span></summary>
-            <ul class="items">
-              <li><b>Brunch végétarien à volonté</b><span class="p num">23 €</span><small>Le samedi et le dimanche.</small></li>
-            </ul>
-          </details>
+  <section class="plate-sec" id="assiette" aria-labelledby="pl-h">
+    <div class="wrap plate-grid">
+      <div>
+        <h2 id="pl-h" class="rv">Composez vos mezzés</h2>
+        <p class="intro rv" style="--d:80ms">Choisissez vos coupelles, on fait le compte au prix de la carte.</p>
+        <ul class="chips" id="chips" aria-label="Mezzés à ajouter">
+          <li><button type="button" class="chip" aria-pressed="false" data-k="houmous" data-p="5" style="--c:#e3c48f"><i></i>Houmous <span class="p">5&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="tzatziki" data-p="5" style="--c:#eef1e4"><i></i>Tzatziki <span class="p">5&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="caviar" data-p="5" style="--c:#8c6b4c"><i></i>Caviar d'aubergines <span class="p">5&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="noix" data-p="5" style="--c:#6a4535"><i></i>Aubergines aux noix <span class="p">5&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="carottes" data-p="5" style="--c:#f0a04b"><i></i>Carottes au fromage <span class="p">5&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="feta" data-p="5" style="--c:#fbfaf3"><i></i>Feta <span class="p">5&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="champi" data-p="5" style="--c:#b8987a"><i></i>Champignons <span class="p">5&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="rouges" data-p="5" style="--c:#7e2525"><i></i>Haricots rouges <span class="p">5&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="verts" data-p="5" style="--c:#5d8a38"><i></i>Haricots verts <span class="p">5&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="vigne" data-p="1.3" style="--c:#4c6a2c"><i></i>Feuille de vigne <span class="p">1,30&nbsp;€</span></button></li>
+          <li><button type="button" class="chip" aria-pressed="false" data-k="pain" data-p="0.7" style="--c:#e7c486"><i></i>Pain galette <span class="p">0,70&nbsp;€</span></button></li>
+        </ul>
+        <div class="total" aria-live="polite"><b id="tot" class="num">0,00&nbsp;€</b><span id="cnt">aucune coupelle</span></div>
+        <p class="verdict" id="verdict">Commencez par le houmous, c'est le plus demandé des mezzés.</p>
+        <div class="plate-actions">
+          <a class="btn btn-white" href="https://www.ubereats.com/fr/store/le-mezze-du-chef-cig-kofte/0LVkm7jWR-a7QQlHrqeHEg" target="_blank" rel="noopener">Commander sur Uber Eats</a>
+          <button type="button" class="btn reset" id="reset">Vider l'assiette</button>
         </div>
       </div>
-      <div class="carte-side rv" style="--d:120ms">
-        <figure class="carte-photo">
-          <img src="https://images.unsplash.com/photo-1767114915974-3481fa23cbb0?w=1100&h=1375&q=75&auto=format&fit=crop" alt="Galettes de pain, houmous, betterave et pickles sur une planche, épices en coupelles" width="1100" height="1375" loading="lazy">
-        </figure>
-        <div class="two">
-          <img src="https://images.unsplash.com/photo-1761828122856-8703baac8e86?w=600&h=600&q=70&auto=format&fit=crop" alt="Baklavas garnis de pistache concassée" width="600" height="600" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1780145968658-beedcf9e8119?w=600&h=600&q=70&auto=format&fit=crop" alt="Verre de thé turc sur une table en bois" width="600" height="600" loading="lazy">
-        </div>
-        <p class="cap">Photos d'ambiance, en attendant les vôtres.</p>
+      <div class="plate-wrap rv" style="--d:120ms">
+        <svg class="plate" viewBox="0 0 400 400" role="img" aria-labelledby="plate-t">
+          <title id="plate-t">Votre plateau de mezzés</title>
+          <circle cx="200" cy="200" r="196" fill="#6b1018"/>
+          <circle cx="200" cy="200" r="178" fill="#fbf7f4"/>
+          <circle cx="200" cy="200" r="160" fill="#f3ebe7"/>
+          <g id="rams"></g>
+        </svg>
       </div>
     </div>
   </section>
 
-  <div class="sheet-wrap" id="cig-kofte">
-    <article class="sheet rv" aria-labelledby="ck-h">
-      <h2 id="ck-h">Le çiğ köfte, sans viande</h2>
-      <p class="lead">Un tartare végétalien venu du sud-est de l'Anatolie. Ici, c'est le plat qu'on vient chercher.</p>
-      <p>La recette d'origine se faisait à la viande crue. Celle-ci n'en contient pas : le boulgour complet est pétri avec le reste jusqu'à prendre la texture d'une farce. Ça se mange à l'assiette ou roulé en galette, avec un ayran pour calmer le piment.</p>
-      <ul class="spices" aria-label="Ce qu'il y a dedans">
-        <li>Boulgour complet</li><li>Noix</li><li>Purée de tomate</li><li>Purée de poivron</li><li>Piment</li><li>Ail</li><li>Sirop de grenade</li><li class="n">27 épices</li>
-      </ul>
-      <p class="src">Composition décrite par Time Out Paris, mars 2025.</p>
-      <svg class="scallop" aria-hidden="true"><defs><pattern id="sc" width="28" height="20" patternUnits="userSpaceOnUse"><circle cx="14" cy="0" r="14"/></pattern></defs><rect width="100%" height="20" fill="url(#sc)"/></svg>
-    </article>
-    <div class="stub rv">
-      <p>Une question sur un plat ou un allergène ?</p>
-      <a class="mail" href="mailto:lemezzeduchef1970@gmail.com">lemezzeduchef1970@gmail.com</a>
+  <section class="wrap ck" id="cig-kofte" aria-labelledby="ck-h">
+    <div class="ck-grid">
+      <figure class="ck-photo rv">
+        <img src="https://media.timeout.com/images/105160839/1372/772/image.jpg" alt="Devant la vitrine du Mezze du Chef, pouce levé ; derrière, le comptoir et les affiches du sandwich çiğ köfte" width="1372" height="772" loading="lazy">
+        <figcaption>Devant la vitrine du 80. Photo Le Mezze du Chef, publiée par Time Out.</figcaption>
+      </figure>
+      <div>
+        <h2 id="ck-h" class="sec-h rv">Le çiğ köfte, sans viande</h2>
+        <p class="lead rv" style="--d:80ms">Ça se prononce « tchig queufteu ». Un tartare végétal venu du sud-est de l'Anatolie, le plat qu'on vient chercher ici.</p>
+        <ul class="ingr rv" style="--d:140ms" aria-label="Ce qu'il y a dedans">
+          <li>Boulgour complet</li><li>Noix</li><li>Purée de tomate</li><li>Purée de poivron</li><li>Piment</li><li>Ail</li><li>Sirop de grenade</li><li class="k">27 épices</li>
+        </ul>
+        <div class="two-ways rv" style="--d:180ms">
+          <div><b>En galette</b><span>avec salade, tomate, persil, menthe, cornichons et sauce grenade</span></div>
+          <div><b>À l'assiette</b><span>250 g, mêmes garnitures, avec un ayran pour calmer le piment</span></div>
+        </div>
+        <blockquote class="press rv" style="--d:220ms">« Cette cambuse turque à la façade carmin mérite largement la grimpette de la colline de Ménilmontant. »<cite>Antoine Besse, Time Out Paris, 14 mars 2025</cite></blockquote>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <section class="visit" id="venir" aria-labelledby="venir-h">
-    <div class="visit-photo">
-      <img src="https://images.unsplash.com/photo-1579005162638-11c872e1586e?w=2000&q=75&auto=format&fit=crop" alt="Verre de thé turc posé sur un tapis tissé aux motifs rouges et bleus" width="2000" height="1333" loading="lazy">
-    </div>
-    <div class="vcard">
-      <h2 id="venir-h">Venir au 80</h2>
-      <address>80 rue de Ménilmontant<br>75020 Paris</address>
-      <ul class="hours num" id="hours">
-        <li data-d="1"><span>Lundi</span><span>9 h – minuit</span></li>
-        <li data-d="2"><span>Mardi</span><span>9 h – minuit</span></li>
-        <li data-d="3"><span>Mercredi</span><span>9 h – minuit</span></li>
-        <li data-d="4"><span>Jeudi</span><span>9 h – minuit</span></li>
-        <li data-d="5"><span>Vendredi</span><span>9 h – 2 h</span></li>
-        <li data-d="6"><span>Samedi</span><span>9 h – 2 h</span></li>
-        <li data-d="0"><span>Dimanche</span><span>9 h – minuit</span></li>
-      </ul>
-      <p class="live" id="live" aria-live="polite"></p>
-      <a class="tel num" href="tel:+33695651920">06 95 65 19 20</a>
-      <a class="btn btn-c" href="https://www.google.com/maps/dir/?api=1&destination=Le+Mezze+du+Chef+80+rue+de+M%C3%A9nilmontant+75020+Paris" target="_blank" rel="noopener">Ouvrir l'itinéraire Google Maps</a>
+  <section class="wrap venir" id="venir" aria-labelledby="venir-h">
+    <div class="venir-grid">
+      <figure class="v-photo rv">
+        <img src="https://media.timeout.com/images/105160841/1920/1080/image.jpg" alt="Le flanc de la devanture : panneaux rouges et menus illustrés du çiğ köfte, du kumpir et des mezzés" width="1920" height="1080" loading="lazy">
+      </figure>
+      <div class="v-card rv" style="--d:100ms">
+        <h2 id="venir-h">Au 80, rue de Ménilmontant</h2>
+        <address>80 rue de Ménilmontant<br>75020 Paris</address>
+        <ul class="hours num" id="hours">
+          <li data-d="1"><span>Lundi</span><span>12 h – minuit</span></li>
+          <li data-d="2"><span>Mardi</span><span>12 h – minuit</span></li>
+          <li data-d="3"><span>Mercredi</span><span>12 h – minuit</span></li>
+          <li data-d="4"><span>Jeudi</span><span>12 h – minuit</span></li>
+          <li data-d="5"><span>Vendredi</span><span>12 h – 1 h</span></li>
+          <li data-d="6"><span>Samedi</span><span>12 h – 1 h</span></li>
+          <li data-d="0"><span>Dimanche</span><span>12 h – minuit</span></li>
+        </ul>
+        <p class="live" id="live" aria-live="polite"></p>
+        <p class="src">Horaires de la fiche Google. Un doute avant de monter la rue : un coup de fil suffit.</p>
+        <div class="v-actions">
+          <a class="btn btn-ink num" href="tel:+33695651920">06 95 65 19 20</a>
+          <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Mezze+du+Chef+80+rue+de+M%C3%A9nilmontant+75020+Paris" target="_blank" rel="noopener">Itinéraire</a>
+        </div>
+      </div>
+      <div class="access">
+        <div class="rv"><h3>Sur place</h3><p>Petite salle et comptoir, mezzés en vitrine.</p></div>
+        <div class="rv" style="--d:60ms"><h3>À emporter</h3><p>Sandwichs, assiettes et mezzés à la portion.</p></div>
+        <div class="rv" style="--d:120ms"><h3>En livraison</h3><p><a href="https://www.ubereats.com/fr/store/le-mezze-du-chef-cig-kofte/0LVkm7jWR-a7QQlHrqeHEg" target="_blank" rel="noopener">Sur Uber Eats</a>, de 11 h à minuit.</p></div>
+        <div class="rv" style="--d:180ms"><h3>Le week-end</h3><p>Brunch végétarien à volonté, 23&nbsp;€ (Time Out, 2025).</p></div>
+      </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="back rv">
-    <svg class="scallop" aria-hidden="true"><defs><pattern id="sc2" width="56" height="20" patternUnits="userSpaceOnUse"><circle cx="28" cy="20" r="28"/></pattern></defs><rect width="100%" height="20" fill="url(#sc2)"/></svg>
-    <div class="back-grid">
-      <div>
-        <h2>À tout à l'heure</h2>
-        <p class="msg">Un çiğ köfte à midi, des mezzés le soir, un baklava et un thé en remontant la rue de Ménilmontant. La cuisine reste ouverte tard, jusqu'à 2 h le vendredi et le samedi.</p>
-      </div>
-      <ul class="addr">
-        <li class="stamp" aria-hidden="true"><img src="https://images.unsplash.com/photo-1778448806128-18e8354356e1?w=240&h=320&q=70&auto=format&fit=crop" alt="" width="240" height="320" loading="lazy"></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=80+rue+de+M%C3%A9nilmontant+75020+Paris" target="_blank" rel="noopener">80 rue de Ménilmontant</a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=80+rue+de+M%C3%A9nilmontant+75020+Paris" target="_blank" rel="noopener">75020 Paris</a></li>
-        <li><a class="num" href="tel:+33695651920">06 95 65 19 20</a></li>
-        <li><a href="mailto:lemezzeduchef1970@gmail.com">Nous écrire</a></li>
-      </ul>
-    </div>
-    <p class="imprint">Le Mezze du Chef, Paris 20e · Démo réalisée par Raul Hatos — site non officiel · Photos d'illustration Unsplash</p>
+<footer class="wrap" aria-label="Pied de page">
+  <div class="board">
+    <div class="b-mark rv"><span translate="no">Le Mezze du Chef</span><p>Cantine turque végétarienne, Paris 20e</p></div>
+    <a class="b-call rv" style="--d:60ms" href="tel:+33695651920"><span class="lbl" style="color:#e9dcda">Un çiğ köfte à emporter ?</span><b>Appeler</b><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="4" aria-hidden="true"><path d="M6 20h26M22 9l11 11-11 11"/></svg></a>
+    <nav class="b-nav rv" aria-label="Plan de la page"><span class="lbl">La page</span><ul><li><a href="#carte">La carte</a></li><li><a href="#assiette">Composer ses mezzés</a></li><li><a href="#cig-kofte">Le çiğ köfte</a></li><li><a href="#venir">Horaires et accès</a></li></ul></nav>
+    <div class="b-mail rv"><span class="lbl">Écrire</span><a href="mailto:lemezzeduchef1970@gmail.com">lemezzeduchef1970@gmail.com</a></div>
+    <div class="b-time rv"><span class="lbl">À Ménilmontant, il est</span><b id="clock" class="num">—</b></div>
+    <div class="b-time rv"><span class="lbl">Commander</span><b><a href="https://www.ubereats.com/fr/store/le-mezze-du-chef-cig-kofte/0LVkm7jWR-a7QQlHrqeHEg" target="_blank" rel="noopener">Uber Eats</a></b></div>
+    <div class="b-legal"><p>Démo réalisée par Raul Hatos — site non officiel. Photos : Le Mezze du Chef (via Time Out Paris et Uber Eats). Prix relevés sur Uber Eats et dans Time Out Paris.</p><p>Le Mezze du Chef, 80 rue de Ménilmontant, 75020 Paris.</p></div>
   </div>
-  <svg class="stripe end-stripe" aria-hidden="true" preserveAspectRatio="none" style="height:8px"><rect width="100%" height="100%" fill="url(#aw)"/></svg>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
 
-// Horaires (Time Out, 2025) : dim–jeu 9 h–24 h, ven–sam 9 h–26 h (2 h le lendemain). Minutes depuis dimanche 0 h.
-const CLOSE={0:24,1:24,2:24,3:24,4:24,5:26,6:26};
-const W=7*1440, OPEN=9*60;
-function slots(){const s=[];for(let d=0;d<7;d++)s.push([d*1440+OPEN,d*1440+CLOSE[d]*60]);return s}
-function state(min){ // min = minutes depuis dimanche 0 h (heure de Paris)
-  for(const [a,b] of slots()){
-    for(const off of [0,W]){ if(min+off>=a&&min+off<b) return {open:true,left:b-(min+off),close:b%1440} }
-  }
+/* ---------- horaires (fiche Google) : 12 h – minuit, 12 h – 1 h ven. et sam. ---------- */
+const OPEN=12*60, CLOSE={0:24,1:24,2:24,3:24,4:24,5:25,6:25}, W=7*1440;
+const slots=()=>[...Array(7)].map((_,d)=>[d*1440+OPEN,d*1440+CLOSE[d]*60]);
+function state(min){
+  for(const [a,b] of slots())for(const off of [0,W])if(min+off>=a&&min+off<b)return {open:true,left:b-(min+off),close:b%1440};
   let next=Infinity;for(const [a] of slots()){let t=a-min;if(t<=0)t+=W;next=Math.min(next,t)}
   return {open:false,until:next};
 }
-// auto-vérif
-console.assert(state(5*1440+25*60).open,'vendredi 1 h ouvert');
-console.assert(state(6*1440+60).open,'samedi 1 h ouvert (soirée du vendredi)');
-console.assert(!state(1*1440+60).open,'lundi 1 h fermé');
-console.assert(state(0*1440+90).open,'dimanche 1 h 30 ouvert (soirée du samedi)');
-console.assert(!state(1*1440+8*60).open,'lundi 8 h fermé');
+console.assert(state(5*1440+24*60+30).open,'vendredi 0 h 30 ouvert');
+console.assert(state(0*1440+30).open,'dimanche 0 h 30 ouvert (soirée du samedi)');
+console.assert(!state(1*1440+30).open,'lundi 0 h 30 fermé');
+console.assert(!state(2*1440+11*60).open,'mardi 11 h fermé');
+console.assert(state(3*1440+13*60).open,'mercredi 13 h ouvert');
 
 const fmt=m=>{const h=Math.floor(m/60),r=m%60;return h?`${h} h${r?' '+String(r).padStart(2,'0'):''}`:`${r} min`};
 const hh=m=>{const h=Math.floor(m/60)%24;return h===0?'minuit':`${h} h`};
-function paris(){const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());
-  const g=t=>p.find(x=>x.type===t).value;const days=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'];
-  return {d:days.indexOf(g('weekday')),h:+g('hour'),m:+g('minute')}}
+function paris(){
+  const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());
+  const g=t=>p.find(x=>x.type===t).value;
+  return {d:['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'].indexOf(g('weekday')),h:+g('hour'),m:+g('minute')};
+}
 function tick(){
   const n=paris();if(n.d<0)return;
-  const min=n.d*1440+n.h*60+n.m, s=state(min);
-  const st=document.getElementById('status'), live=document.getElementById('live');
+  document.getElementById('clock').textContent=`${n.h} h ${String(n.m).padStart(2,'0')}`;
+  const s=state(n.d*1440+n.h*60+n.m), st=document.getElementById('status'), live=document.getElementById('live');
   let a,b;
-  if(s.open){
-    a=`Ouvert · ferme à ${hh(s.close)}`;
-    b=s.left<=90?`Plus que ${fmt(s.left)} avant la fermeture : le temps d'un çiğ köfte.`:`Ouvert en ce moment, jusqu'à ${hh(s.close)}.`;
-  }else{a=`Fermé · ouvre à 9 h`;b=`Fermé pour l'instant. Retour derrière le comptoir dans ${fmt(s.until)}.`}
+  if(s.open){a=`Ouvert, jusqu'à ${hh(s.close)}`;b=s.left<=60?`Plus que ${fmt(s.left)} avant la fermeture : le temps d'un sandwich.`:`Ouvert en ce moment, jusqu'à ${hh(s.close)}.`}
+  else{a=`Fermé, ouvre à 12 h`;b=`Fermé pour l'instant. Réouverture dans ${fmt(s.until)}.`}
   st.classList.toggle('closed',!s.open);st.querySelector('span').textContent=a;live.textContent=b;
-  // la soirée après minuit appartient encore à la veille
-  const svc=(s.open&&n.h<OPEN/60)?(n.d+6)%7:n.d;
+  const svc=(s.open&&n.h*60<OPEN)?(n.d+6)%7:n.d;
   document.querySelectorAll('#hours li').forEach(li=>li.classList.toggle('today',+li.dataset.d===svc));
 }
 tick();setInterval(tick,30000);
 
-// fondu enchaîné du visuel principal
-const imgs=[...document.querySelectorAll('.hero-photo img')];let k=0,timer;
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function cycle(){imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on')}
-function run(){if(!reduce&&!timer)timer=setInterval(cycle,5600)}
-document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInterval(timer);timer=null}else run()});
-run();
+/* ---------- index avec aperçu ---------- */
+const rows=[...document.querySelectorAll('.row[data-img]')], pv=[...document.querySelectorAll('.preview img')];
+function show(r){
+  rows.forEach(x=>x.classList.toggle('on',x===r));
+  pv.forEach(i=>i.classList.toggle('on',i.dataset.k===r.dataset.img));
+  document.getElementById('pv-n').textContent=r.dataset.n;document.getElementById('pv-p').textContent=r.dataset.p;
+}
+rows.forEach(r=>{r.addEventListener('mouseenter',()=>show(r));r.addEventListener('focus',()=>show(r));r.addEventListener('click',()=>show(r))});
 
-// entrées de section
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+/* ---------- assiette de mezzés ---------- */
+const chips=[...document.querySelectorAll('.chip')], rams=document.getElementById('rams');
+const NS='http://www.w3.org/2000/svg', N=chips.length;
+chips.forEach((c,i)=>{
+  const ang=(i/N)*Math.PI*2-Math.PI/2, inner=i%2, R=inner?64:120, r=inner?31:42;
+  const x=200+Math.cos(ang)*R, y=200+Math.sin(ang)*R;
+  const g=document.createElementNS(NS,'g');g.setAttribute('class','ram');g.dataset.k=c.dataset.k;
+  const bowl=document.createElementNS(NS,'circle');bowl.setAttribute('cx',x);bowl.setAttribute('cy',y);bowl.setAttribute('r',r);bowl.setAttribute('fill','#ffffff');
+  const food=document.createElementNS(NS,'circle');food.setAttribute('cx',x);food.setAttribute('cy',y);food.setAttribute('r',r-7);food.setAttribute('fill',getComputedStyle(c).getPropertyValue('--c').trim());
+  g.append(bowl,food);rams.append(g);
+});
+const euro=v=>v.toFixed(2).replace('.',',')+' €';
+function update(){
+  const on=chips.filter(c=>c.getAttribute('aria-pressed')==='true');
+  const sum=on.reduce((s,c)=>s+ +c.dataset.p,0), cups=on.filter(c=>+c.dataset.p===5).length;
+  document.getElementById('tot').textContent=euro(sum);
+  document.getElementById('cnt').textContent=on.length?`${on.length} choix`:'aucune coupelle';
+  rams.querySelectorAll('.ram').forEach(g=>g.classList.toggle('on',on.some(c=>c.dataset.k===g.dataset.k)));
+  let v;
+  if(!on.length)v="Commencez par le houmous, c'est le plus demandé des mezzés.";
+  else if(sum>16)v=`Au-delà de 16 €, l'assiette de mezzés devient plus avantageuse : dix éléments, çiğ köfte compris.`;
+  else if(cups>=2&&!on.some(c=>c.dataset.k==='pain'))v='Ajoutez un pain galette (0,70 €) pour saucer.';
+  else v=`${cups?cups+' coupelle'+(cups>1?'s':'')+' de 100 g':'Un petit extra'}, au prix de la carte Uber Eats.`;
+  document.getElementById('verdict').textContent=v;
+}
+chips.forEach(c=>c.addEventListener('click',()=>{c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');update()}));
+document.getElementById('reset').addEventListener('click',()=>{chips.forEach(c=>c.setAttribute('aria-pressed','false'));update()});
+// démarre avec deux coupelles pour montrer l'assiette garnie
+['houmous','caviar','noix','carottes','pain'].forEach(k=>document.querySelector(`.chip[data-k="${k}"]`).setAttribute('aria-pressed','true'));
+update();
+console.assert(euro(11.7)==='11,70 €','format prix');
+
+/* ---------- entrées ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -5% 0px'});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
 </body>
