@@ -4,200 +4,308 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>La Fromagerie Goncourt · Paris 11e</title>
-<meta name="description" content="Fromagerie au lait cru à l'angle de l'avenue Parmentier et de la rue Abel Rabaud, Paris 11e. Bar à frais, plateaux, sélection de petits producteurs.">
-<!-- DESIGN.md « IBM / Carbon » (awesome-design) : aplats francs, angles droits, un seul bleu affirmé, Plex Sans léger en titrage. Bleu repris de la façade bleu électrique de la boutique. -->
+<title>La Fromagerie Goncourt · Fromages au lait cru, Paris 11e</title>
+<meta name="description" content="Fromagerie au lait cru à l'angle de l'avenue Parmentier et de la rue Abel Rabaud, Paris 11e. Comptoir, bar à frais, crèmerie et conseils pour vos plateaux.">
+<meta name="theme-color" content="#1d3af2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231d3af2'/%3E%3Cpath d='M7 21 25 12v9z' fill='%23f3dc8c'/%3E%3C/svg%3E">
+<!--
+  Direction : « la façade bleu électrique et les étiquettes du comptoir ».
+  DESIGN.md retenu (awesome-design) : Airbnb — fond clair, photographie qui mène, une seule couleur d'action, coins doux, étiquettes blanches sur photos.
+  Le rose Airbnb est remplacé par le bleu électrique de la façade (Gault&Millau : « façade bleu électrique »), le jaune beurre de la croûte de Beaufort sert de second champ.
+  taste-skill : direction « uneven-photographs », type Archivo, palette gardée (marque).
+  Sources des faits : fiche Gault&Millau, Time Out Paris (15 mars 2022, prix relevés), Paris by Mouth, page précédente.
+-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --blue:#1d3af2; --blue-deep:#1229c4; --on-blue:#fff; --on-blue-soft:#d9defd;
-  --bg:#fff; --ink:#161616; --soft:#4d4d4d; --s1:#f3f3f1; --s2:#e7e6e1;
-  --m:clamp(16px,2.2vw,32px);
-  --small:clamp(.8125rem,.79rem + .1vw,.875rem);
-  --body:clamp(1rem,.97rem + .2vw,1.125rem);
-  --lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --head:clamp(2.1rem,1.3rem + 3.4vw,4.25rem);
+  --ground:#f4f4f1;
+  --card:#e8e8e3;
+  --card-deep:#d9d9d2;
+  --ink:#10162f;
+  --body:#232838;
+  --mute:#585d6c;
+  --blue:#1d3af2;
+  --blue-press:#132bc9;
+  --blue-soft:#dfe3fd;
+  --butter:#f3dc8c;
+  --butter-deep:#e7c962;
+  --rind:#8a5a22;
+  --open:#1d7a46;
+  --r-sm:10px;
+  --r-md:16px;
+  --r-lg:28px;
+  --pad:20px;
+  --font:"Archivo",system-ui,sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
   color-scheme:light;
 }
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--body)/1.55 "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.01em;font-variant-numeric:tabular-nums}
-img,svg{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{background:var(--ground);color:var(--body);font:400 17px/1.55 var(--font);overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
 ::selection{background:var(--blue);color:#fff}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
 .on-blue :focus-visible{outline-color:#fff}
-h1,h2,h3{margin:0;font-weight:300;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
-p{margin:0}
+h1,h2,h3{color:var(--ink);font-weight:720;font-stretch:112%;letter-spacing:-.03em;line-height:.98;text-wrap:balance}
+p,li,dd{text-wrap:pretty}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:-9999px}.skip:focus{left:var(--m);top:8px;z-index:20;background:#fff;padding:8px 12px}
+.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--ink);color:#fff;padding:12px 16px;border-radius:var(--r-sm);text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.demo{background:var(--ink);color:#e9ebf3;font-size:13px;text-align:center;padding:7px 12px}
 
-.demo{margin:0;background:var(--ink);color:#e9e9e9;font-size:var(--small);text-align:center;padding:7px var(--m)}
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:600 16px/1 var(--font);text-decoration:none;border:0;cursor:pointer;transition-property:background-color,color,transform;transition-duration:.18s;transition-timing-function:ease-out;white-space:nowrap}
+.btn:active{transform:scale(.96)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-main{background:var(--blue);color:#fff}
+.btn-main:hover{background:var(--blue-press)}
+.btn-soft{background:var(--card);color:var(--ink)}
+.btn-soft:hover{background:var(--card-deep)}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-white:hover{background:var(--blue-soft)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#262d4d}
 
-/* Boutons : rectangles pleins, angle droit (Carbon) */
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 18px;font:500 1rem/1.2 "IBM Plex Sans",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background .25s var(--ease),transform .2s var(--ease)}
-.btn:active{transform:translateY(1px) scale(.98)}
-.btn svg{width:18px;height:18px;flex:none;transition:transform .3s var(--ease)}
-.btn:hover svg{transform:translateX(3px)}
-.btn-white{background:#fff;color:var(--blue)}.btn-white:hover{background:var(--on-blue-soft)}
-.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blue-deep)}
-.hero-acts{display:flex;flex-wrap:wrap;gap:4px}
-.btn-deep{background:var(--blue-deep);color:#fff}.btn-deep:hover{background:#0d1f9e}
-.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:#333}
+/* nav */
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:720;font-stretch:112%;font-size:19px;letter-spacing:-.02em;line-height:1.05}
+.mark svg{width:30px;height:30px;flex:none}
+.mark small{display:block;font-size:13px;font-weight:500;font-stretch:100%;letter-spacing:0;color:var(--mute)}
+.nav ul{display:none;list-style:none;gap:28px}
+.nav ul a{text-decoration:none;font-weight:600;color:var(--ink);transition:color .18s ease-out}
+.nav ul a:hover{color:var(--blue)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
 
-/* HERO : photo en haut, la façade bleue en bas avec le nom */
-.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:56svh auto;background:var(--blue);color:var(--on-blue);overflow:hidden}
-.hero-pic{position:relative;overflow:hidden;background:#3a2e22}
-.hero-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:drift 24s var(--ease) both alternate infinite}
-@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
-.nav{position:absolute;inset:0 0 auto 0;display:flex;justify-content:space-between;align-items:center;padding:14px var(--m);z-index:2;background:rgba(10,10,10,.42)}
-.nav .mini{font-weight:600;color:#fff;text-decoration:none;font-size:.95rem}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
-.nav ul a{color:#fff;text-decoration:none;font-size:.95rem}
-.nav ul a:hover{text-decoration:underline}
-.nav .menu-links{display:none}
-.band{display:flex;flex-direction:column;justify-content:space-between;gap:22px;padding:22px var(--m) 14px}
-.band-row{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
-.band-row p{max-width:34ch;color:#fff;font-size:1.0625rem}
-.band-row p b{font-weight:600}
-h1.name{font:600 19vw/.82 "IBM Plex Sans Condensed",sans-serif;letter-spacing:-.045em;margin:0;white-space:nowrap;display:inline-block;align-self:flex-start;transform-origin:50% 100%;will-change:transform}
+/* hero */
+.hero{padding:18px 0 56px}
+.hero-grid{display:grid;gap:36px}
+.hero h1{font-size:clamp(2.9rem,13vw,5.9rem);line-height:.94;letter-spacing:-.04em;max-width:12ch}
+.lead{margin-top:22px;font-size:19px;line-height:1.48;color:var(--ink);max-width:40ch}
 
-/* INTRO */
-.intro{display:grid;gap:40px;padding:96px var(--m) 120px}
-.intro .col{max-width:36ch}
-.intro .col p+p{margin-top:1.1em}
-.intro .col p:first-child{font-size:var(--lead);line-height:1.35;font-weight:400}
-.intro figure{margin:0}
-.intro figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
-figcaption{font-size:var(--small);color:var(--soft);margin-top:10px}
+/* étiquettes du comptoir */
+.tags{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px;max-width:520px}
+.ptag{position:relative;background:#fff;padding:16px 14px 14px 14px;border-radius:4px 14px 14px 4px;clip-path:polygon(0 12px,12px 0,100% 0,100% 100%,12px 100%,0 calc(100% - 12px))}
+.ptag::before{content:"";position:absolute;left:9px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--card-deep)}
+.ptag b{display:block;padding-left:10px;font-size:clamp(1.3rem,5.6vw,1.65rem);font-weight:760;font-stretch:110%;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.ptag span{display:block;padding-left:10px;margin-top:6px;font-size:13px;line-height:1.3;color:var(--mute)}
+.ptag.blue{background:var(--blue)}
+.ptag.blue::before{background:#5a70f6}
+.ptag.blue b,.ptag.blue span{color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.status{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font-weight:600;color:var(--ink);font-size:15px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--open)}
+.status.closed i{background:var(--mute)}
 
-/* SÉLECTION : déclaration + table poussée à droite */
-.sel{background:var(--s1);padding:110px var(--m) 120px}
-.sel h2{font-size:var(--head);max-width:14ch}
-.sel-grid{display:grid;gap:48px;margin-top:64px}
-.sel-pic img{width:62%;margin-left:auto;aspect-ratio:4/5;object-fit:cover}
-.rows{list-style:none;margin:0;padding:0}
-.rows li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:14px 0}
-.rows li.grp{margin-top:26px}
-.rows .k{grid-column:1/-1;color:var(--soft);font-size:var(--small)}
-.rows .v{font-weight:600}
-.rows .o{color:var(--soft);text-align:right}
-.sel-note{margin-top:28px;color:var(--soft);font-size:var(--small);max-width:46ch}
+/* composition photo */
+.board{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:440px}
+.ph{position:relative;overflow:hidden;border-radius:var(--r-md);background:var(--card);min-height:0}
+.ph img{width:100%;height:100%;object-fit:cover;outline:1px solid rgba(0,0,0,.08);outline-offset:-1px;transition:transform 1.2s var(--ease)}
+.ph:hover img{transform:scale(1.035)}
+.ph-a{grid-row:1/3;border-radius:var(--r-lg)}
+.lbl{position:absolute;left:10px;bottom:10px;display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);font:600 13px/1 var(--font);padding:9px 12px 9px 10px;border-radius:4px 999px 999px 4px;white-space:nowrap}
+.lbl::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.lbl b{color:var(--blue);font-weight:700}
+.stamp{position:absolute;right:14px;top:14px;width:104px;height:104px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-content:center;text-align:center;transform:rotate(-8deg)}
+.stamp b{display:block;font-size:30px;font-weight:780;font-stretch:115%;letter-spacing:-.04em;line-height:1}
+.stamp span{display:block;margin-top:4px;font-size:13px;line-height:1.3;font-weight:600}
 
-/* PLATEAU : plaque carrée + outil */
-.plateau{background:var(--blue);color:#fff;display:grid}
-.plate-side{padding:56px var(--m) 0;display:grid;place-items:center}
-.plate-box{position:relative;width:min(100%,560px);aspect-ratio:1}
-.plate-box svg{width:100%;height:100%}
-.plate-box .wedge{transition:opacity .45s var(--ease),transform .5s var(--ease);transform-origin:200px 200px}
-.plate-side figcaption{color:var(--on-blue-soft);text-align:center}
-.tool{padding:48px var(--m) 72px;display:flex;flex-direction:column;gap:28px;justify-content:space-between}
-.tool h2{font-size:var(--head)}
-.tool .lede{color:var(--on-blue-soft);max-width:40ch;margin-top:16px}
-.tabs{display:flex;gap:4px;flex-wrap:wrap}
-.tabs button{flex:1 1 auto;min-height:48px;padding:10px 14px;border:0;background:var(--blue-deep);color:#fff;font:400 1rem "IBM Plex Sans",sans-serif;cursor:pointer;transition:background .2s}
-.tabs button[aria-pressed="true"]{background:#fff;color:var(--blue);font-weight:600}
-.tabs button:hover:not([aria-pressed="true"]){background:#0d1f9e}
-.count{display:flex;align-items:center;gap:0}
-.count button{width:56px;height:56px;border:0;background:#fff;color:var(--blue);font:300 2rem/1 "IBM Plex Sans",sans-serif;cursor:pointer}
-.count button:hover{background:var(--on-blue-soft)}
-.count output{min-width:7.5ch;text-align:center;font-size:var(--lead)}
-.res{font-size:var(--lead);line-height:1.35}
-.res b{font-weight:600}
-.res-list{list-style:none;margin:14px 0 0;padding:0;color:#fff}
-.res-list li{padding:6px 0;display:flex;gap:12px;align-items:baseline}
-.res-list i{width:12px;height:12px;flex:none;display:inline-block;transform:translateY(1px)}
-.hint{color:var(--on-blue-soft);font-size:var(--small)}
-.acts{display:grid;grid-template-columns:1fr;gap:4px}
-.acts .btn{justify-content:space-between;min-height:64px}
+/* rangée d'infos */
+.facts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:44px}
+.facts li{background:var(--card);border-radius:var(--r-md);padding:16px 18px}
+.facts b{display:block;font-size:17px;font-weight:700;font-stretch:108%;color:var(--ink);line-height:1.3}
+.facts span{display:block;margin-top:5px;font-size:15px;color:var(--mute);line-height:1.35}
+.facts a{text-decoration:underline}
 
-/* BAR À FRAIS + LAIT */
-.frais{padding:120px var(--m)}
-.frais h2{font-size:var(--head);max-width:16ch}
-.frais-grid{display:grid;gap:32px;margin-top:56px}
-.frais figure{margin:0}
-.frais img{width:100%;aspect-ratio:3/2;object-fit:cover}
-.frais h3{font-size:var(--lead);font-weight:600;letter-spacing:0;margin-top:20px}
-.frais figure p{margin-top:8px;max-width:44ch}
+/* bandeau façade */
+.facade{background:var(--blue);color:#fff;overflow:hidden}
+.facade ul{list-style:none;display:flex;gap:14px 34px;flex-wrap:wrap;padding:20px 0}
+.facade li{display:inline-flex;align-items:center;gap:12px;font-size:clamp(1.15rem,3.6vw,1.75rem);font-weight:720;font-stretch:112%;letter-spacing:-.02em;line-height:1.1}
+.facade li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--butter);flex:none}
 
-/* HORAIRES */
-.hours{background:var(--s1);padding:110px var(--m);display:grid;gap:40px}
-.hours h2{font-size:var(--head)}
-.now{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:var(--lead)}
-.now i{width:14px;height:14px;border-radius:50%;background:#1f9d55;display:inline-block}
-.now.closed i{background:#c4362b}
-.hours table{width:100%;border-collapse:collapse;font-size:var(--body)}
-.hours td{padding:14px 0;vertical-align:top}
-.hours td+td{text-align:right}
-.hours tr{border-bottom:1px solid var(--s2)}
-.hours tr.today td{font-weight:600}
-.hours tr.today td:first-child::after{content:" · aujourd'hui";font-weight:400;color:var(--blue)}
-.hours .src{color:var(--soft);font-size:var(--small);margin-top:16px}
+/* sections */
+section{padding:84px 0}
+.h2{font-size:clamp(2.4rem,9vw,4.5rem);max-width:16ch}
+.intro{margin-top:18px;font-size:19px;line-height:1.5;max-width:52ch;color:var(--ink)}
+.split{display:grid;gap:18px}
 
-/* CONTACT : lignes en grand */
-.contact{position:relative;z-index:1;background:var(--bg)}
-.contact h2{padding:110px var(--m) 28px;font-size:var(--head)}
-.crow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;min-height:84px;padding:12px var(--m);font:300 9vw/1 "IBM Plex Sans",sans-serif;letter-spacing:-.03em;text-decoration:none;color:var(--ink);transition:background .25s var(--ease)}
-.crow.alt{background:var(--s1)}
-a.crow:hover{background:var(--s2)}
-.crow small{font:400 var(--small)/1.3 "IBM Plex Sans",sans-serif;letter-spacing:.01em;color:var(--soft);text-align:right;padding-bottom:.4em}
-.crow.ig{font-size:7.2vw}
-.crow.go{background:var(--blue);color:#fff}
-.crow.go:hover{background:var(--blue-deep)}
-.crow .arrow{width:56px;height:56px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;flex:none;transition:transform .35s var(--ease)}
-.crow.go:hover .arrow{transform:translateX(6px)}
-.crow .arrow svg{width:24px;height:24px}
+/* comptoir */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.filters button{min-height:44px;padding:0 18px;border-radius:999px;border:0;background:var(--card);color:var(--ink);font:600 15px/1 var(--font);cursor:pointer;transition-property:background-color,color,transform;transition-duration:.18s;transition-timing-function:ease-out}
+.filters button:hover{background:var(--card-deep)}
+.filters button:active{transform:scale(.96)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.counter{display:grid;gap:28px;margin-top:28px}
+.rows{list-style:none;display:grid;gap:6px;align-content:start}
+.rows li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:baseline;background:#fff;border-radius:var(--r-sm);padding:14px 16px}
+.rows li[hidden]{display:none}
+.rows .n{font-weight:700;color:var(--ink);font-size:17px}
+.rows .o{grid-column:1;font-size:15px;color:var(--mute)}
+.rows .p{grid-row:1/3;grid-column:2;align-self:center;font-weight:700;color:var(--blue);font-size:17px;white-space:nowrap}
+.rows .p.q{color:var(--mute);font-weight:500;font-size:14px}
+.counter-side{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-content:start}
+.counter-side .ph{aspect-ratio:4/5}
+.note{margin-top:16px;font-size:14px;color:var(--mute);max-width:60ch}
 
-/* FOOTER : la façade revient */
-.foot{min-height:0;background:var(--blue);color:#fff;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 20svh auto;padding:40px var(--m) 18px}
-.fcols{display:grid;grid-template-columns:1fr 1fr;gap:32px 24px;font-size:.95rem}
-.fcols p,.fcols li{color:var(--on-blue-soft)}
-.fcols b{display:block;color:#fff;font-weight:600;margin-bottom:6px}
-.fcols ul{list-style:none;margin:0;padding:0}
-.fcols a{color:#fff}
-.big{font:600 19vw/.8 "IBM Plex Sans Condensed",sans-serif;letter-spacing:-.045em;margin:0;white-space:nowrap;display:inline-block;align-self:flex-start;transform-origin:50% 100%}
-.legal{font-size:var(--small);color:var(--on-blue-soft);margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 18px}
+/* plateau */
+.plateau{background:var(--blue);color:#fff}
+.plateau .h2{color:#fff}
+.plateau .intro{color:#eef0ff}
+.pl-grid{display:grid;gap:28px;margin-top:40px}
+.pl-ctrl{background:#fff;color:var(--ink);border-radius:var(--r-lg);padding:26px 22px}
+.pl-ctrl fieldset{border:0;margin:0 0 26px}
+.pl-ctrl legend{font-weight:700;margin-bottom:12px;color:var(--ink)}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{min-height:46px;padding:0 18px;border-radius:999px;border:0;background:var(--card);color:var(--ink);font:600 15px/1 var(--font);cursor:pointer;transition-property:background-color,color,transform;transition-duration:.18s;transition-timing-function:ease-out}
+.seg button:hover{background:var(--card-deep)}
+.seg button:active{transform:scale(.96)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.count{display:flex;align-items:center;gap:8px}
+.count button{width:48px;height:48px;border-radius:50%;border:0;background:var(--card);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition-property:background-color,transform;transition-duration:.18s}
+.count button:hover{background:var(--card-deep)}
+.count button:active{transform:scale(.94)}
+.count button:disabled{opacity:.4;cursor:not-allowed}
+.count button svg{width:18px;height:18px}
+.count output{min-width:118px;text-align:center;font-size:26px;font-weight:760;font-stretch:110%;letter-spacing:-.02em}
+.pl-hint{font-size:14px;color:var(--mute);margin-top:4px}
+.pl-res{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:26px 22px;display:grid;gap:22px;align-content:start}
+.pl-top{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center}
+.pl-top svg{width:150px;height:150px}
+.wedge{transition:opacity .4s var(--ease)}
+.pl-total{font-size:clamp(2.6rem,9vw,3.6rem);font-weight:780;font-stretch:115%;letter-spacing:-.04em;line-height:1;color:#fff}
+.pl-sub{margin-top:8px;font-size:15px;color:#c9cde0}
+.pl-list{list-style:none;display:grid;gap:6px}
+.pl-list li{display:flex;justify-content:space-between;gap:12px;align-items:center;background:#1d2442;border-radius:var(--r-sm);padding:12px 14px;font-size:15px}
+.pl-list li i{width:12px;height:12px;border-radius:50%;flex:none;margin-right:10px}
+.pl-list li span{display:flex;align-items:center;color:#fff}
+.pl-list li b{font-weight:700;color:var(--butter)}
+.pl-res .actions{margin-top:0}
+.pl-res small{font-size:14px;color:#c9cde0}
 
-/* Entrées */
-.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+/* crèmerie */
+.creme-grid{display:grid;gap:8px;margin-top:40px}
+.cell{background:var(--card);border-radius:var(--r-md);padding:22px}
+.cell h3{font-size:clamp(1.5rem,5vw,1.9rem);letter-spacing:-.025em}
+.cell p{margin-top:10px;color:var(--body);max-width:44ch}
+.cell.butter{background:var(--butter)}
+.cell.butter h3{font-size:clamp(2.1rem,7vw,3rem)}
+.cell .ph{margin-top:18px;aspect-ratio:16/10}
+.cell-photo{padding:0;overflow:hidden;min-height:260px}
+.cell-photo .ph{margin:0;height:100%;border-radius:var(--r-md)}
+
+/* Clément */
+.story{background:var(--card)}
+.story-grid{display:grid;gap:32px;margin-top:36px}
+.story-text p{font-size:18px;color:var(--ink);max-width:48ch}
+.story-text p+p{margin-top:14px}
+.press{display:grid;gap:8px;align-content:start}
+.quote{background:#fff;border-radius:var(--r-md);padding:24px}
+.quote blockquote{font-size:clamp(1.25rem,3.6vw,1.6rem);font-weight:620;font-stretch:106%;letter-spacing:-.015em;line-height:1.3;color:var(--ink)}
+.quote figcaption{margin-top:14px;font-size:15px;color:var(--mute)}
+.quote figcaption b{color:var(--ink)}
+.quote.blue{background:var(--blue)}
+.quote.blue blockquote{color:#fff}
+.quote.blue figcaption{color:#dfe3fd}
+.quote.blue figcaption b{color:#fff}
+.story .ph{aspect-ratio:3/4}
+
+/* horaires */
+.hours-grid{display:grid;gap:28px;margin-top:36px}
+.now{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:12px 18px;font-weight:700;color:var(--ink);margin-top:20px}
+.now i{width:10px;height:10px;border-radius:50%;background:var(--open)}
+.now.closed i{background:var(--mute)}
+table{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:17px}
+td{background:#fff;padding:14px 16px}
+td:first-child{border-radius:var(--r-sm) 0 0 var(--r-sm);font-weight:700;color:var(--ink)}
+td:last-child{border-radius:0 var(--r-sm) var(--r-sm) 0;text-align:right;font-variant-numeric:tabular-nums}
+tr.today td{background:var(--blue);color:#fff}
+tr.off td{color:var(--mute)}
+tr.today.off td{color:#fff}
+.src{margin-top:10px;font-size:14px;color:var(--mute)}
+
+/* venir */
+.venir{padding-top:0}
+.v-grid{display:grid;gap:8px}
+.plan{background:var(--butter);border-radius:var(--r-lg);overflow:hidden;display:grid;place-items:center}
+.plan svg{width:100%;height:auto;aspect-ratio:640/420;display:block}
+.v-list{display:grid;gap:8px;align-content:start}
+.v-rows{background:var(--card);border-radius:var(--r-md);padding:6px}
+.v-rows .v-item{background:transparent;border-radius:var(--r-sm)}
+.v-item{display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--card);border-radius:var(--r-md);padding:18px 20px;text-decoration:none;color:var(--ink);transition:background-color .18s ease-out}
+a.v-item:hover{background:var(--card-deep)}
+.v-item b{display:block;font-size:19px;font-weight:700;font-stretch:108%}
+.v-item span{display:block;font-size:15px;color:var(--mute);margin-top:3px}
+.v-item svg{width:22px;height:22px;flex:none;color:var(--blue)}
+.v-item.main{background:var(--blue);color:#fff}
+.v-item.main span{color:#dfe3fd}
+.v-item.main svg{color:#fff}
+a.v-item.main:hover{background:var(--blue-press)}
+
+/* pied */
+.foot{background:var(--ink);color:#d7daea;padding:64px 0 28px}
+.fcols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.fcols b{display:block;color:#fff;margin-bottom:8px;font-weight:700}
+.fcols ul{list-style:none;display:grid;gap:6px}
+.fcols a{color:#d7daea}
+.fcols a:hover{color:#fff}
+.fword{margin-top:56px;font-size:clamp(3rem,15.5vw,14.5rem);font-weight:780;font-stretch:118%;letter-spacing:-.05em;line-height:.85;color:#fff;white-space:nowrap}
+.fword i{font-style:normal;color:var(--butter)}
+.legal{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:26px;font-size:13px;color:#a9aec6}
+
+/* entrées */
+.js .rise{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .rise.in{opacity:1;transform:none}
-
-@media (min-width:760px){
-  .nav{background:none;justify-content:flex-end}
-  .nav .mini{display:none}
-  .nav .menu-links{display:flex}
-  .nav ul a{text-shadow:0 1px 8px rgba(0,0,0,.5)}
-  .hero{grid-template-rows:minmax(0,1fr) auto;height:calc(100svh - 34px);min-height:640px}
-  .band-row{flex-direction:row;justify-content:space-between;align-items:center}
-  .intro{grid-template-columns:15% minmax(0,36ch) 1fr;align-items:start}
-  .intro .col{grid-column:2}
-  .intro figure{grid-column:3;justify-self:end;width:min(100%,520px)}
-  .sel h2{text-indent:3vw}
-  .sel-grid{grid-template-columns:4fr 1fr 7fr;align-items:end}
-  .sel-pic{grid-column:1}.sel-pic img{width:100%}
-  .rows-wrap{grid-column:3}
-  .rows li{grid-template-columns:11rem 1fr auto}
-  .rows .k{grid-column:auto}
-  .plateau{grid-template-columns:1fr 1fr;min-height:88svh}
-  .plate-side{padding:56px 40px}
-  .tool{padding:72px var(--m) 72px 24px}
-  .acts{grid-template-columns:1fr 1fr}
-  .frais-grid{grid-template-columns:7fr 5fr;align-items:start}
-  .frais-grid figure:last-child{margin-top:140px}
-  .hours{grid-template-columns:5fr 1fr 6fr;align-items:start}
-  .hours .tbl{grid-column:3}
-  .crow{min-height:140px;font-size:clamp(44px,6vw,88px)}
-  .fcols{grid-template-columns:repeat(4,1fr)}
-  .foot{min-height:100svh;grid-template-rows:auto 1fr auto}
-  .crow.ig{font-size:clamp(44px,6vw,88px)}
-}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+.ph-a img{animation:drift 2.4s var(--ease) both}
 @media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .js .rise{opacity:1;transform:none}
-  h1.name,.big{transform:none!important}
+  html{scroll-behavior:auto}
+  .js .rise{opacity:1;transform:none;transition:opacity .15s}
+  .ph-a img{animation:none}
+  .ph img,.btn,.seg button,.filters button,.count button{transition:none}
+  .ph:hover img{transform:none}
+}
+
+@media (max-width:699px){
+  .actions .btn{flex:1 1 auto}
+  .ph-b .lbl,.ph-c .lbl{display:none}
+  .stamp{width:84px;height:84px;right:10px;top:10px}
+  .stamp b{font-size:24px}
+  .mark{font-size:17px}
+}
+@media (min-width:700px){
+  :root{--pad:32px}
+  .tags{gap:10px}
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .board{height:540px}
+  .rows{grid-template-columns:1fr 1fr}
+  .creme-grid{grid-template-columns:1fr 1fr}
+  .fcols{grid-template-columns:repeat(4,1fr)}
+}
+@media (min-width:1024px){
+  :root{--pad:48px}
+  .nav ul{display:flex}
+  .hero{padding:34px 0 72px}
+  .hero-grid{grid-template-columns:1fr 1.08fr;align-items:center;gap:56px}
+  .board{height:600px}
+  .ph-b,.ph-c{border-radius:var(--r-md)}
+  section{padding:128px 0}
+  .split{grid-template-columns:1fr 1fr;align-items:end;gap:48px}
+  .split .intro{margin-top:0}
+  .counter{grid-template-columns:2fr 1fr;gap:24px}
+  .counter-side{grid-template-columns:1fr;grid-template-rows:1fr 1fr;align-content:stretch}
+  .counter-side .ph{aspect-ratio:auto;min-height:240px}
+  .counter-side .ph img{position:absolute;inset:0}
+  .pl-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .pl-ctrl,.pl-res{padding:36px}
+  .creme-grid{grid-template-columns:1.2fr 1fr 1fr;grid-auto-rows:minmax(240px,auto)}
+  .creme-grid .tall{grid-row:span 2}
+  .story-grid{grid-template-columns:.9fr 1.1fr 1fr;gap:40px;align-items:start}
+  .hours-grid{grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+  .v-grid{grid-template-columns:1.3fr 1fr}
 }
 </style>
 </head>
@@ -207,236 +315,385 @@ a.crow:hover{background:var(--s2)}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 3.5h3l1.5 4.2-2 1.5a12 12 0 0 0 5.7 5.7l1.5-2 4.2 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM4 6l8 6.5L20 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-wedge" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1d3af2"/><path d="M6 21.5 26 11.5v10z" fill="#f3dc8c"/><circle cx="16" cy="18.5" r="1.6" fill="#1d3af2"/><circle cx="21.5" cy="17" r="1.1" fill="#1d3af2"/></symbol>
   </defs>
 </svg>
 
-<header class="hero on-blue">
-  <div class="hero-pic">
-    <img src="https://images.unsplash.com/photo-1631379578550-7038263db699?w=2000&q=75&auto=format&fit=crop" width="2000" height="1333" alt="Meules de fromages affinés empilées dans une cave d'affinage" fetchpriority="high">
-    <nav class="nav" aria-label="Navigation principale">
-      <a class="mini" href="#main">La Fromagerie Goncourt</a>
-      <ul class="menu-links">
-        <li><a href="#selection">Fromages</a></li>
-        <li><a href="#plateau">Plateau</a></li>
-        <li><a href="#horaires">Horaires</a></li>
-        <li><a href="#venir">Venir</a></li>
-      </ul>
-      <a class="mini" href="#venir" style="text-decoration:underline">Venir</a>
-    </nav>
+<nav class="nav" aria-label="Navigation principale">
+  <div class="wrap">
+    <a class="mark" href="#main"><svg aria-hidden="true"><use href="#i-wedge"/></svg><span>La Fromagerie Goncourt<small>Paris 11e</small></span></a>
+    <ul>
+      <li><a href="#comptoir">Le comptoir</a></li>
+      <li><a href="#plateau">Plateau</a></li>
+      <li><a href="#creme">Crèmerie</a></li>
+      <li><a href="#horaires">Horaires et accès</a></li>
+    </ul>
+    <a class="btn btn-main" href="tel:+33143579128"><svg aria-hidden="true"><use href="#i-tel"/></svg>Appeler</a>
   </div>
-  <div class="band">
-    <div class="band-row">
-      <p><b>La Fromagerie Goncourt.</b> Fromages au lait cru de petits producteurs, à l'angle de l'avenue Parmentier. Paris 11e.</p>
-      <div class="hero-acts"><a class="btn btn-white" href="tel:+33143579128"><svg aria-hidden="true"><use href="#i-tel"/></svg>01 43 57 91 28</a><a class="btn btn-deep" href="https://www.google.com/maps/dir/?api=1&amp;destination=1+rue+Abel+Rabaud+75011+Paris" target="_blank" rel="noopener">Itinéraire <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-    </div>
-    <h1 class="name" id="wordmark"><span class="sr">La Fromagerie </span>GONCOURT</h1>
-  </div>
-</header>
+</nav>
 
 <main id="main">
 
-<section class="intro" aria-labelledby="t-intro">
-  <h2 id="t-intro" class="sr">La boutique</h2>
-  <div class="col rise">
-    <p>La façade bleue au coin de la rue Abel Rabaud, avec son banc devant la vitrine, c'est elle.</p>
-    <p>Clément Brossault a quitté son métier d'auditeur en 2013. Avant d'ouvrir, il a passé deux mois à vélo à travers la France pour rencontrer des producteurs.</p>
-    <p>Le comptoir en garde la trace : surtout du lait cru, des fromages de terroir, une belle place pour la Savoie et la Corse.</p>
-    <p>Et le lait cru de Normandie arrive deux fois par semaine. <a href="#selection">Voir ce qu'on trouve au comptoir</a></p>
-  </div>
-  <figure class="rise">
-    <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=1040&h=1300&q=75&auto=format&fit=crop" width="520" height="650" loading="lazy" alt="Deux tommes à croûte naturelle posées l'une sur l'autre">
-    <figcaption>Tommes à croûte naturelle.</figcaption>
-  </figure>
-</section>
-
-<section class="sel" id="selection" aria-labelledby="t-sel">
-  <h2 id="t-sel" class="rise">Du lait cru, de la Savoie à la Corse</h2>
-  <div class="sel-grid">
-    <div class="sel-pic rise">
-      <img src="https://images.unsplash.com/photo-1626957341926-98752fc2ba90?w=900&h=1125&q=75&auto=format&fit=crop" width="450" height="563" loading="lazy" alt="Pointe de fromage persillé aux veines bleues">
-    </div>
-    <div class="rows-wrap rise">
-      <ul class="rows">
-        <li><span class="k">Persillés</span><span class="v">Bethia</span><span class="o">Ferme Bethanoun, Pays basque</span></li>
-        <li><span class="k" aria-hidden="true"></span><span class="v">Persillé de Tignes</span><span class="o">Savoie</span></li>
-        <li class="grp"><span class="k">Savoie</span><span class="v">Beaufort</span><span class="o">Pâte pressée cuite</span></li>
-        <li><span class="k" aria-hidden="true"></span><span class="v">Tome des Bauges</span><span class="o">Pâte pressée</span></li>
-        <li><span class="k" aria-hidden="true"></span><span class="v">Dent du Chat</span><span class="o">Pâte pressée</span></li>
-        <li class="grp"><span class="k">Corse</span><span class="v">Calenzana</span><span class="o">Pâte molle, croûte lavée</span></li>
-        <li><span class="k">Pâtes molles</span><span class="v">Saint-Marcellin</span><span class="o">Nature ou à la truffe noire</span></li>
-        <li class="grp"><span class="k">D'ailleurs</span><span class="v">Cheddar</span><span class="o">Pâte pressée</span></li>
-        <li><span class="k" aria-hidden="true"></span><span class="v">Gouda aux herbes</span><span class="o">Pâte pressée</span></li>
-        <li class="grp"><span class="k">Bar à frais</span><span class="v">Ricotta, fromage frais</span><span class="o">Au détail</span></li>
-        <li><span class="k" aria-hidden="true"></span><span class="v">Cervelle de canut</span><span class="o">Maison</span></li>
-      </ul>
-      <p class="sel-note">Fromages relevés au comptoir par la presse. La vitrine change avec les arrivages : demandez ce qui est là cette semaine.</p>
-    </div>
-  </div>
-</section>
-
-<section class="plateau on-blue" id="plateau" aria-labelledby="t-plat">
-  <figure class="plate-side rise">
-    <div class="plate-box">
-      <svg viewBox="0 0 400 400" role="img" aria-labelledby="plate-desc">
-        <title id="plate-desc">Plateau dessiné, une part par fromage proposé</title>
-        <circle cx="200" cy="200" r="190" fill="#fff"/>
-        <circle cx="200" cy="200" r="172" fill="#c7a77a"/>
-        <circle cx="200" cy="200" r="168" fill="#d6b88c"/>
-        <g id="wedges"></g>
-      </svg>
-    </div>
-    <figcaption id="plate-cap">Un plateau de quatre fromages</figcaption>
-  </figure>
-  <div class="tool">
-    <div class="rise">
-      <h2 id="t-plat">Composez votre plateau</h2>
-      <p class="lede">Dites pour combien et pour quand. On vous propose une quantité et un assortiment tiré du comptoir, à valider avec le fromager.</p>
-    </div>
-    <div class="rise" style="display:grid;gap:18px">
-      <div class="tabs" role="group" aria-label="Moment du plateau">
-        <button type="button" data-g="80" data-l="en fin de repas" aria-pressed="true">Fin de repas</button>
-        <button type="button" data-g="150" data-l="pour l'apéritif" aria-pressed="false">Apéritif</button>
-        <button type="button" data-g="250" data-l="en plat principal" aria-pressed="false">Repas fromage</button>
-      </div>
-      <div class="count">
-        <button type="button" id="minus" aria-label="Une personne de moins">−</button>
-        <output id="n" aria-live="polite">6 pers.</output>
-        <button type="button" id="plus" aria-label="Une personne de plus">+</button>
-      </div>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
       <div>
-        <p class="res" id="res" aria-live="polite">Environ <b>480 g</b> pour 6 personnes en fin de repas.</p>
-        <ul class="res-list" id="list"></ul>
-        <p class="hint">Repère courant : 80 g par personne en fin de repas, 150 g à l'apéritif, 250 g en repas fromage.</p>
+        <h1>Le lait cru du 11e</h1>
+        <p class="lead">La Fromagerie Goncourt, 1 rue Abel Rabaud, derrière sa façade bleu électrique. Fromages fermiers de petits producteurs, bar à frais, crèmerie et conseils pour composer vos plateaux.</p>
+        <ul class="tags" aria-label="En bref">
+          <li class="ptag blue"><b class="num">5/5</b><span>Time Out Paris</span></li>
+          <li class="ptag"><b class="num">38 €</b><span>le Beaufort au kilo (2022)</span></li>
+          <li class="ptag"><b class="num">2×</b><span>lait cru normand par semaine</span></li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-main" href="#plateau">Composer mon plateau <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-soft" href="tel:+33143579128"><svg aria-hidden="true"><use href="#i-tel"/></svg><span class="num">01 43 57 91 28</span></a>
+        </div>
+        <p class="status closed" id="status" aria-live="polite"><i aria-hidden="true"></i><span>Du lundi après-midi au samedi soir</span></p>
+      </div>
+
+      <div class="board">
+        <figure class="ph ph-a">
+          <img src="https://images.unsplash.com/photo-1631379578550-7038263db699?w=1100&h=1300&q=72&auto=format&fit=crop" width="1100" height="1300" alt="Meules et tommes affinées empilées sur un comptoir de fromager" fetchpriority="high">
+          <span class="stamp"><span><b>lait</b>cru, surtout</span></span>
+          <figcaption class="lbl">Pâtes pressées · <b>Savoie</b></figcaption>
+        </figure>
+        <figure class="ph ph-b">
+          <img src="https://images.unsplash.com/photo-1552767059-ce182ead6c1b?w=760&h=600&q=72&auto=format&fit=crop" width="760" height="600" alt="Comptoir de fromages en morceaux, chacun piqué de son étiquette" fetchpriority="high">
+          <figcaption class="lbl">Au comptoir · <b>à la coupe</b></figcaption>
+        </figure>
+        <figure class="ph ph-c">
+          <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=760&h=600&q=72&auto=format&fit=crop" width="760" height="600" alt="Pointe de fromage persillé avec figues et noix">
+          <figcaption class="lbl">Persillés · <b>Pays basque</b></figcaption>
+        </figure>
       </div>
     </div>
-    <div class="acts rise">
-      <a class="btn btn-white" id="ask" href="mailto:lafromageriegoncourt@gmail.com">Demander ce plateau <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      <a class="btn btn-ink" href="tel:+33143579128">Appeler <svg aria-hidden="true"><use href="#i-tel"/></svg></a>
+
+    <ul class="facts">
+      <li><b>1 rue Abel Rabaud</b><span>Paris 11e, angle avenue Parmentier · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1+rue+Abel+Rabaud+75011+Paris" target="_blank" rel="noopener">itinéraire</a></span></li>
+      <li><b>Métro Goncourt</b><span>Ligne 11, à deux pas</span></li>
+      <li><b>Lundi → samedi</b><span>Le samedi sans coupure, fermé le dimanche</span></li>
+      <li><b>Plateaux sur demande</b><span>Par téléphone ou par e-mail</span></li>
+    </ul>
+  </div>
+</header>
+
+<div class="facade" aria-label="Ce qu'on trouve chez Goncourt">
+  <div class="wrap">
+    <ul>
+      <li>Lait cru</li>
+      <li>Petits producteurs</li>
+      <li>Savoie et Corse</li>
+      <li>Bar à frais</li>
+      <li>Crèmerie et épicerie fine</li>
+    </ul>
+  </div>
+</div>
+
+<section id="comptoir" aria-labelledby="t-comptoir">
+  <div class="wrap">
+    <div class="split rise">
+      <h2 class="h2" id="t-comptoir">Ce qu'il y a au comptoir</h2>
+      <p class="intro">Surtout du lait cru et des fromages de terroir, avec une belle place pour la Savoie et la Corse. La vitrine suit les arrivages : demandez ce qui est là cette semaine.</p>
+    </div>
+
+    <div class="filters rise" role="group" aria-label="Filtrer par famille">
+      <button type="button" data-f="all" aria-pressed="true">Tout le comptoir</button>
+      <button type="button" data-f="presse" aria-pressed="false">Pâtes pressées</button>
+      <button type="button" data-f="molle" aria-pressed="false">Pâtes molles</button>
+      <button type="button" data-f="bleu" aria-pressed="false">Persillés</button>
+      <button type="button" data-f="chevre" aria-pressed="false">Chèvre et brebis</button>
+      <button type="button" data-f="frais" aria-pressed="false">Bar à frais</button>
+    </div>
+
+    <div class="counter">
+      <div class="rise">
+        <ul class="rows" id="rows" aria-live="polite">
+          <li data-f="presse"><span class="n">Beaufort</span><span class="o">Savoie · pâte pressée cuite</span><span class="p num">38 €/kg</span></li>
+          <li data-f="presse"><span class="n">Morbier</span><span class="o">Vache · pâte pressée</span><span class="p num">19,90 €/kg</span></li>
+          <li data-f="presse"><span class="n">Tome des Bauges</span><span class="o">Savoie · pâte pressée</span><span class="p q">au poids</span></li>
+          <li data-f="presse"><span class="n">Dent du Chat</span><span class="o">Savoie · pâte pressée</span><span class="p q">au poids</span></li>
+          <li data-f="chevre"><span class="n">Crottin crémeux des Pyrénées</span><span class="o">Chèvre</span><span class="p num">3,80 €</span></li>
+          <li data-f="chevre"><span class="n">Pavé des Pyrénées</span><span class="o">Chèvre</span><span class="p num">6,50 €</span></li>
+          <li data-f="chevre"><span class="n">Crottin de brebis</span><span class="o">Brebis</span><span class="p num">6,50 €</span></li>
+          <li data-f="molle"><span class="n">Herve</span><span class="o">Belgique · croûte lavée</span><span class="p num">5,50 €</span></li>
+          <li data-f="molle"><span class="n">Calenzana</span><span class="o">Corse · pâte molle, croûte lavée</span><span class="p q">selon arrivage</span></li>
+          <li data-f="molle"><span class="n">Saint-Marcellin</span><span class="o">Nature ou à la truffe noire</span><span class="p q">selon arrivage</span></li>
+          <li data-f="bleu"><span class="n">Bethia</span><span class="o">Ferme Bethanoun, Pays basque</span><span class="p q">au poids</span></li>
+          <li data-f="bleu"><span class="n">Persillé de Tignes</span><span class="o">Savoie</span><span class="p q">au poids</span></li>
+          <li data-f="presse"><span class="n">Cheddar, gouda aux herbes</span><span class="o">D'ailleurs · pâtes pressées</span><span class="p q">au poids</span></li>
+          <li data-f="frais"><span class="n">Ricotta, fromage frais</span><span class="o">Bar à frais · au détail</span><span class="p q">à la louche</span></li>
+          <li data-f="frais"><span class="n">Cervelle de canut</span><span class="o">Bar à frais · maison</span><span class="p q">au détail</span></li>
+        </ul>
+        <p class="note">Prix relevés par Time Out Paris en mars 2022, à vérifier en boutique. Les autres fromages ont été cités par la presse ; la vitrine change avec les saisons et les arrivages.</p>
+      </div>
+      <div class="counter-side rise">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=760&h=950&q=72&auto=format&fit=crop" width="760" height="950" loading="lazy" alt="Deux tommes à croûte naturelle posées l'une sur l'autre"><figcaption class="lbl">Tommes · <b>croûte naturelle</b></figcaption></figure>
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1626957341926-98752fc2ba90?w=760&h=950&q=72&auto=format&fit=crop" width="760" height="950" loading="lazy" alt="Pointe de fromage persillé aux veines bleues"><figcaption class="lbl">Persillés · <b>à la coupe</b></figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="frais" aria-labelledby="t-frais">
-  <h2 id="t-frais" class="rise">Le bar à frais, près de la porte</h2>
-  <div class="frais-grid">
-    <figure class="rise">
-      <img src="https://images.unsplash.com/photo-1624806992066-5ffcf7ca186b?w=1400&h=933&q=75&auto=format&fit=crop" width="700" height="467" loading="lazy" alt="Petits fromages frais moulés, en train d'égoutter">
-      <h3>Au détail, comme on veut</h3>
-      <p>Fromage frais, ricotta et cervelle de canut maison, servis à la quantité. Pour une tartine du soir ou une recette.</p>
-    </figure>
-    <figure class="rise">
-      <img src="https://images.unsplash.com/photo-1528750997573-59b89d56f4f7?w=1000&h=667&q=75&auto=format&fit=crop" width="500" height="333" loading="lazy" alt="Lait versé dans un bocal en verre">
-      <h3>Lait cru de Normandie</h3>
-      <p>Livré deux fois par semaine. Il se garde peu : passez tôt dans la semaine.</p>
-    </figure>
+<section class="plateau on-blue" id="plateau" aria-labelledby="t-plateau">
+  <div class="wrap">
+    <div class="split rise">
+      <h2 class="h2" id="t-plateau">Composez votre plateau</h2>
+      <p class="intro">Dites pour combien et pour quel moment. La fiche calcule la quantité et propose un assortiment tiré du comptoir ; le fromager l'ajuste à ce qui est arrivé.</p>
+    </div>
+    <div class="pl-grid">
+      <div class="pl-ctrl rise">
+        <fieldset>
+          <legend>Le moment</legend>
+          <div class="seg" id="moment">
+            <button type="button" data-g="80" data-l="en fin de repas" aria-pressed="true">Fin de repas</button>
+            <button type="button" data-g="150" data-l="pour l'apéritif" aria-pressed="false">Apéritif</button>
+            <button type="button" data-g="250" data-l="en repas fromage" aria-pressed="false">Repas fromage</button>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Combien de convives</legend>
+          <div class="count">
+            <button type="button" id="minus" aria-label="Une personne de moins"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+            <output id="n" aria-live="polite" class="num">6 pers.</output>
+            <button type="button" id="plus" aria-label="Une personne de plus"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Le style</legend>
+          <div class="seg" id="style">
+            <button type="button" data-s="classique" aria-pressed="true">Classique</button>
+            <button type="button" data-s="montagne" aria-pressed="false">Montagne</button>
+            <button type="button" data-s="caractere" aria-pressed="false">Caractère</button>
+          </div>
+        </fieldset>
+        <p class="pl-hint">Repère courant : 80 g par personne en fin de repas, 150 g à l'apéritif, 250 g en repas fromage.</p>
+      </div>
+
+      <div class="pl-res rise" aria-live="polite">
+        <div class="pl-top">
+          <svg viewBox="0 0 400 400" role="img" aria-labelledby="plate-t">
+            <title id="plate-t">Plateau dessiné, une part par fromage proposé</title>
+            <circle cx="200" cy="200" r="196" fill="#f6f4ef"/>
+            <circle cx="200" cy="200" r="176" fill="#e9dfc9"/>
+            <g id="wedges"></g>
+          </svg>
+          <div>
+            <p class="pl-total num" id="total">480 g</p>
+            <p class="pl-sub" id="sub">pour 6 personnes, en fin de repas</p>
+          </div>
+        </div>
+        <ul class="pl-list" id="list"></ul>
+        <div class="actions">
+          <a class="btn btn-white" id="ask" href="mailto:lafromageriegoncourt@gmail.com">Demander ce plateau <svg aria-hidden="true"><use href="#i-mail"/></svg></a>
+          <a class="btn btn-main" href="tel:+33143579128"><svg aria-hidden="true"><use href="#i-tel"/></svg>Appeler</a>
+        </div>
+        <small>Votre messagerie s'ouvre avec la demande rédigée. Ajoutez le jour de retrait.</small>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="hours" id="horaires" aria-labelledby="t-h">
-  <div class="rise">
-    <h2 id="t-h">Horaires</h2>
-    <p class="now" id="now"><i aria-hidden="true"></i><span>Fermé le dimanche</span></p>
-  </div>
-  <div class="tbl rise">
-    <table>
-      <caption class="sr">Horaires d'ouverture de la boutique</caption>
-      <tbody id="htab">
-        <tr data-d="1"><td>Lundi</td><td>15h30 – 20h</td></tr>
-        <tr data-d="2"><td>Mardi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
-        <tr data-d="3"><td>Mercredi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
-        <tr data-d="4"><td>Jeudi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
-        <tr data-d="5"><td>Vendredi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
-        <tr data-d="6"><td>Samedi</td><td>9h – 20h, sans coupure</td></tr>
-        <tr data-d="0"><td>Dimanche</td><td>Fermé</td></tr>
-      </tbody>
-    </table>
-    <p class="src">Horaires habituels. Jours fériés et vacances : un appel suffit.</p>
+<section id="creme" aria-labelledby="t-creme">
+  <div class="wrap">
+    <div class="split rise">
+      <h2 class="h2" id="t-creme">Tout ce qui va autour</h2>
+      <p class="intro">Le répertoire ne s'arrête pas au fromage : crèmerie, épicerie fine, et de quoi accompagner le plateau jusqu'au dessert.</p>
+    </div>
+    <div class="creme-grid">
+      <article class="cell butter tall rise">
+        <h3>Lait cru de Normandie</h3>
+        <p>Livré deux fois par semaine. Il se garde peu : passez tôt après l'arrivage.</p>
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1528750997573-59b89d56f4f7?w=900&h=560&q=72&auto=format&fit=crop" width="900" height="560" loading="lazy" alt="Lait versé dans un bocal en verre"></figure>
+      </article>
+      <article class="cell rise">
+        <h3>Le bar à frais</h3>
+        <p>Près de la porte : fromage frais, ricotta et cervelle de canut maison, servis à la quantité voulue.</p>
+      </article>
+      <div class="cell cell-photo rise">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1624806992066-5ffcf7ca186b?w=800&h=600&q=72&auto=format&fit=crop" width="800" height="600" loading="lazy" alt="Petits fromages frais moulés en train d'égoutter"></figure>
+      </div>
+      <div class="cell cell-photo rise">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=800&h=600&q=72&auto=format&fit=crop" width="800" height="600" loading="lazy" alt="Planche garnie de fromages, charcuterie, olives et raisin"></figure>
+      </div>
+      <article class="cell rise">
+        <h3>L'épicerie</h3>
+        <p>Charcuterie, pickles de la Maison Marc, vins, confitures et desserts lactés, pour finir le plateau sans courir ailleurs.</p>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="contact" id="venir" aria-labelledby="t-v">
-  <h2 id="t-v" class="rise">Venir</h2>
-  <a class="crow alt" href="https://www.google.com/maps/dir/?api=1&destination=1+rue+Abel+Rabaud+75011+Paris" target="_blank" rel="noopener"><span>1 rue Abel Rabaud</span><small>Itinéraire<br>Google Maps</small></a>
-  <div class="crow"><span>75011 Paris</span><small>Angle avenue<br>Parmentier</small></div>
-  <div class="crow alt"><span>Métro Goncourt</span><small>Ligne 11</small></div>
-  <a class="crow" href="tel:+33143579128"><span>01 43 57 91 28</span><small>Appeler</small></a>
-  <a class="crow alt ig" href="https://www.instagram.com/lafromageriegoncourt/" target="_blank" rel="noopener"><span>@lafromageriegoncourt</span><small>Instagram</small></a>
-  <a class="crow go" href="mailto:lafromageriegoncourt@gmail.com"><span>Écrire</span><span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+<section class="story" aria-labelledby="t-story">
+  <div class="wrap">
+    <h2 class="h2 rise" id="t-story">Deux mois à vélo, puis un comptoir</h2>
+    <div class="story-grid">
+      <div class="story-text rise">
+        <p>Clément Brossault a changé de métier en 2013. Avant d'ouvrir, il a passé deux mois à vélo à travers la France pour rencontrer des producteurs.</p>
+        <p>Le comptoir en garde la trace : des fromagers fermiers, du lait cru, et un fromager qui sait d'où vient chaque morceau.</p>
+        <p>Au coin de la rue Abel Rabaud, la façade bleue et son banc devant la vitrine font le reste.</p>
+      </div>
+      <div class="press rise">
+        <figure class="quote blue">
+          <blockquote><p>« Une formidable fromagerie de proximité. »</p></blockquote>
+          <figcaption><b>Time Out Paris</b> · 5/5, mars 2022</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote><p>« Bons conseils pour faire des plateaux d'anthologie. »</p></blockquote>
+          <figcaption><b>Gault&amp;Millau</b> · fiche artisan</figcaption>
+        </figure>
+      </div>
+      <figure class="ph rise"><img src="https://images.unsplash.com/photo-1634487359989-3e90c9432133?w=760&h=1010&q=72&auto=format&fit=crop" width="760" height="1010" loading="lazy" alt="Fromage à croûte fleurie entamé, couteau et raisin"><figcaption class="lbl">Croûtes fleuries · <b>à point</b></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="horaires" aria-labelledby="t-h">
+  <div class="wrap">
+    <div class="hours-grid">
+      <div class="rise">
+        <h2 class="h2" id="t-h">Horaires</h2>
+        <p class="now closed" id="now"><i aria-hidden="true"></i><span>Fermé le dimanche</span></p>
+        <p class="intro">Le lundi, la boutique n'ouvre que l'après-midi. Le samedi, elle ne ferme pas à midi.</p>
+      </div>
+      <div class="rise">
+        <table>
+          <caption class="sr">Horaires d'ouverture de la boutique</caption>
+          <tbody id="htab">
+            <tr data-d="1"><td>Lundi</td><td>15h30 – 20h</td></tr>
+            <tr data-d="2"><td>Mardi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
+            <tr data-d="3"><td>Mercredi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
+            <tr data-d="4"><td>Jeudi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
+            <tr data-d="5"><td>Vendredi</td><td>9h – 13h30 · 15h30 – 20h</td></tr>
+            <tr data-d="6"><td>Samedi</td><td>9h – 20h</td></tr>
+            <tr data-d="0" class="off"><td>Dimanche</td><td>Fermé</td></tr>
+          </tbody>
+        </table>
+        <p class="src">Horaires habituels. Jours fériés et vacances : un appel suffit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="venir" id="venir" aria-labelledby="t-v">
+  <div class="wrap">
+    <h2 class="h2 rise" id="t-v" style="margin-bottom:36px">Venir à la boutique</h2>
+    <div class="v-grid">
+      <figure class="plan rise">
+        <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="plan-t">
+          <title id="plan-t">Plan schématique : la boutique à l'angle de la rue Abel Rabaud et de l'avenue Parmentier</title>
+          <rect width="640" height="420" fill="#f3dc8c"/>
+          <g fill="#e7c962">
+            <path d="M0 0h250L130 420H0z"/><path d="M330 0h310v150H360z"/><path d="M372 222h268v198H310z"/>
+          </g>
+          <path d="M290 -20 170 440" stroke="#f6f4ef" stroke-width="64"/>
+          <path d="M-20 190 660 186" stroke="#f6f4ef" stroke-width="46"/>
+          <rect x="300" y="128" width="58" height="42" rx="6" fill="#1d3af2"/>
+          <text x="329" y="157" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="22" fill="#fff">1</text>
+          <text x="440" y="182" font-family="Archivo,sans-serif" font-weight="700" font-size="17" fill="#10162f" transform="rotate(-.3 470 182)">rue Abel Rabaud</text>
+          <text font-family="Archivo,sans-serif" font-weight="700" font-size="17" fill="#10162f" transform="translate(196 380) rotate(-75)">avenue Parmentier</text>
+          <text x="372" y="90" font-family="Archivo,sans-serif" font-weight="700" font-size="19" fill="#10162f">La Fromagerie</text>
+          <text x="372" y="112" font-family="Archivo,sans-serif" font-weight="700" font-size="19" fill="#10162f">Goncourt</text>
+          <text x="372" y="134" font-family="Archivo,sans-serif" font-weight="500" font-size="14" fill="#3a3f52">façade bleue, banc devant</text>
+        </svg>
+        <figcaption class="sr">Plan non à l'échelle.</figcaption>
+      </figure>
+      <div class="v-list rise">
+        <a class="v-item main" href="https://www.google.com/maps/dir/?api=1&amp;destination=1+rue+Abel+Rabaud+75011+Paris" target="_blank" rel="noopener"><span><b>1 rue Abel Rabaud</b><span>75011 Paris · itinéraire Google Maps</span></span><svg aria-hidden="true"><use href="#i-pin"/></svg></a>
+        <div class="v-rows">
+        <div class="v-item"><span><b>Métro Goncourt</b><span>Ligne 11, sortie avenue Parmentier</span></span></div>
+        <a class="v-item" href="tel:+33143579128"><span><b class="num">01 43 57 91 28</b><span>Pour un plateau ou une question</span></span><svg aria-hidden="true"><use href="#i-tel"/></svg></a>
+        <a class="v-item" href="mailto:lafromageriegoncourt@gmail.com"><span><b>Écrire un e-mail</b><span>lafromageriegoncourt@gmail.com</span></span><svg aria-hidden="true"><use href="#i-mail"/></svg></a>
+        <a class="v-item" href="https://www.instagram.com/lafromageriegoncourt/" target="_blank" rel="noopener"><span><b>@lafromageriegoncourt</b><span>Les arrivages sur Instagram</span></span><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 </main>
 
-<footer class="foot on-blue">
-  <div class="fcols">
-    <div><b>Adresse</b><p>1 rue Abel Rabaud<br>75011 Paris</p></div>
-    <div><b>Sur la page</b><ul><li><a href="#selection">Fromages</a></li><li><a href="#plateau">Plateau</a></li><li><a href="#horaires">Horaires</a></li></ul></div>
-    <div><b>Suivre</b><ul><li><a href="https://www.instagram.com/lafromageriegoncourt/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/lafromageriegoncourt" target="_blank" rel="noopener">Facebook</a></li></ul></div>
-    <div><b>Contact</b><p><a href="tel:+33143579128">01 43 57 91 28</a><br><a href="mailto:lafromageriegoncourt@gmail.com">Écrire un email</a></p></div>
-  </div>
-  <div></div>
-  <div>
-    <p class="big" id="foot-word" aria-hidden="true">GONCOURT</p>
-    <p class="legal"><span>La Fromagerie Goncourt, Paris 11e</span><span>Démo réalisée par Raul Hatos — site non officiel</span><span>Photos d'ambiance : Unsplash</span></p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="fcols">
+      <div><b>Adresse</b><p>1 rue Abel Rabaud<br>75011 Paris</p></div>
+      <div><b>Sur la page</b><ul><li><a href="#comptoir">Le comptoir</a></li><li><a href="#plateau">Plateau</a></li><li><a href="#horaires">Horaires</a></li></ul></div>
+      <div><b>Suivre</b><ul><li><a href="https://www.instagram.com/lafromageriegoncourt/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/lafromageriegoncourt" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      <div><b>Contact</b><p><a href="tel:+33143579128" class="num">01 43 57 91 28</a><br><a href="mailto:lafromageriegoncourt@gmail.com">Écrire un e-mail</a></p></div>
+    </div>
+    <p class="fword" aria-hidden="true">Goncourt<i>.</i></p>
+    <p class="legal"><span>La Fromagerie Goncourt, Paris 11e</span><span>Démo réalisée par Raul Hatos — site non officiel</span><span>Photos d'illustration : Unsplash</span><span>Citations : Time Out Paris, Gault&amp;Millau</span></p>
   </div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
-// Entrées : visibles par défaut, animées seulement si le script tourne
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
-
-// Le nom remplit exactement la largeur entre les marges
-function fit(el){el.style.fontSize='';const w=el.parentElement.clientWidth-parseFloat(getComputedStyle(el.parentElement).paddingLeft)*2,cur=parseFloat(getComputedStyle(el).fontSize);el.style.fontSize=(cur*w/el.getBoundingClientRect().width)+'px'}
-const fitAll=()=>{fit(document.getElementById('wordmark'));fit(document.getElementById('foot-word'))};
-document.fonts.ready.then(fitAll);addEventListener('resize',fitAll);
-// Le nom pèse : il se tasse en quittant l'écran, se redresse dans le pied de page
-const wm=document.getElementById('wordmark'),fw=document.getElementById('foot-word');
-const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!rm)addEventListener('scroll',()=>{const y=scrollY,h=innerHeight;
-  wm.style.transform=`scale(${1-Math.min(y/h,1)*.06})`;
-  const r=fw.getBoundingClientRect(),p=Math.min(Math.max((h-r.top)/h,0),1);fw.style.transform=`scale(${.94+p*.06})`;},{passive:true});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Entrées : contenu visible sans script ; cascade de 70 ms entre voisins
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rise').forEach((el,i)=>{if(!reduce)el.style.transitionDelay=(i%3)*70+'ms';io.observe(el)});
 
 // Ouvert maintenant ? (heure de Paris)
 const H={1:[[930,1200]],2:[[540,810],[930,1200]],3:[[540,810],[930,1200]],4:[[540,810],[930,1200]],5:[[540,810],[930,1200]],6:[[540,1200]],0:[]};
 const fmt=m=>Math.floor(m/60)+'h'+(m%60?String(m%60).padStart(2,'0'):'');
-(function(){const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+(function(){
+  const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
   const g=t=>parts.find(p=>p.type===t).value,d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%24)*60+ +g('minute');
   document.querySelector(`#htab tr[data-d="${d}"]`)?.classList.add('today');
-  const el=document.getElementById('now'),open=H[d].find(([a,b])=>m>=a&&m<b);
-  if(open){el.querySelector('span').textContent='Ouvert, jusqu\'à '+fmt(open[1]);return}
-  el.classList.add('closed');const next=H[d].find(([a])=>a>m);
-  if(next){el.querySelector('span').textContent='Fermé, réouvre à '+fmt(next[0]);return}
-  for(let k=1;k<8;k++){const dd=(d+k)%7;if(H[dd].length){const nm=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'][dd];el.querySelector('span').textContent='Fermé, réouvre '+(k===1?'demain':nm)+' à '+fmt(H[dd][0][0]);break}}
+  let txt,open=H[d].find(([a,b])=>m>=a&&m<b);
+  if(open)txt='Ouvert, jusqu\'à '+fmt(open[1]);
+  else{const next=H[d].find(([a])=>a>m);
+    if(next)txt='Fermé, réouvre à '+fmt(next[0]);
+    else for(let k=1;k<8;k++){const dd=(d+k)%7;if(H[dd].length){txt='Fermé, réouvre '+(k===1?'demain':['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'][dd])+' à '+fmt(H[dd][0][0]);break}}}
+  ['now','status'].forEach(id=>{const el=document.getElementById(id);el.classList.toggle('closed',!open);el.querySelector('span').textContent=txt});
 })();
 
+// Filtre du comptoir
+const fb=document.querySelectorAll('.filters button');
+fb.forEach(b=>b.addEventListener('click',()=>{
+  fb.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  document.querySelectorAll('#rows li').forEach(li=>li.hidden=b.dataset.f!=='all'&&li.dataset.f!==b.dataset.f);
+}));
+
 // Plateau : quantité + assortiment tiré des fromages cités au comptoir
-const POOL=[['Beaufort','#e6c45f'],['Saint-Marcellin','#f3e6c2'],['Bethia, persillé basque','#dfe2d3'],['Calenzana, croûte lavée','#d9954a'],['Tome des Bauges','#c9a46a'],['Persillé de Tignes','#cfd6c6'],['Ricotta du bar à frais','#fbf9f1']];
-const RIND=['#a8823a','#e2d3a8','#c9cdb8','#b8642a','#7d6447','#aeb6a4','#efe9d8'];
-let n=6,g=80,label='en fin de repas';
+const STY={
+  classique:[['Beaufort','#e9c46a','#a8823a'],['Saint-Marcellin','#f4ead0','#d9c9a0'],['Crottin crémeux des Pyrénées','#fbf8ef','#ddd6c2'],['Persillé de Tignes','#dfe3d6','#a9b29c'],['Morbier','#f0dca0','#7d6447'],['Calenzana','#e7b46a','#b8642a'],['Ricotta du bar à frais','#ffffff','#e8e4dd']],
+  montagne:[['Beaufort','#e9c46a','#a8823a'],['Tome des Bauges','#e6cf9a','#6f5a3e'],['Dent du Chat','#ecd28f','#8e6a3c'],['Persillé de Tignes','#dfe3d6','#a9b29c'],['Morbier','#f0dca0','#7d6447'],['Crottin de brebis','#f6f0e0','#d8ccb0'],['Saint-Marcellin','#f4ead0','#d9c9a0']],
+  caractere:[['Calenzana','#e7b46a','#b8642a'],['Herve','#e2a95c','#a5582a'],['Bethia, persillé basque','#dde2d4','#9aa58c'],['Beaufort','#e9c46a','#a8823a'],['Pavé des Pyrénées','#fbf8ef','#ddd6c2'],['Persillé de Tignes','#dfe3d6','#a9b29c'],['Saint-Marcellin à la truffe','#efe2c4','#5a4a3a']]
+};
+let n=6,g=80,label='en fin de repas',style='classique';
 const $=id=>document.getElementById(id);
-function count(){return n<=3?3:n<=6?4:n<=10?5:n<=16?6:7}
-function wedgePath(i,k){const a0=-Math.PI/2+i*2*Math.PI/k,a1=a0+2*Math.PI/k,r=150,c=200,gap=.03;
-  const p=(a,rr)=>[c+rr*Math.cos(a),c+rr*Math.sin(a)];const [x0,y0]=p(a0+gap,r),[x1,y1]=p(a1-gap,r),[cx0,cy0]=p((a0+a1)/2,14);
-  return [`M${cx0.toFixed(1)} ${cy0.toFixed(1)}L${x0.toFixed(1)} ${y0.toFixed(1)}A${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}Z`,`M${x0.toFixed(1)} ${y0.toFixed(1)}A${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`]}
+const kOf=n=>n<=3?3:n<=6?4:n<=10?5:n<=16?6:7;
+const words=['','','','trois','quatre','cinq','six','sept'];
+const P=(a,r)=>[200+r*Math.cos(a),200+r*Math.sin(a)].map(v=>v.toFixed(1));
+function wedge(i,k,c,rind){
+  const a0=-Math.PI/2+i*2*Math.PI/k,a1=a0+2*Math.PI/k,gap=.035,r=158;
+  const [x0,y0]=P(a0+gap,r),[x1,y1]=P(a1-gap,r),[cx,cy]=P((a0+a1)/2,16),big=(a1-a0-2*gap)>Math.PI?1:0;
+  return `<path class="wedge" d="M${cx} ${cy}L${x0} ${y0}A${r} ${r} 0 ${big} 1 ${x1} ${y1}Z" fill="${c}"/><path d="M${x0} ${y0}A${r} ${r} 0 ${big} 1 ${x1} ${y1}" fill="none" stroke="${rind}" stroke-width="10"/>`;
+}
+const kg=t=>t>=1000?(t/1000).toFixed(2).replace(/0$/,'').replace('.',',')+' kg':t+' g';
 function render(){
-  const k=count(),pick=POOL.slice(0,k),total=Math.round(n*g/10)*10;
+  const k=kOf(n),pick=STY[style].slice(0,k),total=Math.round(n*g/10)*10,each=Math.round(total/k/10)*10;
   $('n').textContent=n+' pers.';
-  $('res').innerHTML=`Environ <b>${total>=1000?(total/1000).toString().replace('.',',')+' kg':total+' g'}</b> pour ${n} personnes ${label}.`;
-  $('list').innerHTML=pick.map(([t,c])=>`<li><i style="background:${c}"></i>${t}, ${Math.round(total/k/10)*10} g</li>`).join('');
-  $('wedges').innerHTML=pick.map(([t,c],i)=>(([d,a])=>`<path class="wedge" d="${d}" fill="${c}"/><path d="${a}" fill="none" stroke="${RIND[i]}" stroke-width="9"/>`)(wedgePath(i,k))+(t.includes('ersill')||t.includes('Bethia')?blue(i,k):'')).join('');
-  $('plate-cap').textContent=`Un plateau de ${['','','','trois','quatre','cinq','six','sept'][k]} fromages`;
+  $('total').textContent=kg(total);
+  $('sub').textContent=`pour ${n} personnes, ${label} · ${words[k]} fromages`;
+  $('list').innerHTML=pick.map(([t,c])=>`<li><span><i style="background:${c}"></i>${t}</span><b class="num">${each} g</b></li>`).join('');
+  $('wedges').innerHTML=pick.map(([t,c,r],i)=>wedge(i,k,c,r)).join('');
   $('minus').disabled=n<=2;$('plus').disabled=n>=30;
-  const body=`Bonjour,\n\nJe voudrais un plateau de fromages pour ${n} personnes, ${label} (environ ${total} g).\nPiste d'assortiment : ${pick.map(p=>p[0]).join(', ')}.\n\nRetrait souhaité le : \nNom et téléphone : \n\nMerci !`;
+  const body=`Bonjour,\n\nJe voudrais un plateau de fromages pour ${n} personnes, ${label} (environ ${kg(total)}).\nPiste d'assortiment (${style}) : ${pick.map(p=>p[0]).join(', ')}.\n\nRetrait souhaité le : \nNom et téléphone : \n\nMerci !`;
   $('ask').href='mailto:lafromageriegoncourt@gmail.com?subject='+encodeURIComponent(`Plateau pour ${n} personnes`)+'&body='+encodeURIComponent(body);
 }
-function blue(i,k){const a=-Math.PI/2+(i+.5)*2*Math.PI/k;let s='';[[60,-.12],[95,.1],[120,-.05],[80,.18]].forEach(([r,o])=>{s+=`<circle cx="${(200+r*Math.cos(a+o)).toFixed(1)}" cy="${(200+r*Math.sin(a+o)).toFixed(1)}" r="5" fill="#5f7d8c"/>`});return s}
 $('minus').onclick=()=>{if(n>2){n--;render()}};
 $('plus').onclick=()=>{if(n<30){n++;render()}};
-document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-pressed',x===b));g=+b.dataset.g;label=b.dataset.l;render()});
+document.querySelectorAll('#moment button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#moment button').forEach(x=>x.setAttribute('aria-pressed',x===b));g=+b.dataset.g;label=b.dataset.l;render()});
+document.querySelectorAll('#style button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#style button').forEach(x=>x.setAttribute('aria-pressed',x===b));style=b.dataset.s;render()});
 render();
 </script>
 </body>
