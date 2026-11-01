@@ -4,436 +4,555 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Le Dirty Queen · Bar à gin, bières craft et karaoké, Paris 10e</title>
-<meta name="description" content="Le Dirty Queen, 12 rue de Paradis, Paris 10e. Gin, bières craft, cocktails, happy hour de 17 h à 20 h, karaoké et baby-foot dans la cave voûtée.">
-<meta name="theme-color" content="#131313">
+<title>Le Dirty Queen · bar karaoké, 12 rue de Paradis, Paris 10e</title>
+<meta name="description" content="Le Dirty Queen, 12 rue de Paradis, Paris 10e. Gins, cocktails, bières artisanales, karaoké et baby-foot gratuits. Happy hour de 17 h à 20 h, ouvert jusqu'à 2 h.">
+<meta property="og:title" content="Le Dirty Queen · bar karaoké rue de Paradis">
+<meta property="og:description" content="Happy hour 17 h – 20 h, karaoké et baby-foot gratuits, cave voûtée à privatiser.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=1200&h=630&fit=crop&q=70&auto=format">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ff64ab">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231438e0'/%3E%3Ctext x='32' y='46' font-family='Arial' font-weight='900' font-size='38' text-anchor='middle' fill='%23ffe24a'%3EDQ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-/* Système adapté du DESIGN.md « The Verge » (awesome-design) : toile presque noire #131313, aplats saturés
-   façon flyers de club (menthe acide, jaune), display lourd et condensé qui crie, texte grotesque qui parle.
-   Adapté : l'ultraviolet de la marque devient le rose néon des soirées drag ; pas de mono, pas de filets. */
+/* Direction taste-skill « la page est l'objet » : l'objet, c'est l'écran de karaoké des années 80-00
+   (fond bleu, paroles blanches qui virent au jaune). Le fond rose vient des néons du bar.
+   Système adapté du DESIGN.md « Spotify » (awesome-design) : une famille grotesque ronde, aplats francs,
+   boutons pleins ; couleurs remplacées par le rose néon / bleu karaoké / jaune paroles. */
 :root{
-  --bg:#131313;
-  --surface:#1f1f1f;
-  --surface-2:#2a2a2a;
-  --ink:#ffffff;
-  --soft:#b9b9b9;
-  --pink:#ff3d9a;
-  --pink-press:#e0247f;
-  --mint:#3cffd0;
-  --yellow:#ffe94a;
-  --on-field:#131313;
-  --m:clamp(16px,2.4vw,32px);
+  --pink:#ff64ab;      /* néon rose : le fond de la page */
+  --pink-2:#ff74b4;    /* un pas de ton au-dessus */
+  --ink:#12030d;       /* encre presque noire */
+  --paper:#fff4f8;     /* papier des feuilles et tickets */
+  --paper-2:#ffe6f0;
+  --blue:#1438e0;      /* écran de karaoké */
+  --blue-2:#2347f2;
+  --yellow:#ffe24a;    /* paroles chantées */
+  --white:#ffffff;
+  --m:clamp(16px,2.6vw,40px);
   --s-small:clamp(.875rem,.85rem + .1vw,.9375rem);
   --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
   --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --s-head:clamp(2.6rem,1.6rem + 4.4vw,5.6rem);
-  --ease:cubic-bezier(.16,1,.3,1);
+  --s-h3:clamp(1.75rem,1.2rem + 1.6vw,2.75rem);
+  --s-head:clamp(2.5rem,1.4rem + 4.6vw,5.5rem);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --t-fast:.18s;
+  --t-norm:.35s;
+  --t-slow:.6s;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip;scrollbar-color:var(--pink) var(--bg)}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:var(--s-body);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
+html{color-scheme:light;-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--pink);color:var(--ink);font-family:"Rubik",system-ui,sans-serif;font-size:var(--s-body);line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
-h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+h1,h2,h3,p,ul,ol,figure{margin:0}
 ul,ol{padding:0;list-style:none}
-h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;line-height:1;letter-spacing:-.005em;text-transform:uppercase;text-wrap:balance}
+h1,h2,h3{font-weight:800;line-height:.95;letter-spacing:-.03em;text-wrap:balance}
 h2{font-size:var(--s-head)}
-p{text-wrap:pretty}
-::selection{background:var(--pink);color:var(--on-field)}
-:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:20;background:var(--mint);color:var(--on-field);padding:8px 14px}
-.wrap{padding-inline:var(--m)}
+p,li{text-wrap:pretty}
+::selection{background:var(--yellow);color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.on-blue :focus-visible,.on-blue:focus-visible{outline-color:var(--yellow)}
+.skip{position:absolute;left:-999px;top:8px}.skip:focus{left:16px;z-index:30;background:var(--ink);color:var(--pink);padding:10px 14px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .num{font-variant-numeric:tabular-nums}
+.wrap{padding-inline:var(--m)}
 
-/* une seule forme de bouton : la pilule pleine */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:0 1.45em;border-radius:999px;border:0;font:600 1rem/1 "Bricolage Grotesque",sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background-color .2s,color .2s}
-.btn svg{width:18px;height:18px;flex:none}
+/* une seule forme de bouton : rectangle plein, coins carrés */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:0 1.35em;border:0;font:700 var(--s-body)/1 "Rubik",sans-serif;text-decoration:none;cursor:pointer;touch-action:manipulation;transition-property:transform,background-color,color;transition-duration:var(--t-fast);transition-timing-function:var(--ease)}
+.btn svg{width:19px;height:19px;flex:none}
 .btn:active{transform:scale(.96)}
-.btn-pink{background:var(--pink);color:var(--on-field)}.btn-pink:hover{background:var(--ink)}
-.btn-ink{background:var(--ink);color:var(--on-field)}.btn-ink:hover{background:var(--mint)}
-.btn-dark{background:var(--bg);color:var(--ink)}.btn-dark:hover{background:#333}
+.btn-ink{background:var(--ink);color:var(--pink)}.btn-ink:hover{background:var(--blue);color:var(--white)}
+.btn-yellow{background:var(--yellow);color:var(--ink)}.btn-yellow:hover{background:var(--white)}
+.btn-paper{background:var(--paper);color:var(--ink)}.btn-paper:hover{background:var(--yellow)}
 
-/* bandeau démo */
-.demo{background:var(--surface);color:var(--soft);font-size:var(--s-small);text-align:center;padding:8px var(--m)}
+.demo{background:var(--ink);color:var(--paper);font-size:var(--s-small);text-align:center;padding:8px var(--m)}
 
-/* ---------- héros : le nom comme enseigne ---------- */
-.hero{position:relative;min-height:calc(100svh - 37px);display:grid;grid-template-rows:auto auto 1fr auto;isolation:isolate;overflow:hidden}
-.hero-pic{position:absolute;inset:0;z-index:-2}
-.hero-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:drift 22s ease-in-out infinite alternate}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(19,19,19,.58)}
-@keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.12) translate(-1.5%,1%)}}
-.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px var(--m) 0;font-size:var(--s-small);font-weight:600}
-.nav a{text-decoration:none}
-.nav ul{display:flex;gap:clamp(14px,2vw,28px)}
-.nav ul a:hover{color:var(--mint)}
-.status{display:inline-flex;align-items:center;gap:.6em}
-.status i{width:10px;height:10px;border-radius:50%;background:var(--soft);flex:none}
-.status.open i{background:var(--mint);animation:pulse 1.8s ease-in-out infinite}
-.status.hh i{background:var(--yellow)}
+/* ---------- barre ---------- */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--m)}
+.mark{font-weight:800;font-size:var(--s-lead);letter-spacing:-.03em;text-decoration:none;line-height:1}
+.bar nav ul{display:none;gap:clamp(18px,2.2vw,34px);font-weight:500}
+.bar nav a{text-decoration:none;padding:12px 0;position:relative}
+.bar nav a::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:3px;background:currentColor;transform:scaleX(0);transform-origin:0 50%;transition:transform var(--t-norm) var(--ease)}
+.bar nav a:hover::after{transform:scaleX(1)}
+.bar .btn{min-height:44px;padding:0 1em}
+@media (min-width:900px){.bar nav ul{display:flex}}
+
+/* ---------- héros : l'écran de karaoké ---------- */
+.hero{display:grid;gap:12px;padding:4px var(--m) clamp(40px,6vw,72px)}
+.screen{container-type:inline-size;background:var(--blue);color:var(--white);padding:clamp(20px,2.8vw,40px);display:grid;gap:clamp(18px,2.2vw,30px);align-content:space-between;position:relative}
+.screen-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:500;font-size:var(--s-small)}
+.status{display:inline-flex;align-items:center;gap:.55em;font-weight:700}
+.status i{width:10px;height:10px;border-radius:50%;background:var(--paper-2);flex:none}
+.status.open i{background:#5dff9a;animation:pulse 1.8s ease-in-out infinite}
+.status.hh i{background:var(--yellow);animation:pulse 1.2s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.35}}
-.hero h1{grid-row:2/5;grid-column:1;display:grid;grid-template-rows:subgrid;margin:0;font-size:clamp(5.5rem,41vw,30rem);font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.84;letter-spacing:-.01em}
-.l1,.l2{display:block;overflow:hidden;padding-inline:var(--m)}
-.l1 span,.l2 span{display:block;animation:rise .8s var(--ease) both}
-.l1{grid-row:1;color:var(--ink);margin-top:clamp(8px,2vh,24px)}
-.l2{grid-row:3;color:var(--pink);text-align:right;padding-bottom:clamp(10px,1.6vh,22px)}
-@media (min-width:700px){.hero h1{font-size:min(24vw,31svh)}}
-.l2 span{animation-delay:.11s}
-@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
-.hero-mid{grid-row:3;grid-column:1;position:relative;z-index:1;align-self:center;padding:clamp(20px,4vh,40px) var(--m);display:grid;gap:22px;max-width:46rem;animation:fade .8s .45s var(--ease) both}
-.hero-mid p{font-size:var(--s-lead);line-height:1.3;max-width:30ch;font-weight:600}
-.hero-mid .acts{display:flex;flex-wrap:wrap;gap:10px}
-@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.screen h1{font-size:clamp(2.6rem,13.5cqi,8.5rem);line-height:.92;letter-spacing:-.035em}
+.ln{display:block;position:relative;width:max-content;max-width:100%}
+.ln .on{position:absolute;inset:0;color:var(--yellow);clip-path:inset(0 100% 0 0);animation:sing 1.5s var(--ease) forwards}
+.ln:nth-child(2) .on{animation-delay:1.25s}
+.ln .on{animation-delay:.35s}
+@keyframes sing{to{clip-path:inset(-.1em -.25em -.15em -.1em)}}
+.screen .lede{font-size:var(--s-lead);line-height:1.3;max-width:34ch;font-weight:500}
+.hh-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;background:var(--blue-2)}
+.hh-row div{padding:14px clamp(12px,1.4vw,20px);background:var(--blue)}
+.hh-row b{display:block;color:var(--yellow);font-size:var(--s-h3);line-height:1;font-weight:800;letter-spacing:-.03em}
+.hh-row span{display:block;font-size:var(--s-small);margin-top:6px}
+.hh-cap{font-size:var(--s-small);font-weight:500;margin-top:8px}
+.acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.rating{display:flex;align-items:center;gap:10px;font-size:var(--s-small);font-weight:500}
+.rating b{font-size:var(--s-lead);font-weight:800;color:var(--yellow)}
+.rating a{color:var(--white)}
 
-/* ---------- carte ---------- */
-.carte{padding-block:clamp(96px,14vw,200px) clamp(64px,9vw,120px)}
-.carte-head{display:grid;gap:24px;margin-bottom:clamp(40px,6vw,72px)}
-.carte-head p{max-width:46ch;color:var(--ink)}
-.hhbox{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
-.toggle{display:inline-flex;background:var(--surface);border-radius:999px;padding:5px}
-.toggle button{font:600 1rem/1 "Bricolage Grotesque",sans-serif;border:0;border-radius:999px;padding:0 1.2em;min-height:44px;background:transparent;color:var(--ink);cursor:pointer;transition:background-color .2s,color .2s}
-.toggle button[aria-pressed="true"]{background:var(--yellow);color:var(--on-field)}
-.toggle button:not([aria-pressed="true"]):hover{background:var(--surface-2)}
-.hhnote{font-size:var(--s-small);color:var(--soft)}
-.menu{display:grid;gap:clamp(48px,6vw,80px)}
-.menu-group h3{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.6rem);color:var(--yellow);margin-bottom:16px}
-.menu-group li{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;font-size:clamp(1.25rem,1rem + 1vw,1.9rem);line-height:1.5;font-weight:600}
-.menu-group li .p{font-variant-numeric:tabular-nums;transition:color .25s}
-.menu-group li .p del{color:var(--soft);font-weight:400;font-size:.8em;margin-right:.6em;text-decoration-thickness:2px}
-.menu-group li small{display:block;font-size:var(--s-small);font-weight:400;color:var(--soft);line-height:1.3;margin-top:-.2em;margin-bottom:.35em}
-.is-hh .menu-group li .p.has-hh{color:var(--yellow)}
-.menu .col{display:grid;gap:clamp(64px,8vw,80px)}
-@media (min-width:900px){.menu{grid-template-columns:1.25fr 1fr;column-gap:clamp(48px,7vw,120px)}.menu .col{display:grid;gap:clamp(48px,6vw,80px);align-content:start}}
-
-/* ---------- la cave : titre qui légende un panorama ---------- */
-.cave{padding-top:clamp(40px,6vw,80px)}
-.cave h2{max-width:12ch}
-.cave-caps{display:grid;gap:12px 48px;margin-top:28px;max-width:44rem;color:var(--ink)}
-@media (min-width:700px){.cave-caps{grid-template-columns:1fr 1fr}}
-.cave figure{margin-top:40px}
-.cave figure img{width:100%;aspect-ratio:21/9;object-fit:cover}
-@media (max-width:699px){.cave figure img{aspect-ratio:4/5}}
-
-/* ---------- la semaine : aplats façon flyers ---------- */
-.nights{padding-block:clamp(120px,14vw,220px) 0}
-.nights h2{margin-bottom:clamp(32px,5vw,56px)}
-.band{display:grid;gap:10px 40px;padding:clamp(28px,4vw,52px) var(--m);color:var(--on-field)}
-.band h3{font-size:clamp(2.4rem,1.4rem + 4.6vw,6rem);line-height:.92}
-.band p{max-width:44ch;font-weight:600;font-size:var(--s-lead);line-height:1.3}
-.band .when{font-weight:800}
-@media (min-width:900px){.band{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:end}}
-.b-yellow{background:var(--yellow)}.b-mint{background:var(--mint)}.b-pink{background:var(--pink)}.b-ink{background:var(--ink)}
-
-/* ---------- galerie ---------- */
-.gal{padding-block:clamp(120px,14vw,200px);display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(12px,2vw,24px);row-gap:clamp(56px,8vw,120px)}
-.gal figure img{width:100%;object-fit:cover}
-.gal figcaption{font-size:var(--s-small);color:var(--soft);margin-top:10px}
-.g1{grid-column:1/6}.g1 img{aspect-ratio:3/4}
-.g2{grid-column:7/13;margin-top:14vh}.g2 img{aspect-ratio:5/4}
-.g3{grid-column:6/13;align-self:end}.g3 img{aspect-ratio:3/2}
-.g4{grid-column:1/5;grid-row:2;align-self:start}.g4 img{aspect-ratio:4/5}
-@media (max-width:699px){
-  .g1{grid-column:1/10}.g2{grid-column:3/13;margin-top:0}.g3{grid-column:1/-1}.g4{grid-column:4/13;grid-row:auto}
+.pics{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:12px;min-height:420px}
+.pics figure{overflow:hidden;background:var(--ink)}
+.pics img{width:100%;height:100%;object-fit:cover}
+.pics .p1{grid-row:1/3}
+.p1 img{animation:drift 24s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.03)}to{transform:scale(1.12) translate(-2%,1%)}}
+@media (min-width:900px){
+  .hero{grid-template-columns:minmax(0,7fr) minmax(0,5fr);min-height:calc(100svh - 110px)}
+  .pics{min-height:0}
 }
 
-/* ---------- privatiser : le calculateur ---------- */
-.priv{background:var(--surface);padding-block:clamp(96px,12vw,180px)}
-.priv-grid{display:grid;gap:clamp(40px,6vw,96px)}
+/* ---------- carte : la feuille du comptoir ---------- */
+.carte{padding-block:clamp(96px,12vw,200px) 0;display:grid;gap:clamp(40px,5vw,72px)}
+.carte-head{display:grid;gap:20px}
+.carte-head p{max-width:46ch}
+.carte-head .ctl{display:grid;gap:20px;align-content:end}
+@media (min-width:900px){.carte-head{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:end;column-gap:clamp(32px,4vw,64px)}}
+.toggle{display:inline-flex;background:var(--ink);padding:4px;gap:4px;width:max-content;max-width:100%}
+.toggle button{font:700 var(--s-body)/1 "Rubik",sans-serif;border:0;padding:0 1.1em;min-height:44px;background:transparent;color:var(--paper);cursor:pointer;transition-property:background-color,color;transition-duration:var(--t-fast)}
+.toggle button[aria-pressed="true"]{background:var(--yellow);color:var(--ink)}
+.toggle button:not([aria-pressed="true"]):hover{background:#3a1430}
+.carte-body{display:grid;gap:clamp(32px,4vw,56px);align-items:start}
+.sheet{position:relative;background:var(--paper);padding:clamp(28px,4vw,56px) clamp(20px,3.6vw,52px);margin-block:12px;display:grid;gap:40px}
+.sheet::before,.sheet::after{content:"";position:absolute;left:0;right:0;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M0 12 12 0 24 12Z' fill='%23fff4f8'/%3E%3C/svg%3E") repeat-x}
+.sheet::before{top:-12px}
+.sheet::after{bottom:-12px;transform:scaleY(-1)}
+.sheet h3{font-size:var(--s-lead);margin-bottom:14px;letter-spacing:-.02em}
+.items li{display:flex;align-items:baseline;gap:10px;padding-block:7px}
+.items .n{font-weight:500}
+.items .lead{flex:1;border-bottom:4px dotted var(--ink);opacity:.35;transform:translateY(-4px);min-width:16px}
+.items .p{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.items .p del{font-weight:400;opacity:.6;margin-right:.45em}
+.items small{display:block;font-size:var(--s-small);color:#5b2147;margin-top:-6px;padding-bottom:6px}
+.is-hh .items .p.has-hh{background:var(--yellow);padding:0 .25em}
+.side{display:grid;gap:16px}
+.side figure{overflow:hidden;background:var(--ink)}
+.side img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.side p{font-weight:500;max-width:36ch}
+@media (min-width:640px){.sheet{grid-template-columns:1fr 1fr;column-gap:clamp(32px,4vw,64px)}}
+@media (min-width:1000px){
+  .carte-body{grid-template-columns:minmax(0,8fr) minmax(0,4fr)}
+  .side{position:sticky;top:24px}
+}
+
+/* ---------- programme : l'écran qui défile ---------- */
+.prog{margin-top:clamp(120px,14vw,220px);background:var(--blue);color:var(--white);padding-block:clamp(80px,10vw,160px)}
+.prog h2{margin-bottom:clamp(36px,5vw,64px)}
+.songs{display:grid;gap:clamp(28px,3.6vw,48px)}
+.song{display:grid;gap:8px 40px}
+.song h3{font-size:var(--s-head);letter-spacing:-.035em;line-height:1}
+.song h3 .ln{width:auto}
+.song .on{animation:none}
+.song.in .on{animation:sing 1.4s var(--ease) .15s forwards}
+.song p{font-size:var(--s-body);max-width:52ch}
+.song .when{display:block;font-weight:700;color:var(--yellow)}
+.song.now h3{color:var(--yellow)}
+@media (min-width:900px){.song{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:end}}
+
+/* ---------- ambiance : tirages avec bandeau ---------- */
+.amb{padding-block:clamp(120px,14vw,220px) 0}
+.amb h2{margin-bottom:clamp(32px,4vw,48px);max-width:16ch}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tile img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform var(--t-slow) var(--ease)}
+.tile .ph{overflow:hidden;background:var(--ink)}
+.tile:hover img{transform:scale(1.05)}
+.strip{padding:12px 14px;min-height:96px;display:grid;gap:4px;font-size:var(--s-small);font-variant-numeric:tabular-nums}
+.strip b{font-size:var(--s-body);font-weight:800;letter-spacing:-.02em}
+.t1 .strip{background:var(--ink);color:var(--pink)}
+.t2 .strip{background:var(--yellow);color:var(--ink)}
+.t3 .strip{background:var(--blue);color:var(--white)}
+.t4 .strip{background:var(--paper);color:var(--ink)}
+@media (min-width:900px){.tiles{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}}
+
+/* ---------- privatiser : le ticket ---------- */
+.priv{padding-block:clamp(120px,14vw,220px) 0}
+.priv-grid{display:grid;gap:clamp(40px,5vw,80px);align-items:start}
 .priv-grid>*{min-width:0}
-@media (min-width:960px){.priv-grid{grid-template-columns:1fr 1fr;align-items:start}}
-.priv-intro p{margin-top:24px;max-width:44ch}
-.spaces{margin-top:36px;display:grid;gap:6px}
-.spaces li{display:grid;grid-template-columns:1fr auto;gap:16px;padding:14px 18px;background:var(--bg);font-weight:600;transition:background-color .25s,color .25s}
-.spaces li span:last-child{font-variant-numeric:tabular-nums;font-weight:400}
-.spaces li.fit{background:var(--mint);color:var(--on-field)}
-.spaces li.fit span:last-child{font-weight:600}
-.calc{background:var(--bg);padding:clamp(24px,3.5vw,44px);display:grid;gap:26px}
-.calc label{display:block;font-weight:600;margin-bottom:10px}
-.count{display:flex;align-items:center;gap:14px}
-.count output{font-family:"Anton",Impact,sans-serif;font-size:clamp(4rem,3rem + 4vw,6.5rem);line-height:1;min-width:2.3ch;color:var(--yellow);font-variant-numeric:tabular-nums}
-.pers{font-weight:600;font-size:var(--s-lead);margin-right:auto}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.step{width:56px;height:56px;border-radius:50%;border:0;background:var(--surface-2);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:background-color .2s,transform .2s var(--ease)}
-.step:hover{background:var(--pink);color:var(--on-field)}.step:active{transform:scale(.92)}
-.step svg{width:22px;height:22px}
-input[type=range]{width:100%;accent-color:var(--pink);height:32px}
-input[type=date],select{width:100%;min-height:52px;background:var(--surface);color:var(--ink);border:2px solid var(--surface-2);border-radius:0;padding:0 14px;font:400 1rem "Bricolage Grotesque",sans-serif;color-scheme:dark}
-input[type=date]:focus,select:focus{border-color:var(--mint);outline:none}
-.verdict{font-size:var(--s-lead);line-height:1.3;font-weight:600;min-height:3.9em}
-.verdict b{color:var(--mint);font-weight:800}
-.calc .row2{display:grid;gap:16px}
-@media (min-width:560px){.calc .row2{grid-template-columns:1fr 1fr}}
+.priv-l{display:grid;gap:28px}
+.priv-l>p{max-width:46ch}
+.field label,.field .lab{display:block;font-weight:700;margin-bottom:8px}
+.count{display:flex;align-items:center;gap:12px}
+.count output{font-size:var(--s-head);font-weight:800;line-height:1;min-width:2.2ch;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.count .pers{font-weight:700;font-size:var(--s-lead)}
+.step{width:48px;height:48px;border:0;touch-action:manipulation;background:var(--ink);color:var(--pink);cursor:pointer;display:grid;place-items:center;flex:none;transition-property:transform,background-color;transition-duration:var(--t-fast)}
+.step:hover{background:var(--blue);color:var(--white)}.step:active{transform:scale(.92)}
+.step svg{width:20px;height:20px}
+input[type=range]{width:100%;accent-color:var(--ink);height:32px;margin:6px 0 0}
+input[type=date],select{width:100%;min-height:52px;background:var(--paper);color:var(--ink);border:3px solid var(--paper);border-radius:0;padding:0 12px;font:400 var(--s-body) "Rubik",sans-serif}
+input[type=date]:focus,select:focus{border-color:var(--ink);outline:none}
+.row2{display:grid;gap:16px}
+@media (min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.addons li{display:flex;align-items:center;gap:12px;padding:10px 0}
+.addons .nm{flex:1;font-weight:500}
+.addons .nm span{display:block;font-size:var(--s-small);font-weight:400}
+.addons output{min-width:1.6ch;text-align:center;font-weight:800;font-size:var(--s-lead);font-variant-numeric:tabular-nums}
+.addons .step{width:44px;height:44px}
+.note{font-size:var(--s-small);font-weight:500}
 
-/* ---------- contact : l'adresse en lignes d'affiche ---------- */
-.contact{padding-block:clamp(120px,14vw,220px) 0}
-.contact h2{margin-bottom:clamp(28px,4vw,48px)}
-.rows a,.rows p{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;min-height:clamp(84px,10vw,150px);padding:0 var(--m) clamp(14px,1.8vw,26px);font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:clamp(2rem,1rem + 5vw,5.5rem);line-height:1;text-decoration:none}
-.rows > :nth-child(odd){background:var(--bg)}
-.rows > :nth-child(even){background:var(--surface)}
-.rows a{transition:background-color .2s,color .2s}
-.rows a:hover{background:var(--mint);color:var(--on-field)}
-.rows a svg{width:.6em;height:.6em;flex:none;margin-bottom:.12em;transition:transform .3s var(--ease)}
-.rows a:hover svg{transform:translate(.08em,-.08em)}
-.rows .greet{background:var(--pink)!important;color:var(--on-field)}
-.rows .greet:hover{background:var(--ink)!important}
+.slip{position:relative;background:var(--paper);padding:28px clamp(20px,3vw,32px) 36px;margin-bottom:14px;display:grid;gap:14px}
+.slip::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='14'%3E%3Cpath d='M0 0 10 14 20 0Z' fill='%23fff4f8'/%3E%3C/svg%3E") repeat-x}
+.slip h3{font-size:var(--s-lead);text-align:center;letter-spacing:-.02em}
+.slip .sub{text-align:center;font-size:var(--s-small);margin-top:-8px}
+.lines li{display:flex;justify-content:space-between;gap:16px;padding:5px 0;font-variant-numeric:tabular-nums}
+.lines li span:last-child{font-weight:700;text-align:right}
+.lines .fit{background:var(--yellow);margin-inline:-8px;padding-inline:8px}
+.lines .out{opacity:.62}
+.thick{height:4px;background:var(--ink)}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.total b{font-size:var(--s-h3);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.verdict{font-weight:700;font-size:var(--s-lead);line-height:1.3;min-height:2.5em}
+.slip .btn{width:100%}
+@media (min-width:960px){.priv-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}.slip-wrap{position:sticky;top:24px}}
 
-/* ---------- pied ---------- */
-.foot{background:var(--mint);color:var(--on-field);display:grid;grid-template-rows:auto clamp(80px,14vh,160px) auto;padding:40px var(--m) 20px}
-.foot-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;font-size:var(--s-small);line-height:1.5}
-@media (min-width:900px){.foot-cols{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.foot-cols li:first-child{font-weight:800}
-.foot-cols a:hover{text-decoration-color:var(--pink)}
-.foot-word{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;line-height:.82;font-size:clamp(4rem,19.6vw,24rem);letter-spacing:-.01em;margin-top:40px;white-space:nowrap}
-@media (max-width:699px){.foot-word{font-size:41vw;white-space:normal}}
-.legal{font-size:var(--s-small);margin-top:18px;max-width:75ch}
+/* ---------- venir : la carte de visite sur une photo ---------- */
+.venir{margin-top:clamp(120px,14vw,220px);position:relative;display:grid}
+.venir figure{grid-area:1/1;overflow:hidden;background:var(--ink);height:70svh;min-height:420px}
+.venir figure img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.card{grid-area:1/1;align-self:end;margin:0 var(--m) 0;transform:translateY(80px);background:var(--paper);padding:28px;display:grid;gap:18px;max-width:440px;position:relative}
+.card h2{font-size:var(--s-h3)}
+.hours{display:grid;gap:4px}
+.hours li{display:flex;justify-content:space-between;gap:16px;font-variant-numeric:tabular-nums}
+.hours li span:last-child{font-weight:700}
+.hours .today{background:var(--yellow);margin-inline:-8px;padding-inline:8px}
+.card .btn{width:100%}
+.card a.line{font-weight:700;text-decoration-thickness:2px;display:inline-block;padding-block:6px}
+@media (min-width:900px){
+  .venir figure{height:min(100svh,880px)}
+  .card{align-self:start;justify-self:start;margin:60px 0 0 var(--m);transform:none;width:420px}
+}
 
-/* entrées des sections */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.rv.in{opacity:1;transform:none}
-.no-js .rv{opacity:1;transform:none}
+/* ---------- pied : le dos de la carte ---------- */
+.foot{padding:clamp(140px,14vw,220px) var(--m) 24px}
+@media (min-width:900px){.foot{padding-top:clamp(120px,12vw,200px)}}
+.back{position:relative;background:var(--paper);padding:clamp(32px,4vw,56px) clamp(20px,4vw,56px) 24px;display:grid;gap:40px;margin-top:18px}
+.back::before{content:"";position:absolute;left:0;right:0;top:-18px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='18'%3E%3Cpath d='M0 18A18 18 0 0 1 36 18Z' fill='%23fff4f8'/%3E%3C/svg%3E") repeat-x}
+.back-grid{display:grid;gap:40px}
+.signoff{font-size:var(--s-h3);margin-bottom:16px}
+.back p{max-width:44ch}
+.addr{display:grid;gap:12px;font-size:var(--s-body);align-content:start;position:relative;padding-right:96px}
+.addr a{font-weight:500;padding-block:6px}
+.stamp{position:absolute;top:0;right:0;width:88px;background:var(--white);padding:6px}
+.stamp img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.imprint{font-size:var(--s-small);max-width:90ch}
+.foot-word{font-weight:800;letter-spacing:-.05em;line-height:.8;font-size:clamp(3.6rem,15.8vw,17rem);white-space:nowrap;margin-top:48px;text-align:center}
+@media (min-width:900px){.back-grid{grid-template-columns:1fr 1fr}}
+
+/* entrées : titre, puis texte, puis image, une seule fois */
+.js .rv>*{opacity:0;transform:translateY(24px);transition-property:opacity,transform;transition-duration:.7s;transition-timing-function:var(--ease)}
+.js .rv.in>*{opacity:1;transform:none}
+.js .rv.in>*:nth-child(2){transition-delay:80ms}
+.js .rv.in>*:nth-child(3){transition-delay:160ms}
+.js .rv.in>*:nth-child(4){transition-delay:240ms}
+.js .rv.in>*:nth-child(5){transition-delay:320ms}
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
+  *,*::before,*::after{animation:none!important;transition-duration:.01s!important;transition-delay:0s!important}
+  .ln .on{clip-path:none}
+  .song .on{clip-path:inset(0 100% 0 0)}
+  .js .rv>*{opacity:1;transform:none}
 }
 </style>
 </head>
-<body class="no-js">
+<body>
 <a class="skip" href="#carte">Aller à la carte</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<header class="hero">
-  <div class="hero-pic"><img src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=2000&q=70&auto=format&fit=crop" alt="Comptoir de bar éclairé au néon rouge, silhouettes de clients au premier plan" width="2000" height="1333" fetchpriority="high"></div>
-  <nav class="nav" aria-label="Navigation principale">
-    <span class="status" id="status"><i></i><span>Lun–sam, 17&nbsp;h – 2&nbsp;h</span></span>
+<header class="bar">
+  <a class="mark" translate="no" href="#top" aria-label="Le Dirty Queen, haut de page">Dirty Queen</a>
+  <nav aria-label="Navigation principale">
     <ul>
-      <li><a href="#carte">Carte</a></li>
-      <li><a href="#soirees">Soirées</a></li>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#programme">Le programme</a></li>
       <li><a href="#privatiser">Privatiser</a></li>
+      <li><a href="#venir">Venir</a></li>
     </ul>
   </nav>
-  <h1><span class="l1"><span>Dirty</span></span><span class="l2"><span>Queen</span></span></h1>
-    <div class="hero-mid">
-      <p>Bar à gin, bières craft et karaoké en cave voûtée. 12 rue de Paradis, Paris 10e.</p>
-      <div class="acts">
-        <a class="btn btn-pink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Dirty%20Queen%2C%2012%20rue%20de%20Paradis%2C%2075010%20Paris"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
-        <a class="btn btn-ink" href="#privatiser">Réserver pour un groupe</a>
-      </div>
-    </div>
+  <a class="btn btn-ink" href="tel:+33142634923"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg><span class="num">01 42 63 49 23</span></a>
 </header>
 
-<main>
+<main id="top">
+<section class="hero" aria-labelledby="t-hero">
+  <div class="screen on-blue">
+    <h1 id="t-hero"><span class="ln">Dirty Queen,<span class="on" aria-hidden="true">Dirty Queen,</span></span><span class="ln">bar karaoké<span class="on" aria-hidden="true">bar karaoké</span></span></h1>
+    <p class="lede">Gins, cocktails maison et bières artisanales au comptoir. Micro, écran et baby-foot en libre accès, sous les néons et la boule à facettes.</p>
+    <div>
+      <div class="hh-row num">
+        <div><b>4&nbsp;€</b><span>la pinte de blonde</span></div>
+        <div><b>6&nbsp;€</b><span>le cocktail</span></div>
+        <div><b>6&nbsp;€</b><span>le gin tonic</span></div>
+      </div>
+      <p class="hh-cap">En happy hour, du lundi au samedi de 17&nbsp;h à 20&nbsp;h.</p>
+    </div>
+    <div class="acts">
+      <a class="btn btn-yellow" href="#privatiser">Réserver pour un groupe</a>
+      <a class="btn btn-paper" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Dirty%20Queen%2C%2012%20rue%20de%20Paradis%2C%2075010%20Paris"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+      <p class="rating"><b class="num">4,9/5</b><span>sur 392 avis <a href="https://www.privateaser.com/lieu/40207-le-dirty-queen">Privateaser</a></span></p>
+    </div>
+    <div class="screen-foot">
+      <span>12 rue de Paradis · Paris 10e · Gare de l’Est</span>
+      <span class="status" id="status" aria-live="polite"><i></i><span>Lun – sam, 17&nbsp;h – 2&nbsp;h</span></span>
+    </div>
+  </div>
+  <div class="pics">
+    <figure class="p1"><img src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=1100&h=1400&fit=crop&q=70&auto=format" alt="Comptoir de bar sous un néon, étagères de bouteilles, clients en contre-jour" width="1100" height="1400" fetchpriority="high"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1559424452-eeb3a13ffe2b?w=800&h=700&fit=crop&q=70&auto=format" alt="Boule à facettes suspendue dans la pénombre" width="800" height="700"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=700&fit=crop&q=70&auto=format" alt="Micro argenté sur pied devant une salle floue" width="800" height="700"></figure>
+  </div>
+</section>
+
 <section class="carte wrap" id="carte" aria-labelledby="t-carte">
   <div class="carte-head rv">
-    <h2 id="t-carte">La carte</h2>
-    <p>Pintes, cocktails, gin tonic et de quoi grignoter. Du lundi au samedi, l'happy hour court de 17&nbsp;h à 20&nbsp;h : les prix en jaune baissent. <span id="hhnote"></span></p>
-    <div class="hhbox">
-      <div class="toggle" role="group" aria-label="Afficher les prix">
-        <button type="button" data-mode="hh" aria-pressed="false">Happy hour</button>
-        <button type="button" data-mode="std" aria-pressed="true">Après 20&nbsp;h</button>
-      </div>
+    <h2 id="t-carte">La carte du comptoir</h2>
+    <div class="ctl">
+    <p>Pintes, gin tonic, cocktails et de quoi grignoter. De 17&nbsp;h à 20&nbsp;h, les prix surlignés baissent. <span id="hhnote"></span></p>
+    <div class="toggle" role="group" aria-label="Afficher les prix">
+      <button type="button" data-mode="hh" aria-pressed="false">Happy hour</button>
+      <button type="button" data-mode="std" aria-pressed="true">Après 20&nbsp;h</button>
+    </div>
     </div>
   </div>
-
-  <div class="menu" id="menu">
-    <div class="col">
-      <div class="menu-group rv">
-        <h3>Bières pression</h3>
-        <ul>
-          <li><span>Pinte de blonde</span><span class="p has-hh" data-hh="4" data-std="5"></span></li>
-          <li><span>Pinte d'IPA</span><span class="p has-hh" data-hh="6,50" data-std="7,50"></span></li>
-          <li><span>Pinte de bière belge</span><span class="p has-hh" data-hh="6,50" data-std="8"></span></li>
-        </ul>
-      </div>
-      <div class="menu-group rv">
-        <h3>Cocktails et gin</h3>
-        <ul>
-          <li><span>Cocktail</span><span class="p has-hh" data-hh="6" data-std="8"></span></li>
-          <li><span>Cocktail sans alcool</span><span class="p has-hh" data-hh="5" data-std="6"></span></li>
-          <li><span>Gin tonic</span><span class="p has-hh" data-hh="6" data-std="10"></span></li>
-          <li><span>Fruity Pinky, création maison</span><span class="p" data-std="7"></span></li>
-          <li><span>The Substance, création maison</span><span class="p" data-std="9"></span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="col">
-      <div class="menu-group rv">
-        <h3>Pour la tablée</h3>
-        <ul>
-          <li><span>Litre de cocktail</span><span class="p" data-std="30"></span></li>
-          <li><span>Mètre de shots</span><span class="p" data-std="30"></span></li>
-          <li><span>Shot</span><span class="p" data-std="3,50"></span></li>
-          <li><span>Verre de vin</span><span class="p" data-std="5"></span></li>
-          <li><span>Bouteille de vin</span><span class="p" data-std="27"></span></li>
-        </ul>
-      </div>
-      <div class="menu-group rv">
-        <h3>À grignoter</h3>
-        <ul>
-          <li><span>Nachos, salsa ou cheddar</span><span class="p" data-std="4"></span></li>
-          <li><span>Nachos, guacamole</span><span class="p" data-std="5"></span></li>
-          <li><span>Assiette de falafels</span><span class="p" data-std="8"></span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cave" aria-labelledby="t-cave">
-  <div class="wrap rv">
-    <h2 id="t-cave">En haut le bar, en bas la cave</h2>
-    <div class="cave-caps">
-      <p>Au rez-de-chaussée : néons, boule à facettes, musique des années 80 et le baby-foot.</p>
-      <p>Au sous-sol, une cave voûtée avec écran, micros de karaoké et ta propre playlist si tu veux.</p>
-    </div>
-  </div>
-  <figure class="rv"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=2400&q=70&auto=format&fit=crop" alt="Mains sur des platines de DJ sous une lumière rose et violette" width="2400" height="1029" loading="lazy"></figure>
-</section>
-
-<section class="nights" id="soirees" aria-labelledby="t-nuits">
-  <h2 class="wrap rv" id="t-nuits">Ce qui se passe ici</h2>
-  <div class="band b-yellow rv">
-    <h3>Happy hour</h3>
-    <p><span class="when">Lundi – samedi, 17&nbsp;h – 20&nbsp;h.</span> Pinte de blonde à 4&nbsp;€, cocktails à 6&nbsp;€, gin tonic à 6&nbsp;€.</p>
-  </div>
-  <div class="band b-pink rv">
-    <h3>Viewing party Drag Race</h3>
-    <p><span class="when">Les jeudis de l'été 2026.</span> La saison 4 de Drag Race France sur grand écran, avec shows drag et jeux entre les épisodes.</p>
-  </div>
-  <div class="band b-mint rv">
-    <h3>Karaoké au sous-sol</h3>
-    <p><span class="when">Dans la cave voûtée.</span> Écran, micros, et la cave se privatise pour 25 à 35&nbsp;personnes.</p>
-  </div>
-  <div class="band b-ink rv">
-    <h3>DJ sets et baby-foot</h3>
-    <p><span class="when">En salle.</span> Une playlist qui suit la salle, et le baby-foot gratuit pour régler les comptes.</p>
-  </div>
-</section>
-
-<section class="gal wrap" aria-label="Ambiance en images">
-  <figure class="g1 rv"><img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=1100&q=70&auto=format&fit=crop" alt="Barman versant un cocktail sous une lumière violette" width="1100" height="1467" loading="lazy"><figcaption>Un cocktail au shaker, lumière violette.</figcaption></figure>
-  <figure class="g2 rv"><img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=1300&q=70&auto=format&fit=crop" alt="Cocktail sombre aux mûres et agrumes séchés" width="1300" height="1040" loading="lazy"><figcaption>Mûres, citron séché, glace pilée.</figcaption></figure>
-  <figure class="g3 rv"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1400&q=70&auto=format&fit=crop" alt="Trois cocktails alignés sur un comptoir en bois" width="1400" height="933" loading="lazy"><figcaption>Trois verres pour commencer la soirée.</figcaption></figure>
-  <figure class="g4 rv"><img src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=900&q=70&auto=format&fit=crop" alt="Bouteilles en contre-jour sur fond rouge et orange" width="900" height="1125" loading="lazy"><figcaption>Le mur de bouteilles en contre-jour.</figcaption></figure>
-</section>
-
-<section class="priv" id="privatiser" aria-labelledby="t-priv">
-  <div class="wrap priv-grid">
-    <div class="priv-intro rv">
-      <h2 id="t-priv">Anniversaire, pot, EVJF ?</h2>
-      <p>Le bar compte 80 places assises sur trois espaces. On réserve quelques tables ou on privatise un espace jusqu'à 2&nbsp;h. Gâteau d'anniversaire sur demande.</p>
-      <ul class="spaces" id="spaces">
-        <li data-min="8" data-max="100"><span>Quelques tables</span><span>8 à 100&nbsp;pers.</span></li>
-        <li data-min="10" data-max="30"><span>L'entrée</span><span>10 à 30&nbsp;pers.</span></li>
-        <li data-min="15" data-max="30"><span>Le fond de la salle</span><span>15 à 30&nbsp;pers.</span></li>
-        <li data-min="25" data-max="35"><span>La cave, karaoké</span><span>25 à 35&nbsp;pers.</span></li>
-      </ul>
-    </div>
-    <form class="calc rv" id="calc" action="mailto:melanie@dirty-queen.bar" method="get">
+  <div class="carte-body">
+    <div class="sheet rv" id="menu">
       <div>
-        <label for="n" class="sr">Nombre de personnes</label>
-        <div class="count">
-          <button type="button" class="step" data-d="-1" aria-label="Une personne de moins"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14"/></svg></button>
-          <output id="nout" for="n" class="num">20</output><span class="pers">personnes</span>
-          <button type="button" class="step" data-d="1" aria-label="Une personne de plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-        </div>
-        <input type="range" id="n" min="2" max="100" value="20" aria-describedby="verdict">
+        <h3>À la pression</h3>
+        <ul class="items">
+          <li><span class="n">Pinte de blonde</span><span class="lead"></span><span class="p has-hh" data-hh="4" data-std="5">5&nbsp;€</span></li>
+          <li><span class="n">Pinte d’IPA</span><span class="lead"></span><span class="p has-hh" data-hh="6,50" data-std="7,50">7,50&nbsp;€</span></li>
+          <li><span class="n">Pinte de bière belge</span><span class="lead"></span><span class="p has-hh" data-hh="6,50" data-std="8">8&nbsp;€</span></li>
+        </ul>
       </div>
-      <p class="verdict" id="verdict" aria-live="polite"></p>
-      <div class="row2">
-        <div><label for="d">Quel soir ?</label><input type="date" id="d"></div>
-        <div><label for="o">L'occasion</label>
-          <select id="o"><option>Anniversaire</option><option>Afterwork</option><option>Pot de départ</option><option>EVJF / EVG</option><option>Soirée d'entreprise</option><option>Autre</option></select></div>
+      <div>
+        <h3>Gin et cocktails</h3>
+        <ul class="items">
+          <li><span class="n">Gin tonic</span><span class="lead"></span><span class="p has-hh" data-hh="6" data-std="10">10&nbsp;€</span></li>
+          <li><span class="n">Cocktail</span><span class="lead"></span><span class="p has-hh" data-hh="6" data-std="8">8&nbsp;€</span></li>
+          <li><span class="n">Cocktail sans alcool</span><span class="lead"></span><span class="p has-hh" data-hh="5" data-std="6">6&nbsp;€</span></li>
+          <li><span class="n">Fruity Pinky</span><span class="lead"></span><span class="p" data-std="7">7&nbsp;€</span></li>
+          <li><span class="n">The Substance</span><span class="lead"></span><span class="p" data-std="9">9&nbsp;€</span></li>
+        </ul>
       </div>
-      <a class="btn btn-pink" id="send" href="mailto:melanie@dirty-queen.bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Envoyer la demande</a>
-    </form>
+      <div>
+        <h3>Pour la tablée</h3>
+        <ul class="items">
+          <li><span class="n">Litre de cocktail</span><span class="lead"></span><span class="p" data-std="30">30&nbsp;€</span></li>
+          <li><span class="n">Mètre de shots</span><span class="lead"></span><span class="p" data-std="30">30&nbsp;€</span></li>
+          <li><span class="n">Shot</span><span class="lead"></span><span class="p" data-std="3,50">3,50&nbsp;€</span></li>
+          <li><span class="n">Verre de vin</span><span class="lead"></span><span class="p" data-std="5">5&nbsp;€</span></li>
+          <li><span class="n">Bouteille de vin</span><span class="lead"></span><span class="p" data-std="27">27&nbsp;€</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>À grignoter</h3>
+        <ul class="items">
+          <li><span class="n">Nachos, salsa ou cheddar</span><span class="lead"></span><span class="p" data-std="4">4&nbsp;€</span></li>
+          <li><span class="n">Nachos, guacamole</span><span class="lead"></span><span class="p" data-std="5">5&nbsp;€</span></li>
+          <li><span class="n">Assiette de falafels</span><span class="lead"></span><span class="p" data-std="8">8&nbsp;€</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side rv">
+      <figure><img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=900&h=1125&fit=crop&q=70&auto=format" alt="Un barman verse un cocktail sous une lumière violette" width="900" height="1125" loading="lazy"></figure>
+      <p>Fruity Pinky et The Substance sont les deux créations de la maison. Le litre de cocktail et le mètre de shots se partagent à la table.</p>
+    </div>
   </div>
 </section>
 
-<section class="contact" id="contact" aria-labelledby="t-contact">
-  <h2 class="wrap rv" id="t-contact">Passer nous voir</h2>
-  <div class="rows">
-    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Dirty%20Queen%2C%2012%20rue%20de%20Paradis%2C%2075010%20Paris"><span>12 rue de Paradis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-    <p><span>75010 · Gare de l'Est</span></p>
-    <p><span class="num">Lun–sam 17&nbsp;h – 2&nbsp;h</span></p>
-    <a href="tel:+33142634923"><span class="num">01 42 63 49 23</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-    <a class="greet" href="mailto:melanie@dirty-queen.bar"><span>Écrire au bar</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<section class="prog on-blue" id="programme" aria-labelledby="t-prog">
+  <div class="wrap">
+    <h2 id="t-prog" class="rv"><span>Au programme</span></h2>
+    <ol class="songs" id="songs">
+      <li class="song" data-k="hh">
+        <h3><span class="ln">Happy hour<span class="on" aria-hidden="true">Happy hour</span></span></h3>
+        <p><span class="when">Lundi – samedi, 17&nbsp;h – 20&nbsp;h</span>Pinte de blonde à 4&nbsp;€, cocktail et gin tonic à 6&nbsp;€, cocktail sans alcool à 5&nbsp;€.</p>
+      </li>
+      <li class="song">
+        <h3><span class="ln">Karaoké<span class="on" aria-hidden="true">Karaoké</span></span></h3>
+        <p><span class="when">Gratuit, en libre accès</span>Micro, sono et projection sur écran. On peut aussi brancher sa propre musique.</p>
+      </li>
+      <li class="song">
+        <h3><span class="ln">Baby-foot et jeux<span class="on" aria-hidden="true">Baby-foot et jeux</span></span></h3>
+        <p><span class="when">Gratuits</span>Le baby-foot et les jeux de société, pour les soirs où l’on chante moins.</p>
+      </li>
+      <li class="song">
+        <h3><span class="ln">Drag Race France<span class="on" aria-hidden="true">Drag Race France</span></span></h3>
+        <p><span class="when">Été 2026, tous les jeudis</span>Viewing party de la saison&nbsp;4 : l’épisode sur écran, des shows drag et des jeux.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="amb wrap" aria-labelledby="t-amb">
+  <h2 id="t-amb" class="rv"><span>Années 80 à 00, néons compris</span></h2>
+  <ul class="tiles rv">
+    <li class="tile t1"><div class="ph"><img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=700&h=875&fit=crop&q=70&auto=format" alt="Micro sur pied sous des lumières bleues de soirée" width="700" height="875" loading="lazy"></div><div class="strip"><b>Karaoké</b><span>Micro · sono · écran</span><span>Gratuit</span></div></li>
+    <li class="tile t2"><div class="ph"><img src="https://images.unsplash.com/photo-1765219040215-1b06d4a75f8f?w=700&h=875&fit=crop&q=70&auto=format" alt="Joueurs rouges et bleus d'un baby-foot, vus de près" width="700" height="875" loading="lazy"></div><div class="strip"><b>Baby-foot</b><span>En libre accès</span><span>Gratuit</span></div></li>
+    <li class="tile t3"><div class="ph"><img src="https://images.unsplash.com/photo-1780766382507-be5988d012f8?w=700&h=875&fit=crop&q=70&auto=format" alt="Silhouette de femme en néon rose derrière une vitre" width="700" height="875" loading="lazy"></div><div class="strip"><b>Néons</b><span>Boule à facettes</span><span>Musique des années 80 à 00</span></div></li>
+    <li class="tile t4"><div class="ph"><img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=700&h=875&fit=crop&q=70&auto=format" alt="Cocktail sombre aux mûres et agrumes séchés" width="700" height="875" loading="lazy"></div><div class="strip"><b>Gins et cocktails</b><span>Cocktail 8&nbsp;€ · 6&nbsp;€ en happy hour</span><span>Gin tonic 10&nbsp;€ · 6&nbsp;€</span></div></li>
+  </ul>
+</section>
+
+<section class="priv wrap" id="privatiser" aria-labelledby="t-priv">
+  <div class="priv-grid">
+    <form class="priv-l rv" id="calc" onsubmit="return false">
+      <h2 id="t-priv">Venir à plusieurs</h2>
+      <p>Le bar compte 80 places assises. On réserve des tables de 8 à 100 personnes, ou l’on privatise l’entrée, le fond de la salle ou la cave voûtée. Gâteau d’anniversaire sur demande.</p>
+      <div class="field">
+        <label for="n" class="sr">Combien serez-vous ?</label>
+        <div class="count">
+          <button type="button" class="step" data-d="-1" aria-label="Une personne de moins"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+          <output id="nout" for="n">20</output><span class="pers">personnes</span>
+          <button type="button" class="step" data-d="1" aria-label="Une personne de plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+        </div>
+        <input type="range" id="n" name="personnes" min="2" max="100" value="20">
+      </div>
+      <div class="row2">
+        <div class="field"><label for="d">Quel soir&nbsp;?</label><input type="date" id="d" name="date" aria-describedby="dnote"></div>
+        <div class="field"><label for="o">L’occasion</label>
+          <select id="o" name="occasion"><option>Anniversaire</option><option>Afterwork</option><option>Pot de départ</option><option>EVJF / EVG</option><option>Soirée d’entreprise</option><option>Autre</option></select></div>
+      </div>
+      <p class="note" id="dnote" aria-live="polite">Réservations du lundi au vendredi dès 17&nbsp;h, le samedi dès 19&nbsp;h.</p>
+      <div class="field">
+        <span class="lab" id="t-add">Pour la table</span>
+        <ul class="addons" aria-labelledby="t-add">
+          <li data-name="Litre de cocktail" data-price="30"><span class="nm">Litre de cocktail<span>30&nbsp;€</span></span><button type="button" class="step" data-a="-1" aria-label="Un litre de cocktail de moins"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14"/></svg></button><output aria-live="polite">0</output><button type="button" class="step" data-a="1" aria-label="Un litre de cocktail de plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></li>
+          <li data-name="Mètre de shots" data-price="30"><span class="nm">Mètre de shots<span>30&nbsp;€</span></span><button type="button" class="step" data-a="-1" aria-label="Un mètre de shots de moins"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14"/></svg></button><output aria-live="polite">0</output><button type="button" class="step" data-a="1" aria-label="Un mètre de shots de plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></li>
+          <li data-name="Assiette de falafels" data-price="8"><span class="nm">Assiette de falafels<span>8&nbsp;€</span></span><button type="button" class="step" data-a="-1" aria-label="Une assiette de falafels de moins"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14"/></svg></button><output aria-live="polite">0</output><button type="button" class="step" data-a="1" aria-label="Une assiette de falafels de plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></li>
+          <li data-name="Nachos, guacamole" data-price="5"><span class="nm">Nachos, guacamole<span>5&nbsp;€</span></span><button type="button" class="step" data-a="-1" aria-label="Des nachos guacamole en moins"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14"/></svg></button><output aria-live="polite">0</output><button type="button" class="step" data-a="1" aria-label="Des nachos guacamole en plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></li>
+        </ul>
+      </div>
+    </form>
+    <div class="slip-wrap rv">
+      <div class="slip" aria-labelledby="t-slip">
+        <h3 id="t-slip">Ticket du Dirty Queen</h3>
+        <p class="sub">12 rue de Paradis · 75010</p>
+        <p class="verdict" id="verdict" aria-live="polite">20 personnes&nbsp;: des tables, l’entrée ou le fond de la salle.</p>
+        <ul class="lines" id="spaces">
+          <li data-min="8" data-max="100" data-say="des tables"><span>Tables réservées</span><span>8 à 100</span></li>
+          <li data-min="10" data-max="30" data-say="l’entrée"><span>L’entrée</span><span>10 à 30</span></li>
+          <li data-min="15" data-max="30" data-say="le fond de la salle"><span>Le fond de la salle</span><span>15 à 30</span></li>
+          <li data-min="25" data-max="35" data-say="la cave voûtée"><span>La cave voûtée</span><span>25 à 35</span></li>
+        </ul>
+        <div class="thick"></div>
+        <ul class="lines" id="picked"><li><span>Rien de commandé pour l’instant</span><span></span></li></ul>
+        <div class="thick"></div>
+        <div class="total"><span>Pour la table</span><b id="total">0&nbsp;€</b></div>
+        <a class="btn btn-ink" id="send" href="mailto:melanie@dirty-queen.bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="m3 7 9 6 9-6"/></svg>Envoyer la demande</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="venir" id="venir" aria-labelledby="t-venir">
+  <figure><img src="https://images.unsplash.com/photo-1788045367011-dd69175de012?w=2000&h=1300&fit=crop&q=70&auto=format" alt="Enseigne verticale « Karaoke » en néon rouge dans la nuit" width="2000" height="1300" loading="lazy"></figure>
+  <div class="card">
+    <h2 id="t-venir">Venir rue de Paradis</h2>
+    <p>12 rue de Paradis, 75010 Paris<br>Métro Gare de l’Est (4, 5, 7), à 5&nbsp;minutes à pied</p>
+    <ul class="hours num" id="hours">
+      <li data-d="1-6"><span>Lundi – samedi</span><span>17&nbsp;h – 2&nbsp;h</span></li>
+      <li data-d="hh"><span>Happy hour</span><span>17&nbsp;h – 20&nbsp;h</span></li>
+      <li data-d="0"><span>Dimanche</span><span>Fermé</span></li>
+    </ul>
+    <p><a class="line num" href="tel:+33142634923">01 42 63 49 23</a><br><a class="line" href="mailto:melanie@dirty-queen.bar">melanie@dirty-queen.bar</a></p>
+    <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Dirty%20Queen%2C%2012%20rue%20de%20Paradis%2C%2075010%20Paris"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire Google Maps</a>
   </div>
 </section>
 </main>
 
 <footer class="foot">
-  <div class="foot-cols">
-    <ul><li>Le Dirty Queen</li><li>12 rue de Paradis</li><li>75010 Paris</li><li>Métro Gare de l'Est (4, 5, 7)</li></ul>
-    <ul><li>Horaires</li><li>Lundi – samedi, 17&nbsp;h – 2&nbsp;h</li><li>Happy hour 17&nbsp;h – 20&nbsp;h</li><li>Fermé le dimanche</li></ul>
-    <ul><li>Suivre le bar</li><li><a href="https://www.instagram.com/ledirtyqueen/">Instagram @ledirtyqueen</a></li><li><a href="https://www.facebook.com/ledirtyqueen/">Facebook</a></li></ul>
-    <ul><li>Contact</li><li><a href="tel:+33142634923">01 42 63 49 23</a></li><li><a href="mailto:melanie@dirty-queen.bar">melanie@dirty-queen.bar</a></li><li><a href="https://www.privateaser.com/lieu/40207-le-dirty-queen">Réserver sur Privateaser</a></li></ul>
+  <div class="back">
+    <div class="back-grid">
+      <div>
+        <h2 class="signoff">À ce soir, rue de Paradis</h2>
+        <p>Le bar ouvre à 17&nbsp;h du lundi au samedi. Pour un groupe, un anniversaire ou la cave, un e-mail à Mélanie suffit.</p>
+      </div>
+      <div class="addr">
+        <figure class="stamp"><img src="https://images.unsplash.com/photo-1784151100421-df2f1e19ee48?w=240&h=320&fit=crop&q=70&auto=format" alt="" width="240" height="320" loading="lazy"></figure>
+        <a href="mailto:melanie@dirty-queen.bar">melanie@dirty-queen.bar</a>
+        <a class="num" href="tel:+33142634923">01 42 63 49 23</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Dirty%20Queen%2C%2012%20rue%20de%20Paradis%2C%2075010%20Paris">12 rue de Paradis, 75010 Paris</a>
+        <a href="https://www.privateaser.com/lieu/40207-le-dirty-queen">Réserver sur Privateaser</a>
+      </div>
+    </div>
+    <p class="imprint">Démo réalisée par Raul Hatos — site non officiel. Prix, capacités et horaires repris de la page Privateaser du bar. Photos d’ambiance&nbsp;: Unsplash, elles ne montrent pas le bar. L’abus d’alcool est dangereux pour la santé, à consommer avec modération.</p>
   </div>
-  <div></div>
-  <div>
-    <p class="foot-word" aria-hidden="true">Dirty Queen</p>
-    <p class="legal">Démo réalisée par Raul Hatos — site non officiel. Photos d'ambiance : Unsplash. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
-  </div>
+  <p class="foot-word" translate="no" aria-hidden="true">Dirty Queen</p>
 </footer>
 
 <script>
-document.body.classList.remove('no-js');
+document.documentElement.classList.add('js');
 (function(){
   // heure de Paris, quel que soit le fuseau du visiteur
   const parts=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
   const get=t=>parts.find(p=>p.type===t).value;
   const wd=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'].indexOf(get('weekday'));
-  const h=+get('hour')%24, mi=+get('minute'), t=h*60+mi;
-  // la nuit de 0 h à 2 h appartient à la veille : ouverte si la veille était lun–sam
-  const prev=(wd+6)%7;
-  const openEvening=wd>=1&&wd<=6&&t>=17*60;
-  const openLate=t<120&&prev>=1&&prev<=6;
+  const t=(+get('hour')%24)*60+(+get('minute'));
+  const prev=(wd+6)%7; // de 0 h à 2 h, c'est encore la soirée de la veille
+  const openEve=wd>=1&&wd<=6&&t>=17*60, openLate=t<120&&prev>=1&&prev<=6;
   const hh=wd>=1&&wd<=6&&t>=17*60&&t<20*60;
-  const st=document.getElementById('status'), lab=st.querySelector('span');
   const fmt=m=>m>=60?Math.floor(m/60)+' h '+String(m%60).padStart(2,'0'):m+' min';
-  if(hh){st.className='status hh';lab.textContent='Happy hour · '+fmt(20*60-t)}
-  else if(openEvening||openLate){st.className='status open';lab.textContent='Ouvert jusqu’à 2 h'}
-  else{st.className='status';lab.textContent=wd===0?'Fermé le dimanche · ouvre lundi 17 h':'Fermé · ouvre à 17 h'}
+  const st=document.getElementById('status'), lab=st.querySelector('span');
+  if(hh){st.className='status hh';lab.textContent='Happy hour, encore '+fmt(20*60-t)}
+  else if(openEve||openLate){st.className='status open';lab.textContent='Ouvert jusqu’à 2 h'}
+  else lab.textContent=(wd===0||(wd===6&&t>=120))?'Fermé · rouvre lundi à 17 h':'Fermé · ouvre à 17 h';
+  const hrs=document.querySelectorAll('#hours li');
+  hrs.forEach(li=>{const d=li.dataset.d;if((d==='1-6'&&wd>=1&&wd<=6)||(d==='0'&&wd===0)||(d==='hh'&&hh))li.classList.add('today')});
+  if(hh) document.querySelector('.song[data-k="hh"]').classList.add('now');
 
-  // prix : happy hour ou tarif normal, réglé sur l'heure de Paris
-  const menu=document.getElementById('menu'), note=document.getElementById('hhnote');
-  const btns=document.querySelectorAll('.toggle button');
+  // la carte : happy hour ou tarif normal
+  const menu=document.getElementById('menu'), btns=document.querySelectorAll('.toggle button');
   function show(mode){
     document.body.classList.toggle('is-hh',mode==='hh');
     btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===mode));
-    menu.querySelectorAll('.p').forEach(p=>{
-      const s=p.dataset.std, v=p.dataset.hh;
-      p.innerHTML=(mode==='hh'&&v)?'<del>'+s+'\u00a0€</del>'+v+'\u00a0€':s+'\u00a0€';
-    });
+    menu.querySelectorAll('.p').forEach(p=>{const s=p.dataset.std,v=p.dataset.hh;p.innerHTML=(mode==='hh'&&v)?'<del>'+s+' €</del>'+v+' €':s+' €'});
   }
   btns.forEach(b=>b.addEventListener('click',()=>show(b.dataset.mode)));
   show(hh?'hh':'std');
-  note.textContent=hh?'C’est maintenant.':'';
+  if(hh) document.getElementById('hhnote').textContent='C’est en ce moment.';
 
-  // privatisation : nombre de personnes -> espaces possibles -> e-mail pré-rempli
+  // le ticket : nombre de personnes -> espaces possibles -> commande -> e-mail pré-rempli
   const n=document.getElementById('n'), out=document.getElementById('nout'), verdict=document.getElementById('verdict');
-  const items=[...document.querySelectorAll('#spaces li')], d=document.getElementById('d'), o=document.getElementById('o'), send=document.getElementById('send');
+  const spaces=[...document.querySelectorAll('#spaces li')], d=document.getElementById('d'), o=document.getElementById('o');
+  const dnote=document.getElementById('dnote'), send=document.getElementById('send'), picked=document.getElementById('picked'), total=document.getElementById('total');
+  const addons=[...document.querySelectorAll('.addons li')]; const qty=addons.map(()=>0);
+  const eur=v=>v.toLocaleString('fr-FR')+' €';
   function upd(){
     const v=+n.value; out.textContent=v;
-    const fit=items.filter(li=>v>=+li.dataset.min&&v<=+li.dataset.max);
-    items.forEach(li=>li.classList.toggle('fit',fit.includes(li)));
-    const names=fit.slice(1).map(li=>li.firstElementChild.textContent.toLowerCase());
-    if(v<8) verdict.innerHTML='À moins de 8, pas besoin de réserver : <b>venez directement</b>.';
-    else if(!names.length) verdict.innerHTML='À '+v+', on vous réserve <b>des tables</b> dans le bar.';
-    else verdict.innerHTML='À '+v+', on peut aussi vous privatiser <b>'+names.join('</b> ou <b>')+'</b>.';
-    const date=d.value?new Date(d.value+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}):'(date à préciser)';
-    const subj=o.value+' – '+v+' personnes';
-    const body='Bonjour Mélanie,\n\nNous aimerions venir au Dirty Queen à '+v+' personnes, le '+date+', pour un(e) '+o.value.toLowerCase()+'.\n'+(names.length?'Espace qui nous intéresse : '+names.join(' ou ')+'.\n':'')+'\nPouvez-vous nous dire ce qui est possible ?\n\nMerci !';
-    send.href='mailto:melanie@dirty-queen.bar?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+    const fit=spaces.filter(li=>v>=+li.dataset.min&&v<=+li.dataset.max);
+    spaces.forEach(li=>{li.classList.toggle('fit',fit.includes(li));li.classList.toggle('out',!fit.includes(li))});
+    const names=fit.map(li=>li.dataset.say);
+    verdict.textContent=v<8?'Moins de 8 : pas besoin de réserver, venez directement.':v+' personnes : '+(names.length>1?names.slice(0,-1).join(', ')+' ou '+names.at(-1):names[0])+'.';
+    let sum=0; const rows=[];
+    addons.forEach((li,i)=>{li.querySelector('output').textContent=qty[i];if(qty[i]){const p=qty[i]*+li.dataset.price;sum+=p;rows.push([qty[i]+' × '+li.dataset.name,eur(p)])}});
+    picked.innerHTML=rows.length?rows.map(r=>'<li><span>'+r[0]+'</span><span>'+r[1]+'</span></li>').join(''):'<li><span>Rien de commandé pour l’instant</span><span></span></li>';
+    total.textContent=eur(sum);
+    let date='(date à préciser)';
+    if(d.value){const dt=new Date(d.value+'T12:00');date=dt.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});const k=dt.getDay();
+      dnote.textContent=k===0?'Le bar est fermé le dimanche : choisissez un autre soir.':k===6?'Le samedi, les réservations commencent à 19 h.':'Ce soir-là, réservation possible dès 17 h.'}
+    const body='Bonjour Mélanie,\n\nNous aimerions venir au Dirty Queen à '+v+' personnes, le '+date+', pour : '+o.value.toLowerCase()+'.\n'+(fit.length&&v>=8?'Espaces possibles : '+names.join(', ')+'.\n':'')+(rows.length?'Pour la table : '+rows.map(r=>r[0]).join(', ')+' ('+eur(sum)+').\n':'')+'\nPouvez-vous nous dire ce qui est possible ?\n\nMerci !';
+    send.href='mailto:melanie@dirty-queen.bar?subject='+encodeURIComponent(o.value+' – '+v+' personnes')+'&body='+encodeURIComponent(body);
   }
   n.addEventListener('input',upd); d.addEventListener('change',upd); o.addEventListener('change',upd);
-  document.querySelectorAll('.step').forEach(b=>b.addEventListener('click',()=>{n.value=Math.min(100,Math.max(2,+n.value+ +b.dataset.d));upd()}));
+  document.querySelectorAll('.step[data-d]').forEach(b=>b.addEventListener('click',()=>{n.value=Math.min(100,Math.max(2,+n.value+ +b.dataset.d));upd()}));
+  addons.forEach((li,i)=>li.querySelectorAll('.step').forEach(b=>b.addEventListener('click',()=>{qty[i]=Math.min(20,Math.max(0,qty[i]+ +b.dataset.a));upd()})));
+  const td=new Date(); d.min=td.toISOString().slice(0,10);
   upd();
 
-  // entrées au scroll
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*70+'ms';io.observe(el)});
+  // entrées au scroll, une seule fois
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
+  document.querySelectorAll('.rv,.song').forEach(el=>io.observe(el));
 })();
 </script>
 </body>
