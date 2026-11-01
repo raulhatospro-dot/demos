@@ -3,416 +3,485 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Özlem · Kebab turc, rue des Petites-Écuries</title>
-<meta name="description" content="Özlem, kebab turc au 57 rue des Petites-Écuries, Paris 10e. Dürüm au pain pétri chaque matin, lahmacun, künefe. Du lundi au samedi, 11h30–16h30. Précommande par téléphone.">
+<meta name="robots" content="noindex, nofollow">
+<title>Özlem · Kebab turc, Paris 10e</title>
+<meta name="description" content="Özlem, kebab turc au 57 rue des Petites-Écuries, Paris 10e. Dürüm au pain maison, lahmacun, brochettes, künefe. Du lundi au samedi, 11h30 à 16h30. Précommande par téléphone.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ground:#fbfaf6;
-  --tile:#efece4;
-  --ink:#121110;
-  --soft:#4a4642;
-  --sumac:#8e1b26;
-  --sumac-press:#6f121c;
+  --ground:#f3f2ef;
+  --tile:#e6e3de;
+  --tile-deep:#d7d1c7;
+  --ink:#16120f;
+  --body:#2b2520;
+  --mute:#5e554b;
+  --sumac:#a3192b;
+  --sumac-press:#83101f;
   --parsley:#2f5d2a;
-  --pad:clamp(16px,3vw,40px);
+  --r:14px;
+  --r-lg:28px;
+  --pad:16px;
   --f:"Archivo",system-ui,sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
-body{background:var(--ground);color:var(--ink);font:400 17px/1.55 var(--f);font-variation-settings:"wdth" 100}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--ground);color:var(--body);font:400 17px/1.55 var(--f)}
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{color:inherit;text-underline-offset:.2em}
 ::selection{background:var(--sumac);color:#fff}
-:focus-visible{outline:3px solid var(--sumac);outline-offset:3px}
-.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
 .num{font-variant-numeric:tabular-nums}
-h1,h2,h3{font-weight:900;letter-spacing:-.03em;line-height:.92;font-stretch:75%;text-transform:uppercase;text-wrap:balance}
-h2{font-size:clamp(2.6rem,8vw,6rem)}
-h3{font-size:clamp(1.4rem,2.6vw,2rem);line-height:1}
-
-/* bandeau démo */
-.demo{background:var(--ink);color:#e9e5dc;font-size:13px;text-align:center;padding:7px 16px}
-
-/* nav */
-.nav{position:sticky;top:0;z-index:20;background:var(--ground)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.mark{font:900 26px/1 var(--f);font-stretch:75%;text-transform:uppercase;letter-spacing:-.02em;text-decoration:none}
-.nav ul{display:none;list-style:none;gap:32px;font-weight:600}
-.nav ul a{text-decoration:none}
-.nav ul a:hover{color:var(--sumac)}
+h1,h2,h3{font-family:var(--f);color:var(--ink);font-weight:900;font-stretch:72%;text-transform:uppercase;letter-spacing:-.02em;line-height:.92;text-wrap:balance}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* boutons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;font:700 16px/1 var(--f);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,transform .2s var(--ease)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:var(--r);font:700 16px/1 var(--f);text-decoration:none;white-space:nowrap;border:0;cursor:pointer;transition:background .2s,transform .2s var(--ease)}
 .btn:active{transform:scale(.97)}
 .btn svg{width:18px;height:18px;flex:none}
 .btn-s{background:var(--sumac);color:#fff}
 .btn-s:hover{background:var(--sumac-press)}
-.btn-k{background:var(--ink);color:var(--ground)}
-.btn-k:hover{background:#000}
 .btn-t{background:var(--tile);color:var(--ink)}
-.btn-t:hover{background:#e3dfd4}
+.btn-t:hover{background:var(--tile-deep)}
+.btn-w{background:#fff;color:var(--sumac)}
+.btn-w:hover{background:var(--ground)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.actions .btn{flex:1 1 auto}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--ground)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.mark{font:900 28px/1 var(--f);font-stretch:72%;text-transform:uppercase;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.mark b{color:var(--sumac)}
+.nav ul{display:none;list-style:none;gap:28px;font-weight:600}
+.nav ul a{text-decoration:none;color:var(--ink)}
+.nav ul a:hover{color:var(--sumac)}
 .nav .btn{min-height:44px;padding:0 16px;font-size:15px}
 
 /* hero */
-.hero{padding:8px 0 0}
-.hero-grid{display:grid;gap:20px}
-.hero-photo{aspect-ratio:4/5;overflow:hidden;background:var(--tile)}
-.hero-photo img{object-position:50% 40%;animation:drift 18s var(--ease) both}
-@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero-text p.lead{font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.35;max-width:30ch;font-weight:500}
-.hero-text p.lead b{font-weight:800}
-.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.ctas .btn{flex:1 1 auto}
-.monument,.foot-name{display:block;width:100%;height:auto;aspect-ratio:10/3;overflow:visible}
-.monument text,.foot-name text{font:900 300px var(--f);font-stretch:75%;text-transform:uppercase;fill:currentColor}
-.monument{margin:28px 0 14px}
-.monument .l{fill:var(--sumac)}
-.hero>.wrap{display:flex;flex-direction:column}
-@media (max-width:759px){.monument,.sub-mon{order:-1}.monument{margin:4px 0 10px}.sub-mon{margin-bottom:24px}}
-.sub-mon{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:14px;padding:12px 0 0;border-top:6px solid var(--ink)}
+.hero{padding:16px 0 72px}
+.hero-grid{display:grid;gap:32px}
+.hero h1{font-size:clamp(2.9rem,13vw,4rem)}
+.hero h1 em{font-style:normal;color:var(--sumac)}
+.lead{margin-top:20px;font-size:19px;line-height:1.45;color:var(--ink);max-width:34ch}
+.rating{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:22px;font-weight:700;color:var(--ink)}
+.rating svg{width:96px;height:18px}
+.rating span{color:var(--mute);font-weight:500}
+.status{display:flex;align-items:center;gap:8px;margin-top:16px;font-weight:700;color:var(--ink);font-size:15px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--parsley)}
+.status.closed i{background:var(--mute)}
+.prices{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;background:var(--sumac);border:6px solid var(--ink);border-radius:var(--r);color:#fff;outline:2px solid #c8343f;outline-offset:-10px}
+.prices li{padding:14px 12px;text-align:center}
+.prices li+li{border-left:2px solid #c8343f}
+.prices b{display:block;font:900 26px/1 var(--f);font-stretch:72%;color:#fff}
+.prices span{font-size:15px;font-weight:700;color:#f6dcdf}
 
-/* broche du jour */
-.broche{background:var(--ink);color:var(--ground);margin-top:72px;padding:48px 0 56px}
-.broche-grid{display:grid;gap:28px}
-.broche h2{color:var(--ground);font-size:clamp(2.4rem,6vw,4.6rem)}
-.state{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;line-height:1.15;font-stretch:85%}
-.state .dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:#7fbf6a;margin-right:.35em;vertical-align:.08em}
-.state.closed .dot{background:#d0564f}
-.state-note{color:#d9d4c8;margin-top:10px;max-width:44ch}
-.day{margin-top:28px}
-.track{position:relative;height:56px;background:#2a2826}
-.seg{position:absolute;top:0;bottom:0;background:var(--sumac)}
-.now{position:absolute;top:-10px;bottom:-10px;width:4px;margin-left:-2px;background:var(--ground)}
-.now::after{content:"";position:absolute;left:-5px;top:-6px;width:14px;height:14px;border-radius:50%;background:var(--ground)}
-.ticks{display:flex;justify-content:space-between;font-size:13px;color:#d9d4c8;margin-top:8px}
-.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:24px;font-size:13px;text-align:center}
-.week div{background:#2a2826;padding:10px 2px;line-height:1.3}
-.week div b{display:block;font-size:15px}
-.week.off{color:#b3ada2}
-.week .today{background:var(--ground);color:var(--ink)}
+.pins{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:440px}
+.pin{position:relative;overflow:hidden;border-radius:var(--r);background:var(--tile);min-height:0}
+.pin img{transition:transform 1.2s var(--ease)}
+.pin:hover img{transform:scale(1.04)}
+.pin-a{grid-row:1/3;border-radius:var(--r-lg)}
+.tag{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font:600 13px/1 var(--f);padding:9px 12px;border-radius:999px;white-space:nowrap}
+.tag b{font-weight:800}
+@media (max-width:699px){.pin-b .tag,.pin-c .tag{left:8px;bottom:8px;font-size:12px;padding:8px 10px}}
+
+/* sections */
+section{padding:80px 0}
+.h2{font-size:clamp(2.6rem,11vw,5rem);max-width:16ch}
+.intro{margin-top:18px;font-size:19px;max-width:52ch}
+
+/* commande */
+.cmd{background:var(--tile)}
+.cmd-grid{display:grid;gap:28px;margin-top:40px}
+.items{list-style:none;display:grid;gap:6px}
+.item{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;background:var(--ground);border-radius:var(--r);padding:14px 14px 14px 18px}
+.item h3{font-size:24px}
+.item p{font-size:15px;color:var(--mute);margin-top:4px}
+.item .p{font-weight:800;color:var(--ink)}
+.qty{display:flex;align-items:center;gap:4px}
+.qty button{width:44px;height:44px;border-radius:12px;border:0;background:var(--tile);color:var(--ink);font:800 22px/1 var(--f);cursor:pointer;transition:background .2s}
+.qty button:hover{background:var(--tile-deep)}
+.qty output{min-width:30px;text-align:center;font:900 24px/1 var(--f);font-stretch:72%;color:var(--ink)}
+.ticket{background:#fff;color:var(--ink);padding:32px 28px 36px;display:grid;gap:16px;align-content:start;border-top:10px dotted var(--tile);border-bottom:10px dotted var(--tile)}
+.ticket h3{font-size:26px;text-align:center;border-bottom:2px solid var(--tile);padding-bottom:14px}
+.ticket h3 small{display:block;font:500 14px/1.4 var(--f);text-transform:none;letter-spacing:0;color:var(--mute);margin-top:6px}
+.ticket ul{list-style:none;display:grid;gap:8px;min-height:3em;color:var(--body)}
+.ticket li{display:flex;justify-content:space-between;gap:16px}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--tile);padding-top:16px;font-weight:700}
+.total b{font:900 clamp(3rem,12vw,4.6rem)/1 var(--f);font-stretch:72%;color:var(--sumac)}
+.ticket .fine{font-size:14px;color:var(--mute)}
+.ticket .actions{margin-top:0}
 
 /* carte */
-.carte{padding:120px 0 0}
-.carte-head{display:grid;gap:16px;margin-bottom:40px}
-.carte-head p{max-width:52ch;font-size:18px}
-.menu{display:grid;gap:0}
-.dish{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:22px 0;border-top:3px solid var(--ink)}
-.dish h3{grid-column:1}
-.dish .price{grid-column:2;grid-row:1;font:900 clamp(1.4rem,2.6vw,2rem)/1 var(--f);font-stretch:75%}
-.dish p{grid-column:1/-1;color:var(--soft);max-width:56ch}
-.menu-photo{aspect-ratio:3/2;overflow:hidden;margin:8px 0 24px}
-.fine{font-size:14px;color:var(--soft);margin-top:20px;max-width:60ch}
+.board{columns:1;column-gap:8px;margin-top:40px}
+.board>*{break-inside:avoid;margin-bottom:8px}
+.card{background:var(--tile);border-radius:var(--r);padding:24px}
+.card h3{font-size:34px;margin-bottom:10px}
+.card table{width:100%;border-collapse:collapse}
+.card td{padding:12px 0;border-top:1px solid var(--tile-deep);vertical-align:top;color:var(--ink)}
+.card tr:first-child td{border-top:0}
+.card td:last-child{text-align:right;font-weight:800;white-space:nowrap;padding-left:14px}
+.card small{display:block;color:var(--mute);font-size:14px}
+.board .pin img{aspect-ratio:4/5}
+.board .pin.wide img{aspect-ratio:4/3}
+.note{margin-top:20px;color:var(--mute);font-size:15px;max-width:62ch}
 
-/* le geste */
-.geste{padding:140px 0 0}
-.geste-grid{display:grid;gap:32px}
-.geste-photo{aspect-ratio:5/4;overflow:hidden}
-.steps{list-style:none;counter-reset:none;display:grid;gap:26px;margin-top:28px}
-.steps li{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:baseline}
-.steps .when{font:900 20px/1 var(--f);font-stretch:75%;text-transform:uppercase;color:var(--sumac)}
-.steps p{max-width:46ch}
-.garnish{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.garnish span{background:var(--tile);padding:8px 14px;font-weight:600;font-size:15px}
+/* avis */
+.avis{background:var(--sumac);color:#fff}
+.avis h2{color:#fff}
+.av-grid{display:grid;gap:40px}
+.big{font:900 clamp(8rem,40vw,15rem)/.8 var(--f);font-stretch:72%;color:#fff;margin-top:20px}
+.big sup{font-size:.28em;vertical-align:top;margin-left:6px;position:relative;top:.3em}
+.facts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:32px}
+.facts li{background:rgba(0,0,0,.16);border-radius:var(--r);padding:18px}
+.facts b{display:block;font:900 40px/1 var(--f);font-stretch:72%}
+.facts span{font-size:15px;font-weight:500}
+.av-photo{border-radius:var(--r-lg);overflow:hidden}
+.av-photo img{aspect-ratio:4/5}
 
-/* histoire */
-.histoire{background:var(--sumac);color:#fff;margin-top:140px;padding:72px 0 80px}
-.histoire h2{color:#fff}
-.hist-grid{display:grid;gap:36px}
-.word{font:900 clamp(9rem,40vw,26rem)/.8 var(--f);font-stretch:62%;text-transform:uppercase;letter-spacing:-.035em}
-.histoire p{font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.5;max-width:46ch}
-.histoire p+p{margin-top:16px}
-.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 40px;margin-top:32px}
-.facts b{display:block;font:900 clamp(2.2rem,5vw,3.6rem)/1 var(--f);font-stretch:75%}
-.facts span{font-size:14px;color:#f3d9dc}
+/* maison */
+.ms-grid{display:grid;gap:36px}
+.ms-photo{border-radius:var(--r-lg);overflow:hidden}
+.ms-photo img{aspect-ratio:4/3}
+.ms p+p{margin-top:14px}
+.garnish{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;list-style:none}
+.garnish li{background:var(--tile);border-radius:999px;padding:10px 18px;font-weight:600;color:var(--ink)}
 
-/* venir */
-.venir{padding:120px 0 0}
-.venir-grid{display:grid;gap:32px}
-.addr{font:900 clamp(2rem,5.4vw,4.2rem)/.95 var(--f);font-stretch:75%;text-transform:uppercase;letter-spacing:-.02em;font-style:normal}
-.info{display:grid;gap:22px;margin-top:28px}
-.info dt{font-weight:800}
-.info dd{color:var(--soft)}
-.info a{color:var(--ink);font-weight:600}
-.map{min-height:360px;background:var(--tile)}
-.map iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:grayscale(.6) contrast(1.05)}
+/* horaires */
+.acces{background:var(--tile)}
+.ac-grid{display:grid;gap:40px;margin-top:40px}
+.hours{width:100%;border-collapse:collapse;font-size:19px}
+.hours th,.hours td{padding:15px 0;border-top:1px solid var(--tile-deep);text-align:left;color:var(--ink)}
+.hours th{font-weight:600}
+.hours td{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.off td{color:var(--mute)}
+.hours tr.today th,.hours tr.today td{color:var(--sumac);font-weight:800}
+.addr{background:var(--ground);border-radius:var(--r-lg);padding:28px}
+.where{font:900 clamp(1.7rem,7vw,2.6rem)/1 var(--f);font-stretch:72%;text-transform:uppercase;color:var(--ink);font-style:normal}
+.meta{margin-top:16px;font-size:17px}
+.tel{display:block;margin-top:22px;font:900 clamp(2.2rem,9vw,3.2rem)/1 var(--f);font-stretch:72%;color:var(--sumac);text-decoration:none}
+.tel:hover{text-decoration:underline;text-underline-offset:6px}
+.map{margin-top:8px;border-radius:var(--r-lg);overflow:hidden;background:var(--tile-deep)}
+.map iframe{display:block;width:100%;height:320px;border:0;filter:grayscale(.5)}
 
-/* footer */
-footer{margin-top:120px;background:var(--ink);color:var(--ground);padding:40px 0 28px;overflow:hidden}
+/* final */
+.final{padding:96px 0 40px}
+.final-grid{display:grid;gap:32px;align-items:end}
+.final h2{font-size:clamp(2.8rem,12vw,5.2rem);max-width:12ch}
+.final .pin{aspect-ratio:16/10;border-radius:var(--r-lg)}
+footer{padding:48px 0 32px}
+.foot-name{font:900 clamp(5rem,26vw,17rem)/.8 var(--f);padding-top:.16em;font-stretch:72%;text-transform:uppercase;color:var(--ink)}
+.foot-name b{color:var(--sumac)}
+.foot-row{display:flex;flex-wrap:wrap;gap:12px 32px;margin-bottom:28px;color:var(--mute);font-size:15px}
+.foot-row a{color:var(--ink)}
+.demo{background:var(--ink);color:#ddd5c6;font:500 13px/1.3 var(--f);text-align:center;padding:9px 16px}
 
-.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:#d9d4c8;margin-top:24px}
+/* apparition */
+.rv{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.pre{opacity:0;transform:translateY(24px)}
+@media (prefers-reduced-motion:reduce){.rv{transition:none}.js .rv.pre{opacity:1;transform:none}html{scroll-behavior:auto}}
 
-/* reveal */
-.rv{transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.js .rv:not(.in){opacity:0;transform:translateY(24px)}
-@media (prefers-reduced-motion:reduce){.rv{transition:none}.js .rv:not(.in){opacity:1;transform:none}.hero-photo img{animation:none}}
-
-@media (min-width:760px){
-  .nav ul{display:flex}
-  .hero-grid{grid-template-columns:1.1fr .9fr;align-items:end;gap:40px}
-  .hero-photo{aspect-ratio:4/3}
-  .ctas .btn{flex:0 0 auto}
-  .broche-grid{grid-template-columns:.9fr 1.1fr;align-items:start;gap:56px}
-  .carte-head{grid-template-columns:1fr 1fr;align-items:end;gap:40px}
-  .menu{grid-template-columns:1fr 1fr;column-gap:56px}
-  .menu-photo{grid-column:1/-1;aspect-ratio:21/8}
-  .geste-grid{grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-  .geste-photo{aspect-ratio:4/5;position:sticky;top:88px}
-  .hist-grid{grid-template-columns:1fr 1fr;gap:56px;align-items:end}
-  .venir-grid{grid-template-columns:1fr 1.1fr;gap:56px}
-  .map,.map iframe{min-height:520px}
+@media (min-width:700px){
+  :root{--pad:32px}
+  .board{columns:2}
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .actions .btn{flex:0 0 auto}
+  .pins{height:560px}
 }
-@media (min-width:1100px){
-  .hero-photo{aspect-ratio:5/4}
+@media (min-width:1000px){
+  :root{--pad:40px}
+  .nav ul{display:flex}
+  .hero{padding:32px 0 120px}
+  .hero-grid{grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+  .hero h1{font-size:6.2rem}
+  .lead{font-size:21px}
+  .pins{height:min(78vh,680px)}
+  section{padding:130px 0}
+  .cmd-grid{grid-template-columns:1.25fr 1fr;gap:40px;align-items:start}
+  .ticket{padding:40px;position:sticky;top:96px}
+  .board{columns:3}
+  .av-grid{grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+  .ms-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .ac-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .addr{padding:44px}
+  .map iframe{height:360px}
+  .final-grid{grid-template-columns:1fr 1fr;gap:64px}
 }
 </style>
 </head>
 <body>
-<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
 <header class="nav">
   <div class="wrap">
-    <a class="mark" href="#top" aria-label="Özlem, accueil">Özlem</a>
-    <ul>
-      <li><a href="#broche">Horaires</a></li>
-      <li><a href="#carte">Carte</a></li>
-      <li><a href="#histoire">Depuis 1987</a></li>
-      <li><a href="#venir">Venir</a></li>
-    </ul>
+    <a class="mark" href="#top" aria-label="Özlem, accueil">Öz<b>l</b>em</a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#commande">Précommande</a></li>
+        <li><a href="#carte">Carte</a></li>
+        <li><a href="#maison">La maison</a></li>
+        <li><a href="#acces">Horaires</a></li>
+      </ul>
+    </nav>
     <a class="btn btn-s" href="tel:+33147703787">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
       Appeler
     </a>
   </div>
 </header>
 
 <main id="top">
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-text rv">
-        <h1 class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Özlem, kebab turc rue des Petites-Écuries, Paris 10e</h1>
-        <p class="lead"><b>Une broche par jour,</b> taillée au couteau et roulée dans un pain pétri le matin même. Le kebab du 57 rue des Petites-Écuries, depuis 1987.</p>
-        <div class="ctas">
+  <section class="hero" aria-labelledby="titre">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="titre" class="rv">Une broche <em>par jour</em></h1>
+        <p class="lead rv">Le kebab turc du 57 rue des Petites-Écuries. Viande taillée au couteau, dürüm roulé dans un pain fait maison. Sur place ou à emporter.</p>
+        <div class="rating rv">
+          <svg viewBox="0 0 100 18" aria-hidden="true"><g fill="#a3192b"><path id="s" d="M9 0l2.6 5.8 6.4.6-4.8 4.2 1.4 6.3L9 13.6 3.4 16.9l1.4-6.3L0 6.4l6.4-.6z"/><use href="#s" x="20.5"/><use href="#s" x="41"/><use href="#s" x="61.5"/><use href="#s" x="82"/></g></svg>
+          4,6/5 <span>971 avis Google</span>
+        </div>
+        <ul class="prices rv" aria-label="Quelques prix">
+          <li><b class="num">10 €</b><span>Dürüm</span></li>
+          <li><b class="num">6 €</b><span>Lahmacun</span></li>
+          <li><b class="num">13,50 €</b><span>Assiette</span></li>
+        </ul>
+        <div class="actions rv">
           <a class="btn btn-s" href="tel:+33147703787">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-            Précommander au 01 47 70 37 87
-          </a>
-          <a class="btn btn-t" href="https://www.google.com/maps/dir/?api=1&destination=57+rue+des+Petites+%C3%89curies+75010+Paris" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            01 47 70 37 87</a>
+          <a class="btn btn-t" href="https://www.google.com/maps/dir/?api=1&amp;destination=57+rue+des+Petites+%C3%89curies+75010+Paris" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            Itinéraire
-          </a>
+            Itinéraire</a>
+        </div>
+        <p class="status rv" id="status" hidden><i></i><span></span></p>
+      </div>
+      <div class="pins rv">
+        <figure class="pin pin-a">
+          <img src="https://images.unsplash.com/photo-1596995804697-27d11d43652e?w=1100&q=80&auto=format&fit=crop" alt="Un cuisinier taille une broche de kebab au long couteau" width="1100" height="1460" fetchpriority="high">
+          <figcaption class="tag">Taillé <b>au couteau</b></figcaption>
+        </figure>
+        <figure class="pin pin-b">
+          <img src="https://images.unsplash.com/photo-1633321702518-7feccafb94d5?w=700&h=700&q=80&auto=format&fit=crop" alt="Un dürüm roulé, garni de viande, tomate et salade" width="700" height="700">
+          <figcaption class="tag">Dürüm · <b>10 €</b></figcaption>
+        </figure>
+        <figure class="pin pin-c">
+          <img src="https://images.unsplash.com/photo-1741166985167-14b7178f15b7?w=700&h=700&q=80&auto=format&fit=crop" alt="Lahmacun sorti du four, garni de viande hachée" width="700" height="700">
+          <figcaption class="tag">Lahmacun · <b>6 €</b></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmd" id="commande" aria-labelledby="t-cmd">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-cmd">Sautez la file</h2>
+      <p class="intro rv">Composez la commande du bureau ou de la famille, voyez le total, puis appelez : elle vous attend au comptoir.</p>
+      <div class="cmd-grid">
+        <ul class="items rv" id="items">
+          <li class="item" data-k="durum" data-p="10"><div><h3>Kebab dürüm</h3><p><span class="p num">10 €</span> · roulé dans le pain maison</p></div><div class="qty"><button type="button" data-d="-1" aria-label="Retirer un dürüm">−</button><output class="num" aria-live="polite">0</output><button type="button" data-d="1" aria-label="Ajouter un dürüm">+</button></div></li>
+          <li class="item" data-k="assiette" data-p="13.5"><div><h3>Assiette kebab</h3><p><span class="p num">13,50 €</span> · la viande servie à l'assiette</p></div><div class="qty"><button type="button" data-d="-1" aria-label="Retirer une assiette">−</button><output class="num" aria-live="polite">0</output><button type="button" data-d="1" aria-label="Ajouter une assiette">+</button></div></li>
+          <li class="item" data-k="lahmacun" data-p="6"><div><h3>Lahmacun</h3><p><span class="p num">6 €</span> · pâte fine, bœuf et veau hachés</p></div><div class="qty"><button type="button" data-d="-1" aria-label="Retirer un lahmacun">−</button><output class="num" aria-live="polite">0</output><button type="button" data-d="1" aria-label="Ajouter un lahmacun">+</button></div></li>
+          <li class="item" data-k="enfant" data-p="10"><div><h3>Menu enfant</h3><p><span class="p num">10 €</span></p></div><div class="qty"><button type="button" data-d="-1" aria-label="Retirer un menu enfant">−</button><output class="num" aria-live="polite">0</output><button type="button" data-d="1" aria-label="Ajouter un menu enfant">+</button></div></li>
+          <li class="item" data-k="ayran" data-p="2.5"><div><h3>Ayran maison</h3><p><span class="p num">2,50 €</span> · yaourt salé, bien frais</p></div><div class="qty"><button type="button" data-d="-1" aria-label="Retirer un ayran">−</button><output class="num" aria-live="polite">0</output><button type="button" data-d="1" aria-label="Ajouter un ayran">+</button></div></li>
+        </ul>
+        <div class="ticket rv" aria-live="polite">
+          <h3>Özlem · 57 Petites-Écuries<small>Votre commande à retirer au comptoir</small></h3>
+          <ul id="recap"><li>Rien pour l'instant. Ajoutez un dürüm.</li></ul>
+          <p class="total"><span>Total estimé</span><b class="num" id="total">0 €</b></p>
+          <p class="fine">Prix relevés en ligne, à confirmer au téléphone. Formules de 11,50 à 15 € au comptoir.</p>
+          <div class="actions">
+            <a class="btn btn-s" href="tel:+33147703787">Appeler pour précommander</a>
+          </div>
         </div>
       </div>
-      <figure class="hero-photo">
-        <img src="https://images.unsplash.com/photo-1596995804697-27d11d43652e?w=1600&q=80&auto=format&fit=crop" alt="Un cuisinier taille une broche de kebab au long couteau" fetchpriority="high">
+    </div>
+  </section>
+
+  <section id="carte" aria-labelledby="t-carte">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-carte">La carte</h2>
+      <p class="intro rv">Poitrine de veau et dinde marinées la veille, montées en broche, grillées et taillées à la minute. Les prix indiqués sont ceux relevés en ligne.</p>
+      <div class="board">
+        <div class="card rv">
+          <h3>La broche</h3>
+          <table>
+            <tr><td>Kebab dürüm<small>pain maison, oignon rouge, sumac, persil, piment, sauce tomate</small></td><td>10 €</td></tr>
+            <tr><td>Assiette kebab<small>la même viande, à l'assiette</small></td><td>13,50 €</td></tr>
+            <tr><td>Formules<small>selon la composition</small></td><td>11,50 à 15 €</td></tr>
+            <tr><td>Menu enfant</td><td>10 €</td></tr>
+          </table>
+        </div>
+        <figure class="pin rv">
+          <img src="https://images.unsplash.com/photo-1756362847925-71c792d6729c?w=800&q=80&auto=format&fit=crop" alt="Broche de viande grillée sur la rôtissoire verticale" loading="lazy" width="800" height="1000">
+        </figure>
+        <div class="card rv">
+          <h3>Du four</h3>
+          <table>
+            <tr><td>Lahmacun<small>pâte fine, bœuf et veau hachés aux oignons</small></td><td>6 €</td></tr>
+          </table>
+        </div>
+        <div class="card rv">
+          <h3>Du grill</h3>
+          <table>
+            <tr><td>Brochettes<small>poulet, dinde ou agneau, boulgour à la tomate, oignons au sumac</small></td><td>au comptoir</td></tr>
+            <tr><td>Köfte<small>boulettes de veau et de dinde, à l'assiette</small></td><td>au comptoir</td></tr>
+          </table>
+        </div>
+        <figure class="pin wide rv">
+          <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800&q=80&auto=format&fit=crop" alt="Brochettes de viande grillée sur pain plat, tomates et oignons" loading="lazy" width="800" height="600">
+        </figure>
+        <div class="card rv">
+          <h3>Pour finir</h3>
+          <table>
+            <tr><td>Künefe<small>spécialité d'Antakya, préparée à la commande : cheveux d'ange, fromage fondant, sirop</small></td><td>au comptoir</td></tr>
+            <tr><td>Ayran maison<small>boisson au yaourt, salée</small></td><td>2,50 €</td></tr>
+            <tr><td>Canettes</td><td>au comptoir</td></tr>
+          </table>
+        </div>
+      </div>
+      <p class="note rv">Sur place ou à emporter, pas de livraison. Prix à vérifier au comptoir.</p>
+    </div>
+  </section>
+
+  <section class="avis" id="avis" aria-labelledby="t-avis">
+    <div class="wrap av-grid">
+      <div>
+        <h2 class="rv" id="t-avis" style="font-size:clamp(2.2rem,7vw,3.6rem);max-width:16ch">971 avis Google, et cette moyenne</h2>
+        <p class="big rv num" aria-label="4,6 sur 5">4,6<sup>/5</sup></p>
+        <ul class="facts rv">
+          <li><b class="num">57</b><span>rue des Petites-Écuries</span></li>
+          <li><b class="num">1</b><span>broche par jour</span></li>
+          <li><b class="num">10 €</b><span>le dürüm</span></li>
+          <li><b class="num">6/7</b><span>jours ouverts</span></li>
+        </ul>
+        <div class="actions rv"><a class="btn btn-w" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%96zlem+57+rue+des+Petites+%C3%89curies+75010+Paris" target="_blank" rel="noopener">Lire les avis sur Google</a></div>
+      </div>
+      <figure class="av-photo rv">
+        <img src="https://images.unsplash.com/photo-1530469912745-a215c6b256ea?w=900&q=80&auto=format&fit=crop" alt="Broche de kebab dorée sur sa rôtissoire" loading="lazy" width="900" height="1125">
       </figure>
     </div>
-    <svg class="monument" viewBox="0 0 1000 300" aria-hidden="true" preserveAspectRatio="none"><text x="0" y="283" textLength="1000" lengthAdjust="spacingAndGlyphs">Öz<tspan class="l">l</tspan>em</text></svg>
-    <div class="sub-mon"><span>Kebab · snack turc</span><span>Paris 10e</span><span>Depuis 1987</span></div>
-  </div>
-</section>
+  </section>
 
-<section class="broche" id="broche" aria-labelledby="broche-t">
-  <div class="wrap broche-grid">
-    <div class="rv">
-      <h2 id="broche-t">La broche du jour</h2>
-      <p class="state-note" style="margin-top:18px">Chez Özlem, on monte une seule broche par jour. Quand elle est finie, c'est fini. Le midi, la file déborde sur le trottoir : appelez avant, votre commande vous attend.</p>
-      <div class="ctas"><a class="btn btn-s" href="tel:+33147703787">Précommander par téléphone</a></div>
-    </div>
-    <div class="rv" aria-live="polite">
-      <p class="state" id="state"><span class="dot" aria-hidden="true"></span><span id="state-txt">Du lundi au samedi, 11h30 – 16h30</span></p>
-      <p class="state-note" id="state-note">Dimanche fermé.</p>
-      <div class="day" aria-hidden="true">
-        <div class="track" id="track"><div class="now" id="now" hidden></div></div>
-        <div class="ticks num"><span>11h</span><span>14h</span><span>17h</span><span>20h</span><span>23h</span></div>
-      </div>
-      <div class="week num" id="week">
-        <div><b>Lun</b>11h30<br>16h30</div>
-        <div><b>Mar</b>11h30<br>16h30</div>
-        <div><b>Mer</b>11h30<br>16h30</div>
-        <div><b>Jeu</b>11h30<br>16h30</div>
-        <div><b>Ven</b>11h30<br>16h30<br>18h30<br>23h</div>
-        <div><b>Sam</b>11h30<br>16h30</div>
-        <div class="off"><b>Dim</b>Fermé</div>
+  <section class="ms" id="maison" aria-labelledby="t-maison">
+    <div class="wrap">
+      <div class="ms-grid">
+        <figure class="ms-photo rv">
+          <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=1100&q=80&auto=format&fit=crop" alt="Brochettes de poulet sur le grill" loading="lazy" width="1100" height="825">
+        </figure>
+        <div>
+          <h2 class="h2 rv" id="t-maison">La broche, taillée au couteau</h2>
+          <p class="intro rv">Özlem tient le 57 rue des Petites-Écuries. Aujourd'hui, Edip Bolatoglu, formé à l'école Ferrandi, mène la cuisine avec son équipe.</p>
+          <p class="intro rv">Le pain du dürüm se pétrit sur place. La viande marine la veille et monte en broche le matin. Une seule par jour : quand elle est finie, c'est fini.</p>
+          <p class="intro rv">En turc, <b lang="tr">özlem</b> veut dire le manque, la nostalgie d'un lieu qu'on a quitté. Les habitués du quartier, eux, reviennent.</p>
+          <ul class="garnish rv" aria-label="Garniture du dürüm">
+            <li>Oignon rouge</li><li>Sumac</li><li>Persil plat</li><li>Piment</li><li>Sauce tomate</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="carte" id="carte" aria-labelledby="carte-t">
-  <div class="wrap">
-    <div class="carte-head rv">
-      <h2 id="carte-t">La carte</h2>
-      <p>Poitrine de veau et dinde marinées la veille, montées en broche, grillées et taillées à la minute.</p>
+  <section class="acces" id="acces" aria-labelledby="t-acces">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-acces">Horaires et accès</h2>
+      <div class="ac-grid">
+        <div>
+          <table class="hours rv" aria-label="Horaires d'ouverture">
+            <tr data-d="1"><th>Lundi</th><td>11 h 30 – 16 h 30</td></tr>
+            <tr data-d="2"><th>Mardi</th><td>11 h 30 – 16 h 30</td></tr>
+            <tr data-d="3"><th>Mercredi</th><td>11 h 30 – 16 h 30</td></tr>
+            <tr data-d="4"><th>Jeudi</th><td>11 h 30 – 16 h 30</td></tr>
+            <tr data-d="5"><th>Vendredi</th><td>11 h 30 – 16 h 30<br>18 h 30 – 23 h</td></tr>
+            <tr data-d="6"><th>Samedi</th><td>11 h 30 – 16 h 30</td></tr>
+            <tr data-d="0" class="off"><th>Dimanche</th><td>Fermé</td></tr>
+          </table>
+          <div class="map rv">
+            <iframe title="Plan : 57 rue des Petites-Écuries, Paris 10e" loading="lazy" src="https://www.google.com/maps?q=57+rue+des+Petites+%C3%89curies+75010+Paris&amp;z=16&amp;output=embed"></iframe>
+          </div>
+        </div>
+        <div class="addr rv">
+          <address class="where">57 rue des Petites-Écuries, 75010 Paris</address>
+          <p class="meta">Métro Poissonnière, Bonne Nouvelle, Château d'Eau ou Cadet. Sur place ou à emporter.</p>
+          <a class="tel num" href="tel:+33147703787">01 47 70 37 87</a>
+          <p class="meta"><a href="mailto:ozlemsnack@gmail.com?subject=Question%20pour%20%C3%96zlem">ozlemsnack@gmail.com</a></p>
+          <div class="actions">
+            <a class="btn btn-s" href="tel:+33147703787">Précommander</a>
+            <a class="btn btn-t" href="https://www.google.com/maps/dir/?api=1&amp;destination=57+rue+des+Petites+%C3%89curies+75010+Paris" target="_blank" rel="noopener">Itinéraire</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="menu">
-      <article class="dish rv">
-        <h3>Kebab dürüm</h3><span class="price num">10 €</span>
-        <p>La viande de la broche roulée dans le pain maison, avec oignon rouge, sumac, persil plat, piment et une sauce tomate légère.</p>
-      </article>
-      <article class="dish rv">
-        <h3>Assiette kebab</h3><span class="price num">13,50 €</span>
-        <p>La même viande servie à l'assiette.</p>
-      </article>
-      <figure class="menu-photo rv">
-        <img src="https://images.unsplash.com/photo-1741166985167-14b7178f15b7?w=1800&q=80&auto=format&fit=crop" alt="Lahmacun turc sorti du four, garni de viande hachée, poivron et tomate" loading="lazy">
+  </section>
+
+  <section class="final" id="contact" aria-labelledby="t-final">
+    <div class="wrap final-grid">
+      <div>
+        <h2 class="rv" id="t-final">Appelez, c'est prêt</h2>
+        <p class="intro rv">Un coup de fil avant de partir, et votre dürüm vous attend au 57. Une question, un groupe, une commande pour le bureau : écrivez-nous.</p>
+        <div class="actions rv">
+          <a class="btn btn-s" href="tel:+33147703787">01 47 70 37 87</a>
+          <a class="btn btn-t" href="mailto:ozlemsnack@gmail.com?subject=Question%20pour%20%C3%96zlem">Écrire un email</a>
+        </div>
+      </div>
+      <figure class="pin rv">
+        <img src="https://images.unsplash.com/photo-1642783944285-b33b18ef6c3b?w=1200&q=80&auto=format&fit=crop" alt="Un sandwich kebab garni, tenu à la main" loading="lazy" width="1200" height="750">
       </figure>
-      <article class="dish rv">
-        <h3>Lahmacun</h3><span class="price num">6 €</span>
-        <p>Pâte fine garnie de bœuf et de veau hachés aux oignons, roulée comme on la mange à Istanbul.</p>
-      </article>
-      <article class="dish rv">
-        <h3>Brochettes</h3>
-        <p>Poulet, dinde ou agneau, servies avec boulgour à la tomate et oignons au sumac. Celle d'agneau a ses fidèles.</p>
-      </article>
-      <article class="dish rv">
-        <h3>Köfte</h3>
-        <p>L'assiette de boulettes de veau et de dinde.</p>
-      </article>
-      <article class="dish rv">
-        <h3>Künefe</h3>
-        <p>Le dessert : spécialité d'Antakya préparée à la commande : cheveux d'ange, fromage fondant, sirop de sucre.</p>
-      </article>
-      <article class="dish rv">
-        <h3>Formules</h3><span class="price num">11,50 – 15 €</span>
-        <p>Menu enfant à 10 €.</p>
-      </article>
-      <article class="dish rv">
-        <h3>Ayran maison</h3><span class="price num">2,50 €</span>
-        <p>Boisson au yaourt, salée et fraîche. Canettes aussi.</p>
-      </article>
     </div>
-    <p class="fine">Sur place ou à emporter, pas de livraison. Prix indicatifs, à vérifier au comptoir.</p>
-  </div>
-</section>
-
-<section class="geste" aria-labelledby="geste-t">
-  <div class="wrap geste-grid">
-    <figure class="geste-photo rv">
-      <img src="https://images.unsplash.com/photo-1756362847925-71c792d6729c?w=1400&q=80&auto=format&fit=crop" alt="Broche de viande grillée sur la rôtissoire verticale" loading="lazy">
-    </figure>
-    <div>
-      <h2 id="geste-t" class="rv">Le dürüm, du début</h2>
-      <ol class="steps">
-        <li class="rv"><span class="when">La veille</span><p>La poitrine de veau et la dinde marinent de longues heures.</p></li>
-        <li class="rv"><span class="when">À l'aube</span><p>L'équipe arrive tôt. La viande monte en broche, la pâte du dürüm se pétrit sur place.</p></li>
-        <li class="rv"><span class="when">11h30</span><p>La broche grille devant vous et se taille au long couteau, commande après commande.</p></li>
-        <li class="rv"><span class="when">Au comptoir</span><p>Le pain s'étale, la viande s'y couche, puis la garniture et un dernier tour de main.</p></li>
-      </ol>
-      <div class="garnish rv" aria-label="Garniture du dürüm">
-        <span>Oignon rouge</span><span>Sumac</span><span>Persil plat</span><span>Piment</span><span>Sauce tomate</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="histoire" id="histoire" aria-labelledby="hist-t">
-  <div class="wrap hist-grid">
-    <div class="rv">
-      <h2 id="hist-t" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Depuis 1987</h2>
-      <div class="word num" aria-hidden="true">1987</div>
-    </div>
-    <div class="rv">
-      <p>En turc, <b>özlem</b> veut dire le manque, la nostalgie d'un lieu qu'on a quitté. Le nom colle à la maison : le décor n'a pas bougé depuis 1987 et les habitués reviennent pour le même dürüm.</p>
-      <p>Aujourd'hui, Edip Bolatoglu, formé à l'école Ferrandi, tient la cuisine avec son équipe. Même rigueur, même broche unique.</p>
-      <div class="facts num">
-        <div><b>4,6</b><span>sur Google</span></div>
-        <div><b>971</b><span>avis</span></div>
-        <div><b>1</b><span>broche par jour</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="venir" id="venir" aria-labelledby="venir-t">
-  <div class="wrap venir-grid">
-    <div class="rv">
-      <h2 id="venir-t">Venir</h2>
-      <address class="addr" style="margin-top:24px">57 rue des<br>Petites-Écuries<br>75010 Paris</address>
-      <dl class="info">
-        <div><dt>Métro</dt><dd>Poissonnière, Bonne Nouvelle, Château d'Eau, Cadet</dd></div>
-        <div><dt>Téléphone</dt><dd><a href="tel:+33147703787" class="num">01 47 70 37 87</a> · précommande conseillée le midi</dd></div>
-        <div><dt>Email</dt><dd><a href="mailto:ozlemsnack@gmail.com?subject=Question%20pour%20%C3%96zlem">ozlemsnack@gmail.com</a></dd></div>
-        <div><dt>Service</dt><dd>Sur place ou à emporter</dd></div>
-      </dl>
-      <div class="ctas">
-        <a class="btn btn-k" href="https://www.google.com/maps/dir/?api=1&destination=57+rue+des+Petites+%C3%89curies+75010+Paris" target="_blank" rel="noopener">Ouvrir l'itinéraire</a>
-        <a class="btn btn-t" href="mailto:ozlemsnack@gmail.com?subject=Question%20pour%20%C3%96zlem">Écrire</a>
-      </div>
-    </div>
-    <div class="map rv">
-      <iframe title="Plan : 57 rue des Petites-Écuries, Paris 10e" loading="lazy" src="https://www.google.com/maps?q=57+rue+des+Petites+%C3%89curies+75010+Paris&z=17&output=embed"></iframe>
-    </div>
-  </div>
-</section>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <svg class="foot-name" viewBox="0 0 1000 300" aria-hidden="true" preserveAspectRatio="none"><text x="0" y="283" textLength="1000" lengthAdjust="spacingAndGlyphs">Özlem</text></svg>
     <div class="foot-row">
-      <span>Özlem · 57 rue des Petites-Écuries, 75010 Paris · <a href="tel:+33147703787">01 47 70 37 87</a></span>
-      <span>Démo réalisée par Raul Hatos — site non officiel · Photos Unsplash</span>
+      <span>57 rue des Petites-Écuries, 75010 Paris</span>
+      <a href="tel:+33147703787">01 47 70 37 87</a>
+      <a href="mailto:ozlemsnack@gmail.com">ozlemsnack@gmail.com</a>
+      <span>Photos : Unsplash</span>
     </div>
+    <p class="foot-name" aria-hidden="true">Öz<b>l</b>em</p>
   </div>
 </footer>
 
+
 <script>
 document.documentElement.classList.add('js');
-// reveal
+// précommande
 (function(){
-  var els=document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-  els.forEach(function(e,i){e.style.transitionDelay=(i%4)*70+'ms';io.observe(e)});
+  var Q={},items=document.querySelectorAll('.item'),recap=document.getElementById('recap'),tot=document.getElementById('total');
+  function eur(x){return (Math.round(x*100)/100).toFixed(2).replace('.00','').replace('.',',')+' €'}
+  function draw(){
+    var t=0,rows=[];
+    items.forEach(function(it){var n=Q[it.dataset.k]||0,p=+it.dataset.p;it.querySelector('output').textContent=n;if(n){t+=n*p;rows.push('<li><span>'+n+' × '+it.querySelector('h3').textContent+'</span><span>'+eur(n*p)+'</span></li>')}});
+    recap.innerHTML=rows.length?rows.join(''):'<li>Rien pour l’instant. Ajoutez un dürüm.</li>';
+    tot.textContent=eur(t);
+  }
+  items.forEach(function(it){it.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){var k=it.dataset.k;Q[k]=Math.max(0,Math.min(30,(Q[k]||0)+(+b.dataset.d)));draw()})})});
+  draw();
 })();
-
-// broche du jour : état d'ouverture à l'heure de Paris
+// ouvert maintenant (heure de Paris), minutes depuis minuit
 (function(){
-  // minutes depuis minuit ; 0 = dimanche
   var H={1:[[690,990]],2:[[690,990]],3:[[690,990]],4:[[690,990]],5:[[690,990],[1110,1380]],6:[[690,990]],0:[]};
-  var J=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-  var START=660,END=1380;
-  function fmt(m){var h=Math.floor(m/60),mm=m%60;return h+'h'+(mm?String(mm).padStart(2,'0'):'')}
-  function dur(m){var h=Math.floor(m/60),mm=m%60;return h?h+' h'+(mm?' '+String(mm).padStart(2,'0'):''):mm+' min'}
-  function paris(){
-    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
-    var o={};p.forEach(function(x){o[x.type]=x.value});
-    return {d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday),m:(+o.hour)*60+(+o.minute)};
-  }
-  function next(d,m){
-    for(var i=0;i<8;i++){var dd=(d+i)%7;var s=H[dd];for(var k=0;k<s.length;k++){if(i>0||s[k][0]>m)return {i:i,d:dd,at:s[k][0]}}}
-  }
-  function render(){
-    var t=paris(),slots=H[t.d],open=null;
-    slots.forEach(function(s){if(t.m>=s[0]&&t.m<s[1])open=s});
-    var st=document.getElementById('state'),tx=document.getElementById('state-txt'),no=document.getElementById('state-note');
-    if(open){
-      var left=open[1]-t.m;
-      st.classList.remove('closed');
-      tx.textContent='Ouvert, la broche tourne jusqu’à '+fmt(open[1]);
-      no.textContent=left<=60?'Plus que '+dur(left)+'. Appelez pour vérifier qu’il en reste.':'Encore '+dur(left)+' de service. Le midi, précommandez pour couper la file.';
-    }else{
-      var n=next(t.d,t.m);
-      st.classList.add('closed');
-      tx.textContent='Fermé pour l’instant';
-      no.textContent='Prochaine broche '+(n.i===0?'aujourd’hui':n.i===1?'demain':J[n.d])+' à '+fmt(n.at)+'.';
-    }
-    var tr=document.getElementById('track');
-    tr.querySelectorAll('.seg').forEach(function(e){e.remove()});
-    slots.forEach(function(s){var e=document.createElement('div');e.className='seg';e.style.left=(s[0]-START)/(END-START)*100+'%';e.style.width=(s[1]-s[0])/(END-START)*100+'%';tr.prepend(e)});
-    var nw=document.getElementById('now');
-    if(t.m>=START&&t.m<=END){nw.hidden=false;nw.style.left=(t.m-START)/(END-START)*100+'%'}else nw.hidden=true;
-    var cells=document.getElementById('week').children;
-    for(var i=0;i<7;i++)cells[i].classList.toggle('today',((i+1)%7)===t.d);
-  }
-  render();setInterval(render,30000);
+  function fmt(m){var h=Math.floor(m/60),mm=m%60;return h+' h'+(mm?' '+mm:'')}
+  try{
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()),o={};
+    p.forEach(function(x){o[x.type]=x.value});
+    var d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday),m=(+o.hour)*60+(+o.minute);
+    var row=document.querySelector('.hours tr[data-d="'+d+'"]');if(row)row.classList.add('today');
+    var st=document.getElementById('status'),txt=st.querySelector('span'),s=H[d],open=null,next=null;
+    s.forEach(function(x){if(m>=x[0]&&m<x[1])open=x;if(!next&&x[0]>m)next=x});
+    if(open)txt.textContent='Ouvert, la broche tourne jusqu’à '+fmt(open[1]);
+    else{st.classList.add('closed');txt.textContent=next?'Ouvre aujourd’hui à '+fmt(next[0]):'Fermé en ce moment, retour à 11 h 30'+(d===6?' lundi':' demain')}
+    st.hidden=false;
+  }catch(e){}
 })();
+// apparition
+if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el,i){var r=el.getBoundingClientRect();if(r.top>innerHeight){el.classList.add('pre');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)}});
+}
 </script>
 </body>
 </html>
