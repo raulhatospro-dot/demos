@@ -3,565 +3,610 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
 <title>Gage Services · Plombier à Boulogne-Billancourt</title>
-<meta name="description" content="Gage Services, plombier au 26 rue de la Rochefoucauld à Boulogne-Billancourt depuis 2015 : fuites, débouchage, chauffe-eau, robinetterie, salle de bain, radiateurs.">
-<meta name="theme-color" content="#eef0f3">
+<meta name="description" content="Gage Services, plomberie, dépannage et rénovation au 26 rue de la Rochefoucauld à Boulogne-Billancourt depuis 2015. Tarifs affichés, zone d’intervention, horaires.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#dce8f4">
+<meta property="og:title" content="Gage Services · Plombier à Boulogne-Billancourt">
+<meta property="og:description" content="Plomberie, dépannage et rénovation à Boulogne-Billancourt depuis 2015. Déplacement à Boulogne 40 € HT, main-d’œuvre 70 € HT de l’heure.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=1200&h=630&fit=crop&q=70&fm=jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cpath fill='%230e4372' d='M50 4 92 58v58H8V58z'/%3E%3Cpath fill='%23fff' d='M50 20C40 34 26 54 26 76a24 24 0 0 0 48 0c0-22-14-42-24-56z'/%3E%3Cpath fill='%230e4372' d='M51 64h41v11H51zM46 60h4v19h-4z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;500&family=Stack+Sans+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#eef0f3;
-  --surface:#e2e5ea;
-  --tile:#f8f9fb;
-  --ink:#0b0c0e;
-  --muted:#4a515c;
-  --accent:#1f2de6;
-  --accent-press:#1622b8;
-  --accent-ink:#fff;
-  --dark-1:#0b0c0e;
-  --dark-2:#17191e;
-  --on-dark:#eef0f3;
-  --on-dark-soft:#aab2c0;
-  --rail-1:#dde2ea;
-  --rail-2:#c3cbd8;
-  --rail-3:#8e99ab;
-  --rail-4:#2a2f38;
-  --ok:#0f7a43;
-  --gap:8px;
-  --m:8px;
-  --r:6px;
-  --display:"Stack Sans Headline",system-ui,sans-serif;
-  --text:"Stack Sans Text",system-ui,sans-serif;
-  --s-small:clamp(.8125rem,.79rem + .1vw,.875rem);
-  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --s-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --s-head:clamp(2rem,1.3rem + 3.2vw,4rem);
+  /* brand: their logo navy #0e4372, their site's pale blue #edf6ff and yellow #ffd300 */
+  --ground:#dce8f4; --paper:#ffffff; --pale:#edf6ff; --sky:#a8cbea; --sky-2:#c6dcf0;
+  --navy:#0e4372; --navy-2:#1d5a90; --navy-d:#0a345b; --navy-dd:#072846;
+  --ink:#0b2f52; --ink-2:#36597c;
+  --yellow:#ffd300; --yellow-d:#f0c400;
+  --g:8px; --m:clamp(16px,1.2vw,24px); --pad:clamp(20px,2vw,28px);
+  --s1:15px; --s2:18px; --s3:clamp(22px,1.8vw,26px); --s4:clamp(34px,3.9vw,58px); --s5:clamp(38px,4.4vw,66px);
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:16px}
-body{background:var(--bg);color:var(--ink);font:400 var(--s-body)/1.5 var(--text);overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
-::selection{background:var(--accent);color:#fff}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:var(--display);font-weight:300;letter-spacing:-.022em;line-height:1.05;text-wrap:balance}
-.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.tab{font-variant-numeric:tabular-nums}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--ink);font:400 var(--s2)/1.5 Outfit,system-ui,sans-serif;touch-action:manipulation;font-variant-numeric:tabular-nums;overflow-x:clip}
+::selection{background:var(--yellow);color:var(--navy)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
+h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1;text-wrap:balance}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.dk :focus-visible,.dk:focus-visible{outline-color:#fff}
+.skip{position:absolute;left:12px;top:-80px;background:var(--navy);color:#fff;padding:12px 16px;z-index:50;transition:top .2s}
+.skip:focus{top:8px}
+.demo{background:var(--navy-dd);color:#fff;text-align:center;font-size:var(--s1);padding:8px 16px}
 
-/* bandeau démo */
-.demo{background:var(--ink);color:var(--on-dark-soft);font-size:var(--s-small);padding:8px 16px;text-align:center}
-.demo b{color:var(--on-dark);font-weight:500}
-
-/* boutons : une forme, la pilule */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:0;font:500 1rem/1 var(--text);text-decoration:none;cursor:pointer;transition:background .2s,transform .25s var(--ease),color .2s;white-space:nowrap}
+/* buttons: square, flat */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 20px;font:600 var(--s2)/1 Outfit,sans-serif;text-decoration:none;border:0;cursor:pointer;white-space:nowrap;transition:transform .15s var(--ease),background-color .2s}
 .btn:active{transform:scale(.96)}
-.btn svg{width:18px;height:18px;flex:none}
-.btn-accent{background:var(--accent);color:var(--accent-ink)}
-.btn-accent:hover{background:var(--accent-press)}
-.btn-ink{background:var(--ink);color:#fff}
-.btn-ink:hover{background:#2a2f38}
-.btn-light{background:#fff;color:var(--ink)}
-.btn-light:hover{background:var(--surface)}
-.btn-ghost{background:rgba(255,255,255,.14);color:#fff}
-.btn-ghost:hover{background:rgba(255,255,255,.24)}
+.btn svg{width:20px;height:20px;flex:none}
+.b-navy{background:var(--navy);color:#fff}.b-navy:hover{background:var(--navy-2)}
+.b-white{background:#fff;color:var(--navy)}.b-white:hover{background:var(--pale)}
+.b-yellow{background:var(--yellow);color:var(--ink)}.b-yellow:hover{background:#ffe04d}
 
-/* ===== tableau d'accueil ===== */
-.board{padding:var(--m);display:grid;gap:var(--gap);grid-template-columns:repeat(2,1fr)}
-.t{border-radius:var(--r);background:var(--tile);overflow:hidden;position:relative;min-width:0}
-.t img{width:100%;height:100%;object-fit:cover}
-.name{grid-column:1/-1;height:104px;background:var(--tile);display:flex;align-items:center;padding:0 12px}
-.name .word{font:300 clamp(3rem,13.6vw,16rem)/1 var(--display);letter-spacing:-.045em;white-space:nowrap;padding-bottom:.08em}
-.name .word b{font-weight:300;color:var(--accent)}
-.links{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
-.links a{display:block;min-height:56px;padding:14px 16px;background:var(--surface);border-radius:var(--r);text-decoration:none;font-weight:500;transition:background .2s}
-.links a:hover{background:var(--rail-2)}
-.links a.call{background:var(--accent);color:#fff}
-.links a.call:hover{background:var(--accent-press)}
-.main-ph{grid-column:1/-1;aspect-ratio:4/3;order:3}
-.links{order:4}
-.rail{order:5}
-.facts{order:6}
-.statement{order:2}
-.name{order:1}
-.statement{grid-column:1/-1;background:var(--tile);padding:22px 20px 24px}
-.statement h2{font-size:clamp(1.75rem,7.4vw,2.25rem);font-weight:300}
-.statement h2 span{color:var(--muted)}
-.statement p{margin-top:14px;max-width:44ch}
-.statement .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.statement .acts .btn{flex:1 1 auto}
-.rail{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
-.rail .r{border-radius:var(--r);padding:16px;min-height:96px;font-size:.9375rem;line-height:1.35;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
-.rail .r{font:300 1.3rem/1.2 var(--display);letter-spacing:-.01em}
-.rail .r strong{font-weight:500;white-space:nowrap}
-.r1{background:var(--rail-1)}.r2{background:var(--rail-2)}.r3{background:var(--rail-3);color:#0b0c0e}.r4{background:var(--rail-4);color:var(--on-dark)}
-.r5{grid-column:1/-1;background:var(--accent);color:#fff;text-decoration:none;transition:background .2s}
-.r5:hover{background:var(--accent-press)}
-.status{display:inline-flex;align-items:center;gap:8px;font:400 .875rem/1.3 var(--text)}
-.status i{width:9px;height:9px;border-radius:50%;background:var(--rail-3);flex:none}
-.status.open i{background:#34d17a}
-.side-ph{display:none}
-.facts{grid-column:1/-1;background:var(--surface);padding:20px}
-.facts h2{font-size:1.25rem;font-weight:500;letter-spacing:-.01em}
-.facts ul{list-style:none;margin-top:12px;display:grid;gap:6px}
-.facts li{display:flex;gap:10px}
-.facts li::before{content:"";width:6px;height:6px;margin-top:.62em;border-radius:1px;background:var(--accent);flex:none}
+/* top row of tiles */
+.bar{display:grid;grid-template-columns:68px 1fr auto;gap:var(--g);padding:var(--g) var(--m)}
+.bar>*{min-height:68px}
+.logo{background:var(--navy);display:grid;place-items:center}
+.logo svg{width:34px;height:auto}
+.links{background:var(--pale);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 20px}
+.links b{font-size:var(--s3);letter-spacing:-.02em;white-space:nowrap}
+.links b span{font-weight:300}
+.links ul{display:flex;gap:28px;list-style:none}
+.links ul a{text-decoration:none;font-weight:600;display:inline-block;padding:12px 0}
+.links ul a:hover{text-decoration:underline}
+.bar .btn{min-height:68px;padding:0 24px}
 
-/* ===== bandeau qui défile ===== */
-.marquee{overflow:hidden;background:var(--ink);color:#fff;margin:0 var(--m);border-radius:var(--r);padding:18px 0}
-.marquee .track{display:flex;width:max-content;animation:slide 38s linear infinite}
-.marquee:hover .track{animation-play-state:paused}
-.marquee span{font:300 clamp(2.6rem,7vw,6rem)/1 var(--display);letter-spacing:-.035em;padding-right:.5em;white-space:nowrap}
-.marquee span em{font-style:normal;color:#7f88f5}
-@keyframes slide{to{transform:translateX(-50%)}}
+/* hero board */
+.hero{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto minmax(220px,1fr);grid-template-areas:"t t t t t t p p p p p p" "n n n n n n p p p p p p" "b b b c c c p p p p p p";gap:var(--g);padding:0 var(--m);height:clamp(620px,calc(100svh - 132px),820px)}
+.t-title{grid-area:t;background:var(--paper);padding:clamp(26px,3vw,48px) clamp(24px,2.8vw,44px) 68px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero h1{font-size:var(--s5);max-width:15ch}
+.lead{margin-top:20px;max-width:52ch}
+.status{display:flex;align-items:center;gap:10px;margin-top:18px;font-weight:600;font-size:var(--s1)}
+.dot{width:10px;height:10px;border-radius:50%;background:#7b8ea3;flex:none}
+.status.open .dot{background:#1f9d55}
+.nums{grid-area:n;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--g);list-style:none}
+.nums li{background:var(--pale);padding:16px 20px 18px}
+.nums li:nth-child(1){background:var(--navy);color:#fff}
+.nums li:nth-child(4){background:var(--yellow)}
+.nums b{display:block;font-size:clamp(30px,2.7vw,40px);line-height:1;letter-spacing:-.03em;white-space:nowrap}
+.nums b small{font-size:.48em;letter-spacing:0;font-weight:600}
+.nums span{display:block;font-size:var(--s1);line-height:1.35;margin-top:8px}
+.ph{position:relative;overflow:hidden;background:var(--navy)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.cap{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font-size:var(--s1);font-weight:600;padding:5px 10px;line-height:1.3}
+.t-p{grid-area:p}.t-b{grid-area:b}.t-c{grid-area:c}
+.t-title .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 
-/* ===== métiers ===== */
-.split{display:grid;margin:var(--gap) var(--m) 0;gap:var(--gap)}
-.split .cell{background:var(--tile);border-radius:var(--r);padding:32px 20px;display:flex;flex-direction:column;justify-content:space-between;gap:32px}
-.zig{font-size:clamp(2.3rem,10vw,4.25rem)}
+/* shutter (signature move) */
+.js .shutter{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s var(--ease)}
+.js .shutter img{transform:scale(1.12);transition:transform 1.4s var(--ease)}
+.js .shutter.in{clip-path:inset(0 0 0 0)}
+.js .shutter.in img{transform:none}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+section{padding-top:clamp(120px,11vw,180px)}
+.h2{font-size:var(--s4)}
+
+/* prestations: statement cell + dark rows */
+.split{display:grid;grid-template-columns:1fr 1fr;padding-left:var(--m);padding-right:var(--m);gap:0}
+.stmt{background:var(--pale);padding:clamp(28px,3.4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:clamp(560px,80svh,820px)}
 .zig span{display:block}
-.zig span:nth-child(2){text-align:right}
-.cell .foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
-.cell .foot p{max-width:32ch}
-.rows{display:grid;gap:0;border-radius:var(--r);overflow:hidden}
-.row{background:var(--dark-1);color:var(--on-dark);padding:26px 20px;display:grid;gap:10px}
-.row:nth-child(even){background:var(--dark-2)}
-.row h3{font-size:1.75rem;color:#fff}
-.row p{color:var(--on-dark-soft)}
-.row .terms{color:#c9cfdb;font-size:.9375rem}
+.zig span+span{text-align:right}
+.stmt-foot{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.stmt-foot p{max-width:32ch}
+.stmt figure{position:relative;flex:1;min-height:220px;overflow:hidden}
+.stmt figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rows{display:grid;grid-auto-rows:1fr;list-style:none}
+.rows>li{display:grid;grid-template-columns:5fr 4fr 3fr;gap:20px;padding:28px;background:var(--navy-dd);color:#fff;align-items:start}
+.rows>li:nth-child(even){background:var(--navy-d)}
+.rows h3{font-size:var(--s3);letter-spacing:-.02em;line-height:1.1}
+.rows p{font-size:var(--s1);line-height:1.5;color:#dbe8f5}
+.rows ul{list-style:none;font-size:var(--s1);line-height:1.5;color:#fff}
+.rows ul li{display:block;padding:0;background:none}
+.rows ul li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--yellow);margin-right:10px;vertical-align:.1em}
 
-/* ===== outil : décrivez votre problème ===== */
-.tool{margin:var(--gap) var(--m) 0;background:var(--accent);color:#fff;border-radius:var(--r);padding:40px 16px 16px}
-.tool-head{padding:0 4px;display:grid;gap:14px;max-width:1100px}
-.tool-head h2{font-size:var(--s-head)}
-.tool-head p{max-width:52ch;color:#e3e6ff}
-.tool-grid{display:grid;gap:var(--gap);margin-top:32px}
-.panel{background:#2533ee;border-radius:var(--r);padding:20px 16px}
-.panel + .panel{margin-top:0}
-.q{border:0;padding:0;margin:0 0 26px}
-.q:last-child{margin-bottom:0}
-.q legend,.q label.lab{display:block;font:500 1.125rem/1.3 var(--text);margin-bottom:12px;color:#fff}
-.chips{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
-.chip{position:relative}
-.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
-.chip span{display:flex;align-items:center;min-height:52px;padding:10px 14px;border-radius:var(--r);background:#3a47f0;color:#fff;font-size:.98rem;line-height:1.25;transition:background .2s,color .2s,transform .25s var(--ease)}
-.chip input:hover + span{background:#4e5af2}
-.chip input:checked + span{background:#fff;color:var(--ink);font-weight:500}
-.chip input:focus-visible + span{outline:3px solid #fff;outline-offset:2px}
-.chip input:active + span{transform:scale(.97)}
-.chips.wide{grid-template-columns:1fr}
-.field{width:100%;min-height:52px;border:0;border-radius:var(--r);background:#3a47f0;color:#fff;font:400 1rem/1.4 var(--text);padding:14px}
-.field::placeholder{color:#c3c8ff}
-.field:focus{outline:3px solid #fff;outline-offset:1px;background:#4552f1}
-textarea.field{min-height:110px;resize:vertical}
-.duo{display:grid;gap:6px}
-.warn{display:none;margin-top:12px;background:#fff;color:var(--ink);border-radius:var(--r);padding:14px 16px;font-size:.98rem}
-.warn.on{display:block}
-.warn b{font-weight:600}
-/* le bon */
-.bon{background:#fff;color:var(--ink);border-radius:var(--r);padding:22px 18px;display:flex;flex-direction:column;gap:18px}
-.bon h3{font-size:1.75rem}
-.bon .to{color:var(--muted);font-size:var(--s-small);margin-top:-10px}
-.bon pre{white-space:pre-wrap;font:400 1rem/1.55 var(--text);background:var(--bg);border-radius:var(--r);padding:16px;min-height:180px}
-.bon .send{display:grid;gap:8px}
-.bon .send .btn{width:100%}
-.bon .note{font-size:var(--s-small);color:var(--muted)}
-.copied{color:var(--ok);font-weight:500}
+/* tarifs: bars that step up with the price */
+.wrap{padding-left:var(--m);padding-right:var(--m)}
+.bars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--g);align-items:end;position:relative;min-height:640px}
+.bars-head{position:absolute;left:0;top:0;width:calc(50% - 4px);padding:0 clamp(8px,1.2vw,16px)}
+.bars-head p{margin-top:16px;max-width:40ch}
+.bar-t{display:flex;flex-direction:column;justify-content:space-between}
+.bar-t .in{padding:28px}
+.bar-t h3{font-size:var(--s3);letter-spacing:-.02em}
+.bar-t .price{font-size:var(--s4);font-weight:700;letter-spacing:-.04em;line-height:1;margin-top:14px;white-space:nowrap}
+.bar-t .price small{font-size:.38em;letter-spacing:0;font-weight:600;margin-left:.2em}
+.bar-t .strip{min-height:64px;display:flex;align-items:center;padding:0 28px;font-weight:600;font-size:var(--s1)}
+.k1{height:360px;background:var(--paper)}.k1 .strip{background:var(--pale)}
+.k2{height:460px;background:var(--sky)}.k2 .strip{background:#93bde3}
+.k3{height:520px;background:var(--navy-2);color:#fff}.k3 .strip{background:#174c7b}
+.k4{height:640px;background:var(--navy);color:#fff}.k4 .strip{background:var(--navy-d)}
+.k4 .price{color:var(--yellow)}
+.note{font-size:var(--s1);color:var(--ink-2);margin-top:14px}
 
-/* ===== en trois temps ===== */
-.grow{margin:0 var(--m);padding:96px 8px 24px;display:grid;gap:28px}
-.grow h2{font-size:var(--s-head)}
-.stage figure{border-radius:var(--r);overflow:hidden;background:var(--surface)}
-.stage:nth-of-type(1) figure{height:52vw}
-.stage:nth-of-type(2) figure{height:64vw}
-.stage:nth-of-type(3) figure{height:80vw}
-.stage:nth-of-type(1) img{object-position:62% 50%}
-.stage:nth-of-type(2) img{object-position:25% 50%}
-.stage h3{font:500 1.25rem/1.3 var(--text);letter-spacing:-.01em;margin-top:14px}
-.stage p{color:var(--muted);margin-top:4px;max-width:36ch}
+.calc{display:grid;grid-template-columns:5fr 4fr 3fr;gap:var(--g);margin-top:var(--g)}
+.calc form{background:var(--paper);padding:var(--pad);display:grid;gap:16px;align-content:start}
+.calc h3{font-size:var(--s3);letter-spacing:-.02em}
+label{display:block;font-weight:600;font-size:var(--s1);margin-bottom:6px}
+select,input,textarea{width:100%;min-height:52px;font:400 var(--s2) Outfit,sans-serif;color:var(--ink);background:var(--pale);border:2px solid transparent;padding:10px 14px;border-radius:0}
+select:focus-visible,input:focus-visible,textarea:focus-visible{border-color:var(--navy);outline:none}
+.check{display:flex;align-items:center;gap:12px;min-height:44px;font-weight:600;font-size:var(--s1);cursor:pointer;margin:0}
+.check input{width:22px;height:22px;min-height:0;accent-color:var(--navy);flex:none}
+.out{background:var(--navy);color:#fff;padding:var(--pad);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.out dl{display:grid;grid-template-columns:1fr auto;gap:10px 20px}
+.out dd{text-align:right;font-weight:600}
+.tot{font-size:var(--s4);font-weight:700;letter-spacing:-.04em;line-height:1}
+.out .small{font-size:var(--s1);color:#cfe2f5;margin-top:10px}
+.tier{background:var(--yellow);padding:var(--pad);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.tier p:first-child{font-size:var(--s3);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.tier p:last-child{font-size:var(--s1)}
 
-/* ===== contact ===== */
-.contact{margin:var(--gap) var(--m) 0;background:var(--ink);color:#fff;border-radius:var(--r);padding:28px 0 16px;overflow:hidden}
-.strip{display:flex;gap:8px;width:max-content;animation:slide 60s linear infinite}
-.strip img{height:110px;width:auto;border-radius:var(--r);object-fit:cover}
-.strip img:nth-child(3n+1){aspect-ratio:3/4}
-.strip img:nth-child(3n+2){aspect-ratio:1}
-.strip img:nth-child(3n){aspect-ratio:3/2}
-.contact-in{padding:0 16px}
-.contact h2{font-size:clamp(2.3rem,9vw,3.75rem);margin-top:48px}
-.contact .addr{margin-top:14px;color:var(--on-dark-soft);font-size:var(--s-lead);line-height:1.35}
-.bar{display:grid;gap:8px;margin-top:32px}
-.bar a{display:flex;flex-direction:column;justify-content:center;min-height:68px;padding:12px 20px;border-radius:var(--r);background:#1e2128;color:#fff;text-decoration:none;font-size:1.125rem;font-weight:500;transition:background .2s}
-.bar a small{font-size:var(--s-small);font-weight:400;color:var(--on-dark-soft)}
-.bar a:hover{background:#2a2f38}
-.bar a.go{background:#fff;color:var(--ink)}
-.bar a.go small{color:var(--muted)}
-.bar a.go:hover{background:var(--surface)}
-.below{display:grid;gap:8px;margin-top:8px}
-.hours{background:#1e2128;border-radius:var(--r);padding:20px}
-.hours h3{font-size:1.75rem}
-.hours table{width:100%;border-collapse:collapse;margin-top:14px}
-.hours td{padding:7px 0;color:#d5dae3}
-.hours td:last-child{text-align:right}
-.hours tr.today td{color:#fff;font-weight:600}
-.hours .n{margin-top:12px;font-size:var(--s-small);color:var(--on-dark-soft)}
-.map{border-radius:var(--r);overflow:hidden;min-height:300px;background:#1e2128;position:relative}
-.map a{position:absolute;inset:0;display:grid;place-items:center;color:var(--on-dark-soft)}
-.map iframe{position:relative}
-.map iframe{width:100%;height:100%;min-height:300px;border:0;display:block;filter:grayscale(.35)}
+/* méthode: accordion of tinted panels */
+.intro2{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g);align-items:end}
+.intro2 h2{grid-column:1/6}
+.intro2 p{grid-column:7/12}
+.acc{display:flex;height:520px;margin-top:64px;list-style:none}
+.st{flex:1 1 0;min-width:76px;display:flex;position:relative;overflow:hidden;transition:flex-grow .45s var(--ease)}
+.st.open{flex-grow:7}
+.st:nth-child(1){background:var(--navy-dd);color:#fff}
+.st:nth-child(2){background:var(--navy);color:#fff}
+.st:nth-child(3){background:var(--navy-2);color:#fff}
+.st:nth-child(4){background:var(--sky);color:var(--ink)}
+.st button{all:unset;cursor:pointer;position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;padding:24px 22px}
+.st button span{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:var(--s3);white-space:nowrap}
+.st button:focus-visible{outline:3px solid currentColor;outline-offset:-8px}
+.st .body{display:grid;grid-template-columns:1fr 1fr;width:100%;min-width:640px}
+.st .txt{padding:32px;display:flex;flex-direction:column;justify-content:space-between}
+.st h3{font-size:var(--s4);letter-spacing:-.03em}
+.st .txt p{max-width:36ch}
+.st .txt strong{display:block;font-size:var(--s3);margin-bottom:10px;letter-spacing:-.02em}
+.st figure{overflow:hidden}
+.st figure img{width:100%;height:100%;object-fit:cover}
+.js .st:not(.open) .body{visibility:hidden;opacity:0}
+.js .st.open button{display:none}
+.st .body{transition:opacity .4s var(--ease) .15s}
+html:not(.js) .acc{height:auto;flex-direction:column}
+html:not(.js) .st button{display:none}
 
-/* ===== pied : G.A.G.E en carreaux ===== */
-footer{margin:var(--gap) var(--m) 0;padding-bottom:var(--m)}
-.mark{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;align-items:end;height:30svh;min-height:180px}
-.mark div{border-radius:var(--r);display:flex;align-items:flex-end;justify-content:flex-start;padding:10px 12px;font:300 clamp(4rem,19vw,16rem)/.8 var(--display);letter-spacing:-.05em}
-.mark div:nth-child(1){height:100%;background:var(--accent);color:#fff}
-.mark div:nth-child(2){height:74%;background:var(--ink);color:#fff}
-.mark div:nth-child(3){height:88%;background:var(--rail-2)}
-.mark div:nth-child(4){height:64%;background:var(--surface)}
-.fcols{display:grid;grid-template-columns:1fr 1fr;gap:28px 16px;padding:40px 8px 20px;font-size:.9375rem}
-.fcols h3{font:500 1rem/1.3 var(--text);letter-spacing:0;margin-bottom:8px}
-.fcols ul{list-style:none;display:grid;gap:4px;color:var(--muted)}
-.fcols a{text-decoration:none}
-.fcols a:hover{color:var(--accent);text-decoration:underline}
-.legal{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:8px;font-size:var(--s-small);color:var(--muted)}
+/* rénovation + pros: colour tiles */
+.reno-h{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.reno-h p{max-width:44ch}
+.tiles4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px;list-style:none}
+.tint{aspect-ratio:4/5;overflow:hidden}
+.tint img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15);mix-blend-mode:multiply;transition:transform .6s var(--ease)}
+.tiles4 li:hover .tint img{transform:scale(1.04)}
+.tiles4 li:nth-child(1) .tint{background:var(--sky)}
+.tiles4 li:nth-child(2) .tint{background:var(--yellow)}
+.tiles4 li:nth-child(3) .tint{background:#7fb0dc}
+.tiles4 li:nth-child(4) .tint{background:var(--pale)}
+.tiles4 b{display:block;margin-top:12px;font-size:var(--s2)}
+.tiles4 span{display:block;font-size:var(--s1);color:var(--ink-2)}
+.pros{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g);margin-top:var(--g)}
+.pro-list{grid-column:1/8;background:var(--navy);color:#fff;padding:var(--pad) var(--pad) 32px}
+.pro-list h3{font-size:var(--s3);letter-spacing:-.02em}
+.pro-list ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:20px}
+.pro-list li{background:var(--navy-2);padding:10px 16px;font-weight:600}
+.devis{grid-column:8/13;background:var(--yellow);padding:var(--pad);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.devis b{font-size:var(--s4);letter-spacing:-.04em;line-height:1}
+.devis blockquote{font-size:var(--s2);font-weight:600}
+.devis footer{font-size:var(--s1);font-weight:400;margin-top:6px}
 
-/* ===== entrées ===== */
-.rise{opacity:1;transform:none}
-.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0ms)}
-.js .rise.in{opacity:1;transform:none}
-.zoom img{transition:transform 1.4s var(--ease)}
-.zoom:hover img{transform:scale(1.04)}
-.hero-img img{animation:drift 22s ease-in-out infinite alternate}
-@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.1) translateX(-1.5%)}}
+/* zone */
+.zone{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g)}
+.zone-map{grid-column:1/7;background:var(--navy);color:#fff;padding:var(--pad);display:flex;flex-direction:column;gap:24px}
+.zone-map svg{width:100%;height:auto;max-height:480px;margin:auto 0}
+.zone-r{grid-column:7/13;display:grid;grid-template-rows:auto 1fr 1fr auto;gap:var(--g)}
+.zt{padding:var(--pad)}
+.zt h3{font-size:var(--s3);letter-spacing:-.02em;display:flex;align-items:center;gap:12px}
+.zt p{margin-top:10px}
+.z1{background:var(--yellow)}.z2{background:var(--navy-2);color:#fff}.z3{background:var(--sky)}
+.zone-r .zt.go{background:var(--pale);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-/* ===== tablette ===== */
-@media (min-width:700px){
-  :root{--m:12px}
-  .name{height:150px}
-  .name .word{font-size:13.8vw}
-  .links{grid-template-columns:repeat(4,1fr)}
-  .rail{grid-template-columns:repeat(5,1fr)}
-  .r5{grid-column:auto}
-  .split{grid-template-columns:1fr 1fr}
-  .split .cell{padding:40px 32px}
-  .zig{font-size:clamp(2.2rem,5.2vw,4.25rem)}
-  .tool{padding:64px 24px 24px}
-  .chips{grid-template-columns:repeat(3,1fr)}
-  .duo{grid-template-columns:1fr 1fr}
-  .grow{grid-template-columns:3fr 4fr 5fr;align-items:end;padding:140px 16px 24px}
-  .grow h2{grid-column:1/3;align-self:start}
-  .grow .stage:nth-of-type(1){grid-column:1;grid-row:2}
-  .grow .stage:nth-of-type(2){grid-column:2;grid-row:2}
-  .grow .stage:nth-of-type(3){grid-column:3;grid-row:1/3}
-  .stage:nth-of-type(1) figure{height:30vh}
-  .stage:nth-of-type(2) figure{height:44vh}
-  .stage:nth-of-type(3) figure{height:60vh}
-  .contact{padding:48px 0 24px}
-  .strip img{height:150px}
-  .contact-in{padding:0 32px}
-  .bar{grid-template-columns:repeat(3,1fr)}
-  .bar a{min-height:96px;align-items:center;text-align:center}
-  .below{grid-template-columns:1fr 1.4fr}
-  .fcols{grid-template-columns:repeat(4,1fr)}
+/* horaires & accès board */
+.visit{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto;gap:var(--g)}
+.hours-t{grid-column:1/5;grid-row:1/3;background:var(--paper);padding:var(--pad)}
+.hours-t h2{font-size:var(--s4)}
+.hours{width:100%;border-collapse:collapse;margin-top:24px}
+.hours th,.hours td{padding:12px 10px;text-align:left;font-weight:400}
+.hours td{text-align:right;white-space:nowrap}
+.hours tr:nth-child(odd){background:var(--pale)}
+.hours tr.today{background:var(--yellow);font-weight:600}
+.hours tr.today th,.hours tr.today td{font-weight:600}
+.addr-t{grid-column:5/9;background:var(--navy);color:#fff;padding:var(--pad);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.addr-t p{font-size:var(--s3);line-height:1.2;font-weight:600;letter-spacing:-.02em}
+.lines{display:flex;flex-direction:column;gap:4px}
+.lines a{font-weight:600;padding:8px 0;min-height:44px;display:flex;align-items:center}
+.map-t{grid-column:9/13;grid-row:1/3;min-height:460px;background:var(--sky)}
+.map-t iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.3)}
+.mail-t{grid-column:5/9;background:var(--yellow);padding:var(--pad)}
+.mail-t h3{font-size:var(--s3);letter-spacing:-.02em}
+.mail-t form{display:grid;gap:10px;margin-top:16px}
+.mail-t input,.mail-t textarea{background:#fff}
+.mail-t textarea{min-height:96px;resize:vertical}
+.mail-t .acts{display:flex;gap:8px;flex-wrap:wrap}
+
+
+/* footer: the mark built large */
+.foot{background:var(--navy);color:#fff;margin-top:clamp(120px,11vw,180px);padding:clamp(40px,5vw,72px) var(--m) 28px}
+.mark{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,48px);align-items:end}
+.mark svg{width:clamp(90px,14vw,210px);height:auto}
+.mark b{display:block;font-size:clamp(48px,11.4vw,176px);line-height:.82;letter-spacing:-.05em;font-weight:700;white-space:nowrap}
+.mark b span{font-weight:300;letter-spacing:-.03em}
+.mark small{display:block;font-size:var(--s3);font-weight:400;margin-top:16px;letter-spacing:0}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:56px}
+.cols h3{font-size:var(--s2);margin-bottom:8px;letter-spacing:0}
+.cols ul{list-style:none}
+.cols a,.cols li{color:#dbe8f5;text-decoration:none;font-size:var(--s1);line-height:1.6}
+.cols a{display:inline-block;padding:5px 0}
+.cols a:hover{color:#fff;text-decoration:underline}
+.legal{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:48px;font-size:var(--s1);color:#c4d8ec}
+.legal .btn{min-height:44px;font-size:var(--s1)}
+
+@media (max-width:1180px){
+  .hero{height:auto;grid-template-rows:auto auto;grid-template-areas:"t t t t t t t p p p p p" "n n n n n n n b b c c c"}
+  .t-b,.t-c{min-height:200px}
+  .nums{grid-template-columns:1fr 1fr}
+  .links ul{gap:20px}
+  .rows>li{grid-template-columns:1fr 1fr}
+  .rows>li ul{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 18px}
+  .calc{grid-template-columns:1fr 1fr}
+  .tier{grid-column:1/-1}
 }
-
-/* ===== bureau : le tableau complet ===== */
-@media (min-width:1100px){
-  .board>*{order:0!important}
-  .board{grid-template-columns:repeat(12,1fr);height:calc(100svh - 38px);min-height:760px;max-height:1000px}
-  .name{height:auto;padding:0 22px}
-  .name .word{font-size:clamp(7.5rem,13.4vw,15rem);line-height:1.12;padding-bottom:0}
-  .links a{min-height:0;padding:20px 22px}
-  .board{grid-template-rows:auto 64px 1fr auto}
-  .side-ph{display:block;grid-column:1/3;grid-row:3;min-height:0}
-  .facts{grid-column:1/3;grid-row:4;padding:20px 18px}
-  .facts h2{font-size:1.0625rem}
-  .facts ul{font-size:.9375rem;gap:5px}
-  .main-ph{grid-column:3/11;grid-row:3/5;aspect-ratio:auto;min-height:0}
-  .statement{grid-column:3/11;grid-row:4;z-index:1;align-self:end;border-radius:0 0 var(--r) var(--r);padding:28px 32px 30px;display:grid;grid-template-columns:1fr auto;gap:12px 40px;align-items:end}
-  .statement h2{font-size:clamp(2rem,2.6vw,2.6rem);max-width:22ch}
-  .statement p{margin-top:0;grid-column:1;max-width:52ch}
-  .statement .acts{grid-column:2;grid-row:1/3;margin-top:0;flex-direction:column}
-  .rail{grid-column:11/13;grid-row:3/5;grid-template-columns:1fr;grid-template-rows:repeat(5,1fr);min-height:0}
-  .rail .r{min-height:0;padding:16px}
-  .rail .r{justify-content:flex-end;font-size:1.125rem}
-  .split{min-height:min(90svh,860px)}
-  .split .cell{padding:56px 48px}
-  .zig span{display:block}
-  .rows{grid-template-rows:repeat(5,1fr)}
-  .row{grid-template-columns:5fr 4fr 3fr;gap:28px;padding:28px 32px;align-content:start}
-  .tool{padding:96px 40px 40px}
-  .tool-grid{grid-template-columns:7fr 5fr;align-items:start}
-  .panel{padding:32px 28px}
-  .bon{position:sticky;top:16px;padding:28px}
-  .grow{padding:200px 24px 40px;column-gap:10px}
-  .contact h2{margin-top:72px}
-  .contact-in{padding:0 48px}
-  footer .fcols{padding:56px 16px 24px}
+@media (max-width:960px){
+  .links b{display:none}
+  .split{grid-template-columns:1fr}
+  .stmt{min-height:0}
+  .bars{grid-template-columns:1fr 1fr;min-height:0;align-items:stretch}
+  .bars-head{position:static;width:auto;grid-column:1/-1;padding:0 0 24px}
+  .bar-t{height:auto!important;min-height:260px;justify-content:flex-start}
+  .bar-t .strip{background:none!important;min-height:0;padding:0 28px 28px}
+  .intro2 h2,.intro2 p{grid-column:1/-1}
+  .zone-map,.zone-r{grid-column:1/-1}
+  .hours-t{grid-column:1/7;grid-row:auto}.addr-t{grid-column:7/13}
+  .map-t{grid-column:1/-1;grid-row:auto;min-height:320px}.mail-t{grid-column:1/-1}
+  .pro-list,.devis{grid-column:1/-1}
+  .tiles4{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  :root{--g:6px;--m:16px}
+  body{font-size:17px}
+  .bar{grid-template-columns:56px 1fr}
+  .bar>*{min-height:56px}
+  .links{display:none}
+  .bar .btn{min-height:56px}
+  .hero{grid-template-columns:1fr 1fr;grid-template-rows:auto 210px auto 170px;grid-template-areas:"t t" "p p" "n n" "b c"}
+  .t-title{padding:24px 18px}
+  .t-p .cap{top:10px;bottom:auto}
+  .hero h1{font-size:8vw}
+  .lead{margin-top:14px}
+  .nums li{padding:14px 14px 16px}
+  .nums b{font-size:30px}
+  .t-title .row .btn{flex:1 1 100%}
+  section{padding-top:96px}
+  .h2{font-size:clamp(32px,9vw,40px)}
+  .stmt{padding:24px 20px}
+  .rows>li{grid-template-columns:1fr;gap:10px;padding:22px 20px}
+  .bars{grid-template-columns:1fr}
+  .bar-t{min-height:0}
+  .bar-t .in{padding:22px 20px}
+  .calc{grid-template-columns:1fr}
+  .acc{flex-direction:column;height:auto;margin-top:32px}
+  .st{flex:none;min-width:0;display:block}
+  .st button{position:static;padding:20px;display:flex;min-height:64px;align-items:center;width:100%;box-sizing:border-box}
+  .st button span{writing-mode:horizontal-tb;transform:none;font-size:18px}
+  .js .st.open button{display:none}
+  .st .body{min-width:0;grid-template-columns:1fr}
+  .js .st:not(.open) .body{display:none}
+  .st figure{height:200px}
+  .st .txt{padding:22px 20px;gap:16px}
+  .tiles4{gap:8px}
+  .pro-list,.devis,.zt,.zone-map{padding:22px 20px}
+  .hours-t,.addr-t{grid-column:1/-1}
+  .mark{grid-template-columns:1fr}
+  .mark b{font-size:clamp(44px,17vw,80px)}
+  .mark b span{display:block}
+  .cols{grid-template-columns:1fr 1fr}
 }
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .js .rise{opacity:1;transform:none}
-  .strip{overflow-x:auto;width:auto}
+  html{scroll-behavior:auto}
+  .js .rv,.js .shutter,.js .shutter img{opacity:1;transform:none;clip-path:none;transition:none}
+  .st,.st .body,.btn,.tint img{transition:none}
 }
 </style>
 </head>
 <body>
-<p class="demo">Démo réalisée par <b>Raul Hatos</b> — site non officiel</p>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<!-- ============ accueil ============ -->
-<header class="board" id="top">
-  <h1 class="t name"><span class="word">Gage Services</span><span class="vh">, plombier à Boulogne-Billancourt</span></h1>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gage" viewBox="0 0 100 124">
+    <path d="M50 4 92 58v62H8V58z" fill="currentColor"/>
+    <path d="M50 20C40 34 25 55 25 78a25 25 0 0 0 50 0c0-23-15-44-25-58z" fill="var(--hole,#fff)"/>
+    <path d="M51 68h41v11H51zM45 64h4v19h-4z" fill="currentColor"/>
+    <path d="M91 0c-6 9-8 15-6 22-4-3-5-7-4-12-5 7-7 14-5 21 2 8 7 12 13 12 7 0 11-6 11-14 0-6-3-10-5-13 0 4-1 7-3 8 1-8 0-15-1-24z" fill="var(--flame,currentColor)" transform="translate(-6 0) scale(.9)"/>
+  </symbol>
+</svg>
+
+<header class="bar">
+  <a class="logo dk" href="#top" aria-label="Gage Services, haut de page"><svg viewBox="0 0 100 124" style="color:#fff;--hole:var(--navy);--flame:var(--yellow)" aria-hidden="true"><use href="#gage"/></svg></a>
   <nav class="links" aria-label="Sections">
-    <a href="#metiers">Ce qu'on répare</a>
-    <a href="#probleme">Décrire votre problème</a>
-    <a href="#contact">Horaires et adresse</a>
-    <a class="call" href="mailto:gageplomberie@gmail.com?subject=Demande%20de%20plombier">Écrire un e-mail</a>
+    <b translate="no">GAGE <span>SERVICES</span></b>
+    <ul>
+      <li><a href="#prestations">Prestations</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#zone">Zone</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+    </ul>
   </nav>
-
-  <figure class="t side-ph zoom"><img src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?w=700&h=1000&fit=crop&q=75&fm=jpg" width="700" height="1000" alt="Plombier au travail dans une salle de bain carrelée"></figure>
-      <figure class="t main-ph hero-img"><img src="https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=1800&h=1200&fit=crop&q=75&fm=jpg" width="1800" height="1200" alt="Mains qui resserrent un siphon sous un évier"></figure>
-      <div class="t statement">
-        <h2>Votre plombier <span>à Boulogne-Billancourt</span></h2>
-        <p>Fuites, débouchage, chauffe-eau, robinetterie et salle de bain. Au 26 rue de la Rochefoucauld depuis 2015.</p>
-        <div class="acts">
-          <a class="btn btn-accent" href="tel:+33625747976"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>06 25 74 79 76</a>
-          <a class="btn btn-ink" href="#probleme">Décrire mon problème</a>
-        </div>
-      </div>
-    <div class="rail">
-      <p class="r r1"><span><strong class="tab">4,9/5</strong> sur 106 avis clients</span></p>
-      <p class="r r2"><span>Installé à Boulogne depuis <strong class="tab">2015</strong></span></p>
-      <p class="r r3"><span>Du lundi au jeudi, <strong class="tab">8h–19h</strong></span></p>
-      <p class="r r4"><span>Le vendredi, <strong class="tab">8h–14h</strong></span><span class="status" id="status"><i></i><span>fermé le week-end</span></span></p>
-      <a class="r r5" href="tel:+33625747976"><span>Appeler le <strong class="tab">06 25 74 79 76</strong></span></a>
-    </div>
-      <div class="t facts">
-        <h2>En bref</h2>
-        <ul>
-          <li>Plomberie et chauffage</li>
-          <li>Boulogne-Billancourt et Hauts-de-Seine</li>
-          <li>Particuliers, dépannage et travaux</li>
-          <li>Quartier Princes-Marmottan</li>
-          <li>Fermé le week-end</li>
-        </ul>
-      </div>
+  <a class="btn b-navy dk" href="tel:+33625747976"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>06&nbsp;25&nbsp;74&nbsp;79&nbsp;76</a>
 </header>
 
-<!-- ============ bandeau ============ -->
-<div class="marquee" aria-hidden="true"><div class="track">
-  <span>Gage Services <em>·</em> plombier à Boulogne-Billancourt <em>·</em> 06 25 74 79 76 <em>·</em></span>
-  <span>Gage Services <em>·</em> plombier à Boulogne-Billancourt <em>·</em> 06 25 74 79 76 <em>·</em></span>
-</div></div>
-
-<!-- ============ métiers ============ -->
-<section class="split" id="metiers" aria-labelledby="metiers-t">
-  <div class="cell">
-    <h2 class="zig rise" id="metiers-t"><span>Fuite, bouchon,</span><span>eau froide.</span></h2>
-    <div class="foot rise" style="--d:90ms">
-      <p>Le dépannage du jour comme la salle de bain à refaire : Gage Services traite toute la plomberie d'un logement, de l'arrivée d'eau aux radiateurs.</p>
-      <a class="btn btn-accent" href="#probleme">Décrire mon problème</a>
+<main id="contenu">
+<div class="hero" id="top">
+  <div class="t-title">
+    <h1 class="rv">Le plombier de Boulogne-Billancourt</h1>
+    <p class="lead rv">Gage Services dépanne et rénove depuis 2015, au 26 rue de la Rochefoucauld&nbsp;: fuites, débouchage, chauffe-eau, WC, robinetterie et salles de bain clé en main.</p>
+    <p class="status rv" id="status" aria-live="polite"><span class="dot"></span><span id="status-t">Lundi au jeudi 8&nbsp;h – 19&nbsp;h, vendredi 8&nbsp;h – 14&nbsp;h</span></p>
+    <div class="row rv">
+      <a class="btn b-navy dk" href="tel:+33625747976"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>06&nbsp;25&nbsp;74&nbsp;79&nbsp;76</a>
+      <a class="btn b-yellow" href="#estimer">Estimer le prix</a>
     </div>
   </div>
-  <div class="rows">
-    <article class="row rise"><h3>Fuites</h3><p>Une tache au plafond, un joint qui suinte, un tuyau qui goutte sous l'évier.</p><p class="terms">Recherche de fuite, joints, tuyauterie</p></article>
-    <article class="row rise"><h3>Débouchage</h3><p>L'eau stagne dans l'évier, la douche s'écoule mal, le WC refoule.</p><p class="terms">Évier, lavabo, WC, canalisations</p></article>
-    <article class="row rise"><h3>Chauffe-eau</h3><p>Plus d'eau chaude, un ballon qui fuit ou qui a fait son temps.</p><p class="terms">Réparation, remplacement, ballon électrique</p></article>
-    <article class="row rise"><h3>Salle de bain</h3><p>Changer un mitigeur, poser une vasque, refaire les sanitaires.</p><p class="terms">Robinetterie, sanitaires, douche</p></article>
-    <article class="row rise"><h3>Chauffage</h3><p>Un radiateur froid, une chaudière, un adoucisseur à installer.</p><p class="terms">Radiateurs, chaudière, adoucisseur</p></article>
+  <ul class="nums">
+    <li class="rv"><b>40&nbsp;€ <small>HT</small></b><span>le déplacement à Boulogne-Billancourt</span></li>
+    <li class="rv"><b>70&nbsp;€ <small>HT</small></b><span>l’heure de main-d’œuvre, hors matériel</span></li>
+    <li class="rv"><b>12</b><span>villes où ils arrivent «&nbsp;ultra vite&nbsp;»</span></li>
+    <li class="rv"><b>24&nbsp;h</b><span>pour répondre à un devis de rénovation</span></li>
+  </ul>
+  <figure class="ph t-p shutter"><img src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?w=1000&h=1100&fit=crop&q=70&fm=jpg" width="1000" height="1100" alt="Plombier en salopette avec sa caisse à outils dans une salle de bain carrelée"><figcaption class="cap">Dépannage à domicile</figcaption></figure>
+  <figure class="ph t-b"><img src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=700&h=520&fit=crop&q=70&fm=jpg" width="700" height="520" alt="Main qui resserre un siphon sous un lavabo"><figcaption class="cap">Siphon de lavabo</figcaption></figure>
+  <figure class="ph t-c"><img src="https://images.unsplash.com/photo-1676210134050-6f12c6898395?w=700&h=520&fit=crop&q=70&fm=jpg" width="700" height="520" alt="Artisan qui pose la plaque de commande d’un WC suspendu"><figcaption class="cap">Pose de WC</figcaption></figure>
+</div>
+
+<section id="prestations" aria-labelledby="h-svc">
+  <div class="split">
+    <div class="stmt">
+      <h2 class="h2 zig rv" id="h-svc"><span>Réparer, poser,</span><span>rénover</span></h2>
+      <figure class="rv"><img loading="lazy" src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=900&h=560&fit=crop&q=70&fm=jpg" width="900" height="560" alt="Plombier qui démonte une évacuation sous un lavabo, éclairage bleu"></figure>
+      <div class="stmt-foot rv">
+        <p>Le détail de leur grille de prestations, du dépannage du jour à la salle de bain refaite. Dépannage sur tous ces postes.</p>
+      </div>
+    </div>
+    <ul class="rows dk">
+      <li class="rv"><h3>Robinetterie</h3><p>Robinet d’évier, de douche, de lavabo ou de baignoire, dépose et pose d’un évier.</p><ul><li>Mitigeur</li><li>Robinet d’arrêt</li><li>Bonde de lavabo</li></ul></li>
+      <li class="rv"><h3>Chauffage et eau chaude</h3><p>Réparation de chauffe-eau, remplacement du ballon ou de la chaudière au gaz.</p><ul><li>Chauffe-eau</li><li>Ballon d’eau chaude</li><li>Chaudière gaz</li></ul></li>
+      <li class="rv"><h3>Toilettes et canalisations</h3><p>Pose et remplacement de WC, réservoir, cuvette, mécanisme. Débouchage et dégorgement.</p><ul><li>Flotteur</li><li>Chasse d’eau</li><li>Débouchage</li></ul></li>
+      <li class="rv"><h3>Fuites d’eau</h3><p>Recherche de fuite, puis réparation&nbsp;: joints, soudure sur cuivre, plomb ou acier.</p><ul><li>Visuelle</li><li>Acoustique</li><li>Thermique</li></ul></li>
+      <li class="rv"><h3>Salle de bain clé en main</h3><p>Gage coordonne les corps de métier, de la dépose aux finitions.</p><ul><li>Baignoire</li><li>Douche à l’italienne</li><li>Sanitaires</li></ul></li>
+    </ul>
   </div>
 </section>
 
-<!-- ============ décrivez votre problème ============ -->
-<section class="tool" id="probleme" aria-labelledby="probleme-t">
-  <div class="tool-head rise">
-    <h2 id="probleme-t">Décrivez votre problème</h2>
-    <p>Trois touches et votre message est prêt : le plombier sait de quoi il retourne avant même de décrocher. Vous l'envoyez par SMS, par e-mail, ou vous appelez.</p>
+<section id="tarifs" class="wrap" aria-labelledby="h-tarifs">
+  <div class="bars">
+    <div class="bars-head">
+      <h2 class="h2 rv" id="h-tarifs">Les tarifs, avant de venir</h2>
+      <p class="rv">Après le passage du plombier, le devis se calcule sur cette base, hors achat de matériel. Plus le prix monte, plus la barre est haute.</p>
+    </div>
+    <div class="bar-t k1 rv"><div class="in"><h3>Petites fournitures</h3><p class="price">19&nbsp;€<small>HT</small></p></div><p class="strip">Joints, raccords, petites pièces</p></div>
+    <div class="bar-t k2 rv"><div class="in"><h3>Déplacement</h3><p class="price">40&nbsp;€<small>HT</small></p></div><p class="strip">À Boulogne-Billancourt</p></div>
+    <div class="bar-t k3 dk rv"><div class="in"><h3>Déplacement</h3><p class="price">50&nbsp;€<small>HT</small></p></div><p class="strip">Paris et Île-de-France</p></div>
+    <div class="bar-t k4 dk rv"><div class="in"><h3>Main-d’œuvre</h3><p class="price">70&nbsp;€<small>HT / h</small></p></div><p class="strip">Le matériel s’ajoute, sur devis</p></div>
   </div>
-  <div class="tool-grid">
-    <form class="panel" id="f" onsubmit="return false">
-      <fieldset class="q">
-        <legend>Où ça se passe ?</legend>
-        <div class="chips" id="rooms">
-          <label class="chip"><input type="radio" name="room" value="cuisine" checked><span>Cuisine</span></label>
-          <label class="chip"><input type="radio" name="room" value="sdb"><span>Salle de bain</span></label>
-          <label class="chip"><input type="radio" name="room" value="wc"><span>WC</span></label>
-          <label class="chip"><input type="radio" name="room" value="ce"><span>Chauffe-eau</span></label>
-          <label class="chip"><input type="radio" name="room" value="chauffage"><span>Radiateurs, chaudière</span></label>
-          <label class="chip"><input type="radio" name="room" value="autre"><span>Ailleurs, je ne sais pas</span></label>
-        </div>
-      </fieldset>
-      <fieldset class="q">
-        <legend>Que se passe-t-il ?</legend>
-        <div class="chips" id="issues"></div>
-      </fieldset>
-      <fieldset class="q">
-        <legend>C'est urgent ?</legend>
-        <div class="chips">
-          <label class="chip"><input type="radio" name="urg" value="now"><span>L'eau coule en ce moment</span></label>
-          <label class="chip"><input type="radio" name="urg" value="stable" checked><span>Gênant, mais stable</span></label>
-          <label class="chip"><input type="radio" name="urg" value="projet"><span>C'est un projet</span></label>
-        </div>
-        <p class="warn" id="warn" role="status"><b>En attendant :</b> fermez le robinet d'arrivée d'eau du logement (souvent près du compteur ou sous l'évier) et appelez plutôt qu'écrire.</p>
-      </fieldset>
-      <div class="q">
-        <label class="lab" for="details">Un détail à ajouter ?</label>
-        <textarea class="field" id="details" placeholder="Ex. : la fuite vient du raccord sous le lavabo, depuis ce matin"></textarea>
-      </div>
-      <div class="q duo">
-        <div><label class="lab" for="who">Votre nom</label><input class="field" id="who" autocomplete="name" placeholder="Prénom Nom"></div>
-        <div><label class="lab" for="where">Adresse ou quartier</label><input class="field" id="where" autocomplete="street-address" placeholder="Rue, Boulogne-Billancourt"></div>
-      </div>
+  <p class="note">Base publiée par Gage Services. Montants hors taxes&nbsp;; le devis du plombier fait foi.</p>
+
+  <div class="calc" id="estimer">
+    <form id="calc" class="rv" aria-labelledby="h-calc" onsubmit="return false">
+      <h3 id="h-calc">Estimer mon dépannage</h3>
+      <div><label for="ville">Votre commune</label>
+        <select id="ville">
+          <optgroup label="Ils arrivent ultra vite">
+            <option value="a|40">Boulogne-Billancourt</option>
+            <option value="a">Issy-les-Moulineaux</option><option value="a">Clamart</option><option value="a">Meudon</option><option value="a">Montrouge</option><option value="a">Châtillon</option><option value="a">Malakoff</option><option value="a">Paris 15e</option><option value="a">Paris 16e</option><option value="a">Neuilly-sur-Seine</option><option value="a">Chaville</option><option value="a">Sèvres</option>
+          </optgroup>
+          <optgroup label="Ils arrivent très vite">
+            <option value="b">Paris 6e</option><option value="b">Paris 7e</option><option value="b">Paris 8e</option><option value="b">Paris 14e</option><option value="b">Paris 17e</option><option value="b">Antony</option><option value="b">Asnières-sur-Seine</option><option value="b">Bagneux</option><option value="b">Clichy</option><option value="b">Colombes</option><option value="b">Courbevoie</option><option value="b">Gennevilliers</option><option value="b">Levallois-Perret</option><option value="b">Nanterre</option><option value="b">Puteaux</option><option value="b">Rueil-Malmaison</option><option value="b">Suresnes</option>
+          </optgroup>
+          <optgroup label="Ils arrivent vite">
+            <option value="c">Autre arrondissement de Paris</option><option value="c">Autre commune d’Île-de-France</option>
+          </optgroup>
+        </select></div>
+      <div><label for="duree">Durée estimée sur place</label>
+        <select id="duree"><option value="1">1&nbsp;heure</option><option value="1.5">1&nbsp;h&nbsp;30</option><option value="2">2&nbsp;heures</option><option value="3">3&nbsp;heures</option><option value="4">4&nbsp;heures</option></select></div>
+      <label class="check"><input type="checkbox" id="fourn" checked> Compter les petites fournitures (joints, raccords…)</label>
     </form>
-
-    <aside class="bon" aria-labelledby="bon-t">
-      <h3 id="bon-t">Votre message</h3>
-      <p class="to">Pour Gage Services · 06 25 74 79 76 · gageplomberie@gmail.com</p>
-      <pre id="msg" aria-live="polite">Bonjour, j'ai un problème de plomberie dans ma cuisine.</pre>
-      <div class="send">
-        <a class="btn btn-accent" id="b-call" href="tel:+33625747976">Appeler le 06 25 74 79 76</a>
-        <a class="btn btn-ink" id="b-sms" href="sms:+33625747976">Envoyer par SMS</a>
-        <a class="btn btn-light" style="background:var(--surface)" id="b-mail" href="mailto:gageplomberie@gmail.com">Envoyer par e-mail</a>
-      </div>
-      <p class="note" id="copy-note"><button type="button" id="b-copy" class="btn btn-light" style="min-height:40px;padding:0 16px;background:var(--bg)">Copier le message</button></p>
-    </aside>
-  </div>
-</section>
-
-<!-- ============ en trois temps ============ -->
-<section class="grow" aria-labelledby="grow-t">
-  <h2 id="grow-t" class="rise">De la fuite à l'eau claire</h2>
-  <div class="stage rise"><figure class="zoom"><img loading="lazy" src="https://images.unsplash.com/photo-1542013936693-884638332954?w=900&h=700&fit=crop&q=75&fm=jpg" width="900" height="700" alt="Eau qui jaillit d'un robinet de cuisine"></figure><h3>Vous décrivez</h3><p>Par téléphone, SMS ou e-mail, avec le message préparé plus haut.</p></div>
-  <div class="stage rise" style="--d:90ms"><figure class="zoom"><img loading="lazy" src="https://images.unsplash.com/photo-1676210134050-6f12c6898395?w=1000&h=900&fit=crop&q=75&fm=jpg" width="1000" height="900" alt="Plombier en gants de travail qui intervient près d'un WC"></figure><h3>Le plombier intervient</h3><p>Chez vous, à Boulogne ou dans les Hauts-de-Seine.</p></div>
-  <div class="stage rise" style="--d:180ms"><figure class="zoom"><img loading="lazy" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1100&h=1200&fit=crop&q=75&fm=jpg" width="1100" height="1200" alt="Salle de bain refaite avec douche vitrée et vasque"></figure><h3>Tout refonctionne</h3><p>L'eau coule où elle doit, et nulle part ailleurs.</p></div>
-</section>
-
-<!-- ============ contact ============ -->
-<section class="contact" id="contact" aria-labelledby="contact-t">
-  <div class="strip" aria-hidden="true">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=300&h=400&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=300&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1650551182991-b07558247564?w=450&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?w=300&h=400&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1761758674188-2b8e4c89c5e2?w=300&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=450&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=300&h=400&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1542013936693-884638332954?w=300&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1676210134050-6f12c6898395?w=450&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=300&h=400&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=300&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1650551182991-b07558247564?w=450&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?w=300&h=400&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1761758674188-2b8e4c89c5e2?w=300&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=450&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=300&h=400&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1542013936693-884638332954?w=300&h=300&fit=crop&q=70&fm=jpg" alt="">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1676210134050-6f12c6898395?w=450&h=300&fit=crop&q=70&fm=jpg" alt="">
-  </div>
-  <div class="contact-in">
-    <h2 id="contact-t" class="rise">Horaires et adresse</h2>
-    <p class="addr rise" style="--d:80ms">26 rue de la Rochefoucauld<br>92100 Boulogne-Billancourt</p>
-    <div class="bar rise" style="--d:160ms">
-      <a href="tel:+33625747976">06 25 74 79 76<small>Appeler</small></a>
-      <a href="mailto:gageplomberie@gmail.com?subject=Demande%20de%20plombier">gageplomberie@gmail.com<small>Écrire</small></a>
-      <a class="go" href="https://www.google.com/maps/dir/?api=1&amp;destination=26+rue+de+la+Rochefoucauld+92100+Boulogne-Billancourt" target="_blank" rel="noopener">Itinéraire<small>Google Maps</small></a>
+    <div class="out dk rv" aria-live="polite">
+      <div><p class="tot" id="o-tot">129&nbsp;€ HT</p><p class="small">Estimation hors matériel et hors TVA, sur la base affichée.</p></div>
+      <dl>
+        <dt>Déplacement</dt><dd id="o-dep">40&nbsp;€ HT</dd>
+        <dt>Main-d’œuvre</dt><dd id="o-mo">70&nbsp;€ HT</dd>
+        <dt>Petites fournitures</dt><dd id="o-f">19&nbsp;€ HT</dd>
+      </dl>
     </div>
-    <div class="below">
-      <div class="hours">
-        <h3>Horaires</h3>
-        <table class="tab" id="hours">
-          <tr data-d="1"><td>Lundi</td><td>8h – 19h</td></tr>
-          <tr data-d="2"><td>Mardi</td><td>8h – 19h</td></tr>
-          <tr data-d="3"><td>Mercredi</td><td>8h – 19h</td></tr>
-          <tr data-d="4"><td>Jeudi</td><td>8h – 19h</td></tr>
-          <tr data-d="5"><td>Vendredi</td><td>8h – 14h</td></tr>
-          <tr data-d="6"><td>Samedi</td><td>Fermé</td></tr>
-          <tr data-d="0"><td>Dimanche</td><td>Fermé</td></tr>
-        </table>
-        <p class="n">Horaires indicatifs : un appel confirme la disponibilité du jour.</p>
-      </div>
-      <div class="map"><a href="https://www.google.com/maps/search/?api=1&amp;query=26+rue+de+la+Rochefoucauld+92100+Boulogne-Billancourt" target="_blank" rel="noopener">Ouvrir la carte</a><iframe loading="lazy" title="Carte : 26 rue de la Rochefoucauld, Boulogne-Billancourt" src="https://www.google.com/maps?q=26+rue+de+la+Rochefoucauld,+92100+Boulogne-Billancourt&amp;output=embed"></iframe></div>
+    <div class="tier rv" aria-live="polite">
+      <p id="tier">Boulogne-Billancourt&nbsp;: ils arrivent ultra vite.</p>
+      <p>Les trois vitesses sont celles que Gage annonce pour sa zone.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ pied ============ -->
-<footer>
-  <div class="mark" aria-label="G.A.G.E Services"><div>G</div><div>A</div><div>G</div><div>E</div></div>
-  <div class="fcols">
-    <div><h3>Dépannage</h3><ul><li><a href="#metiers">Fuites</a></li><li><a href="#metiers">Débouchage</a></li><li><a href="#metiers">Chauffe-eau</a></li></ul></div>
-    <div><h3>Travaux</h3><ul><li><a href="#metiers">Salle de bain</a></li><li><a href="#metiers">Robinetterie</a></li><li><a href="#metiers">Chauffage</a></li></ul></div>
-    <div><h3>Contact</h3><ul><li><a href="tel:+33625747976">06 25 74 79 76</a></li><li><a href="mailto:gageplomberie@gmail.com">gageplomberie@gmail.com</a></li><li><a href="#probleme">Décrire un problème</a></li></ul></div>
-    <div><h3>G.A.G.E Services</h3><ul><li>26 rue de la Rochefoucauld</li><li>92100 Boulogne-Billancourt</li><li class="tab">SIRET 817 527 682 00048</li></ul></div>
+<section id="methode" class="wrap" aria-labelledby="h-meth">
+  <div class="intro2">
+    <h2 class="h2 rv" id="h-meth">Comment ça se passe</h2>
+    <p class="rv">Quatre temps, dans l’ordre où Gage Services les décrit&nbsp;: déplacement, analyse, solution chiffrée, puis travaux une fois l’accord donné.</p>
   </div>
-  <div class="legal">
-    <span>Plomberie, code APE 43.22A · Photos d'illustration : Unsplash · Démo réalisée par Raul Hatos, site non officiel</span>
-    <a class="btn btn-ink" style="min-height:40px;padding:0 18px" href="#top">Haut de page</a>
+  <ol class="acc" id="acc">
+    <li class="st open dk"><button aria-expanded="true" aria-controls="b1" id="t1"><span>On se déplace</span></button>
+      <div class="body" id="b1" role="region" aria-labelledby="t1"><div class="txt"><h3>On se déplace</h3><p><strong>40 ou 50&nbsp;€ HT</strong>Le plombier vient chez vous&nbsp;: 40&nbsp;€ HT à Boulogne, 50&nbsp;€ HT ailleurs en Île-de-France.</p></div><figure><img loading="lazy" src="https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=700&h=800&fit=crop&q=70&fm=jpg" width="700" height="800" alt="Mains d’un plombier sous un lavabo, éclairage bleu"></figure></div></li>
+    <li class="st dk"><button aria-expanded="false" aria-controls="b2" id="t2"><span>On analyse</span></button>
+      <div class="body" id="b2" role="region" aria-labelledby="t2"><div class="txt"><h3>On analyse</h3><p><strong>Sur place</strong>Recherche de la cause&nbsp;: fuite, bouchon, chauffe-eau, mécanisme de WC, robinetterie.</p></div><figure><img loading="lazy" src="https://images.unsplash.com/photo-1761758674188-2b8e4c89c5e2?w=700&h=800&fit=crop&q=70&fm=jpg" width="700" height="800" alt="Clé posée sur une vanne avec manomètre"></figure></div></li>
+    <li class="st dk"><button aria-expanded="false" aria-controls="b3" id="t3"><span>On propose une solution</span></button>
+      <div class="body" id="b3" role="region" aria-labelledby="t3"><div class="txt"><h3>On propose une solution</h3><p><strong>70&nbsp;€ HT / h</strong>Un devis détaillé, calculé sur la main-d’œuvre affichée, matériel en plus.</p></div><figure><img loading="lazy" src="https://images.unsplash.com/photo-1650551182991-b07558247564?w=700&h=800&fit=crop&q=70&fm=jpg" width="700" height="800" alt="Chaudière et tuyauterie de chauffage avec vannes"></figure></div></li>
+    <li class="st"><button aria-expanded="false" aria-controls="b4" id="t4"><span>On lance les travaux</span></button>
+      <div class="body" id="b4" role="region" aria-labelledby="t4"><div class="txt"><h3>On lance les travaux</h3><p><strong>Accord donné</strong>Réparation dans la foulée pour un dépannage, chantier planifié pour une rénovation.</p></div><figure><img loading="lazy" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=700&h=800&fit=crop&q=70&fm=jpg" width="700" height="800" alt="Salle de bain avec douche vitrée et meuble vasque"></figure></div></li>
+  </ol>
+</section>
+
+<section id="renovation" class="wrap" aria-labelledby="h-reno">
+  <div class="reno-h">
+    <h2 class="h2 rv" id="h-reno">Rénovation, clé en main</h2>
+    <p class="rv">Salles de bain et sanitaires haut de gamme, appartements, commerces et hôtels&nbsp;: Gage orchestre les différents corps d’état.</p>
   </div>
+  <ul class="tiles4">
+    <li class="rv"><div class="tint"><img loading="lazy" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=750&fit=crop&q=70&fm=jpg" width="600" height="750" alt="Salle de bain rénovée avec douche vitrée"></div><b>Salles de bain</b><span>Douche simple ou à l’italienne, baignoire</span></li>
+    <li class="rv"><div class="tint"><img loading="lazy" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&h=750&fit=crop&q=70&fm=jpg" width="600" height="750" alt="Robinet mélangeur chromé au-dessus d’une baignoire"></div><b>Appartements</b><span>Plomberie, sols, peinture, cuisine</span></li>
+    <li class="rv"><div class="tint"><img loading="lazy" src="https://images.unsplash.com/photo-1542013936693-884638332954?w=600&h=750&fit=crop&q=70&fm=jpg" width="600" height="750" alt="Eau qui jaillit d’un robinet de cuisine dans un évier"></div><b>Commerces</b><span>Rénovation commerciale</span></li>
+    <li class="rv"><div class="tint"><img loading="lazy" src="https://images.unsplash.com/photo-1650551182991-b07558247564?w=600&h=750&fit=crop&q=70&fm=jpg" width="600" height="750" alt="Tuyauterie et vannes d’une installation de chauffage"></div><b>Hôtels</b><span>Rénovation d’hôtels</span></li>
+  </ul>
+  <div class="pros">
+    <div class="pro-list dk rv">
+      <h3>Ils travaillent aussi pour les pros</h3>
+      <ul><li>Syndics</li><li>Agences de gestion</li><li>Administrateurs de biens</li><li>Assureurs</li><li>Architectes</li></ul>
+    </div>
+    <div class="devis rv">
+      <blockquote>«&nbsp;Un devis pour un projet de rénovation&nbsp;? On vous répond sous 24&nbsp;h. Laissez-nous quand même le temps de faire nos interventions d’urgence d’abord.&nbsp;»<footer>Gage Services</footer></blockquote>
+      <b>24&nbsp;h</b>
+    </div>
+  </div>
+</section>
+
+<section id="zone" class="wrap" aria-labelledby="h-zone">
+  <div class="zone">
+    <div class="zone-map dk">
+      <h2 class="h2 rv" id="h-zone">Où ils arrivent vite</h2>
+      <svg class="rv" viewBox="0 0 600 440" role="img" aria-label="Trois cercles autour de Boulogne-Billancourt : ultra vite, très vite, vite">
+        <circle cx="300" cy="230" r="205" fill="#a8cbea"/>
+        <circle cx="300" cy="230" r="140" fill="#1d5a90"/>
+        <circle cx="300" cy="230" r="78" fill="#ffd300"/>
+        <text x="300" y="224" text-anchor="middle" font-family="Outfit,sans-serif" font-size="28" font-weight="700" fill="#0b2f52">Boulogne</text>
+        <text x="300" y="256" text-anchor="middle" font-family="Outfit,sans-serif" font-size="22" font-weight="400" fill="#0b2f52">ultra vite</text>
+        <text x="300" y="124" text-anchor="middle" font-family="Outfit,sans-serif" font-size="26" font-weight="700" fill="#ffffff">très vite</text>
+        <text x="300" y="60" text-anchor="middle" font-family="Outfit,sans-serif" font-size="26" font-weight="700" fill="#0b2f52">vite</text>
+      </svg>
+    </div>
+    <div class="zone-r">
+      <div class="zt z1 rv"><h3>Ultra vite</h3><p>Boulogne-Billancourt, Issy-les-Moulineaux, Clamart, Meudon, Montrouge, Châtillon, Malakoff, Paris 15e et 16e, Neuilly, Chaville, Sèvres.</p></div>
+      <div class="zt z2 rv"><h3>Très vite</h3><p>Paris 6e, 7e, 8e, 14e et 17e, Nanterre, Colombes, Asnières-sur-Seine, Rueil-Malmaison, Courbevoie, Antony, Levallois-Perret, Clichy, Gennevilliers, Puteaux, Suresnes, Bagneux.</p></div>
+      <div class="zt z3 rv"><h3>Vite</h3><p>Les autres arrondissements de Paris et le reste de l’Île-de-France. Leur consigne&nbsp;: «&nbsp;soyez patient&nbsp;».</p></div>
+      <div class="zt go rv"><p>Votre commune, le délai et le déplacement&nbsp;:</p><a class="btn b-navy dk" href="#estimer">Vérifier ma commune</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="horaires" class="wrap" aria-labelledby="h-hor">
+  <div class="visit">
+    <div class="hours-t rv">
+      <h2 id="h-hor">Horaires</h2>
+      <table class="hours" aria-label="Horaires d’ouverture">
+        <tbody>
+          <tr data-d="1"><th scope="row">Lundi</th><td>8&nbsp;h – 19&nbsp;h</td></tr>
+          <tr data-d="2"><th scope="row">Mardi</th><td>8&nbsp;h – 19&nbsp;h</td></tr>
+          <tr data-d="3"><th scope="row">Mercredi</th><td>8&nbsp;h – 19&nbsp;h</td></tr>
+          <tr data-d="4"><th scope="row">Jeudi</th><td>8&nbsp;h – 19&nbsp;h</td></tr>
+          <tr data-d="5"><th scope="row">Vendredi</th><td>8&nbsp;h – 14&nbsp;h</td></tr>
+          <tr data-d="6"><th scope="row">Samedi</th><td>Fermé</td></tr>
+          <tr data-d="0"><th scope="row">Dimanche</th><td>Fermé</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="addr-t dk rv">
+      <p>26 rue de la Rochefoucauld<br>92100 Boulogne-Billancourt</p>
+      <div class="lines">
+        <a href="tel:+33625747976">06&nbsp;25&nbsp;74&nbsp;79&nbsp;76</a>
+        <a href="mailto:gageplomberie@gmail.com">gageplomberie@gmail.com</a>
+      </div>
+      <a class="btn b-yellow" href="https://www.google.com/maps/dir/?api=1&amp;destination=26+rue+de+la+Rochefoucauld+92100+Boulogne-Billancourt" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+    </div>
+    <div class="map-t rv"><iframe title="Plan : 26 rue de la Rochefoucauld, Boulogne-Billancourt" loading="lazy" src="https://www.google.com/maps?q=26+rue+de+la+Rochefoucauld,+92100+Boulogne-Billancourt&amp;output=embed"></iframe></div>
+    <div class="mail-t rv" id="ecrire">
+      <h3>Décrire la panne par e-mail</h3>
+      <form id="mail" aria-label="Préparer un e-mail">
+        <div><label for="f-ville">Commune ou quartier</label><input id="f-ville" name="ville" autocomplete="address-level2" placeholder="Boulogne, Issy…"></div>
+        <div><label for="f-msg">Le problème</label><textarea id="f-msg" name="msg" placeholder="Le chauffe-eau ne chauffe plus depuis ce matin…"></textarea></div>
+        <div class="acts"><button class="btn b-navy dk" type="submit">Préparer l’e-mail</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot dk">
+  <div class="mark">
+    <svg viewBox="0 0 100 124" style="color:#fff;--hole:var(--navy);--flame:var(--yellow)" aria-hidden="true"><use href="#gage"/></svg>
+    <div><b translate="no">GAGE<span>SERVICES</span></b><small>Plomberie · Sanitaire · Dépannage · Rénovation</small></div>
+  </div>
+  <div class="cols">
+    <div><h3>Dépannage</h3><ul><li><a href="#prestations">Fuites</a></li><li><a href="#prestations">Débouchage</a></li><li><a href="#prestations">Chauffe-eau</a></li><li><a href="#prestations">WC et chasse d’eau</a></li></ul></div>
+    <div><h3>Rénovation</h3><ul><li><a href="#renovation">Salle de bain clé en main</a></li><li><a href="#renovation">Appartements, commerces</a></li><li><a href="#zone">Zone d’intervention</a></li><li><a href="#tarifs">Tarifs</a></li></ul></div>
+    <div><h3>Contact</h3><ul><li><a href="tel:+33625747976">06&nbsp;25&nbsp;74&nbsp;79&nbsp;76</a></li><li><a href="mailto:gageplomberie@gmail.com">gageplomberie@gmail.com</a></li><li><a href="#ecrire">Décrire la panne</a></li></ul></div>
+    <div><h3>Atelier</h3><ul><li>26 rue de la Rochefoucauld</li><li>92100 Boulogne-Billancourt</li><li>Lun.–jeu. 8&nbsp;h – 19&nbsp;h, ven. 8&nbsp;h – 14&nbsp;h</li></ul></div>
+  </div>
+  <div class="legal"><span>G.A.G.E Services · SIRET 817&nbsp;527&nbsp;682&nbsp;00048 · Photos d’illustration&nbsp;: Unsplash · Démo réalisée par Raul Hatos, site non officiel</span><a class="btn b-yellow" href="#top">Haut de page</a></div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
+// reveals, staggered within each parent
 (function(){
-  var TEL='+33625747976', MAIL='gageplomberie@gmail.com';
-  var ISSUES={
-    cuisine:['Fuite sous l\'évier','Évier bouché','Robinet qui goutte','Robinet à remplacer','Lave-vaisselle à raccorder'],
-    sdb:['Fuite','Douche ou baignoire qui s\'écoule mal','Lavabo bouché','Mitigeur à remplacer','Projet de salle de bain'],
-    wc:['Chasse d\'eau qui coule sans arrêt','WC bouché','Fuite au pied du WC','WC à remplacer'],
-    ce:['Plus d\'eau chaude','Le chauffe-eau fuit','Eau seulement tiède','Chauffe-eau à remplacer'],
-    chauffage:['Radiateur froid','Fuite sur un radiateur','Panne de chaudière','Adoucisseur à installer'],
-    autre:['Fuite d\'origine inconnue','Tache d\'humidité au plafond','Odeur d\'égout','Pression d\'eau faible']
-  };
-  var ROOM={cuisine:'dans ma cuisine',sdb:'dans ma salle de bain',wc:'aux WC',ce:'sur mon chauffe-eau',chauffage:'sur mon chauffage',autre:'chez moi'};
-  var URG={now:'C\'est urgent : l\'eau coule en ce moment.',stable:'Ce n\'est pas une inondation, mais c\'est gênant.',projet:'Pas d\'urgence, c\'est un projet de travaux.'};
-  var f=document.getElementById('f'), box=document.getElementById('issues'), msg=document.getElementById('msg');
-  function val(n){var e=f.querySelector('input[name="'+n+'"]:checked');return e?e.value:''}
-  function fillIssues(){
-    var room=val('room'); box.innerHTML='';
-    ISSUES[room].forEach(function(t,i){
-      var l=document.createElement('label');l.className='chip';
-      l.innerHTML='<input type="radio" name="issue"'+(i===0?' checked':'')+'><span></span>';
-      l.querySelector('input').value=t;l.querySelector('span').textContent=t;box.appendChild(l);
-    });
-  }
-  function build(){
-    var room=val('room'), issue=val('issue'), urg=val('urg');
-    var d=document.getElementById('details').value.trim(), who=document.getElementById('who').value.trim(), where=document.getElementById('where').value.trim();
-    var t='Bonjour, '+(who?'ici '+who+'. ':'')+'J\'ai un problème '+ROOM[room]+' : '+issue.charAt(0).toLowerCase()+issue.slice(1)+'.\n'+URG[urg];
-    if(d) t+='\n\n'+d;
-    if(where) t+='\n\nAdresse : '+where+'.';
-    t+='\n\nPouvez-vous me rappeler ? Merci.';
-    msg.textContent=t;
-    document.getElementById('warn').classList.toggle('on',urg==='now');
-    document.getElementById('b-sms').href='sms:'+TEL+'?&body='+encodeURIComponent(t);
-    document.getElementById('b-mail').href='mailto:'+MAIL+'?subject='+encodeURIComponent('Plomberie : '+issue)+'&body='+encodeURIComponent(t);
-    return t;
-  }
-  f.addEventListener('change',function(e){if(e.target.name==='room')fillIssues();build()});
-  f.addEventListener('input',build);
-  fillIssues();build();
-  document.getElementById('b-copy').addEventListener('click',function(){
-    var t=build(), b=this;
-    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Message copié';b.classList.add('copied')},function(){b.textContent='Sélectionnez le texte pour le copier'});
-  });
-
-  // ouvert maintenant (heure de Paris)
+  var els=document.querySelectorAll('.rv,.shutter');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.children).filter(function(x){return x.classList.contains('rv')});e.target.style.transitionDelay=Math.min(Math.max(sib.indexOf(e.target),0),5)*80+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+// open/closed, Paris time
+(function(){
   var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
-  var map={lun:1,mar:2,mer:3,jeu:4,ven:5,sam:6,dim:0}, wd, h=0, m=0;
-  p.forEach(function(x){if(x.type==='weekday')wd=map[x.value.replace('.','')];if(x.type==='hour')h=+x.value;if(x.type==='minute')m=+x.value});
-  var row=document.querySelector('#hours tr[data-d="'+wd+'"]'); if(row) row.classList.add('today');
-  var now=h+m/60, close=wd>=1&&wd<=4?19:(wd===5?14:0), open=close&&now>=8&&now<close;
-  var st=document.getElementById('status');
-  if(st){st.classList.toggle('open',open);st.lastElementChild.textContent=open?'ouvert maintenant':'fermé en ce moment';}
-
-  // entrées
-  var els=document.querySelectorAll('.rise');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-    els.forEach(function(e){io.observe(e)});
-  } else els.forEach(function(e){e.classList.add('in')});
+  var g=function(t){return (p.find(function(x){return x.type===t})||{}).value};
+  var days={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6};
+  var d=days[g('weekday')],h=+g('hour')+(+g('minute'))/60;
+  var close=function(x){return x>=1&&x<=4?19:x===5?14:0};
+  var names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  var el=document.getElementById('status'),t=document.getElementById('status-t');
+  var row=document.querySelector('.hours tr[data-d="'+d+'"]');if(row)row.classList.add('today');
+  if(close(d)&&h>=8&&h<close(d)){el.classList.add('open');t.textContent='Ouvert, jusqu’à '+close(d)+' h aujourd’hui';return}
+  if(close(d)&&h<8){t.textContent='Fermé · ouvre à 8 h ce matin';return}
+  var n=d;do{n=(n+1)%7}while(!close(n));
+  t.textContent='Fermé · ouvre '+(n===(d+1)%7?'demain':names[n])+' à 8 h';
+})();
+// estimator on their published base: 40 € Boulogne / 50 € IDF, 70 €/h, 19 € fournitures
+(function(){
+  var v=document.getElementById('ville'),du=document.getElementById('duree'),f=document.getElementById('fourn');
+  var words={a:'ultra vite',b:'très vite',c:'vite (leur consigne : soyez patient)'};
+  var eur=function(x){return (Math.round(x*100)/100).toLocaleString('fr-FR')+' € HT'};
+  function up(){
+    var o=v.options[v.selectedIndex],k=o.value.split('|'),dep=k[1]?+k[1]:50,mo=70*(+du.value),fo=f.checked?19:0;
+    document.getElementById('tier').textContent=o.text+' : ils arrivent '+words[k[0]]+'.';
+    document.getElementById('o-dep').textContent=eur(dep);
+    document.getElementById('o-mo').textContent=eur(mo);
+    document.getElementById('o-f').textContent=fo?eur(fo):'—';
+    document.getElementById('o-tot').textContent=eur(dep+mo+fo);
+  }
+  [v,du,f].forEach(function(e){e.addEventListener('change',up)});up();
+  console.assert(70*1.5+50+19===174,'estimate math');
+})();
+// accordion
+(function(){
+  var items=[].slice.call(document.querySelectorAll('#acc .st'));
+  items.forEach(function(li){li.querySelector('button').addEventListener('click',function(){
+    items.forEach(function(o){var on=o===li;o.classList.toggle('open',on);o.querySelector('button').setAttribute('aria-expanded',on)});
+    var h=li.querySelector('h3');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}
+  })});
+})();
+// mailto composer
+document.getElementById('mail').addEventListener('submit',function(e){
+  e.preventDefault();var fd=new FormData(this);
+  var body='Bonjour,\n\n'+(fd.get('msg')||'')+'\n\nCommune : '+(fd.get('ville')||'');
+  location.href='mailto:gageplomberie@gmail.com?subject='+encodeURIComponent('Demande de plombier'+(fd.get('ville')?' – '+fd.get('ville'):''))+'&body='+encodeURIComponent(body);
+});
+// slow scroll-linked drift on the statement photo
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var img=document.querySelector('.stmt figure img');if(!img)return;img.style.willChange='transform';
+  addEventListener('scroll',function(){var r=img.parentNode.getBoundingClientRect(),p=(r.top+r.height/2)/innerHeight-.5;img.style.transform='scale(1.12) translateY('+(p*-24).toFixed(1)+'px)'},{passive:true});
 })();
 </script>
 </body>
