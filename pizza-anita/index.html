@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>La Pizza d'Anita · Pizzeria sur le quai Louis-Blériot, Paris 16e</title>
+<meta name="description" content="Pizzas romaines à pâte fine, pâtes à la truffe et terrasse au soleil, 182 quai Louis-Blériot, Paris 16e.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff;
+  --soft:#f3f2ef;
+  --ink:#121314;
+  --ink-2:#3d3f42;
+  --tomato:#d53b00;
+  --tomato-press:#aa2f00;
+  --on-tomato:#ffffff;
+  --night:#121314;
+  --on-night:#ffffff;
+  --on-night-2:#c9cacc;
+  --leaf:#5f7a3a;
+  --m:clamp(16px,4vw,48px);
+  --gap:clamp(96px,14vw,200px);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;font-size:18px;line-height:1.5;font-feature-settings:"tnum" 0}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+::selection{background:var(--tomato);color:#fff}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:3px;border-radius:4px}
+.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
+
+/* bandeau démo */
+.demo{background:var(--soft);color:var(--ink-2);font-size:13px;text-align:center;padding:7px var(--m)}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{font-weight:500;font-size:19px;text-decoration:none;letter-spacing:-.01em}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:16px}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline}
+@media (max-width:820px){.nav ul{display:none}}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 28px;border-radius:999px;font:700 17px/1.2 "Inter Tight",sans-serif;letter-spacing:.02em;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-tomato{background:var(--tomato);color:var(--on-tomato)}
+.btn-tomato:hover{background:var(--tomato-press)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#2b2d30}
+.btn-white{background:#fff;color:var(--tomato)}
+.btn-white:hover{background:#ffe9df;color:var(--tomato-press)}
+.btn-line{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn-line:hover{background:rgba(127,127,127,.12)}
+.btn svg{width:20px;height:20px;flex:none}
+.nav .btn{min-height:44px;padding:10px 22px;font-size:15px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr;gap:28px;padding-top:clamp(16px,3vw,32px)}
+.hero h1{font-weight:300;font-size:clamp(56px,10.4vw,168px);line-height:.92;letter-spacing:-.045em;text-wrap:balance}
+.hero .lede{font-size:clamp(19px,1.6vw,24px);line-height:1.4;max-width:34ch;margin-top:32px;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.rating{display:flex;align-items:center;gap:10px;margin-top:28px;font-size:16px;color:var(--ink-2)}
+.rating b{font-weight:700;color:var(--ink);font-size:18px}
+.stars{display:flex;gap:2px;color:var(--tomato)}
+.stars svg{width:16px;height:16px}
+.hero-pic{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:4/5;background:var(--soft)}
+.hero-pic img{width:100%;height:100%;object-fit:cover;animation:drift 18s var(--ease) both}
+@keyframes drift{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero-pic figcaption{position:absolute;left:16px;bottom:16px;background:#fff;color:var(--ink);font-size:14px;padding:8px 14px;border-radius:999px}
+@media (min-width:900px){
+  .hero{grid-template-columns:1.15fr .85fr;align-items:end;gap:clamp(32px,4vw,72px)}
+  .hero-pic{aspect-ratio:4/5;max-height:78vh}
+}
+
+/* chapitre tomate */
+.chap-tomato{background:var(--tomato);color:var(--on-tomato);margin-top:clamp(64px,8vw,120px)}
+.sig{display:grid;gap:40px;padding-block:clamp(72px,9vw,140px)}
+.sig h2{text-wrap:balance;font-weight:300;font-size:clamp(44px,7vw,112px);line-height:.95;letter-spacing:-.04em}
+.sig p{font-size:clamp(19px,1.5vw,22px);max-width:36ch;margin-top:24px}
+.ingredients{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.ingredients li{background:rgba(0,0,0,.16);padding:10px 18px;border-radius:999px;font-weight:500;font-size:17px}
+.sig-pic{border-radius:8px;overflow:hidden;aspect-ratio:1/1}
+.sig-pic img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){.sig{grid-template-columns:1fr 1fr;align-items:center;gap:clamp(40px,6vw,96px)}}
+
+/* carte */
+.carte{padding-block:var(--gap) 0}
+.carte-head{display:grid;gap:24px;align-items:end}
+.carte-head h2,.quai h2,.infos h2{text-wrap:balance;font-weight:300;font-size:clamp(44px,6.4vw,104px);line-height:.95;letter-spacing:-.04em}
+.carte-head p{max-width:42ch;color:var(--ink-2)}
+@media (min-width:900px){.carte-head{grid-template-columns:1fr 1fr}}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:48px}
+.tab{font:500 17px/1 "Inter Tight",sans-serif;padding:14px 22px;border-radius:999px;border:0;background:var(--soft);color:var(--ink);cursor:pointer;transition:background-color .2s,color .2s,transform .2s var(--ease)}
+.tab:hover{background:#e7e5e0}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.panel{display:grid;gap:32px;margin-top:40px}
+@media (min-width:900px){.panel{grid-template-columns:1.1fr .9fr;gap:clamp(40px,5vw,80px)}}
+.panel[hidden]{display:none}
+.dishes{list-style:none}
+.dishes li{display:grid;gap:4px;padding:22px 0;background:linear-gradient(var(--soft),var(--soft)) bottom/100% 2px no-repeat}
+.dishes li:last-child{background:none}
+.dishes strong{font-weight:500;font-size:clamp(22px,2vw,28px);letter-spacing:-.015em}
+.dishes span{color:var(--ink-2);font-size:17px}
+.panel figure{border-radius:8px;overflow:hidden;align-self:start;aspect-ratio:4/5;background:var(--soft)}
+.panel figure img{width:100%;height:100%;object-fit:cover}
+.note{margin-top:40px;padding:24px 28px;background:var(--soft);border-radius:8px;font-size:17px;max-width:none}
+.note b{font-weight:700}
+
+/* chapitre nuit : le quai */
+.quai{background:var(--night);color:var(--on-night);margin-top:var(--gap);padding-block:clamp(72px,9vw,140px)}
+.quai-grid{display:grid;gap:40px}
+@media (min-width:900px){.quai-grid{grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,96px);align-items:start}}
+.quai .sub{color:var(--on-night-2);margin-top:20px;max-width:38ch;font-size:19px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:40px}
+.day{font:500 15px/1 "Inter Tight",sans-serif;min-height:52px;border-radius:999px;border:0;background:#24262a;color:#fff;cursor:pointer;transition:background-color .2s,transform .2s var(--ease)}
+.day:hover{background:#34363b}
+.day[aria-pressed="true"]{background:var(--tomato)}
+.readout{margin-top:28px;background:#1d1f22;border-radius:8px;padding:28px}
+.readout .status{font-weight:300;font-size:clamp(26px,3vw,44px);line-height:1.05;letter-spacing:-.03em}
+.readout dl{display:grid;grid-template-columns:auto 1fr;gap:12px 24px;margin-top:24px;font-size:18px}
+.readout dt{color:var(--on-night-2)}
+.readout dd{font-variant-numeric:tabular-nums;font-weight:500}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:12px;vertical-align:.12em;background:#7b7d80}
+.dot.on{background:#7fd36b}
+.quai-pics{display:grid;grid-template-columns:1fr;gap:12px}
+.quai-pics figure{border-radius:8px;overflow:hidden;position:relative}
+.quai-pics img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.quai-pics figcaption{font-size:14px;color:var(--on-night-2);padding-top:10px}
+.quai-pics img{aspect-ratio:4/3}@media (min-width:900px){.quai-pics img{aspect-ratio:5/6}}
+
+/* infos */
+.infos{padding-block:var(--gap)}
+.infos-grid{display:grid;gap:48px;margin-top:48px}
+@media (min-width:900px){.infos-grid{grid-template-columns:repeat(3,1fr);gap:clamp(32px,4vw,64px)}}
+.infos h3{font-weight:500;font-size:24px;letter-spacing:-.01em;margin-bottom:16px}
+.infos p,.infos li{font-size:18px}
+.infos ul{list-style:none;display:grid;gap:8px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;font-variant-numeric:tabular-nums}
+.hours dt{color:var(--ink-2)}
+.small{font-size:15px!important;color:var(--ink-2);margin-top:14px}
+.map{margin-top:64px;border-radius:8px;overflow:hidden;background:var(--soft);aspect-ratio:4/5}@media (min-width:900px){.map{aspect-ratio:16/7}}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.8)}
+
+/* footer */
+footer{background:var(--soft);padding-block:72px 40px}
+.foot-name{font-weight:300;font-size:clamp(48px,12vw,200px);line-height:.9;letter-spacing:-.05em}
+.foot-row{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;margin-top:40px;font-size:15px;color:var(--ink-2)}
+.credits{font-size:13px;color:var(--ink-2);margin-top:24px;max-width:110ch}
+
+/* barre d'action mobile */
+.dock{position:fixed;left:12px;right:12px;bottom:12px;z-index:20;display:flex;gap:8px;transform:translateY(140%);transition:transform .5s var(--ease)}
+.dock.show{transform:none}
+.dock .btn{flex:1;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+@media (min-width:900px){.dock{display:none}}
+
+/* entrées */
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .hero-pic img{animation:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .dock{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="wrap nav">
+  <a class="brand" href="#top">La Pizza d'Anita</a>
+  <nav aria-label="Navigation principale">
+    <ul>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#quai">Le quai</a></li>
+      <li><a href="#infos">Horaires et accès</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-tomato" href="https://www.thefork.fr/restaurant/la-pizza-d-anita/25719" target="_blank" rel="noopener">Réserver</a>
+</header>
+
+<main id="top">
+  <section class="wrap hero" aria-labelledby="titre">
+    <div>
+      <h1 id="titre" class="rv">La Pizza d'Anita</h1>
+      <p class="lede rv">Pizzeria italienne sur le quai Louis-Blériot, Paris 16e. Pizzas romaines à pâte fine, pâtes à la truffe, terrasse au soleil.</p>
+      <div class="actions rv">
+        <a class="btn btn-tomato" href="https://www.thefork.fr/restaurant/la-pizza-d-anita/25719" target="_blank" rel="noopener">Réserver une table</a>
+        <a class="btn btn-line" href="tel:+33145272493"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>01 45 27 24 93</a>
+      </div>
+      <p class="rating rv"><span class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      </span><span><b>4,8</b> sur Google · 2 272 avis</span></p>
+    </div>
+    <figure class="hero-pic rv">
+      <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=1400&q=75&auto=format&fit=crop" alt="Pizza margherita à pâte fine sur une planche" fetchpriority="high">
+      <figcaption>Pâte fine, sauce tomate maison</figcaption>
+    </figure>
+  </section>
+
+  <section class="chap-tomato" aria-labelledby="sig-titre">
+    <div class="wrap sig">
+      <div>
+        <h2 id="sig-titre" class="rv">La pizza qui porte son nom</h2>
+        <p class="rv">Celle que les habitués commandent les yeux fermés : la truffe et le speck sur une pâte fine, croustillante sur les bords.</p>
+        <ul class="ingredients rv" aria-label="Garniture de la Pizza d'Anita">
+          <li>Truffe</li><li>Champignons</li><li>Speck</li><li>Tomates confites</li>
+        </ul>
+        <div class="actions rv"><a class="btn btn-white" href="#carte">Voir toute la carte</a></div>
+      </div>
+      <figure class="sig-pic rv">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&q=75&auto=format&fit=crop" alt="Pizza garnie, découpée en parts" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section id="carte" class="wrap carte" aria-labelledby="carte-titre">
+    <div class="carte-head">
+      <h2 id="carte-titre" class="rv">La carte</h2>
+      <p class="rv">Une cuisine de trattoria : pizzas romaines, pâtes généreuses, antipasti à partager. Les suggestions changent selon la saison, demandez-les en salle.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Rubriques de la carte">
+      <button class="tab" role="tab" id="t-pizzas" aria-controls="p-pizzas" aria-selected="true">Pizzas</button>
+      <button class="tab" role="tab" id="t-pates" aria-controls="p-pates" aria-selected="false" tabindex="-1">Pâtes</button>
+      <button class="tab" role="tab" id="t-anti" aria-controls="p-anti" aria-selected="false" tabindex="-1">Antipasti et plats</button>
+      <button class="tab" role="tab" id="t-dolci" aria-controls="p-dolci" aria-selected="false" tabindex="-1">Dolci</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-pizzas" aria-labelledby="t-pizzas">
+      <ul class="dishes">
+        <li><strong>Pizza d'Anita</strong><span>Truffe, champignons, speck, tomates confites</span></li>
+        <li><strong>Bufala</strong><span>Mozzarella di bufala</span></li>
+        <li><strong>Diavola</strong><span>La piquante</span></li>
+        <li><strong>Bianca</strong><span>Sans sauce tomate</span></li>
+        <li><strong>Margherita, Napoletana, Regina</strong><span>Les classiques</span></li>
+        <li><strong>Salmone, Vegetariana, Calzone</strong><span>Et la pizza pliée</span></li>
+      </ul>
+      <figure><img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=1000&q=75&auto=format&fit=crop" alt="Pizza à la mozzarella et aux feuilles vertes" loading="lazy"></figure>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-pates" aria-labelledby="t-pates" hidden>
+      <ul class="dishes">
+        <li><strong>Rigatoni à la crème de champignons truffée</strong><span>La truffe, version pâtes</span></li>
+        <li><strong>Pâtes aux morilles</strong><span>À la crème</span></li>
+        <li><strong>All'amatriciana</strong><span>Tomate, guanciale, pecorino</span></li>
+        <li><strong>Puttanesca</strong><span>Tomate, olives, câpres</span></li>
+        <li><strong>Sicilienne</strong><span>Recette du Sud</span></li>
+        <li><strong>Carbonara</strong><span>La romaine</span></li>
+      </ul>
+      <figure><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=1000&q=75&auto=format&fit=crop" alt="Assiette de pâtes aux champignons" loading="lazy"></figure>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-anti" aria-labelledby="t-anti" hidden>
+      <ul class="dishes">
+        <li><strong>Carpaccio de bœuf</strong><span>En entrée ou en plat</span></li>
+        <li><strong>Mozzarella</strong><span>À partager</span></li>
+        <li><strong>Antipasti</strong><span>L'apéritif à l'italienne</span></li>
+        <li><strong>Escalope milanaise</strong><span>Panée, dorée</span></li>
+      </ul>
+      <figure><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1000&q=75&auto=format&fit=crop" alt="Assiette de penne à la sauce tomate" loading="lazy"></figure>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-dolci" aria-labelledby="t-dolci" hidden>
+      <ul class="dishes">
+        <li><strong>Tiramisu</strong><span>Le dessert que l'on garde pour la fin</span></li>
+        <li><strong>Desserts du moment</strong><span>À découvrir en salle</span></li>
+      </ul>
+      <figure><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=1000&q=75&auto=format&fit=crop" alt="Part de tiramisu saupoudrée de cacao" loading="lazy"></figure>
+    </div>
+
+    <p class="note rv"><b>Sur place ou à emporter.</b> Carte bancaire, espèces, titres-restaurant et chèques acceptés. Prix et carte du jour au restaurant.</p>
+  </section>
+
+  <section id="quai" class="quai" aria-labelledby="quai-titre">
+    <div class="wrap quai-grid">
+      <div>
+        <h2 id="quai-titre" class="rv">Ce soir, au bord de la Seine</h2>
+        <p class="sub rv">Choisissez un jour : le créneau de réservation et l'heure du coucher de soleil sur la Seine, calculée pour Paris.</p>
+        <div class="days" role="group" aria-label="Jour de la semaine" id="days"></div>
+        <div class="readout" aria-live="polite">
+          <p class="status" id="status">Lundi</p>
+          <dl>
+            <dt>Réservations</dt><dd id="slot">12 h – 14 h 30</dd>
+            <dt>Coucher du soleil</dt><dd id="sun">—</dd>
+          </dl>
+        </div>
+        <div class="actions"><a class="btn btn-tomato" id="qcta" href="https://www.thefork.fr/restaurant/la-pizza-d-anita/25719" target="_blank" rel="noopener">Réserver ce créneau</a></div>
+      </div>
+      <div class="quai-pics">
+        <figure class="rv">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Pont_du_Garigliano%2C_Seine_River%2C_Paris_11_December_2016.jpg/1280px-Pont_du_Garigliano%2C_Seine_River%2C_Paris_11_December_2016.jpg" alt="Le pont du Garigliano au-dessus de la Seine" loading="lazy">
+          <figcaption>La Seine au pont du Garigliano</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="infos" class="wrap infos" aria-labelledby="infos-titre">
+    <h2 id="infos-titre" class="rv">Horaires et accès</h2>
+    <div class="infos-grid">
+      <div class="rv">
+        <h3>Réservations</h3>
+        <dl class="hours">
+          <dt>Lundi</dt><dd>12 h – 14 h 30</dd>
+          <dt>Mardi au vendredi</dt><dd>12 h – 22 h 30</dd>
+          <dt>Samedi</dt><dd>19 h – 22 h 30</dd>
+          <dt>Dimanche</dt><dd>Se renseigner par téléphone</dd>
+        </dl>
+        <p class="small">Un doute sur un jour férié ? Un coup de fil suffit.</p>
+      </div>
+      <div class="rv">
+        <h3>Adresse</h3>
+        <p>182 quai Louis-Blériot<br>75016 Paris</p>
+        <p class="small">Métro ligne 9, Porte de Saint-Cloud, à 10 minutes à pied.</p>
+        <div class="actions"><a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&destination=La+Pizza+d%27Anita%2C+182+quai+Louis+Bl%C3%A9riot%2C+75016+Paris" target="_blank" rel="noopener">Itinéraire</a></div>
+      </div>
+      <div class="rv">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+33145272493">01 45 27 24 93</a></li>
+          <li><a href="mailto:sirdubarry@gmail.com?subject=Table%20%C3%A0%20La%20Pizza%20d%27Anita">sirdubarry@gmail.com</a></li>
+        </ul>
+        <p class="small">Groupes jusqu'à 50 personnes : appelez pour organiser votre soirée.</p>
+      </div>
+    </div>
+    <div class="map rv">
+      <iframe title="Plan d'accès à La Pizza d'Anita" loading="lazy" src="https://maps.google.com/maps?q=182%20quai%20Louis%20Bl%C3%A9riot%2C%2075016%20Paris&z=16&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-name">La Pizza d'Anita</p>
+    <div class="foot-row">
+      <span>182 quai Louis-Blériot, 75016 Paris · <a href="tel:+33145272493">01 45 27 24 93</a></span>
+      <span>Démo réalisée par Raul Hatos — site non officiel</span>
+    </div>
+    <p class="credits">Photo : « Pont du Garigliano, Seine River, Paris » par Guilhem Vellut, CC BY 2.0, via Wikimedia Commons. Photos de plats : Unsplash, à titre d'illustration.</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <a class="btn btn-ink" href="tel:+33145272493">Appeler</a>
+  <a class="btn btn-tomato" href="https://www.thefork.fr/restaurant/la-pizza-d-anita/25719" target="_blank" rel="noopener">Réserver</a>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+
+/* entrées échelonnées */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting)return;
+      var sib=[].slice.call(en.target.parentElement.querySelectorAll(':scope > .rv'));
+      en.target.style.transitionDelay=(Math.max(0,sib.indexOf(en.target))*80)+'ms';
+      en.target.classList.add('in');io.unobserve(en.target);
+    });
+  },{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+/* onglets de la carte */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function sel(t){
+    tabs.forEach(function(x){
+      var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(t)});
+    t.addEventListener('keydown',function(e){
+      var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;
+      var n=tabs[(i+d+tabs.length)%tabs.length];sel(n);n.focus();e.preventDefault();
+    });
+  });
+})();
+
+/* créneaux + coucher du soleil (Paris) */
+(function(){
+  var LAT=48.8389,LNG=2.2663;
+  var names=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+  var short=['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+  // créneaux de réservation [ouverture, fermeture] en minutes ; null = sans réservation
+  var slots=[null,[720,870],[720,1350],[720,1350],[720,1350],[720,1350],[1140,1350]];
+  function fmt(m){var h=Math.floor(m/60),mm=m%60;return h+' h'+(mm?' '+String(mm).padStart(2,'0'):'')}
+  // NOAA, précision ~1 min
+  function sunset(date){
+    var rad=Math.PI/180,start=Date.UTC(date.getFullYear(),0,1);
+    var n=Math.floor((Date.UTC(date.getFullYear(),date.getMonth(),date.getDate())-start)/864e5)+1;
+    var g=2*Math.PI/365*(n-1+(18-12)/24);
+    var eq=229.18*(0.000075+0.001868*Math.cos(g)-0.032077*Math.sin(g)-0.014615*Math.cos(2*g)-0.040849*Math.sin(2*g));
+    var decl=0.006918-0.399912*Math.cos(g)+0.070257*Math.sin(g)-0.006758*Math.cos(2*g)+0.000907*Math.sin(2*g)-0.002697*Math.cos(3*g)+0.00148*Math.sin(3*g);
+    var ha=Math.acos(Math.cos(90.833*rad)/(Math.cos(LAT*rad)*Math.cos(decl))-Math.tan(LAT*rad)*Math.tan(decl))/rad;
+    var utcMin=720-4*(LNG-ha)-eq; // coucher : 720 - 4(longitude - angle horaire) - équation du temps
+    var d=new Date(Date.UTC(date.getFullYear(),date.getMonth(),date.getDate(),0,0,0)+utcMin*6e4);
+    return d.toLocaleTimeString('fr-FR',{timeZone:'Europe/Paris',hour:'2-digit',minute:'2-digit'}).replace(':',' h ');
+  }
+  var box=document.getElementById('days');
+  var now=new Date(),today=now.getDay();
+  var order=[1,2,3,4,5,6,0];
+  order.forEach(function(d){
+    var b=document.createElement('button');b.className='day';b.type='button';
+    b.textContent=short[d];b.setAttribute('aria-label',names[d]);b.dataset.d=d;
+    b.addEventListener('click',function(){show(d)});box.appendChild(b);
+  });
+  function nextDate(d){var x=new Date(now);x.setDate(x.getDate()+((d-today+7)%7));return x}
+  function show(d){
+    [].forEach.call(box.children,function(b){b.setAttribute('aria-pressed',String(+b.dataset.d===d))});
+    var s=slots[d],st=document.getElementById('status');
+    var mins=now.getHours()*60+now.getMinutes();
+    var label=d===today?'Aujourd’hui':names[d];
+    if(d===today&&s&&mins>=s[0]&&mins<s[1]) st.innerHTML='<span class="dot on" aria-hidden="true"></span>'+label+', réservations ouvertes';
+    else st.innerHTML='<span class="dot'+(s?' on':'')+'" aria-hidden="true"></span>'+label+(s?', on réserve':', sur appel');
+    document.getElementById('slot').textContent=s?fmt(s[0])+' – '+fmt(s[1]):'Par téléphone';
+    var c=document.getElementById('qcta');
+    if(s){c.href='https://www.thefork.fr/restaurant/la-pizza-d-anita/25719';c.target='_blank';c.textContent='Réserver ce créneau'}
+    else{c.href='tel:+33145272493';c.removeAttribute('target');c.textContent='Appeler le 01 45 27 24 93'}
+    document.getElementById('sun').textContent=sunset(nextDate(d));
+  }
+  show(today);
+})();
+
+/* barre mobile après le premier écran */
+(function(){
+  var dock=document.getElementById('dock'),hero=document.querySelector('.hero .actions');
+  if(!('IntersectionObserver' in window))return;
+  new IntersectionObserver(function(e){dock.classList.toggle('show',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(hero);
+})();
+</script>
+</body>
+</html>
