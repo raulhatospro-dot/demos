@@ -4,635 +4,434 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Aux Péchés Normands · Boulangerie, Paris 10e</title>
-<meta name="description" content="Aux Péchés Normands, boulangerie-pâtisserie au 9, rue du Faubourg-du-Temple, à République. Chouquettes au chocolat le matin, 40 sandwichs à midi, gâteaux l'après-midi.">
-<meta name="theme-color" content="#1f3a2a">
-<meta name="color-scheme" content="light">
-<meta property="og:title" content="Aux Péchés Normands · Boulangerie, Paris 10e">
-<meta property="og:description" content="Le comptoir change avec l'heure : chouquettes au chocolat, mur de 40 sandwichs, gâteaux l'après-midi. 9, rue du Faubourg-du-Temple.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?w=1200&h=630&fit=crop&q=75&auto=format">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 16V2a14 14 0 1 1-12.1 7z' fill='%23b3261e'/%3E%3C/svg%3E">
-<script>document.documentElement.classList.add('js')</script>
+<title>Aux Péchés Normands · Boulangerie-pâtisserie, Paris 10e</title>
+<meta name="description" content="Aux Péchés Normands, boulangerie-pâtisserie au 9, rue du Faubourg-du-Temple, Paris 10e, à République. Viennoiseries le matin, sandwichs à midi, gâteaux l'après-midi.">
+<meta name="theme-color" content="#9fe870">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;500&family=Stack+Sans+Text:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f0f0ed;          /* pierre de lavoir */
-  --surface:#e4e2da;
-  --ink:#17231b;         /* vert bocage presque noir */
-  --soft:#45503f;
-  --accent:#b3261e;      /* pomme rouge : le péché */
-  --accent-ink:#ffffff;
-  --butter:#f1cf63;      /* beurre salé */
-  --apple:#cfe08f;       /* pomme verte */
-  --blush:#f2c4b8;       /* chair de pomme */
-  --bocage:#1f3a2a;      /* champ inversé */
-  --bocage-ink:#f0f0ed;
-  --m:clamp(16px,4vw,64px);
-  --w:1320px;
-  --step-small:1rem;
+  --bg:#ffffff;
+  --sage:#e8ebe6;        /* papier de comptoir */
+  --ink:#0e0f0c;
+  --soft:#454745;
+  --apple:#9fe870;       /* pomme verte, le seul accent */
+  --apple-pale:#e2f6d5;
+  --leaf:#163300;        /* vert bocage, champ inversé */
+  --m:clamp(16px,2.6vw,40px);
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
   --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
-  --step-head:clamp(2.25rem,1.5rem + 3.2vw,4.25rem);
-  --step-hero:clamp(2.75rem,1.4rem + 4.6vw,5.25rem);
-  --ease:cubic-bezier(.22,1,.36,1);
-  --r:18px;
+  --step-lead:clamp(1.25rem,1.05rem + .7vw,1.625rem);
+  --step-head:clamp(2.25rem,1.4rem + 3.4vw,4.5rem);
+  --step-giant:clamp(3.5rem,1.6rem + 7.6vw,6rem);
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{background:var(--bg);color:var(--ink);font-family:"Stack Sans Text",system-ui,sans-serif;font-size:var(--step-body);line-height:1.5;overflow-x:clip}
-img{display:block;max-width:100%;height:auto}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:var(--step-body);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%}
 a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
-ul,ol{list-style:none}
-::selection{background:var(--butter);color:var(--ink)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
-h1,h2,h3{font-family:"Stack Sans Headline",system-ui,sans-serif;font-weight:300;letter-spacing:-.022em;line-height:1.05;text-wrap:balance}
-h1{font-size:var(--step-hero)}
-h2{font-size:var(--step-head)}
-h3{font-size:var(--step-lead);font-weight:500;letter-spacing:-.01em}
-p,li{text-wrap:pretty}
-strong{font-weight:500}
-.wrap{max-width:var(--w);margin-inline:auto;padding-inline:var(--m)}
-.tab{font-variant-numeric:tabular-nums}
+ul{list-style:none}
+::selection{background:var(--apple);color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-weight:900;letter-spacing:-.035em;line-height:.92;text-wrap:balance}
+p{text-wrap:pretty}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;z-index:20}
-.skip:focus{top:12px}
 
 /* bandeau démo */
-.demo{background:var(--ink);color:var(--bg);font-size:.875rem;text-align:center;padding:7px 16px}
+.demo{background:var(--ink);color:#fff;font-size:var(--step-small);text-align:center;padding:7px var(--m)}
 
-/* navigation */
-.nav{position:sticky;top:0;z-index:10;background:var(--bg)}
-.nav .wrap{display:flex;align-items:center;gap:24px;min-height:68px}
-.brand{display:flex;align-items:center;gap:10px;font-family:"Stack Sans Headline";font-weight:500;font-size:1.25rem;text-decoration:none;letter-spacing:-.01em}
-.brand svg{width:26px;height:26px;flex:none}
-.nav nav{margin-left:auto}
-.nav ul{display:flex;gap:28px}
-.nav ul a{text-decoration:none;font-weight:500;font-size:1rem;padding:10px 0}
-.nav ul a:hover{color:var(--accent)}
-.btn{touch-action:manipulation;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;font:500 1rem/1 "Stack Sans Text",sans-serif;text-decoration:none;border:0;cursor:pointer;transition-property:transform,background-color,color;transition-duration:180ms;transition-timing-function:var(--ease)}
-.btn:active{transform:scale(.96)}
+/* barre */
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;align-items:center;gap:24px;padding:12px var(--m);min-height:64px}
+.mark{font-weight:900;font-size:1.25rem;letter-spacing:-.03em;text-decoration:none;margin-right:auto}
+.bar nav{display:flex;gap:22px;font-weight:600;font-size:var(--step-small)}
+.bar nav a{text-decoration:none;padding:6px 0}
+.bar nav a:hover{text-decoration:underline}
+
+/* boutons : la pilule, une seule forme */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 1.5em;border-radius:999px;font:600 1rem/1 "Hanken Grotesk",sans-serif;text-decoration:none;background:var(--apple);color:var(--ink);border:0;cursor:pointer;transition:transform .35s var(--ease),background-color .2s}
+.btn:hover{background:#b8f08f;transform:translateY(-2px)}
+.btn:active{transform:scale(.97)}
+.btn.alt{background:var(--sage)}
+.btn.alt:hover{background:#d9ded5}
+.btn.ink{background:var(--ink);color:#fff}
+.btn.ink:hover{background:#2a2c27}
 .btn svg{width:18px;height:18px;flex:none}
-.btn-red{background:var(--accent);color:var(--accent-ink)}
-.btn-red:hover{background:#951d17}
-.btn-quiet{background:var(--surface);color:var(--ink)}
-.btn-quiet:hover{background:#d8d5cb}
-.btn-pale{background:var(--bocage-ink);color:var(--ink)}
-.btn-pale:hover{background:#fff}
-.nav .btn{min-height:44px;padding:0 20px}
+.bar .btn{min-height:44px;padding:0 1.2em}
+.bar .lbl{display:none}
 
-/* HERO */
-.hero{overflow-x:clip;padding-block:clamp(28px,4vw,56px) clamp(40px,5vw,72px)}
-.hero .wrap{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
-@media (min-width:960px){.hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:56px}}
-.lead{font-size:var(--step-lead);line-height:1.4;margin-top:28px;max-width:30ch}
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:32px;max-width:560px}
-.fact{background:var(--surface);border-radius:var(--r);padding:14px 16px 16px}
-.fact b{display:block;font-family:"Stack Sans Headline";font-weight:500;font-size:2.25rem;letter-spacing:-.02em;line-height:1.1}
-.fact span{display:block;font-size:var(--step-small);line-height:1.35;margin-top:4px;color:var(--soft)}
-.fact.on{background:var(--butter)}
-.fact.on span{color:var(--ink)}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.now{display:flex;align-items:center;gap:10px;margin-top:20px;font-weight:500;font-size:var(--step-small)}
-.dot{width:10px;height:10px;border-radius:50%;background:#2f7a3d;flex:none}
-.dot.off{background:var(--accent)}
+/* la scène fendue */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 12px 12px}
+.col{padding:0 calc(var(--m) - 12px)}
+.stage{position:sticky;top:76px;height:calc(100svh - 88px);border-radius:24px;overflow:hidden;background:var(--sage)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease;transform:scale(1.04);animation:drift 24s ease-in-out infinite alternate}
+.stage img.on{opacity:1}
+@keyframes drift{to{transform:scale(1.12) translate(-1.5%,-1%)}}
+.stage-bar{position:absolute;left:12px;right:12px;bottom:12px;background:var(--bg);border-radius:16px;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 18px;font-size:var(--step-small);font-weight:600}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#2ead4b;margin-right:8px;vertical-align:1px}
+.dot.off{background:#d03238}
 
-/* le cadran : motif de la page */
-.dial{position:relative;width:min(100%,600px);aspect-ratio:1;margin-inline:auto}
-.dial .w{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 600ms var(--ease),filter 400ms var(--ease)}
-.dial .w.dim{filter:saturate(.35) brightness(.9)}
-.dial .w.lit{transform:scale(1.025)}
-.w-matin{clip-path:polygon(50% 50%,50.96% 0.01%,54.89% 0.24%,58.79% 0.78%,62.64% 1.62%,66.40% 2.77%,70.07% 4.21%,73.61% 5.93%,77.01% 7.92%,80.23% 10.18%,83.27% 12.68%,86.11% 15.41%,88.72% 18.36%,91.09% 21.51%,93.20% 24.83%,95.05% 28.31%,96.62% 31.92%,97.89% 35.64%,98.88% 39.46%,99.55% 43.33%,99.92% 47.25%,99.99% 51.19%,99.74% 55.12%,99.18% 59.02%,98.32% 62.86%,97.16% 66.62%,95.70% 70.28%,93.96% 73.82%,91.95% 77.20%,89.68% 80.42%)}
-.w-midi{clip-path:polygon(50% 50%,88.49% 81.92%,86.07% 84.63%,83.46% 87.16%,80.67% 89.49%,77.72% 91.61%,74.63% 93.51%,71.41% 95.19%,68.07% 96.62%,64.64% 97.81%,61.13% 98.75%,57.56% 99.43%,53.95% 99.84%,50.32% 100.00%,46.69% 99.89%,43.08% 99.52%,39.50% 98.88%,35.98% 97.99%,32.53% 96.85%,29.17% 95.46%)}
-.w-aprem{clip-path:polygon(50% 50%,27.44% 94.62%,23.32% 92.29%,19.44% 89.57%,15.83% 86.50%,12.53% 83.10%,9.56% 79.41%,6.96% 75.45%,4.75% 71.26%,2.94% 66.88%,1.55% 62.35%,0.60% 57.71%,0.09% 53.00%,0.03% 48.26%,0.42% 43.54%,1.25% 38.87%,2.53% 34.31%,4.22% 29.89%,6.33% 25.64%,8.84% 21.62%,11.71% 17.85%,14.92% 14.37%,18.45% 11.21%,22.27% 8.40%,26.33% 5.96%,30.60% 3.92%,35.05% 2.29%,39.64% 1.09%,44.31% 0.32%,49.04% 0.01%)}
-.slice{clip-path:polygon(50% 50%,96.98% 32.90%,98.33% 37.20%,99.29% 41.60%,99.85% 46.08%,100.00% 50.58%,99.74% 55.08%,99.08% 59.54%,98.02% 63.92%,96.57% 68.19%,94.75% 72.31%,92.56% 76.25%,90.02% 79.97%,87.16% 83.46%,83.99% 86.67%,80.55% 89.58%,76.86% 92.17%,72.96% 94.42%,68.87% 96.30%,64.62% 97.82%,60.25% 98.94%,55.80% 99.66%,51.31% 99.98%,46.80% 99.90%,42.32% 99.41%,37.90% 98.51%,33.58% 97.23%,29.40% 95.56%,25.38% 93.52%,21.56% 91.12%,17.97% 88.40%,14.64% 85.36%,11.60% 82.03%,8.88% 78.44%,6.48% 74.62%,4.44% 70.60%,2.77% 66.42%,1.49% 62.10%,0.59% 57.68%,0.10% 53.20%,0.02% 48.69%,0.34% 44.20%,1.06% 39.75%,2.18% 35.38%,3.70% 31.13%,5.58% 27.04%,7.83% 23.14%,10.42% 19.45%,13.33% 16.01%,16.54% 12.84%,20.03% 9.98%,23.75% 7.44%,27.69% 5.25%,31.81% 3.43%,36.08% 1.98%,40.46% 0.92%,44.92% 0.26%,49.42% 0.00%,53.92% 0.15%,58.40% 0.71%,62.80% 1.67%,67.10% 3.02%)}
-.hub{position:absolute;inset:31%;border-radius:50%;background:var(--bg);display:grid;place-content:center;text-align:center;z-index:2}
-.hub b{font-family:"Stack Sans Headline";font-weight:300;font-size:clamp(2.25rem,1.5rem + 2vw,3rem);letter-spacing:-.03em;line-height:1}
-.hub span{font-size:var(--step-small);font-weight:500;margin-top:6px;max-width:13ch;margin-inline:auto;line-height:1.3}
-.hand{position:absolute;inset:0;z-index:3;pointer-events:none;transition:transform 700ms var(--ease)}
-.hand::before{content:"";position:absolute;left:calc(50% - 3px);top:4%;width:6px;height:27%;background:var(--accent);border-radius:3px}
-.hand i{position:absolute;left:calc(50% - 10px);top:calc(4% - 10px);width:20px;height:20px;border-radius:50%;background:var(--accent);border:4px solid var(--bg)}
-.tag em{font-style:normal}
-.tag{position:absolute;transform:translate(-50%,-50%);background:var(--bg);color:var(--ink);font-weight:500;font-size:var(--step-small);padding:7px 13px;border-radius:999px;white-space:nowrap;z-index:2}
-.tag.t-matin{left:79.7%;top:35.7%}
-.tag.t-midi{left:57.3%;top:82.2%}
-.tag.t-aprem{left:17.8%;top:42.7%}
-.tick{position:absolute;font-size:.875rem;font-weight:500;transform:translate(-50%,-50%);z-index:2}
-.price{position:absolute;right:-2%;top:-1%;width:clamp(96px,22%,132px);aspect-ratio:1;border-radius:50%;background:var(--butter);display:grid;place-content:center;text-align:center;z-index:4;transform:rotate(-8deg)}
-.price b{font-family:"Stack Sans Headline";font-weight:500;font-size:2.25rem;line-height:1;letter-spacing:-.03em}
-.price span{font-size:.875rem;font-weight:500;line-height:1.2}
+/* hero */
+.hero{min-height:calc(100svh - 100px);display:flex;flex-direction:column;justify-content:center;padding:48px 0 64px}
+.hero h1{font-size:var(--step-giant);max-width:9ch}
+.hero .lead{font-size:var(--step-lead);line-height:1.35;max-width:30ch;margin-top:32px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
 
-/* rangée d'infos */
-.info{background:var(--surface)}
-.info ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;padding-block:22px}
-@media (min-width:960px){.info ul{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.info b{display:block;font-weight:500;font-size:1rem}
-.info span,.info a{font-size:var(--step-small);color:var(--soft)}
+/* l'horloge du comptoir : la chose vivante */
+.clock{margin-top:56px;background:var(--sage);border-radius:24px;padding:24px;max-width:560px}
+.clock h2{font-size:1.5rem;letter-spacing:-.02em;line-height:1.1}
+.clock .row{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.day{min-height:44px;min-width:48px;padding:0 12px;border-radius:999px;border:0;background:var(--bg);font:600 .9375rem "Hanken Grotesk",sans-serif;color:var(--ink);cursor:pointer;transition:background-color .2s,transform .3s var(--ease)}
+.day:hover{transform:translateY(-1px)}
+.day[aria-pressed="true"]{background:var(--ink);color:#fff}
+.clock label{display:flex;justify-content:space-between;font-weight:600;font-size:var(--step-small);margin-top:20px}
+.clock output{font-weight:900;font-size:1.0625rem;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;margin-top:10px;accent-color:var(--leaf);height:32px;cursor:pointer}
+.verdict{margin-top:14px;font-size:var(--step-body);min-height:3em}
+.verdict strong{font-weight:900}
 
-/* bande */
-.band{background:var(--bocage);color:var(--bocage-ink);overflow:hidden}
-.band p{display:flex;flex-wrap:wrap;gap:8px 36px;padding-block:22px}
-.band span{display:flex;align-items:center;gap:12px;font-family:"Stack Sans Headline";font-weight:500;font-size:var(--step-lead);letter-spacing:-.015em}
-.band span::before{content:"";width:16px;height:16px;flex:none;background:var(--butter);border-radius:50%;clip-path:polygon(50% 50%,100% 50%,100% 100%,0 100%,0 0,50% 0)}
+/* les moments */
+.moment{padding:clamp(96px,14vh,180px) 0 32px;min-height:80svh}
+.moment h2{font-size:var(--step-head);max-width:11ch}
+.moment p{margin-top:28px;max-width:44ch}
+.moment .m-img{display:none}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.tags li{background:var(--apple-pale);border-radius:999px;padding:10px 18px;font-weight:600}
+.big{font-size:var(--step-giant);font-weight:900;letter-spacing:-.04em;line-height:.9;margin-top:40px;display:flex;align-items:baseline;gap:16px}
+.big small{font-size:var(--step-lead);letter-spacing:-.01em;font-weight:600;line-height:1.2;max-width:20ch}
+blockquote{margin-top:40px;background:var(--apple);border-radius:24px;padding:28px 28px 24px;max-width:520px}
+blockquote p{margin:0!important;font-size:var(--step-lead);line-height:1.3;font-weight:600;letter-spacing:-.01em}
+blockquote cite{display:block;margin-top:14px;font-style:normal;font-size:var(--step-small);font-weight:600}
+.breads{margin-top:32px;max-width:520px}
+.breads li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;font-weight:600;font-size:var(--step-lead);letter-spacing:-.01em}
+.breads span{font-weight:400;font-size:var(--step-small);color:var(--soft);align-self:center;text-align:right}
 
-/* sections */
-section{padding-block:clamp(80px,10vw,160px)}
-.head{display:grid;gap:20px 48px;align-items:end;margin-bottom:clamp(36px,4vw,64px)}
-@media (min-width:960px){.head{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
-.head p{font-size:var(--step-lead);line-height:1.4;max-width:34ch}
+/* la feuille du comptoir */
+.sheet-band{background:var(--apple);padding:clamp(96px,14vw,200px) 12px}
+.sheet{background:var(--bg);max-width:680px;margin:0 auto;padding:72px clamp(24px,6vw,64px) 80px;
+  --s:14px;
+  -webkit-mask:radial-gradient(circle var(--s) at 50% 0,#0000 98%,#000) 50% 0/calc(var(--s)*2.6) 51% repeat-x,radial-gradient(circle var(--s) at 50% 100%,#0000 98%,#000) 50% 100%/calc(var(--s)*2.6) 51% repeat-x;
+  mask:radial-gradient(circle var(--s) at 50% 0,#0000 98%,#000) 50% 0/calc(var(--s)*2.6) 51% repeat-x,radial-gradient(circle var(--s) at 50% 100%,#0000 98%,#000) 50% 100%/calc(var(--s)*2.6) 51% repeat-x}
+.sheet h2{font-size:var(--step-head);text-align:center}
+.sheet .note{text-align:center;margin-top:16px;color:var(--soft)}
+.group{margin-top:56px}
+.group h3{font-size:1.5rem;letter-spacing:-.02em;text-align:center;line-height:1.1}
+.group ul{margin:20px auto 0;max-width:440px}
+.group li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;font-weight:600}
+.group li span{font-weight:400;color:var(--soft);text-align:right}
+.sheet .hours{margin-top:56px;text-align:center;font-weight:600}
+.sheet .hours p+p{margin-top:4px}
+.sheet .actions{justify-content:center}
 
-/* l'heure de passage */
-.when{background:var(--butter)}
-.when .head p{color:var(--ink)}
-.tool{display:grid;gap:24px}
-@media (min-width:960px){.tool{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px}}
-.panel{background:var(--bg);border-radius:var(--r);padding:clamp(22px,3vw,40px)}
-.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
-.days button{min-height:48px;touch-action:manipulation;border:0;border-radius:999px;background:var(--surface);font:500 .875rem/1 "Stack Sans Text",sans-serif;color:var(--ink);cursor:pointer;transition-property:background-color,color,transform;transition-duration:160ms}
-.days button:hover{background:#d8d5cb}
-.days button:active{transform:scale(.95)}
-.days button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.lbl{display:block;font-weight:500;margin:26px 0 10px}
-.clock{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.clock label{font-weight:500}
-.clock output{font-family:"Stack Sans Headline";font-weight:300;font-size:3rem;letter-spacing:-.03em;line-height:1}
-input[type=range]{width:100%;height:48px;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer}
-input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:var(--surface)}
-input[type=range]::-moz-range-track{height:10px;border-radius:999px;background:var(--surface)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;margin-top:-10px;border-radius:50%;background:var(--accent);border:4px solid var(--bg)}
-input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--accent);border:4px solid var(--bg)}
-.scale{display:flex;justify-content:space-between;font-size:.875rem;color:var(--soft)}
-.verdict{margin-top:24px;font-size:var(--step-body);min-height:3em}
-.verdict strong{display:block;font-size:var(--step-lead);font-weight:500;line-height:1.3}
-.result{display:grid;grid-template-columns:1fr;background:var(--bg);border-radius:var(--r);overflow:hidden}
-@media (min-width:600px){.result{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.result figure{aspect-ratio:auto;min-height:100%}}
-.result figure{position:relative;aspect-ratio:1;background:var(--surface)}
-.result figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 450ms var(--ease)}
-.result figure img.on{opacity:1}
-.result .txt{padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:14px}
-.result h3{font-size:2.25rem;font-weight:300;letter-spacing:-.02em}
-.result ul{display:grid;gap:8px}
-.result li{display:flex;gap:10px;align-items:baseline}
-.result li::before,.items li::before{content:"";width:12px;height:12px;flex:none;background:var(--accent);border-radius:50%;clip-path:polygon(50% 50%,100% 50%,100% 100%,0 100%,0 0,50% 0);transform:translateY(1px)}
-.result .btn{margin-top:auto;align-self:flex-start}
+/* au 9 */
+.place{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
+.place figure{border-radius:24px;overflow:hidden;min-height:620px;position:relative}
+.place figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.place figcaption{position:absolute;left:12px;bottom:12px;background:var(--bg);border-radius:12px;padding:8px 14px;font-size:var(--step-small);font-weight:600}
+.place .txt{background:var(--sage);border-radius:24px;padding:clamp(32px,5vw,72px);display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.place h2{font-size:var(--step-head);max-width:10ch}
+.place p{max-width:44ch;margin-top:24px}
+.access{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.access dt{font-size:var(--step-small);font-weight:600;color:var(--soft)}
+.access dd{font-weight:600;margin-top:4px}
+.week{font-variant-numeric:tabular-nums}
+.week div{display:flex;justify-content:space-between;gap:12px}
+.week div.today{font-weight:900}
 
-/* la carte du comptoir */
-.menu{display:grid;gap:clamp(80px,6vw,88px) 64px}
-@media (min-width:960px){.menu{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.cat{display:grid;grid-template-columns:clamp(96px,12vw,148px) minmax(0,1fr);gap:24px;align-items:start}
-.cat img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}
-.ch{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
-.ch span{font-weight:500;font-size:1rem;color:var(--soft)}
-.cat h3{font-size:2.25rem;font-weight:300;letter-spacing:-.02em}
-.items{margin-top:16px;display:grid;gap:14px}
-.items li{display:flex;gap:12px;align-items:baseline}
-.items b{font-weight:500}
-.items span{display:block;font-size:var(--step-small);color:var(--soft);line-height:1.4}
-.note{margin-top:clamp(40px,5vw,64px);display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;background:var(--surface);border-radius:var(--r);padding:20px 24px}
-.note p{flex:1 1 320px;max-width:48ch}
+/* contact : l'adresse email en grand */
+.contact{background:var(--leaf);color:#fff;min-height:88svh;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(48px,7vw,96px) var(--m) 48px;margin-top:12px}
+.contact .ask{font-size:var(--step-lead);line-height:1.3;max-width:26ch;color:#fff}
+.contact h2{font-size:var(--step-lead);color:var(--apple);letter-spacing:-.01em;margin-bottom:12px}
+.mail{display:block;font-weight:900;font-size:clamp(2.4rem,7.4vw,7.4rem);letter-spacing:-.045em;line-height:.95;text-decoration:none;color:#fff;transition:color .3s;overflow-wrap:anywhere;margin:48px 0}
+.mail:hover{color:var(--apple)}
+.mail span{display:block}
+.contact .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:var(--step-small);font-weight:600}
+.contact .foot a{color:var(--apple)}
 
-/* l'avis du guide */
-.guide{padding-block:0}
-.inset{background:var(--bocage);color:var(--bocage-ink);overflow:hidden;display:grid;gap:40px;padding-block:clamp(64px,7vw,112px);padding-inline:max(var(--m),calc((100% - var(--w))/2 + var(--m)))}
-@media (min-width:960px){.inset{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:64px;align-items:center}}
-.inset h2{max-width:12ch}
-.inset blockquote{margin-top:28px;font-size:var(--step-lead);line-height:1.4;max-width:32ch}
-.inset cite{display:block;margin-top:16px;font-style:normal;font-size:var(--step-small);opacity:.85}
-.slice-wrap{position:relative;max-width:520px;width:100%;margin-inline:auto}
-.slice-wrap img{width:100%;aspect-ratio:1;object-fit:cover}
-.slice-wrap .bite{position:absolute;right:2%;top:4%;background:var(--butter);color:var(--ink);border-radius:var(--r);padding:14px 18px;max-width:220px}
-.slice-wrap .bite b{display:block;font-family:"Stack Sans Headline";font-weight:500;font-size:2.25rem;line-height:1;letter-spacing:-.02em}
-.slice-wrap .bite span{font-size:var(--step-small);line-height:1.35;display:block;margin-top:6px}
-.pair{display:grid;gap:22px;margin-top:36px}
-@media (min-width:600px){.pair{grid-template-columns:1fr 1fr}}
-.pair h3{font-size:var(--step-body)}
-.pair p{font-size:var(--step-small);margin-top:6px;opacity:.9;line-height:1.5}
+footer{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:end;padding:22vh var(--m) 30px;font-size:var(--step-small);color:var(--soft)}
+footer nav{display:flex;gap:24px}
+footer nav a{color:var(--ink);font-weight:600}
+footer .r{text-align:right}
 
-/* commandes : le bon à découper */
-.coupon{position:relative;display:grid;background:var(--blush);border-radius:var(--r);overflow:hidden}
-@media (min-width:960px){.coupon{grid-template-columns:46% 54%}}
-.coupon .l,.coupon .r{padding:clamp(26px,4vw,52px)}
-.coupon .l{display:flex;flex-direction:column;gap:20px}
-.coupon .l p{max-width:36ch}
-.coupon .r{background:#f6d6cc;border-left:5px dotted var(--bg)}
-.coupon::before,.coupon::after{content:"";position:absolute;left:calc(46% - 16px);width:32px;height:32px;border-radius:50%;background:var(--bg);z-index:1}
-.coupon::before{top:-16px}.coupon::after{bottom:-16px}
-@media (max-width:959px){.coupon::before,.coupon::after{display:none}.coupon .r{border-left:0;border-top:5px dotted var(--bg)}}
-.field{display:block;margin-bottom:12px}
-.field span{display:block;font-weight:500;font-size:.875rem;margin-bottom:6px}
-.field input,.field select{width:100%;min-height:52px;border:0;border-radius:12px;background:var(--bg);padding:0 16px;font:400 1rem "Stack Sans Text",sans-serif;color:var(--ink)}
-.memo{margin:16px 0;background:var(--bg);border-radius:12px;padding:14px 16px;font-size:var(--step-small);min-height:3.2em}
-.big-tel{white-space:nowrap;font-family:"Stack Sans Headline";font-weight:300;font-size:3rem;letter-spacing:-.02em;text-decoration:none;line-height:1}
-.big-tel:hover{color:var(--accent)}
+/* entrées */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
 
-/* horaires & accès */
-.access{display:grid;gap:32px}
-@media (min-width:960px){.access{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:48px}}
-.hours{display:grid;gap:4px}
-.hours li{display:flex;justify-content:space-between;gap:16px;padding:12px 16px;border-radius:12px;font-variant-numeric:tabular-nums}
-.hours li.today{background:var(--butter);font-weight:500}
-.hours li.closed span:last-child{color:var(--accent)}
-.hours li.today.closed span:last-child{color:var(--ink)}
-.addr{margin-top:28px;display:grid;gap:18px}
-.addr b{display:block;font-weight:500}
-.map{position:relative;border-radius:var(--r);overflow:hidden;min-height:380px;background:var(--surface)}
-.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.map .pin{position:absolute;left:16px;bottom:16px;right:16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--bg);border-radius:14px;padding:12px 12px 12px 18px}
-.map .pin b{font-weight:500}
-
-/* pied de page */
-footer{background:var(--ink);color:var(--bg);padding-block:clamp(56px,7vw,96px) 32px}
-.mark{font-family:"Stack Sans Headline";font-weight:300;font-size:clamp(2.75rem,8.6vw,8.75rem);letter-spacing:-.04em;line-height:.95}
-.mark span{color:var(--butter)}
-.foot{display:grid;gap:28px;margin-top:48px;font-size:var(--step-small)}
-@media (min-width:960px){.foot{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.foot b{display:block;font-weight:500;margin-bottom:6px;font-size:1rem}
-.foot a{text-decoration:none}
-.foot a:hover{text-decoration:underline}
-.foot li{padding-block:3px}
-.credit{margin-top:44px;font-size:.875rem;opacity:.8;max-width:60ch}
-
-/* phone */
-@media (max-width:959px){
-  .nav ul{display:none}
-  .price{display:none}
-  .nav .btn{margin-left:auto}
-  .lead{max-width:none}
+@media (max-width:900px){
+  .bar nav{display:none}
+  .split{grid-template-columns:1fr;padding:0}
+  .stage{position:relative;top:0;height:56svh;margin:0 12px;order:-1}
+  .col{padding:0 var(--m)}
+  .hero{min-height:0;padding:36px 0 24px}
+  .clock{margin-top:40px;padding:20px}
+  .moment{min-height:0;padding:96px 0 0}
+  .moment .m-img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:20px;margin-top:32px}
+  .place{grid-template-columns:1fr}
+  .place figure{min-height:360px}
+  .access{grid-template-columns:1fr}
+  .mail{font-size:9.4vw}
+  .mail span{white-space:nowrap}
+  .bar .num{display:none}
+  .bar .lbl{display:inline}
+  .stage-bar .addr{display:none}
+  .clock .row{gap:4px}
+  .day{flex:1;min-width:0;padding:0}
+  .contact .foot{flex-direction:column;gap:12px}
+  footer{grid-template-columns:1fr;gap:8px;padding:20vh var(--m) 24px}
+  footer .r{text-align:left}
+  .sheet-band{padding:96px 10px}
+  .sheet{padding:56px 22px 64px}
+  .group li{font-size:1rem}
 }
-@media (max-width:599px){
-  .facts{grid-template-columns:1fr 1fr 1fr;gap:6px}
-  .fact{padding:12px 12px 14px}
-  .fact b{font-size:1.5rem}
-  .fact span{font-size:.875rem}
-  .cta .btn{flex:1 1 100%}
-  .tag{font-size:.875rem;padding:6px 10px}
-  .tag em{display:none}
-  .price{right:0;top:-2%}
-  .tag.t-aprem{left:22%}
-  .tag.t-matin{left:86%;top:46%}
-  .cat{grid-template-columns:84px minmax(0,1fr);gap:16px}
-  .cat h3{font-size:1.75rem}
-  .brand{font-size:1.0625rem}
-  .big-tel{font-size:2.25rem}
-  .days button{font-size:.875rem}
-  .map{min-height:320px}
-  .map .pin{position:static;border-radius:0}
-  .map iframe{position:static;height:280px}
-}
-
-/* mouvement */
-@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:no-preference){
-  .js .rv{opacity:0}
-  .js .rv.in{animation:rise 700ms var(--ease) both}
-  .hero .rv.in{animation-duration:900ms}
-}
-@keyframes drift{from{transform:scale(1)}to{transform:scale(1.08)}}
-.slice-wrap img{animation:drift 14s ease-in-out infinite alternate}
+@media (max-width:420px){.actions .btn{flex:1 1 100%}}
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .slice-wrap img{animation:none}
-  .hand,.dial .w,.btn,.days button{transition:none}
+  *{scroll-behavior:auto!important}
+  .stage img{animation:none;transition:none;transform:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .btn,.day{transition:none}
 }
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Aller au contenu</a>
-<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Aux Péchés Normands, haut de page">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 16V2a14 14 0 1 1-12.1 7z" fill="#b3261e"/></svg>
-      Aux Péchés Normands
-    </a>
-    <nav aria-label="Navigation principale">
-      <ul>
-        <li><a href="#heure">Quelle heure ?</a></li>
-        <li><a href="#comptoir">Au comptoir</a></li>
-        <li><a href="#commandes">Commandes</a></li>
-        <li><a href="#acces">Horaires et accès</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-red" href="tel:+33142084773">Appeler</a>
-  </div>
+<header class="bar">
+  <a class="mark" href="#top">Aux Péchés Normands</a>
+  <nav aria-label="Sections">
+    <a href="#matin">Le comptoir</a>
+    <a href="#feuille">La feuille</a>
+    <a href="#au-9">Horaires et accès</a>
+  </nav>
+  <a class="btn ink" href="tel:+33142084773" aria-label="Appeler le 01 42 08 47 73"><span class="num">01 42 08 47 73</span><span class="lbl">Appeler</span></a>
 </header>
 
-<main id="main">
-<section class="hero" id="top" aria-labelledby="t-hero" style="padding-top:clamp(28px,4vw,56px)">
-  <div class="wrap">
-    <div>
-      <h1 id="t-hero" class="rv">Le comptoir suit l’heure</h1>
-      <p class="lead rv">Aux Péchés Normands, boulangerie-pâtisserie au 9, rue du Faubourg-du-Temple. Chouquettes au chocolat le matin, mur de sandwichs à midi, gâteaux l’après-midi.</p>
-      <div class="facts rv">
-        <div class="fact on"><b>40</b><span>sandwichs au mur de midi</span></div>
-        <div class="fact"><b>4,1/5</b><span>663 avis Google</span></div>
-        <div class="fact"><b>6 h</b><span>ouverture en semaine</span></div>
+<main id="top">
+<div class="split">
+  <div class="col">
+    <section class="hero" aria-labelledby="t">
+      <h1 id="t">Aux Péchés Normands</h1>
+      <p class="lead">Boulangerie-pâtisserie au 9, rue du Faubourg-du-Temple, à la sortie du métro République.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+33142084773"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+        <a class="btn alt" href="https://www.google.com/maps/dir/?api=1&destination=Aux+P%C3%A9ch%C3%A9s+Normands+9+rue+du+Faubourg+du+Temple+75010+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Itinéraire</a>
+        <a class="btn alt" href="mailto:peches-normands@wanadoo.fr?subject=Commande%20%C3%A0%20retirer%20au%209%2C%20rue%20du%20Faubourg-du-Temple&body=Bonjour%2C%0A%0AJe%20souhaiterais%20commander%20%3A%0A%0A%C3%80%20retirer%20le%20%3A%0ANom%20%3A%0AT%C3%A9l%C3%A9phone%20%3A%0A%0AMerci%20!">Commander par email</a>
       </div>
-      <div class="cta rv">
-        <a class="btn btn-red" href="tel:+33142084773"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>01 42 08 47 73</a>
-        <a class="btn btn-quiet" href="#heure">Voir ce qu’il y a à mon heure</a>
-      </div>
-      <p class="now rv" id="now" aria-live="polite"><span class="dot"></span>Lundi au vendredi 6 h – 20 h, samedi 8 h – 19 h 45.</p>
-    </div>
 
-    <div class="dial rv" id="dial" role="img" aria-label="Cadran de la journée au comptoir : le matin les viennoiseries, à midi les sandwichs, l’après-midi les gâteaux. L’aiguille indique l’heure actuelle.">
-      <img class="w w-matin" data-k="matin" src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?w=1000&h=1000&fit=crop&q=72&auto=format" width="1000" height="1000" alt="">
-      <img class="w w-midi" data-k="midi" src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=1000&h=1000&fit=crop&q=72&auto=format" width="1000" height="1000" alt="">
-      <img class="w w-aprem" data-k="aprem" src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=1000&h=1000&fit=crop&q=72&auto=format" width="1000" height="1000" alt="">
-      <span class="tag t-matin">Matin<em> · viennoiseries</em></span>
-      <span class="tag t-midi">Midi<em> · sandwichs</em></span>
-      <span class="tag t-aprem">Après-midi<em> · gâteaux</em></span>
-      <div class="hub"><b class="tab" id="hubT">8 h 00</b><span id="hubL">le matin au comptoir</span></div>
-      <div class="hand" id="hand" style="transform:rotate(77deg)"><i></i></div>
-      <div class="price"><b>40</b><span>sandwichs<br>à midi</span></div>
-    </div>
+      <form class="clock" id="clock" onsubmit="return false" aria-labelledby="clock-t">
+        <h2 id="clock-t">Le comptoir change avec l'heure. Vous passez quand&nbsp;?</h2>
+        <div class="row" role="group" aria-label="Jour">
+          <button type="button" class="day" data-d="1" aria-pressed="false">Lun</button>
+          <button type="button" class="day" data-d="2" aria-pressed="false">Mar</button>
+          <button type="button" class="day" data-d="3" aria-pressed="false">Mer</button>
+          <button type="button" class="day" data-d="4" aria-pressed="false">Jeu</button>
+          <button type="button" class="day" data-d="5" aria-pressed="false">Ven</button>
+          <button type="button" class="day" data-d="6" aria-pressed="false">Sam</button>
+          <button type="button" class="day" data-d="0" aria-pressed="false">Dim</button>
+        </div>
+        <label for="h"><span>Heure de passage</span><output id="ho" for="h">8 h 00</output></label>
+        <input type="range" id="h" min="300" max="1290" step="15" value="480">
+        <p class="verdict" id="verdict" aria-live="polite">Lundi au vendredi de 6 h à 20 h, samedi de 8 h à 19 h 45, fermé le dimanche.</p>
+      </form>
+    </section>
+
+    <section class="moment" id="matin" data-k="matin" aria-labelledby="t-matin">
+      <h2 id="t-matin" class="rv">Le matin, les chouquettes au chocolat</h2>
+      <img class="m-img" src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?w=900&h=675&fit=crop&q=75&auto=format" width="900" height="675" alt="Plaque de viennoiseries dorées" loading="lazy">
+      <p class="rv">Dès 6 h en semaine, le comptoir se remplit de viennoiseries et de chouquettes au chocolat. On en prend un sachet pour le bureau, ou une seule pour la route.</p>
+      <ul class="tags rv" aria-label="Au comptoir le matin">
+        <li>Chouquettes au chocolat</li><li>Viennoiseries</li><li>Pain craquant</li>
+      </ul>
+    </section>
+
+    <section class="moment" id="midi" data-k="midi" aria-labelledby="t-midi">
+      <h2 id="t-midi" class="rv">À midi, le mur de sandwichs</h2>
+      <img class="m-img" src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=900&h=675&fit=crop&q=75&auto=format" width="900" height="675" alt="Sandwich garni dans une baguette" loading="lazy">
+      <div class="big rv">40<small>variétés de sandwichs au comptoir</small></div>
+      <p class="rv">Sandwichs frais, quiches et salades pour la pause déjeuner. Le classique qu'on ne trouve pas partout&nbsp;: le beurre salé-sardine.</p>
+      <blockquote class="rv">
+        <p>«&nbsp;Choix et variété, les comptoirs changent de volumes et de couleurs suivant les heures.&nbsp;»</p>
+        <cite>Gault&amp;Millau, guide des artisans</cite>
+      </blockquote>
+    </section>
+
+    <section class="moment" id="apres-midi" data-k="aprem" aria-labelledby="t-aprem">
+      <h2 id="t-aprem" class="rv">L'après-midi, les gâteaux</h2>
+      <img class="m-img" src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=900&h=675&fit=crop&q=75&auto=format" width="900" height="675" alt="Tarte meringuée entamée" loading="lazy">
+      <p class="rv">Après le déjeuner, les gâteaux prennent les rayons&nbsp;: de quoi tenir jusqu'au dîner, ou finir un repas de famille. Pour un grand nombre de parts, on commande à l'avance.</p>
+      <ul class="tags rv" aria-label="Au comptoir l'après-midi">
+        <li>Flan pâtissier</li><li>Opéra</li><li>Macarons</li><li>Gâteaux sur commande</li>
+      </ul>
+    </section>
+
+    <section class="moment" id="pains" data-k="pains" aria-labelledby="t-pains">
+      <h2 id="t-pains" class="rv">Et toute la journée, le pain</h2>
+      <img class="m-img" src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=900&h=675&fit=crop&q=75&auto=format" width="900" height="675" alt="Étagères de pains et de baguettes" loading="lazy">
+      <ul class="breads rv">
+        <li>Baguette Tradition <span>la croûte qui craque</span></li>
+        <li>Pain aux lardons</li>
+        <li>Pain au fromage</li>
+        <li>Pain nature</li>
+        <li>Pains au levain</li>
+      </ul>
+    </section>
   </div>
-</section>
 
-<div class="info">
-  <ul class="wrap">
-    <li><b>9, rue du Faubourg-du-Temple</b><a href="https://www.google.com/maps/dir/?api=1&destination=Aux+P%C3%A9ch%C3%A9s+Normands+9+rue+du+Faubourg+du+Temple+75010+Paris" target="_blank" rel="noopener">Paris 10e · itinéraire</a></li>
-    <li><b>Métro République</b><span>lignes 3, 5, 8, 9 et 11</span></li>
-    <li><b>Lun.–ven. 6 h – 20 h</b><span>samedi 8 h – 19 h 45, fermé le dimanche</span></li>
-    <li><b>Sur place ou à emporter</b><span>salle et terrasse, carte bancaire acceptée</span></li>
-  </ul>
+  <aside class="stage" aria-label="Le comptoir en images">
+    <img data-k="matin" class="on" src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?w=1400&h=1800&fit=crop&q=75&auto=format" width="1400" height="1800" alt="Plaque de viennoiseries dorées">
+    <img data-k="midi" src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=1400&h=1800&fit=crop&q=75&auto=format" width="1400" height="1800" alt="Sandwich garni dans une baguette" loading="lazy">
+    <img data-k="aprem" src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=1400&h=1800&fit=crop&q=75&auto=format" width="1400" height="1800" alt="Tarte meringuée entamée" loading="lazy">
+    <img data-k="pains" src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1400&h=1800&fit=crop&q=75&auto=format" width="1400" height="1800" alt="Étagères de pains et de baguettes" loading="lazy">
+    <img data-k="ferme" src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=1400&h=1800&fit=crop&q=75&auto=format" width="1400" height="1800" alt="Miche de pain farinée" loading="lazy">
+    <div class="stage-bar"><span id="now"><span class="dot"></span>Lun–ven 6 h–20 h · sam 8 h–19 h 45</span><span class="addr">9, rue du Faubourg-du-Temple</span></div>
+  </aside>
 </div>
 
-<div class="band"><p class="wrap">
-    <span>Chouquettes au chocolat</span>
-    <span>Beurre salé-sardine</span>
-    <span>Pain aux lardons</span>
-    <span>Baguette Tradition</span>
-  </p></div>
-
-<section class="when" id="heure" aria-labelledby="t-heure">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="t-heure" class="rv">Vous passez à quelle heure&nbsp;?</h2>
-      <p class="rv">Choisissez le jour et l’heure&nbsp;: la page vous dit si la boutique est ouverte et ce qui garnit le comptoir à ce moment-là.</p>
+<section class="sheet-band" id="feuille" aria-labelledby="t-feuille">
+  <div class="sheet">
+    <h2 id="t-feuille" class="rv">La feuille du comptoir</h2>
+    <p class="note rv">Ce qu'on trouve au 9, selon l'heure. Prix en boutique.</p>
+    <div class="group rv">
+      <h3>Le matin</h3>
+      <ul>
+        <li>Chouquettes au chocolat</li>
+        <li>Croissants, pains au chocolat <span>viennoiseries</span></li>
+      </ul>
     </div>
-    <div class="tool">
-      <div class="panel rv">
-        <span class="lbl" id="l-days" style="margin-top:0">Le jour</span>
-        <div class="days" role="group" aria-labelledby="l-days">
-          <button type="button" data-d="1" aria-label="Lundi">Lun</button>
-          <button type="button" data-d="2" aria-label="Mardi">Mar</button>
-          <button type="button" data-d="3" aria-label="Mercredi">Mer</button>
-          <button type="button" data-d="4" aria-label="Jeudi">Jeu</button>
-          <button type="button" data-d="5" aria-label="Vendredi">Ven</button>
-          <button type="button" data-d="6" aria-label="Samedi">Sam</button>
-          <button type="button" data-d="0" aria-label="Dimanche">Dim</button>
-        </div>
-        <div class="clock" style="margin-top:26px"><output id="ho" for="h" class="tab">8 h 00</output><label for="h">heure de passage</label></div>
-        <input type="range" id="h" min="300" max="1290" step="15" value="480">
-        <div class="scale" aria-hidden="true"><span>5 h</span><span>11 h</span><span>14 h</span><span>21 h 30</span></div>
-        <p class="verdict" id="verdict" aria-live="polite"><strong>Lundi au vendredi de 6 h à 20 h.</strong> Samedi de 8 h à 19 h 45, fermé le dimanche.</p>
-      </div>
-      <div class="result rv">
-        <figure>
-          <img data-k="matin" class="on" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&h=800&fit=crop&q=72&auto=format" width="800" height="800" alt="Croissants dorés sur une plaque" loading="lazy">
-          <img data-k="midi" src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=800&h=800&fit=crop&crop=left&q=72&auto=format" width="800" height="800" alt="Sandwich baguette garni de salade et de tomate" loading="lazy">
-          <img data-k="aprem" src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&h=800&fit=crop&crop=top&q=72&auto=format" width="800" height="800" alt="Macarons de toutes les couleurs" loading="lazy">
-          <img data-k="ferme" src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&h=800&fit=crop&q=72&auto=format" width="800" height="800" alt="Comptoir de boulangerie avec baguettes et pains" loading="lazy">
-        </figure>
-        <div class="txt">
-          <h3 id="rT">Le matin</h3>
-          <ul id="rL">
-            <li>Chouquettes au chocolat</li>
-            <li>Croissants et viennoiseries</li>
-            <li>Pain craquant, baguette Tradition</li>
-          </ul>
-          <a class="btn btn-red" id="rB" href="tel:+33142084773">Appeler la boutique</a>
-        </div>
-      </div>
+    <div class="group rv">
+      <h3>À midi</h3>
+      <ul>
+        <li>Sandwichs frais <span>40 variétés</span></li>
+        <li>Beurre salé-sardine <span>la spécialité</span></li>
+        <li>Quiches</li>
+        <li>Salades</li>
+      </ul>
     </div>
+    <div class="group rv">
+      <h3>L'après-midi</h3>
+      <ul>
+        <li>Flan pâtissier</li>
+        <li>Opéra</li>
+        <li>Macarons</li>
+        <li>Gâteaux et traiteur <span>sur commande</span></li>
+      </ul>
+    </div>
+    <div class="group rv">
+      <h3>Les pains</h3>
+      <ul>
+        <li>Baguette Tradition</li>
+        <li>Pain aux lardons</li>
+        <li>Pain au fromage</li>
+        <li>Pain nature</li>
+        <li>Pains au levain</li>
+      </ul>
+    </div>
+    <div class="hours">
+      <p>Du lundi au vendredi, 6 h – 20 h</p>
+      <p>Le samedi, 8 h – 19 h 45 · fermé le dimanche</p>
+    </div>
+    <div class="actions"><a class="btn ink" href="tel:+33142084773">Commander par téléphone</a></div>
   </div>
 </section>
 
-<section id="comptoir" aria-labelledby="t-comptoir">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="t-comptoir" class="rv">Au comptoir, du matin au soir</h2>
-      <p class="rv">Le Gault&amp;Millau le dit en une phrase&nbsp;: les comptoirs changent de volumes et de couleurs suivant les heures.</p>
-    </div>
-    <div class="menu">
-      <article class="cat rv">
-        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=400&fit=crop&q=72&auto=format" width="400" height="400" alt="Croissants sur une plaque" loading="lazy">
-        <div>
-          <div class="ch"><h3>Le matin</h3><span>dès 6 h</span></div>
-          <ul class="items">
-            <li><div><b>Chouquettes au chocolat</b><span>Au sachet pour le bureau, ou une seule pour la route.</span></div></li>
-            <li><div><b>Croissants, pains au chocolat</b><span>Les viennoiseries du matin.</span></div></li>
-            <li><div><b>Pain craquant</b><span>Pour le petit-déjeuner.</span></div></li>
-          </ul>
-        </div>
-      </article>
-      <article class="cat rv">
-        <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&h=400&fit=crop&q=72&auto=format" width="400" height="400" alt="Sandwich baguette" loading="lazy">
-        <div>
-          <div class="ch"><h3>À midi</h3><span>40 sandwichs</span></div>
-          <ul class="items">
-            <li><div><b>Le mur de sandwichs</b><span>Quarante variétés au comptoir.</span></div></li>
-            <li><div><b>Beurre salé-sardine</b><span>Tout frais du moment, la spécialité qu’on ne trouve pas partout.</span></div></li>
-            <li><div><b>Quiches et salades</b><span>Pour la pause déjeuner, sur place ou à emporter.</span></div></li>
-          </ul>
-        </div>
-      </article>
-      <article class="cat rv">
-        <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=400&h=400&fit=crop&q=72&auto=format" width="400" height="400" alt="Macarons colorés" loading="lazy">
-        <div>
-          <div class="ch"><h3>L’après-midi</h3><span>gâteaux</span></div>
-          <ul class="items">
-            <li><div><b>Flan pâtissier</b><span>À la part, avec un café.</span></div></li>
-            <li><div><b>Opéra et macarons</b><span>Les gâteaux plaisir qui colorent les rayons.</span></div></li>
-            <li><div><b>Gâteaux et traiteur</b><span>Sur commande, pour un anniversaire ou un bureau.</span></div></li>
-          </ul>
-        </div>
-      </article>
-      <article class="cat rv">
-        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=400&fit=crop&q=72&auto=format" width="400" height="400" alt="Pains de campagne" loading="lazy">
-        <div>
-          <div class="ch"><h3>Toute la journée</h3><span>les pains</span></div>
-          <ul class="items">
-            <li><div><b>Baguette Tradition</b><span>De bonne conservation, la croûte qui craque.</span></div></li>
-            <li><div><b>Pain aux lardons, pain au fromage</b><span>Les pains garnis de la maison.</span></div></li>
-            <li><div><b>Pain nature, pains au levain</b><span>Pour toute la semaine.</span></div></li>
-          </ul>
-        </div>
-      </article>
-    </div>
-    <div class="note rv">
-      <p><strong>Prix affichés en boutique.</strong> Pour un grand nombre de parts ou un plateau de sandwichs, commandez à l’avance par téléphone.</p>
-      <a class="btn btn-red" href="tel:+33142084773">01 42 08 47 73</a>
-    </div>
-  </div>
-</section>
-
-<section class="guide" aria-labelledby="t-guide">
-  <div class="inset">
+<section class="place" id="au-9" aria-labelledby="t-place">
+  <figure>
+    <img src="https://images.unsplash.com/photo-1623334044303-241021148842?w=1400&h=1400&fit=crop&q=75&auto=format" width="1400" height="1400" alt="Croissants alignés sur une plaque" loading="lazy">
+  </figure>
+  <div class="txt">
     <div>
-      <h2 id="t-guide" class="rv">Bénie des snackers</h2>
-      <blockquote class="rv">
-        <p>«&nbsp;Choix et variété, les comptoirs changent de volumes et de couleurs suivant les heures&nbsp;: chouquettes au chocolat, viennoiseries, murs de sandwichs (40 variétés), beurre salé-sardine tout frais du moment et pain craquant.&nbsp;»</p>
-        <cite>Gault&amp;Millau, fiche artisan boulanger</cite>
-      </blockquote>
-      <div class="pair rv">
-        <div><h3>À une minute du métro</h3><p>Le Faubourg-du-Temple part de la place de la République&nbsp;: la boutique est au n°&nbsp;9, juste après la bouche de métro.</p></div>
-        <div><h3>Sur place ou à emporter</h3><p>Une salle, une terrasse, et le café pour accompagner une part de flan.</p></div>
-      </div>
+      <h2 id="t-place" class="rv">Au 9, depuis 1993</h2>
+      <p class="rv">L'enseigne Aux Péchés Normands est inscrite au 9, rue du Faubourg-du-Temple depuis 1993. Le Faubourg commence à la place de la République&nbsp;: la boutique est à une minute de la bouche de métro.</p>
     </div>
-    <div class="slice-wrap rv">
-      <img class="slice" src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1000&h=1000&fit=crop&q=72&auto=format" width="1000" height="1000" alt="Comptoir de boulangerie garni de baguettes et de pains" loading="lazy">
-      <div class="bite"><b>4,1/5</b><span>sur 663 avis Google</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="commandes" aria-labelledby="t-cmd">
-  <div class="wrap">
-    <div class="coupon rv">
-      <div class="l">
-        <h2 id="t-cmd">Un gâteau pour samedi&nbsp;?</h2>
-        <p>Gâteaux, plateaux de sandwichs et traiteur se commandent à l’avance. Préparez votre liste ici, puis appelez la boutique&nbsp;: tout est déjà prêt à dire.</p>
-        <a class="big-tel tab" href="tel:+33142084773">01 42 08 47 73</a>
-      </div>
-      <form class="r" id="memoF" onsubmit="return false">
-        <label class="field"><span>Ce que vous voulez</span>
-          <select id="mQ" name="quoi">
-            <option>un gâteau</option>
-            <option>un plateau de sandwichs</option>
-            <option>des viennoiseries</option>
-            <option>du traiteur</option>
-          </select>
-        </label>
-        <label class="field"><span>Pour combien de personnes</span><input id="mN" name="personnes" autocomplete="off" type="number" inputmode="numeric" min="1" max="200" value="8"></label>
-        <label class="field"><span>Pour quel jour</span><input id="mD" name="jour" type="date"></label>
-        <p class="memo" id="memo" aria-live="polite">Bonjour, je voudrais commander un gâteau pour 8 personnes.</p>
-        <a class="btn btn-red" style="width:100%" href="tel:+33142084773">Appeler avec ma liste</a>
-      </form>
+    <dl class="access rv">
+      <div><dt>Adresse</dt><dd>9, rue du Faubourg-du-Temple<br>75010 Paris</dd></div>
+      <div><dt>Métro</dt><dd>République, lignes 3, 5, 8, 9 et 11</dd></div>
+      <div><dt>Téléphone</dt><dd><a href="tel:+33142084773">01 42 08 47 73</a></dd></div>
+      <div><dt>Horaires</dt><dd class="week" id="week">
+        <div data-d="1"><span>Lundi</span><span>6 h – 20 h</span></div>
+        <div data-d="2"><span>Mardi</span><span>6 h – 20 h</span></div>
+        <div data-d="3"><span>Mercredi</span><span>6 h – 20 h</span></div>
+        <div data-d="4"><span>Jeudi</span><span>6 h – 20 h</span></div>
+        <div data-d="5"><span>Vendredi</span><span>6 h – 20 h</span></div>
+        <div data-d="6"><span>Samedi</span><span>8 h – 19 h 45</span></div>
+        <div data-d="0"><span>Dimanche</span><span>fermé</span></div>
+      </dd></div>
+    </dl>
+    <div class="actions" style="margin-top:0">
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Aux+P%C3%A9ch%C3%A9s+Normands+9+rue+du+Faubourg+du+Temple+75010+Paris" target="_blank" rel="noopener">Itinéraire Google Maps</a>
     </div>
   </div>
 </section>
 
-<section id="acces" aria-labelledby="t-acces" style="padding-top:0">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="t-acces" class="rv">Horaires et accès</h2>
-      <p class="rv" id="openTxt">Ouvert six jours sur sept, dès 6 h en semaine.</p>
-    </div>
-    <div class="access">
-      <div class="rv">
-        <ul class="hours" id="week">
-          <li data-d="1"><span>Lundi</span><span>6 h – 20 h</span></li>
-          <li data-d="2"><span>Mardi</span><span>6 h – 20 h</span></li>
-          <li data-d="3"><span>Mercredi</span><span>6 h – 20 h</span></li>
-          <li data-d="4"><span>Jeudi</span><span>6 h – 20 h</span></li>
-          <li data-d="5"><span>Vendredi</span><span>6 h – 20 h</span></li>
-          <li data-d="6"><span>Samedi</span><span>8 h – 19 h 45</span></li>
-          <li data-d="0" class="closed"><span>Dimanche</span><span>fermé</span></li>
-        </ul>
-        <div class="addr">
-          <p><b>Adresse</b>9, rue du Faubourg-du-Temple, 75010 Paris</p>
-          <p><b>Métro</b>République, lignes 3, 5, 8, 9 et 11</p>
-          <p><b>Téléphone</b><a href="tel:+33142084773">01 42 08 47 73</a></p>
-        </div>
-      </div>
-      <div class="map rv">
-        <iframe title="Plan : 9, rue du Faubourg-du-Temple, Paris 10e" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=2.3600%2C48.8655%2C2.3708%2C48.8711&amp;layer=mapnik&amp;marker=48.8683036%2C2.3654280"></iframe>
-        <div class="pin"><span><b>Aux Péchés Normands</b> · 9, rue du Faubourg-du-Temple</span><a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&destination=Aux+P%C3%A9ch%C3%A9s+Normands+9+rue+du+Faubourg+du+Temple+75010+Paris" target="_blank" rel="noopener">Itinéraire</a></div>
-      </div>
-    </div>
+<section class="contact" aria-labelledby="t-contact">
+  <div>
+    <h2 id="t-contact">Commandes et traiteur</h2>
+    <p class="ask">Un gâteau pour samedi, un plateau de sandwichs pour le bureau&nbsp;: écrivez-nous.</p>
+  </div>
+  <a class="mail" href="mailto:peches-normands@wanadoo.fr?subject=Commande"><span>peches-normands@</span><span>wanadoo.fr</span></a>
+  <div class="foot">
+    <span>01 42 08 47 73 · Paris 10e</span>
+    <a href="https://www.facebook.com/auxpechesnormands/" target="_blank" rel="noopener">Facebook</a>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <p class="mark">Aux Péchés <span>Normands</span></p>
-    <div class="foot">
-      <div><b>Boutique</b>9, rue du Faubourg-du-Temple<br>75010 Paris · métro République</div>
-      <div><b>Horaires</b>Lundi au vendredi 6 h – 20 h<br>Samedi 8 h – 19 h 45 · dimanche fermé</div>
-      <div><b>Contact</b><ul><li><a href="tel:+33142084773">01 42 08 47 73</a></li><li><a href="https://www.facebook.com/auxpechesnormands/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
-      <div><b>Sur la page</b><ul><li><a href="#heure">Quelle heure&nbsp;?</a></li><li><a href="#comptoir">Au comptoir</a></li><li><a href="#commandes">Commandes</a></li><li><a href="#acces">Horaires et accès</a></li></ul></div>
-    </div>
-    <p class="credit">Démo non officielle réalisée par Raul Hatos. Photos d’illustration Unsplash, plan © contributeurs OpenStreetMap. Avis Gault&amp;Millau cité depuis sa fiche artisan.</p>
-  </div>
+  <span>Boulangerie-pâtisserie, Paris 10e</span>
+  <nav aria-label="Pied de page"><a href="#matin">Le comptoir</a><a href="#feuille">La feuille</a><a href="#au-9">Accès</a></nav>
+  <span class="r">Démo non officielle · photos Unsplash</span>
 </footer>
 
 <script>
+document.documentElement.classList.add('js');
 (function(){
+  // horaires en minutes : [ouverture, fermeture], dimanche fermé
   var H={0:null,1:[360,1200],2:[360,1200],3:[360,1200],4:[360,1200],5:[360,1200],6:[480,1185]};
   var J=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
   var fmt=function(m){var h=Math.floor(m/60),mi=m%60;return h+' h'+(mi?' '+String(mi).padStart(2,'0'):'')};
-  var fmt2=function(m){return Math.floor(m/60)+' h '+String(m%60).padStart(2,'0')};
+  var fmt2=function(m){var h=Math.floor(m/60),mi=m%60;return h+' h '+String(mi).padStart(2,'0')};
   var moment=function(m){return m<660?'matin':m<840?'midi':'aprem'};
-  var C={
-    matin:{t:'Le matin',l:['Chouquettes au chocolat','Croissants et viennoiseries','Pain craquant, baguette Tradition']},
-    midi:{t:'À midi',l:['Le mur de 40 sandwichs','Beurre salé-sardine','Quiches et salades']},
-    aprem:{t:'L’après-midi',l:['Flan pâtissier, opéra, macarons','Gâteaux plaisir au comptoir','Pains pour le soir']},
-    ferme:{t:'Boutique fermée',l:['Lundi au vendredi 6 h – 20 h','Samedi 8 h – 19 h 45','Fermé le dimanche']}
-  };
+  var LABEL={matin:'les viennoiseries et les chouquettes au chocolat',midi:'le mur de sandwichs et les quiches',aprem:'les gâteaux de l’après-midi'};
+  var imgs=[].slice.call(document.querySelectorAll('.stage img'));
+  var show=function(k){imgs.forEach(function(i){i.classList.toggle('on',i.dataset.k===k)})};
+  var next=function(d){for(var i=1;i<=7;i++){var n=(d+i)%7;if(H[n])return n}};
   var status=function(d,m){
     var h=H[d];
-    if(h&&m>=h[0]&&m<h[1])return {open:true,k:moment(m),txt:'Ouvert, ferme à '+fmt(h[1])+'.'};
-    if(h&&m<h[0])return {open:false,k:'ferme',txt:'Pas encore ouvert : ouverture à '+fmt(h[0])+'.'};
-    for(var i=1;i<=7;i++){var n=(d+i)%7;if(H[n])return {open:false,k:'ferme',txt:'Fermé. Réouverture '+(i===1?'demain':J[n])+' à '+fmt(H[n][0])+'.'}}
+    if(h&&m>=h[0]&&m<h[1])return {open:true,k:moment(m),txt:'Ouvert. Ferme à '+fmt(h[1])+'.'};
+    if(h&&m<h[0])return {open:false,k:'ferme',txt:'Pas encore ouvert\u00a0: ouverture à '+fmt(h[0])+'.'};
+    var n=next(d);return {open:false,k:'ferme',txt:'Fermé. Réouverture '+J[n]+' à '+fmt(H[n][0])+'.'};
   };
   var now=new Date(),today=now.getDay(),nowM=now.getHours()*60+now.getMinutes();
-
-  // cadran : 6 h en haut, 20 h au même point, la journée fait le tour
-  var hand=document.getElementById('hand'),wedges=[].slice.call(document.querySelectorAll('.dial .w'));
-  var hubT=document.getElementById('hubT'),hubL=document.getElementById('hubL');
-  function setDial(d,m){
-    var s=status(d,m),c=Math.min(1200,Math.max(360,m));
-    hand.style.transform='rotate('+((c-360)/840*360)+'deg)';
-    hubT.textContent=fmt2(m);
-    hubL.textContent=s.open?C[s.k].t.toLowerCase()+' au comptoir':'boutique fermée';
-    wedges.forEach(function(w){w.classList.toggle('lit',s.open&&w.dataset.k===s.k);w.classList.toggle('dim',s.open&&w.dataset.k!==s.k)});
-  }
-  var s0=status(today,nowM);
-  document.getElementById('now').innerHTML='<span class="dot'+(s0.open?'':' off')+'"></span>'+s0.txt;
-  document.getElementById('openTxt').textContent=(s0.open?'En ce moment : ':'')+s0.txt+' Ouvert six jours sur sept.';
-  var wk=document.querySelector('#week [data-d="'+today+'"]');if(wk)wk.classList.add('today');
-  setDial(today,nowM);
-
-  // l'outil « quelle heure »
   var day=today,range=document.getElementById('h'),out=document.getElementById('ho'),v=document.getElementById('verdict');
-  var days=[].slice.call(document.querySelectorAll('.days button')),imgs=[].slice.call(document.querySelectorAll('.result img'));
-  var rT=document.getElementById('rT'),rL=document.getElementById('rL');
+  var days=[].slice.call(document.querySelectorAll('.day'));
+  var userTouched=false;
   function render(){
-    var m=+range.value,s=status(day,m),c=C[s.k];
+    var m=+range.value,s=status(day,m);
     out.textContent=fmt2(m);
-    range.setAttribute('aria-valuetext',fmt2(m));
-    days.forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.d===day))});
-    v.innerHTML='<strong>'+J[day].charAt(0).toUpperCase()+J[day].slice(1)+' à '+fmt(m)+' : '+s.txt+'</strong>'+(s.open?'Au comptoir : '+c.l[0].toLowerCase()+'.':'Choisissez un autre moment.');
-    imgs.forEach(function(i){i.classList.toggle('on',i.dataset.k===s.k)});
-    rT.textContent=c.t;rL.innerHTML=c.l.map(function(x){return '<li>'+x+'</li>'}).join('');
-    setDial(day,m);
+    days.forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.d===day)});
+    v.innerHTML=s.open?'<strong>'+s.txt+'</strong> Au comptoir à cette heure\u00a0: '+LABEL[s.k]+'.':'<strong>'+s.txt+'</strong>';
+    if(userTouched)show(s.k);
   }
-  days.forEach(function(b){b.addEventListener('click',function(){day=+b.dataset.d;render()})});
-  range.addEventListener('input',render);
+  days.forEach(function(b){b.addEventListener('click',function(){day=+b.dataset.d;userTouched=true;render()})});
+  range.addEventListener('input',function(){userTouched=true;render()});
   range.value=Math.min(1290,Math.max(300,Math.round(nowM/15)*15));
   render();
 
-  // pense-bête de commande
-  var q=document.getElementById('mQ'),n=document.getElementById('mN'),dd=document.getElementById('mD'),memo=document.getElementById('memo');
-  function writeMemo(){
-    var t='Bonjour, je voudrais commander '+q.value+' pour '+(Math.max(1,+n.value||1))+' personne'+((+n.value||1)>1?'s':'');
-    if(dd.value){var x=new Date(dd.value+'T12:00');t+=', à retirer le '+x.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'})}
-    memo.textContent=t+'.';
-  }
-  [q,n,dd].forEach(function(e){e.addEventListener('input',writeMemo)});writeMemo();
+  // barre d'état en direct sur la photo
+  var s=status(today,nowM),bar=document.getElementById('now');
+  bar.innerHTML='<span class="dot'+(s.open?'':' off')+'"></span>'+s.txt;
+  var wk=document.querySelector('#week [data-d="'+today+'"]');if(wk)wk.classList.add('today');
 
-  // entrées échelonnées
-  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  // la photo fixe suit la section lue
+  var secs=[].slice.call(document.querySelectorAll('.moment'));
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.children).filter(function(x){return x.classList.contains('rv')});e.target.style.animationDelay=Math.min(sib.indexOf(e.target),5)*80+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-    rv.forEach(function(x){io.observe(x)});
-  }else rv.forEach(function(x){x.classList.add('in')});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){userTouched=false;show(e.target.dataset.k)}})},{rootMargin:'-45% 0px -45% 0px'});
+    secs.forEach(function(x){io.observe(x)});
+    var hero=document.querySelector('.hero');
+    new IntersectionObserver(function(es){if(es[0].isIntersecting&&!userTouched)show('matin')},{rootMargin:'-45% 0px -45% 0px'}).observe(hero);
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rv.unobserve(e.target)}})},{rootMargin:'0px 0px -4% 0px'});
+    document.querySelectorAll('.rv').forEach(function(x,i){x.style.transitionDelay=(i%4)*75+'ms';rv.observe(x)});
+  }else{document.querySelectorAll('.rv').forEach(function(x){x.classList.add('in')})}
 })();
 </script>
 </body>
