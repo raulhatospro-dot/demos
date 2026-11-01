@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>La Petite Ourcq, librairie indépendante, Paris 19e</title>
-<meta name="description" content="La Petite Ourcq, librairie indépendante au 169 avenue Jean-Jaurès, Paris 19e. 7 000 références en trois pièces : littérature, manga, BD, cinéma, jeunesse. Commande et retrait en boutique.">
+<meta name="description" content="Librairie indépendante, 169 avenue Jean-Jaurès, Paris 19e : 7 000 références en trois pièces, du manga à la jeunesse. Commande et retrait en boutique.">
+<meta property="og:title" content="La Petite Ourcq, librairie indépendante, Paris 19e">
+<meta property="og:description" content="7 000 références en trois pièces, avenue Jean-Jaurès. Commande et retrait en boutique.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1533327325824-76bc4e62d560?w=1200&amp;h=630&amp;fit=crop&amp;q=75">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1f4a44">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f4a44'/%3E%3Cpath d='M9 8h6v16H9zM17 8h6v16h-6z' fill='%23ffffff'/%3E%3C/svg%3E">
 <!--
@@ -103,9 +107,10 @@ a,button,input,select{touch-action:manipulation; -webkit-tap-highlight-color:rgb
 /* les planches photo */
 .plates{grid-column:7 / span 6; display:grid; grid-template-columns:1.35fr 1fr; grid-template-rows:1fr 1fr; gap:clamp(12px,1.4vw,20px); min-height:480px}
 .plate{margin:0; position:relative; overflow:hidden; background:var(--field-deep)}
-.plate img{width:100%; height:100%; object-fit:cover}
+.plate img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
 .plate.big{grid-row:1 / span 2}
 .notule{position:absolute; left:14px; bottom:14px; max-width:calc(100% - 28px); background:var(--paper); color:var(--ink); padding:9px 13px 10px; font:italic 400 16px/1.25 var(--text); transform:rotate(-1.2deg)}
+.notule small{font:500 14px/1 var(--display); font-style:normal; color:var(--muted)}
 .notule b{font:700 14px/1.2 var(--display); font-style:normal; display:block; letter-spacing:0; margin-bottom:2px}
 .plate:nth-child(2) .notule{transform:rotate(1.4deg)}
 .plate:nth-child(3) .notule{transform:rotate(-.6deg)}
@@ -289,6 +294,7 @@ footer{ background:var(--field-deep); color:var(--on-field); padding:clamp(48px,
   .mark{padding:28px 22px 26px; gap:18px}
   .mark::before{top:18px; right:18px; width:14px; height:14px}
   .offer{grid-template-columns:auto auto 1fr; order:5}
+
   .offer div{padding:12px 10px 13px}
   .offer b{font-size:22px}
   .offer span{font-size:14px}
@@ -299,7 +305,8 @@ footer{ background:var(--field-deep); color:var(--on-field); padding:clamp(48px,
   .plates .notule{display:none}
   .mark h1{font-size:clamp(40px,12vw,52px)}
   .notule{left:8px; bottom:8px; max-width:calc(100% - 16px); font-size:14px; padding:7px 9px}
-  .notule b{font-size:14px}
+  .notule small{font:500 14px/1 var(--display); font-style:normal; color:var(--muted)}
+.notule b{font-size:14px}
   .stub{grid-template-columns:1fr 1fr}
   .stub > *{padding:12px 12px 13px}
   .stub b,.stub span{font-size:14px}
@@ -325,6 +332,10 @@ footer{ background:var(--field-deep); color:var(--on-field); padding:clamp(48px,
   .verso{grid-template-columns:1fr auto; padding:26px 22px}
   .verso .sign{font-size:24px}
   .stamp{width:76px}
+}
+@media (max-width:480px){
+  .offer{grid-template-columns:1fr 1fr}
+  .offer div:last-child{grid-column:1/-1}
 }
 </style>
 </head>
@@ -374,15 +385,15 @@ footer{ background:var(--field-deep); color:var(--on-field); padding:clamp(48px,
       <div class="plates">
         <figure class="plate big open">
           <img src="https://images.unsplash.com/photo-1533327325824-76bc4e62d560?w=1100&amp;q=78&amp;auto=format&amp;fit=crop" alt="Librairie aux étagères de bois chargées de livres, une banquette sous la fenêtre au fond" width="1100" height="733" fetchpriority="high">
-          <figcaption class="notule"><b>Pièce principale</b>littérature, manga, bande dessinée</figcaption>
+          <figcaption class="notule"><b>Devant</b>littérature, manga, BD <small>· illustration</small></figcaption>
         </figure>
         <figure class="plate open" style="--i:1">
           <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=700&amp;q=75&amp;auto=format&amp;fit=crop" alt="Rangée de livres posés debout, tranches visibles" width="700" height="467">
-          <figcaption class="notule"><b>Le passage</b>cuisine, écologie, cinéma</figcaption>
+          <figcaption class="notule"><b>Au milieu</b>cuisine, écologie, cinéma</figcaption>
         </figure>
         <figure class="plate open" style="--i:2">
-          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=700&amp;q=75&amp;auto=format&amp;fit=crop" alt="Enfants qui dessinent autour d'une table" width="700" height="467">
-          <figcaption class="notule"><b>Arrière-boutique</b>15 m² pour la jeunesse</figcaption>
+          <img src="https://images.unsplash.com/photo-1629992101753-56d196c8aabb?w=700&amp;q=75&amp;auto=format&amp;fit=crop" alt="Album jeunesse illustré, couverture bleue et dorée, dans une lumière chaude" width="700" height="467">
+          <figcaption class="notule"><b>Au fond</b>jeunesse, 15 m²</figcaption>
         </figure>
       </div>
     </div>
@@ -606,7 +617,7 @@ document.documentElement.classList.add('js');
   const rooms={
     principale:{t:'Pièce principale',l:['Littérature','Manga','Bande dessinée'],n:"Dès l'entrée, les romans, les mangas et les bandes dessinées.",img:U+'1526243741027-444d633d7365?w=900&q=75&auto=format&fit=crop',alt:'Rayonnages remplis de livres de face et de dos'},
     passage:{t:'Le passage',l:['Cuisine','Écologie','Cinéma'],n:"Les livres pratiques et les essais. Le cinéma est le rayon de prédilection de la libraire.",img:U+'1489599849927-2ee91cede3ba?w=900&q=75&auto=format&fit=crop',alt:'Rangées de fauteuils rouges dans une salle de cinéma'},
-    jeunesse:{t:'Arrière-boutique',l:['Albums','Romans jeunesse','Ados'],n:"15 m² rien que pour les enfants et les adolescents, au fond de la boutique.",img:U+'1588072432836-e10032774350?w=900&q=75&auto=format&fit=crop',alt:'Enfants qui dessinent autour d’une table'}
+    jeunesse:{t:'Arrière-boutique',l:['Albums','Romans jeunesse','Ados'],n:"15 m² rien que pour les enfants et les adolescents, au fond de la boutique.",img:U+'1629992101753-56d196c8aabb?w=900&q=75&auto=format&fit=crop',alt:'Album jeunesse illustré, couverture bleue et dorée'}
   };
   const tabs=[...document.querySelectorAll('.room')], panel=document.getElementById('shelf'), img=document.getElementById('shelf-img'), txt=document.getElementById('shelf-txt');
   function pick(btn,focus){
