@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>De beaux lendemains · Librairie à Bagnolet</title>
+<meta name="description" content="Librairie indépendante à Bagnolet, 8 allée Rosa-Parks : romans, BD, jeunesse, essais et rencontres d'auteurs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Système : DESIGN.md « Sanity » (rampe achromatique, rouge corail, vert néon, bleu électrique au survol, boutons pilule)
+   sur la direction « chapitres de couleur ». */
+:root{
+  --black:#0b0b0b; --white:#ffffff; --grey-1:#ededed; --grey-2:#b9b9b9; --grey-3:#212121;
+  --coral:#f36458; --neon:#a7ff9c; --blue:#0052ef; --sky:#afe3ff; --blush:#ffd3cc;
+  --m:clamp(16px,2.8vw,40px);
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.05rem + .8vw,2rem);
+  --step-head:clamp(2.5rem,1.4rem + 4.6vw,6rem);
+  --step-giant:clamp(4rem,1rem + 13vw,13.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{font-family:"Host Grotesk",system-ui,sans-serif;font-size:var(--step-body);line-height:1.5;color:var(--black);background:var(--white);font-variant-numeric:tabular-nums}
+::selection{background:var(--blue);color:var(--white)}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+h1,h2,h3{font-weight:800;letter-spacing:-.04em;line-height:.9;text-wrap:balance}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Bandeau démo */
+.demo{background:var(--black);color:var(--white);font-size:13px;text-align:center;padding:6px var(--m)}
+
+/* Boutons pilule */
+.btn{display:inline-flex;align-items:center;gap:.6em;min-height:48px;padding:0 1.4em;border-radius:999px;border:2px solid var(--black);background:var(--black);color:var(--white);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;transition:background .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease)}
+.btn:hover{background:var(--blue);border-color:var(--blue)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--black)}
+.btn.ghost:hover{background:var(--blue);border-color:var(--blue);color:var(--white)}
+.link{font-weight:700;text-decoration:underline;text-underline-offset:.22em;text-decoration-thickness:2px;transition:color .2s}
+.link:hover{color:var(--blue)}
+.ico{width:1.1em;height:1.1em;flex:none}
+
+/* Champs */
+.field{position:relative;padding:clamp(80px,11vw,160px) var(--m)}
+
+/* 1. Ouverture */
+.hero{background:var(--coral);min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding-top:22px;padding-bottom:40px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:15px}
+.top .mark{font-weight:800;letter-spacing:-.02em;text-decoration:none}
+.top nav{display:flex;gap:clamp(14px,2vw,30px);align-items:center}
+.top nav a{text-decoration:none;font-weight:500}
+.top nav a:hover{text-decoration:underline;text-underline-offset:.2em}
+.hero h1{align-self:center;font-size:clamp(4.2rem,16.5vw,15rem);line-height:.84;margin:6vh 0 4vh -.04em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln span{display:block}
+.hero h1 .l1{color:var(--white)}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.hero-foot .where{font-size:15px;font-weight:500;max-width:22ch}
+.hero-foot .pitch{max-width:34ch;text-align:right;display:grid;gap:22px;justify-items:end}
+.hero-foot .pitch p{font-size:var(--step-lead);line-height:1.2;font-weight:500;letter-spacing:-.01em}
+.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+
+/* 2. La librairie */
+.intro{background:var(--black);color:var(--white);display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:56px;align-items:end}
+.intro h2{grid-column:1/8;grid-row:1;align-self:start;font-size:var(--step-head);max-width:13ch}
+.intro .statement{grid-column:1/8;font-size:clamp(1.5rem,1rem + 1.4vw,2.25rem);line-height:1.18;font-weight:500;letter-spacing:-.015em;max-width:30ch}
+.intro .photos{grid-column:8/13;grid-row:1/3;position:relative;aspect-ratio:1/1;align-self:center}
+.intro .statement{grid-row:2}
+.intro .photos img{position:absolute;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.intro .photos .a{width:62%;aspect-ratio:4/5;left:0;top:0;transform:rotate(-4deg)}
+.intro .photos .b{width:48%;aspect-ratio:4/5;right:0;bottom:0;transform:rotate(5deg)}
+.facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:96px}
+.facts p{font-size:var(--step-body);color:var(--grey-1);max-width:32ch}
+.facts b{display:block;color:var(--neon);font-size:var(--step-lead);letter-spacing:-.02em;line-height:1.1;margin-bottom:8px}
+
+/* 3. Rayons : cartes qui traversent une photo tenue */
+.rayons{background:var(--grey-2);position:relative;height:240svh}
+.stage{position:sticky;top:0;height:100svh;overflow:hidden}
+.stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.4)}
+.stage h2{position:absolute;left:var(--m);top:clamp(28px,6vh,64px);color:var(--white);font-size:var(--step-head);z-index:1}
+.stage .lead{position:absolute;left:var(--m);top:calc(clamp(28px,6vh,64px) + var(--step-head) * 1.1);color:var(--white);max-width:34ch;font-weight:500;z-index:1}
+.track{position:absolute;left:0;top:50%;display:flex;gap:40px;padding-left:46vw;transform:translate3d(0,-38%,0);will-change:transform}
+.card{flex:none;width:min(640px,60vw);display:grid;grid-template-rows:auto auto;background:var(--white)}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;filter:grayscale(1)}
+.card .panel{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:24px 28px 28px;min-height:150px}
+.card h3{font-size:clamp(2rem,1.3rem + 2vw,3rem)}
+.card p{font-size:16px;text-align:right;max-width:28ch}
+.card.c1 .panel{background:var(--neon)} .card.c2 .panel{background:var(--blush)} .card.c3 .panel{background:var(--sky)}
+.card.c4 .panel{background:var(--grey-1)} .card.c5 .panel{background:var(--coral)}
+.card a{font-weight:700}
+
+/* 4. Rencontres */
+.rencontres{background:var(--neon);display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
+.rencontres h2{grid-column:1/-1;font-size:var(--step-giant);margin-bottom:clamp(40px,6vw,88px)}
+.next{grid-column:1/8}
+.next .date{font-size:var(--step-head);font-weight:800;letter-spacing:-.04em;line-height:.95}
+.next .who{font-size:var(--step-lead);line-height:1.2;font-weight:500;margin:24px 0 28px;max-width:30ch}
+.next .actions{justify-content:flex-start}
+.past{grid-column:9/13;align-self:end}
+.past h3{font-size:var(--step-lead);letter-spacing:-.02em;line-height:1.1;margin-bottom:18px}
+.past ul{list-style:none;display:grid;gap:16px}
+.past li{max-width:34ch}
+.past li b{display:block;font-weight:700}
+
+/* 5. Et demain ? */
+.demain{background:var(--white);padding-top:clamp(80px,9vw,140px)}
+.demain-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,64px)}
+.demain h2{font-size:var(--step-head)}
+.now{font-size:var(--step-lead);font-weight:500;line-height:1.2;max-width:24ch;text-align:right}
+.now .dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--grey-2);margin-right:.35em;vertical-align:.08em}
+.now.open .dot{background:#18b300}
+.week{list-style:none}
+.week li{display:flex;justify-content:space-between;align-items:baseline;gap:24px;transition:color .2s}
+.week li:hover{color:var(--blue)}
+.week .d{font-size:clamp(3.4rem,1rem + 8.4vw,9.4rem);font-weight:800;letter-spacing:-.045em;line-height:.92;text-transform:lowercase}
+.week .h{font-size:var(--step-body);font-weight:500;text-align:right;white-space:nowrap}
+.week .h em{font-style:normal;font-weight:700;color:var(--coral)}
+.week li.off .d{color:var(--grey-2)}
+.week li.first .d{color:var(--coral)}
+.summer{margin-top:40px;font-size:var(--step-small);max-width:60ch}
+
+/* 6. Venir */
+.venir{background:var(--grey-1);padding:0}
+.venir h2{font-size:inherit;letter-spacing:inherit;line-height:inherit;font-weight:inherit}
+.row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;min-height:clamp(84px,10vw,150px);padding:0 var(--m) clamp(14px,1.6vw,22px);font-size:clamp(2.2rem,.8rem + 5.2vw,5.5rem);font-weight:500;letter-spacing:-.035em;line-height:1;text-decoration:none}
+.row:nth-child(even){background:#e0e0e0}
+a.row{transition:background .25s var(--ease),color .25s var(--ease)}
+a.row:hover{background:var(--black);color:var(--white)}
+.row small{font-size:var(--step-small);letter-spacing:0;font-weight:500;padding-bottom:.6em;text-align:right}
+.row .go{flex:none;display:grid;place-items:center;width:.9em;height:.9em;border-radius:50%;background:var(--coral);color:var(--black)}
+.row .go svg{width:.45em;height:.45em}
+
+/* 7. Pied */
+footer{background:var(--coral);min-height:90svh;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto auto;gap:32px;padding:40px var(--m) 28px}
+.notes{display:flex;justify-content:space-between;gap:24px;font-size:15px}
+.notes div{display:grid;grid-template-columns:repeat(3,minmax(0,22ch));gap:24px}
+.mail{align-self:end;font-size:clamp(2.6rem,.5rem + 8.6vw,9.6rem);font-weight:800;letter-spacing:-.045em;line-height:.9;text-decoration:none;display:block;transition:color .2s}
+.mail span{display:block}
+.mail:hover{color:var(--white)}
+.meta{display:flex;justify-content:space-between;gap:16px;font-size:14px;flex-wrap:wrap}
+.meta a{font-weight:700}
+
+/* Mouvement : contenu visible par défaut ; le script ajoute l'entrée */
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rise.in{opacity:1;transform:none}
+.js .hero h1 .ln span{transform:translateY(105%);transition:transform .9s var(--ease)}
+.js .hero h1 .ln.l2 span{transition-delay:.11s}
+.js.loaded .hero h1 .ln span{transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .rise,.js .hero h1 .ln span{opacity:1;transform:none;transition:none}
+  .track{transition:none}
+}
+
+/* Téléphone */
+@media (max-width:760px){
+  .top nav a:not(.keep){display:none}
+  .hero h1{font-size:clamp(3.4rem,17.5vw,8rem);margin-top:14vh}
+  .hero-foot{flex-direction:column;align-items:flex-start}
+  .hero-foot .pitch{text-align:left;justify-items:start}
+  .actions{justify-content:flex-start}
+  .intro{display:block}
+  .intro h2{margin-bottom:28px}
+  .intro .photos{width:100%;margin:40px 0 0;aspect-ratio:5/4}
+  .intro .photos .a{width:52%} .intro .photos .b{width:42%}
+  .facts{grid-template-columns:1fr;gap:28px}
+  .rayons{height:auto;padding:80px 0 72px}
+  .stage{position:relative;height:auto;overflow:visible;display:flex;flex-direction:column}
+  .stage>img{order:2} .track{order:3}
+  .stage>img{position:relative;height:auto;aspect-ratio:3/2;margin-top:24px}
+  .stage h2,.stage .lead{position:relative;left:auto;top:auto;color:var(--black);padding:0 var(--m)}
+  .stage .lead{margin-top:16px}
+  .track{position:relative;top:auto;transform:none!important;flex-direction:column;gap:24px;padding:24px var(--m) 0}
+  .card{width:100%}
+  .card img{aspect-ratio:4/3}
+  .card .panel{flex-direction:column;align-items:flex-start;min-height:140px;padding:20px}
+  .card p{text-align:left}
+  .rencontres{display:block}
+  .past{margin-top:56px}
+  .now{text-align:left}
+  .week li{flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:22px}
+  .week .d{font-size:15vw}
+  .week .h{font-size:15px;text-align:left}
+  .row{flex-direction:column;align-items:flex-start;justify-content:flex-end;font-size:9.4vw;gap:6px}
+  .row small{text-align:left;padding:0}
+  .row.write{flex-direction:row;align-items:center;justify-content:space-between;background:var(--neon)}
+  .row.write .go{width:56px;height:56px}
+  .notes,.notes div{display:grid;grid-template-columns:1fr;gap:14px}
+  .mail{font-size:8.6vw}
+  .meta{display:grid;font-size:13px;gap:6px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Démo réalisée par Raul Hatos — site non officiel</div>
+
+<header class="field hero" id="haut">
+  <div class="top">
+    <a class="mark" href="#haut">De beaux lendemains</a>
+    <nav aria-label="Navigation principale">
+      <a href="#rayons">Rayons</a>
+      <a href="#rencontres">Rencontres</a>
+      <a href="#demain" class="keep">Horaires</a>
+      <a href="#venir">Venir</a>
+    </nav>
+  </div>
+  <h1 aria-label="De beaux lendemains, librairie à Bagnolet"><span class="ln l1"><span>De beaux</span></span><span class="ln l2"><span>lendemains</span></span></h1>
+  <div class="hero-foot">
+    <p class="where">Librairie indépendante<br>8 allée Rosa-Parks, Bagnolet</p>
+    <div class="pitch">
+      <p>Romans, BD, jeunesse, essais, et des rencontres avec celles et ceux qui les écrivent.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+33148451520"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>01 48 45 15 20</a>
+        <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=De+beaux+lendemains+8+all%C3%A9e+Rosa+Parks+93170+Bagnolet" target="_blank" rel="noopener">Itinéraire</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="field intro" aria-labelledby="t-intro">
+  <h2 id="t-intro" class="rise">Une librairie pour toute la ville</h2>
+  <p class="statement rise">Le 31 janvier 2020, Bagnolet a retrouvé une librairie. Au cœur du nouveau centre-ville, De beaux lendemains choisit, conseille et commande, pour les grands lecteurs comme pour ceux qui poussent la porte la première fois.</p>
+  <div class="photos rise" aria-hidden="true">
+    <img class="a" src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=700&q=70&auto=format&fit=crop" alt="" width="560" height="700" loading="lazy">
+    <img class="b" src="https://images.unsplash.com/photo-1474932430478-367dbb6832c1?w=600&q=70&auto=format&fit=crop" alt="" width="480" height="600" loading="lazy">
+  </div>
+  <div class="facts">
+    <p class="rise"><b>Le nom</b>De beaux lendemains, c'est aussi le titre d'un roman de Russell Banks.</p>
+    <p class="rise"><b>Le logo</b>Dessiné par Zeina Abirached, autrice de romans graphiques sur son enfance au Liban.</p>
+    <p class="rise"><b>Le prix des lecteurs</b>Né d'une résidence d'écriture de Colombe Boncenne, avec les élèves du lycée Eugène-Hénaff.</p>
+  </div>
+</section>
+
+<section class="rayons" id="rayons" aria-labelledby="t-rayons">
+  <div class="stage">
+    <img src="https://images.unsplash.com/photo-1526243741027-444d633d7365?w=2000&q=70&auto=format&fit=crop" alt="Étagères de livres" width="2000" height="1333">
+    <h2 id="t-rayons">Les rayons</h2>
+    <p class="lead">Une librairie généraliste : on y trouve de tout, et on vous aide à trouver le bon.</p>
+    <div class="track" id="track">
+      <article class="card c1"><img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=1100&q=70&auto=format&fit=crop" alt="Livres alignés sur une table" width="1100" height="619"><div class="panel"><h3>Romans</h3><p>Littérature française et étrangère, choisie et défendue par les libraires.</p></div></article>
+      <article class="card c2"><img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=1100&q=70&auto=format&fit=crop" alt="Livre ouvert" width="1100" height="619"><div class="panel"><h3>BD</h3><p>Un rayon bande dessinée bien fourni, des classiques aux nouveautés.</p></div></article>
+      <article class="card c3"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1100&q=70&auto=format&fit=crop" alt="Pile de livres aux tranches colorées" width="1100" height="619"><div class="panel"><h3>Jeunesse</h3><p>Un coin jeunesse plein de pépites, et des rencontres pensées pour les enfants.</p></div></article>
+      <article class="card c4"><img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=1100&q=70&auto=format&fit=crop" alt="Une main tient une pile de livres" width="1100" height="619"><div class="panel"><h3>Essais</h3><p>Société, politique, histoire : les livres des autrices et auteurs reçus en rencontre.</p></div></article>
+      <article class="card c5"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1100&q=70&auto=format&fit=crop" alt="Livre ouvert à côté d'un café" width="1100" height="619"><div class="panel"><h3>Commandes</h3><p>Un titre manque ? On le commande. Réservation et retrait en librairie via <a href="https://www.parislibrairies.fr/magasins/bagnolet/De-beaux-lendemains-3316/" target="_blank" rel="noopener">Paris Librairies</a>.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="field rencontres" id="rencontres" aria-labelledby="t-renc">
+  <h2 id="t-renc" class="rise">Rencontres</h2>
+  <div class="next">
+    <p class="date rise">Jeudi 26 novembre, 19 h</p>
+    <p class="who rise">Elsa Marcel et Lucas Levy-Lajeunesse, rencontre croisée autour de «&nbsp;État de droit&nbsp;», ordre bourgeois (La fabrique).</p>
+    <div class="actions rise">
+      <button class="btn" type="button" id="ics"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Ajouter à mon agenda</button>
+      <a class="btn ghost" href="mailto:contact@debeauxlendemains.fr?subject=Rencontre%20du%2026%20novembre">Prévenir de ma venue</a>
+    </div>
+  </div>
+  <div class="past rise">
+    <h3>Déjà passés allée Rosa-Parks</h3>
+    <ul>
+      <li><b>Rosa Bursztein</b>La peur au ventre, juin 2026</li>
+      <li><b>Didier Daeninckx</b>rencontre des éditions Verdier</li>
+      <li><b>Colombe Boncenne</b>résidence d'écriture et prix des lecteurs</li>
+    </ul>
+  </div>
+</section>
+
+<section class="field demain" id="demain" aria-labelledby="t-demain">
+  <div class="demain-head">
+    <h2 id="t-demain" class="rise">Et demain&nbsp;?</h2>
+    <p class="now rise" id="now" aria-live="polite">Du mardi au samedi 10 h – 19 h, le dimanche 10 h – 13 h.</p>
+  </div>
+  <ol class="week" id="week">
+    <li><span class="d">mardi</span><span class="h">10 h – 19 h</span></li>
+    <li><span class="d">mercredi</span><span class="h">10 h – 19 h</span></li>
+    <li><span class="d">jeudi</span><span class="h">10 h – 19 h</span></li>
+    <li><span class="d">vendredi</span><span class="h">10 h – 19 h</span></li>
+    <li><span class="d">samedi</span><span class="h">10 h – 19 h</span></li>
+    <li><span class="d">dimanche</span><span class="h">10 h – 13 h</span></li>
+    <li class="off"><span class="d">lundi</span><span class="h">fermé</span></li>
+  </ol>
+  <p class="summer">En juillet et août, horaires d'été : du mardi au samedi, 10 h 30 – 13 h 30 et 15 h – 19 h. Un doute un jour férié&nbsp;? Un coup de fil suffit.</p>
+</section>
+
+<section class="venir" id="venir" aria-labelledby="t-venir">
+  <div class="row"><h2 id="t-venir">Venir nous voir</h2></div>
+  <a class="row" href="https://www.google.com/maps/search/?api=1&query=De+beaux+lendemains+8+all%C3%A9e+Rosa+Parks+93170+Bagnolet" target="_blank" rel="noopener">8 allée Rosa-Parks <small>Ouvrir le plan</small></a>
+  <div class="row">93170 Bagnolet</div>
+  <div class="row">Mar–sam 10–19 h, dim 10–13 h</div>
+  <a class="row" href="tel:+33148451520">01 48 45 15 20 <small>Appeler</small></a>
+  <a class="row write" href="mailto:contact@debeauxlendemains.fr?subject=Une%20question%20pour%20la%20librairie">Écrire <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+</section>
+</main>
+
+<footer>
+  <div class="notes">
+    <div>
+      <p>De beaux lendemains<br>8 allée Rosa-Parks, 93170 Bagnolet</p>
+      <p>Mardi–samedi 10 h – 19 h<br>Dimanche 10 h – 13 h, lundi fermé</p>
+      <p>Librairie indépendante, généraliste, ouverte depuis 2020.</p>
+    </div>
+    <a class="link" href="#haut">Haut de page</a>
+  </div>
+  <span></span>
+  <a class="mail" href="mailto:contact@debeauxlendemains.fr"><span>contact@</span><span>debeauxlendemains.fr</span></a>
+  <div class="meta">
+    <span><a href="https://www.instagram.com/librairiedebeauxlendemains/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/librairiedebeauxlendemains" target="_blank" rel="noopener">Facebook</a></span>
+    <span>Démo réalisée par Raul Hatos — site non officiel · photos Unsplash</span>
+    <span>Bagnolet, 2026</span>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+addEventListener('load',()=>document.documentElement.classList.add('loaded'));
+setTimeout(()=>document.documentElement.classList.add('loaded'),60);
+
+// Entrées de section
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%4)*75+'ms';io.observe(el)});
+
+// Rayons : la piste de cartes traverse la photo tenue
+const ray=document.getElementById('rayons'),track=document.getElementById('track');
+const mq=matchMedia('(min-width:761px)');
+function slide(){if(!mq.matches)return;const r=ray.getBoundingClientRect(),run=ray.offsetHeight-innerHeight;
+  const p=Math.min(1,Math.max(0,-r.top/run));const dist=track.scrollWidth-innerWidth*.6;
+  track.style.transform=`translate3d(${-p*dist}px,-38%,0)`}
+addEventListener('scroll',slide,{passive:true});addEventListener('resize',slide);slide();
+
+// Et demain ? — la semaine à venir, à partir de demain (heure de Paris)
+const DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+const EVENTS={'2026-11-26':'rencontre 19 h'};
+function paris(){const s=new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'});return new Date(s)}
+function hours(d){const dow=d.getDay(),summer=d.getMonth()===6||d.getMonth()===7;
+  if(dow===1)return null;
+  if(dow===0)return summer?{txt:'horaires d\'été à confirmer',slots:[]}:{txt:'10 h – 13 h',slots:[[10,13]]};
+  return summer?{txt:'10 h 30 – 13 h 30 · 15 h – 19 h',slots:[[10.5,13.5],[15,19]]}:{txt:'10 h – 19 h',slots:[[10,19]]}}
+const key=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const fmt=t=>{const h=Math.floor(t),m=Math.round((t-h)*60);return h+' h'+(m?' '+m:'')};
+function render(){const now=paris(),t=now.getHours()+now.getMinutes()/60,h=hours(now),el=document.getElementById('now');
+  const slot=h&&h.slots.find(s=>t>=s[0]&&t<s[1]);
+  if(slot){el.className='now open';el.innerHTML='<span class="dot"></span>Ouvert maintenant, jusqu\'à '+fmt(slot[1])+'.'}
+  else{let n=new Date(now),label='';for(let i=0;i<8;i++){const hh=hours(n);const s=hh&&hh.slots.find(s=>i>0||s[0]>t);if(s){label=(i===0?'aujourd\'hui':i===1?'demain':DAYS[n.getDay()])+' à '+fmt(s[0]);break}n.setDate(n.getDate()+1)}
+    el.className='now';el.innerHTML='<span class="dot"></span>Fermé pour l\'instant. On rouvre '+label+'.'}
+  const ol=document.getElementById('week');ol.innerHTML='';
+  for(let i=1;i<=7;i++){const d=new Date(now);d.setDate(now.getDate()+i);const hh=hours(d),ev=EVENTS[key(d)];
+    const li=document.createElement('li');if(!hh)li.className='off';if(i===1)li.classList.add('first');
+    const date=d.toLocaleDateString('fr-FR',{weekday:'short',day:'numeric',month:'short'});
+    li.innerHTML='<span class="d">'+(i===1?'demain':DAYS[d.getDay()])+'</span><span class="h">'+(i===1?date+' · ':'')+(hh?hh.txt:'fermé')+(ev?' · <em>'+ev+'</em>':'')+'</span>';
+    ol.appendChild(li)}}
+render();setInterval(render,60000);
+
+// Agenda : fichier .ics de la prochaine rencontre
+document.getElementById('ics').addEventListener('click',()=>{
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//De beaux lendemains//FR','BEGIN:VEVENT','UID:elsa-marcel-20261126@debeauxlendemains.fr','DTSTAMP:20261101T000000Z',
+  'DTSTART;TZID=Europe/Paris:20261126T190000','DTEND;TZID=Europe/Paris:20261126T203000',
+  'SUMMARY:Rencontre Elsa Marcel et Lucas Levy-Lajeunesse','LOCATION:De beaux lendemains\\, 8 allée Rosa-Parks\\, 93170 Bagnolet','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='rencontre-26-novembre.ics';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)});
+</script>
+</body>
+</html>
