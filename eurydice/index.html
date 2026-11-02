@@ -4,461 +4,508 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>L'Eurydice · bar musical, Paris 5e</title>
-<meta name="description" content="L'Eurydice, bar musical au 79 rue du Cardinal Lemoine, Paris 5e : concerts jazz, rock et folk, jam, scène ouverte et absinthes.">
+<title>L’Eurydice · bar musical, 79 rue du Cardinal Lemoine, Paris 5e</title>
+<meta name="description" content="L’Eurydice, bar musical du Quartier latin : rock, folk et jazz en direct, scène ouverte, absinthes et vins médiévaux. 79 rue du Cardinal Lemoine, Paris 5e.">
+<meta name="theme-color" content="#ecebe6">
+<meta property="og:title" content="L’Eurydice · bar musical, Paris 5e">
+<meta property="og:description" content="Rock, folk et jazz en direct, scène ouverte, absinthes. 79 rue du Cardinal Lemoine.">
+<meta property="og:image" content="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/53016.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23d99a22'/%3E%3Ctext x='16' y='24' font-family='Georgia' font-size='22' text-anchor='middle' fill='%238f1a17'%3EE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#e3ebdc;          /* opaline : l'absinthe troublée */
-  --surface:#d3e0ca;
-  --ink:#0d1a13;
-  --muted:#33463a;
-  --accent:#1f5c49;
-  --accent-ink:#ffffff;
-  --night:#0e1511;
-  --night-2:#18231c;
-  --night-ink:#e3ebdc;
-  --night-muted:#b4c4b0;
-  --m:clamp(16px,2.2vw,32px);
-  --step-small:clamp(0.875rem,0.84rem + 0.1vw,0.9375rem);
-  --step-body:clamp(1.0625rem,1rem + 0.25vw,1.1875rem);
-  --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
-  --step-head:clamp(2.5rem,1.2rem + 5vw,5.5rem);
-  --step-name:clamp(4.25rem,9vw,8.75rem);
+  --ground:#ecebe6;      /* pierre du mur */
+  --raised:#f6f6f4;
+  --ink:#23110e;
+  --ink-2:#4a302a;
+  --ochre:#d99a22;       /* la devanture */
+  --ochre-2:#e9b956;
+  --red:#8f1a17;         /* le rideau de scène */
+  --red-2:#a3231f;
+  --green:#2f5a35;       /* l'absinthe */
+  --white:#ffffff;
+  --m:clamp(16px,2.8vw,40px);
+  --max:1440px;
+  --f-display:"DM Serif Display",Georgia,serif;
+  --f-text:"Instrument Sans",system-ui,sans-serif;
+  --s-small:0.9375rem;
+  --s-body:clamp(1rem,.96rem + .2vw,1.125rem);
+  --s-lead:clamp(1.0625rem,1rem + .35vw,1.3125rem);
+  --s-h2:clamp(2.125rem,1.4rem + 2.8vw,4rem);
+  --s-h1:clamp(2.5rem,1.6rem + 3.2vw,4.75rem);
   --ease:cubic-bezier(.16,1,.3,1);
-  font-family:"Bricolage Grotesque",system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font-size:var(--step-body);line-height:1.5;font-optical-sizing:auto;overflow-x:clip}
-img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
-::selection{background:var(--accent);color:var(--accent-ink)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-.night :focus-visible{outline-color:var(--night-ink)}
-h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.92;text-wrap:balance}
-h2{font-size:var(--step-head)}
+html{background:#ecebe6;-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-text);font-size:var(--s-body);line-height:1.55;overflow-x:clip;touch-action:manipulation}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+::selection{background:var(--red);color:var(--white)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--white)}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1;letter-spacing:-.015em;text-wrap:balance}
+h2{font-size:var(--s-h2)}
+h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
 p{text-wrap:pretty}
-.btn{display:inline-flex;align-items:center;gap:.6em;min-height:52px;padding:0 1.5em;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:500;text-decoration:none;font-size:var(--step-body);transition:transform .25s var(--ease),background .25s}
-.btn:hover{background:#174a3a}
-.btn:active{transform:scale(.97)}
-.btn svg{width:18px;height:18px;flex:none}
-.link{display:inline-flex;align-items:center;gap:.4em;font-weight:500;text-decoration:underline;min-height:44px}
-.link svg{width:16px;height:16px;transition:transform .25s var(--ease)}
-.link:hover svg{transform:translateX(4px)}
+.num,.price,.tile b,.est-out{font-variant-numeric:tabular-nums lining-nums}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--m)}
+.skip{position:absolute;left:var(--m);top:-60px;background:var(--ink);color:var(--white);padding:12px 18px;z-index:50;text-decoration:none}
+.skip:focus{top:8px}
+.demo{background:var(--ink);color:#e8ddd6;font-size:var(--s-small);text-align:center;padding:8px var(--m)}
 
-/* bandeau démo */
-.demo{background:var(--night);color:var(--night-muted);font-size:var(--step-small);text-align:center;padding:8px var(--m)}
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:0 1.4em;font:600 var(--s-body)/1 var(--f-text);text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background-color .2s,color .2s}
+.btn:active{transform:scale(.96)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:#6f1210}
+.btn-ink{background:var(--ink);color:var(--white)}
+.btn-ink:hover{background:#000}
+.btn-light{background:var(--raised);color:var(--ink)}
+.btn-light:hover{background:var(--white)}
 
-/* ---------- HERO : le nom coupé aux deux coins ---------- */
-.hero{position:relative}
-.corners{position:sticky;top:0;height:100svh;margin-bottom:-100svh;z-index:5;pointer-events:none;color:var(--ink);font-size:var(--step-name);line-height:.85}
-.corners span{position:absolute}
-.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.corners .a{top:var(--m);left:var(--m)}
-.corners .b{bottom:var(--m);right:var(--m)}
-.panel{min-height:100svh;position:relative}
-.p1{display:grid;grid-template-columns:repeat(12,1fr)}
-.p1 .stage{grid-column:1/8;background:var(--bg);position:relative;padding:calc(var(--step-name) + 2*var(--m)) var(--m) calc(var(--step-name) + 2*var(--m))}
-.p1 .lead{margin-left:16.66%;margin-top:4svh;max-width:34ch;font-size:var(--step-lead);line-height:1.3;font-weight:500}
-.p1 .acts{margin-left:16.66%;margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
-.status{margin-left:16.66%;margin-top:28px;display:flex;align-items:center;gap:.6em;font-size:var(--step-body);color:var(--muted)}
-.dot{width:10px;height:10px;border-radius:50%;background:#8a958d;flex:none}
-.status.open .dot{background:#2f8f5b;box-shadow:0 0 0 0 rgba(47,143,91,.5);animation:pulse 2.4s infinite}
-.status.open b{color:var(--accent)}
-@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(47,143,91,0)}100%{box-shadow:0 0 0 0 rgba(47,143,91,0)}}
-.side{position:absolute;right:var(--m);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:6px;font-size:var(--step-small);text-align:right}
-.side a{text-decoration:none;padding:6px 0}
-.side a:hover{text-decoration:underline}
-.p1 figure{grid-column:8/13;position:relative;overflow:hidden;background:var(--night);margin:var(--m) var(--m) calc(var(--step-name)*.85 + 2*var(--m)) 0}
-.p1 figure img{width:100%;height:100%;object-fit:cover;object-position:35% 50%;position:absolute;inset:0;animation:drift 18s ease-in-out infinite alternate}
-@keyframes drift{to{transform:scale(1.08) translate(-2%,1%)}}
-.p2{background:var(--bg);color:var(--ink);display:grid;place-items:center;padding:12svh var(--m)}
-.p2 figure{width:min(40vw,520px);aspect-ratio:4/5;position:relative;overflow:hidden}
-.p2 figure img{width:100%;height:100%;object-fit:cover}
-.p2 figure{display:grid;grid-template-columns:1fr;}
-.p2 figcaption{margin-top:16px;font-size:var(--step-body);color:var(--muted);max-width:40ch}
-.p2 figcaption b{color:var(--ink);font-weight:500}
+/* en-tête */
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand i{width:34px;height:34px;background:var(--ochre);display:grid;place-items:center;font:400 22px/1 var(--f-display);color:var(--red);font-style:normal}
+.brand b{font:400 clamp(1.5rem,1.2rem + 1vw,2rem)/1 var(--f-display);letter-spacing:-.01em}
+.nav{display:flex;gap:6px}
+.nav a{text-decoration:none;font-weight:500;padding:12px 12px;min-height:44px;display:inline-flex;align-items:center;transition:color .2s}
+.nav a:hover{color:var(--red);text-decoration:underline}
+.top .btn{min-height:46px}
 
-/* ---------- LA SCÈNE : phrase tenue, photos qui passent ---------- */
-.scene{position:relative;z-index:6;background:var(--night);color:var(--night-ink);padding:0 var(--m)}
-.scene .wrap{display:grid;grid-template-columns:5fr 7fr;gap:var(--m)}
-.scene .hold{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:center;gap:28px}
-.scene h2{color:var(--night-ink)}
-.scene .hold p{font-size:clamp(1.375rem,1rem + 1.2vw,2.125rem);line-height:1.2;font-weight:500;max-width:22ch}
-.scene .hold ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.scene .hold li{background:var(--night-2);padding:8px 16px;border-radius:999px;font-size:var(--step-small);color:var(--night-ink)}
-.pass{padding:20svh 0 24svh;display:flex;flex-direction:column;gap:14svh}
-.pass figure{position:relative}
-.pass img{width:100%;height:100%;object-fit:cover}
-.pass .f1{width:62%;aspect-ratio:4/5}
-.pass .f2{width:100%;aspect-ratio:16/10}
-.pass .f3{width:48%;aspect-ratio:1;margin-left:auto}
-.pass figcaption,.cap{margin-top:12px;font-size:var(--step-small);color:var(--night-muted)}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);gap:14px;padding-bottom:clamp(64px,8vw,120px);align-items:stretch}
+.panel{background:var(--ochre);padding:clamp(28px,3.6vw,56px);display:flex;flex-direction:column;justify-content:center}
+.panel h1{font-size:var(--s-h1)}
+.panel h1 span{display:block;font-size:.62em;margin-top:.12em}
+.lead{margin-top:22px;font-size:var(--s-lead);line-height:1.45;max-width:36em}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:28px}
+.tile{background:var(--ochre-2);padding:14px 14px 16px}
+.tile b{display:block;font:400 clamp(1.5rem,1.2rem + 1vw,2rem)/1 var(--f-display);white-space:nowrap}
+.tile span{display:block;margin-top:8px;font-size:var(--s-small);line-height:1.3}
+.tile.hot{background:var(--red);color:var(--white)}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.status{display:flex;align-items:center;gap:10px;margin-top:20px;font-weight:500}
+.status .dot{width:11px;height:11px;border-radius:50%;background:var(--ink-2);flex:none}
+.status.open .dot{background:#1e7a3a}
+.mosaic{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;gap:14px}
+.mosaic figure{position:relative;overflow:hidden;margin:0;background:var(--ink)}
+.mosaic .big{grid-column:1/3;aspect-ratio:2/1}
+.mosaic .sm{aspect-ratio:auto;min-height:220px}
+.mosaic .sm img{position:absolute;inset:0}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.mosaic figure:hover img{transform:scale(1.03)}
+.cap{position:absolute;left:10px;bottom:10px;background:var(--raised);color:var(--ink);font-size:var(--s-small);font-weight:500;padding:5px 10px;line-height:1.3}
 
-/* ---------- AU COMPTOIR : photo tenue, liste active ---------- */
-.bar{padding:clamp(120px,14vw,200px) var(--m)}
-.bar .wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--m)}
-.bar .pic{grid-column:1/6;position:sticky;top:12vh;align-self:start;aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
-.bar .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s var(--ease),transform 1.2s var(--ease);transform:scale(1.04)}
-.bar .pic img.on{opacity:1;transform:none}
-.bar .col{grid-column:7/13}
-.bar .col>p{margin:24px 0 48px;max-width:40ch;font-size:var(--step-lead);line-height:1.3}
-.rows{list-style:none;padding:0}
-.rows li{border-radius:18px;transition:background .3s}
-.rows button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 20px;min-height:58px;font-size:clamp(1.25rem,1rem + .9vw,1.75rem);font-weight:500;color:var(--muted);border-radius:18px}
-.rows button span{font-size:var(--step-small);font-weight:400;text-align:right}
-.rows .d{display:none;padding:0 20px 20px;max-width:46ch;color:var(--ink)}
-.rows li.on{background:var(--surface)}
-.rows li.on button{color:var(--ink);font-weight:800}
-.rows li.on .d{display:block}
-.rows button:hover{color:var(--ink)}
+/* sections */
+section{padding:clamp(72px,9vw,150px) 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 56px;align-items:end;margin-bottom:clamp(36px,4vw,64px)}
+.sec-head p{font-size:var(--s-lead);max-width:34em}
 
-/* ---------- LES SOIRS : cartes qui traversent ---------- */
-.nights{position:relative;height:300svh;background:var(--night);color:var(--night-ink)}
-.nights .stage{position:sticky;top:0;height:100svh;overflow:hidden}
-.nights .bgp{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(.8)}
-.nights h2{position:absolute;top:calc(var(--m) + 4svh);left:var(--m);z-index:2;max-width:9ch}
-.nights .lede{position:absolute;bottom:calc(var(--m) + 2svh);left:var(--m);z-index:2;max-width:34ch;color:var(--night-ink)}
-.track{position:absolute;top:50%;left:0;display:flex;gap:40px;padding-left:46vw;transform:translate3d(0,-50%,0);will-change:transform}
-.card{flex:none;width:min(640px,58vw);height:min(520px,62svh);display:grid;grid-template-rows:66% 34%;background:var(--night-2)}
-.card img{width:100%;height:100%;object-fit:cover}
-.card .t{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:24px 28px;color:#fff}
-.card h3{font-size:clamp(1.75rem,1rem + 1.8vw,2.75rem)}
-.card p{font-size:var(--step-small);max-width:28ch;text-align:right;line-height:1.4}
-.c1 .t{background:#1f5c49}.c2 .t{background:#4f5d24}.c3 .t{background:#6a4a22}.c4 .t{background:#2f4a57}
+/* carte */
+.carte{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,3vw,48px);align-items:start}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.menu .grp{background:var(--raised);padding:clamp(20px,2.2vw,32px)}
+.menu .grp.wide{grid-column:1/3;background:var(--green);color:var(--white)}
+.menu h3{margin-bottom:14px}
+.menu ul{list-style:none;padding:0}
+.menu li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:9px 0}
+.menu small{display:block;font-size:var(--s-small);color:var(--ink-2)}
+.price{font-weight:700;white-space:nowrap}
+.grp.wide p{max-width:46em}
+.grp.wide .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.grp.wide img{width:clamp(140px,16vw,220px);aspect-ratio:1/1;object-fit:cover}
+.note{margin-top:14px;font-size:var(--s-small);color:var(--ink-2)}
+.stack{display:grid;gap:14px}
+.stack figure{margin:0;position:relative;overflow:hidden}
+.stack img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.stack .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stack .two img{aspect-ratio:1/1}
 
-/* ---------- LA LOUCHE : l'élément vivant ---------- */
-.louche{padding:clamp(120px,14vw,200px) var(--m);background:var(--surface)}
-.louche .wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--m);align-items:center}
-.glass{grid-column:1/7;display:grid;place-items:center;background:var(--bg);aspect-ratio:1;position:relative;overflow:hidden}
-.glass svg{width:min(70%,420px);height:auto;overflow:visible}
-.glass .drip{animation:drip 1.1s linear infinite;opacity:0}
-.glass.pour .drip{opacity:1}
-@keyframes drip{from{transform:translateY(0)}to{transform:translateY(64px)}}
-.louche .ctl{grid-column:8/13}
-.louche .ctl>p{margin:24px 0 40px;max-width:40ch;font-size:var(--step-lead);line-height:1.3}
-.louche .ctl .ratio{margin:8px 0 0;font-size:clamp(3.5rem,2rem + 5vw,6rem);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
-.louche .ctl .verdict{min-height:3em;margin:12px 0 28px;font-size:var(--step-lead);line-height:1.3;font-weight:500;max-width:30ch}
-label.r{display:block;font-weight:500;margin-bottom:12px}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer}
-input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:var(--bg)}
-input[type=range]::-moz-range-track{height:10px;border-radius:999px;background:var(--bg)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;border-radius:50%;background:var(--accent);margin-top:-12px;border:4px solid var(--surface)}
-input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--accent);border:4px solid var(--surface)}
-.scale{display:flex;justify-content:space-between;font-size:var(--step-small);color:var(--muted);margin-top:4px}
+/* scène */
+.scn{background:var(--red);color:var(--white)}
+.scn .sec-head p{color:#f7e6e2}
+.stage{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:14px}
+.formats{display:grid;gap:8px;align-content:start}
+.fmt{background:var(--red-2);padding:20px 22px}
+.fmt p{margin-top:6px;color:#fbecea}
+.fmt.ig{background:var(--white);color:var(--ink)}
+.fmt.ig p{color:var(--ink)}
+.fmt.ig .btn{margin-top:14px}
+.shots{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.shots figure{margin:0;position:relative;overflow:hidden}
+.shots .a{grid-column:1/3}
+.shots .a img{aspect-ratio:2/1}
+.shots img{width:100%;aspect-ratio:1/1;object-fit:cover}
 
-/* ---------- HORAIRES & VENIR ---------- */
-.visit{padding:clamp(120px,14vw,200px) var(--m)}
-.visit .wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--m)}
-.visit h2{grid-column:1/-1;margin-bottom:clamp(32px,4vw,64px)}
-.hours{grid-column:1/7;list-style:none;padding:0;font-variant-numeric:tabular-nums}
-.hours li{display:flex;justify-content:space-between;padding:14px 20px;border-radius:14px;font-size:var(--step-lead)}
-.hours li:nth-child(odd){background:var(--surface)}
-.hours li.today{background:var(--accent);color:var(--accent-ink);font-weight:800}
-.hours .off{color:var(--muted)}
-.hours li.today .off{color:var(--accent-ink)}
-.where{grid-column:8/13;display:flex;flex-direction:column;gap:20px}
-.where address{font-style:normal;font-size:var(--step-lead);line-height:1.3;font-weight:500}
-.where .note{color:var(--muted)}
-.street{grid-column:1/-1;margin-top:clamp(48px,6vw,96px);background:var(--night);color:var(--night-ink);padding:var(--m);display:grid;grid-template-columns:repeat(12,1fr);gap:var(--m);align-items:center}
-.street svg{grid-column:1/8;width:100%;height:auto}
-.street p{grid-column:8/13;font-size:var(--step-body);color:var(--night-muted)}
-.street p b{color:var(--night-ink);font-weight:500}
+/* salles */
+.salles{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:14px}
+.salles figure{margin:0;position:relative;overflow:hidden}
+.salles .main img{width:100%;height:100%;min-height:100%;object-fit:cover;aspect-ratio:3/2}
+.salles .side{display:grid;gap:14px;grid-template-rows:auto auto 1fr}
+.salles .side img{width:100%;aspect-ratio:2/1;object-fit:cover}
+.facts{background:var(--raised);padding:clamp(20px,2.2vw,32px)}
+.facts ul{padding-left:1.1em;display:grid;gap:6px}
 
-/* ---------- CONTACT : l'adresse mail en grand ---------- */
-.mail{min-height:100svh;background:var(--night);color:var(--night-ink);padding:var(--m);display:grid;grid-template-rows:auto 1fr auto auto;gap:24px}
-.mail h2{font-size:clamp(1.25rem,1rem + .6vw,1.5rem);letter-spacing:-.01em;line-height:1.3;font-weight:500;max-width:30ch}
-.mail .big{align-self:end;font-size:clamp(2.5rem,7.6vw,7.5rem);font-weight:800;letter-spacing:-.045em;line-height:.95;text-decoration:none;word-break:break-word;transition:color .3s;margin-bottom:6svh}
-.mail .big:hover{color:#9fd18a}
-.mail .big .at{display:inline}
-.mail .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 32px;font-size:var(--step-small);color:var(--night-muted)}
-.mail .foot a{color:var(--night-ink)}
-.mail .foot div{display:flex;flex-wrap:wrap;gap:8px 24px}
+/* soirée */
+.soiree{background:var(--ochre)}
+.est{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:14px}
+.est form,.est .out{background:var(--ochre-2);padding:clamp(22px,2.6vw,40px)}
+.field{display:grid;gap:8px;margin-bottom:22px}
+.field label,.field legend{font-weight:600}
+.field output{font-weight:700}
+input[type=range]{width:100%;accent-color:var(--red);height:44px;cursor:pointer}
+fieldset{border:0;padding:0;margin:0 0 6px}
+.choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.choices label{display:inline-flex;align-items:center;gap:8px;background:var(--raised);padding:0 16px;min-height:46px;cursor:pointer;font-weight:500;transition:background-color .2s,color .2s}
+.choices input{accent-color:var(--red);width:18px;height:18px}
+.choices label:has(input:checked){background:var(--ink);color:var(--white)}
+.choices label:has(input:focus-visible){outline:3px solid var(--ink);outline-offset:2px}
+.est .out{background:var(--ink);color:var(--white);display:flex;flex-direction:column;gap:18px}
+.est-out{font:400 clamp(3.5rem,2.4rem + 4vw,6rem)/1 var(--f-display)}
+.est .out p{color:#efe2dc}
+.est .out ul{padding-left:1.1em;color:#efe2dc;display:grid;gap:4px}
+.est .out .acts{margin-top:auto}
+.est .out :focus-visible{outline-color:var(--white)}
 
-footer{padding:30svh var(--m) 30px;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;font-size:var(--step-small);color:var(--muted);align-items:end}
-footer nav{display:flex;gap:24px}
-footer nav a{color:var(--ink)}
-footer .r{text-align:right}
+/* venir */
+.venir{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:14px}
+.hours{background:var(--raised);padding:clamp(22px,2.6vw,40px);display:flex;flex-direction:column;gap:18px}
+.hours .big{font:400 clamp(1.5rem,1.2rem + 1vw,2rem)/1.1 var(--f-display)}
+.hours dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px}
+.hours dt{font-weight:600}
+.map{position:relative;min-height:420px;background:#ddd6cc}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.75)}
 
-/* entrées */
-.rv{opacity:1;transform:none}
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+/* pied */
+.foot{background:var(--ink);color:#efe2dc;padding:clamp(56px,7vw,110px) 0 28px}
+.foot .name{font:400 clamp(3.5rem,2rem + 7vw,9rem)/.9 var(--f-display);color:var(--ochre);letter-spacing:-.02em}
+.foot .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}
+.foot a{display:inline-flex;min-height:44px;align-items:center}
+.foot small{display:block;margin-top:48px;color:#c9b9b1;font-size:var(--s-small)}
+
+/* apparitions : visibles sans JS */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.mosaic img{transition:none}}
 
-/* ---------- TÉLÉPHONE ---------- */
-@media (max-width:820px){
-  :root{--step-name:15vw}
-  .side{display:none}
-  .corners{position:relative;height:auto;margin:0;padding:20px 16px 0;font-size:16vw;line-height:.9}
-  .corners span{position:static}
-  .corners .sr{position:absolute!important}
-  .p1{display:flex;flex-direction:column}
-  .p1 .stage{padding:calc(15vw + 40px) 16px 40px;order:2;min-height:auto}
-  .p1 figure{order:1;height:56svh;margin:20px 0 0}
-  .p1 .lead,.p1 .acts,.status{margin-left:0}
-  .p1 .lead{margin-top:0;font-size:1.1875rem}
-  .p1 .stage{padding-top:28px;padding-bottom:56px}
-  .p1{min-height:auto}
-  .p2{min-height:auto;padding:24px 16px 96px}
-  .p2 figure{width:100%}
-  .scene .wrap{display:block}
-  .scene .hold{position:relative;height:auto;padding:120px 0 40px}
-  .pass{padding:24px 0 120px;gap:64px}
-  .pass .f1{width:78%}.pass .f3{width:64%}
-  .bar .wrap,.louche .wrap,.visit .wrap,.street{display:block}
-  .bar .pic{position:sticky;top:0;z-index:2;aspect-ratio:4/3;height:auto;margin:0 -16px 24px;width:calc(100% + 32px)}
-  .bar .col>p{margin:20px 0 32px}
-  .nights{height:auto}
-  .nights .stage{position:relative;height:auto;overflow:visible;padding:0 16px 120px}
-  .nights .bgp{position:relative;inset:auto;height:auto;aspect-ratio:4/5;width:calc(100% + 32px);margin:0 -16px;filter:brightness(.55)}
-  .nights h2{position:relative;top:auto;left:auto;margin:-40vw 0 32px;max-width:none}
-  .nights .lede{position:relative;bottom:auto;left:auto;margin-bottom:40px}
-  .track{position:relative;top:auto;padding:0;flex-direction:column;gap:24px;transform:none!important}
-  .card{width:100%;height:auto;grid-template-rows:auto auto}
-  .card img{aspect-ratio:4/3}
-  .card .t{flex-direction:column;align-items:flex-start;gap:8px;min-height:140px}
-  .card p{text-align:left}
-  .glass{margin-bottom:40px}
-  .hours{margin-bottom:48px}
-  .street svg{margin-bottom:20px}
-  .mail .big{font-size:11.5vw}
-  .mail .big .at{display:block}
-  .mail .foot{flex-direction:column}
-  footer{grid-template-columns:1fr;padding-top:20svh}
-  footer .r{text-align:left}
+/* largeurs intermédiaires */
+@media (max-width:1180px){
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .js .rv{opacity:1;transform:none}
-  html{scroll-behavior:auto}
+@media (max-width:1400px) and (min-width:821px){
+  .panel{padding:32px 36px}
+  .panel h1{font-size:clamp(2.5rem,1.4rem + 2.6vw,4rem)}
+  .lead{margin-top:16px;font-size:1.0625rem}
+  .tiles{margin-top:20px}
+  .tile span{font-size:.875rem}
+}
+@media (max-width:1100px){
+  .nav{display:none}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .carte,.stage,.salles,.venir,.est{grid-template-columns:1fr}
+  .stack{grid-template-columns:1fr 1fr}
+  .stack img{aspect-ratio:1/1}
+  .sec-head{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .mosaic{order:-1}
+  .mosaic .sm .cap{display:none}
+  .panel{padding:26px 20px}
+  .stack{grid-template-columns:1fr}
+  .stack .two{grid-template-columns:1fr 1fr}
+  .menu{grid-template-columns:1fr}
+  .menu .grp.wide{grid-column:auto}
+  .grp.wide .row{grid-template-columns:1fr}
+  .grp.wide img{width:100%;aspect-ratio:1/1}
+  .foot .cols{grid-template-columns:1fr}
+  .map{min-height:320px}
+}
+@media (max-width:560px){
+  .top .btn span{display:none}
+  .top .btn{padding:0 14px}
+  .mosaic{gap:8px}
+  .mosaic .sm{aspect-ratio:1/1;min-height:0}
+  .cap{left:6px;bottom:6px;font-size:.8125rem}
+  .acts .btn{flex:1 1 100%}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<main>
-<!-- HERO -->
-<section class="hero" aria-label="L'Eurydice">
-  <h1 class="corners"><span class="sr">L’Eurydice, bar musical à Paris 5e</span><span class="a" aria-hidden="true">L’Eury</span><span class="b" aria-hidden="true">dice</span></h1>
-  <div class="panel p1">
-    <div class="stage">
-      <p class="lead">Bar musical du Quartier Latin. Jazz, rock et folk sur la petite scène, absinthes et hydromel au comptoir. Au 79, rue du Cardinal Lemoine.</p>
-      <div class="acts">
-        <a class="btn" href="tel:+33987708572"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Réserver une table</a>
-        <a class="link" href="https://www.google.com/maps/dir/?api=1&destination=L%27Eurydice%2C%2079%20rue%20du%20Cardinal%20Lemoine%2C%2075005%20Paris" target="_blank" rel="noopener">Itinéraire<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<header class="wrap top">
+  <a class="brand" href="#" translate="no"><i aria-hidden="true">E</i><b>L’Eurydice</b></a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#carte">La carte</a><a href="#scene">La scène</a><a href="#salles">Les salles</a><a href="#soiree">Votre soirée</a><a href="#venir">Venir</a>
+  </nav>
+  <a class="btn btn-ink" href="tel:+33987708572" aria-label="Appeler le 09 87 70 85 72"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>Appeler</span></a>
+</header>
+
+<main id="contenu">
+<div class="wrap hero">
+  <div class="panel">
+    <h1><span translate="no" style="font-size:1em;margin:0;display:inline">L’Eurydice</span><span>bar musical du Quartier latin</span></h1>
+    <p class="lead">Au 79, rue du Cardinal Lemoine, derrière la devanture jaune : rock, folk et jazz en direct, une scène ouverte, des absinthes et des vins médiévaux au comptoir.</p>
+    <div class="tiles">
+      <div class="tile hot"><b>4,5/5</b><span>37 avis sur Privateaser</span></div>
+      <div class="tile"><b>5&nbsp;€</b><span>la pinte de L’Eurydice, 50&nbsp;cl</span></div>
+      <div class="tile"><b>9&nbsp;€</b><span>le cocktail</span></div>
+      <div class="tile"><b>70</b><span>invités au plus pour une soirée privée</span></div>
+    </div>
+    <div class="acts">
+      <a class="btn btn-red" href="tel:+33987708572"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Réserver&nbsp;: 09&nbsp;87&nbsp;70&nbsp;85&nbsp;72</a>
+      <a class="btn btn-light" href="https://www.google.com/maps/dir/?api=1&amp;destination=79%20rue%20du%20Cardinal%20Lemoine%2C%2075005%20Paris"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Itinéraire</a>
+    </div>
+    <p class="status" id="status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span id="status-t">Du mardi au samedi, dès 19&nbsp;h</span></p>
+  </div>
+  <div class="mosaic">
+    <figure class="big"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/53016.jpg" width="1500" height="750" alt="La devanture jaune de L’Eurydice, enseigne en lettres capitales, au 79 rue du Cardinal Lemoine" fetchpriority="high"><figcaption class="cap">La devanture, « tripot littéraire &amp; artistique »</figcaption></figure>
+    <figure class="sm"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/316486.jpg" width="1500" height="750" alt="La petite scène, son rideau rouge, un piano droit et un micro"><figcaption class="cap">La scène</figcaption></figure>
+    <figure class="sm"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/396086.jpg" width="1500" height="750" alt="Une fontaine à absinthe en verre sur le comptoir, devant les bouteilles" style="object-position:40% 50%"><figcaption class="cap">La fontaine à absinthe</figcaption></figure>
+  </div>
+</div>
+
+<section id="carte" aria-labelledby="h-carte">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-carte" class="rv">La carte du comptoir</h2>
+      <p class="rv">Bière locale et bio, cervoise, vins médiévaux, cocktails, et des planches pour tenir jusqu’au dernier morceau.</p>
+    </div>
+    <div class="carte">
+      <div class="menu">
+        <div class="grp rv">
+          <h3>Bières</h3>
+          <ul>
+            <li><span>L’Eurydice<small>50&nbsp;cl</small></span><span class="price">5&nbsp;€</span></li>
+            <li><span>L’Eurydice<small>25&nbsp;cl</small></span><span class="price">3&nbsp;€</span></li>
+            <li><span>Artevelde<small>50&nbsp;cl</small></span><span class="price">7&nbsp;€</span></li>
+            <li><span>Cervoise<small>50&nbsp;cl</small></span><span class="price">8&nbsp;€</span></li>
+          </ul>
+        </div>
+        <div class="grp rv">
+          <h3>Vins et cocktails</h3>
+          <ul>
+            <li><span>Verre de vin</span><span class="price">5&nbsp;€</span></li>
+            <li><span>Bouteille de vin</span><span class="price">35&nbsp;€</span></li>
+            <li><span>Cocktail</span><span class="price">9&nbsp;€</span></li>
+          </ul>
+        </div>
+        <div class="grp rv">
+          <h3>À partager</h3>
+          <ul>
+            <li><span>Planche apéritive</span><span class="price">dès 14&nbsp;€</span></li>
+            <li><span>Planche de tapas</span><span class="price">18&nbsp;€</span></li>
+          </ul>
+        </div>
+        <div class="grp rv">
+          <h3>Sans alcool</h3>
+          <ul>
+            <li><span>Jus de fruits<small>25&nbsp;cl</small></span><span class="price">4&nbsp;€</span></li>
+            <li><span>Limonade<small>25&nbsp;cl</small></span><span class="price">3,80&nbsp;€</span></li>
+            <li><span>Orangina ou Perrier<small>33&nbsp;cl</small></span><span class="price">3,80&nbsp;€</span></li>
+          </ul>
+        </div>
+        <div class="grp wide rv">
+          <div class="row">
+            <div>
+              <h3>L’absinthe, à la fontaine</h3>
+              <p>Le bar en garde plusieurs bouteilles, servies avec la fontaine posée sur le comptoir&nbsp;: l’eau froide tombe goutte à goutte et la fée verte se trouble. Demandez la sélection du moment au bar.</p>
+            </div>
+            <img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/396147.jpg" width="1500" height="750" loading="lazy" alt="Une fontaine à absinthe entourée de bouteilles d’absinthe sur un tonneau">
+          </div>
+        </div>
       </div>
-      <p class="status" id="status" aria-live="polite"><span class="dot"></span><span>Du mardi au samedi, dès 19 h</span></p>
-      <nav class="side" aria-label="Sections">
-        <a href="#scene">La scène</a>
-        <a href="#comptoir">Au comptoir</a>
-        <a href="#louche">La louche</a>
-        <a href="#venir">Venir</a>
-      </nav>
+      <div class="stack">
+        <figure class="rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/396146.jpg" width="1500" height="750" loading="lazy" alt="Planche de charcuterie et de fromages, verres d’absinthe et fontaine sur une table en bois"><figcaption class="cap">Planche et absinthe</figcaption></figure>
+        <div class="two">
+          <figure class="rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/396085.jpg" width="1500" height="750" loading="lazy" alt="Quatre bouteilles d’absinthe alignées sur une table ronde"></figure>
+          <figure class="rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/396150.jpg" width="1500" height="750" loading="lazy" alt="Planche de tapas avec houmous, légumes et beignets"></figure>
+        </div>
+      </div>
     </div>
-    <figure>
-      <img src="https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=1100&q=72&auto=format&fit=crop" width="1100" height="1400" alt="Un saxophoniste joue sous les projecteurs, cuivres en arrière-plan">
-    </figure>
-  </div>
-  <div class="panel p2">
-    <figure>
-      <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1000&q=72&auto=format&fit=crop" width="1000" height="1250" loading="lazy" alt="Une petite scène vide : batterie, micro sur pied, tabourets">
-      <figcaption><b>Orphée descendait aux Enfers pour Eurydice, sa lyre à la main.</b> Ici, il suffit de monter la rue du Cardinal Lemoine, instrument sous le bras ou pas.</figcaption>
-    </figure>
+    <p class="note">Prix relevés sur Privateaser et Schlouk Map, à confirmer au comptoir.</p>
   </div>
 </section>
 
-<!-- LA SCÈNE -->
-<section class="scene night" id="scene">
+<section id="scene" class="scn on-dark" aria-labelledby="h-scene">
   <div class="wrap">
-    <div class="hold">
-      <h2 class="rv">La scène</h2>
-      <p class="rv">Des concerts, des bœufs, une scène ouverte : le micro passe de main en main.</p>
-      <ul class="rv" aria-label="Styles joués">
-        <li>Jazz</li><li>Rock</li><li>Folk</li><li>Blues</li><li>Jam</li><li>Scène ouverte</li><li>Poésie</li>
-      </ul>
+    <div class="sec-head">
+      <h2 id="h-scene" class="rv">Rock, folk et jazz en direct</h2>
+      <p class="rv">La scène est au fond de la salle, entre le rideau rouge, le piano droit et les vieilles affiches. Les groupes y jouent, et les soirs de scène ouverte, le micro passe à qui le demande.</p>
     </div>
-    <div class="pass">
-      <figure class="f1 rv"><img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=900&q=70&auto=format&fit=crop" width="900" height="1125" loading="lazy" alt="Gros plan sur une guitare acoustique jouée en arpège"><figcaption>Le folk, guitare sur les genoux.</figcaption></figure>
-      <figure class="f2 rv"><img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1300&q=70&auto=format&fit=crop" width="1300" height="812" loading="lazy" alt="Les mains d'un trompettiste sur les pistons, lumière chaude"><figcaption>Le jazz, cuivres compris.</figcaption></figure>
-      <figure class="f3 rv"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=70&auto=format&fit=crop" width="800" height="800" loading="lazy" alt="Un micro vintage chromé sur fond de lumières floues"><figcaption>La scène ouverte, à qui veut.</figcaption></figure>
+    <div class="stage">
+      <div class="formats">
+        <div class="fmt rv"><h3>Concerts</h3><p>Rock, folk et jazz, sur la petite scène du fond.</p></div>
+        <div class="fmt rv"><h3>Scène ouverte</h3><p>Des soirées open mic pour monter jouer, chanter ou dire un texte.</p></div>
+        <div class="fmt rv"><h3>Spectacles et DJ</h3><p>Des spectacles, et de temps en temps un DJ pour finir la soirée en dansant.</p></div>
+        <div class="fmt ig rv">
+          <h3>Le programme de la semaine</h3>
+          <p>Les dates sont annoncées sur le compte Instagram du bar.</p>
+          <a class="btn btn-red" href="https://www.instagram.com/eurydice_music_bar/">Voir @eurydice_music_bar</a>
+        </div>
+      </div>
+      <div class="shots">
+        <figure class="a rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/396094.jpg" width="1500" height="750" loading="lazy" alt="La scène avec batterie, guitares et amplis, devant un mur couvert d’affiches anciennes"><figcaption class="cap">La scène, prête pour le concert</figcaption></figure>
+        <figure class="rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/396096.jpg" width="1500" height="750" loading="lazy" alt="La scène sous une lumière violette, batterie et contrebasse près de la vitrine" style="object-position:30% 50%"></figure>
+        <figure class="rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/53017.jpg" width="1500" height="750" loading="lazy" alt="L’estrade vide devant un rideau orange, sous une arche de pierre"></figure>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- AU COMPTOIR -->
-<section class="bar" id="comptoir">
+<section id="salles" aria-labelledby="h-salles">
   <div class="wrap">
-    <div class="pic" aria-hidden="true">
-      <img class="on" data-k="0" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&q=70&auto=format&fit=crop" width="1000" height="1250" alt="">
-      <img data-k="1" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1000&q=70&auto=format&fit=crop" width="1000" height="1250" loading="lazy" alt="">
-      <img data-k="2" src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=1000&q=70&auto=format&fit=crop" width="1000" height="1250" loading="lazy" alt="">
-      <img data-k="3" src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=1000&q=70&auto=format&fit=crop" width="1000" height="1250" loading="lazy" alt="">
-      <img data-k="4" src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&q=70&auto=format&fit=crop" width="1000" height="1250" loading="lazy" alt="">
+    <div class="sec-head">
+      <h2 id="h-salles" class="rv">Deux salles en pierre</h2>
+      <p class="rv">Murs de pierre, papier peint ancien, longues banquettes rouges, lustres et affiches d’époque. Une seconde salle, sous les arches, pour les groupes.</p>
     </div>
-    <div class="col">
-      <h2 class="rv">Au comptoir</h2>
-      <p class="rv">On vient pour la musique, on reste pour ce qui se boit ici et presque nulle part ailleurs.</p>
-      <ul class="rows" id="rows">
-        <li class="on"><button type="button" aria-expanded="true" data-k="0">Absinthes <span>la spécialité</span></button><p class="d">La maison en a fait sa spécialité : une large sélection d’absinthes, à boire allongées d’eau fraîche. Le rituel est expliqué plus bas.</p></li>
-        <li><button type="button" aria-expanded="false" data-k="1">Hydromel et vins anciens <span>à la médiévale</span></button><p class="d">Le vin de miel des tavernes, et des vins aux recettes d’un autre âge.</p></li>
-        <li><button type="button" aria-expanded="false" data-k="2">Bières <span>pression et bouteille</span></button><p class="d">L’Eurydice, la bière qui porte le nom du bar, à côté de l’Artevelde et d’une cervoise.</p></li>
-        <li><button type="button" aria-expanded="false" data-k="3">Cocktails <span>de la maison</span></button><p class="d">Des créations du bar, à demander au comptoir selon l’humeur et le concert du soir.</p></li>
-        <li><button type="button" aria-expanded="false" data-k="4">Planches à partager <span>apéritif</span></button><p class="d">Des planches apéritives pour tenir jusqu’au dernier morceau.</p></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- LES SOIRS -->
-<section class="nights night" id="soirs">
-  <div class="stage">
-    <img class="bgp" src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=1800&q=65&auto=format&fit=crop" width="1800" height="1200" loading="lazy" alt="">
-    <h2>Les soirs</h2>
-    <p class="lede">Le programme change chaque semaine : il est publié sur Instagram, @eurydice_music_bar.</p>
-    <div class="track" id="track">
-      <article class="card c1"><img src="https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" loading="lazy" alt="Un guitariste chante sous une lumière rouge"><div class="t"><h3>Concerts</h3><p>Jazz, rock, folk, blues : des groupes sur la scène du fond.</p></div></article>
-      <article class="card c2"><img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" loading="lazy" alt="Un musicien accorde sa guitare près d'une fenêtre"><div class="t"><h3>Jam</h3><p>Les musiciens montent à tour de rôle et improvisent ensemble.</p></div></article>
-      <article class="card c3"><img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" loading="lazy" alt="Une partition ouverte en gros plan"><div class="t"><h3>Scène ouverte</h3><p>Chansons, poèmes, premiers essais : le micro est à vous.</p></div></article>
-      <article class="card c4"><img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1200&q=70&auto=format&fit=crop" width="1200" height="800" loading="lazy" alt="Un comptoir de bar éclairé le soir"><div class="t"><h3>Votre soirée</h3><p>Anniversaire, pot de départ : jusqu’à 70 personnes, à voir par téléphone.</p></div></article>
+    <div class="salles">
+      <figure class="main rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/396088.jpg" width="1500" height="750" loading="lazy" alt="La grande salle tout en longueur : murs de pierre, banquettes rouges, tables de bistrot et le bar au fond"><figcaption class="cap">La grande salle</figcaption></figure>
+      <div class="side">
+        <figure class="rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/396091.jpg" width="1500" height="750" loading="lazy" alt="La seconde salle aux murs verts, une arche ouvre sur un piano"><figcaption class="cap">La seconde salle</figcaption></figure>
+        <figure class="rv"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/6951/1500x750/316474.jpg" width="1500" height="750" loading="lazy" alt="Le comptoir en bois, ses bouteilles et ses ardoises"></figure>
+        <div class="facts rv">
+          <h3>Pour un groupe</h3>
+          <ul>
+            <li>Privatisation partielle, jusqu’à 70&nbsp;personnes</li>
+            <li>Sono et micro sur place, vous pouvez passer votre musique</li>
+            <li>Gâteau et nourriture apportés&nbsp;: sur demande</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- LA LOUCHE -->
-<section class="louche" id="louche">
+<section id="soiree" class="soiree" aria-labelledby="h-soiree">
   <div class="wrap">
-    <div class="glass" id="glass">
-      <svg viewBox="0 0 300 380" role="img" aria-labelledby="gt">
-        <title id="gt">Un verre d’absinthe sous le robinet d’une fontaine, une cuillère et un sucre posés dessus : l’eau fait passer l’absinthe du vert clair au blanc opalin</title>
-        <rect x="96" y="-60" width="108" height="78" rx="14" fill="#0d1a13"/>
-        <path d="M142 18h16v16q0 8-8 8t-8-8z" fill="#0d1a13"/>
-        <rect x="128" y="22" width="44" height="7" rx="3.5" fill="#33463a"/>
-        <circle class="drip" cx="150" cy="50" r="5" fill="#7fb3c9"/>
-        <clipPath id="cup"><path d="M80 150H220L204 262Q214 268 210 286Q204 306 150 306Q96 306 90 286Q86 268 96 262Z"/></clipPath>
-        <rect id="liquid" x="70" y="262" width="160" height="60" fill="#78ac3a" clip-path="url(#cup)"/>
-        <rect id="cloud" x="70" y="262" width="160" height="60" fill="#dde8c4" opacity="0" clip-path="url(#cup)"/>
-        <path d="M80 150H220L204 262Q214 268 210 286Q204 306 150 306Q96 306 90 286Q86 268 96 262Z" fill="none" stroke="#0d1a13" stroke-width="5" stroke-linejoin="round"/>
-        <path d="M98 262h104" stroke="#0d1a13" stroke-width="2.5" opacity=".55"/>
-        <path d="M140 306h20v34h-20z" fill="#0d1a13"/>
-        <ellipse cx="150" cy="346" rx="62" ry="10" fill="#0d1a13"/>
-        <g>
-          <rect x="46" y="138" width="208" height="12" rx="6" fill="#33463a"/>
-          <rect x="104" y="140" width="92" height="8" rx="3" fill="#4d6455"/>
-          <circle cx="116" cy="144" r="2.5" fill="#0d1a13"/><circle cx="130" cy="144" r="2.5" fill="#0d1a13"/><circle cx="170" cy="144" r="2.5" fill="#0d1a13"/><circle cx="184" cy="144" r="2.5" fill="#0d1a13"/>
-          <path d="M131 112h38v26h-38z" fill="#fbfaf4" stroke="#0d1a13" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M131 112l8-8h38l-8 8z" fill="#e9e6da" stroke="#0d1a13" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M169 112l8-8v26l-8 8z" fill="#d9d5c6" stroke="#0d1a13" stroke-width="3" stroke-linejoin="round"/>
-        </g>
-      </svg>
+    <div class="sec-head">
+      <h2 id="h-soiree" class="rv">Votre soirée, chiffrée</h2>
+      <p class="rv">Anniversaire, pot de départ, afterwork&nbsp;: réglez le nombre d’invités et ce qu’ils boivent, vous avez un ordre de grandeur avant d’appeler le bar.</p>
     </div>
-    <div class="ctl">
-      <h2 class="rv">La louche</h2>
-      <p class="rv">Versez l’eau goutte à goutte sur le sucre : l’absinthe se trouble et passe du vert à l’opale. Essayez.</p>
-      <label class="r" for="water">Parts d’eau pour une dose d’absinthe</label>
-      <input type="range" id="water" min="0" max="5" step="1" value="0" aria-describedby="verdict">
-      <div class="scale" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
-      <p class="ratio" id="ratio">1 : 0</p>
-      <p class="verdict" id="verdict">Pure, elle est trop forte pour se boire ainsi. Ajoutez de l’eau.</p>
+    <div class="est">
+      <form id="est" class="rv" onsubmit="return false">
+        <div class="field">
+          <label for="g">Invités&nbsp;: <output id="g-o" for="g">20</output></label>
+          <input type="range" id="g" min="5" max="70" step="1" value="20">
+        </div>
+        <div class="field">
+          <label for="c">Verres par personne&nbsp;: <output id="c-o" for="c">2</output></label>
+          <input type="range" id="c" min="1" max="4" step="1" value="2">
+        </div>
+        <fieldset class="field">
+          <legend>Ils boivent surtout</legend>
+          <div class="choices">
+            <label><input type="radio" name="d" value="5" data-n="pintes de L’Eurydice" checked>Pinte, 5&nbsp;€</label>
+            <label><input type="radio" name="d" value="5" data-n="verres de vin">Vin, 5&nbsp;€</label>
+            <label><input type="radio" name="d" value="9" data-n="cocktails">Cocktail, 9&nbsp;€</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="p">Planches de tapas (18&nbsp;€)&nbsp;: <output id="p-o" for="p">4</output></label>
+          <input type="range" id="p" min="0" max="15" step="1" value="4">
+        </div>
+      </form>
+      <div class="out rv on-dark">
+        <p class="est-out" id="tot" aria-live="polite">272&nbsp;€</p>
+        <p>à prévoir pour la soirée, environ&nbsp;:</p>
+        <ul id="detail">
+          <li>40 pintes de L’Eurydice × 5&nbsp;€</li>
+          <li>4 planches de tapas × 18&nbsp;€</li>
+        </ul>
+        <p>Calcul sur les prix de la carte, hors offre de groupe. Le bar confirme par téléphone.</p>
+        <div class="acts">
+          <a class="btn btn-red" href="tel:+33987708572">Appeler le bar</a>
+          <a class="btn btn-light" id="mail" href="mailto:eurydicebar@gmail.com?subject=Soir%C3%A9e%20%C3%A0%20L%E2%80%99Eurydice">Écrire</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- HORAIRES & VENIR -->
-<section class="visit" id="venir">
+<section id="venir" aria-labelledby="h-venir">
   <div class="wrap">
-    <h2 class="rv">Horaires et accès</h2>
-    <ul class="hours" id="hours">
-      <li data-d="1"><span>Lundi</span><span class="off">Fermé</span></li>
-      <li data-d="2"><span>Mardi</span><span>19 h – 1 h</span></li>
-      <li data-d="3"><span>Mercredi</span><span>19 h – 1 h</span></li>
-      <li data-d="4"><span>Jeudi</span><span>19 h – 1 h</span></li>
-      <li data-d="5"><span>Vendredi</span><span>19 h – 2 h</span></li>
-      <li data-d="6"><span>Samedi</span><span>19 h – 2 h</span></li>
-      <li data-d="0"><span>Dimanche</span><span class="off">Fermé</span></li>
-    </ul>
-    <div class="where">
-      <address>79, rue du Cardinal Lemoine<br>75005 Paris</address>
-      <p>Métro Cardinal Lemoine (ligne 10), à 240 mètres. Hemingway a vécu au 74 de la même rue.</p>
-      <p class="note">Pour réserver une table ou venir en groupe, appelez le bar : <a href="tel:+33987708572">09 87 70 85 72</a>.</p>
-      <div><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=L%27Eurydice%2C%2079%20rue%20du%20Cardinal%20Lemoine%2C%2075005%20Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Ouvrir l’itinéraire</a></div>
+    <div class="sec-head">
+      <h2 id="h-venir" class="rv">Horaires et accès</h2>
+      <p class="rv">En haut de la rue du Cardinal Lemoine, à quelques pas de la place de la Contrescarpe. Hemingway a vécu en face, au 74.</p>
     </div>
-    <div class="street">
-      <svg viewBox="0 0 700 220" role="img" aria-labelledby="st">
-        <title id="st">Schéma : la rue du Cardinal Lemoine monte de la Seine vers la place de la Contrescarpe, en passant par le métro puis le bar au 79</title>
-        <path d="M40 170 L660 60" stroke="#e3ebdc" stroke-width="22" stroke-linecap="round"/>
-        <text x="40" y="208" fill="#b4c4b0" font-size="15" font-family="Bricolage Grotesque, sans-serif">vers la Seine</text>
-        <text x="560" y="34" fill="#b4c4b0" font-size="15" font-family="Bricolage Grotesque, sans-serif">Contrescarpe</text>
-        <circle cx="250" cy="133" r="18" fill="#e3ebdc"/><text x="250" y="139" text-anchor="middle" font-size="16" font-weight="800" fill="#0e1511" font-family="Bricolage Grotesque, sans-serif">M</text>
-        <text x="200" y="182" fill="#b4c4b0" font-size="15" font-family="Bricolage Grotesque, sans-serif">Cardinal Lemoine</text>
-        <circle cx="500" cy="88" r="22" fill="#7cae3f"/><text x="500" y="94" text-anchor="middle" font-size="16" font-weight="800" fill="#0e1511" font-family="Bricolage Grotesque, sans-serif">79</text>
-        <text x="440" y="140" fill="#e3ebdc" font-size="20" font-weight="800" font-family="Bricolage Grotesque, sans-serif">L’Eurydice</text>
-      </svg>
-      <p><b>Schéma indicatif, pas à l’échelle.</b> Depuis le métro, on remonte la rue vers la place de la Contrescarpe : le bar est au 79.</p>
+    <div class="venir">
+      <div class="hours rv">
+        <p class="big">Du mardi au samedi, dès 19&nbsp;h</p>
+        <p class="status" id="status2"><span class="dot" aria-hidden="true"></span><span id="status2-t">Le soir seulement</span></p>
+        <dl>
+          <dt>Dimanche, lundi</dt><dd>appelez avant de venir</dd>
+          <dt>Adresse</dt><dd>79, rue du Cardinal Lemoine, 75005 Paris</dd>
+          <dt>Métro</dt><dd>Cardinal Lemoine (ligne&nbsp;10), à 240&nbsp;m</dd>
+          <dt>Téléphone</dt><dd><a href="tel:+33987708572" class="num">09&nbsp;87&nbsp;70&nbsp;85&nbsp;72</a></dd>
+          <dt>Courriel</dt><dd><a href="mailto:eurydicebar@gmail.com">eurydicebar@gmail.com</a></dd>
+        </dl>
+        <div class="acts">
+          <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=79%20rue%20du%20Cardinal%20Lemoine%2C%2075005%20Paris">Ouvrir l’itinéraire</a>
+        </div>
+      </div>
+      <div class="map rv">
+        <iframe title="Plan : L’Eurydice, 79 rue du Cardinal Lemoine" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=2.3448%2C48.8425%2C2.3548%2C48.8475&amp;layer=mapnik&amp;marker=48.84499%2C2.34983"></iframe>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="mail night" id="contact">
-  <h2>Un concert à proposer, une soirée à organiser, une question ? Écrivez.</h2>
-  <span></span>
-  <a class="big" href="mailto:eurydicebar@gmail.com?subject=Une%20question%20pour%20L%27Eurydice">eurydicebar<span class="at">@gmail.com</span></a>
-  <div class="foot">
-    <div><a href="tel:+33987708572">09 87 70 85 72</a><span>79, rue du Cardinal Lemoine, Paris 5e</span></div>
-    <div><a href="https://www.instagram.com/eurydice_music_bar/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/EurydiceCabaret/" target="_blank" rel="noopener">Facebook</a></div>
   </div>
 </section>
 </main>
 
-<footer>
-  <span>L’Eurydice, bar musical à Paris</span>
-  <nav aria-label="Pied de page"><a href="#scene">Scène</a><a href="#comptoir">Comptoir</a><a href="#venir">Venir</a></nav>
-  <span class="r">Démo non officielle · photos Unsplash</span>
+<footer class="foot on-dark">
+  <div class="wrap">
+    <p class="name" translate="no">L’Eurydice</p>
+    <div class="cols">
+      <div>79, rue du Cardinal Lemoine<br>75005 Paris</div>
+      <div><a href="tel:+33987708572" class="num">09&nbsp;87&nbsp;70&nbsp;85&nbsp;72</a><br><a href="mailto:eurydicebar@gmail.com">eurydicebar@gmail.com</a></div>
+      <div><a href="https://www.instagram.com/eurydice_music_bar/">Instagram</a><br><a href="https://www.facebook.com/EurydiceCabaret/">Facebook</a></div>
+    </div>
+    <small>Démo non officielle réalisée par Raul Hatos. Photos&nbsp;: fiche Privateaser de L’Eurydice. Prix et avis&nbsp;: Privateaser, Schlouk Map.</small>
+  </div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
 (function(){
-  /* --- ouvert maintenant ? (horaires Google : mar-jeu 19h-1h, ven-sam 19h-2h) --- */
-  var H={2:[19,25],3:[19,25],4:[19,25],5:[19,26],6:[19,26]};
-  var names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-  function paris(){var s=new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'});return new Date(s)}
+  // Seule plage commune à toutes les sources : du mardi au samedi, 19 h – 1 h.
   function state(d){
-    var day=d.getDay(),h=d.getHours()+d.getMinutes()/60,prev=(day+6)%7;
-    if(H[day]&&h>=H[day][0])return{open:true,close:H[day][1]-24};
-    if(H[prev]&&h<H[prev][1]-24)return{open:true,close:H[prev][1]-24};
-    for(var i=0;i<7;i++){var k=(day+i)%7;if(H[k]&&(i>0||h<H[k][0]))return{open:false,next:i===0?'ce soir':i===1?'demain':names[k]}}
+    var day=d.getDay(),h=d.getHours();
+    var eve=day>=2&&day<=6&&h>=19, late=day>=3&&day<=6&&h<1 || day===0&&h<1;
+    if(eve||late) return 'open';
+    if(day>=2&&day<=6) return 'tonight';
+    return 'call';
   }
-  // self-check : samedi 23h ouvert, dimanche 1h30 ouvert, dimanche 3h fermé -> mardi
-  console.assert(state(new Date(2026,10,7,23)).open&&state(new Date(2026,10,8,1,30)).open&&state(new Date(2026,10,8,3)).next==='mardi','horaires');
-  var now=paris(),s=state(now),el=document.getElementById('status');
-  el.lastElementChild.innerHTML=s.open?'<b>Ouvert</b> jusqu’à '+s.close+' h':'Fermé · ouvre '+s.next+' à 19 h';
-  if(s.open)el.classList.add('open');
-  var t=document.querySelector('#hours li[data-d="'+now.getDay()+'"]');if(t)t.classList.add('today');
+  console.assert(state(new Date(2026,10,3,21))==='open'&&state(new Date(2026,10,4,0,30))==='open'&&state(new Date(2026,10,3,15))==='tonight'&&state(new Date(2026,10,2,21))==='call'&&state(new Date(2026,10,8,0,30))==='open','horaires');
+  var s=state(new Date()),txt={open:'Ouvert en ce moment',tonight:'Ouvre ce soir à 19 h',call:'Ce soir : appelez avant de venir'}[s];
+  ['status','status2'].forEach(function(id){var el=document.getElementById(id);el.classList.toggle('open',s==='open');document.getElementById(id+'-t').textContent=txt;});
 
-  /* --- liste du comptoir --- */
-  var rows=[].slice.call(document.querySelectorAll('#rows li')),imgs=[].slice.call(document.querySelectorAll('.bar .pic img'));
-  function act(k){rows.forEach(function(r,i){var on=i===k;r.classList.toggle('on',on);r.firstElementChild.setAttribute('aria-expanded',on)});imgs.forEach(function(m,i){m.classList.toggle('on',i===k)})}
-  rows.forEach(function(r,i){var b=r.firstElementChild;b.addEventListener('click',function(){act(i)});b.addEventListener('mouseenter',function(){if(matchMedia('(hover:hover)').matches)act(i)})});
+  // estimateur
+  var f=document.getElementById('est'),eur=function(n){return n.toLocaleString('fr-FR')+' €'};
+  function calc(){
+    var g=+f.g.value,c=+f.c.value,p=+f.p.value,r=f.querySelector('input[name=d]:checked'),pr=+r.value,n=g*c;
+    document.getElementById('g-o').textContent=g;document.getElementById('c-o').textContent=c;document.getElementById('p-o').textContent=p;
+    var tot=n*pr+p*18;
+    document.getElementById('tot').textContent=eur(tot);
+    document.getElementById('detail').innerHTML='<li>'+n+' '+r.dataset.n+' × '+pr+' €</li>'+(p?'<li>'+p+' planche'+(p>1?'s':'')+' de tapas × 18 €</li>':'');
+    var body='Bonjour,\n\nNous aimerions organiser une soirée à L’Eurydice pour '+g+' personnes, le (date) …\n\nMerci,\n';
+    document.getElementById('mail').href='mailto:eurydicebar@gmail.com?subject='+encodeURIComponent('Soirée de '+g+' personnes')+'&body='+encodeURIComponent(body);
+    return tot;
+  }
+  f.addEventListener('input',calc);calc();
+  console.assert(calc()===272,'estimation');
 
-  /* --- la louche --- */
-  var w=document.getElementById('water'),liq=document.getElementById('liquid'),cl=document.getElementById('cloud'),ra=document.getElementById('ratio'),ve=document.getElementById('verdict'),gl=document.getElementById('glass'),tm;
-  var txt=['Pure, elle est trop forte pour se boire ainsi. Ajoutez de l’eau.','Le trouble apparaît à peine. Encore un peu.','Le vert pâlit, les arômes s’ouvrent.','Une dose pour trois d’eau : l’équilibre classique, opalin et anisé.','Plus douce, toujours parfumée.','Très allongée, pour faire durer la soirée.'];
-  function pour(){var n=+w.value,top=262-n*21;[liq,cl].forEach(function(r){r.setAttribute('y',top);r.setAttribute('height',322-top)});cl.setAttribute('opacity',Math.min(.92,n/3.4).toFixed(2));ra.textContent='1 : '+n;ve.textContent=txt[n];gl.classList.add('pour');clearTimeout(tm);tm=setTimeout(function(){gl.classList.remove('pour')},1200)}
-  w.addEventListener('input',pour);pour();gl.classList.remove('pour');
-
-  /* --- cartes qui traversent --- */
-  var sec=document.getElementById('soirs'),tr=document.getElementById('track'),mq=matchMedia('(min-width:821px)'),red=matchMedia('(prefers-reduced-motion:reduce)');
-  function move(){if(!mq.matches){tr.style.transform='';return}var r=sec.getBoundingClientRect(),p=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));var max=tr.scrollWidth-innerWidth*0.54;tr.style.transform='translate3d('+(-p*max)+'px,-50%,0)'}
-  addEventListener('scroll',function(){requestAnimationFrame(move)},{passive:true});addEventListener('resize',move);move();
-
-  /* --- entrées --- */
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var kids=e.target.parentElement.querySelectorAll('.rv');e.target.style.transitionDelay=([].indexOf.call(kids,e.target)*80)+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
-  document.querySelectorAll('.rv').forEach(function(n){io.observe(n)});
+  // apparitions décalées
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el,i){var sib=Array.prototype.indexOf.call(el.parentNode.children,el);el.style.transitionDelay=(Math.min(sib,4)*80)+'ms';io.observe(el)});
+  } else document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
 })();
 </script>
 </body>
