@@ -5,434 +5,507 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Le Photon des Vosges · Opticien et lunettes vintage, Paris 4e</title>
-<meta name="description" content="Opticien du Marais, lunettes vintage chinées dans le monde entier. 9 rue du Pas de la Mule, Paris 4e, à deux pas de la place des Vosges. Ouvert l'après-midi, dimanche compris.">
+<meta name="description" content="Opticien indépendant et lunettes vintage chinées dans le monde entier, au 9 rue du Pas-de-la-Mule, Paris 4e, au bout de la place des Vosges.">
+<meta name="theme-color" content="#1d3a82">
+<meta property="og:title" content="Le Photon des Vosges · Lunettes vintage, Paris 4e">
+<meta property="og:description" content="Montures vintage chinées dans le monde entier, verres à votre vue. 9 rue du Pas-de-la-Mule, Paris 4e.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1707094903462-cb6ab724485d?w=1200&q=72&auto=format&fit=crop">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%232f6b43'/%3E%3Crect x='3' y='3' width='26' height='26' rx='3' fill='%231d3a82'/%3E%3Ccircle cx='11' cy='16' r='4.5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='21' cy='16' r='4.5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='21' cy='16' r='1.6' fill='%23f2d54a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,400&family=Albert+Sans:wght@400;500&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('js')</script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#e2e2e2; --surface:#d6d6d6; --surface-2:#cbcbcb;
-  --ink:#7d0c14; --muted:#5c2a2f;
-  --field:#7d0c14; --field-2:#6c0a11; --field-ink:#f6f3f3; --field-soft:#e4b9bc;
-  --display:"Imbue",ui-serif,serif; --text:"Albert Sans",system-ui,sans-serif;
-  --step-small:clamp(.8125rem,.79rem + .1vw,.875rem);
+  --blue:#1d3a82;      /* émail des plaques de rue parisiennes */
+  --blue-2:#183170;
+  --blue-3:#264897;
+  --green:#2f6b43;     /* cadre vert des plaques */
+  --cream:#eeeeea;
+  --cream-2:#e2e3de;
+  --ink:#13285c;
+  --white:#ffffff;
+  --pale:#d6def3;
+  --sun:#f2d54a;       /* le photon : la seule lumière jaune de la page */
+  --sun-ink:#10204a;
+  --step-small:1rem;
   --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
-  --step-lead:clamp(1.375rem,1.1rem + 1.1vw,2.25rem);
-  --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
-  --m:clamp(16px,2vw,28px);
+  --step-lead:clamp(1.375rem,1.15rem + .8vw,1.875rem);
+  --step-head:clamp(2.25rem,1.5rem + 3vw,4rem);
+  --step-disp:clamp(3rem,1.8rem + 5.4vw,6rem);
+  --m:clamp(16px,3vw,40px);
+  --gap:clamp(96px,12vw,176px);
   --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.55 var(--text);font-kerning:normal;overflow-x:clip}
-img{display:block;max-width:100%}
-a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:.06em}
-::selection{background:var(--ink);color:var(--bg)}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.field :focus-visible,.foot :focus-visible{outline-color:var(--field-ink)}
-.display{font-family:var(--display);font-weight:400;font-optical-sizing:auto;text-transform:uppercase;letter-spacing:-.045em;line-height:.85}
-.ph{filter:grayscale(1) contrast(1.06);background:var(--surface)}
+body{background:var(--blue);color:var(--white);font:400 var(--step-body)/1.55 "Barlow",system-ui,sans-serif;touch-action:manipulation;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+::selection{background:var(--sun);color:var(--sun-ink)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:2px}
+.cream :focus-visible{outline-color:var(--ink)}
+h1,h2,h3,.cond{font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:600;letter-spacing:-.01em;line-height:.98;text-wrap:balance}
+.num,time,.t{font-variant-numeric:tabular-nums}
+.skip{position:absolute;left:var(--m);top:-60px;background:var(--sun);color:var(--sun-ink);padding:12px 16px;z-index:20;font-weight:600;transition:top .2s var(--ease)}
+.skip:focus{top:8px}
+.demo{background:var(--sun);color:var(--sun-ink);text-align:center;font-size:var(--step-small);font-weight:500;padding:8px var(--m)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* demo strip */
-.demo{background:var(--ink);color:#f7f5f5;font-size:13px;line-height:1.3;padding:7px var(--m);text-align:center}
+/* plaque émaillée : cadre vert, filet blanc, champ bleu */
+.plaque{background:var(--green);padding:6px;border-radius:12px;display:inline-block}
+.plaque>span,.plaque>.in{display:block;background:var(--blue);border-radius:8px;border:3px solid var(--white)}
 
-/* HERO */
-.hero{min-height:calc(100svh - 33px);display:grid;grid-template-rows:minmax(34svh,1fr) auto auto;position:relative}
-.hero-photo{grid-row:1}.hero h1{grid-row:2}.hero-row{grid-row:3;padding-bottom:28px}
-.hero-photo{position:relative;overflow:hidden}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;transform-origin:50% 100%}
-.nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:14px var(--m);font-size:16px;z-index:2}
-.nav::before{content:"";position:absolute;inset:0 0 -24px;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,0));z-index:-1} /* taste-skill-ignore: neutral scrim over photo */
-.nav a{color:#f1f1f1;text-decoration:none}
+/* barre */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px var(--m)}
+.mark{text-decoration:none;font:600 var(--step-lead)/1 "Barlow Condensed",sans-serif;letter-spacing:.01em}
+.mark>span{padding:9px 14px 8px}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{text-decoration:none;font-weight:500;padding:10px 0;min-height:44px;display:inline-flex;align-items:center}
 .nav a:hover{text-decoration:underline}
-.nav .links{display:flex;gap:22px}
-.nav .links a:not(.menu){display:none}
-.hero-row{display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding:14px var(--m) 0}
-.hero-row p{max-width:34ch;font-size:19px;line-height:1.4}
-.status{display:inline-flex;align-items:center;gap:8px;font-weight:500}
-.status i{width:9px;height:9px;border-radius:50%;background:var(--ink);opacity:.35}
-.status.open i{opacity:1;animation:pulse 2.4s var(--ease) infinite}
-@keyframes pulse{50%{transform:scale(1.5);opacity:.5}}
-.btn{display:inline-flex;align-items:center;gap:.6em;background:var(--ink);color:#f7f5f5;text-decoration:none;font:500 16px/1 var(--text);padding:15px 20px;border-radius:0;border:0;cursor:pointer;transition:transform .35s var(--ease),background .25s}
-.btn:hover{background:#5e0910}
-.btn:active{transform:scale(.97)}
-.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
-.btn:hover svg{transform:translateX(3px)}
-.hero h1{align-self:end;padding:24px var(--m) .1em;color:var(--ink);white-space:nowrap}
-.hero h1 span{display:block}
-.fit{font-size:21vw}
+.nav .call{background:var(--sun);color:var(--sun-ink);padding:10px 18px;border-radius:999px}
+.nav .call:hover{text-decoration:none;background:#f7df6e}
 
-/* ABOUT */
-.about{padding:110px var(--m) 120px;display:grid;gap:36px}
-.about .story{font-size:var(--step-lead);line-height:1.22;max-width:34em}
-.about .story.more{color:var(--muted);margin-top:1.4em;font-size:var(--step-body);line-height:1.55;max-width:60ch}
-.about .story img{float:left;width:4.9em;height:4.9em;object-fit:cover;margin:.18em .5em 0 0}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;font-size:13px;line-height:1.35}
-.facts b{display:block;font-weight:500}
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 24px;border-radius:999px;font:600 var(--step-body)/1.1 "Barlow",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .16s var(--ease),background-color .2s}
+.btn:active{transform:scale(.96)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.sun{background:var(--sun);color:var(--sun-ink)}
+.btn.sun:hover{background:#f7df6e}
+.btn.soft{background:var(--blue-3);color:var(--white)}
+.btn.soft:hover{background:#2f55ad}
+.btn.ink{background:var(--ink);color:var(--white)}
+.btn.ink:hover{background:#1d3a82}
 
-/* SHOWCASE */
-.show h2{font-family:var(--display);font-weight:400;font-size:var(--step-head);letter-spacing:-.03em;line-height:.95;text-transform:uppercase;padding:0 var(--m) 40px}
-.band{display:grid;grid-template-columns:64fr 36fr;grid-template-rows:1fr 1fr;height:84svh}
-.band figure{position:relative;overflow:hidden;min-width:0}
-.band figure:nth-child(3){grid-column:1;grid-row:2}
-.band img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.band figure:hover img{transform:scale(1.04)}
-.band figcaption{position:absolute;left:0;top:0;font:400 clamp(22px,2vw,28px)/1.05 var(--display);text-transform:uppercase;letter-spacing:-.02em;color:#f7f7f7;background:rgba(0,0,0,.62);padding:14px 18px}
-.band-cap{padding:16px var(--m) 0;font-size:16px;color:var(--muted);max-width:60ch}
-.band.re{grid-template-columns:36fr 64fr}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);padding:clamp(8px,1.2vw,16px) var(--m) clamp(56px,6vw,88px);align-items:stretch}
+.hero h1{font-size:clamp(2.25rem,4.9vw,5.75rem);padding:.24em .34em .22em;line-height:.95}
+.hero h1 span{display:block;white-space:nowrap}
+.hero .plaque{max-width:100%;justify-self:start;align-self:start}
+.lede{font-size:clamp(1.25rem,1rem + .6vw,1.5rem);line-height:1.35;margin-top:24px;max-width:46ch;text-wrap:pretty}
+sup{font-size:.62em;line-height:0}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;list-style:none}
+.tiles li{background:var(--blue-2);border-radius:10px;padding:14px 18px 16px}
+.tiles li:first-child{background:var(--sun);color:var(--sun-ink)}
+.tiles b{display:block;font:600 clamp(2rem,1.3rem + 1.4vw,2.75rem)/1 "Barlow Condensed",sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tiles span{display:block;margin-top:6px;font-size:var(--step-small);line-height:1.35;color:var(--pale)}
+.tiles li:first-child span{color:var(--sun-ink)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.status{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:var(--step-small);font-weight:500}
+.status i{width:10px;height:10px;border-radius:50%;background:var(--pale);flex:none}
+.status.open i{background:#7fd69a}
+.status.closed i{background:#ff9b8a}
 
-/* INDEX */
-.index{padding:130px var(--m) 140px;display:grid;gap:40px}
-.index h2{font-size:28px;font-weight:500;line-height:1.2}
-.cols{display:grid;gap:40px}
-.cols h3{font-size:19px;font-weight:500;margin-bottom:1em}
-.cols ul{list-style:none;font-size:19px;line-height:1.4;color:var(--muted)}
-.cols li{cursor:default;transition:color .2s}
-.cols li:hover,.cols li:focus{color:var(--ink)}
-.cols .sum{margin-top:.8em;color:var(--muted);font-size:16px}
-.desc{display:none}
+.shots{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:1fr 1fr;gap:10px;min-height:520px}
+.shots figure{position:relative;overflow:hidden;border-radius:10px;background:var(--blue-2)}
+.shots .big{grid-row:span 2}
+.shots .big img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
+.shots .big img.on{opacity:1}
+.shots .sm{min-height:0}
+.shots .sm img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+figcaption.tag{position:absolute;left:10px;bottom:10px;background:var(--white);color:var(--ink);font-size:var(--step-small);font-weight:500;line-height:1.2;padding:6px 10px;border-radius:999px;max-width:calc(100% - 20px)}
+.pause{position:absolute;right:10px;top:10px;width:44px;height:44px;border-radius:50%;border:0;background:var(--white);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:transform .16s var(--ease)}
+.pause:active{transform:scale(.96)}
+.pause svg{width:16px;height:16px}
 
-/* SIZES (live thing) */
-.sizes{background:var(--surface);padding:110px var(--m) 120px;display:grid;gap:44px}
-.sizes h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:var(--step-head);letter-spacing:-.03em;line-height:.95;max-width:12ch}
-.sizes .intro{max-width:46ch;margin-top:20px}
-.stamp{display:flex;align-items:baseline;flex-wrap:wrap;gap:.18em;font-family:var(--display);font-size:clamp(64px,14vw,170px);line-height:1;letter-spacing:-.03em}
-.stamp label{display:flex;flex-direction:column}
-.stamp label span{font:500 16px/1.2 var(--text);letter-spacing:0;order:2;margin-top:6px}
-.stamp input{font:inherit;color:var(--ink);background:var(--bg);border:0;width:2.25ch;text-align:center;padding:0 .05em;border-radius:0;-moz-appearance:textfield;appearance:textfield;transition:background .2s}
-.stamp input.w3{width:2.9ch}
-.stamp input::-webkit-inner-spin-button,.stamp input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-.stamp input:hover{background:#ededed}
-.stamp input:focus-visible{outline-offset:0}
-.stamp .box{display:inline-block;width:.42em;height:.42em;border:.06em solid currentColor;align-self:center;margin:0 .04em .55em}
-.frame-fig{background:var(--bg);padding:24px;display:grid;gap:16px}
-.frame-fig svg{width:100%;height:auto;overflow:visible}
-.readout{font-size:19px;line-height:1.4}
-.readout b{font-weight:500;font-variant-numeric:tabular-nums}
-.sizes .btn{justify-self:start}
-.hint{font-size:var(--step-small);color:var(--muted)}
+/* intro : la phrase de la rue */
+.cream{background:var(--cream);color:var(--ink)}
+.intro{padding:var(--gap) var(--m);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.intro h2{font-size:var(--step-head);margin-bottom:28px}
+.intro p.st{font-size:var(--step-lead);line-height:1.3;font-weight:500;max-width:44ch;text-wrap:pretty}
+.intro .facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 40px;margin-top:40px;list-style:none}
+.intro .facts b{display:block;font:600 var(--step-lead)/1.1 "Barlow Condensed",sans-serif}
+.intro .facts span{font-size:var(--step-small)}
+.pair{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}
+.pair figure{overflow:hidden;border-radius:10px}
+.pair img{width:100%;height:100%;object-fit:cover}
+.pair .a{aspect-ratio:4/5;transform:rotate(-2deg)}
+.pair .b{aspect-ratio:3/4;margin-bottom:-36px}
+.pair figcaption{font-size:var(--step-small);margin-top:10px}
+.pair .cap{grid-column:1/-1;font-size:var(--step-small);margin-top:52px}
 
-/* HOURS POSTER */
-.field{background:var(--field);color:var(--field-ink)}
-.hours{padding:80px var(--m)}
-.hours h2{font-size:18px;font-weight:500;margin-bottom:28px;color:var(--field-soft)}
-.days{list-style:none}
-.days li{display:flex;flex-direction:column;padding:2px 0 18px;transition:color .25s}
-.days .d{font-family:var(--display);text-transform:uppercase;font-size:15vw;white-space:nowrap;line-height:.92;letter-spacing:-.04em}
-.days .t{font-size:16px;font-variant-numeric:tabular-nums;color:var(--field-soft);margin-top:4px}
-.days li.off .d{color:transparent;-webkit-text-stroke:1.5px var(--field-soft)}
-.days li.today .d{color:#fff}
-.days li.today .t{color:#fff;font-weight:500}
-.days li:hover .d{color:#fff}
-.days li.off:hover .d{color:transparent}
-.hours .note{margin-top:30px;font-size:16px;color:var(--field-soft);max-width:52ch}
+/* échelle de Monoyer : l'offre */
+.chart{padding:var(--gap) var(--m);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.chart h2{font-size:var(--step-head)}
+.chart .sub{margin-top:20px;max-width:46ch;color:var(--white)}
+.rows{list-style:none;margin-top:48px}
+.rows li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;column-gap:20px;padding:14px 0}
+.rows li small{grid-column:1/-1;font-size:var(--step-small);line-height:1.4;color:var(--pale);margin-top:8px;max-width:48ch}
+.rows li+li{margin-top:4px}
+.rows .l{font-family:"Barlow Condensed",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;line-height:1}
+.rows .a{font-size:var(--step-small);color:var(--pale);font-variant-numeric:tabular-nums}
+.r1 .l{font-size:var(--step-disp)}
+.r2 .l{font-size:var(--step-head)}
+.r3 .l{font-size:var(--step-lead)}
+.r4 .l,.r5 .l{font-size:var(--step-body)}
+.chart aside{display:grid;gap:12px;align-self:center}
+.chart aside figure{border-radius:10px;overflow:hidden;position:relative}
+.chart aside .museum{background:#e9e8e4}
+.chart aside img{width:100%;object-fit:cover}
+.chart aside .museum img{aspect-ratio:4/3.4;object-fit:contain;padding:10px 24px}
+.chart aside .vit img{aspect-ratio:16/10}
+.chart aside figcaption{font-size:var(--step-small);padding:10px 2px 0;color:var(--pale)}
+.chart aside .museum figcaption{color:var(--ink);background:var(--cream);padding:10px 14px}
 
-/* PLACE */
-.place{position:relative}
-.place img{width:100%;height:72svh;object-fit:cover}
-.place figcaption{padding:16px var(--m) 0;font-size:16px;color:var(--muted)}
+/* branche : l'outil */
+.sizes{padding:var(--gap) var(--m);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,5vw,80px);align-items:center}
+.sizes h2{font-size:var(--step-head)}
+.sizes .intro-t{margin-top:24px;max-width:44ch}
+.sizes .lhs img{margin-top:36px;border-radius:10px;aspect-ratio:16/9;object-fit:cover;width:100%}
+.tool{background:var(--cream-2);border-radius:14px;padding:clamp(20px,3vw,40px)}
+.stamp{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 14px;font-family:"Barlow Condensed",sans-serif}
+.stamp label{display:flex;flex-direction:column;gap:6px;font:500 var(--step-small)/1.2 "Barlow",sans-serif}
+.stamp input{font:600 min(var(--step-head),3.4vw)/1 "Barlow Condensed",sans-serif;font-variant-numeric:tabular-nums;color:var(--ink);background:var(--white);border:0;border-radius:8px;width:2.3em;padding:8px 10px;min-height:56px;-moz-appearance:textfield}
+.stamp input.w3{width:2.9em}
+.stamp input::-webkit-inner-spin-button{appearance:none}
+.stamp .box{width:30px;height:30px;border:4px solid var(--ink);margin-bottom:16px;flex:none}
+.stamp .dash{font:600 var(--step-head)/1 "Barlow Condensed",sans-serif;margin-bottom:12px}
+.tool svg.frame{width:100%;height:auto;margin-top:28px}
+.readout{margin-top:14px;font-size:var(--step-body);font-weight:500;font-variant-numeric:tabular-nums}
+.hint{font-size:var(--step-small);margin-top:6px}
+.tool .acts{margin-top:24px}
+.copied{font-size:var(--step-small);margin-top:12px;min-height:1.4em}
 
-/* CONTACT ROWS */
-.contact{padding:110px 0 0}
-.contact h2{padding:0 var(--m) 28px;font-size:18px;font-weight:500}
-.rows{list-style:none}.rows li>a,.rows li:not(:has(a)){display:flex;align-items:flex-end;justify-content:space-between;gap:16px;min-height:84px;padding:12px var(--m);font-family:var(--display);text-transform:uppercase;font-size:9.6vw;line-height:1;letter-spacing:-.03em;text-decoration:none;color:var(--ink)}
-.rows>li:nth-child(odd)>*,.rows>li:nth-child(odd):not(:has(a)){background:var(--surface)}
-.rows>li:nth-child(even)>*,.rows>li:nth-child(even):not(:has(a)){background:var(--bg)}
-.rows a{transition:background .25s,color .25s}
-.rows a:hover{background:var(--ink);color:var(--bg)}
-.rows .arcade{width:1.1em;height:1.1em;border-radius:50%;object-fit:cover;flex:none;align-self:center}
-.rows li.hrs{justify-content:flex-start;flex-wrap:wrap;column-gap:.3em}
-.rows .hrs span{display:block;width:100%}
-.rows .hello{background:var(--field)!important;color:var(--field-ink)!important;align-items:center}
-.round{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--field-ink);color:var(--field);flex:none;transition:transform .35s var(--ease)}
-.round svg{width:22px;height:22px}
-.rows .hello:hover .round{transform:rotate(-45deg)}
+/* parcours en escalier */
+.steps{padding:var(--gap) var(--m);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px}
+.steps h2{grid-column:1/-1;font-size:var(--step-head);margin-bottom:48px}
+.steps ol{grid-column:1/-1;list-style:none;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;row-gap:48px}
+.steps li{grid-column:var(--c)/span 5}
+.green{background:var(--green);color:var(--white)}
+.steps li b{display:block;font:600 var(--step-head)/1.02 "Barlow Condensed",sans-serif}
+.steps li span{display:block;margin-top:10px;max-width:40ch}
+.steps li:last-child b{color:var(--sun)}
+.steps figure{grid-column:9/-1;grid-row:1;align-self:start;border-radius:10px;overflow:hidden}
+.steps figure img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.steps .wrap{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px}
+.steps .wrap ol{grid-column:1/-1;grid-row:1}
 
-/* FOOTER */
-.foot{background:var(--field);color:var(--field-ink);min-height:80svh;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto auto;padding:40px var(--m) 60px}
-.foot .fcols{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;font-size:16px;line-height:1.5}
-.foot .fcols ul{list-style:none}
-.foot .fcols li:first-child{font-weight:500}
-.foot .fcols li:not(:first-child){color:var(--field-soft)}
-.foot .fcols a{color:inherit}
-.foot .word{white-space:nowrap;margin-top:12svh}
-.foot .word span{display:block}
-.foot .legal{font-size:13px;color:var(--field-soft);margin-top:20px;max-width:90ch}
-main{background:var(--bg);position:relative;z-index:1}
+/* horaires */
+.hours{padding:var(--gap) var(--m)}
+.hours-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end}
+.hours h2{font-size:var(--step-head)}
+.hours .now{font-size:var(--step-lead);font-weight:500;justify-self:end;text-align:right}
+.days{list-style:none;margin-top:48px}
+.days li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;font:500 var(--step-lead)/1 "Barlow Condensed",sans-serif;padding:14px 16px;border-radius:8px}
+.days li:nth-child(odd){background:var(--blue-2)}
+.days li .t{text-align:right}
+.days li.today{background:var(--sun);color:var(--sun-ink)}
+.days li.unk{color:var(--pale)}
+.days li.unk.today{color:var(--sun-ink)}
+.hours .note{margin-top:24px;max-width:70ch;font-size:var(--step-small);color:var(--pale)}
 
-/* motion */
-.js [data-rise]{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
-.js [data-rise].in{opacity:1;transform:none}
-.js .hero h1 span{transform:translateY(40%);opacity:0;animation:up 1.1s var(--ease) forwards;animation-delay:calc(var(--i,0)*90ms + 150ms)}
-@keyframes up{to{transform:none;opacity:1}}
-@supports (animation-timeline:view()){
-  .hero h1{animation:shrink linear both;animation-timeline:view();animation-range:exit 0% exit 100%;transform-origin:0 100%}
-  @keyframes shrink{to{scale:.93}}
-  .hero-photo img{animation:drift linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
-  @keyframes drift{to{transform:scale(1.08) translateY(6%)}}
-  .foot .word{animation:grow linear both;animation-timeline:view();animation-range:entry 0% cover 50%;transform-origin:0 100%}
-  @keyframes grow{from{scale:.94}to{scale:1}}
-}
+/* accès */
+.find{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);padding:var(--gap) var(--m);align-items:stretch}
+.find h2{font-size:var(--step-head);margin-bottom:28px}
+.addr{list-style:none}
+.addr li{font:600 var(--step-head)/1.02 "Barlow Condensed",sans-serif;padding:14px 0}
+.addr li+li{background:none}
+.addr a{text-decoration:none;display:inline-flex;align-items:center;gap:14px;min-height:44px}
+.addr a:hover{text-decoration:underline}
+.addr .sm a{display:inline;min-height:0;text-decoration:underline}
+.addr .go{width:.9em;height:.9em;border-radius:50%;background:var(--ink);color:var(--white);display:inline-grid;place-items:center;flex:none;transition:transform .2s var(--ease)}
+.addr a:hover .go{transform:translateX(4px)}
+.addr .go svg{width:.45em;height:.45em}
+.addr .sm{font:500 var(--step-body)/1.5 "Barlow",sans-serif;padding-top:20px;max-width:56ch}
+.find .pics{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;gap:12px}
+.find .pics figure{border-radius:10px;overflow:hidden;position:relative}
+.find .pics .wide{grid-column:1/-1}
+.find .pics img{width:100%;height:100%;object-fit:cover}
+.find .pics .wide img{aspect-ratio:16/10}
+.find .pics .sq img{aspect-ratio:1}
+
+/* pied : la plaque, en grand */
+.foot{padding:clamp(72px,9vw,128px) var(--m) 40px}
+.bigplaque{display:block;width:100%;border-radius:clamp(14px,2vw,26px);padding:clamp(8px,1vw,14px)}
+.bigplaque .in{border-radius:clamp(9px,1.4vw,18px);border:clamp(4px,.6vw,8px) solid var(--white);padding:clamp(18px,3vw,44px) clamp(18px,3vw,48px);display:flex;flex-direction:column;align-items:center;text-align:center}
+.bigplaque .arr{font:600 var(--step-lead)/1 "Barlow Condensed",sans-serif;letter-spacing:.04em}
+.bigplaque .nm{font:600 clamp(2.4rem,.6rem + 8.6vw,9.5rem)/.9 "Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.01em;margin-top:.12em;white-space:nowrap}
+.fcols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:56px;font-size:var(--step-small)}
+.fcols p{line-height:1.7}
+.fcols strong{display:block;font-weight:600;margin-bottom:4px}
+.fcols a{display:inline-block;min-height:28px}
+.legal{margin-top:40px;font-size:var(--step-small);line-height:1.55;color:var(--pale);max-width:75ch}
+
+/* apparitions */
+.js [data-rise]{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.js [data-rise].in-view{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .js [data-rise]{opacity:1;transform:none}
-  .js .hero h1 span{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+  .js [data-rise]{opacity:1;transform:none;transition:none}
+  .shots .big img{transition:none}
+  .btn,.pause,.addr .go{transition:none}
 }
 
-/* DESKTOP */
-@media (min-width:760px){
-  .nav .links a:not(.menu){display:inline}
-  .nav .links .menu{display:none}
-  .hero{grid-template-rows:1fr auto auto;height:calc(100svh - 33px)}
-  .hero h1{padding:20px var(--m) 0}
-  .hero-row{padding:18px var(--m) 26px}
-  .hero-row{flex-direction:row;justify-content:space-between;align-items:center;padding-top:22px}
-  .hero-row p{font-size:19px;max-width:60ch}
-  .hero h1 span{display:inline}
-  .hero h1 span+span::before{content:" "}
-  .fit{font-size:10.4vw}
-  .about{grid-template-columns:2fr 10fr;padding:140px var(--m)}
-  .facts{font-size:16px;grid-template-columns:1fr;align-content:start;gap:22px;padding-top:.6em;grid-column:1;grid-row:1}
-  .about>div:first-child{grid-column:2;grid-row:1}
-  .about .story img{width:3.6em;height:3.6em}
-  .show h2{padding-left:calc(var(--m) + (100vw - 2*var(--m))*2/12)}
-  .band{display:flex;height:68svh}
-  .band figure{flex:var(--g);transition:flex .5s var(--ease)}
-  .band figure:hover{flex:6}
-  .band figure:nth-child(1){--g:5}.band figure:nth-child(2){--g:2}.band figure:nth-child(3){--g:3}.band figure:nth-child(4){--g:2}
-  .index{grid-template-columns:repeat(12,1fr);padding:20vh var(--m)}
-  .index h2{grid-column:1/-1;font-size:28px;margin-bottom:56px}
-  .cols{grid-column:1/10;grid-template-columns:repeat(3,1fr);gap:24px}
-  .cols ul{font-size:19px;line-height:1.3}
-  .cols .sum{display:none}
-  .desc{display:block;grid-column:10/13;font-size:19px;line-height:1.35;align-self:start;min-height:4em}
-  .sizes{grid-template-columns:5fr 7fr;column-gap:6vw;align-items:start;padding:150px var(--m)}
-  .sizes .lhs{grid-row:span 2}
-  .hours{padding:80px var(--m);overflow:clip}
-  .days li{flex-direction:row;justify-content:space-between;align-items:baseline;padding:0}
-  .days .d{font-size:9vw}
-  .days .t{font-size:19px}
-  .rows{list-style:none}.rows li>a,.rows li:not(:has(a)){min-height:150px;font-size:6vw;padding:0 var(--m) 18px}
-  .rows .hrs span{display:inline;width:auto}
-  .rows .hrs span+span::before{content:" · "}
-  .rows .hello{background:var(--surface)!important;color:var(--ink)!important;justify-content:flex-start;gap:24px}
-  .rows .hello .round{width:.9em;height:.9em;background:var(--ink);color:var(--bg)}
-  .rows .hello .round svg{width:.4em;height:.4em}
-  .foot .fcols{grid-template-columns:repeat(4,1fr)}
-  .foot .word span{display:inline}
-  .foot .word span+span::before{content:" "}
+/* largeurs */
+@media (max-width:1100px){
+  .chart{grid-template-columns:1fr}
+  .chart aside{position:static;grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .nav a:not(.call){display:none}
+  .hero{grid-template-columns:1fr;gap:0;padding-top:8px}
+  .hero>div:first-child{display:contents}
+  .hero .plaque{order:1}
+  .shots{order:2;margin-top:18px;grid-template-columns:1.3fr 1fr;min-height:0;height:clamp(240px,58vw,460px)}
+  .hero .lede{order:3;margin-top:22px}
+  .hero .acts{order:4}
+  .hero .status{order:5}
+  .hero .tiles{order:6}
+  .intro,.sizes,.find{grid-template-columns:1fr}
+  .pair{max-width:560px}
+  .steps li{grid-column:1/-1;padding-left:calc(var(--k,0)*6vw)}
+  .steps figure{grid-column:1/-1;grid-row:auto;margin-top:48px}
+  .steps figure img{aspect-ratio:3/2}
+  .steps .wrap ol{grid-row:auto}
+  .hours-head{grid-template-columns:1fr}
+  .hours .now{justify-self:start;text-align:left}
+  .fcols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .mark>span{padding:8px 10px 7px;white-space:nowrap}
+  .mark{font-size:1.125rem}
+  .shots .sm .tag{display:none}
+  .nav .call{padding:10px 14px}
+  .hero h1{font-size:clamp(2.35rem,10.5vw,3rem)}
+  .lede{font-size:1.25rem}
+  .acts .btn{flex:1 1 100%}
+  .chart aside{grid-template-columns:1fr}
+  .days li{padding:12px 12px}
+  .stamp .box{width:22px;height:22px}
+  .stamp input{font-size:2.25rem}
+  .stamp .dash{display:none}
+  .bigplaque .nm{white-space:normal;font-size:12.5vw;line-height:.95}
+  .intro .facts{grid-template-columns:repeat(3,auto);gap:12px 20px}
 }
 </style>
+<script>document.documentElement.className='js'</script>
 </head>
 <body>
+<a class="skip" href="#main">Aller au contenu</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
-<main>
-<header class="hero" id="top">
-  <div class="hero-photo">
-    <img class="ph" src="https://images.unsplash.com/photo-1759910546804-68fd991aceac?w=2000&q=75&auto=format&fit=crop" width="2000" height="1333" alt="Montures vintage en écaille et en métal alignées sur un comptoir" fetchpriority="high">
-    <nav class="nav" aria-label="Navigation principale">
-      <a href="#top" aria-label="Le Photon des Vosges, haut de page">9 rue du Pas de la Mule</a>
-      <span class="links">
-        <a href="#montures">Montures</a>
-        <a href="#mesures">Mesures</a>
-        <a href="#horaires">Horaires</a>
-        <a href="#contact">Contact</a>
-        <a class="menu" href="#contact">Contact</a>
-      </span>
-    </nav>
-  </div>
-  <div class="hero-row">
-    <p><span class="status" id="status"><i aria-hidden="true"></i><span>Ouvert l'après-midi, dimanche compris</span></span><br>Opticien et lunettes vintage chinées dans le monde entier, à deux pas de la place des Vosges.</p>
-    <a class="btn" href="tel:+33142774522">Appeler le 01 42 77 45 22 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-  </div>
-  <h1 class="display fit" data-fit><span style="--i:0">Le Photon</span><span style="--i:1">des Vosges</span></h1>
+
+<header class="bar">
+  <a class="mark plaque" href="#top" translate="no"><span>Le Photon des Vosges</span></a>
+  <nav class="nav" aria-label="Navigation principale">
+    <a href="#boutique">La boutique</a>
+    <a href="#mesures">Vos mesures</a>
+    <a href="#horaires">Horaires</a>
+    <a href="#acces">Accès</a>
+    <a class="call num" href="tel:+33142774522">01&nbsp;42&nbsp;77&nbsp;45&nbsp;22</a>
+  </nav>
 </header>
 
-<section class="about" aria-label="La boutique">
+<main id="main">
+<section class="hero" id="top" aria-labelledby="t-hero">
   <div>
-    <p class="story" data-rise><img class="ph" src="https://images.unsplash.com/photo-1552574023-e7095f12d660?w=400&h=400&q=70&auto=format&fit=crop" width="400" height="400" alt="Lunettes rondes cerclées de noir posées sur un meuble en bois" loading="lazy">Au <strong style="font-weight:500">Photon des Vosges</strong>, on vient chercher une paire que personne d'autre ne portera : des montures vintage chinées aux quatre coins du monde.</p>
-    <p class="story more" data-rise style="--i:1">On choisit d'abord une forme, une couleur, une époque. Ensuite, l'opticien y monte des verres à votre vue, et la monture d'hier devient vos lunettes de tous les jours.</p>
-  </div>
-  <div class="facts" data-rise style="--i:2">
-    <p><b>Paris 4e</b>Entre la place des Vosges et le boulevard Beaumarchais</p>
-    <p><b>Depuis 1990</b>Au 9 rue du Pas de la Mule</p>
-    <p><b>Métro Chemin Vert</b>Ligne 8, bus 69 arrêt Beaumarchais</p>
-  </div>
-</section>
-
-<section class="show" id="montures" aria-labelledby="t-montures">
-  <h2 id="t-montures" data-rise>Montures d'ailleurs</h2>
-  <div class="band">
-    <figure><img class="ph" src="https://images.unsplash.com/photo-1759910546772-73e4bb7fdadd?w=1400&q=72&auto=format&fit=crop" width="1400" height="933" alt="Rangée de montures anciennes posées sur leurs étuis" loading="lazy" style="object-position:50% 88%"><figcaption>Vue,<br>soleil, vintage</figcaption></figure>
-    <figure><img class="ph" src="https://images.unsplash.com/photo-1456421385613-d0666bb96b78?w=900&q=72&auto=format&fit=crop" width="900" height="600" alt="Deux mains tiennent des lunettes de soleil rondes" loading="lazy"></figure>
-    <figure><img class="ph" src="https://images.unsplash.com/photo-1707094903462-cb6ab724485d?w=1000&q=72&auto=format&fit=crop" width="1000" height="667" alt="Présentoir de lunettes de soleil aux formes rétro" loading="lazy"></figure>
-    <figure><img class="ph" src="https://images.unsplash.com/photo-1761896883591-0f3e5c9bfba7?w=900&q=72&auto=format&fit=crop" width="900" height="1200" alt="Une monture écaille et une monture transparente posées sur un tissu" loading="lazy"></figure>
-  </div>
-  <p class="band-cap" data-rise>Rondes, papillon, aviateur, écaille ou cristal : en vintage, chaque paire existe souvent en un seul exemplaire. Passez les essayer.</p>
-</section>
-
-<section class="index" aria-labelledby="t-index">
-  <h2 id="t-index" data-rise>À la boutique</h2>
-  <div class="cols">
-    <div data-rise>
-      <h3>Les montures</h3>
-      <ul>
-        <li tabindex="0" data-d="Des montures d'époque, chinées dans le monde entier, souvent en pièce unique.">Lunettes vintage</li>
-        <li tabindex="0" data-d="Des lunettes de soleil, vintage ou non, pour la ville et pour l'été.">Lunettes de soleil</li>
-        <li tabindex="0" data-d="Des montures pour la vue, à équiper de verres correcteurs.">Lunettes de vue</li>
-        <li tabindex="0" data-d="Une monture seule, si vous préférez faire monter vos verres ailleurs ou plus tard.">Montures seules</li>
-      </ul>
-      <p class="sum">Vintage, soleil ou vue : des formes qu'on ne trouve pas ailleurs.</p>
+    <div class="plaque" data-rise><h1 class="in" id="t-hero"><span>Lunettes vintage,</span> <span>rue du Pas-de-la-Mule</span></h1></div>
+    <p class="lede" data-rise style="--i:1"><span translate="no">Le Photon des Vosges</span>, opticien indépendant du 4<sup>e</sup>&nbsp;: des montures vintage chinées dans le monde entier, équipées de verres à votre vue.</p>
+    <div class="acts" data-rise style="--i:3">
+      <a class="btn sun" href="tel:+33142774522"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler la boutique</a>
+      <a class="btn soft" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Photon+des+Vosges,+9+Rue+du+Pas+de+la+Mule,+75004+Paris" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Itinéraire</a>
     </div>
-    <div data-rise style="--i:1">
-      <h3>L'opticien</h3>
-      <ul>
-        <li tabindex="0" data-d="Votre ordonnance en main, les verres sont montés dans la monture choisie.">Verres à votre vue</li>
-        <li tabindex="0" data-d="Une monture vintage se règle : branches, plaquettes, inclinaison.">Ajustage de la monture</li>
-        <li tabindex="0" data-d="Forme du visage, couleur, époque : on vous aide à trancher entre deux paires.">Conseil au choix</li>
-      </ul>
-      <p class="sum">Une vieille monture devient vos lunettes de tous les jours.</p>
-    </div>
-    <div data-rise style="--i:2">
-      <h3>En pratique</h3>
-      <ul>
-        <li tabindex="0" data-d="Pensez à votre carte de mutuelle et à votre ordonnance.">Tiers payant</li>
-        <li tabindex="0" data-d="Carte bancaire et paiement sans contact acceptés.">Carte et sans contact</li>
-        <li tabindex="0" data-d="La boutique ouvre l'après-midi, y compris le dimanche.">Ouvert le dimanche</li>
-        <li tabindex="0" data-d="Le lundi, la boutique est fermée.">Fermé le lundi</li>
-      </ul>
-      <p class="sum">Ordonnance et carte de mutuelle en poche, c'est tout.</p>
-    </div>
+    <p class="status" id="status" aria-live="polite" data-rise style="--i:4"><i aria-hidden="true"></i><span>Ouvert l’après-midi, du mardi au dimanche</span></p>
+    <ul class="tiles" data-rise style="--i:5">
+      <li><b>25&nbsp;ans&nbsp;+</b><span>à chiner des montures aux quatre coins du monde</span></li>
+      <li><b>14&nbsp;h&nbsp;30</b><span>ouverture, du mardi au samedi</span></li>
+      <li><b>Dimanche</b><span>ouvert l’après-midi, 15&nbsp;h – 19&nbsp;h</span></li>
+      <li><b>Ligne&nbsp;8</b><span>métro Chemin Vert, place des Vosges au bout de la rue</span></li>
+    </ul>
   </div>
-  <p class="desc" aria-live="polite" id="desc">Survolez une ligne pour en savoir plus.</p>
-</section>
-
-<section class="sizes" id="mesures" aria-labelledby="t-mesures">
-  <div class="lhs" data-rise>
-    <h2 id="t-mesures">Votre taille, sur la branche</h2>
-    <p class="intro">À l'intérieur de la branche de vos lunettes actuelles, trois chiffres sont gravés : la largeur d'un verre, celle du pont, la longueur de la branche, en millimètres. Recopiez-les ici : vous verrez votre monture à l'échelle, et vous pourrez nous les envoyer avant de passer.</p>
-  </div>
-  <form class="rhs" id="sz" data-rise style="--i:1" onsubmit="return false">
-    <div class="stamp" aria-label="Mesures gravées sur la branche">
-      <label><input id="a" inputmode="numeric" type="number" min="38" max="62" value="48" aria-describedby="h-a"><span id="h-a">Verre</span></label>
-      <span class="box" aria-hidden="true"></span>
-      <label><input id="p" inputmode="numeric" type="number" min="12" max="26" value="20" aria-describedby="h-p"><span id="h-p">Pont</span></label>
-      <label style="margin-left:.25em"><input id="b" class="w3" inputmode="numeric" type="number" min="120" max="155" value="145" aria-describedby="h-b"><span id="h-b">Branche</span></label>
-    </div>
-    <figure class="frame-fig" style="margin-top:28px">
-      <svg id="frame" viewBox="0 0 160 60" role="img" aria-label="Dessin de la monture à l'échelle"></svg>
-      <figcaption class="readout" id="readout" aria-live="polite"></figcaption>
+  <div class="shots" data-rise style="--i:2">
+    <figure class="big" id="fade">
+      <img class="on" src="https://images.unsplash.com/photo-1707094903462-cb6ab724485d?w=1100&amp;q=72&amp;auto=format&amp;fit=crop" width="1100" height="730" alt="Mur de lunettes de soleil œil-de-chat aux montures colorées" fetchpriority="high" style="object-position:22% 50%">
+      <img src="https://images.unsplash.com/photo-1552574023-e7095f12d660?w=1100&amp;q=72&amp;auto=format&amp;fit=crop" width="1100" height="1650" alt="Lunettes rondes cerclées de noir posées sur un meuble en bois" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1761896883591-0f3e5c9bfba7?w=1100&amp;q=72&amp;auto=format&amp;fit=crop" width="1100" height="1375" alt="Une monture écaille et une monture cristal posées sur un tissu clair" loading="lazy">
+      <button class="pause" id="pause" type="button" aria-label="Mettre le diaporama en pause" aria-pressed="false"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg></button>
     </figure>
-    <p class="hint" style="margin:12px 0 22px">Verre de 38 à 62, pont de 12 à 26, branche de 120 à 155 mm.</p>
-    <a class="btn" id="send" href="mailto:lephoton@free.fr">Envoyer mes mesures <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+    <figure class="sm">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/P1100566_Paris_IV_rue_du_Pas-de-la-Mule_rwk.JPG/1280px-P1100566_Paris_IV_rue_du_Pas-de-la-Mule_rwk.JPG" width="1280" height="971" alt="La rue du Pas-de-la-Mule, ses façades claires et ses boutiques">
+      <figcaption class="tag">Rue du Pas-de-la-Mule</figcaption>
+    </figure>
+    <figure class="sm">
+      <img src="https://images.unsplash.com/photo-1759910546772-73e4bb7fdadd?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="461" alt="Montures anciennes alignées dans une vitrine sur leurs étuis" style="object-position:50% 70%">
+    </figure>
+  </div>
+</section>
+
+<section class="intro cream" id="boutique" aria-labelledby="t-intro">
+  <div>
+    <h2 id="t-intro" data-rise>Une monture que personne d’autre ne portera</h2>
+    <p class="st" data-rise style="--i:1">Au 9, entre la place des Vosges et le boulevard Beaumarchais&nbsp;: des montures chinées ailleurs, et des verres montés à votre vue.</p>
+    <ul class="facts" data-rise style="--i:2">
+      <li><b>Vintage</b><span>montures d’époque</span></li>
+      <li><b>Soleil</b><span>solaires, vintage ou non</span></li>
+      <li><b>Vue</b><span>verres à votre ordonnance</span></li>
+    </ul>
+  </div>
+  <div class="pair" data-rise style="--i:2">
+    <figure class="a"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Plaques_Rue_Pas_Mule_-_Paris_IV_%28FR75%29_-_2026-04-18_-_1.jpg/960px-Plaques_Rue_Pas_Mule_-_Paris_IV_%28FR75%29_-_2026-04-18_-_1.jpg" width="960" height="1078" alt="Les deux plaques émaillées bleues de la rue du Pas-de-la-Mule, 4e arrondissement" loading="lazy"></figure>
+    <figure class="b"><img src="https://images.unsplash.com/photo-1716125561153-cfea3837dcd2?w=600&amp;h=800&amp;q=70&amp;auto=format&amp;fit=crop" width="600" height="800" alt="Les voûtes de brique des arcades de la place des Vosges" loading="lazy"></figure>
+    <p class="cap">Les plaques de la rue et les arcades de la place des Vosges, à quelques pas de la boutique.</p>
+  </div>
+</section>
+
+<section class="chart" aria-labelledby="t-chart">
+  <div>
+    <h2 id="t-chart" data-rise>Ce qu’on y trouve, lu de loin</h2>
+    <p class="sub" data-rise style="--i:1">Comme sur l’échelle de lecture de l’opticien, la première ligne se voit du trottoir d’en face. Les suivantes demandent de pousser la porte.</p>
+    <ul class="rows">
+      <li class="r1" data-rise><span class="l">Vintage</span><span class="a">1/10</span><small>Des montures d’époque chinées dans le monde entier, souvent en exemplaire unique.</small></li>
+      <li class="r2" data-rise style="--i:1"><span class="l">Solaires</span><span class="a">3/10</span><small>Des lunettes de soleil pour la ville et pour l’été, vintage ou non.</small></li>
+      <li class="r3" data-rise style="--i:2"><span class="l">Lunettes de vue</span><span class="a">5/10</span><small>Une monture choisie, des verres correcteurs à votre ordonnance.</small></li>
+      <li class="r4" data-rise style="--i:3"><span class="l">Ajustage et conseil</span><span class="a">8/10</span><small>Branches, plaquettes, inclinaison : une monture ancienne se règle sur votre visage.</small></li>
+      <li class="r5" data-rise style="--i:4"><span class="l">Réseau Opticiens par Conviction</span><span class="a">10/10</span><small>La boutique figure dans ce réseau d’opticiens indépendants.</small></li>
+    </ul>
+  </div>
+  <aside data-rise style="--i:2">
+    <figure class="museum"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Turn_pin_spectacles%2C_tortoiseshell_frames%2C_silver_arms%2C_hall_Wellcome_L0057637.jpg/960px-Turn_pin_spectacles%2C_tortoiseshell_frames%2C_silver_arms%2C_hall_Wellcome_L0057637.jpg" width="960" height="1169" alt="Lunettes à branches pivotantes en écaille et argent, avec leur étui en bois sculpté" loading="lazy"><figcaption>Écaille et argent, poinçon de Paris, 1819–1838. Wellcome Collection.</figcaption></figure>
+    <figure class="vit"><img src="https://images.unsplash.com/photo-1456421385613-d0666bb96b78?w=1000&amp;q=72&amp;auto=format&amp;fit=crop" width="1000" height="664" alt="Deux mains tiennent des lunettes de soleil rondes à monture claire" loading="lazy"></figure>
+  </aside>
+</section>
+
+<section class="sizes cream" id="mesures" aria-labelledby="t-mesures">
+  <div class="lhs">
+    <h2 id="t-mesures" data-rise>Votre taille est gravée sur la branche</h2>
+    <p class="intro-t" data-rise style="--i:1">À l’intérieur d’une branche de vos lunettes actuelles, trois nombres en millimètres&nbsp;: la largeur d’un verre, celle du pont, la longueur de la branche. Recopiez-les&nbsp;: la monture se dessine à vos proportions, et vous les avez sous la main en appelant la boutique.</p>
+    <img data-rise style="--i:2" src="https://images.unsplash.com/photo-1759910546804-68fd991aceac?w=1200&amp;q=72&amp;auto=format&amp;fit=crop" width="1200" height="800" alt="Montures vintage en écaille et en métal sur un comptoir vitré" loading="lazy" style="object-position:50% 70%">
+  </div>
+  <form class="tool" id="sz" data-rise style="--i:1" onsubmit="return false" aria-label="Calcul de la taille de monture">
+    <div class="stamp">
+      <label for="a">Verre<input id="a" inputmode="numeric" type="number" min="38" max="62" value="48" aria-describedby="hint"></label>
+      <span class="box" aria-hidden="true"></span>
+      <label for="p">Pont<input id="p" inputmode="numeric" type="number" min="12" max="26" value="20" aria-describedby="hint"></label>
+      <span class="dash" aria-hidden="true">–</span>
+      <label for="b">Branche<input id="b" class="w3" inputmode="numeric" type="number" min="120" max="155" value="145" aria-describedby="hint"></label>
+    </div>
+    <p class="hint" id="hint">Verre de 38 à 62, pont de 12 à 26, branche de 120 à 155&nbsp;mm.</p>
+    <svg class="frame" id="frame" viewBox="0 0 160 62" role="img" aria-label="Dessin de la monture à vos proportions"></svg>
+    <p class="readout" id="readout" aria-live="polite">Face d’environ 126&nbsp;mm, branche de 145&nbsp;mm.</p>
+    <div class="acts">
+      <a class="btn ink" href="tel:+33142774522">Appeler avec mes mesures</a>
+      <button class="btn sun" type="button" id="copy">Copier mes mesures</button>
+    </div>
+    <p class="copied" id="copied" aria-live="polite"></p>
   </form>
 </section>
 
-<section class="hours field" id="horaires" aria-labelledby="t-horaires">
-  <h2 id="t-horaires" class="sr">Horaires d'ouverture</h2>
-  <ol class="days" id="days">
-    <li data-day="2"><span class="d">Mardi</span><span class="t">14 h 30 – 19 h</span></li>
-    <li data-day="3"><span class="d">Mercredi</span><span class="t">14 h 30 – 19 h</span></li>
-    <li data-day="4"><span class="d">Jeudi</span><span class="t">14 h 30 – 19 h</span></li>
-    <li data-day="5"><span class="d">Vendredi</span><span class="t">14 h 30 – 19 h</span></li>
-    <li data-day="6"><span class="d">Samedi</span><span class="t">14 h 30 – 19 h</span></li>
-    <li data-day="0"><span class="d">Dimanche</span><span class="t">15 h – 19 h</span></li>
-    <li data-day="1" class="off"><span class="d">Lundi</span><span class="t">Fermé</span></li>
-  </ol>
-  <p class="note">Horaires susceptibles de changer pendant les vacances et les jours fériés : un coup de fil au 01 42 77 45 22 avant de traverser Paris.</p>
+<section class="steps green" aria-labelledby="t-steps">
+  <h2 id="t-steps" data-rise>De la vitrine à votre nez</h2>
+  <div class="wrap">
+    <ol>
+      <li style="--c:1;--k:0" data-rise><b>D’abord, vous essayez.</b><span>Formes, couleurs, époques&nbsp;: on compare face au miroir, sans se presser.</span></li>
+      <li style="--c:2;--k:1" data-rise><b>Puis on prend vos mesures.</b><span>Écart entre les pupilles, hauteur des yeux dans la monture choisie.</span></li>
+      <li style="--c:3;--k:2" data-rise><b>Ensuite, les verres sont montés.</b><span>Apportez votre ordonnance&nbsp;: les verres sont faits pour votre vue.</span></li>
+      <li style="--c:4;--k:3" data-rise><b>Enfin, la monture est ajustée.</b><span>Branches et plaquettes réglées à votre visage, pour une paire qui tient.</span></li>
+    </ol>
+    <figure data-rise style="--i:2"><img src="https://images.unsplash.com/photo-1761896883591-0f3e5c9bfba7?w=900&amp;h=600&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="600" alt="Une monture écaille et une monture cristal posées près d’une tasse" loading="lazy"></figure>
+  </div>
 </section>
 
-<figure class="place">
-  <img class="ph" src="https://images.unsplash.com/photo-1656228458637-d8a9a86e87e7?w=2000&q=72&auto=format&fit=crop" width="2000" height="1333" alt="La place des Vosges, sa fontaine et ses pavillons de brique" loading="lazy">
-  <figcaption>La place des Vosges, à une minute à pied de la boutique.</figcaption>
-</figure>
+<section class="hours" id="horaires" aria-labelledby="t-horaires">
+  <div class="hours-head">
+    <h2 id="t-horaires" data-rise>Horaires d’ouverture</h2>
+    <p class="now" id="now" aria-live="polite" data-rise style="--i:1">L’après-midi, du mardi au dimanche</p>
+  </div>
+  <ol class="days" id="days">
+    <li data-day="2"><span>Mardi</span><span class="t">14&nbsp;h&nbsp;30 – 19&nbsp;h</span></li>
+    <li data-day="3"><span>Mercredi</span><span class="t">14&nbsp;h&nbsp;30 – 19&nbsp;h</span></li>
+    <li data-day="4"><span>Jeudi</span><span class="t">14&nbsp;h&nbsp;30 – 19&nbsp;h</span></li>
+    <li data-day="5"><span>Vendredi</span><span class="t">14&nbsp;h&nbsp;30 – 19&nbsp;h</span></li>
+    <li data-day="6"><span>Samedi</span><span class="t">14&nbsp;h&nbsp;30 – 19&nbsp;h</span></li>
+    <li data-day="0"><span>Dimanche</span><span class="t">15&nbsp;h – 19&nbsp;h</span></li>
+    <li data-day="1" class="unk"><span>Lundi</span><span class="t">Appelez avant</span></li>
+  </ol>
+  <p class="note">Horaires de l’après-midi relevés sur la fiche Opticiens par Conviction de la boutique. Le lundi et les matinées varient selon les sources&nbsp;: un coup de fil au 01&nbsp;42&nbsp;77&nbsp;45&nbsp;22 avant de traverser Paris.</p>
+</section>
 
-<section class="contact" id="contact" aria-labelledby="t-contact">
-  <h2 id="t-contact" class="sr">Nous trouver</h2>
-  <ul class="rows">
-    <li>Le Photon des Vosges <img class="arcade ph" src="https://images.unsplash.com/photo-1716125561153-cfea3837dcd2?w=300&h=300&q=70&auto=format&fit=crop" width="300" height="300" alt="Voûtes des arcades de la place des Vosges" loading="lazy"></li>
-    <li><a href="https://www.google.com/maps/dir/?api=1&destination=Le+Photon+des+Vosges,+9+Rue+du+Pas+de+la+Mule,+75004+Paris" target="_blank" rel="noopener">9 rue du Pas de la Mule</a></li>
-    <li>75004 Paris</li>
-    <li class="hrs"><span>Mar – dim</span><span>L'après-midi</span></li>
-    <li><a href="tel:+33142774522">01 42 77 45 22</a></li>
-    <li><a class="hello" href="mailto:lephoton@free.fr?subject=Une%20question%20pour%20Le%20Photon%20des%20Vosges">Écrire <span class="round" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></li>
-  </ul>
+<section class="find cream" id="acces" aria-labelledby="t-acces">
+  <div>
+    <h2 id="t-acces" data-rise>Venir à la boutique</h2>
+    <ul class="addr">
+      <li data-rise translate="no">Le Photon des Vosges</li>
+      <li data-rise style="--i:1"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Photon+des+Vosges,+9+Rue+du+Pas+de+la+Mule,+75004+Paris" target="_blank" rel="noopener">9, rue du Pas-de-la-Mule <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></li>
+      <li data-rise style="--i:2">75004 Paris</li>
+      <li data-rise style="--i:3"><a class="num" href="tel:+33142774522">01&nbsp;42&nbsp;77&nbsp;45&nbsp;22 <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></li>
+      <li class="sm" data-rise style="--i:4">Métro Chemin Vert (ligne&nbsp;8), puis le boulevard Beaumarchais jusqu’à la rue. Par l’autre bout, la rue débouche sur la place des Vosges. Nouveautés et arrivages sur <a href="https://www.facebook.com/LePhotonDesVosges/" target="_blank" rel="noopener">la page Facebook de la boutique</a>.</li>
+    </ul>
+  </div>
+  <div class="pics" data-rise style="--i:2">
+    <figure class="wide"><img src="https://images.unsplash.com/photo-1656228458637-d8a9a86e87e7?w=1600&amp;q=72&amp;auto=format&amp;fit=crop" width="1600" height="1072" alt="La place des Vosges, son jardin, sa fontaine et ses pavillons de brique" loading="lazy"><figcaption class="tag">La place des Vosges</figcaption></figure>
+    <figure class="sq"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/P1100566_Paris_IV_rue_du_Pas-de-la-Mule_rwk.JPG/1280px-P1100566_Paris_IV_rue_du_Pas-de-la-Mule_rwk.JPG" width="1280" height="971" alt="Perspective de la rue du Pas-de-la-Mule" loading="lazy" style="object-position:60% 50%"></figure>
+    <figure class="sq"><img src="https://images.unsplash.com/photo-1716125561153-cfea3837dcd2?w=600&amp;h=600&amp;q=70&amp;auto=format&amp;fit=crop" width="600" height="600" alt="Galerie voûtée sous les arcades de la place des Vosges" loading="lazy"></figure>
+  </div>
 </section>
 </main>
 
 <footer class="foot">
+  <div class="bigplaque plaque" data-rise><div class="in"><span class="arr">4<sup>e</sup> Arrt · 9, rue du Pas-de-la-Mule</span><span class="nm" translate="no">Le Photon des Vosges</span></div></div>
   <div class="fcols">
-    <ul><li>Adresse</li><li>9 rue du Pas de la Mule</li><li>75004 Paris</li><li><a href="https://www.google.com/maps/dir/?api=1&destination=Le+Photon+des+Vosges,+9+Rue+du+Pas+de+la+Mule,+75004+Paris" target="_blank" rel="noopener">Itinéraire</a></li></ul>
-    <ul><li>Contact</li><li><a href="tel:+33142774522">01 42 77 45 22</a></li><li><a href="mailto:lephoton@free.fr">lephoton@free.fr</a></li></ul>
-    <ul><li>Horaires</li><li>Mardi – samedi, 14 h 30 – 19 h</li><li>Dimanche, 15 h – 19 h</li><li>Lundi fermé</li></ul>
-    <ul><li>Suivre</li><li><a href="https://www.facebook.com/LePhotonDesVosges/" target="_blank" rel="noopener">Facebook</a></li><li><a href="#montures">Montures</a></li><li><a href="#mesures">Mesures</a></li></ul>
+    <p><strong>Adresse</strong>9, rue du Pas-de-la-Mule<br>75004 Paris<br><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Le+Photon+des+Vosges,+9+Rue+du+Pas+de+la+Mule,+75004+Paris" target="_blank" rel="noopener">Itinéraire</a></p>
+    <p><strong>Téléphone</strong><a class="num" href="tel:+33142774522">01&nbsp;42&nbsp;77&nbsp;45&nbsp;22</a></p>
+    <p><strong>Horaires</strong>Mardi – samedi, 14&nbsp;h&nbsp;30 – 19&nbsp;h<br>Dimanche, 15&nbsp;h – 19&nbsp;h</p>
+    <p><strong>Suivre</strong><a href="https://www.facebook.com/LePhotonDesVosges/" target="_blank" rel="noopener">Facebook</a><br><a href="#mesures">Vos mesures</a></p>
   </div>
-  <div></div>
-  <p class="display word" data-fit aria-hidden="true"><span>Le Photon</span><span>des Vosges</span></p>
-  <p class="legal">Démo réalisée par Raul Hatos, site non officiel. Photographies d'illustration : Unsplash. © Le Photon des Vosges, Paris 4e.</p>
+  <p class="legal">Démo réalisée par Raul Hatos, site non officiel. Photographies d’illustration Unsplash, sauf&nbsp;: rue du Pas-de-la-Mule par Mbzt (CC&nbsp;BY&nbsp;3.0) ; plaques de la rue par Chabe01 (CC&nbsp;BY-SA&nbsp;4.0) ; lunettes en écaille, Wellcome Collection (CC&nbsp;BY&nbsp;4.0), via Wikimedia Commons.</p>
 </footer>
 
-
 <script>
-// fit display lines to the frame width
-function fit(){
-  document.querySelectorAll('[data-fit]').forEach(el=>{
-    el.style.fontSize='100px';
-    const cs=getComputedStyle(el),avail=el.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
-    const spans=[...el.querySelectorAll('span')],inline=getComputedStyle(spans[0]).display==='inline';
-    const rw=n=>{const r=document.createRange();r.selectNodeContents(n);return r.getBoundingClientRect().width};
-    const w=inline?rw(el):Math.max(...spans.map(rw));
-    el.style.fontSize=(100*avail/w*0.995)+'px';
+(function(){
+  /* ouvert / fermé, heure de Paris */
+  var H={2:[870,1140],3:[870,1140],4:[870,1140],5:[870,1140],6:[870,1140],0:[900,1140]};
+  var N=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  function hm(m){var h=Math.floor(m/60),r=m%60;return h+' h'+(r?' '+r:'')}
+  function paris(){var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});var d=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'].indexOf(o.weekday);return{d:d,m:+o.hour*60+ +o.minute}}
+  function next(d,m){for(var i=0;i<8;i++){var k=(d+i)%7,h=H[k];if(h&&(i>0||m<h[0]))return(i===0?'aujourd’hui':i===1?'demain':N[k])+' à '+hm(h[0])}return''}
+  function upd(){
+    var t=paris(),h=H[t.d],s=document.getElementById('status'),tx,cls;
+    if(h&&t.m>=h[0]&&t.m<h[1]){tx='Ouvert, jusqu’à '+hm(h[1]);cls='open'}
+    else if(t.d===1){tx='Lundi : appelez avant de venir. Sinon, ouvre '+next(t.d,t.m);cls='closed'}
+    else{tx='Fermé pour l’instant, ouvre '+next(t.d,t.m);cls='closed'}
+    s.className='status '+cls;s.querySelector('span').textContent=tx;
+    document.getElementById('now').textContent=tx;
+    [].forEach.call(document.querySelectorAll('#days li'),function(li){li.classList.toggle('today',+li.dataset.day===t.d)});
+  }
+  upd();setInterval(upd,60000);
+
+  /* fondu lent des photos, avec pause */
+  var imgs=[].slice.call(document.querySelectorAll('#fade img')),i=0,timer=null,btn=document.getElementById('pause');
+  var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function step(){imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on')}
+  function play(){if(!timer&&!still)timer=setInterval(step,7000)}
+  function stop(){clearInterval(timer);timer=null}
+  if(still){btn.hidden=true}else{play()}
+  btn.addEventListener('click',function(){var p=btn.getAttribute('aria-pressed')==='true';if(p){btn.setAttribute('aria-pressed','false');btn.setAttribute('aria-label','Mettre le diaporama en pause');btn.innerHTML='<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>';play()}else{btn.setAttribute('aria-pressed','true');btn.setAttribute('aria-label','Relancer le diaporama');btn.innerHTML='<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2l10 6-10 6z"/></svg>';stop()}});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else if(btn.getAttribute('aria-pressed')!=='true')play()});
+
+  /* monture dessinée à partir des chiffres de la branche */
+  var A=document.getElementById('a'),P=document.getElementById('p'),B=document.getElementById('b'),svg=document.getElementById('frame'),out=document.getElementById('readout');
+  function cl(v,lo,hi,df){v=parseInt(v,10);return isNaN(v)?df:Math.min(hi,Math.max(lo,v))}
+  function draw(){
+    var a=cl(A.value,38,62,48),p=cl(P.value,12,26,20),b=cl(B.value,120,155,145);
+    var rim=3,face=2*a+p+2*rim+4,x0=(160-face)/2+rim+2,h=a*.78,y=8;
+    var lx=x0,rx=x0+a+p,r=Math.min(14,h/2);
+    function lens(x){return '<rect x="'+x+'" y="'+y+'" width="'+a+'" height="'+h.toFixed(1)+'" rx="'+r+'" fill="#d6def3" fill-opacity=".55" stroke="#13285c" stroke-width="'+rim+'"/>'}
+    var by=y+h*.28;
+    svg.innerHTML=lens(lx)+lens(rx)+
+      '<path d="M'+(lx+a+rim/2)+' '+(by+2)+' Q '+(lx+a+p/2)+' '+(by-5)+' '+(rx-rim/2)+' '+(by+2)+'" fill="none" stroke="#13285c" stroke-width="'+rim+'" stroke-linecap="round"/>'+
+      '<path d="M'+(lx-rim/2)+' '+(y+6)+' h-'+(rim+2)+'M'+(rx+a+rim/2)+' '+(y+6)+' h'+(rim+2)+'" stroke="#13285c" stroke-width="'+rim+'" stroke-linecap="round"/>'+
+      '<circle cx="'+(rx+a*.72)+'" cy="'+(y+h*.3)+'" r="2.4" fill="#f2d54a"/>';
+    out.textContent='Face d’environ '+face+' mm, branche de '+b+' mm.';
+    return a+'□'+p+' '+b;
+  }
+  [A,P,B].forEach(function(el){el.addEventListener('input',draw);el.addEventListener('change',function(){el.value=cl(el.value,+el.min,+el.max,+el.defaultValue);draw()})});
+  draw();
+  document.getElementById('copy').addEventListener('click',function(){
+    var t='Mes mesures : '+draw()+' (verre, pont, branche en mm)',m=document.getElementById('copied');
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){m.textContent='Copié : '+t},function(){m.textContent=t})}else{m.textContent=t}
   });
-}
-document.fonts.ready.then(fit);addEventListener('resize',fit);fit();
 
-// live status: Paris time
-const H={0:[900,1140],1:null,2:[870,1140],3:[870,1140],4:[870,1140],5:[870,1140],6:[870,1140]};
-const hm=m=>Math.floor(m/60)+' h'+(m%60?' '+String(m%60).padStart(2,'0'):'');
-const names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-function paris(){const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t).value;const wd=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'].indexOf(g('weekday'));return{d:wd,m:+g('hour')*60+ +g('minute')}}
-function status(){
-  const {d,m}=paris(),el=document.getElementById('status'),t=el.querySelector('span'),h=H[d];
-  document.querySelectorAll('#days li').forEach(li=>li.classList.toggle('today',+li.dataset.day===d));
-  if(h&&m>=h[0]&&m<h[1]){el.classList.add('open');t.textContent='Ouvert maintenant, jusqu\'à '+hm(h[1]);return}
-  el.classList.remove('open');
-  if(h&&m<h[0]){t.textContent='Fermé, ouvre aujourd\'hui à '+hm(h[0]);return}
-  for(let i=1;i<8;i++){const n=(d+i)%7;if(H[n]){t.textContent='Fermé, ouvre '+(i===1?'demain':names[n])+' à '+hm(H[n][0]);return}}
-}
-status();setInterval(status,60000);
-
-// index descriptions
-const desc=document.getElementById('desc');
-document.querySelectorAll('.cols li').forEach(li=>{const s=()=>desc.textContent=li.dataset.d;li.addEventListener('mouseenter',s);li.addEventListener('focus',s)});
-
-// temple reader
-const $=id=>document.getElementById(id);
-function clamp(v,lo,hi,def){v=parseInt(v,10);return isNaN(v)?def:Math.min(hi,Math.max(lo,v))}
-function draw(){
-  const a=clamp($('a').value,38,62,48),p=clamp($('p').value,12,26,20),b=clamp($('b').value,120,155,145);
-  const lh=a*0.78,y=8,cx=80,w=2*a+p,x0=cx-w/2,r=Math.min(a,lh)*0.42;
-  const lens=x=>`<rect x="${x}" y="${y}" width="${a}" height="${lh}" rx="${r}" fill="none" stroke="currentColor" stroke-width="2.4"/>`;
-  $('frame').setAttribute('viewBox',`${cx-80} 0 160 ${y+lh+22}`);
-  $('frame').innerHTML=`<g style="color:var(--ink)">${lens(x0)}${lens(x0+a+p)}
-   <path d="M${x0+a} ${y+lh*0.32} q${p/2} -${Math.min(8,p*0.4)} ${p} 0" fill="none" stroke="currentColor" stroke-width="2.4"/>
-   <path d="M${x0} ${y+lh*0.22} h-${Math.max(2,(160-w)/2-4)}" stroke="currentColor" stroke-width="2.4"/>
-   <path d="M${x0+w} ${y+lh*0.22} h${Math.max(2,(160-w)/2-4)}" stroke="currentColor" stroke-width="2.4"/></g>
-   <g font-family="Albert Sans,sans-serif" font-size="5.2" fill="var(--muted)" text-anchor="middle">
-   <text x="${x0+a/2}" y="${y+lh+11}">${a} mm</text><text x="${cx}" y="${y+lh+11}">${p}</text><text x="${x0+a+p+a/2}" y="${y+lh+11}">${a} mm</text>
-   <text x="${cx}" y="${y+lh+20}">largeur des verres et du pont : ${w} mm</text></g>`;
-  $('readout').innerHTML=`Votre marquage : <b>${a} □ ${p} ${b}</b>. Verres et pont réunis : <b>${w} mm</b> de face, hors cerclage. D'une époque à l'autre, les tailles changent : ces chiffres aident à viser juste.`;
-  const body=`Bonjour,\n\nVoici les mesures gravées sur la branche de mes lunettes actuelles : ${a} □ ${p} ${b}.\nAuriez-vous des montures vintage proches de cette taille ?\n\nMerci,`;
-  $('send').href='mailto:lephoton@free.fr?subject='+encodeURIComponent('Mes mesures : '+a+' □ '+p+' '+b)+'&body='+encodeURIComponent(body);
-}
-['a','p','b'].forEach(id=>{$(id).addEventListener('input',draw);$(id).addEventListener('change',e=>{const lim={a:[38,62,48],p:[12,26,20],b:[120,155,145]}[id];e.target.value=clamp(e.target.value,...lim);draw()})});
-draw();
-
-// entrances
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('[data-rise]').forEach(el=>io.observe(el));
+  /* apparitions */
+  var els=document.querySelectorAll('[data-rise]');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});[].forEach.call(els,function(e){io.observe(e)})}
+  else{[].forEach.call(els,function(e){e.classList.add('in-view')})}
+})();
 </script>
 </body>
 </html>
