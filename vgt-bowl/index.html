@@ -4,499 +4,599 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>VGT Bowl · Bowls et plats maison, Paris 7e</title>
-<meta name="description" content="VGT Bowl, 22 rue de Beaune, Paris 7e. Buddha bowl, plats chauds, toasts et desserts faits maison avec des produits de saison. Déjeuner du lundi au samedi, sur place ou à emporter.">
+<title>VGT Bowl · Buddha bowls maison, rue de Beaune, Paris 7e</title>
+<meta name="description" content="VGT Bowl, 22 rue de Beaune, Paris 7e : Buddha Bowl du jour, plats chauds, toastés sur pain Poilâne et desserts faits maison. Le midi, sur place ou à emporter.">
+<meta name="theme-color" content="#f1f2ee">
+<meta property="og:title" content="VGT Bowl · Buddha bowls maison, rue de Beaune">
+<meta property="og:description" content="Végétal, gourmand, tonique : le Buddha Bowl du jour dès 12,90 €, au 22 rue de Beaune, Paris 7e.">
+<meta property="og:image" content="https://media.spinach.guide/v1/p/f02e7b66f3aa706e/2559995405/1600.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23245c1c'/%3E%3Cpath d='M6 14h20a10 10 0 0 1-20 0z' fill='%23b9dc4a'/%3E%3Cpath d='M12 13c0-4 3-6 6-7-1 3-2 5-6 7z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ground:#f7fbf5;
-  --tone:#eef3e6;
-  --tone-2:#e2ecd8;
-  --aloe:#c1fbd4;
-  --pista:#d4f9e0;
-  --ink:#000;
-  --body:#1d1f1c;
-  --muted:#4d5450;
-  --night:#0f1a14;
-  --pad:24px;
-  --f:"Inter Tight",Helvetica,Arial,sans-serif;
+  --ground:#f1f2ee;
+  --tone:#e4e6df;
+  --paper:#fafbf8;
+  --ink:#17221a;
+  --leaf:#245c1c;
+  --leaf-2:#1b4915;
+  --lime:#b9dc4a;
+  --lime-soft:#dcedb0;
+  --slate:#1e2622;
+  --chalk:#eef0ea;
+  --gutter:clamp(16px,3vw,40px);
+  --f:"Bricolage Grotesque",system-ui,sans-serif;
+  --hand:"Caveat",cursive;
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scrollbar-color:#000 var(--tone)}
-body{background:var(--ground);color:var(--body);font:400 17px/1.55 var(--f);overflow-x:clip}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scrollbar-color:var(--leaf) var(--tone)}
+body{background:var(--ground);color:var(--ink);font:400 18px/1.55 var(--f);overflow-x:clip;touch-action:manipulation}
 img{display:block;max-width:100%;height:auto}
-a{color:inherit}
-::selection{background:var(--aloe);color:#000}
-:focus-visible{outline:3px solid #000;outline-offset:3px;border-radius:4px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.num{font-variant-numeric:tabular-nums}
-h2{font:600 clamp(30px,3vw,40px)/1.05 var(--f);letter-spacing:-.03em;color:var(--ink);text-wrap:balance}
+a{color:inherit;text-underline-offset:3px}
+::selection{background:var(--lime);color:var(--ink)}
+:focus-visible{outline:3px solid var(--leaf);outline-offset:3px;border-radius:6px}
+.slate :focus-visible,.foot :focus-visible{outline-color:#fff}
+.num,.price{font-variant-numeric:tabular-nums}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.03em;line-height:1}
+h2{font-size:clamp(34px,4.4vw,60px);font-weight:800}
+h3{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.wrap{padding:0 var(--gutter);max-width:1520px;margin:0 auto}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:12px 16px;border-radius:8px;z-index:20;transition:transform .2s var(--ease)}
+.skip:focus{transform:translateY(72px)}
+.demo{background:var(--ink);color:var(--chalk);font-size:14px;text-align:center;padding:8px 16px}
 
-/* bandeau démo */
-.demo{background:#000;color:#f7fbf5;font:500 13px/1.3 var(--f);text-align:center;padding:7px 16px}
-
-/* boutons : une seule forme, la pilule */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;border:0;font:600 16px/1 var(--f);text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:0;font:700 16px/1 var(--f);text-decoration:none;cursor:pointer;transition:transform .18s var(--ease),background-color .18s,color .18s}
 .btn:active{transform:scale(.96)}
-.btn-ink{background:#000;color:#fff}
-.btn-ink:hover{background:#26302a}
-.btn-soft{background:var(--aloe);color:#000}
-.btn-soft:hover{background:#a8f2c0}
 .btn svg{width:18px;height:18px;flex:none}
+.btn-leaf{background:var(--leaf);color:#fff}
+.btn-leaf:hover{background:var(--leaf-2)}
+.btn-pale{background:var(--tone);color:var(--ink)}
+.btn-pale:hover{background:#d6d9cf}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{background:#cbe86a}
 
-/* HERO */
-.hero{position:relative;height:calc(100svh - 32px);min-height:640px;max-height:1100px;display:grid;grid-template-rows:58fr auto auto;background:var(--ground)}
-.hero-photo{position:relative;overflow:hidden;min-height:300px;background:var(--tone)}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;animation:drift 26s ease-in-out infinite alternate}
-@keyframes drift{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.1) translate3d(-1.5%,-1%,0)}}
-.nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad)}
-.nav .tag{background:var(--ground);color:#000;font:600 15px/1 var(--f);padding:10px 14px;border-radius:999px;text-decoration:none}
-.nav ul{display:flex;gap:4px;list-style:none;background:var(--ground);border-radius:999px;padding:4px}
-.nav ul a{display:block;padding:8px 14px;border-radius:999px;font:500 15px/1 var(--f);text-decoration:none;color:#000;transition:background-color .2s}
-.nav ul a:hover{background:var(--aloe)}
-.strip{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px var(--pad) 0}
-.strip p{max-width:48ch;font-size:17px;color:var(--body)}
-.strip .acts{display:flex;gap:10px;flex:none}
-.word{padding:0 var(--pad) 18px;overflow:hidden}
-h1.mono{display:flex;align-items:flex-end;gap:.2em;font:600 clamp(96px,18.6vw,330px)/.8 var(--f);letter-spacing:-.06em;color:#000;white-space:nowrap;transform-origin:50% 100%}
-h1.mono .o{display:inline-block;width:.74em;height:.74em;border-radius:50%;overflow:hidden;margin:0 .02em .015em;flex:none;background:var(--tone);outline:.045em solid #000;outline-offset:-.045em}
-h1.mono .o img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-h1.mono:hover .o img{transform:rotate(25deg) scale(1.06)}
-@supports (animation-timeline:scroll()){
-  h1.mono{animation:shrink linear both;animation-timeline:scroll(root);animation-range:0 90vh}
-  @keyframes shrink{to{transform:scale(.93)}}
-}
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{height:40px;width:auto}
+.brand small{display:block;font-size:14px;line-height:1.2;color:#3d4a40}
+.nav ul{display:flex;gap:28px;list-style:none;font-weight:500}
+.nav ul a{text-decoration:none;padding:12px 0;transition:color .18s}
+.nav ul a:hover{color:var(--leaf)}
+.tel-s{display:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);grid-template-areas:"top media" "bottom media";column-gap:clamp(28px,4vw,64px);align-items:start;padding:16px 0 40px}
+.h-top{grid-area:top;align-self:end;padding-top:clamp(8px,3vh,40px)}
+.h-bottom{grid-area:bottom}
+.h-media{grid-area:media}
+h1{font-size:clamp(44px,5.4vw,84px);font-weight:800;line-height:.98;letter-spacing:-.04em}
+.lead{margin-top:24px;font-size:18px;line-height:1.5;max-width:34em}
+.lead strong{font-weight:700;color:var(--leaf)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
+.tile{background:var(--tone);border-radius:16px;padding:16px 18px}
+.tile b{display:block;font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1.05;white-space:nowrap}
+.tile span{display:block;font-size:14px;line-height:1.35;margin-top:4px;color:#33403a}
+.tile.on{background:var(--leaf);color:#fff}
+.tile.on span{color:#e3f0d6}
+.tile.lime{background:var(--lime)}
+.tile.lime span{color:#24301c}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.status{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:18px;font-size:16px;font-weight:500}
+.status span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:#9aa39c;flex:none}
+.dot.open{background:#2f9a2a}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:2.6fr 1fr;gap:8px;height:clamp(520px,calc(100svh - 150px),760px);background:var(--leaf);padding:8px;border-radius:24px}
+.mosaic figure{position:relative;overflow:hidden;border-radius:16px;background:var(--tone)}
+.mosaic figure:first-child{grid-column:1 / 3}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic figure:first-child img{object-position:50% 12%}
+.cap{position:absolute;left:12px;bottom:12px;background:var(--paper);color:var(--ink);font-size:14px;font-weight:600;padding:7px 12px;border-radius:999px;line-height:1.2}
+.cap .price{color:var(--leaf)}
 
 /* sections */
-section{scroll-margin-top:16px}
-.wrap{padding:0 var(--pad);max-width:1480px;margin:0 auto}
+section{padding:clamp(80px,11vw,160px) 0 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px 48px;flex-wrap:wrap;margin-bottom:40px}
+.sec-head p{max-width:34em;font-size:18px}
 
-/* COMPOSER */
-.compose{background:var(--tone);padding:120px 0}
-.compose .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;min-height:80svh}
-.plate{position:relative;background:var(--aloe);aspect-ratio:1;display:grid;place-items:center;align-self:center}
-.plate svg{width:86%;height:86%;overflow:visible}
-.plate .sec{transition:opacity .45s var(--ease),transform .55s var(--ease);transform-origin:250px 250px}
-.plate .sec.off{opacity:0;transform:scale(.6)}
-.plate figcaption{position:absolute;left:20px;bottom:16px;font:500 14px/1.3 var(--f);color:#0d2a18}
-.panel{display:flex;flex-direction:column;gap:28px;justify-content:space-between}
-.panel .lead{max-width:40ch;margin-top:16px;color:var(--body)}
-.tabs{display:flex;gap:6px;flex-wrap:wrap}
-.tabs button{font:500 17px/1 var(--f);background:none;border:0;padding:10px 14px;border-radius:999px;color:var(--muted);cursor:pointer;transition:background-color .2s,color .2s}
-.tabs button[aria-selected=true]{background:#000;color:#fff}
-.tabs button:hover:not([aria-selected=true]){background:var(--tone-2);color:#000}
-.opts[hidden]{display:none}
-.opts{display:flex;flex-wrap:wrap;gap:8px;min-height:120px;align-content:flex-start}
-.opts label{position:relative;cursor:pointer}
-.opts input{position:absolute;opacity:0;inset:0;cursor:pointer}
-.opts span{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:var(--ground);font:500 16px/1 var(--f);color:#000;transition:background-color .2s,transform .2s var(--ease)}
-.opts span i{width:14px;height:14px;border-radius:50%;flex:none}
-.opts label:hover span{background:#fff}
-.opts input:checked+span{background:#000;color:#fff}
-.opts input:focus-visible+span{outline:3px solid #000;outline-offset:3px}
-.opts label:active span{transform:scale(.95)}
-.hint{font-size:15px;color:var(--muted)}
-.recap{background:var(--ground);padding:20px 22px;font-size:17px}
-.recap b{color:#000;font-weight:600}
-.cells{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.cells .btn{min-height:64px;width:100%}
+/* ardoise */
+.slate{background:var(--slate);color:var(--chalk);border-radius:28px;padding:clamp(28px,4vw,56px);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start}
+.slate h2{color:#fff}
+.slate .intro{margin:16px 0 28px;font-size:18px;max-width:32em;color:#e4e2d8}
+fieldset{border:0;margin-top:40px}
+legend{font:700 18px/1.2 var(--f);color:var(--lime);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chip label{display:flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:999px;background:#2c3631;color:var(--chalk);font-size:16px;font-weight:500;cursor:pointer;transition:background-color .18s,color .18s,transform .18s var(--ease)}
+.chip label small{font-size:14px;color:#bfc9b8;font-variant-numeric:tabular-nums}
+.chip input:checked+label{background:var(--lime);color:var(--ink)}
+.chip input:checked+label small{color:#2a3a1d}
+.chip input:active+label{transform:scale(.96)}
+.chip input:focus-visible+label{outline:3px solid #fff;outline-offset:2px}
+.board{position:sticky;top:24px}
+.bowl-art{width:100%;max-width:420px;margin:0 auto;display:block}
+.bowl-art .ing{transition:opacity .35s var(--ease),transform .35s var(--ease);transform-origin:center;transform-box:fill-box}
+.bowl-art .ing.off{opacity:0;transform:scale(.6)}
+.ticket{margin-top:20px;font-size:18px;line-height:1.45;color:var(--chalk)}
+#t-lines{font-family:var(--hand);font-size:24px;line-height:1.2}
+.ticket .total{display:flex;justify-content:space-between;align-items:baseline;background:#2c3631;border-radius:14px;margin-top:14px;padding:10px 16px;font-size:18px;font-weight:700;color:#fff}
+.ticket .total span:last-child{font-family:var(--f);font-size:32px;font-weight:800;font-variant-numeric:tabular-nums}
+.slate .note{font-size:14px;color:#c9cfc3;margin-top:14px}
+.slate .actions{margin-top:20px}
+.ardoise-photo{margin-top:28px;display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;font-size:16px;color:#d8dccf}
+.ardoise-photo img{width:120px;height:150px;object-fit:cover;border-radius:12px}
 
-/* CARTE */
-.menu{padding:180px 0 140px}
-.menu .wrap{display:grid;grid-template-columns:min(620px,46%) 1fr;gap:64px;align-items:start}
-.col{container-type:inline-size}
-.menu h2.giant{font:700 31cqw/.78 var(--f);letter-spacing:-.065em;margin-left:-.04em;margin-bottom:24px}
-.menu details{background:var(--tone);margin-bottom:6px;border-radius:6px}
-.menu summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:58px;padding:0 20px;font:600 17px/1 var(--f);color:#000;transition:background-color .2s}
-.menu summary::-webkit-details-marker{display:none}
-.menu summary:hover{background:var(--tone-2);border-radius:6px}
-.menu summary .pl{width:16px;height:16px;position:relative;flex:none;transition:transform .3s var(--ease)}
-.menu summary .pl::before,.menu summary .pl::after{content:"";position:absolute;background:#000;left:0;top:7px;width:16px;height:2px}
-.menu summary .pl::after{transform:rotate(90deg)}
-.menu details[open] .pl{transform:rotate(45deg)}
-.menu ul{list-style:none;padding:4px 20px 22px}
-.menu li{display:flex;justify-content:space-between;gap:16px;padding:7px 0;font-size:16px}
-.menu li span:first-child{color:#000}
-.menu li small{display:block;font-size:14px;color:var(--muted)}
-.menu li .p{font-variant-numeric:tabular-nums;white-space:nowrap;color:#000;font-weight:500}
-.menu .note{margin-top:18px;font-size:15px;color:var(--muted)}
-.pics{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:sticky;top:24px}
-.pics figure{margin:0}
-.pics figure:first-child{grid-column:1/-1}
-.pics img{width:100%;aspect-ratio:1;object-fit:cover}
-.pics figure:first-child img{aspect-ratio:16/10}
-.pics figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+/* carte */
+.carte{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.menu-block{background:var(--paper);border-radius:22px;padding:28px}
+.menu-block h3{margin-bottom:6px}
+.menu-block > p{font-size:16px;color:#3d4a40;margin-bottom:14px}
+.dish{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:12px 0}
+.dish + .dish{border-top:2px solid var(--ground)}
+.dish h4{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.dish .price{font-size:18px;font-weight:700;color:var(--leaf);white-space:nowrap}
+.dish p{grid-column:1 / -1;font-size:16px;color:#3d4a40;line-height:1.45}
+.b-hot{grid-column:span 5}
+.b-hot-img{grid-column:span 3;border-radius:22px;overflow:hidden;min-height:100%}
+.b-hot-img img,.b-toast-img img{width:100%;height:100%;object-fit:cover}
+.b-toast{grid-column:span 4;background:var(--lime-soft)}
+.b-toast .dish + .dish{border-top-color:#cfe39a}
+.b-toast-img{grid-column:span 4;border-radius:22px;overflow:hidden}
+.b-dessert{grid-column:span 4}
+.b-juice{grid-column:span 4;background:var(--leaf);color:#fff}
+.b-juice > p,.b-juice .dish p{color:#dcebcf}
+.b-juice .dish .price{color:var(--lime)}
+.b-juice .dish + .dish{border-top-color:#3a7330}
+.b-drinks{grid-column:span 12;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 40px}
+.b-drinks h3{grid-column:1 / -1}
+.b-drinks ul{list-style:none}
+.b-drinks li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;font-size:16px}
+.b-drinks li span:last-child{font-weight:700;color:var(--leaf);font-variant-numeric:tabular-nums;white-space:nowrap}
+.carte-note{margin-top:18px;font-size:16px;color:#3d4a40}
 
-/* MAISON */
-.about{padding:40px 0 160px}
-.about .row{display:grid;grid-template-columns:34% 1fr;gap:0;align-items:start}
-.facts{display:grid;gap:20px;font-size:15px}
-.facts dt{color:var(--muted)}
-.facts dd{color:#000;font-weight:500}
-.about .big{font:400 clamp(21px,1.75vw,27px)/1.35 var(--f);color:#000;max-width:36em;letter-spacing:-.01em}
-.about .big+.big{margin-top:18px}
-.duo{display:grid;grid-template-columns:5fr 7fr;gap:10px;margin-top:96px}
-.duo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+/* la salle */
+.salle{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center}
+.salle-pics{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;align-items:end}
+.salle-pics figure{border-radius:20px;overflow:hidden;position:relative}
+.salle-pics img{width:100%;height:100%;object-fit:cover}
+.salle-pics figure:first-child{aspect-ratio:3/4}
+.salle-pics figure:last-child{aspect-ratio:3/4}
+.salle-pics figure:last-child img{object-position:50% 20%}
+.salle-text p{margin-top:20px;font-size:18px}
+.facts{list-style:none;margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+.facts li{padding-left:22px;position:relative;font-size:16px;line-height:1.4}
+.facts li::before{content:"";position:absolute;left:0;top:6px;width:12px;height:12px;border-radius:50%;background:var(--lime)}
+.facts b{display:block;font-size:18px}
+.group{margin-top:12px;background:var(--lime);border-radius:14px;padding:16px 18px;font-size:16px}
+.group b{font-size:18px}
 
-/* CONTACT */
-.contact{background:var(--aloe)}
-.contact h2{padding:110px var(--pad) 28px;max-width:1480px;margin:0 auto}
-.rows a,.rows div{display:block;text-decoration:none}
-.rows>*{font:500 clamp(40px,5.6vw,86px)/1 var(--f);letter-spacing:-.04em;color:#000;padding:44px var(--pad) 22px;transition:background-color .25s}
-.rows>*:nth-child(odd){background:var(--pista)}
-.rows>*:nth-child(even){background:var(--aloe)}
-.rows a:hover{background:#fff}
-.rows .live{display:block;font:500 17px/1.3 var(--f);letter-spacing:0;margin-top:14px;color:#0d2a18}
-.rows .live b{display:inline-block;width:10px;height:10px;border-radius:50%;background:#1a7f3c;margin-right:8px;vertical-align:1px}
-.rows .live.closed b{background:#a33}
-.hello{display:flex;align-items:center;gap:24px}
-.hello .go{display:inline-grid;place-items:center;width:.95em;height:.95em;border-radius:50%;background:#000;color:#fff;transition:transform .3s var(--ease)}
-.hello:hover .go{transform:translateX(8px)}
-.hello .go svg{width:.42em;height:.42em}
-.hello small{font:500 17px/1.3 var(--f);letter-spacing:0;display:block;margin-top:10px;color:#0d2a18}
+/* horaires */
+.hours-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.hours{background:var(--paper);border-radius:22px;padding:28px}
+.hours table{width:100%;border-collapse:collapse;font-size:18px;margin-top:8px}
+.hours td{padding:12px 0;border-top:2px solid var(--ground)}
+.hours td:last-child{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.hours tr.today td{color:var(--leaf)}
+.hours tr.today td:first-child::after{content:" · aujourd’hui";font-weight:500}
+.live{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;margin-bottom:6px}
+.hours .small{font-size:14px;color:#3d4a40;margin-top:14px}
+.access{background:var(--leaf);color:#fff;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:18px}
+.access address{font-style:normal;font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.access ul{list-style:none;display:grid;gap:10px;font-size:16px;color:#e6f1dc}
+.access ul b{color:#fff}
+.access .actions{margin-top:auto}
+.plan{width:100%;height:auto;display:block;border-radius:14px;background:#1b4915}
+.access .btn-pale{background:#fff}
 
-/* FOOTER */
-footer{overflow:hidden;background:var(--night);color:#d7e2d9;min-height:92svh;display:grid;grid-template-rows:auto 1fr auto;padding:44px var(--pad) 22px}
-footer .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;font-size:16px;max-width:1480px}
-footer .cols p:first-child{color:#fff;font-weight:600}
-footer a{text-decoration:none}
-footer a:hover{color:var(--aloe)}
-footer .wm{font:700 21.4vw/.8 var(--f);letter-spacing:-.065em;color:var(--aloe);white-space:nowrap;margin:0 0 18px -.03em}
-footer .legal{font-size:13px;color:#aebcb2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* pied */
+.foot{margin-top:clamp(80px,11vw,160px);background:var(--lime);color:var(--ink);padding:48px 0 28px}
+.foot-top{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap}
+.foot .big svg{width:min(620px,86vw);height:auto}
+.foot p{font-size:16px}
+.foot nav{display:flex;gap:20px;flex-wrap:wrap;font-weight:600}
+.foot nav a{padding:10px 0}
+.foot .fine{margin-top:28px;font-size:14px;color:#2a3a1d}
 
-/* entrées */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.rv.in{opacity:1;transform:none}
-.no-js .rv{opacity:1;transform:none}
+/* révélation */
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv:nth-child(2){transition-delay:.07s}
+.js .rv:nth-child(3){transition-delay:.14s}
+.js .rv:nth-child(4){transition-delay:.21s}
+.js .hero .rv.in{transition-delay:0s}
+.mosaic img{transition:transform 1.2s var(--ease)}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic figure:first-child img{animation:drift 24s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.09) translate3d(-1.5%,0,0)}}
+.paused .mosaic figure:first-child img{animation-play-state:paused}
+.pause{position:absolute;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:transform .18s var(--ease)}
+.pause:active{transform:scale(.96)}
+.pause svg{width:16px;height:16px}
 
-/* téléphone */
-@media (max-width:820px){
-  :root{--pad:16px}
-  .hero{grid-template-rows:46svh auto auto;height:auto;min-height:0;max-height:none}
+@media (max-width:1100px){
   .nav ul{display:none}
-  .nav .menu-link{display:block}
-  .strip{flex-direction:column;align-items:flex-start;padding-top:20px;gap:16px}
-  .strip p{font-size:16px}
-  .word{padding-top:26px;padding-bottom:14px}
-  h1.mono{flex-direction:column;align-items:flex-start;font-size:33vw;line-height:.82;letter-spacing:-.065em}
-  footer .wm{font-size:35vw;white-space:normal;line-height:.82}
-  .compose{padding:72px 0}
-  .compose .wrap{grid-template-columns:1fr;gap:28px;min-height:0}
-  .cells{grid-template-columns:1fr}
-  .cells .btn{min-height:58px}
-  .menu{padding:96px 0 72px}
-  .menu .wrap{grid-template-columns:1fr;gap:40px}
-  .pics{position:static}
-  .about{padding:24px 0 96px}
-  .about .row{grid-template-columns:1fr}
-  .facts{grid-template-columns:1fr 1fr;gap:16px;order:2;margin-top:36px}
-  .about .big{font-size:19px}
-  .duo{grid-template-columns:1fr;margin-top:56px}
-  .contact h2{padding-top:72px}
-  .rows>*{font-size:9.6vw;padding:30px var(--pad) 16px}
-  footer .cols{grid-template-columns:1fr 1fr;gap:28px}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .mosaic{height:clamp(520px,calc(100svh - 140px),680px)}
+  .slate{grid-template-columns:1fr}
+  .board{position:static;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center}
+  .b-hot{grid-column:span 7}.b-hot-img{grid-column:span 5}
+  .b-toast,.b-toast-img{grid-column:span 6}
+  .b-dessert,.b-juice{grid-column:span 6}
+  .b-drinks{grid-template-columns:1fr 1fr}
 }
-@media (min-width:821px){.nav .menu-link{display:none}}
+@media (max-width:760px){
+  body{font-size:16px}
+  .brand small{display:none}
+  .nav .btn{min-height:46px;padding:0 18px;font-size:16px}
+  .tel-l{display:none}.tel-s{display:inline}
+  .brand svg{height:32px}
+  .hero{grid-template-columns:1fr;grid-template-areas:"top" "media" "bottom";padding-top:4px}
+  h1{font-size:clamp(40px,11vw,54px)}
+  .lead{font-size:16px;margin-top:16px}
+  .mosaic{height:auto;grid-template-rows:200px 130px;margin-top:22px;padding:8px;gap:8px;border-radius:20px}
+  .tile b{font-size:24px}
+  .cap-p{display:none}
+  .actions .btn{flex:1 1 auto}
+  .sec-head{margin-bottom:28px}
+  .board{display:block}
+  .carte{grid-template-columns:1fr}
+  .carte > *{grid-column:auto !important}
+  .b-hot-img,.b-toast-img{aspect-ratio:16/10}
+  .b-drinks{grid-template-columns:1fr}
+  .salle,.hours-grid{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr}
+  .menu-block,.hours,.access{padding:22px}
+}
 @media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
   html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms !important;animation:none !important}
+  .js .rv{opacity:1;transform:none}
 }
 </style>
 </head>
-<body class="no-js">
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 <p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
 
-<header class="hero">
-  <div class="hero-photo">
-    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=2000&q=72&auto=format&fit=crop" width="2000" height="1333" alt="Bacs de légumes frais : brocoli, carottes, maïs, haricots rouges, olives, pois chiches.">
-    <nav class="nav" aria-label="Navigation principale">
-      <a class="tag" href="tel:+33147039207">01 47 03 92 07</a>
-      <ul>
-        <li><a href="#composer">Composer</a></li>
-        <li><a href="#carte">Carte</a></li>
-        <li><a href="#maison">La maison</a></li>
-        <li><a href="#contact">Horaires</a></li>
-      </ul>
-      <a class="tag menu-link" href="#carte">Carte</a>
-    </nav>
-  </div>
-  <div class="strip">
-    <p class="rv">Bowls de saison, plats chauds et desserts faits maison. Déjeuner du lundi au samedi, sur place ou à emporter, 22 rue de Beaune, Paris 7e.</p>
-    <div class="acts rv">
-      <a class="btn btn-ink" href="#carte">Voir la carte</a>
-      <a class="btn btn-soft" href="https://www.google.com/maps/dir/?api=1&destination=VGT+Bowl,+22+Rue+de+Beaune,+75007+Paris" target="_blank" rel="noopener">Itinéraire</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 300 64">
+    <text x="0" y="52" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="58" letter-spacing="-2" fill="currentColor">VGT B</text>
+    <g transform="translate(160 10)">
+      <path d="M2 18h48a24 24 0 0 1-48 0z" fill="#b9dc4a"/>
+      <path d="M2 18h48a24 24 0 0 1-48 0z" fill="none" stroke="currentColor" stroke-width="4"/>
+      <path d="M17 16c0-8 6-13 13-15-2 7-6 12-13 15z" fill="#2f8a24"/>
+      <path d="M29 16c3-5 8-7 13-7-2 4-7 7-13 7z" fill="#2f8a24"/>
+    </g>
+    <text x="215" y="52" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="58" letter-spacing="-2" fill="currentColor">WL</text>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 11h18a9 9 0 0 1-18 0zM12 11c0-4 2-6 5-7-1 3-2 5-5 7z"/></symbol>
+</svg>
+
+<div class="wrap">
+  <header class="nav">
+    <a class="brand" href="#" aria-label="VGT Bowl, accueil" translate="no">
+      <svg viewBox="0 0 300 64" role="img" aria-hidden="true"><use href="#logo"/></svg>
+      <small>Végétal · gourmand · tonique</small>
+    </a>
+    <ul>
+      <li><a href="#bowl">Le bowl du jour</a></li>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#salle">La salle</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+    </ul>
+    <a class="btn btn-leaf" href="tel:+33147039207" aria-label="Appeler le 01 47 03 92 07"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num tel-l">01&nbsp;47&nbsp;03&nbsp;92&nbsp;07</span><span class="tel-s">Appeler</span></a>
+  </header>
+
+  <main id="contenu">
+  <div class="hero">
+    <div class="h-top rv">
+      <h1>Bowls maison,<br> rue de Beaune</h1>
+      <p class="lead"><strong translate="no">VGT Bowl</strong>, cantine du Buddha Bowl dans une ancienne boulangerie du 22 rue de Beaune, Paris&nbsp;7e. Bowl de saison, plats chauds, toastés sur pain Poilâne et desserts maison, sur place ou à emporter.</p>
+    </div>
+    <div class="h-media rv">
+      <div class="mosaic">
+        <figure><img src="https://media.spinach.guide/v1/p/f02e7b66f3aa706e/2559995405/1600.jpg" width="1461" height="977" alt="La devanture de VGT Bowl : boiseries blanches, ancienne enseigne dorée « Boulangerie » au numéro 22, parasols et ardoises en terrasse"><figcaption class="cap">22 rue de Beaune</figcaption><button class="pause" type="button" id="pause" aria-pressed="false" aria-label="Mettre en pause le mouvement de la photo"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" fill="currentColor"/><rect x="9.5" y="2" width="3.5" height="12" fill="currentColor"/></svg></button></figure>
+        <figure><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="1350" alt="Un buddha bowl : avocat, pois chiches, patate douce, tomates cerises, chou rouge et jeunes pousses"><figcaption class="cap">Buddha Bowl<span class="cap-p"> · <span class="price">dès 12,90&nbsp;€</span></span></figcaption></figure>
+        <figure><img src="https://media.spinach.guide/v1/p/b3b7b347f8045ba3/3024960876/1600.jpg" width="1600" height="1066" alt="Une table de la salle : carafe verte, verres, papier peint jungle en noir et blanc"><figcaption class="cap">La salle</figcaption></figure>
+      </div>
+    </div>
+    <div class="h-bottom rv">
+      <div class="tiles">
+        <div class="tile on"><b class="price">12,90&nbsp;€</b><span>le Buddha Bowl du jour, un ingrédient au choix</span></div>
+        <div class="tile"><b class="price">11,90&nbsp;€</b><span>le curry de légumes, plat chaud</span></div>
+        <div class="tile lime"><b>Poilâne</b><span>le pain des toastés maison</span></div>
+        <div class="tile"><b>Mar–sam</b><span class="num">11&nbsp;h&nbsp;30 à 16&nbsp;h, le midi</span></div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-leaf" href="#bowl"><svg aria-hidden="true"><use href="#i-bowl"/></svg>Composer mon bowl</a>
+        <a class="btn btn-pale" href="https://www.google.com/maps/dir/?api=1&amp;destination=VGT+Bowl,+22+Rue+de+Beaune,+75007+Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Itinéraire</a>
+      </div>
+      <p class="status" aria-live="polite"><span><i class="dot" id="dot"></i><span id="now">Mardi au samedi, le midi</span></span><span>Sur place ou à emporter</span></p>
     </div>
   </div>
-  <div class="word">
-    <h1 class="mono" aria-label="VGT Bowl, bowls et plats maison à Paris 7e"><span aria-hidden="true">VGT</span><span aria-hidden="true">B<span class="o"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=72&auto=format&fit=crop" width="900" height="900" alt=""></span>WL</span></h1>
-  </div>
-</header>
 
-<main>
-<section class="compose" id="composer" aria-labelledby="t-compose">
-  <div class="wrap">
-    <figure class="plate rv">
-      <svg viewBox="0 0 500 500" role="img" aria-labelledby="bowl-desc">
-        <title id="bowl-desc">Votre bowl vu du dessus</title>
-        <defs>
-          <pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.4" fill="#000" opacity=".14"/><circle cx="11" cy="10" r="1.8" fill="#fff" opacity=".35"/></pattern>
-          <clipPath id="inside"><circle cx="250" cy="250" r="196"/></clipPath>
-        </defs>
-        <circle cx="250" cy="250" r="236" fill="#fbfbf5"/>
-        <circle cx="250" cy="250" r="236" fill="none" stroke="#000" stroke-width="6"/>
-        <g clip-path="url(#inside)">
-          <circle id="base" cx="250" cy="250" r="196" fill="#e9d8a6"/>
-          <circle cx="250" cy="250" r="196" fill="url(#grain)"/>
-          <g id="secs"></g>
-          <path id="sauce" class="sec" d="M120 300 C 170 220, 230 360, 280 260 S 360 190, 390 250" fill="none" stroke="#f3ead2" stroke-width="10" stroke-linecap="round"/>
-        </g>
-        <circle cx="250" cy="250" r="196" fill="none" stroke="#000" stroke-width="3" opacity=".25"/>
-      </svg>
-      <figcaption id="bowl-cap">Base quinoa</figcaption>
-    </figure>
-
-    <div class="panel">
+  <section id="bowl" aria-labelledby="t-bowl">
+    <div class="slate">
       <div>
-        <h2 id="t-compose">Composez votre bowl</h2>
-        <p class="lead">Choisissez une base, des légumes, une garniture et une sauce : le bowl se remplit sous vos yeux. Puis appelez l’équipe pour savoir ce que propose le bowl du jour.</p>
-      </div>
-      <div>
-        <div class="tabs" role="tablist" aria-label="Étapes du bowl">
-          <button role="tab" aria-selected="true" aria-controls="p-base" id="tab-base">Base</button>
-          <button role="tab" aria-selected="false" aria-controls="p-leg" id="tab-leg" tabindex="-1">Légumes</button>
-          <button role="tab" aria-selected="false" aria-controls="p-gar" id="tab-gar" tabindex="-1">Garniture</button>
-          <button role="tab" aria-selected="false" aria-controls="p-sauce" id="tab-sauce" tabindex="-1">Sauce</button>
+        <h2 id="t-bowl">Votre bowl, à l’ardoise</h2>
+        <p class="intro">Jeunes pousses, crudités, légumes, légumineuse, céréale, fruits et graines mélangés&nbsp;: la base change chaque jour. Choisissez ce qui l’accompagne, le prix se calcule.</p>
+        <form id="composer" onsubmit="return false">
+          <fieldset>
+            <legend>L’ingrédient compris</legend>
+            <div class="chips">
+              <span class="chip"><input type="radio" name="main" id="m-fromage" value="fromage" data-price="12.90" checked><label for="m-fromage">Fromage <small>12,90&nbsp;€</small></label></span>
+              <span class="chip"><input type="radio" name="main" id="m-houmous" value="houmous" data-price="12.90"><label for="m-houmous">Houmous <small>12,90&nbsp;€</small></label></span>
+              <span class="chip"><input type="radio" name="main" id="m-oeuf" value="oeuf" data-price="12.90"><label for="m-oeuf">Œuf bio <small>12,90&nbsp;€</small></label></span>
+              <span class="chip"><input type="radio" name="main" id="m-falafel" value="falafel" data-price="13.90"><label for="m-falafel">3 falafels <small>13,90&nbsp;€</small></label></span>
+              <span class="chip"><input type="radio" name="main" id="m-avocat" value="avocat" data-price="13.90"><label for="m-avocat">½ avocat <small>13,90&nbsp;€</small></label></span>
+              <span class="chip"><input type="radio" name="main" id="m-jambon" value="jambon" data-price="13.90"><label for="m-jambon">Jambon Serrano <small>13,90&nbsp;€</small></label></span>
+              <span class="chip"><input type="radio" name="main" id="m-tarama" value="tarama" data-price="13.90"><label for="m-tarama">Tarama <small>13,90&nbsp;€</small></label></span>
+              <span class="chip"><input type="radio" name="main" id="m-saumon" value="saumon" data-price="16.90"><label for="m-saumon">Saumon fumé <small>16,90&nbsp;€</small></label></span>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>En supplément</legend>
+            <div class="chips">
+              <span class="chip"><input type="checkbox" name="extra" id="x-fromage" value="fromage" data-price="2.00"><label for="x-fromage">Fromage <small>+2&nbsp;€</small></label></span>
+              <span class="chip"><input type="checkbox" name="extra" id="x-houmous" value="houmous" data-price="2.00"><label for="x-houmous">Houmous <small>+2&nbsp;€</small></label></span>
+              <span class="chip"><input type="checkbox" name="extra" id="x-oeuf" value="oeuf" data-price="2.00"><label for="x-oeuf">Œuf bio <small>+2&nbsp;€</small></label></span>
+              <span class="chip"><input type="checkbox" name="extra" id="x-falafel" value="falafel" data-price="2.50"><label for="x-falafel">3 falafels <small>+2,50&nbsp;€</small></label></span>
+              <span class="chip"><input type="checkbox" name="extra" id="x-avocat" value="avocat" data-price="2.50"><label for="x-avocat">½ avocat <small>+2,50&nbsp;€</small></label></span>
+              <span class="chip"><input type="checkbox" name="extra" id="x-saumon" value="saumon" data-price="5.00"><label for="x-saumon">Saumon fumé <small>+5&nbsp;€</small></label></span>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>La sauce</legend>
+            <div class="chips">
+              <span class="chip"><input type="radio" name="sauce" id="s-citron" value="Huile d’olive citron" checked><label for="s-citron">Huile d’olive citron</label></span>
+              <span class="chip"><input type="radio" name="sauce" id="s-sale" value="Soja salé"><label for="s-sale">Soja salé</label></span>
+              <span class="chip"><input type="radio" name="sauce" id="s-sucre" value="Soja sucré"><label for="s-sucre">Soja sucré</label></span>
+            </div>
+          </fieldset>
+        </form>
+        <div class="ardoise-photo rv">
+          <img src="https://images.menufans.com/menus/019c5129b8f071f6a6a070b99275828d/1/medium/menu_001.jpg" width="750" height="1000" loading="lazy" alt="L’ardoise de VGT Bowl écrite à la craie : Buddha Bowl du jour, plats chauds, desserts">
+          <p>Les légumes du jour s’écrivent à la craie, sur l’ardoise près du comptoir. Ce jour-là&nbsp;: betterave, concombre, purée de potiron, lentilles, graines, persil.</p>
         </div>
       </div>
-      <div>
-        <fieldset class="opts" id="p-base" role="tabpanel" aria-labelledby="tab-base" style="border:0">
-          <legend class="sr">Base, une au choix</legend>
-        </fieldset>
-        <fieldset class="opts" id="p-leg" role="tabpanel" aria-labelledby="tab-leg" hidden style="border:0">
-          <legend class="sr">Légumes, trois au choix</legend>
-        </fieldset>
-        <fieldset class="opts" id="p-gar" role="tabpanel" aria-labelledby="tab-gar" hidden style="border:0">
-          <legend class="sr">Garniture, deux au choix</legend>
-        </fieldset>
-        <fieldset class="opts" id="p-sauce" role="tabpanel" aria-labelledby="tab-sauce" hidden style="border:0">
-          <legend class="sr">Sauce, une au choix</legend>
-        </fieldset>
-        <p class="hint" id="hint" aria-live="polite">Une base au choix.</p>
-      </div>
-      <p class="recap" aria-live="polite"><b>Votre bowl :</b> <span id="recap">quinoa.</span></p>
-      <div class="cells">
-        <a class="btn btn-ink" href="tel:+33147039207">Appeler : bowl du jour ?</a>
-        <a class="btn btn-soft" id="mail" href="mailto:vgtbowl@gmail.com">Envoyer par e-mail</a>
+      <div class="board rv">
+        <svg class="bowl-art" viewBox="0 0 400 300" role="img" aria-labelledby="bowl-title">
+          <title id="bowl-title">Votre bowl vu de profil</title>
+          <g class="ing" data-k="base"><ellipse cx="200" cy="140" rx="168" ry="40" fill="#5e9a34"/><circle cx="120" cy="128" r="20" fill="#7fb63f"/><circle cx="160" cy="118" r="16" fill="#c43c5a"/><circle cx="250" cy="120" r="18" fill="#e48a2c"/><circle cx="290" cy="130" r="14" fill="#a8743a"/><circle cx="206" cy="112" r="14" fill="#7fb63f"/></g>
+          <g class="ing off" data-k="fromage"><rect x="134" y="92" width="28" height="22" rx="4" fill="#f2e7c4"/><rect x="166" y="98" width="24" height="18" rx="4" fill="#efe0b0"/></g>
+          <g class="ing off" data-k="houmous"><ellipse cx="236" cy="100" rx="26" ry="14" fill="#e4c992"/><circle cx="236" cy="96" r="4" fill="#b3743a"/></g>
+          <g class="ing off" data-k="oeuf"><ellipse cx="290" cy="104" rx="22" ry="14" fill="#fff"/><circle cx="290" cy="102" r="8" fill="#f2b632"/></g>
+          <g class="ing off" data-k="falafel"><circle cx="104" cy="106" r="11" fill="#8a5a2b"/><circle cx="126" cy="98" r="11" fill="#9b6a34"/><circle cx="118" cy="114" r="10" fill="#7c4f25"/></g>
+          <g class="ing off" data-k="avocat"><ellipse cx="196" cy="94" rx="26" ry="16" fill="#9cc25a"/><ellipse cx="196" cy="94" rx="18" ry="10" fill="#d4e48a"/></g>
+          <g class="ing off" data-k="jambon"><path d="M140 86c20-14 46-10 52 6-16 10-38 10-52-6z" fill="#c9566a"/></g>
+          <g class="ing off" data-k="tarama"><ellipse cx="262" cy="96" rx="20" ry="11" fill="#f1a3a8"/></g>
+          <g class="ing off" data-k="saumon"><path d="M210 82c18-10 44-6 50 8-16 8-36 8-50-8z" fill="#f08a5d"/><path d="M216 84c12-4 26-2 36 4" stroke="#fbd0b8" stroke-width="3" fill="none"/></g>
+          <path d="M28 146h344c0 70-77 126-172 126S28 216 28 146z" fill="#f1efe6"/>
+          <path d="M28 146h344" stroke="#f1efe6" stroke-width="6" stroke-linecap="round"/>
+          <path d="M60 190c40 18 240 18 280 0" stroke="#245c1c" stroke-width="6" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="ticket" aria-live="polite">
+            <div id="t-lines">Buddha Bowl, fromage<br>Sauce huile d’olive citron</div>
+            <div class="total"><span>Total</span><span id="t-total">12,90&nbsp;€</span></div>
+          </div>
+          <p class="note">Prix de la carte imprimée du comptoir&nbsp;; l’ardoise du jour fait foi.</p>
+          <div class="actions">
+            <a class="btn btn-lime" href="tel:+33147039207"><svg aria-hidden="true"><use href="#i-phone"/></svg>Appeler pour le bowl du jour</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="menu" id="carte" aria-labelledby="t-carte">
+  <section id="carte" aria-labelledby="t-carte">
+    <div class="sec-head rv">
+      <h2 id="t-carte">La carte du midi</h2>
+      <p>Les plats chauds tournent avec l’ardoise. Les toastés sont faits maison, sur le pain de la maison Poilâne. Tous les desserts sont faits maison.</p>
+    </div>
+    <div class="carte">
+      <div class="menu-block b-hot rv">
+        <h3>Plats chauds</h3>
+        <p>D’autres plats arrivent à l’ardoise selon le jour.</p>
+        <div class="dish"><h4>Curry de légumes</h4><span class="price">11,90&nbsp;€</span><p>Carottes, épinards, pois chiches, persil.</p></div>
+        <div class="dish"><h4>Chili veggie</h4><span class="price">12,90&nbsp;€</span><p>Carottes, poivrons verts, céleri branche, tomates concassées, haricots rouges, persil plat.</p></div>
+        <div class="dish"><h4>Minestrone</h4><span class="price">12,90&nbsp;€</span><p>Carottes, patates douces, céleri branche, fenouil, tomates concassées, haricots blancs, persil plat.</p></div>
+        <div class="dish"><h4>Salade de lentilles</h4><span class="price">13,90&nbsp;€</span><p>Chèvre frais rôti au miel, céleri branche, concombre, pois chiches, ciboulette, persil, salade.</p></div>
+      </div>
+      <figure class="b-hot-img rv"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="1350" loading="lazy" alt="Un curry de légumes dans un bol blanc, feuilles de basilic"></figure>
+      <div class="menu-block b-toast rv">
+        <h3>Toastés sur pain Poilâne</h3>
+        <p>Fromage du jour et jeunes pousses sur chaque toast.</p>
+        <div class="dish"><h4>L’Avocado toast</h4><span class="price">13,90&nbsp;€</span><p>Avocat, fromage du jour, jeunes pousses.</p></div>
+        <div class="dish"><h4>Le toast jambon</h4><span class="price">14,90&nbsp;€</span><p>Jambon Serrano, fromage du jour, jeunes pousses.</p></div>
+        <div class="dish"><h4>Le toast saumon fumé</h4><span class="price">16,90&nbsp;€</span><p>Saumon fumé, fromage du jour, jeunes pousses.</p></div>
+      </div>
+      <div class="menu-block b-dessert rv">
+        <h3>Desserts maison</h3>
+        <p>Avec de bons fruits frais de saison.</p>
+        <div class="dish"><h4>Fondant au chocolat</h4><span class="price">5,50&nbsp;€</span></div>
+        <div class="dish"><h4>Crumble aux fruits</h4><span class="price">5,50&nbsp;€</span><p>Pommes ou framboises, selon l’ardoise.</p></div>
+        <div class="dish"><h4>Compote du jour</h4><span class="price">3,90&nbsp;€</span><p>Pommes et vanille, selon l’ardoise.</p></div>
+        <div class="dish"><h4>Fruits frais, 100&nbsp;g</h4><span class="price">3,90&nbsp;€</span></div>
+      </div>
+      <figure class="b-toast-img rv"><img src="https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=900&amp;q=72&amp;auto=format&amp;fit=crop" width="900" height="1125" loading="lazy" alt="Deux tartines d’avocat sur une assiette blanche, rondelles de citron"></figure>
+      <div class="menu-block b-juice rv">
+        <h3>Jus pressés minute</h3>
+        <p>Faits maison avec des fruits frais de saison.</p>
+        <div class="dish"><h4>Le Tonic, 35&nbsp;cl</h4><span class="price">5,80&nbsp;€</span><p>Kiwi, pomme, citron, gingembre.</p></div>
+        <div class="dish"><h4>Jus pressé minute, 35&nbsp;cl</h4><span class="price">5,40&nbsp;€</span><p>Pomme, carotte, gingembre… au choix.</p></div>
+        <div class="dish"><h4>Orange pressée, 25&nbsp;cl</h4><span class="price">4,50&nbsp;€</span></div>
+      </div>
+      <div class="menu-block b-drinks rv">
+        <h3>Boissons</h3>
+        <ul>
+          <li><span>Evian, 50&nbsp;cl</span><span>2,50&nbsp;€</span></li>
+          <li><span>San Pellegrino, 50&nbsp;cl</span><span>2,60&nbsp;€</span></li>
+          <li><span>Perrier, 33&nbsp;cl</span><span>2,60&nbsp;€</span></li>
+          <li><span>Coca-Cola ou Zéro, 33&nbsp;cl</span><span>2,50&nbsp;€</span></li>
+          <li><span>Heineken, 33&nbsp;cl</span><span>3,50&nbsp;€</span></li>
+        </ul>
+        <ul>
+          <li><span>Café Nespresso ou déca</span><span>2,50&nbsp;€</span></li>
+          <li><span>Café noisette</span><span>2,60&nbsp;€</span></li>
+          <li><span>Café americano, 25&nbsp;cl</span><span>3&nbsp;€</span></li>
+          <li><span>Café latte, 30&nbsp;cl</span><span>4,50&nbsp;€</span></li>
+          <li><span>Café chantilly</span><span>4,50&nbsp;€</span></li>
+        </ul>
+        <ul>
+          <li><span>Chocolat chaud, 30&nbsp;cl</span><span>4&nbsp;€</span></li>
+          <li><span>Chocolat viennois, 30&nbsp;cl</span><span>4,50&nbsp;€</span></li>
+          <li><span>Thé vert, noir ou rouge, 50&nbsp;cl</span><span>4&nbsp;€</span></li>
+          <li><span>Infusion, 50&nbsp;cl</span><span>4&nbsp;€</span></li>
+          <li><span>Verre de vin, 15&nbsp;cl</span><span>dès 4,20&nbsp;€</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="carte-note">Prix relevés sur la carte imprimée affichée au comptoir&nbsp;; l’ardoise du jour fait foi. Paiement par carte à partir de 10&nbsp;€.</p>
+  </section>
+
+  <section id="salle" aria-labelledby="t-salle">
+    <div class="salle">
+      <div class="salle-pics">
+        <figure class="rv"><img src="https://media.spinach.guide/v1/p/496e46deecdd41cc/4054809684/1600.jpg" width="1200" height="1600" loading="lazy" alt="La salle de VGT Bowl : tables en bois clair, chaises blanches aux coussins fleuris, suspensions en osier et grands miroirs"></figure>
+        <figure class="rv"><img src="https://images.menufans.com/menus/019c5129b8f071f6a6a070b99275828d/0/medium/menu_000.jpg" width="750" height="1000" loading="lazy" alt="La carte imprimée de VGT Bowl affichée au mur : Buddha Bowl, toastés, desserts, jus et boissons"></figure>
+      </div>
+      <div class="salle-text rv">
+        <h2 id="t-salle">Une boulangerie devenue cantine</h2>
+        <p>L’enseigne dorée « Boulangerie » est restée au-dessus de la porte. Dedans&nbsp;: des suspensions en osier, un papier peint jungle en noir et blanc, des tables en bois clair et des chaises aux coussins fleuris. On commande au comptoir, on mange sur place ou on repart avec son bowl.</p>
+        <ul class="facts">
+          <li><b>Sur place ou à emporter</b>Vente au comptoir</li>
+          <li><b>Accessible</b>Entrée et places en fauteuil roulant</li>
+          <li><b>Wi-Fi gratuit</b>Dans la salle</li>
+          <li><b>Carte et sans contact</b>Paiement par carte dès 10&nbsp;€</li>
+        </ul>
+        <p class="group"><b>Un groupe de 20 personnes&nbsp;?</b> La salle peut ouvrir pour vous&nbsp;: déjeuner de famille ou réunion de travail. Appelez le <a class="num" href="tel:+33147039207">01&nbsp;47&nbsp;03&nbsp;92&nbsp;07</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="horaires" aria-labelledby="t-horaires">
+    <div class="sec-head">
+      <h2 id="t-horaires">Horaires et accès</h2>
+      <p>Entre le quai Voltaire et la rue de l’Université, à quelques minutes à pied du musée d’Orsay.</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours rv">
+        <p class="live" aria-live="polite"><i class="dot" id="dot2"></i><span id="now2">Ouvert le midi, du mardi au samedi</span></p>
+        <table>
+          <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Horaires d’ouverture</caption>
+          <tbody>
+            <tr data-d="1"><td>Lundi</td><td>à confirmer par téléphone</td></tr>
+            <tr data-d="2"><td>Mardi</td><td>11&nbsp;h&nbsp;30 – 16&nbsp;h</td></tr>
+            <tr data-d="3"><td>Mercredi</td><td>11&nbsp;h&nbsp;30 – 16&nbsp;h</td></tr>
+            <tr data-d="4"><td>Jeudi</td><td>11&nbsp;h&nbsp;30 – 16&nbsp;h</td></tr>
+            <tr data-d="5"><td>Vendredi</td><td>11&nbsp;h&nbsp;30 – 16&nbsp;h</td></tr>
+            <tr data-d="6"><td>Samedi</td><td>12&nbsp;h – 16&nbsp;h</td></tr>
+            <tr data-d="0"><td>Dimanche</td><td>fermé</td></tr>
+          </tbody>
+        </table>
+        <p class="small">Jours fériés&nbsp;: mieux vaut appeler avant de venir.</p>
+      </div>
+      <div class="access rv">
+        <address>22 rue de Beaune<br>75007 Paris</address>
+        <ul>
+          <li><b>Métro</b> Rue du Bac, ligne&nbsp;12</li>
+          <li><b>RER</b> Musée d’Orsay, ligne&nbsp;C</li>
+          <li><b>Téléphone</b> <a class="num" href="tel:+33147039207">01&nbsp;47&nbsp;03&nbsp;92&nbsp;07</a></li>
+        </ul>
+        <svg class="plan" viewBox="0 0 520 220" role="img" aria-labelledby="plan-t">
+          <title id="plan-t">Plan simplifié : la rue de Beaune relie le quai Voltaire, au bord de la Seine, à la rue de l’Université</title>
+          <rect x="0" y="0" width="520" height="46" fill="#2f6f8f"/>
+          <text x="20" y="30" fill="#e6f1dc" font-family="Bricolage Grotesque, sans-serif" font-size="16" font-weight="600">La Seine</text>
+          <rect x="0" y="46" width="520" height="22" fill="#e6f1dc"/>
+          <text x="20" y="62" fill="#1b4915" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="700">Quai Voltaire</text>
+          <rect x="250" y="68" width="22" height="152" fill="#e6f1dc"/>
+          <rect x="0" y="176" width="520" height="22" fill="#e6f1dc"/>
+          <text x="300" y="192" fill="#1b4915" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="700">Rue de l’Université</text>
+          <text x="286" y="110" fill="#fff" font-family="Bricolage Grotesque, sans-serif" font-size="16" font-weight="700">Rue de Beaune</text>
+          <circle cx="261" cy="128" r="15" fill="#b9dc4a" stroke="#17221a" stroke-width="3"/>
+          <circle cx="261" cy="128" r="5" fill="#17221a"/>
+          <text x="286" y="134" fill="#dcebcf" font-family="Bricolage Grotesque, sans-serif" font-size="14">VGT Bowl, au n°&nbsp;22</text>
+        </svg>
+        <div class="actions">
+          <a class="btn btn-pale" href="https://www.google.com/maps/dir/?api=1&amp;destination=VGT+Bowl,+22+Rue+de+Beaune,+75007+Paris" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Itinéraire</a>
+          <a class="btn btn-lime" href="tel:+33147039207"><svg aria-hidden="true"><use href="#i-phone"/></svg>Appeler</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+</div>
+
+<footer class="foot">
   <div class="wrap">
-    <div class="col">
-      <h2 class="giant rv" id="t-carte">Carte</h2>
-      <details open class="rv">
-        <summary>Le Buddha Bowl <span class="pl" aria-hidden="true"></span></summary>
-        <ul><li><span>Le Buddha Bowl<small>Composé chaque jour avec les légumes de saison</small></span><span class="p">dès 12,90 €</span></li></ul>
-      </details>
-      <details class="rv">
-        <summary>Plats chauds <span class="pl" aria-hidden="true"></span></summary>
-        <ul>
-          <li><span>Curry de légumes</span><span class="p">11,90 €</span></li>
-          <li><span>Chili veggie</span><span class="p">12,90 €</span></li>
-          <li><span>Minestrone</span><span class="p">12,90 €</span></li>
-          <li><span>Salade de lentilles</span><span class="p">13,90 €</span></li>
-        </ul>
-      </details>
-      <details class="rv">
-        <summary>Toasts <span class="pl" aria-hidden="true"></span></summary>
-        <ul>
-          <li><span>Avocado toast</span><span class="p">13,90 €</span></li>
-          <li><span>Toast au jambon</span><span class="p">14,90 €</span></li>
-          <li><span>Toast au saumon fumé</span><span class="p">16,90 €</span></li>
-        </ul>
-      </details>
-      <details class="rv">
-        <summary>Desserts maison <span class="pl" aria-hidden="true"></span></summary>
-        <ul>
-          <li><span>Fondant au chocolat</span><span class="p">5,50 €</span></li>
-          <li><span>Crumble aux fruits</span><span class="p">5,50 €</span></li>
-          <li><span>Compote du jour</span><span class="p">3,90 €</span></li>
-          <li><span>Fruits frais, 100 g</span><span class="p">3,90 €</span></li>
-        </ul>
-      </details>
-      <details class="rv">
-        <summary>Jus pressés <span class="pl" aria-hidden="true"></span></summary>
-        <ul>
-          <li><span>Le Tonic, 35 cl</span><span class="p">5,80 €</span></li>
-          <li><span>Jus pressés, 35 cl</span><span class="p">dès 5,40 €</span></li>
-          <li><span>Orange pressée, 25 cl</span><span class="p">4,50 €</span></li>
-        </ul>
-      </details>
-      <details class="rv">
-        <summary>Boissons fraîches <span class="pl" aria-hidden="true"></span></summary>
-        <ul>
-          <li><span>Evian, 50 cl</span><span class="p">2,50 €</span></li>
-          <li><span>San Pellegrino, 50 cl</span><span class="p">2,60 €</span></li>
-          <li><span>Perrier, 33 cl</span><span class="p">2,60 €</span></li>
-          <li><span>Coca-Cola ou Coca-Cola Zéro, 33 cl</span><span class="p">2,50 €</span></li>
-          <li><span>Heineken, 33 cl</span><span class="p">3,50 €</span></li>
-          <li><span>Bière en bouteille</span><span class="p">dès 7 €</span></li>
-          <li><span>Verre de vin, 15 cl</span><span class="p">dès 4,20 €</span></li>
-        </ul>
-      </details>
-      <details class="rv">
-        <summary>Boissons chaudes <span class="pl" aria-hidden="true"></span></summary>
-        <ul>
-          <li><span>Café ou déca Nespresso</span><span class="p">2,50 €</span></li>
-          <li><span>Café macchiato</span><span class="p">2,60 €</span></li>
-          <li><span>Café americano, 25 cl</span><span class="p">3 €</span></li>
-          <li><span>Café latte, 30 cl</span><span class="p">4,50 €</span></li>
-          <li><span>Café chantilly</span><span class="p">4,50 €</span></li>
-          <li><span>Chocolat chaud, 30 cl</span><span class="p">4 €</span></li>
-          <li><span>Chocolat viennois, 30 cl</span><span class="p">4,50 €</span></li>
-          <li><span>Thé vert, noir ou rouge, 50 cl</span><span class="p">4 €</span></li>
-          <li><span>Infusion, 50 cl</span><span class="p">4 €</span></li>
-        </ul>
-      </details>
-      <p class="note">Les desserts sont faits maison, avec des fruits frais de saison.</p>
-    </div>
-    <div class="pics">
-      <figure class="rv"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=1400&q=72&auto=format&fit=crop" width="1400" height="875" loading="lazy" alt="Curry de légumes dans un bol blanc, basilic frais."><figcaption>Côté plats chauds</figcaption></figure>
-      <figure class="rv"><img src="https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=800&q=72&auto=format&fit=crop" width="800" height="1000" loading="lazy" alt="Deux tartines d’avocat et des rondelles de citron."><figcaption>Côté toasts</figcaption></figure>
-      <figure class="rv"><img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=800&q=72&auto=format&fit=crop" width="800" height="1000" loading="lazy" alt="Verre de boisson au citron vert et à la menthe."><figcaption>Côté jus</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="maison" aria-labelledby="t-maison">
-  <div class="wrap">
-    <div class="row">
-      <dl class="facts rv">
-        <div><dt>Service</dt><dd>Déjeuner, du lundi au samedi</dd></div>
-        <div><dt>Formules</dt><dd>Sur place ou à emporter</dd></div>
-        <div><dt>Paiement</dt><dd>Carte et sans contact</dd></div>
-        <div><dt>Accès</dt><dd>Entrée accessible en fauteuil roulant</dd></div>
-        <div><dt>Métro</dt><dd>Rue du Bac (ligne 12)</dd></div>
-      </dl>
+    <div class="foot-top">
       <div>
-        <h2 id="t-maison" class="rv" style="margin-bottom:28px">Une cantine de quartier, rue de Beaune</h2>
-        <p class="big rv">Entre le quai Voltaire et la rue de l’Université, VGT Bowl sert le déjeuner du 7e : un Buddha Bowl qui change avec le marché, des plats chauds mijotés, des toasts et des jus pressés minute.</p>
-        <p class="big rv">Tout est fait maison, avec des fruits et des légumes de saison. Les desserts aussi : fondant au chocolat, crumble, compote du jour.</p>
+        <h2 class="big" translate="no"><svg viewBox="0 0 300 64" role="img" aria-label="VGT Bowl"><use href="#logo"/></svg></h2>
+        <p>Végétal, gourmand, tonique. 22 rue de Beaune, Paris&nbsp;7e.</p>
       </div>
+      <nav aria-label="Pied de page">
+        <a href="#bowl">Le bowl du jour</a><a href="#carte">La carte</a><a href="#salle">La salle</a><a href="#horaires">Horaires</a>
+      </nav>
     </div>
-    <div class="duo">
-      <img class="rv" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=72&auto=format&fit=crop" width="1200" height="900" loading="lazy" alt="Assiette de légumes de saison, œuf, radis et avocat, vue du dessus.">
-      <img class="rv" src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=1600&q=72&auto=format&fit=crop" width="1600" height="1200" loading="lazy" alt="Salade d’épinards, avocat et grenade.">
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact" aria-labelledby="t-contact">
-  <h2 id="t-contact">Horaires et adresse</h2>
-  <div class="rows">
-    <div>VGT Bowl</div>
-    <a href="https://www.google.com/maps/dir/?api=1&destination=VGT+Bowl,+22+Rue+de+Beaune,+75007+Paris" target="_blank" rel="noopener">22 rue de Beaune, 75007 Paris</a>
-    <div><span class="num">Lun–ven 11h30–16h</span><br><span class="num">Samedi 12h–16h</span><span class="live" id="live" aria-live="polite">Fermé le dimanche</span></div>
-    <a href="tel:+33147039207" class="num">01 47 03 92 07</a>
-    <a class="hello" href="mailto:vgtbowl@gmail.com"><span>Bonjour<small>vgtbowl@gmail.com</small></span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="cols">
-    <div><p>Adresse</p><p>22 rue de Beaune</p><p>75007 Paris</p></div>
-    <div><p>Pages</p><p><a href="#composer">Composer</a></p><p><a href="#carte">Carte</a></p><p><a href="#contact">Horaires</a></p></div>
-    <div><p>Contact</p><p><a href="tel:+33147039207">01 47 03 92 07</a></p><p><a href="mailto:vgtbowl@gmail.com">vgtbowl@gmail.com</a></p></div>
-    <div><p>Horaires</p><p>Lun–ven 11h30–16h</p><p>Sam 12h–16h, dim fermé</p></div>
-  </div>
-  <div></div>
-  <div>
-    <p class="wm" aria-hidden="true">VGT BOWL</p>
-    <div class="legal"><span>Démo réalisée par Raul Hatos — site non officiel</span><span>Photos : Unsplash</span></div>
+    <p class="fine">Démo réalisée par Raul Hatos — site non officiel. Photos du lieu&nbsp;: Google via Spinach et menufans. Photos de plats&nbsp;: Unsplash, à titre d’illustration.</p>
   </div>
 </footer>
 
 <script>
-document.body.classList.remove('no-js');
-// shortcut: options du composeur = exemples de saison, à remplacer par la vraie liste du restaurant
-const D={
-  base:{max:1,el:'p-base',hint:'Une base au choix.',items:[['Quinoa','#e9d8a6'],['Riz complet','#d6c29b'],['Lentilles','#8f6b3c'],['Jeunes pousses','#5d9b45']]},
-  leg:{max:3,el:'p-leg',hint:'Jusqu’à trois légumes.',items:[['Carotte râpée','#f08a24'],['Betterave','#9e1f45'],['Chou rouge','#7a2c66'],['Concombre','#93c86f'],['Avocat','#a7c957'],['Patate douce rôtie','#e3772f'],['Pois chiches','#e2c27b'],['Tomates cerises','#de3b26'],['Radis','#ee7a98']]},
-  gar:{max:2,el:'p-gar',hint:'Jusqu’à deux garnitures.',items:[['Feta','#f6f3ea'],['Œuf mollet','#f7c948'],['Tofu grillé','#d9a35a'],['Graines de courge','#3f6b3a'],['Noix','#9a6a3a']]},
-  sauce:{max:1,el:'p-sauce',hint:'Une sauce au choix.',items:[['Tahini citron','#f3ead2'],['Vinaigrette moutarde','#e8c45a'],['Huile d’olive et citron','#d7d27a']]}
-};
-const sel={base:['Quinoa'],leg:['Carotte râpée','Avocat','Chou rouge'],gar:['Œuf mollet'],sauce:['Tahini citron']};
-for(const k in D){
-  const f=document.getElementById(D[k].el);
-  D[k].items.forEach(([n,c])=>{
-    const l=document.createElement('label');
-    l.innerHTML=`<input type="${D[k].max===1?'radio':'checkbox'}" name="${k}" value="${n}"><span><i style="background:${c};outline:1px solid rgba(0,0,0,.18);outline-offset:-1px"></i>${n}</span>`;
-    const i=l.querySelector('input');i.checked=sel[k].includes(n);
-    i.addEventListener('change',()=>{
-      if(D[k].max===1){sel[k]=[n]}
-      else if(i.checked){if(sel[k].length>=D[k].max){i.checked=false;document.getElementById('hint').textContent=`${D[k].hint.replace('Jusqu’à','Pas plus de')} Retirez-en un d’abord.`;return}sel[k].push(n)}
-      else sel[k]=sel[k].filter(x=>x!==n);
-      draw();
-    });
-    f.appendChild(l);
-  });
-}
-const col=(k,n)=>D[k].items.find(x=>x[0]===n)[1];
-const secs=document.getElementById('secs');
-function wedge(a0,a1){const r=200,c=250,p=a=>[c+r*Math.cos(a),c+r*Math.sin(a)];const[x0,y0]=p(a0),[x1,y1]=p(a1);return`M${c} ${c} L${x0} ${y0} A${r} ${r} 0 ${a1-a0>Math.PI?1:0} 1 ${x1} ${y1}Z`}
-function draw(){
-  document.getElementById('base').setAttribute('fill',col('base',sel.base[0]));
-  const tops=[...sel.leg.map(n=>col('leg',n)),...sel.gar.map(n=>col('gar',n))];
-  // les garnitures occupent les 5 secteurs du bas, la base reste visible en haut
-  const start=-Math.PI*0.05,span=Math.PI*1.1,step=tops.length?span/tops.length:0;
-  secs.innerHTML=tops.map((c,i)=>`<g class="sec"><path d="${wedge(start+i*step,start+(i+1)*step)}" fill="${c}"/><path d="${wedge(start+i*step,start+(i+1)*step)}" fill="url(#grain)"/><path d="${wedge(start+i*step,start+(i+1)*step)}" fill="none" stroke="#fbfbf5" stroke-width="5"/></g>`).join('');
-  const s=document.getElementById('sauce');s.setAttribute('stroke',col('sauce',sel.sauce[0]));
-  s.classList.toggle('off',!sel.sauce.length);
-  const parts=[sel.base[0].toLowerCase(),...sel.leg.map(x=>x.toLowerCase()),...sel.gar.map(x=>x.toLowerCase())];
-  const txt=parts.join(', ')+(sel.sauce[0]?', sauce '+sel.sauce[0].toLowerCase():'')+'.';
-  document.getElementById('recap').textContent=txt;
-  document.getElementById('bowl-cap').textContent='Base '+sel.base[0].toLowerCase()+' · '+tops.length+' garniture'+(tops.length>1?'s':'');
-  document.getElementById('mail').href='mailto:vgtbowl@gmail.com?subject='+encodeURIComponent('Mon bowl idéal')+'&body='+encodeURIComponent('Bonjour,\n\nVoici le bowl que j’aimerais : '+txt+'\n\nEst-ce possible ce midi ?\n\nMerci !');
-}
-draw();
-// onglets accessibles
-const tabs=[...document.querySelectorAll('[role=tab]')];
-const hints={'p-base':D.base.hint,'p-leg':D.leg.hint,'p-gar':D.gar.hint,'p-sauce':D.sauce.hint};
-function act(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});document.getElementById('hint').textContent=hints[t.getAttribute('aria-controls')]}
-tabs.forEach((t,i)=>{t.addEventListener('click',()=>act(t));t.addEventListener('keydown',e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){const n=tabs[(i+d+tabs.length)%tabs.length];act(n);n.focus()}})});
-
-// ouvert maintenant ? (heure de Paris)
+document.documentElement.classList.add('js');
 (function(){
-  const now=new Date(),fmt=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
-  const parts=Object.fromEntries(fmt.formatToParts(now).map(p=>[p.type,p.value]));
-  const day=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'].indexOf(parts.weekday);
-  const m=+parts.hour*60+ +parts.minute;
-  const H=d=>d===0?null:d===6?[720,960]:[690,960];
-  const el=document.getElementById('live'),h=H(day);
-  const hm=x=>Math.floor(x/60)+'h'+(x%60?String(x%60).padStart(2,'0'):'');
-  if(h&&m>=h[0]&&m<h[1]){const r=h[1]-m;el.innerHTML='<b></b>Ouvert en ce moment · fermeture dans '+(r>=60?Math.floor(r/60)+' h '+(r%60?r%60+' min':''):r+' min');}
-  else{
-    let d=day,first=true,o;for(let k=0;k<8;k++){const hh=H(d);if(hh&&(!first||m<hh[0])){o=[d,hh[0]];break}d=(d+1)%7;first=false}
-    const names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-    el.classList.add('closed');el.innerHTML='<b></b>Fermé en ce moment · ouvre '+(o[0]===day?'aujourd’hui':o[0]===(day+1)%7?'demain':names[o[0]])+' à '+hm(o[1]);
-  }
-})();
+  // ouvert / fermé, heure de Paris ; lundi non confirmé
+  const H={2:[690,960],3:[690,960],4:[690,960],5:[690,960],6:[720,960]};
+  const names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  const fmt=m=>Math.floor(m/60)+' h'+(m%60?' '+String(m%60).padStart(2,'0'):'');
+  const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.find(x=>x.type==='weekday').value);
+  const m=(+p.find(x=>x.type==='hour').value%24)*60+ +p.find(x=>x.type==='minute').value;
+  let txt,open=false;
+  if(H[d]&&m>=H[d][0]&&m<H[d][1]){open=true;txt='Ouvert, jusqu’à 16 h'}
+  else if(H[d]&&m<H[d][0]){txt='Fermé, ouvre à '+fmt(H[d][0])}
+  else if(d===1){txt='Lundi : horaires à confirmer'}
+  else{let n=(d+1)%7;while(!H[n])n=(n+1)%7;txt='Fermé, ouvre '+names[n]+' à '+fmt(H[n][0])}
+  for(const id of ['now','now2'])document.getElementById(id).textContent=txt;
+  for(const id of ['dot','dot2'])document.getElementById(id).classList.toggle('open',open);
+  const row=document.querySelector('tr[data-d="'+d+'"]');if(row)row.classList.add('today');
 
-// le nom occupe toute la largeur, sans jamais passer à la ligne
-const mono=document.querySelector('h1.mono');
-function fit(){mono.style.fontSize='';if(innerWidth<=820)return;const box=mono.parentElement.clientWidth-parseFloat(getComputedStyle(mono.parentElement).paddingLeft)*2;const fs=parseFloat(getComputedStyle(mono).fontSize),k=mono.children,w=k[k.length-1].getBoundingClientRect().right-k[0].getBoundingClientRect().left;mono.style.fontSize=Math.min(fs*box/w,400)+'px'}
-document.fonts.ready.then(fit);addEventListener('resize',fit);
-// entrées
-let rvs=[...document.querySelectorAll('.rv')];
-function reveal(){const lim=innerHeight*.92;rvs=rvs.filter(el=>{if(el.getBoundingClientRect().top<lim){const sibs=[...el.parentElement.querySelectorAll(':scope>.rv')];el.style.transitionDelay=Math.min(sibs.indexOf(el),6)*70+'ms';el.classList.add('in');return false}return true});if(!rvs.length)removeEventListener('scroll',reveal)}
-addEventListener('scroll',reveal,{passive:true});reveal();
+  // composeur
+  const f=document.getElementById('composer');
+  const eur=v=>v.toFixed(2).replace('.',',').replace(',00','')+' €';
+  const label={fromage:'fromage',houmous:'houmous',oeuf:'œuf bio',falafel:'3 falafels',avocat:'½ avocat',jambon:'jambon Serrano',tarama:'tarama',saumon:'saumon fumé'};
+  function upd(){
+    const main=f.querySelector('[name=main]:checked');
+    const ex=[...f.querySelectorAll('[name=extra]:checked')];
+    const sauce=f.querySelector('[name=sauce]:checked').value;
+    const total=+main.dataset.price+ex.reduce((s,e)=>s+ +e.dataset.price,0);
+    const on=new Set([main.value,...ex.map(e=>e.value)]);
+    document.querySelectorAll('.bowl-art .ing').forEach(g=>g.classList.toggle('off',g.dataset.k!=='base'&&!on.has(g.dataset.k)));
+    const L=document.getElementById('t-lines');L.textContent='';
+    const lines=['Buddha Bowl, '+label[main.value]].concat(ex.map(e=>'+ '+label[e.value]+' '+eur(+e.dataset.price)),['Sauce '+sauce.toLowerCase()]);
+    lines.forEach((t,i)=>{if(i)L.appendChild(document.createElement('br'));L.appendChild(document.createTextNode(t))});
+    document.getElementById('t-total').textContent=eur(Math.round(total*100)/100);
+  }
+  f.addEventListener('change',upd);upd();
+  console.assert(eur(12.9)==='12,90 €'&&eur(2)==='2 €','format prix');
+
+  const pb=document.getElementById('pause');pb.addEventListener('click',()=>{const on=document.body.classList.toggle('paused');pb.setAttribute('aria-pressed',on);pb.setAttribute('aria-label',on?'Relancer le mouvement de la photo':'Mettre en pause le mouvement de la photo')});
+  // apparitions
+  const els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(el=>io.observe(el));
+  }else els.forEach(el=>el.classList.add('in'));
+})();
 </script>
 </body>
 </html>
