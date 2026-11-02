@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Folie Liberté · Brasserie et cocktails, métro Liberté, Charenton-le-Pont</title>
+<meta name="description" content="Folie Liberté, brasserie et bar à cocktails au 137 rue de Paris à Charenton-le-Pont, à la sortie du métro Liberté. Petit-déjeuner, formules du midi, happy hour de 16 h à 20 h, pizzas et cocktails.">
+<meta name="theme-color" content="#f1f1ef">
+<meta property="og:title" content="Folie Liberté · Boire, manger, partager">
+<meta property="og:description" content="Brasserie et bar à cocktails au 137 rue de Paris, à la sortie du métro Liberté (ligne 8). Du café de 6 h 30 au dernier cocktail.">
+<meta property="og:image" content="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387340.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317213a'/%3E%3Cpath d='M9 7h14v4h-9v4h8v4h-8v6H9z' fill='%23ff5c84'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+/* Direction tirée de la devanture du 137 : store bleu marine aux lettres blanches,
+   banquettes en velours moutarde, carreaux bleus, néon rose « Folie Liberté ». */
+:root{
+  --ground:#f1f1ef;
+  --paper:#ffffff;
+  --step:#e7e5df;
+  --ink:#17213a;
+  --ink-2:#2b3757;
+  --navy:#17213a;
+  --navy-2:#24315a;
+  --on-navy:#d7dceb;
+  --mustard:#dcb24b;
+  --mustard-2:#e8c86f;
+  --neon:#ff5c84;
+  --m:clamp(16px,3.2vw,48px);
+  --gap:clamp(96px,11vw,200px);
+  --t-small:.9375rem;
+  --t-body:1.125rem;
+  --t-lead:clamp(1.1875rem,1.05rem + .55vw,1.5rem);
+  --t-head:clamp(2.25rem,1.3rem + 3.4vw,4.5rem);
+  --t-hero:clamp(3rem,1.2rem + 5.2vw,6rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip;scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-optical-sizing:auto;font-size:var(--t-body);line-height:1.55;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;touch-action:manipulation}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2,h3{font-weight:800;line-height:1;letter-spacing:-.03em;text-wrap:balance}
+h2{font-size:var(--t-head)}
+h3{font-size:var(--t-lead);line-height:1.15;letter-spacing:-.015em}
+p{text-wrap:pretty}
+b,strong{font-weight:700}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.dark :focus-visible,.navy :focus-visible{outline-color:#fff}
+::selection{background:var(--neon);color:var(--ink)}
+.wrap{padding-inline:var(--m);max-width:1520px;margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;z-index:30;background:#fff;color:var(--ink);padding:12px 16px;font-weight:700}
+.skip:focus{left:16px}
+.nw{white-space:nowrap}
+
+/* boutons : rectangles francs, comme les lettres du store */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:54px;padding:0 1.35em;border:0;border-radius:0;font:700 var(--t-body)/1 "Bricolage Grotesque",sans-serif;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,transform .15s var(--ease)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn:active{transform:scale(.96)}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy-2)}
+.btn-step{background:var(--step);color:var(--ink)}.btn-step:hover{background:#dcd9d1}
+.btn-neon{background:var(--neon);color:var(--ink)}.btn-neon:hover{background:#ff7898}
+.btn-white{background:#fff;color:var(--ink)}.btn-white:hover{background:var(--step)}
+
+.demo{background:var(--ink);color:#e3e6ef;font-size:var(--t-small);text-align:center;padding:9px var(--m)}
+
+/* barre */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:var(--t-lead);letter-spacing:-.02em;min-height:44px}
+.mark svg{width:34px;height:34px;flex:none}
+.mark small{display:block;font-weight:500;font-size:var(--t-small);letter-spacing:0;color:var(--ink-2)}
+.bar ul{display:none;gap:30px;font-weight:500;font-size:var(--t-body)}
+.bar ul a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.bar ul a:hover{text-decoration:underline}
+.bar .btn{min-height:46px;padding:0 1em}
+@media (min-width:960px){.bar ul{display:flex}}
+@media (max-width:479px){.mark small{display:none}}
+
+/* premier écran */
+.hero{display:grid;gap:22px;padding-top:4px;padding-bottom:8px}
+.hero-text{display:flex;flex-direction:column}
+.hero h1{font-size:var(--t-hero);line-height:.95;letter-spacing:-.04em;white-space:nowrap}
+.lead{margin-top:20px;font-size:var(--t-lead);line-height:1.42;max-width:34ch}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:26px}
+.tile{background:var(--paper);padding:14px 16px 15px}
+.tile b{display:block;font-size:clamp(1.75rem,1.3rem + 1.3vw,2.45rem);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.tile span{display:block;font-size:var(--t-small);line-height:1.3;margin-top:4px}
+.tile.hot{background:var(--navy);color:#fff}
+.tile.hot span{color:var(--on-navy)}
+.tile.mus{background:var(--mustard)}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin-top:18px;font-size:var(--t-small);font-weight:500}
+.status a{font-weight:700}
+.dot{display:inline-flex;align-items:center;gap:9px}
+.dot::before{content:"";width:10px;height:10px;border-radius:50%;background:#8a8f9c;flex:none}
+.dot.open::before{background:#1f9d55}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;order:-1}
+.ph{position:relative;overflow:hidden;background:var(--step);margin:0}
+/* les photos source ont des bords flous : le cadre ne dépasse jamais 4:3 (paysage) ou 3:4 (portrait) */
+.ph img{width:100%;height:100%;object-fit:cover}
+.r43{aspect-ratio:4/3}.r34{aspect-ratio:3/4}
+.ph figcaption{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font-size:var(--t-small);font-weight:500;padding:5px 9px;line-height:1.2}
+.photos .big{grid-column:1/-1}
+.photos .big img{animation:settle 2.4s var(--ease) both}
+@keyframes settle{from{transform:scale(1.07)}to{transform:scale(1)}}
+@media (min-width:600px) and (max-width:859px){
+  .photos{grid-template-columns:repeat(3,1fr)}
+  .photos .big{grid-column:auto}
+  .photos figcaption{display:none}
+}
+@media (max-width:599px){
+  .photos .sm{display:none}
+  .photos figcaption{display:none}
+  .lead{margin-top:14px}
+}
+@media (min-width:860px){
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(28px,3.4vw,56px);align-items:center;padding-top:clamp(8px,1.6vw,24px)}
+  .photos{order:0;max-width:calc((100vh - 200px) / 1.125);justify-self:end;width:100%}
+}
+@media (min-width:860px) and (max-width:1180px){
+  .hero h1{font-size:clamp(2.6rem,1rem + 3.6vw,3.6rem)}
+  .lead{font-size:1.1875rem}
+}
+
+/* à cette heure-ci */
+.now{margin-top:var(--gap);background:var(--navy);color:#fff}
+.now-in{display:grid;gap:clamp(28px,4vw,64px);padding-block:clamp(56px,7vw,112px)}
+.now h2{max-width:14ch}
+.now-intro{margin-top:18px;font-size:var(--t-lead);line-height:1.42;color:var(--on-navy);max-width:38ch}
+.moments{display:flex;flex-wrap:wrap;gap:6px;margin-top:28px}
+.moments button{font:700 var(--t-body)/1 "Bricolage Grotesque",sans-serif;min-height:48px;padding:0 1.05em;background:var(--navy-2);color:#fff;border:0;border-radius:0;cursor:pointer;transition:background-color .2s,color .2s,transform .15s var(--ease)}
+.moments button:hover{background:#30406f}
+.moments button:active{transform:scale(.96)}
+.moments button[aria-selected="true"]{background:var(--mustard);color:var(--ink)}
+.moments button .nowtag{display:inline-block;margin-left:.45em;color:var(--neon)}
+.moments button[aria-selected="true"] .nowtag{color:var(--ink)}
+.moment{margin-top:26px}
+.moment[hidden]{display:none}
+
+.moment > p{margin-top:8px;color:var(--on-navy);max-width:46ch}
+.picks{display:grid;gap:4px;margin-top:20px;max-width:620px}
+.picks li{display:grid;grid-template-columns:1fr auto;gap:2px 20px;background:var(--navy-2);padding:13px 16px}
+.picks li b{white-space:nowrap}
+.picks small{grid-column:1/-1;color:var(--on-navy);font-size:var(--t-small);line-height:1.4}
+.now-photo{align-self:start}
+.now-photo .ph{background:var(--navy-2)}
+@media (min-width:900px){
+  .now-in{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:center}
+  .now-photo .ph{max-width:470px;margin-left:auto}
+}
+
+/* la carte */
+.carte{margin-top:var(--gap)}
+.carte-head{display:grid;gap:16px;align-items:end}
+.carte-head p{max-width:46ch;font-size:var(--t-lead);line-height:1.42}
+@media (min-width:900px){.carte-head{grid-template-columns:1fr 1fr}}
+.tabs{display:flex;flex-wrap:wrap;gap:4px;margin-top:30px}
+.tabs button{flex:none;font:700 var(--t-body)/1 "Bricolage Grotesque",sans-serif;background:var(--step);color:var(--ink);border:0;border-radius:0;min-height:50px;padding:0 1.1em;cursor:pointer;transition:background-color .2s,color .2s,transform .15s var(--ease)}
+.tabs button:hover{background:#dcd9d1}
+.tabs button:active{transform:scale(.96)}
+.tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
+.carte-body{display:grid;gap:clamp(24px,4vw,64px);margin-top:26px;align-items:start}
+.panel[hidden]{display:none}
+.panel + .panel{margin-top:40px}
+.js .panel + .panel{margin-top:0}
+.panel h3{margin-bottom:6px}
+.js .panel h3{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.menu{columns:1;column-gap:clamp(28px,4vw,64px)}
+.menu li{break-inside:avoid;display:grid;grid-template-columns:1fr auto;gap:2px 24px;padding:11px 0;font-weight:500}
+.menu .p{font-weight:700;white-space:nowrap}
+.menu small{grid-column:1/-1;font-weight:400;font-size:var(--t-small);line-height:1.4;color:var(--ink-2)}
+.note{margin-top:16px;font-size:var(--t-small);background:var(--paper);padding:12px 16px;display:inline-block}
+.carte-photo{display:grid;gap:10px}
+@media (min-width:900px){
+  .carte-body{grid-template-columns:minmax(0,2.1fr) minmax(0,1fr)}
+  .menu{columns:2}
+  .carte-photo{position:sticky;top:24px}
+}
+
+/* happy hour */
+.happy{margin-top:var(--gap);background:var(--mustard)}
+.happy-in{display:grid;gap:clamp(28px,4vw,64px);padding-block:clamp(56px,7vw,112px);align-items:center}
+.happy h2{max-width:13ch}
+.happy-intro{margin-top:16px;font-size:var(--t-lead);line-height:1.42;max-width:36ch}
+.prices{display:grid;gap:6px;margin-top:28px;max-width:640px}
+.prices li{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--mustard-2);padding:14px 18px;font-weight:500;line-height:1.3}
+.prices b{flex:none;font-size:clamp(1.75rem,1.3rem + 1.3vw,2.45rem);font-weight:800;letter-spacing:-.035em;line-height:1}
+.happy-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (min-width:900px){.happy-in{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
+
+/* la salle */
+.salle{margin-top:var(--gap)}
+.salle-grid{display:grid;gap:10px;margin-top:30px;grid-template-columns:1fr 1fr}
+.salle-text{display:grid;gap:22px;align-items:end}
+.salle-text p{max-width:46ch;font-size:var(--t-lead);line-height:1.42}
+.facts{display:grid;gap:4px;margin-top:2px}
+.facts li{background:var(--paper);padding:13px 16px;font-weight:500}
+@media (min-width:900px){
+  .salle-text{grid-template-columns:1fr 1fr}
+  .salle-grid{grid-template-columns:repeat(4,1fr)}
+}
+
+/* venir */
+.visit{margin-top:var(--gap);display:grid;gap:clamp(28px,4vw,64px)}
+.hours{margin-top:24px;display:grid;gap:4px;max-width:540px}
+.hours div{display:flex;justify-content:space-between;gap:16px;background:var(--paper);padding:13px 16px;font-weight:500}
+.hours dt{font-weight:700}
+.hours div.today{background:var(--navy);color:#fff}
+.addr{margin-top:28px;font-size:var(--t-lead);line-height:1.35;font-weight:500}
+.contact{margin-top:16px;display:grid;gap:6px}
+.contact a{font-weight:700;display:inline-flex;align-items:center;min-height:44px}
+.visit .actions{margin-top:18px}
+.map{min-height:380px;background:var(--step);position:relative}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:900px){.visit{grid-template-columns:5fr 7fr}.map{min-height:100%}}
+
+/* pied */
+footer{margin-top:var(--gap);background:var(--navy);color:#fff;padding-block:clamp(48px,6vw,88px) 28px}
+.foot-name{font-size:clamp(3rem,.6rem + 11vw,12rem);font-weight:800;line-height:.88;letter-spacing:-.05em}
+.foot-name span{color:var(--neon)}
+.foot-row{display:grid;gap:14px;margin-top:34px;font-size:var(--t-small);color:var(--on-navy)}
+.foot-row a{color:#fff}
+@media (min-width:900px){.foot-row{grid-template-columns:repeat(3,1fr)}}
+
+/* apparitions : le contenu reste visible sans script */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0) * 75ms)}
+.js .rv.in{opacity:1;transform:none}
+.ph img{transition:transform .6s var(--ease)}
+.ph:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .photos .big img{animation:none}
+  .ph img,.btn,.tabs button,.moments button{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<p class="demo">Démo réalisée par Raul Hatos — site non officiel</p>
+
+<header class="wrap bar">
+  <a class="mark" href="#" translate="no" aria-label="Folie Liberté, haut de page">
+    <svg viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" fill="#17213a"/><path d="M10 8h15v4.2h-10v4.2h8.6v4.2H15V27h-5z" fill="#ff5c84"/></svg>
+    <span>Folie Liberté<small>Boire, manger, partager</small></span>
+  </a>
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#maintenant">À cette heure-ci</a></li>
+      <li><a href="#carte">La carte</a></li>
+      <li><a href="#happy">Happy hour</a></li>
+      <li><a href="#salle">Fêter</a></li>
+      <li><a href="#venir">Horaires</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-navy" href="tel:+33981033725"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+</header>
+
+<main id="contenu">
+<section class="wrap hero" aria-labelledby="titre">
+  <div class="hero-text">
+    <h1 id="titre" translate="no">Folie Liberté</h1>
+    <p class="lead"><b>Brasserie et bar à cocktails</b> au 137 rue de Paris, à Charenton-le-Pont, juste à la sortie du métro Liberté. Café dès 6&nbsp;h&nbsp;30, formules du midi, pizzas, burgers et cocktails jusqu’à 23&nbsp;h.</p>
+    <ul class="tiles">
+      <li class="tile hot"><b>5&nbsp;€</b><span>la pinte de Bud en happy hour</span></li>
+      <li class="tile"><b>18&nbsp;€</b><span>la formule Express Midi</span></li>
+      <li class="tile"><b>3,90&nbsp;€</b><span>expresso et croissant</span></li>
+      <li class="tile mus"><b>14</b><span>pizzas, de 11 à 16,50&nbsp;€</span></li>
+    </ul>
+    <div class="actions">
+      <a class="btn btn-navy" href="tel:+33981033725"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="nw">09 81 03 37 25</span></a>
+      <a class="btn btn-step" href="#carte">Voir la carte et les prix</a>
+    </div>
+    <p class="status"><span class="dot" id="etat" aria-live="polite">Lun – ven 6&nbsp;h&nbsp;30 – 23&nbsp;h · sam 8&nbsp;h – 23&nbsp;h</span>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Folie+Libert%C3%A9%2C+137+rue+de+Paris%2C+94220+Charenton-le-Pont">Itinéraire</a></p>
+  </div>
+  <div class="photos">
+    <figure class="ph r43 big"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387340.jpg" width="1500" height="750" alt="La devanture de Folie Liberté le soir, store bleu marine et terrasse éclairée, au coin de la rue de Paris" fetchpriority="high"><figcaption>Le 137 rue de Paris, le soir</figcaption></figure>
+    <figure class="ph r43 sm"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/750x375/387337.jpg" width="750" height="375" alt="Le néon rose Folie Liberté sur le mur végétal, entre les étagères de bouteilles"><figcaption>Le néon du bar</figcaption></figure>
+    <figure class="ph r43 sm"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/750x375/387339.jpg" width="750" height="375" alt="La terrasse, chaises bistrot tressées et tables rondes sous le parasol"><figcaption>La terrasse</figcaption></figure>
+  </div>
+</section>
+
+<section class="now navy" id="maintenant" aria-labelledby="t-now">
+  <div class="wrap now-in">
+    <div>
+      <h2 id="t-now" class="rv">À cette <span class="nw">heure-ci</span>, au 137</h2>
+      <p class="now-intro rv" style="--i:1">Le même comptoir sert le café de 6&nbsp;h&nbsp;30, les formules du midi, la pinte de l’happy hour et la pizza du soir. Choisissez un moment&nbsp;: la page s’ouvre sur celui de l’heure qu’il est.</p>
+      <div class="moments rv" style="--i:2" role="tablist" aria-label="Moments de la journée">
+        <button role="tab" id="tb-matin" aria-controls="m-matin" aria-selected="true" data-m="matin">Le matin</button>
+        <button role="tab" id="tb-midi" aria-controls="m-midi" aria-selected="false" data-m="midi">Le midi</button>
+        <button role="tab" id="tb-happy" aria-controls="m-happy" aria-selected="false" data-m="happy">16 h – 20 h</button>
+        <button role="tab" id="tb-soir" aria-controls="m-soir" aria-selected="false" data-m="soir">Le soir</button>
+      </div>
+      <div class="moment" id="m-matin" role="tabpanel" aria-labelledby="tb-matin" data-img="387333" data-alt="Le coin fenêtre, carreaux bleus et ardoise de l’happy hour">
+        <h3>Le petit-déjeuner, jusqu’à 10&nbsp;h&nbsp;30</h3>
+        <p>Servi chaque jour d’ouverture. Le samedi, la porte ouvre à 8&nbsp;h.</p>
+        <ul class="picks">
+          <li><span>La Charentonnais</span><b>3,90&nbsp;€</b><small>Un expresso et un croissant ou une tartine.</small></li>
+          <li><span>Le Petit Gourmand</span><b>9,90&nbsp;€</b></li>
+          <li><span>2 œufs au plat et bacon</span><b>8&nbsp;€</b></li>
+          <li><span>Omelette jambon-fromage, salade</span><b>13&nbsp;€</b></li>
+        </ul>
+      </div>
+      <div class="moment" id="m-midi" role="tabpanel" aria-labelledby="tb-midi" data-img="387332" data-alt="Une assiette du midi, viande, pommes de terre sautées et salade, avec un verre de rouge">
+        <h3>Les formules, du lundi au vendredi</h3>
+        <p>Hors jours fériés. L’entrée, le plat et le dessert du jour changent à l’ardoise.</p>
+        <ul class="picks">
+          <li><span>L’Express Midi</span><b>18&nbsp;€</b><small>Entrée et plat du jour, ou plat et dessert du jour. Café non compris.</small></li>
+          <li><span>La Complète Midi</span><b>22&nbsp;€</b><small>Entrée, plat et dessert du jour.</small></li>
+          <li><span>Menu enfant</span><b>11,50&nbsp;€</b></li>
+          <li><span>Bowl de Folie, saumon gravlax, mangue, avocat</span><b>17,50&nbsp;€</b></li>
+        </ul>
+      </div>
+      <div class="moment" id="m-happy" role="tabpanel" aria-labelledby="tb-happy" data-img="387334" data-alt="Un Lillet Spritz posé sur le comptoir, devant la bouteille de Lillet rosé">
+        <h3>Happy hour, tous les jours d’ouverture</h3>
+        <p>De 16&nbsp;h à 20&nbsp;h, en terrasse ou au comptoir.</p>
+        <ul class="picks">
+          <li><span>Pinte de Bud, 50&nbsp;cl</span><b>5&nbsp;€</b></li>
+          <li><span>Cocktail Spritz, Aperol, Campari, Lillet ou Saint-Germain</span><b>6&nbsp;€</b></li>
+          <li><span>Pinte de Leffe, Chouffe ou Picon bière</span><b>6,90&nbsp;€</b></li>
+          <li><span>La citronnade maison, 25&nbsp;cl</span><b>4&nbsp;€</b></li>
+        </ul>
+      </div>
+      <div class="moment" id="m-soir" role="tabpanel" aria-labelledby="tb-soir" data-img="387335" data-alt="Deux cocktails mousseux garnis d’un agrume séché, sur le bar">
+        <h3>Pizzas, planches et cocktails, jusqu’à 23&nbsp;h</h3>
+        <p>Quatorze pizzas à la mozzarella fior di latte, des planches à partager et une carte de cocktails et de mocktails.</p>
+        <ul class="picks">
+          <li><span>Pizza Tartufata, crème de truffe</span><b>16,50&nbsp;€</b></li>
+          <li><span>Planche mixte, charcuterie et fromages</span><b>19,50&nbsp;€</b></li>
+          <li><span>Pornstar Martini</span><b>11&nbsp;€</b></li>
+          <li><span>Mocktails, 20&nbsp;cl</span><b>7,50&nbsp;€</b><small>Virgin Mojito, Rose Tonic, Floreal Spritz, Blush Me Up, Like a Virgin.</small></li>
+        </ul>
+      </div>
+    </div>
+    <div class="now-photo rv" style="--i:2">
+      <figure class="ph r34"><img id="now-img" src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387333.jpg" width="1500" height="750" alt="Le coin fenêtre, carreaux bleus et ardoise de l’happy hour" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap carte" id="carte" aria-labelledby="t-carte">
+  <div class="carte-head">
+    <h2 id="t-carte" class="rv">La carte</h2>
+    <p class="rv" style="--i:1">Des tapas aux pizzas, en passant par les plats de brasserie et les burgers. Suggestion du moment et plat du jour à l’ardoise.</p>
+  </div>
+  <div class="tabs rv" style="--i:2" role="tablist" aria-label="Rubriques de la carte">
+    <button role="tab" id="c-1" aria-controls="p-1" aria-selected="true">Entrées et tapas</button>
+    <button role="tab" id="c-2" aria-controls="p-2" aria-selected="false">Plats</button>
+    <button role="tab" id="c-3" aria-controls="p-3" aria-selected="false">Burgers et bowls</button>
+    <button role="tab" id="c-4" aria-controls="p-4" aria-selected="false">Pizzas</button>
+    <button role="tab" id="c-5" aria-controls="p-5" aria-selected="false">Desserts</button>
+    <button role="tab" id="c-6" aria-controls="p-6" aria-selected="false">Cocktails</button>
+  </div>
+  <div class="carte-body">
+    <div>
+      <div class="panel" id="p-1" role="tabpanel" aria-labelledby="c-1">
+        <h3>Entrées et tapas</h3>
+        <ul class="menu">
+          <li><span>Entrée du jour</span><span class="p">6,80&nbsp;€</span></li>
+          <li><span>Soupe à l’oignon gratinée</span><span class="p">8,50&nbsp;€</span></li>
+          <li><span>Sticks de mozzarella, sauce salsa</span><span class="p">8,90&nbsp;€</span></li>
+          <li><span>Croquetas de brie au miel</span><span class="p">8,90&nbsp;€</span></li>
+          <li><span>La fameuse burrata</span><span class="p">9,90&nbsp;€</span><small>Roquette, tomate séchée, pesto.</small></li>
+          <li><span>Assiette de légumes grillés</span><span class="p">9,90&nbsp;€</span></li>
+          <li><span>Nems au poulet, sauce nuoc-mâm</span><span class="p">9,90&nbsp;€</span></li>
+          <li><span>Nachos et leurs 3 sauces</span><span class="p">10,90&nbsp;€</span><small>Guacamole, salsa, cheddar.</small></li>
+          <li><span>Jambon San Daniele 18 mois</span><span class="p">12,50&nbsp;€</span></li>
+          <li><span>Gravlax de saumon, crème au yuzu</span><span class="p">12,90&nbsp;€</span></li>
+          <li><span>Crevettes tempura, sauce chili douce</span><span class="p">13,50&nbsp;€</span></li>
+          <li><span>Os à moelle et pain grillé</span><span class="p">13,50&nbsp;€</span></li>
+          <li><span>Camembert rôti, miel et thym</span><span class="p">14,50&nbsp;€</span></li>
+        </ul>
+      </div>
+      <div class="panel" id="p-2" role="tabpanel" aria-labelledby="c-2">
+        <h3>Plats</h3>
+        <ul class="menu">
+          <li><span>Poulet snacké, sauce teriyaki, riz thaï</span><span class="p">16&nbsp;€</span></li>
+          <li><span>Tartare de bœuf classique, frites maison</span><span class="p">17&nbsp;€</span></li>
+          <li><span>Filet de bar, émulsion beurre yuzu</span><span class="p">18,50&nbsp;€</span></li>
+          <li><span>Tartare de saumon, frites maison</span><span class="p">18,50&nbsp;€</span></li>
+          <li><span>Tataki de thon au sésame, riz thaï</span><span class="p">19,50&nbsp;€</span></li>
+          <li><span>Carpaccio de bœuf et sa burrata</span><span class="p">19,50&nbsp;€</span></li>
+          <li><span>Confit de canard, pommes sautées ail et persil</span><span class="p">19,50&nbsp;€</span></li>
+          <li><span>Rigatoni à la crème de truffe</span><span class="p">21,50&nbsp;€</span><small>Parmesan, roquette. Avec jambon San Daniele&nbsp;: +5&nbsp;€.</small></li>
+          <li><span>Noix d’entrecôte, environ 300&nbsp;g</span><span class="p">24,50&nbsp;€</span><small>Sauce béarnaise ou poivre maison, frites et salade.</small></li>
+        </ul>
+      </div>
+      <div class="panel" id="p-3" role="tabpanel" aria-labelledby="c-3">
+        <h3>Burgers et bowls</h3>
+        <ul class="menu">
+          <li><span>Burger de Folie</span><span class="p">18,50&nbsp;€</span><small>Steak, cheddar, confit d’oignons, sauce burger.</small></li>
+          <li><span>Burger végé</span><span class="p">18&nbsp;€</span></li>
+          <li><span>Chicken burger</span><span class="p">19&nbsp;€</span><small>Poulet pané, salsa d’avocat, confit d’oignons.</small></li>
+          <li><span>Burger saumon</span><span class="p">19,50&nbsp;€</span></li>
+          <li><span>Burger auvergnat</span><span class="p">21&nbsp;€</span><small>Steak, bleu, lard fumé, confit d’oignons.</small></li>
+          <li><span>Bowl végé</span><span class="p">15,50&nbsp;€</span></li>
+          <li><span>Salade César</span><span class="p">15,50&nbsp;€</span></li>
+          <li><span>Salade chèvre chaud</span><span class="p">16,50&nbsp;€</span></li>
+          <li><span>Bowl poulet</span><span class="p">17&nbsp;€</span></li>
+          <li><span>Bowl de Folie</span><span class="p">17,50&nbsp;€</span></li>
+          <li><span>Salade océane</span><span class="p">17,50&nbsp;€</span></li>
+        </ul>
+        <p class="note">Supplément lard fumé dans le burger&nbsp;: +2&nbsp;€.</p>
+      </div>
+      <div class="panel" id="p-4" role="tabpanel" aria-labelledby="c-4">
+        <h3>Pizzas</h3>
+        <ul class="menu">
+          <li><span>Margarita</span><span class="p">11&nbsp;€</span></li>
+          <li><span>Napolitaine</span><span class="p">14,50&nbsp;€</span></li>
+          <li><span>Regina</span><span class="p">14,50&nbsp;€</span></li>
+          <li><span>Calzone</span><span class="p">14,50&nbsp;€</span></li>
+          <li><span>Vegetariana</span><span class="p">14,50&nbsp;€</span></li>
+          <li><span>Orientale</span><span class="p">14,50&nbsp;€</span></li>
+          <li><span>Chorizo</span><span class="p">15&nbsp;€</span></li>
+          <li><span>Campione</span><span class="p">15&nbsp;€</span></li>
+          <li><span>4 fromages</span><span class="p">16&nbsp;€</span></li>
+          <li><span>Chèvre miel</span><span class="p">16&nbsp;€</span></li>
+          <li><span>La Burrata</span><span class="p">16,50&nbsp;€</span></li>
+          <li><span>Tartufata</span><span class="p">16,50&nbsp;€</span></li>
+          <li><span>San Daniele</span><span class="p">16,50&nbsp;€</span></li>
+          <li><span>Nordique</span><span class="p">16,50&nbsp;€</span></li>
+        </ul>
+        <p class="note">Toutes à la mozzarella fior di latte. Burrata en supplément&nbsp;: +5&nbsp;€.</p>
+      </div>
+      <div class="panel" id="p-5" role="tabpanel" aria-labelledby="c-5">
+        <h3>Desserts</h3>
+        <ul class="menu">
+          <li><span>Dessert du jour</span><span class="p">6,50&nbsp;€</span></li>
+          <li><span>Tiramisu du moment</span><span class="p">6,90&nbsp;€</span></li>
+          <li><span>Crème brûlée du moment</span><span class="p">7,90&nbsp;€</span></li>
+          <li><span>Cheesecake du moment</span><span class="p">7,90&nbsp;€</span></li>
+          <li><span>Pavlova du moment</span><span class="p">8,50&nbsp;€</span></li>
+          <li><span>Tarte Tatin maison, boule vanille</span><span class="p">8,50&nbsp;€</span></li>
+          <li><span>Fromage blanc, muesli et miel</span><span class="p">8,50&nbsp;€</span></li>
+          <li><span>Mi-cuit au chocolat, glace vanille</span><span class="p">8,90&nbsp;€</span></li>
+          <li><span>Coupe Colonel</span><span class="p">9,50&nbsp;€</span></li>
+          <li><span>Brioche façon pain perdu au caramel</span><span class="p">9,90&nbsp;€</span></li>
+        </ul>
+      </div>
+      <div class="panel" id="p-6" role="tabpanel" aria-labelledby="c-6">
+        <h3>Cocktails</h3>
+        <ul class="menu">
+          <li><span>Aperol Spritz</span><span class="p">9&nbsp;€</span></li>
+          <li><span>Folie Spritz</span><span class="p">9&nbsp;€</span><small>Liqueur de pamplemousse, prosecco.</small></li>
+          <li><span>Limoncello Spritz</span><span class="p">9&nbsp;€</span></li>
+          <li><span>Lillet Spritz</span><span class="p">9&nbsp;€</span></li>
+          <li><span>Carcassis Spritz</span><span class="p">9&nbsp;€</span></li>
+          <li><span>Mojito, nature, fraise ou passion</span><span class="p">9,50&nbsp;€</span></li>
+          <li><span>Pink Paloma</span><span class="p">9,50&nbsp;€</span><small>Mezcal, citron vert, soda pamplemousse.</small></li>
+          <li><span>Gin tonic</span><span class="p">9,50&nbsp;€</span></li>
+          <li><span>Saint-Germain Spritz</span><span class="p">11&nbsp;€</span></li>
+          <li><span>Pornstar Martini</span><span class="p">11&nbsp;€</span></li>
+          <li><span>Mocktails, 20&nbsp;cl</span><span class="p">7,50&nbsp;€</span><small>Virgin Mojito, Rose Tonic, Floreal Spritz, Blush Me Up, Like a Virgin.</small></li>
+        </ul>
+        <p class="note">En happy hour, de 16&nbsp;h à 20&nbsp;h, le Spritz est à 6&nbsp;€.</p>
+      </div>
+    </div>
+    <div class="carte-photo rv" style="--i:2">
+      <figure class="ph r43"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387341.jpg" width="1500" height="750" alt="Le comptoir, sa façade en marbre noir et blanc et les tireuses à bière" loading="lazy"><figcaption>Le comptoir</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="happy" id="happy" aria-labelledby="t-happy">
+  <div class="wrap happy-in">
+    <div>
+      <h2 id="t-happy" class="rv">Happy hour, de 16&nbsp;h à 20&nbsp;h</h2>
+      <p class="happy-intro rv" style="--i:1">Tous les jours d’ouverture, sur toutes les boissons. Le moment de la terrasse, en sortant du métro.</p>
+      <ul class="prices">
+        <li class="rv" style="--i:2"><span>la pinte de Bud</span><b>5&nbsp;€</b></li>
+        <li class="rv" style="--i:3"><span>le cocktail Spritz</span><b>6&nbsp;€</b></li>
+        <li class="rv" style="--i:4"><span>la pinte de Leffe, Chouffe ou Picon bière</span><b>6,90&nbsp;€</b></li>
+        <li class="rv" style="--i:5"><span>la citronnade maison</span><b>4&nbsp;€</b></li>
+      </ul>
+    </div>
+    <div class="happy-photos rv" style="--i:2">
+      <figure class="ph r34"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387334.jpg" width="1500" height="750" alt="Un Lillet Spritz tenu au-dessus du comptoir" loading="lazy"></figure>
+      <figure class="ph r34"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387335.jpg" width="1500" height="750" alt="Deux cocktails mousseux devant le bar" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap salle" id="salle" aria-labelledby="t-salle">
+  <div class="salle-text">
+    <h2 id="t-salle" class="rv">Un anniversaire, un pot de départ&nbsp;?</h2>
+    <div class="rv" style="--i:1">
+      <p>La salle aux banquettes moutarde, le comptoir à cocktails et la terrasse se réservent pour un afterwork, un anniversaire ou un EVJF. Un écran et un projecteur sont sur place.</p>
+      <div class="actions">
+        <a class="btn btn-navy" href="tel:+33981033725">Appeler pour réserver</a>
+        <a class="btn btn-step" href="https://www.privateaser.com/lieu/49066-folie-liberte">Réserver sur Privateaser</a>
+      </div>
+    </div>
+  </div>
+  <div class="salle-grid">
+    <figure class="ph r34 rv" style="--i:1"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387331.jpg" width="1500" height="750" alt="La salle, ses banquettes moutarde et l’écran de projection au fond" loading="lazy"><figcaption>La salle et l’écran</figcaption></figure>
+    <figure class="ph r34 rv" style="--i:2"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387338.jpg" width="1500" height="750" alt="Le coin des baies vitrées, carreaux bleus et banquette en velours" loading="lazy"><figcaption>Les carreaux bleus</figcaption></figure>
+    <figure class="ph r34 rv" style="--i:3"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387336.jpg" width="1500" height="750" alt="Le néon Folie Liberté au milieu du mur de bouteilles" loading="lazy"><figcaption>Le néon</figcaption></figure>
+    <figure class="ph r34 rv" style="--i:4"><img src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/387339.jpg" width="1500" height="750" alt="La terrasse et ses chaises bistrot, face à la rue de Paris" loading="lazy"><figcaption>La terrasse</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap visit" id="venir" aria-labelledby="t-venir">
+  <div>
+    <h2 id="t-venir" class="rv">Horaires et accès</h2>
+    <dl class="hours rv" style="--i:1" id="hours">
+      <div data-d="1"><dt>Lundi</dt><dd>6&nbsp;h&nbsp;30 – 23&nbsp;h</dd></div>
+      <div data-d="2"><dt>Mardi</dt><dd>6&nbsp;h&nbsp;30 – 23&nbsp;h</dd></div>
+      <div data-d="3"><dt>Mercredi</dt><dd>6&nbsp;h&nbsp;30 – 23&nbsp;h</dd></div>
+      <div data-d="4"><dt>Jeudi</dt><dd>6&nbsp;h&nbsp;30 – 23&nbsp;h</dd></div>
+      <div data-d="5"><dt>Vendredi</dt><dd>6&nbsp;h&nbsp;30 – 23&nbsp;h</dd></div>
+      <div data-d="6"><dt>Samedi</dt><dd>8&nbsp;h – 23&nbsp;h</dd></div>
+      <div data-d="0"><dt>Dimanche</dt><dd>Fermé</dd></div>
+    </dl>
+    <p class="addr rv" style="--i:2">137, rue de Paris<br>94220 Charenton-le-Pont<br>Métro ligne 8, station Liberté</p>
+    <div class="contact rv" style="--i:3">
+      <a href="tel:+33981033725">09 81 03 37 25</a>
+      <a href="https://www.instagram.com/foliliberte94/">Instagram&nbsp;: @foliliberte94</a>
+    </div>
+    <div class="actions rv" style="--i:4">
+      <a class="btn btn-navy" href="https://www.google.com/maps/dir/?api=1&amp;destination=Folie+Libert%C3%A9%2C+137+rue+de+Paris%2C+94220+Charenton-le-Pont">Itinéraire Google Maps</a>
+    </div>
+  </div>
+  <div class="map rv" style="--i:2">
+    <iframe title="Plan : Folie Liberté, 137 rue de Paris, Charenton-le-Pont" src="https://maps.google.com/maps?q=Folie%20Libert%C3%A9%2C%20137%20rue%20de%20Paris%2C%2094220%20Charenton-le-Pont&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+</main>
+
+<footer class="navy">
+  <div class="wrap">
+    <p class="foot-name" translate="no">Folie <span>Liberté</span></p>
+    <div class="foot-row">
+      <p>Brasserie et bar à cocktails<br>137, rue de Paris, 94220 Charenton-le-Pont</p>
+      <p><a href="tel:+33981033725">09 81 03 37 25</a><br><a href="https://www.instagram.com/foliliberte94/">@foliliberte94</a></p>
+      <p>Démo réalisée par Raul Hatos — site non officiel.<br>Photos&nbsp;: fiche Privateaser de l’établissement.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var P='https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49066/1500x750/';
+  // heure de Paris, quel que soit le fuseau du visiteur
+  var parts=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+  var get=function(t){var p=parts.find(function(x){return x.type===t});return p?p.value:''};
+  var days={'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6,'dim.':0};
+  var d=days[get('weekday')];if(d===undefined)d=new Date().getDay();
+  var mins=(+get('hour'))*60+(+get('minute'));
+  var openAt=function(day){return day===0?null:(day===6?480:390)};
+  var fmt=function(m){var h=Math.floor(m/60),mm=m%60;return h+' h'+(mm?' '+mm:'')};
+  var names=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  var o=openAt(d),etat=document.getElementById('etat'),txt,open=false;
+  if(o!==null&&mins>=o&&mins<1380){open=true;txt='Ouvert maintenant · jusqu’à 23 h'}
+  else if(o!==null&&mins<o){txt='Fermé · ouvre aujourd’hui à '+fmt(o)}
+  else{var n=(d+1)%7;while(openAt(n)===null)n=(n+1)%7;txt='Fermé · ouvre '+(n===(d+1)%7?'demain':names[n])+' à '+fmt(openAt(n))}
+  etat.textContent=txt;if(open)etat.classList.add('open');
+  var row=document.querySelector('#hours [data-d="'+d+'"]');if(row)row.classList.add('today');
+
+  function tabs(list,onPick){
+    var bs=[].slice.call(list.querySelectorAll('[role=tab]'));
+    function pick(b,focus){bs.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});if(focus)b.focus();if(onPick)onPick(b)}
+    bs.forEach(function(b,i){b.addEventListener('click',function(){pick(b)});b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(k){e.preventDefault();pick(bs[(i+k+bs.length)%bs.length],true)}})});
+    return {pick:pick,bs:bs};
+  }
+  var img=document.getElementById('now-img');
+  var mt=tabs(document.querySelector('.moments'),function(b){var p=document.getElementById(b.getAttribute('aria-controls'));var src=P+p.dataset.img+'.jpg';if(img.src!==src){img.src=src;img.alt=p.dataset.alt}});
+  var cur=(!open&&o===null)||mins<630?'matin':mins<960?'midi':mins<1200?'happy':'soir';
+  if(d===0)cur='matin';
+  var b=document.querySelector('.moments [data-m="'+cur+'"]');
+  if(open){var s=document.createElement('span');s.className='nowtag';s.textContent='· maintenant';b.appendChild(s)}
+  mt.pick(b);
+  var ct=tabs(document.querySelector('.tabs'));ct.pick(ct.bs[0]);
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else els.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
